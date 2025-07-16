@@ -1,15 +1,14 @@
 // src/app/layout.tsx
 import "./globals.css";
+import type { ReactNode } from "react";
 
 export const metadata = {
-  title: "Attribix",
+  title:       "Attribix",
   description: "Smarter Attribution. Bigger Impact.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
+    <html lang="en"><head/><body>{children}</body></html>
   );
 }
