@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* File: attribixweb/attribixweb/src/app/globals.css */
 
 /* = Reset & base = */
@@ -166,61 +170,46 @@ body,
 /* = Login page = */
 .login-page {
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column; /* stack heading + form */
-  align-items: center;
-  justify-content: center;
-  background: #09013a; /* base color */
+  width: 100vw;
+  height: 100vh;
+  display: flex !important;
+  justify-content: center !important; /* center horizontally */
+  align-items: center !important;     /* center vertically */
   overflow: hidden;
-  padding: 1rem;
+  background: linear-gradient(
+    135deg,
+    #000416 0%,
+    #180440 33%,
+    #004077 66%,
+    #09013a 100%
+  );
+
 }
 
-/* wide, very dark blurred gradient with softened pink/purple */
+/* subtle animated “aurora” wash */
 .login-page::before {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    60deg,
-    rgba(0,   0,   0,   0.95) 0%,
-    rgba(0,   0,   0,   0.95) 60%,   /* hold black through 60% */
-    rgba(192,132,252,0.5)      65%,   /* start pink */
-    rgba(192,132,252,0.5)      80%,   /* end pink */
-    rgba(0,   0,   0,   0.95) 100%
+    45deg,
+    rgba(0, 4, 22, 0.95)   0%,
+    rgba(0, 64,119, 0.8)   33%,
+    rgba(192,132,252,0.8)  66%,
+    rgba(0, 4, 22, 0.95)  100%
   );
-  background-size: 600% 600%;
-  filter: blur(160px) saturate(1.5);
-  animation: aurora-back 60s ease infinite alternate;
+  background-size: 300% 300%;
+  filter: blur(100px) saturate(1.5);
+  animation: aurora-move 30s ease-in-out infinite;
   z-index: 1;
 }
 
-/* narrower, darker ribbon with very soft pink stripes */
-.login-page::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(0,   0,    0,    0.85) 0%,
-    rgba(0,   0,    0,    0.85) 20%,
-    rgba(0,   64,  119,   0.6) 30%,
-    rgba(192,132,252,0.4)      40%, /* softer pink */
-    rgba(0,   64,  119,   0.6) 50%,
-    rgba(0,   0,    0,    0.85)100%
-  );
-  background-size: 400% 400%;
-  filter: blur(100px) saturate(2);
-  animation: aurora-front 40s ease infinite alternate-reverse;
-  z-index: 2;
-}
-
-/* lift form content above the effects */
+/* lift form above background */
 .login-header,
 .login-form,
 .signup-prompt {
   position: relative;
-  z-index: 3;
+  z-index: 2;
 }
 
 /* inline logo + heading */
@@ -248,23 +237,19 @@ body,
   border-radius: 1rem;
   max-width: 400px;
   width: 100%;
-  color: #fff;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
-
-/* labels */
 .login-form label {
   font-weight: 600;
 }
-
-/* inputs */
 .login-form input {
   padding: 0.75rem 1rem;
   border: 1px solid #334155;
   border-radius: 0.5rem;
-  font-size: 1rem;
   background: #0f172a;
   color: #fff;
 }
@@ -272,8 +257,6 @@ body,
   outline: none;
   border-color: #3b82f6;
 }
-
-/* submit button */
 .login-form .cta {
   margin-top: 1.5rem;
 }
@@ -292,12 +275,9 @@ body,
   text-decoration: underline;
 }
 
-/* = Keyframe animations = */
-@keyframes aurora-back {
-  0%   { background-position: 0% 20%; }
-  100% { background-position: 100% 80%; }
-}
-@keyframes aurora-front {
-  0%   { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* keyframe for aurora */
+@keyframes aurora-move {
+  0%   { background-position:   0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position:   0% 50%; }
 }

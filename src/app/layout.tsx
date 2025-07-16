@@ -1,15 +1,23 @@
-import "./globals.css";
-import React from 'react';
+// src/app/layout.tsx
+import React from 'react'
+import './globals.css'
 
 export const metadata = {
-  title: 'Attribix',
-  description: 'Smarter Attribution. Bigger Impact.',
-};
+  title: 'AttribixWeb',
+  description: 'Your dashboard and analytics app',
+}
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <head />
+      <body>
+        {children}
+      </body>
     </html>
-  );
+  )
 }
