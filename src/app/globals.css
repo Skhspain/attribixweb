@@ -1,16 +1,18 @@
 /* src/app/globals.css */
 
-/* 1. Brand variables (at the very top) */
+/* 1. Brand variables */
 :root {
   --brand-primary: #123456;
   --brand-accent:  #abcdef;
 }
 
-/* 2. Tailwind base (preflight + resets) */
+/* 2. Tailwind base (Preflight + resets) */
 @tailwind base;
 
-/* 3. Your own reset (optional, but before components) */
-* {
+/* 3. Your custom reset (runs before components) */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -19,16 +21,15 @@
 /* 4. Tailwind component classes */
 @tailwind components;
 
-/* 5. Your custom CSS */
+/* 5. Your global styles */
 html,
 body,
 #__next {
   height: 100%;
   font-family: "Inter", sans-serif;
-  /* default text color is dark; individual pages can override */
 }
 
-/* —— Hero section (force white text) —— */
+/* —— Hero gradient wrapper —— */
 .intro-gradient {
   min-height: calc(100vh + 300px);
   background: linear-gradient(
@@ -38,11 +39,13 @@ body,
     #004077 66%,
     #09013a 100%
   );
-  color: #fff; /* base text white */
+  color: #fff; /* all text white by default */
 }
-
-/* make everything inside inherit that white */
-.intro-gradient * {
+/* only core hero children need to inherit white */
+.intro-gradient > *,
+.intro-gradient .nav,
+.intro-gradient .hero-content,
+.intro-gradient .cta {
   color: inherit;
 }
 
@@ -98,7 +101,7 @@ body,
   background: #2563eb;
 }
 
-/* —— Hero content (“Smarter Attribution…”) —— */
+/* —— Hero content styling —— */
 .hero-content {
   position: relative;
   z-index: 10;
@@ -129,16 +132,6 @@ body,
   background: #2563eb;
 }
 
-/* —— Chart overlay —— */
-.hero-chart {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 70%;
-  opacity: 0.6;
-  z-index: 5;
-}
-
 /* —— Features section —— */
 .features {
   display: flex;
@@ -147,9 +140,9 @@ body,
   padding: 4rem 2rem;
   background: linear-gradient(
     to bottom,
-    rgba(15, 23, 42, 0.5) 0%,
-    rgba(15, 23, 42, 0.8) 50%,
-    rgba(15, 23, 42, 0.5) 100%
+    rgba(15,23,42,0.5) 0%,
+    rgba(15,23,42,0.8) 50%,
+    rgba(15,23,42,0.5) 100%
   );
 }
 .feature {
@@ -179,7 +172,6 @@ body,
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   background: linear-gradient(
     135deg,
     #000416 0%,
@@ -194,10 +186,10 @@ body,
   inset: 0;
   background: linear-gradient(
     45deg,
-    rgba(0, 4, 22, 0.9) 0%,
-    rgba(0, 64, 119, 0.6) 33%,
-    rgba(192, 132, 252, 0.6) 66%,
-    rgba(0, 4, 22, 0.9) 100%
+    rgba(0,4,22,0.9) 0%,
+    rgba(0,64,119,0.6) 33%,
+    rgba(192,132,252,0.6) 66%,
+    rgba(0,4,22,0.9) 100%
   );
   background-size: 300% 300%;
   filter: blur(100px) saturate(1.5);
@@ -220,13 +212,14 @@ body,
   height: 1.5rem;
 }
 .login-header h2 {
-  margin: 0;
   font-size: 1.75rem;
   font-weight: 700;
   color: #fff;
 }
+
+/* —— Login form styling —— */
 .login-form {
-  background: rgba(0, 4, 22, 0.85);
+  background: rgba(0,4,22,0.85);
   padding: 2rem;
   border-radius: 1rem;
   max-width: 400px;
@@ -235,7 +228,7 @@ body,
   flex-direction: column;
   gap: 1rem;
   color: #fff;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
 }
 .login-form label {
   font-weight: 600;
@@ -268,20 +261,11 @@ body,
   text-decoration: underline;
 }
 
-/* —— Keyframes —— */
+/* —— Aurora keyframes —— */
 @keyframes aurora-move {
-  0%, 100% { background-position: 0% 50%; }
-  50%      { background-position: 100% 50%; }
+  0%,100% { background-position: 0% 50%; }
+  50%     { background-position: 100% 50%; }
 }
 
 /* 6. Tailwind utility classes */
 @tailwind utilities;
-
-/* 7. Final overrides (if needed) */
-/* ensure nav‐links remain white when inside the gradient */
-.intro-gradient .nav-links a {
-  color: inherit;
-}
-.intro-gradient .nav-links a:hover {
-  color: #e11d48;
-}
