@@ -2,9 +2,8 @@
 
 /* 1. Brand variables (at the very top) */
 :root {
-  --brand-primary:    #123456;
-  --brand-accent:     #abcdef;
-  /* --brand-accent-light: rgba(171, 205, 239, 0.1); */
+  --brand-primary: #123456;
+  --brand-accent:  #abcdef;
 }
 
 /* 2. Tailwind base (preflight + resets) */
@@ -26,10 +25,10 @@ body,
 #__next {
   height: 100%;
   font-family: "Inter", sans-serif;
-  /* default dark text on analytics, etc. */
+  /* default text color is dark; individual pages can override */
 }
 
-/* —— Hero section (text-in-white only here) —— */
+/* —— Hero section (force white text) —— */
 .intro-gradient {
   min-height: calc(100vh + 300px);
   background: linear-gradient(
@@ -39,14 +38,11 @@ body,
     #004077 66%,
     #09013a 100%
   );
-  color: #fff;             /* base text white */
+  color: #fff; /* base text white */
 }
 
-/* only immediate children inherit white */
-.intro-gradient > *,
-.intro-gradient .nav,
-.intro-gradient .hero-content,
-.intro-gradient .cta {
+/* make everything inside inherit that white */
+.intro-gradient * {
   color: inherit;
 }
 
@@ -282,13 +278,10 @@ body,
 @tailwind utilities;
 
 /* 7. Final overrides (if needed) */
-
-/* ————————————————————————————— */
-/* Hero nav‐link fix: make them white on the gradient */
+/* ensure nav‐links remain white when inside the gradient */
 .intro-gradient .nav-links a {
   color: inherit;
 }
 .intro-gradient .nav-links a:hover {
   color: #e11d48;
 }
-/* ————————————————————————————— */
