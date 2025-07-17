@@ -1,11 +1,11 @@
 // src/app/page.tsx
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 export default function HomePage() {
   return (
     <div className="intro-gradient text-white">
-      {/* —— Header / Hero section —— */}
+      {/* —— Navigation + Hero —— */}
       <header className="hero">
         <nav className="nav">
           <div className="logo-wrapper">
@@ -30,20 +30,17 @@ export default function HomePage() {
         </nav>
 
         <div className="hero-content">
-          <h1 className="text-6xl font-bold text-white">
-            Smarter  
-            <br />
-            Attribution.  
-            <br />
-            Bigger  
-            <br />
+          <h1 className="text-6xl font-bold">
+            Smarter<br/>
+            Attribution.<br/>
+            Bigger<br/>
             Impact.
           </h1>
           <button className="cta text-white">Connect your project</button>
         </div>
 
         <div className="hero-chart">
-          {/* optional chart goes here */}
+          {/* Optional chart image */}
         </div>
       </header>
 
@@ -56,8 +53,8 @@ export default function HomePage() {
             width={48}
             height={48}
           />
-          <h3 className="text-white">Accurate Tracking</h3>
-          <p className="text-white/80">Track your ads with precision and confidence.</p>
+          <h3>Accurate Tracking</h3>
+          <p>Track your ads with precision and confidence.</p>
         </div>
         <div className="feature">
           <Image
@@ -66,8 +63,8 @@ export default function HomePage() {
             width={48}
             height={48}
           />
-          <h3 className="text-white">Privacy-Compliant</h3>
-          <p className="text-white/80">Ensure your data aligns with global privacy standards.</p>
+          <h3>Privacy-Compliant</h3>
+          <p>Ensure your data aligns with global privacy standards.</p>
         </div>
         <div className="feature">
           <Image
@@ -76,8 +73,8 @@ export default function HomePage() {
             width={48}
             height={48}
           />
-          <h3 className="text-white">Data-Driven Insights</h3>
-          <p className="text-white/80">Make informed decisions based on accurate analytics.</p>
+          <h3>Data-Driven Insights</h3>
+          <p>Make informed decisions based on accurate analytics.</p>
         </div>
         <div className="feature">
           <Image
@@ -86,8 +83,8 @@ export default function HomePage() {
             width={48}
             height={48}
           />
-          <h3 className="text-white">Real-Time Analytics</h3>
-          <p className="text-white/80">Access live performance data for your campaigns.</p>
+          <h3>Real-Time Analytics</h3>
+          <p>Access live performance data for your campaigns.</p>
         </div>
       </section>
     </div>
