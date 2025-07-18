@@ -1,6 +1,6 @@
 /* src/app/globals.css */
 
-/* 1. Brand variables */
+/* 1. Brand variables (at the very top) */
 :root {
   --brand-primary: #123456;
   --brand-accent:  #abcdef;
@@ -41,7 +41,7 @@ body,
   );
   color: #fff; /* all text white by default */
 }
-/* only core hero children need to inherit white */
+/* only the key hero elements inherit white text */
 .intro-gradient > *,
 .intro-gradient .nav,
 .intro-gradient .hero-content,
@@ -101,7 +101,7 @@ body,
   background: #2563eb;
 }
 
-/* —— Hero content styling —— */
+/* —— Hero content (“Smarter Attribution…”) —— */
 .hero-content {
   position: relative;
   z-index: 10;
@@ -261,10 +261,10 @@ body,
   text-decoration: underline;
 }
 
-/* —— Aurora keyframes —— */
+/* —— Keyframes for login background animation —— */
 @keyframes aurora-move {
-  0%,100% { background-position: 0% 50%; }
-  50%     { background-position: 100% 50%; }
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
 }
 
 /* 6. Tailwind utility classes */
