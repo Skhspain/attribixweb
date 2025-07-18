@@ -6,10 +6,9 @@
   --brand-accent:  #abcdef;
 }
 
-/* 2. Tailwind base (Preflight + resets) */
+/* 2. Tailwind Preflight + your “zero out” reset before any components */
 @tailwind base;
 
-/* 3. Your custom reset (runs before components) */
 *,
 *::before,
 *::after {
@@ -18,10 +17,15 @@
   box-sizing: border-box;
 }
 
-/* 4. Tailwind component classes */
+/* 3. Tailwind component classes */
 @tailwind components;
 
-/* 5. Your global styles */
+/* 4. Tailwind utility classes (must be last of the Tailwind directives) */
+@tailwind utilities;
+
+/* ——————————————————————————————————————————————————————— */
+/* 5. Your global overrides (after Tailwind) */
+
 html,
 body,
 #__next {
@@ -39,9 +43,8 @@ body,
     #004077 66%,
     #09013a 100%
   );
-  color: #fff; /* all text white by default */
+  color: #fff; /* all text white */
 }
-/* only the key hero elements inherit white text */
 .intro-gradient > *,
 .intro-gradient .nav,
 .intro-gradient .hero-content,
@@ -57,37 +60,17 @@ body,
   padding: 2rem 4rem;
   z-index: 10;
 }
-.logo-wrapper {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
-}
-.logo {
-  height: 2rem;
-  flex-shrink: 0;
-}
-.logo-text {
-  font-size: 1.75rem;
-  font-weight: 800;
-}
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
+.logo-wrapper { display: flex; align-items: baseline; gap: 0.5rem; }
+.logo          { height: 2rem; flex-shrink: 0; }
+.logo-text     { font-size: 1.75rem; font-weight: 800; }
+.nav-actions   { display: flex; align-items: center; gap: 2rem; }
+.nav-links     { display: flex; gap: 2rem; list-style: none; }
 .nav-links a {
   font-weight: 600;
   text-decoration: none;
   transition: color 0.2s;
 }
-.nav-links a:hover {
-  color: #e11d48;
-}
+.nav-links a:hover     { color: #e11d48; }
 .login-button {
   padding: 0.5rem 1rem;
   background: #3b82f6;
@@ -97,25 +80,17 @@ body,
   text-decoration: none;
   transition: background 0.3s;
 }
-.login-button:hover {
-  background: #2563eb;
-}
+.login-button:hover   { background: #2563eb; }
 
-/* —— Hero content (“Smarter Attribution…”) —— */
+/* —— Hero content styling —— */
 .hero-content {
   position: relative;
   z-index: 10;
   max-width: 500px;
   padding: 20vh 0 0 5rem;
 }
-.hero-content h1 {
-  font-size: 4rem;
-  font-weight: 800;
-}
-.tagline {
-  margin-top: 1rem;
-  font-size: 1.5rem;
-}
+.hero-content h1     { font-size: 4rem; font-weight: 800; }
+.tagline              { margin-top: 1rem; font-size: 1.5rem; }
 
 /* —— CTA button —— */
 .cta {
@@ -128,9 +103,7 @@ body,
   cursor: pointer;
   transition: background 0.3s;
 }
-.cta:hover {
-  background: #2563eb;
-}
+.cta:hover            { background: #2563eb; }
 
 /* —— Features section —— */
 .features {
@@ -145,24 +118,10 @@ body,
     rgba(15,23,42,0.5) 100%
   );
 }
-.feature {
-  max-width: 200px;
-  text-align: center;
-}
-.feature img {
-  width: 3rem;
-  height: 3rem;
-  margin-bottom: 1rem;
-}
-.feature h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-.feature p {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
+.feature  { max-width: 200px; text-align: center; }
+.feature img { width: 3rem; height: 3rem; margin-bottom: 1rem; }
+.feature h3  { font-size: 1.25rem; font-weight: 600; }
+.feature p   { margin-top: 0.5rem; font-size: 0.9rem; line-height: 1.4; }
 
 /* —— Login page styling —— */
 .login-page {
@@ -198,24 +157,15 @@ body,
 }
 .login-header,
 .login-form,
-.signup-prompt {
-  position: relative;
-  z-index: 2;
-}
+.signup-prompt { position: relative; z-index: 2; }
 .login-header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
-.login-header .logo {
-  height: 1.5rem;
-}
-.login-header h2 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #fff;
-}
+.login-header .logo { height: 1.5rem; }
+.login-header h2      { font-size: 1.75rem; font-weight: 700; color: #fff; }
 
 /* —— Login form styling —— */
 .login-form {
@@ -230,9 +180,7 @@ body,
   color: #fff;
   box-shadow: 0 8px 24px rgba(0,0,0,0.6);
 }
-.login-form label {
-  font-weight: 600;
-}
+.login-form label    { font-weight: 600; }
 .login-form input {
   padding: 0.75rem 1rem;
   border: 1px solid #334155;
@@ -241,13 +189,9 @@ body,
   color: #fff;
   font-size: 1rem;
 }
-.login-form input:focus {
-  outline: none;
-  border-color: #3b82f6;
-}
-.login-form .cta {
-  margin-top: 1.5rem;
-}
+.login-form input:focus { outline: none; border-color: #3b82f6; }
+.login-form .cta        { margin-top: 1.5rem; }
+
 .signup-prompt {
   text-align: center;
   font-size: 0.9rem;
@@ -257,15 +201,10 @@ body,
   font-weight: 600;
   text-decoration: none;
 }
-.signup-prompt a:hover {
-  text-decoration: underline;
-}
+.signup-prompt a:hover   { text-decoration: underline; }
 
-/* —— Keyframes for login background animation —— */
+/* —— Aurora background animation —— */
 @keyframes aurora-move {
   0%, 100% { background-position: 0% 50%; }
   50%      { background-position: 100% 50%; }
 }
-
-/* 6. Tailwind utility classes */
-@tailwind utilities;

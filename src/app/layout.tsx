@@ -1,13 +1,17 @@
 // src/app/layout.tsx
-import './globals.css';
-import type { ReactNode } from 'react';
+import React, { ReactNode } from 'react'
+import './globals.css'
 
 export const metadata = {
   title:       'Attribix',
   description: 'Smarter Attribution. Bigger Impact.',
-};
+}
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+interface RootLayoutProps {
+  children: ReactNode
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <head />
@@ -15,5 +19,5 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {children}
       </body>
     </html>
-  );
+  )
 }
