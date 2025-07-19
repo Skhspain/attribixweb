@@ -1,30 +1,35 @@
 /* src/app/globals.css */
-
-/* 1. Brand variables (at the very top) */
-:root {
-  --brand-primary: #123456;
-  --brand-accent:  #abcdef;
-}
-
-/* 2. Tailwind Preflight + your “zero out” reset before any components */
 @tailwind base;
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* 3. Tailwind component classes */
 @tailwind components;
 
-/* 4. Tailwind utility classes (must be last of the Tailwind directives) */
-@tailwind utilities;
+/* …and the rest of your custom CSS… */
 
-/* ——————————————————————————————————————————————————————— */
-/* 5. Your global overrides (after Tailwind) */
+html,
+body,
+#__next {
+  height: 100%;
+  font-family: "Inter", sans-serif;
+}
+
+/* —— Hero gradient wrapper —— */
+.intro-gradient {
+  min-height: calc(100vh + 300px);
+  background: linear-gradient(
+    135deg,
+    #000416 0%,
+    #180440 33%,
+    #004077 66%,
+    #09013a 100%
+  );
+  color: #fff;
+}
+/* ————————————————————————————————————————————— */
+/* 4) Your overrides (after Tailwind) */
+
+html, body, #__next {
+  height: 100%;
+  font-family: "Inter", sans-serif;
+}
 
 html,
 body,
@@ -208,3 +213,5 @@ body,
   0%, 100% { background-position: 0% 50%; }
   50%      { background-position: 100% 50%; }
 }
+/* 6) Tailwind utilities always at the VERY BOTTOM */
+@tailwind utilities;

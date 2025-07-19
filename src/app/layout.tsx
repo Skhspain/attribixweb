@@ -1,21 +1,10 @@
-// src/app/layout.tsx
-import React, { ReactNode } from 'react'
 import './globals.css'
+import type { ReactNode } from 'react'
 
-export const metadata = {
-  title:       'Attribix',
-  description: 'Smarter Attribution. Bigger Impact.',
-}
-
-interface RootLayoutProps {
-  children: ReactNode
-}
-
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <head />
-      <body className="bg-gray-50 text-gray-900 antialiased">
+    <html lang="en" className="h-full">
+      <body className="h-full">
         {children}
       </body>
     </html>
