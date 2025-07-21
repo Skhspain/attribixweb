@@ -1,22 +1,43 @@
-// src/app/layout.tsx
-import './globals.css'
-import Link from 'next/link'
+import "./globals.css"; // you can leave this or delete it for now
 
 export const metadata = {
-  title: 'Attribix',
-}
+  title: "Attribix",
+};
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className="h-full">
+      <head>
+        {/* ———————— Tailwind CDN ———————— */}
+        <script
+          src="https://cdn.tailwindcss.com"
+          // optional: you can customize your theme here inline:
+          // dangerouslySetInnerHTML={{
+          //   __html: `tailwind.config = { theme: { extend: { colors: { primary: '#1E40AF' } } } };`,
+          // }}
+        ></script>
+      </head>
+
       <body className="flex flex-col min-h-screen">
         <header className="bg-white shadow">
           <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-            <Link href="/" className="text-2xl font-bold">Attribix</Link>
+            <a href="/" className="text-2xl font-bold">
+              Attribix
+            </a>
             <nav className="space-x-4">
-              <Link href="/"      className="hover:underline">Home</Link>
-              <Link href="/analytics" className="hover:underline font-semibold">Analytics</Link>
-              <Link href="/settings"  className="hover:underline">Settings</Link>
+              <a href="/" className="hover:underline">
+                Home
+              </a>
+              <a href="/analytics" className="hover:underline font-semibold">
+                Analytics
+              </a>
+              <a href="/settings" className="hover:underline">
+                Settings
+              </a>
             </nav>
           </div>
         </header>
@@ -30,5 +51,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </footer>
       </body>
     </html>
-  )
+  );
 }

@@ -3,13 +3,16 @@ export default function AnalyticsPage() {
   return (
     <>
       <h1 className="text-3xl font-bold mb-6">Analytics Dashboard</h1>
-
       <div className="overflow-x-auto">
-        <table className="w-full table-auto border border-gray-200 bg-white shadow rounded-lg">
-          <thead className="bg-gray-50">
+        <table className="w-full table-auto bg-white shadow rounded-lg">
+          <thead className="bg-gray-100">
             <tr>
-              <th className="px-4 py-2 text-left text-sm font-medium tracking-wide uppercase">Metric</th>
-              <th className="px-4 py-2 text-left text-sm font-medium tracking-wide uppercase">Value</th>
+              <th className="px-4 py-2 text-left text-sm font-semibold uppercase">
+                Metric
+              </th>
+              <th className="px-4 py-2 text-left text-sm font-semibold uppercase">
+                Value
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -21,5 +24,5 @@ export default function AnalyticsPage() {
         </table>
       </div>
     </>
-  )
+  );
 }

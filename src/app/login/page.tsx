@@ -1,62 +1,31 @@
 // src/app/login/page.tsx
-"use client";
-
-import React, { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-
 export default function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log({ email, password });
-  };
-
   return (
-    <div className="login-page">
-      <form className="login-form" onSubmit={handleSubmit}>
-        <h2 className="login-header">
-          Log In to{" "}
-          <Image
-            src="/assets/icons/logo.svg"
-            alt="Attribix logo"
-            width={24}
-            height={24}
-          />{" "}
-          Attribix
-        </h2>
-
-        <label htmlFor="email">Email</label>
+    <>
+      <h1 className="text-3xl font-bold mb-6">Log In</h1>
+      <div className="max-w-md bg-white p-6 rounded-lg shadow">
+        <label className="block mb-2 font-medium" htmlFor="email">
+          Email
+        </label>
         <input
           id="email"
           type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
+          className="w-full mb-4 px-4 py-2 border border-gray-200 rounded focus:ring-2 focus:ring-blue-500"
         />
 
-        <label htmlFor="password">Password</label>
+        <label className="block mb-2 font-medium" htmlFor="password">
+          Password
+        </label>
         <input
           id="password"
           type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
+          className="w-full mb-6 px-4 py-2 border border-gray-200 rounded focus:ring-2 focus:ring-blue-500"
         />
 
-        <button type="submit" className="cta">
-          Log In
+        <button className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+          Sign In
         </button>
-
-        <p className="signup-prompt">
-          Don’t have an account?{" "}
-          <Link href="/signup" className="signup-link">
-            Sign up
-          </Link>
-        </p>
-      </form>
-    </div>
+      </div>
+    </>
   );
 }
