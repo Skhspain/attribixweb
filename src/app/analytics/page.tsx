@@ -1,23 +1,25 @@
 // src/app/analytics/page.tsx
 export default function AnalyticsPage() {
   return (
-    <div className="p-8 space-y-4">
-      <h1 className="text-3xl font-bold">Dashboard</h1>
-      <table className="w-full border-collapse">
-        <thead>
-          <tr>
-            <th className="border p-2">Metric</th>
-            <th className="border p-2">Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className="border p-2">Total Visits</td>
-            <td className="border p-2">12.5k</td>
-          </tr>
-          {/* … */}
-        </tbody>
-      </table>
-    </div>
+    <>
+      <h1 className="text-3xl font-bold mb-6">Analytics Dashboard</h1>
+
+      <div className="overflow-x-auto">
+        <table className="w-full table-auto border border-gray-200 bg-white shadow rounded-lg">
+          <thead className="bg-gray-50">
+            <tr>
+              <th className="px-4 py-2 text-left text-sm font-medium tracking-wide uppercase">Metric</th>
+              <th className="px-4 py-2 text-left text-sm font-medium tracking-wide uppercase">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-t">
+              <td className="px-4 py-3">Total Visits</td>
+              <td className="px-4 py-3">12.5k</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </>
   )
 }

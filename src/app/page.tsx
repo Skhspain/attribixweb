@@ -1,25 +1,17 @@
 // src/app/page.tsx
-import React from "react";
-import Image from "next/image";
+import Image from "next/image"
 
 export default function HomePage() {
   return (
     <div className="intro-gradient text-white">
-      {/* —— Navigation + Hero —— */}
       <header className="hero">
         <nav className="nav">
           <div className="logo-wrapper">
-            <Image
-              src="/assets/icons/logo.svg"
-              alt="Attribix logo"
-              width={64}
-              height={32}
-              className="logo"
-            />
+            <Image src="/assets/icons/logo.svg" alt="Attribix logo" width={64} height={32} className="logo"/>
             <span className="logo-text">Attribix</span>
           </div>
           <div className="nav-actions">
-            <ul className="nav-links">
+            <ul className="nav-links flex gap-8">
               <li><a href="#">Features</a></li>
               <li><a href="#">Pricing</a></li>
               <li><a href="#">Blog</a></li>
@@ -28,65 +20,16 @@ export default function HomePage() {
             <a href="/login" className="login-button">Log In</a>
           </div>
         </nav>
-
         <div className="hero-content">
-          <h1 className="text-6xl font-bold">
-            Smarter<br/>
-            Attribution.<br/>
-            Bigger<br/>
-            Impact.
+          <h1 className="text-6xl font-bold leading-snug">
+            Smarter<br/>Attribution.<br/>Bigger Impact.
           </h1>
-          <button className="cta text-white">Connect your project</button>
-        </div>
-
-        <div className="hero-chart">
-          {/* Optional chart image */}
+          <button className="cta mt-8">Connect your project</button>
         </div>
       </header>
-
-      {/* —— Features row —— */}
-      <section className="features">
-        <div className="feature">
-          <Image
-            src="/assets/icons/icon-accurate.svg"
-            alt="Accurate Tracking"
-            width={48}
-            height={48}
-          />
-          <h3>Accurate Tracking</h3>
-          <p>Track your ads with precision and confidence.</p>
-        </div>
-        <div className="feature">
-          <Image
-            src="/assets/icons/icon-privacy.svg"
-            alt="Privacy-Compliant"
-            width={48}
-            height={48}
-          />
-          <h3>Privacy-Compliant</h3>
-          <p>Ensure your data aligns with global privacy standards.</p>
-        </div>
-        <div className="feature">
-          <Image
-            src="/assets/icons/icon-insights.svg"
-            alt="Data-Driven Insights"
-            width={48}
-            height={48}
-          />
-          <h3>Data-Driven Insights</h3>
-          <p>Make informed decisions based on accurate analytics.</p>
-        </div>
-        <div className="feature">
-          <Image
-            src="/assets/icons/icon-realtime.svg"
-            alt="Real-Time Analytics"
-            width={48}
-            height={48}
-          />
-          <h3>Real-Time Analytics</h3>
-          <p>Access live performance data for your campaigns.</p>
-        </div>
+      <section className="features bg-gray-100 p-16 flex justify-around">
+        {/* feature cards… */}
       </section>
     </div>
-  );
+  )
 }

@@ -1,9 +1,9 @@
-// postcss.config.cjs
+// postcss.config.js
 module.exports = {
   plugins: {
-    'postcss-import': {},
+    // this is the PostCSS “bridge” into Tailwind’s engine
     '@tailwindcss/postcss': {},
-    'postcss-nesting': {},
+    // autoprefixer is still its own plugin
     autoprefixer: {},
   },
 }
