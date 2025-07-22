@@ -1,55 +1,55 @@
-import "./globals.css"; // you can leave this or delete it for now
+// File: src/app/layout.tsx
+
+import './globals.css'
+import Link from 'next/link'
+import type { ReactNode } from 'react'
 
 export const metadata = {
-  title: "Attribix",
-};
+  title: 'Attribix',
+  description: 'Smarter Attribution. Bigger Impact.',
+}
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+interface RootLayoutProps {
+  children: ReactNode
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className="h-full">
-      <head>
-        {/* ———————— Tailwind CDN ———————— */}
-        <script
-          src="https://cdn.tailwindcss.com"
-          // optional: you can customize your theme here inline:
-          // dangerouslySetInnerHTML={{
-          //   __html: `tailwind.config = { theme: { extend: { colors: { primary: '#1E40AF' } } } };`,
-          // }}
-        ></script>
-      </head>
-
-      <body className="flex flex-col min-h-screen">
-        <header className="bg-white shadow">
-          <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="/" className="text-2xl font-bold">
+    <html lang="en">
+      {/* Next.js will auto-inject your metadata into <head> */}
+      <body className="min-h-screen flex flex-col bg-white text-gray-800">
+        {/* HEADER */}
+        <header className="bg-white border-b">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+            <Link href="/" className="text-2xl font-bold text-blue-600">
               Attribix
-            </a>
-            <nav className="space-x-4">
-              <a href="/" className="hover:underline">
+            </Link>
+            <nav className="space-x-6">
+              <Link href="/" className="hover:text-blue-600">
                 Home
-              </a>
-              <a href="/analytics" className="hover:underline font-semibold">
+              </Link>
+              <Link href="/analytics" className="hover:text-blue-600">
                 Analytics
-              </a>
-              <a href="/settings" className="hover:underline">
+              </Link>
+              <Link href="/settings" className="hover:text-blue-600">
                 Settings
-              </a>
+              </Link>
             </nav>
           </div>
         </header>
 
-        <main className="flex-1 container mx-auto px-4 py-8">
+        {/* MAIN CONTENT */}
+        <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {children}
         </main>
 
-        <footer className="bg-gray-100 text-center py-4">
-          © {new Date().getFullYear()} Attribix, Inc.
+        {/* FOOTER */}
+        <footer className="border-t">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-center text-sm text-gray-500">
+            © {new Date().getFullYear()} Attribix. All rights reserved.
+          </div>
         </footer>
       </body>
     </html>
-  );
+  )
 }

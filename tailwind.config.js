@@ -2,11 +2,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/app/**/*.{js,ts,jsx,tsx}',
-    './src/pages/**/*.{js,ts,jsx,tsx}',
+    "./src/app/**/*.{js,jsx,ts,tsx}",
+    "./src/components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      // your custom colors, fonts, etc.
+    },
   },
-  plugins: [],
+  plugins: [
+    // e.g. require('@tailwindcss/forms'),
+  ],
 }
