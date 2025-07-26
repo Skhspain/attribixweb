@@ -1,0 +1,12 @@
+{
+  // 1) Turn off VS Code’s built-in CSS/SCSS/LESS validation
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+
+  // 2) Treat all .css files as Tailwind CSS
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "*.pcss": "postcss"
+  }
+}

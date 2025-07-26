@@ -1,0 +1,15 @@
+/* src/app/layout.module.css */
+
+.body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #666;
+}
