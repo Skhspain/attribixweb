@@ -1,25 +1,27 @@
+/* 1) Tailwind’s Preflight (reset & base typography) */
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-/* 1) Reset & base */
+/* 2) Your reset */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* 3) Base HTML/body defaults */
 html, body, #__next {
   height: 100%;
   font-family: Inter, sans-serif;
-  /* default text colour for non-Tailwind fallback */
   color: #111;
 }
 
-/* 2) Link reset */
+/* 4) Tailwind’s components (forms, etc.) */
+@tailwind components;
+
+/* 5) Global link reset (no underline) */
 a {
-  color: inherit;
   text-decoration: none;
 }
 
-/* 3) Your global overrides… */
+/* 6) Tailwind’s utilities (text-white, bg-blue-500, etc.) */
+@tailwind utilities;
