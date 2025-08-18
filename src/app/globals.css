@@ -249,3 +249,64 @@ body,
     width: 14rem !important;
   }
 }
+
+/* =========================
+   Analytics-only light theme
+   (scoped to a wrapper .ax)
+   ========================= */
+.ax {
+  --ax-bg: #f8fafc;        /* slate-50 */
+  --ax-card: #ffffff;      /* white */
+  --ax-border: #e2e8f0;    /* slate-200 */
+  --ax-text: #0f172a;      /* slate-900 */
+  --ax-muted: #64748b;     /* slate-500 */
+  background-color: var(--ax-bg);
+  color: var(--ax-text) !important; /* override global body { color:#fff } */
+}
+
+/* Neutralize purple visited links ONLY inside analytics */
+.ax a,
+.ax a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Cards, metrics, tables */
+.ax .ax-card {
+  background: var(--ax-card);
+  border: 1px solid var(--ax-border);
+  border-radius: 1rem;
+  box-shadow:
+    0 1px 1px rgba(0,0,0,0.04),
+    0 8px 24px -12px rgba(15, 23, 42, 0.18);
+}
+.ax .ax-card-body { padding: 1rem; }
+.ax .ax-metric-label { color: var(--ax-muted); font-size: .875rem; }
+.ax .ax-metric-value { margin-top: .25rem; font-weight: 600; font-size: 1.5rem; }
+
+.ax .ax-table { width: 100%; font-size: .875rem; }
+.ax .ax-table thead th {
+  text-align: left; color: var(--ax-muted); padding: .5rem 1.5rem .5rem 0;
+}
+.ax .ax-table tbody tr { border-bottom: 1px solid var(--ax-border); }
+.ax .ax-table td { padding: .5rem 1.5rem .5rem 0; }
+
+/* Sidebar links inside analytics */
+.ax .sidebar-link,
+.ax .sidebar-link:visited { color: #334155; }        /* slate-700 */
+.ax .sidebar-link:hover { background: #f1f5f9; }     /* slate-100 */
+.ax .sidebar-link-active { background: #f1f5f9; font-weight: 600; }
+
+/* Recharts tweaks scoped to analytics */
+.ax .recharts-cartesian-grid-horizontal line,
+.ax .recharts-cartesian-grid-vertical line { stroke: #e2e8f0; }        /* slate-200 */
+.ax .recharts-cartesian-axis-tick-value { fill: #64748b; }              /* slate-500 */
+.ax .recharts-default-tooltip {
+  background: #fff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: .75rem !important;
+  padding: .5rem .75rem !important;
+  box-shadow:
+    0 1px 1px rgba(0,0,0,.04),
+    0 8px 24px -12px rgba(15,23,42,.18) !important;
+}

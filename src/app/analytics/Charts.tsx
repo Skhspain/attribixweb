@@ -1,92 +1,38 @@
+// src/app/analytics/Charts.tsx
 "use client";
 
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
-import { Line, Bar } from "react-chartjs-2";
+  LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer, BarChart, Bar,
+} from "recharts";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
-
-const lineLabels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"];
-const lineValues = [400, 600, 500, 700, 650, 800];
-
-const barLabels = ["Facebook", "Google", "TikTok", "Email", "Direct"];
-const barValues = [200, 250, 300, 350, 400];
-
-// shared options for both charts
-const baseOptions = {
-  responsive: true,
-  maintainAspectRatio: false,
-  layout: { padding: { top: 12, bottom: 12, left: 12, right: 12 } },
-  plugins: { legend: { display: false } },
-  scales: {
-    x: {
-      grid: { display: false },
-      border: { display: false },
-      ticks: { color: "#9CA3AF", font: { size: 12 } },
-    },
-    y: {
-      grid: { color: "#F3F4F6" },
-      border: { display: false },
-      ticks: { color: "#9CA3AF", font: { size: 12 }, stepSize: 100 },
-    },
-  },
-};
-
-export function OverviewChart() {
+export function OverviewChart({ data }: { data: { month: string; value: number }[] }) {
   return (
-    <Line
-      data={{
-        labels: lineLabels,
-        datasets: [
-          {
-            data: lineValues,
-            borderColor: "#374151",
-            borderWidth: 2,
-            backgroundColor: "rgba(31,41,55,0.03)",
-            tension: 0.4,
-            pointRadius: 0,
-            fill: true,
-          },
-        ],
-      }}
-      options={baseOptions}
-    />
+    <div className="h-72 w-full">
+      <ResponsiveContainer>
+        <LineChart data={data} margin={{ left: 8, right: 8, top: 8, bottom: 8 }}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="month" />
+          <YAxis />
+          <Tooltip />
+          <Line type="monotone" dataKey="value" stroke="#334155" strokeWidth={2} dot={{ r: 2 }} />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 }
 
-export function SessionsChart() {
+export function SessionsBySourceChart({ data }: { data: { source: string; sessions: number }[] }) {
   return (
-    <Bar
-      data={{
-        labels: barLabels,
-        datasets: [
-          {
-            data: barValues,
-            backgroundColor: "#374151",
-            borderRadius: 4,
-            maxBarThickness: 24,
-          },
-        ],
-      }}
-      options={baseOptions}
-    />
+    <div className="h-72 w-full">
+      <ResponsiveContainer>
+        <BarChart data={data} margin={{ left: 8, right: 8, top: 8, bottom: 8 }}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="source" />
+          <YAxis />
+          <Tooltip />
+          <Bar dataKey="sessions" fill="#0ea5e9" radius={[6, 6, 0, 0]} />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
   );
 }

@@ -1,94 +1,79 @@
-"use client";
-
-import React from "react";
-import { OverviewChart, SessionsChart } from "./Charts";
-import { recentActivity, integrations } from "./data";
+// src/app/analytics/page.tsx
+import { kpis, overview, sessionsBySource, recent, integrations } from "./data";
+import { OverviewChart, SessionsBySourceChart } from "./Charts";
 
 export default function AnalyticsPage() {
-  const metrics: [string, string][] = [
-    ["12.5k", "Total Visits"],
-    ["1.2k", "Conversions"],
-    ["$18.9k", "Revenue"],
-    ["4.2", "ROAS"],
-  ];
-
   return (
-    <>
-      <h1 className="text-3xl font-extrabold text-gray-900 mb-10">
-        Dashboard
-      </h1>
+    <div className="space-y-8">
+      <header className="flex items-center justify-between">
+        <h1 className="text-2xl md:text-3xl font-semibold tracking-tight">Dashboard</h1>
+      </header>
 
-      {/* Metric cards */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
-        {metrics.map(([value, label]) => (
-          <div
-            key={label}
-            className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
-          >
-            <div className="text-2xl font-bold text-gray-900">{value}</div>
-            <div className="text-sm text-gray-500">{label}</div>
+      {/* KPI cards */}
+      <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {kpis.map((k) => (
+          <div key={k.label} className="rounded-2xl border bg-white p-4 shadow-sm">
+            <div className="text-sm text-slate-500">{k.label}</div>
+            <div className="mt-1 text-2xl font-semibold">{k.value}</div>
           </div>
         ))}
-      </div>
+      </section>
 
       {/* Charts */}
-      <div className="grid md:grid-cols-2 gap-8 mb-10">
-        <section className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">
-            Overview
-          </h2>
-          <div className="h-52">
-            <OverviewChart />
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="rounded-2xl border bg-white p-4 shadow-sm">
+          <div className="mb-3 flex items-center justify-between">
+            <h2 className="text-base font-medium">Overview</h2>
           </div>
-        </section>
+          <OverviewChart data={overview} />
+        </div>
 
-        <section className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">
-            Sessions by Source
-          </h2>
-          <div className="h-52">
-            <SessionsChart />
+        <div className="rounded-2xl border bg-white p-4 shadow-sm">
+          <div className="mb-3 flex items-center justify-between">
+            <h2 className="text-base font-medium">Sessions by Source</h2>
           </div>
-        </section>
-      </div>
+          <SessionsBySourceChart data={sessionsBySource} />
+        </div>
+      </section>
 
-      {/* Tables */}
-      <div className="grid md:grid-cols-2 gap-8">
-        <section className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">
-            Recent Activity
-          </h2>
-          <table className="w-full text-sm">
-            <thead className="text-gray-500">
-              <tr>
-                <th className="text-left py-2">Date</th>
-                <th className="text-left py-2">User</th>
-                <th className="text-left py-2">Activity</th>
-              </tr>
-            </thead>
-            <tbody className="text-gray-700">
-              {recentActivity.map((row, i) => (
-                <tr key={i} className="border-t border-gray-100">
-                  <td className="py-2">{row.date}</td>
-                  <td className="py-2">{row.user}</td>
-                  <td className="py-2">{row.activity}</td>
+      {/* Table + Integrations */}
+      <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="lg:col-span-2 rounded-2xl border bg-white p-4 shadow-sm">
+          <h3 className="text-base font-medium mb-3">Recent Activity</h3>
+          <div className="overflow-x-auto">
+            <table className="min-w-full text-sm">
+              <thead>
+                <tr className="text-left text-slate-500">
+                  <th className="py-2 pr-6">Date</th>
+                  <th className="py-2 pr-6">User</th>
+                  <th className="py-2">Activity</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
+              </thead>
+              <tbody className="[&_tr:not(:last-child)]:border-b">
+                {recent.map((r) => (
+                  <tr key={r.date}>
+                    <td className="py-2 pr-6">{r.date}</td>
+                    <td className="py-2 pr-6">{r.user}</td>
+                    <td className="py-2">{r.activity}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-        <section className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">
-            Integrations
-          </h2>
-          <ul className="text-sm text-gray-700 list-disc list-inside space-y-1">
-            {integrations.map((label) => (
-              <li key={label}>{label}</li>
+        <div className="rounded-2xl border bg-white p-4 shadow-sm">
+          <h3 className="text-base font-medium mb-3">Integrations</h3>
+          <ul className="space-y-2 text-sm">
+            {integrations.map((i) => (
+              <li key={i.name} className="flex items-center justify-between rounded-xl border p-2">
+                <span>{i.name}</span>
+                <span className="text-emerald-600 font-medium">{i.status}</span>
+              </li>
             ))}
           </ul>
-        </section>
-      </div>
-    </>
+        </div>
+      </section>
+    </div>
   );
 }

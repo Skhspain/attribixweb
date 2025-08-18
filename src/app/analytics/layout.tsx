@@ -1,24 +1,36 @@
-"use client";
+// src/app/analytics/layout.tsx
+import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
+import "@/app/globals.css";
 
-import React from "react";
-import Sidebar from "@/components/Sidebar";
+export const metadata: Metadata = {
+  title: "Analytics · Attribix",
+};
 
-export default function AnalyticsLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function AnalyticsLayout({ children }: { children: React.ReactNode }) {
   return (
-    // full-page light gray background, default dark text
-    <div className="min-h-screen bg-gray-50 text-gray-900">
-      <div className="flex flex-1 gap-6 p-6">
-        <Sidebar />
-
-        {/* main panel */}
-        <div className="flex-1 bg-white border border-gray-200 rounded-2xl shadow-sm p-8 overflow-auto">
-          {children}
+    // The .ax wrapper scopes the light theme to analytics only
+    <div className="ax min-h-screen grid grid-cols-[240px_1fr]">
+      {/* Sidebar */}
+      <aside className="hidden md:flex flex-col gap-6 border-r bg-white p-4">
+        <div className="flex items-center gap-3">
+          <Image src="/assets/logo.svg" alt="Attribix" width={28} height={28} />
+          <span className="font-semibold">Attribix</span>
         </div>
-      </div>
+        <nav className="space-y-1 text-sm">
+          <Link className="sidebar-link sidebar-link-active" href="/analytics">Overview</Link>
+          <Link className="sidebar-link" href="#">Sessions</Link>
+          <Link className="sidebar-link" href="#">Recommendations</Link>
+          <Link className="sidebar-link" href="#">Settings</Link>
+        </nav>
+        <div className="mt-auto text-xs text-slate-500">v1.0</div>
+      </aside>
+
+      {/* Main */}
+      <main className="p-4 md:p-8">
+        {children}
+      </main>
     </div>
   );
 }
