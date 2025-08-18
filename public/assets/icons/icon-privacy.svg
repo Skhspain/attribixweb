@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 64 64"
+     role="img"
+     aria-labelledby="privacy-title">
+  <title id="privacy-title">Privacy Verified Icon</title>
+  <defs>
+    <linearGradient id="privacy-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D8FF"/>
+      <stop offset="100%" stop-color="#006EFF"/>
+    </linearGradient>
+    <filter id="privacy-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- heart -->
+  <path d="M32 12
+           C24 12 16 20 16 30
+           C16 46 32 56 32 56
+           C32 56 48 46 48 30
+           C48 20 40 12 32 12 Z"
+        fill="url(#privacy-grad)"
+        filter="url(#privacy-glow)"/>
+
+  <!-- checkmark -->
+  <polyline points="22,32 30,40 42,24"
+            fill="none"
+            stroke="#FFF"
+            stroke-width="4"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+</svg>

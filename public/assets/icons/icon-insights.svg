@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 64 64"
+     role="img"
+     aria-labelledby="insights-title">
+  <title id="insights-title">Data Insights Icon</title>
+  <defs>
+    <linearGradient id="insights-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D8FF"/>
+      <stop offset="100%" stop-color="#006EFF"/>
+    </linearGradient>
+    <filter id="insights-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- big slice -->
+  <path d="M32,6
+           A26,26 0 1,1 6,32
+           L32,32 Z"
+        fill="url(#insights-grad)"
+        filter="url(#insights-glow)"/>
+
+  <!-- small wedge -->
+  <path d="M32,32
+           L32,58
+           A26,26 0 0,1 58,32 Z"
+        fill="url(#insights-grad)"
+        filter="url(#insights-glow)"/>
+</svg>
