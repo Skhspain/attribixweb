@@ -1,15 +1,8 @@
 // tailwind.config.js
 module.exports = {
-  content: ["src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}", "./public/index.html"],
   theme: {
-    extend: {
-      colors: {
-        // only if you need to tweak default violet
-        violet: {
-          600: "#7c3aed",
-        },
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };

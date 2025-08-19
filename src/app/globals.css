@@ -7,6 +7,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== Brand tokens (shared site + analytics) ===== */
+:root {
+  --brand-600: #4f46e5; /* indigo-600 */
+  --brand-500: #6366f1;
+  --accent-600: #0891b2; /* cyan-600 */
+  --accent-500: #06b6d4;
+
+  /* Logo blue used in charts (Sessions by Source bars) */
+  /* If you prefer the lighter variant, change to #0ea5ff */
+  --logo-blue: #0e7eff;
+}
+
 /* = Reset & base = */
 * {
   margin: 0;
@@ -191,9 +203,9 @@ body,
   background: linear-gradient(
     60deg,
     rgba(0, 0, 0, 0.95) 0%,
-    rgba(0, 0, 0, 0.95) 60%, /* hold black through 60% */
-    rgba(192, 132, 252, 0.5) 65%, /* start pink */
-    rgba(192, 132, 252, 0.5) 80%, /* end pink */
+    rgba(0, 0, 0, 0.95) 60%,
+    rgba(192, 132, 252, 0.5) 65%,
+    rgba(192, 132, 252, 0.5) 80%,
     rgba(0, 0, 0, 0.95) 100%
   );
   background-size: 600% 600%;
@@ -224,30 +236,20 @@ body,
 
 /* = Keyframe animations = */
 @keyframes aurora-back {
-  0% {
-    background-position: 0% 20%;
-  }
-  100% {
-    background-position: 100% 80%;
-  }
+  0% { background-position: 0% 20%; }
+  100% { background-position: 100% 80%; }
 }
 @keyframes aurora-front {
-  0% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* ———————————————————————————————— */
 /*  Custom utilities injected via Tailwind’s @layer      */
 /* ———————————————————————————————— */
 @layer utilities {
-  /* fixes Sidebar width in analytics layout */
-  .w-56 {
-    width: 14rem !important;
-  }
+  /* fixes Sidebar width in analytics layout (legacy) */
+  .w-56 { width: 14rem !important; }
 }
 
 /* =========================
@@ -291,11 +293,31 @@ body,
 .ax .ax-table tbody tr { border-bottom: 1px solid var(--ax-border); }
 .ax .ax-table td { padding: .5rem 1.5rem .5rem 0; }
 
-/* Sidebar links inside analytics */
+/* Sidebar links inside analytics (consolidated) */
 .ax .sidebar-link,
-.ax .sidebar-link:visited { color: #334155; }        /* slate-700 */
+.ax .sidebar-link:visited {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  color: #334155; /* slate-700 */
+}
 .ax .sidebar-link:hover { background: #f1f5f9; }     /* slate-100 */
-.ax .sidebar-link-active { background: #f1f5f9; font-weight: 600; }
+.ax .sidebar-link-active {
+  background: #f1f5f9;
+  font-weight: 600;
+  position: relative;
+}
+/* Meta-style left accent bar for the active item */
+.ax .sidebar-link-active::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  border-radius: 9999px;
+  background: var(--brand-600);
+}
 
 /* Recharts tweaks scoped to analytics */
 .ax .recharts-cartesian-grid-horizontal line,
@@ -309,4 +331,17 @@ body,
   box-shadow:
     0 1px 1px rgba(0,0,0,.04),
     0 8px 24px -12px rgba(15,23,42,.18) !important;
+}
+
+/* --- Analytics layout grid (left sidebar) --- */
+.ax-grid { display: grid; grid-template-columns: 1fr; }
+@media (min-width: 768px) {
+  .ax-grid { grid-template-columns: 280px minmax(0, 1fr); }
+}
+
+/* Sticky left rail (Meta-style) */
+.ax-sticky {
+  position: sticky;
+  top: 0;
+  height: 100dvh; /* full viewport height with mobile-safe unit */
 }

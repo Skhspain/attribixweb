@@ -1,23 +1,15 @@
-// File: src/app/layout.tsx
+import type { Metadata } from "next";
 import "./globals.css";
-import React from "react";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Attribix",
   description: "Smarter Attribution. Bigger Impact.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  console.log("✅ ROOT LAYOUT RAN");
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="bg-[#0f172a] text-white antialiased">
-        {children}
-      </body>
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-[#0f172a] text-white antialiased">{children}</body>
     </html>
   );
 }
