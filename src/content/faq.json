@@ -1,0 +1,34 @@
+[
+  {
+    "q": "Does Attribix work with Shopify and WordPress?",
+    "a": "Yes—Shopify and WooCommerce are supported. Connect your store and start streaming events quickly."
+  },
+  {
+    "q": "How do you track conversions accurately?",
+    "a": "Client-side pixels plus server-side APIs with deduplication and robust match keys (hashed email/phone, fbp/fbc, event_id)."
+  },
+  {
+    "q": "Which attribution models are available?",
+    "a": "Last‑Click, First‑Click, Linear, Time‑Decay. Position‑based (40‑20‑40) is available in Settings."
+  },
+  {
+    "q": "How is privacy handled?",
+    "a": "Consent Mode v2, TCF pass‑through, IP anonymization, region‑based disables, and configurable retention."
+  },
+  {
+    "q": "Can I export or use an API?",
+    "a": "Yes—CSV exports plus webhooks and a token‑based API for automation."
+  },
+  {
+    "q": "Do you support UTM/channel rules?",
+    "a": "Map UTM keys, define grouping rules (contains/regex), and exclude self‑referrals."
+  },
+  {
+    "q": "How do refunds, tax & shipping affect revenue?",
+    "a": "Choose gross/net/confirmed revenue and whether taxes/shipping are included; refunds can be immediate or when processed."
+  },
+  {
+    "q": "Is there a free trial?",
+    "a": "Yes—verify tracking and reports during the trial before upgrading."
+  }
+]
