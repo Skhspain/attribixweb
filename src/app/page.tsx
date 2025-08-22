@@ -76,10 +76,8 @@ function KPICard({
 }) {
   // Force green when the metric going DOWN is good (Cost ↓)
   const isCost = label.toLowerCase().includes("cost");
-  const green =
-    "bg-emerald-500/15 text-emerald-300 border-emerald-400/20";
-  const red =
-    "bg-rose-500/15 text-rose-300 border-rose-400/20";
+  const green = "bg-emerald-500/15 text-emerald-300 border-emerald-400/20";
+  const red = "bg-rose-500/15 text-rose-300 border-rose-400/20";
   const chip = isCost ? green : trend === "down" ? red : green;
 
   return (
@@ -103,7 +101,7 @@ function KPICard({
 }
 
 /* -----------------------------------------------------
-   Hero Attribution Chart (looping)
+   Hero Attribution Chart (looping) — SSR-safe
 ----------------------------------------------------- */
 type Bubble = {
   id: number;
@@ -126,9 +124,18 @@ function HeroAttributionChart() {
   const nextId = React.useRef(0);
 
   const PLATFORMS = [
-    { name: "Meta", cls: "bg-gradient-to-r from-[#2563EB] to-[#9333EA] text-white/90 border-white/10" },
-    { name: "Google", cls: "bg-gradient-to-r from-[#22D3EE] to-[#60A5FA] text-white/90 border-white/10" },
-    { name: "TikTok", cls: "bg-gradient-to-r from-[#ec4899] to-[#8b5cf6] text-white/90 border-white/10" },
+    {
+      name: "Meta",
+      cls: "bg-gradient-to-r from-[#2563EB] to-[#9333EA] text-white/90 border-white/10",
+    },
+    {
+      name: "Google",
+      cls: "bg-gradient-to-r from-[#22D3EE] to-[#60A5FA] text-white/90 border-white/10",
+    },
+    {
+      name: "TikTok",
+      cls: "bg-gradient-to-r from-[#ec4899] to-[#8b5cf6] text-white/90 border-white/10",
+    },
   ] as const;
 
   const LANES = 4;
@@ -155,7 +162,11 @@ function HeroAttributionChart() {
 
       const STEP_MS = 720; // reveal next bar every 0.72s
       const BAR_EASE_MS = 920; // animate each height change
-      (window as any).__BAR_EASE_MS__ = BAR_EASE_MS;
+
+      // safe to touch window inside effects
+      if (typeof window !== "undefined") {
+        (window as any).__BAR_EASE_MS__ = BAR_EASE_MS;
+      }
 
       const lift = (i: number) => {
         if (cancelled) return;
@@ -180,14 +191,17 @@ function HeroAttributionChart() {
         const life = 2600 + Math.random() * 1200;
 
         setBubbles((prev) =>
-          [...prev, {
-            id,
-            bar: i,
-            label: `${plat.name}: +${Math.random() < 0.75 ? 1 : 2} Purchase`,
-            cls: plat.cls,
-            lane,
-            life,
-          }].slice(-MAX_BUBBLES)
+          [
+            ...prev,
+            {
+              id,
+              bar: i,
+              label: `${plat.name}: +${Math.random() < 0.75 ? 1 : 2} Purchase`,
+              cls: plat.cls,
+              lane,
+              life,
+            },
+          ].slice(-MAX_BUBBLES)
         );
         setTimeout(() => {
           setBubbles((prev) => prev.filter((b) => b.id !== id));
@@ -207,9 +221,21 @@ function HeroAttributionChart() {
 
   // KPI animation config (re-animate each loop)
   const totalRevealMs = 720 * BAR_COUNT;
-  const roasFrom = 3.2, roasTo = 11.0, roasDelta = +244;
-  const purFrom = 180, purTo = 260, purDelta = +22;
-  const cppFrom = 19.0, cppTo = 3.0, cppDelta = -84;
+  const roasFrom = 3.2,
+    roasTo = 11.0,
+    roasDelta = +244;
+  const purFrom = 180,
+    purTo = 260,
+    purDelta = +22;
+  const cppFrom = 19.0,
+    cppTo = 3.0,
+    cppDelta = -84;
+
+  // ✅ SSR-safe read: don't touch window in render unless it exists
+  const barEase =
+    typeof window !== "undefined" && (window as any).__BAR_EASE_MS__
+      ? (window as any).__BAR_EASE_MS__
+      : 900;
 
   return (
     <div className="relative overflow-visible">
@@ -262,7 +288,7 @@ function HeroAttributionChart() {
               className="rounded-t"
               style={{
                 height: `${i < revealed ? h : 4}%`,
-                transition: `height ${(window as any).__BAR_EASE_MS__ ?? 900}ms cubic-bezier(.22,.7,.2,1)`,
+                transition: `height ${barEase}ms cubic-bezier(.22,.7,.2,1)`,
                 // subtle 2-color increase marker in the middle
                 background:
                   "linear-gradient(to top, rgba(124,58,237,.55) 0%, rgba(59,130,246,.55) 50%, rgba(6,182,212,.85) 100%)",
@@ -275,7 +301,10 @@ function HeroAttributionChart() {
           {/* floating purchases */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 top-0 overflow-visible">
             {bubbles.map((b) => {
-              const leftPct = Math.max(5, Math.min(95, ((b.bar + 0.5) / BAR_COUNT) * 100));
+              const leftPct = Math.max(
+                5,
+                Math.min(95, ((b.bar + 0.5) / BAR_COUNT) * 100)
+              );
               const barH = heights[b.bar] ?? 0;
               const bottom = Math.min(90, barH + 12 + b.lane * 22);
               return (
@@ -304,10 +333,21 @@ function HeroAttributionChart() {
       {/* local CSS for bubble fade */}
       <style jsx>{`
         @keyframes bubbleFade {
-          0% { opacity: 0; transform: translateX(-50%) translateY(6px) scale(.98); }
-          10% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
-          85% { opacity: 1; }
-          100% { opacity: 0; transform: translateX(-50%) translateY(-6px) scale(.98); }
+          0% {
+            opacity: 0;
+            transform: translateX(-50%) translateY(6px) scale(0.98);
+          }
+          10% {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0) scale(1);
+          }
+          85% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+            transform: translateX(-50%) translateY(-6px) scale(0.98);
+          }
         }
       `}</style>
     </div>
@@ -328,11 +368,22 @@ export default function Home() {
             <span className="font-semibold">Attribix</span>
           </div>
           <nav className="hidden md:flex items-center gap-8 text-sm">
-            <a href="#features" className="opacity-80 hover:opacity-100">Features</a>
-            <a href="#how" className="opacity-80 hover:opacity-100">How it works</a>
-            <a href="#integrations" className="opacity-80 hover:opacity-100">Integrations</a>
-            <a href="#pricing" className="opacity-80 hover:opacity-100">Pricing</a>
-            <a href="#contact" className="opacity-80 hover:opacity-100">Contact</a>
+            {/* 🔗 changed: now navigate to the new pages */}
+            <Link href="/features" className="opacity-80 hover:opacity-100">
+              Features
+            </Link>
+            <a href="#how" className="opacity-80 hover:opacity-100">
+              How it works
+            </a>
+            <a href="#integrations" className="opacity-80 hover:opacity-100">
+              Integrations
+            </a>
+            <a href="#pricing" className="opacity-80 hover:opacity-100">
+              Pricing
+            </a>
+            <a href="#contact" className="opacity-80 hover:opacity-100">
+              Contact
+            </a>
             <Link
               href="/login"
               className="rounded-full bg-white/10 px-4 py-2 hover:bg-white/15"
@@ -374,12 +425,13 @@ export default function Home() {
               >
                 Open Dashboard
               </Link>
-              <a
-                href="#features"
+              {/* 🔗 changed: hero button now goes to the new /features page */}
+              <Link
+                href="/features"
                 className="rounded-xl border border-white/20 px-5 py-3 hover:bg-white/10"
               >
                 Explore features
-              </a>
+              </Link>
             </div>
 
             <p className="mt-4 text-xs text-white/60">
@@ -396,29 +448,52 @@ export default function Home() {
         </div>
       </section>
 
+      {/* the rest of the page (logo cloud, sections, footer) stays unchanged */}
       {/* LOGO CLOUD */}
       <section className="mx-auto max-w-7xl px-4 py-8">
-        <p className="text-center text-sm text-white/60 mb-6">Trusted by growth‑minded brands</p>
+        <p className="text-center text-sm text-white/60 mb-6">
+          Trusted by growth‑minded brands
+        </p>
         <div className="grid grid-cols-2 md:grid-cols-6 gap-6 opacity-80">
-          {["Acme","North","Apex","Tempo","Nova","Glow"].map((n) => (
-            <div key={n} className="flex items-center justify-center rounded-xl border border-white/10 bg-white/5 py-3">
+          {["Acme", "North", "Apex", "Tempo", "Nova", "Glow"].map((n) => (
+            <div
+              key={n}
+              className="flex items-center justify-center rounded-xl border border-white/10 bg-white/5 py-3"
+            >
               <span className="text-white/70 text-sm">{n}</span>
             </div>
           ))}
         </div>
       </section>
 
-      {/* FEATURES */}
+      {/* FEATURES (kept for SEO/scroll, but main Features entry now goes to /features) */}
       <section id="features" className="mx-auto max-w-7xl px-4 py-20">
-        <h2 className="text-3xl md:text-4xl font-extrabold">Why teams pick Attribix</h2>
+        <h2 className="text-3xl md:text-4xl font-extrabold">
+          Why teams pick Attribix
+        </h2>
         <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {[
-            { t: "Accurate Tracking", d: "Pixels + CAPI with deduplication and consent‑aware capture." },
-            { t: "Attribution models", d: "Last/First, Linear, Time‑Decay, and position‑based." },
-            { t: "Ads Review", d: "CPP, ROAS, revenue per ad — sortable and filterable." },
-            { t: "Real‑time insights", d: "Fresh metrics, alerts for high CPA or low ROAS." },
+            {
+              t: "Accurate Tracking",
+              d: "Pixels + CAPI with deduplication and consent‑aware capture.",
+            },
+            {
+              t: "Attribution models",
+              d: "Last/First, Linear, Time‑Decay, and position‑based.",
+            },
+            {
+              t: "Ads Review",
+              d: "CPP, ROAS, revenue per ad — sortable and filterable.",
+            },
+            {
+              t: "Real‑time insights",
+              d: "Fresh metrics, alerts for high CPA or low ROAS.",
+            },
           ].map((f) => (
-            <div key={f.t} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <div
+              key={f.t}
+              className="rounded-2xl border border-white/10 bg-white/5 p-5"
+            >
               <div className="text-lg font-semibold">{f.t}</div>
               <p className="mt-2 text-sm text-white/70">{f.d}</p>
             </div>
@@ -427,8 +502,10 @@ export default function Home() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section id="how" className="mx-auto max-w-7xl px-4 py-20">
-        <h2 className="text-3xl md:text-4xl font-extrabold">Get value in 3 steps</h2>
+      <section id="how" className="mx-auto max-w-7xl px_4 py-20">
+        <h2 className="text-3xl md:text-4xl font-extrabold">
+          Get value in 3 steps
+        </h2>
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           {[
             { n: "1", t: "Connect your store", d: "Shopify or WooCommerce in minutes." },
@@ -451,7 +528,7 @@ export default function Home() {
         <div className="mt-6 grid grid-cols-2 md:grid-cols-5 gap-4">
           {["Meta","Google","TikTok","Shopify","WooCommerce"].map((n) => (
             <div key={n} className="flex items-center justify-center rounded-xl border border-white/10 bg-white/5 py-4">
-              <span className="text-sm text-white/80">{n}</span>
+              <span className="text-sm text_white/80">{n}</span>
             </div>
           ))}
         </div>
@@ -484,20 +561,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TESTIMONIAL */}
-      <section className="mx-auto max-w-5xl px-4 py-16">
-        <figure className="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <blockquote className="text-lg text-white/90">
-            “Attribix finally showed us which ads were wasting budget.
-            We scaled winners and dropped CPA by 28% in two weeks.”
-          </blockquote>
-          <figcaption className="mt-3 text-sm text-white/60">— Mia Larsen, Growth Lead at Nova</figcaption>
-        </figure>
-      </section>
-
-      {/* CTA BANNER */}
+      {/* CTA & FOOTER */}
       <section className="mx-auto max-w-7xl px-4 pb-24">
-        <div className="rounded-3xl border border-white/10 bg-white/10 p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="rounded-3xl border border-white/10 bg_white/10 p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
             <h3 className="text-2xl font-extrabold">Ready to see true ROAS?</h3>
             <p className="text-white/80">Open your analytics and review ads & attribution now.</p>
@@ -508,7 +574,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTACT / FOOTER */}
       <footer id="contact" className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 py-8 text-sm text-white/60 flex items-center justify-between">
           <div className="flex items-center gap-2">
