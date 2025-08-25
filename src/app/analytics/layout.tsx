@@ -1,4 +1,3 @@
-// src/app/analytics/layout.tsx
 "use client";
 
 import Link from "next/link";
@@ -10,13 +9,19 @@ export default function AnalyticsLayout({ children }: { children: React.ReactNod
   const pathname = usePathname();
 
   const links = [
-    { href: "/analytics",                                label: "Overview" },
-    { href: "/analytics/sessions",                       label: "Sessions" },
-    { href: "/analytics/ads",                            label: "Ads Review" },
-    { href: "/analytics/attribution",                    label: "Attribution" },
-    { href: "/analytics/attribution/customerlist",       label: "Customer List" },
-    { href: "/analytics/recommendations",                label: "Recommendations" },
-    { href: "/analytics/settings",                       label: "Settings" },
+    { href: "/analytics", label: "Overview" },
+    { href: "/analytics/sessions", label: "Sessions" },
+    { href: "/analytics/ads", label: "Ads Review" },
+    { href: "/analytics/attribution", label: "Attribution" },
+    { href: "/analytics/attribution/customerlist", label: "Customer List" },
+    { href: "/analytics/recommendations", label: "Recommendations" },
+
+    // --- Site Intelligence section ---
+    { href: "/analytics/sitemap", label: "Sitemap", section: "SITE INTELLIGENCE" } as any,
+    { href: "/analytics/behavior", label: "Behavior overview" },
+    // ----------------------------------
+
+    { href: "/analytics/settings", label: "Settings" },
   ];
 
   return (
@@ -28,16 +33,26 @@ export default function AnalyticsLayout({ children }: { children: React.ReactNod
         </div>
 
         <nav className="space-y-1 text-sm">
-          {links.map((l) => {
+          {links.map((l, idx) => {
             const active = pathname === l.href || pathname.startsWith(l.href + "/");
+
+            const next = links[idx - 1];
+            const showSection = "section" in l && (!next || !(next as any).section);
+
             return (
-              <Link
-                key={l.href}
-                href={l.href}
-                className={`block sidebar-link ${active ? "sidebar-link-active" : ""}`}
-              >
-                {l.label}
-              </Link>
+              <div key={l.href}>
+                {"section" in l && showSection && (
+                  <div className="mt-4 mb-1 px-2 text-[11px] font-semibold uppercase tracking-wide text-slate-400">
+                    {(l as any).section}
+                  </div>
+                )}
+                <Link
+                  href={l.href}
+                  className={`block sidebar-link ${active ? "sidebar-link-active" : ""}`}
+                >
+                  {l.label}
+                </Link>
+              </div>
             );
           })}
         </nav>

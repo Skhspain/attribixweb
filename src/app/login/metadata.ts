@@ -4,3 +4,4 @@ export const metadata: Metadata = {
   title: "Log in · Attribix",
   robots: { index: false },
 };
+
