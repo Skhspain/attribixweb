@@ -78,7 +78,7 @@ function Reveal({
 }
 
 /* -----------------------------------------------------
-   Scroll spy (active nav)
+   Scroll spy (currently not used for header)
 ----------------------------------------------------- */
 function useScrollSpy(ids: string[], offset = 100) {
   const [active, setActive] = React.useState<string | null>(null);
@@ -622,7 +622,7 @@ function Counter({
     const start = performance.now();
     const d = Math.max(300, duration);
     const startVal = prevTo.current; // animate from last end value
-       const endVal = to;
+    const endVal = to;
 
     const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 
@@ -944,10 +944,7 @@ function HeroAttributionChart() {
           {/* floating purchases */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 top-0 overflow-visible">
             {bubbles.map((b) => {
-              const leftPct = Math.max(
-                5,
-                Math.min(95, ((b.bar + 0.5) / BAR_COUNT) * 100)
-              );
+              const leftPct = Math.max(5, Math.min(95, ((b.bar + 0.5) / BAR_COUNT) * 100));
               const barH = heights[b.bar] ?? 0;
               const bottom = Math.min(90, barH + 12 + b.lane * 22);
               return (
@@ -995,15 +992,15 @@ function HeroAttributionChart() {
         @keyframes chipPop {
           0% {
             transform: scale(0.96);
-            filter: drop-shadow(0 0 0 rgba(56, 189, 248, 0));
+            filter: drop-shadow(0 0 0 rgba(56,189,248,0));
           }
           40% {
             transform: scale(1.04);
-            filter: drop-shadow(0 6px 14px rgba(56, 189, 248, 0.35));
+            filter: drop-shadow(0 6px 14px rgba(56,189,248,0.35));
           }
           100% {
             transform: scale(1);
-            filter: drop-shadow(0 0 0 rgba(56, 189, 248, 0));
+            filter: drop-shadow(0 0 0 rgba(56,189,248,0));
           }
         }
         .animate-chip {
@@ -1090,9 +1087,9 @@ function CopyEmail({ email }: { email: string }) {
    PAGE
 ----------------------------------------------------- */
 export default function Home() {
-  const active = useScrollSpy(["features", "how", "integrations", "pricing"], 120);
+  // we still can use scroll spy for in-page sections if we want later
+  // const active = useScrollSpy(["features", "how", "integrations", "pricing"], 120);
   const [showDemo, setShowDemo] = React.useState(false);
-  const [mobileOpen, setMobileOpen] = React.useState(false);
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-[#0F0620] via-[#0E1530] to-[#053B56] text-white overflow-hidden">
@@ -1124,134 +1121,66 @@ export default function Home() {
 
       {/* NAV */}
       <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/20">
-        <div className="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
+        <div className="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <Image src="/assets/logo.svg" alt="Attribix" width={28} height={28} />
             <span className="font-semibold">Attribix</span>
           </div>
 
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8 text-sm">
-            <a
-              href="#features"
-              className={cx(
-                "opacity-80 hover:opacity-100 relative",
-                active === "features" &&
-                  "opacity-100 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
-              )}
-            >
-              Features
-            </a>
-            <a
-              href="#how"
-              className={cx(
-                "opacity-80 hover:opacity-100 relative",
-                active === "how" &&
-                  "opacity-100 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
-              )}
-            >
-              How it works
-            </a>
-            <a
-              href="#integrations"
-              className={cx(
-                "opacity-80 hover:opacity-100 relative",
-                active === "integrations" &&
-                  "opacity-100 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
-              )}
-            >
-              Integrations
-            </a>
-            <a
-              href="#pricing"
-              className={cx(
-                "opacity-80 hover:opacity-100 relative",
-                active === "pricing" &&
-                  "opacity-100 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
-              )}
-            >
-              Pricing
-            </a>
-            <Link href="/login" className="rounded-full bg-white/10 px-4 py-2 hover:bg-white/15">
-              Log in
-            </Link>
-          </nav>
-
-          {/* Mobile burger */}
-          <button
-            onClick={() => setMobileOpen((v) => !v)}
-            className="md:hidden p-2 rounded-lg border border-white/20"
-            aria-label="Toggle menu"
-          >
-            <svg width="24" height="24" stroke="white" strokeWidth="2">
-              <path d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-
-        {/* Mobile dropdown */}
-        {mobileOpen && (
-          <div className="md:hidden px-4 pb-4 space-y-3 text-sm bg-black/60 backdrop-blur">
-            <a
-              href="#features"
-              onClick={() => setMobileOpen(false)}
-              className="block opacity-80 hover:opacity-100"
-            >
-              Features
-            </a>
-            <a
-              href="#how"
-              onClick={() => setMobileOpen(false)}
-              className="block opacity-80 hover:opacity-100"
-            >
-              How it works
-            </a>
-            <a
-              href="#integrations"
-              onClick={() => setMobileOpen(false)}
-              className="block opacity-80 hover:opacity-100"
-            >
-              Integrations
-            </a>
-            <a
-              href="#pricing"
-              onClick={() => setMobileOpen(false)}
-              className="block opacity-80 hover:opacity-100"
-            >
-              Pricing
-            </a>
-            <Link
-              href="/login"
-              onClick={() => setMobileOpen(false)}
-              className="block rounded-md bg-white/10 px-4 py-2 text-center"
-            >
-              Log in
-            </Link>
+          {/* Desktop nav + CTAs */}
+          <div className="hidden md:flex items-center gap-8 text-sm">
+            <nav className="flex items-center gap-6">
+              <Link href="/analytics" className="opacity-80 hover:opacity-100">
+                Analytics
+              </Link>
+              <Link href="/features" className="opacity-80 hover:opacity-100">
+                Features
+              </Link>
+              <Link href="/faq" className="opacity-80 hover:opacity-100">
+                FAQ
+              </Link>
+              <a href="#pricing" className="opacity-80 hover:opacity-100">
+                Pricing
+              </a>
+            </nav>
+            <div className="flex items-center gap-3">
+              <Link
+                href="/login"
+                className="rounded-full bg-white/10 px-4 py-2 hover:bg-white/15"
+              >
+                Log in
+              </Link>
+              <MagneticButton
+                href="/book-demo"
+                className="!px-4 !py-2 text-sm"
+              >
+                Book demo
+              </MagneticButton>
+            </div>
           </div>
-        )}
+        </div>
       </header>
 
       {/* HERO */}
-      <section className="relative mx-auto max-w-7xl px-4 py-16 md:py-28">
+      <section className="relative mx-auto max-w-7xl px-4 py-20 md:py-28">
         <div className="grid items-start gap-10 md:grid-cols-2">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs">
               New — Ads Review & Attribution
             </p>
-            <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
+            <h1 className="mt-4 text-5xl md:text-6xl font-extrabold leading-[1.05]">
               Smarter{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] via-[#2563EB] to-[#06B6D4]">
                 Attribution
               </span>
-              .
-              <br />
+              .<br className="hidden md:block" />
               Bigger{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#06B6D4] via-[#22D3EE] to-[#60A5FA]">
                 Impact
               </span>
               .
             </h1>
-            <p className="mt-5 text-base sm:text-lg text-white/80 max-w-xl">
+            <p className="mt-5 text-lg text-white/80 max-w-xl">
               See which channels actually drive revenue. Connect Shopify or
               WooCommerce, pipe in Meta/Google/TikTok, and make decisions with
               real, trustworthy data.
@@ -1303,7 +1232,7 @@ export default function Home() {
 
       <WaveDivider />
 
-      {/* FEATURES */}
+      {/* FEATURES (section still kept for storytelling) */}
       <section id="features" className="relative mx-auto max-w-7xl px-4 py-24">
         <SectionTitle>Why teams pick Attribix</SectionTitle>
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -1443,17 +1372,20 @@ export default function Home() {
             {
               brand: "Apex",
               metric: "+22% Purchases",
-              summary: "Unified pixel + CAPI with de-dupe lifted tracked conversions.",
+              summary:
+                "Unified pixel + CAPI with de-dupe lifted tracked conversions.",
             },
             {
               brand: "Tempo",
               metric: "ROAS 3.2 → 6.8",
-              summary: "Channel split + model comparison reallocated 34% of spend.",
+              summary:
+                "Channel split + model comparison reallocated 34% of spend.",
             },
             {
               brand: "Glow",
               metric: "CPP ↓ 41%",
-              summary: "Creative-level review surfaced winners and paused bleeders.",
+              summary:
+                "Creative-level review surfaced winners and paused bleeders.",
             },
           ]}
         />
