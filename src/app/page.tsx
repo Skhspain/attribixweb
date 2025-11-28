@@ -622,7 +622,7 @@ function Counter({
     const start = performance.now();
     const d = Math.max(300, duration);
     const startVal = prevTo.current; // animate from last end value
-    const endVal = to;
+       const endVal = to;
 
     const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 
@@ -703,9 +703,18 @@ function HeroAttributionChart() {
   const [pulseKey, setPulseKey] = React.useState(0);
 
   const PLATFORMS = [
-    { name: "Meta", cls: "bg-gradient-to-r from-[#2563EB] to-[#9333EA] text-white/90 border-white/10" },
-    { name: "Google", cls: "bg-gradient-to-r from-[#22D3EE] to-[#60A5FA] text-white/90 border-white/10" },
-    { name: "TikTok", cls: "bg-gradient-to-r from-[#ec4899] to-[#8b5cf6] text-white/90 border-white/10" },
+    {
+      name: "Meta",
+      cls: "bg-gradient-to-r from-[#2563EB] to-[#9333EA] text-white/90 border-white/10",
+    },
+    {
+      name: "Google",
+      cls: "bg-gradient-to-r from-[#22D3EE] to-[#60A5FA] text-white/90 border-white/10",
+    },
+    {
+      name: "TikTok",
+      cls: "bg-gradient-to-r from-[#ec4899] to-[#8b5cf6] text-white/90 border-white/10",
+    },
   ] as const;
 
   const LANES = 4;
@@ -792,9 +801,12 @@ function HeroAttributionChart() {
   }, []);
 
   // KPI baselines and goals
-  const roasFrom = 3.2, roasTo = 11.0;
-  const purFrom = 180, purTo = 260;
-  const cppFrom = 19.0, cppTo = 3.0;
+  const roasFrom = 3.2,
+    roasTo = 11.0;
+  const purFrom = 180,
+    purTo = 260;
+  const cppFrom = 19.0,
+    cppTo = 3.0;
 
   // progress and interpolated values
   const p = Math.min(1, step / BAR_COUNT);
@@ -807,7 +819,7 @@ function HeroAttributionChart() {
   const purDeltaNow = Math.round((purNow / purFrom - 1) * 100);
   const cppDeltaNow = Math.round((cppFrom / cppNow - 1) * 100);
 
-  // SSR‑safe read
+  // SSR-safe read
   const barEase =
     typeof window !== "undefined" && (window as any).__BAR_EASE_MS__
       ? (window as any).__BAR_EASE_MS__
@@ -932,7 +944,10 @@ function HeroAttributionChart() {
           {/* floating purchases */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 top-0 overflow-visible">
             {bubbles.map((b) => {
-              const leftPct = Math.max(5, Math.min(95, ((b.bar + 0.5) / BAR_COUNT) * 100));
+              const leftPct = Math.max(
+                5,
+                Math.min(95, ((b.bar + 0.5) / BAR_COUNT) * 100)
+              );
               const barH = heights[b.bar] ?? 0;
               const bottom = Math.min(90, barH + 12 + b.lane * 22);
               return (
@@ -980,15 +995,15 @@ function HeroAttributionChart() {
         @keyframes chipPop {
           0% {
             transform: scale(0.96);
-            filter: drop-shadow(0 0 0 rgba(56,189,248,0));
+            filter: drop-shadow(0 0 0 rgba(56, 189, 248, 0));
           }
           40% {
             transform: scale(1.04);
-            filter: drop-shadow(0 6px 14px rgba(56,189,248,0.35));
+            filter: drop-shadow(0 6px 14px rgba(56, 189, 248, 0.35));
           }
           100% {
             transform: scale(1);
-            filter: drop-shadow(0 0 0 rgba(56,189,248,0));
+            filter: drop-shadow(0 0 0 rgba(56, 189, 248, 0));
           }
         }
         .animate-chip {
@@ -1077,6 +1092,7 @@ function CopyEmail({ email }: { email: string }) {
 export default function Home() {
   const active = useScrollSpy(["features", "how", "integrations", "pricing"], 120);
   const [showDemo, setShowDemo] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-[#0F0620] via-[#0E1530] to-[#053B56] text-white overflow-hidden">
@@ -1113,6 +1129,8 @@ export default function Home() {
             <Image src="/assets/logo.svg" alt="Attribix" width={28} height={28} />
             <span className="font-semibold">Attribix</span>
           </div>
+
+          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm">
             <a
               href="#features"
@@ -1158,29 +1176,82 @@ export default function Home() {
               Log in
             </Link>
           </nav>
+
+          {/* Mobile burger */}
+          <button
+            onClick={() => setMobileOpen((v) => !v)}
+            className="md:hidden p-2 rounded-lg border border-white/20"
+            aria-label="Toggle menu"
+          >
+            <svg width="24" height="24" stroke="white" strokeWidth="2">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </div>
+
+        {/* Mobile dropdown */}
+        {mobileOpen && (
+          <div className="md:hidden px-4 pb-4 space-y-3 text-sm bg-black/60 backdrop-blur">
+            <a
+              href="#features"
+              onClick={() => setMobileOpen(false)}
+              className="block opacity-80 hover:opacity-100"
+            >
+              Features
+            </a>
+            <a
+              href="#how"
+              onClick={() => setMobileOpen(false)}
+              className="block opacity-80 hover:opacity-100"
+            >
+              How it works
+            </a>
+            <a
+              href="#integrations"
+              onClick={() => setMobileOpen(false)}
+              className="block opacity-80 hover:opacity-100"
+            >
+              Integrations
+            </a>
+            <a
+              href="#pricing"
+              onClick={() => setMobileOpen(false)}
+              className="block opacity-80 hover:opacity-100"
+            >
+              Pricing
+            </a>
+            <Link
+              href="/login"
+              onClick={() => setMobileOpen(false)}
+              className="block rounded-md bg-white/10 px-4 py-2 text-center"
+            >
+              Log in
+            </Link>
+          </div>
+        )}
       </header>
 
       {/* HERO */}
-      <section className="relative mx-auto max-w-7xl px-4 py-20 md:py-28">
+      <section className="relative mx-auto max-w-7xl px-4 py-16 md:py-28">
         <div className="grid items-start gap-10 md:grid-cols-2">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs">
               New — Ads Review & Attribution
             </p>
-            <h1 className="mt-4 text-5xl md:text-6xl font-extrabold leading-[1.05]">
+            <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
               Smarter{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] via-[#2563EB] to-[#06B6D4]">
                 Attribution
               </span>
-              .<br className="hidden md:block" />
+              .
+              <br />
               Bigger{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#06B6D4] via-[#22D3EE] to-[#60A5FA]">
                 Impact
               </span>
               .
             </h1>
-            <p className="mt-5 text-lg text-white/80 max-w-xl">
+            <p className="mt-5 text-base sm:text-lg text-white/80 max-w-xl">
               See which channels actually drive revenue. Connect Shopify or
               WooCommerce, pipe in Meta/Google/TikTok, and make decisions with
               real, trustworthy data.
@@ -1215,7 +1286,9 @@ export default function Home() {
       {/* LOGO CLOUD */}
       <section className="relative mx-auto max-w-7xl px-4 py-10">
         <Reveal>
-          <p className="text-center text-sm text-white/60 mb-6">Trusted by growth‑minded brands</p>
+          <p className="text-center text-sm text-white/60 mb-6">
+            Trusted by growth-minded brands
+          </p>
         </Reveal>
         <div className="grid grid-cols-2 md:grid-cols-6 gap-6 opacity-90">
           {["Acme", "North", "Apex", "Tempo", "Nova", "Glow"].map((n, i) => (
@@ -1235,10 +1308,26 @@ export default function Home() {
         <SectionTitle>Why teams pick Attribix</SectionTitle>
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {[
-            { t: "Accurate Tracking", d: "Pixels + CAPI with deduplication and consent‑aware capture.", icon: "🎯" },
-            { t: "Attribution models", d: "Last/First, Linear, Time‑Decay, and position‑based.", icon: "🧭" },
-            { t: "Ads Review", d: "CPP, ROAS, revenue per ad — sortable and filterable.", icon: "📊" },
-            { t: "Real‑time insights", d: "Fresh metrics, alerts for high CPA or low ROAS.", icon: "⚡" },
+            {
+              t: "Accurate Tracking",
+              d: "Pixels + CAPI with deduplication and consent-aware capture.",
+              icon: "🎯",
+            },
+            {
+              t: "Attribution models",
+              d: "Last/First, Linear, Time-Decay, and position-based.",
+              icon: "🧭",
+            },
+            {
+              t: "Ads Review",
+              d: "CPP, ROAS, revenue per ad — sortable and filterable.",
+              icon: "📊",
+            },
+            {
+              t: "Real-time insights",
+              d: "Fresh metrics, alerts for high CPA or low ROAS.",
+              icon: "⚡",
+            },
           ].map((f, i) => (
             <Reveal key={f.t} delay={100 + i * 80}>
               <NeonCard className="p-5 group">
@@ -1264,10 +1353,26 @@ export default function Home() {
         <h3 className="text-2xl font-extrabold mb-4">Loved by performance teams</h3>
         <Marquee
           items={[
-            { quote: "Finally trustable ROAS. Cut CPA by 38% in 2 weeks.", author: "Mia K.", role: "Growth @ Tempo" },
-            { quote: "Attribution models that actually reflect our funnel.", author: "Jon A.", role: "CMO @ Apex" },
-            { quote: "CPP dropped and scale got easier. 10/10.", author: "Sofia R.", role: "Paid Lead @ Nova" },
-            { quote: "We can defend budgets with clarity now.", author: "Evan D.", role: "Founder @ North" },
+            {
+              quote: "Finally trustable ROAS. Cut CPA by 38% in 2 weeks.",
+              author: "Mia K.",
+              role: "Growth @ Tempo",
+            },
+            {
+              quote: "Attribution models that actually reflect our funnel.",
+              author: "Jon A.",
+              role: "CMO @ Apex",
+            },
+            {
+              quote: "CPP dropped and scale got easier. 10/10.",
+              author: "Sofia R.",
+              role: "Paid Lead @ Nova",
+            },
+            {
+              quote: "We can defend budgets with clarity now.",
+              author: "Evan D.",
+              role: "Founder @ North",
+            },
           ]}
         />
       </section>
@@ -1280,8 +1385,16 @@ export default function Home() {
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           {[
             { n: "1", t: "Connect your store", d: "Shopify or WooCommerce in minutes." },
-            { n: "2", t: "Link ad platforms", d: "Meta, Google, TikTok OAuth — we sync spend and conversions." },
-            { n: "3", t: "Decide with clarity", d: "See which ads and channels actually drive revenue." },
+            {
+              n: "2",
+              t: "Link ad platforms",
+              d: "Meta, Google, TikTok OAuth — we sync spend and conversions.",
+            },
+            {
+              n: "3",
+              t: "Decide with clarity",
+              d: "See which ads and channels actually drive revenue.",
+            },
           ].map((s, i) => (
             <Reveal key={s.n} delay={100 + i * 100}>
               <NeonCard className="p-5">
@@ -1302,13 +1415,17 @@ export default function Home() {
       {/* INTEGRATIONS */}
       <section id="integrations" className="relative mx-auto max-w-7xl px-4 py-24">
         <SectionTitle>Integrations</SectionTitle>
-        <p className="mt-2 text-white/70">One click to connect your ad platforms and storefront.</p>
+        <p className="mt-2 text-white/70">
+          One click to connect your ad platforms and storefront.
+        </p>
         <div className="mt-8 grid grid-cols-2 md:grid-cols-5 gap-4">
           {["Meta", "Google", "TikTok", "Shopify", "WooCommerce"].map((n, i) => (
             <Reveal key={n} delay={100 + i * 80}>
               <NeonCard className="py-4 flex items-center justify-center group">
                 <TiltCard>
-                  <span className="text-sm text-white/80 group-hover:text-white transition">{n}</span>
+                  <span className="text-sm text-white/80 group-hover:text-white transition">
+                    {n}
+                  </span>
                 </TiltCard>
               </NeonCard>
             </Reveal>
@@ -1326,7 +1443,7 @@ export default function Home() {
             {
               brand: "Apex",
               metric: "+22% Purchases",
-              summary: "Unified pixel + CAPI with de‑dupe lifted tracked conversions.",
+              summary: "Unified pixel + CAPI with de-dupe lifted tracked conversions.",
             },
             {
               brand: "Tempo",
@@ -1336,7 +1453,7 @@ export default function Home() {
             {
               brand: "Glow",
               metric: "CPP ↓ 41%",
-              summary: "Creative‑level review surfaced winners and paused bleeders.",
+              summary: "Creative-level review surfaced winners and paused bleeders.",
             },
           ]}
         />
@@ -1360,14 +1477,14 @@ export default function Home() {
             {
               name: "Growth",
               price: 149,
-              note: "15‑day free trial",
+              note: "15-day free trial",
               features: ["Up to 250k sessions", "All models", "Slack alerts"],
               highlight: true,
             },
             {
               name: "Scale",
               price: 299,
-              note: "15‑day free trial",
+              note: "15-day free trial",
               features: ["Unlimited", "API access", "Priority support"],
               highlight: false,
             },
@@ -1388,7 +1505,8 @@ export default function Home() {
                   )}
                   <div className="text-lg font-semibold">{p.name}</div>
                   <div className="mt-2 text-3xl font-extrabold">
-                    ${p.price} <span className="text-sm font-normal text-white/60">/mo</span>
+                    ${p.price}{" "}
+                    <span className="text-sm font-normal text-white/60">/mo</span>
                   </div>
                   <div className="text-xs text-emerald-300 mt-1">{p.note}</div>
                   <ul className="mt-4 space-y-2 text-sm text-white/80">
@@ -1425,7 +1543,9 @@ export default function Home() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div>
                 <h3 className="text-2xl font-extrabold">Ready to see true ROAS?</h3>
-                <p className="text-white/80">Open your analytics and review ads & attribution now.</p>
+                <p className="text-white/80">
+                  Open your analytics and review ads & attribution now.
+                </p>
               </div>
               <MagneticButton href="/login">Launch Analytics</MagneticButton>
             </div>
