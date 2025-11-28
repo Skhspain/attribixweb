@@ -78,7 +78,7 @@ function Reveal({
 }
 
 /* -----------------------------------------------------
-   Scroll spy (currently not used for header)
+   Scroll spy (active nav)
 ----------------------------------------------------- */
 function useScrollSpy(ids: string[], offset = 100) {
   const [active, setActive] = React.useState<string | null>(null);
@@ -944,7 +944,10 @@ function HeroAttributionChart() {
           {/* floating purchases */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 top-0 overflow-visible">
             {bubbles.map((b) => {
-              const leftPct = Math.max(5, Math.min(95, ((b.bar + 0.5) / BAR_COUNT) * 100));
+              const leftPct = Math.max(
+                5,
+                Math.min(95, ((b.bar + 0.5) / BAR_COUNT) * 100)
+              );
               const barH = heights[b.bar] ?? 0;
               const bottom = Math.min(90, barH + 12 + b.lane * 22);
               return (
@@ -1087,9 +1090,9 @@ function CopyEmail({ email }: { email: string }) {
    PAGE
 ----------------------------------------------------- */
 export default function Home() {
-  // we still can use scroll spy for in-page sections if we want later
-  // const active = useScrollSpy(["features", "how", "integrations", "pricing"], 120);
+  const active = useScrollSpy(["features", "how", "integrations", "pricing"], 120);
   const [showDemo, setShowDemo] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-[#0F0620] via-[#0E1530] to-[#053B56] text-white overflow-hidden">
@@ -1121,44 +1124,134 @@ export default function Home() {
 
       {/* NAV */}
       <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/20">
-        <div className="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between gap-4">
+        <div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Image src="/assets/logo.svg" alt="Attribix" width={28} height={28} />
             <span className="font-semibold">Attribix</span>
           </div>
 
-          {/* Desktop nav + CTAs */}
-          <div className="hidden md:flex items-center gap-8 text-sm">
-            <nav className="flex items-center gap-6">
-              <Link href="/analytics" className="opacity-80 hover:opacity-100">
-                Analytics
-              </Link>
-              <Link href="/features" className="opacity-80 hover:opacity-100">
-                Features
-              </Link>
-              <Link href="/faq" className="opacity-80 hover:opacity-100">
-                FAQ
-              </Link>
-              <a href="#pricing" className="opacity-80 hover:opacity-100">
-                Pricing
-              </a>
-            </nav>
-            <div className="flex items-center gap-3">
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-8 text-sm">
+            <Link
+              href="/features"
+              className={cx(
+                "opacity-80 hover:opacity-100 relative",
+                active === "features" &&
+                  "opacity-100 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
+              )}
+            >
+              Features
+            </Link>
+            <Link
+              href="/#how"
+              className={cx(
+                "opacity-80 hover:opacity-100 relative",
+                active === "how" &&
+                  "opacity-100 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
+              )}
+            >
+              How it works
+            </Link>
+            <Link
+              href="/#integrations"
+              className={cx(
+                "opacity-80 hover:opacity-100 relative",
+                active === "integrations" &&
+                  "opacity-100 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
+              )}
+            >
+              Integrations
+            </Link>
+            <Link
+              href="/pricing"
+              className={cx(
+                "opacity-80 hover:opacity-100 relative",
+                active === "pricing" &&
+                  "opacity-100 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
+              )}
+            >
+              Pricing
+            </Link>
+
+            <div className="flex items-center gap-2">
               <Link
                 href="/login"
                 className="rounded-full bg-white/10 px-4 py-2 hover:bg-white/15"
               >
                 Log in
               </Link>
-              <MagneticButton
-                href="/book-demo"
-                className="!px-4 !py-2 text-sm"
-              >
+              <MagneticButton href="/book-demo" className="text-sm px-4 py-2">
                 Book demo
               </MagneticButton>
             </div>
-          </div>
+          </nav>
+
+          {/* Mobile hamburger */}
+          <button
+            type="button"
+            className="md:hidden inline-flex items-center justify-center rounded-full border border-white/20 px-3 py-2 text-xs font-medium text-white/80 hover:bg-white/10"
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-label="Toggle navigation"
+          >
+            <span className="mr-1">Menu</span>
+            <span className="flex flex-col gap-[3px]">
+              <span className="h-[2px] w-4 bg-white rounded-full" />
+              <span className="h-[2px] w-4 bg-white rounded-full" />
+            </span>
+          </button>
         </div>
+
+        {/* Mobile menu panel */}
+        {mobileOpen && (
+          <div className="md:hidden border-t border-white/10 bg-black/70 backdrop-blur-sm">
+            <nav className="mx-auto max-w-7xl px-4 py-4 space-y-2 text-sm">
+              <Link
+                href="/features"
+                onClick={() => setMobileOpen(false)}
+                className="block py-1 text-white/80 hover:text-white"
+              >
+                Features
+              </Link>
+              <Link
+                href="/#how"
+                onClick={() => setMobileOpen(false)}
+                className="block py-1 text-white/80 hover:text-white"
+              >
+                How it works
+              </Link>
+              <Link
+                href="/#integrations"
+                onClick={() => setMobileOpen(false)}
+                className="block py-1 text-white/80 hover:text-white"
+              >
+                Integrations
+              </Link>
+              <Link
+                href="/pricing"
+                onClick={() => setMobileOpen(false)}
+                className="block py-1 text-white/80 hover:text-white"
+              >
+                Pricing
+              </Link>
+              <div className="mt-3 flex flex-col gap-2">
+                <Link
+                  href="/login"
+                  onClick={() => setMobileOpen(false)}
+                  className="block rounded-lg border border-white/20 px-4 py-2 text-center text-white/90 hover:bg-white/10"
+                >
+                  Log in
+                </Link>
+                <Link
+                  href="/book-demo"
+                  onClick={() => setMobileOpen(false)}
+                  className="block rounded-lg bg-white text-center text-gray-900 px-4 py-2 font-semibold"
+                >
+                  Book demo
+                </Link>
+              </div>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* HERO */}
@@ -1168,7 +1261,7 @@ export default function Home() {
             <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs">
               New — Ads Review & Attribution
             </p>
-            <h1 className="mt-4 text-5xl md:text-6xl font-extrabold leading-[1.05]">
+            <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.05]">
               Smarter{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] via-[#2563EB] to-[#06B6D4]">
                 Attribution
@@ -1180,7 +1273,7 @@ export default function Home() {
               </span>
               .
             </h1>
-            <p className="mt-5 text-lg text-white/80 max-w-xl">
+            <p className="mt-5 text-base sm:text-lg text-white/80 max-w-xl">
               See which channels actually drive revenue. Connect Shopify or
               WooCommerce, pipe in Meta/Google/TikTok, and make decisions with
               real, trustworthy data.
@@ -1190,7 +1283,7 @@ export default function Home() {
               <MagneticButton href="/login">Open Dashboard</MagneticButton>
               <button
                 onClick={() => setShowDemo(true)}
-                className="rounded-xl border border-white/20 px-5 py-3 hover:bg-white/10"
+                className="rounded-xl border border-white/20 px-5 py-3 hover:bg-white/10 text-sm"
               >
                 Watch demo
               </button>
@@ -1201,7 +1294,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="relative">
+          <div className="relative mt-6 md:mt-0">
             <div className="absolute -inset-6 rounded-3xl bg-cyan-400/20 blur-2xl" />
             <div className="relative rounded-3xl border border-white/15 bg-white/5 backdrop-blur-sm p-4 shadow-2xl">
               <HeroAttributionChart />
@@ -1232,7 +1325,7 @@ export default function Home() {
 
       <WaveDivider />
 
-      {/* FEATURES (section still kept for storytelling) */}
+      {/* FEATURES */}
       <section id="features" className="relative mx-auto max-w-7xl px-4 py-24">
         <SectionTitle>Why teams pick Attribix</SectionTitle>
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
