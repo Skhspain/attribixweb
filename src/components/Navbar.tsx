@@ -1,135 +1,167 @@
 // src/components/Navbar.tsx
 "use client";
 
+import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import MagneticButton from "@/components/MagneticButton";
 
 type NavItem = {
   label: string;
   href: string;
+  match?: (pathname: string) => boolean;
 };
 
 const navItems: NavItem[] = [
-  { label: "Analytics", href: "/analytics" },
-  { label: "Features", href: "/features" },
-  { label: "FAQ", href: "/faq" },
+  {
+    label: "Features",
+    href: "/features",
+    match: (pathname) => pathname.startsWith("/features"),
+  },
+  {
+    label: "How it works",
+    href: "/#how",
+  },
+  {
+    label: "Integrations",
+    href: "/#integrations",
+  },
+  {
+    label: "Pricing",
+    href: "/pricing",
+    match: (pathname) => pathname.startsWith("/pricing"),
+  },
 ];
 
-export function Navbar() {
+function DesktopNav() {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
-
-  const isActive = (href: string) =>
-    href === "/"
-      ? pathname === "/"
-      : pathname === href || pathname?.startsWith(href);
 
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full bg-black/40 backdrop-blur-md border-b border-white/10">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-sky-400 text-xs font-bold text-white">
-            AX
-          </span>
-          <span className="text-lg font-semibold text-white">Attribix</span>
-        </Link>
+    <nav className="hidden md:flex items-center gap-8 text-sm">
+      {navItems.map((item) => {
+        const isActive =
+          item.match?.(pathname) ??
+          (item.href !== "/" && pathname === item.href);
 
-        {/* Desktop nav */}
-        <div className="hidden items-center gap-8 md:flex">
-          <div className="flex items-center gap-6">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`text-sm transition ${
-                  isActive(item.href)
-                    ? "text-white"
-                    : "text-white/70 hover:text-white"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Link
-              href="/login"
-              className="text-sm text-white/80 hover:text-white transition"
-            >
-              Log in
-            </Link>
-            <Link
-              href="/book-demo"
-              className="rounded-full bg-white px-4 py-2 text-sm font-medium text-black shadow-md hover:bg-neutral-200 transition"
-            >
-              Book demo
-            </Link>
-          </div>
-        </div>
-
-        {/* Mobile right side: CTAs + menu */}
-        <div className="flex items-center gap-2 md:hidden">
+        return (
           <Link
-            href="/book-demo"
-            className="rounded-full bg-white px-3 py-1.5 text-xs font-medium text-black shadow-md hover:bg-neutral-200 transition"
+            key={item.label}
+            href={item.href}
+            className={[
+              "opacity-80 hover:opacity-100 relative transition",
+              isActive &&
+                "opacity-100 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded",
+            ]
+              .filter(Boolean)
+              .join(" ")}
           >
-            Book demo
+            {item.label}
           </Link>
+        );
+      })}
 
-          <button
-            onClick={() => setOpen((prev) => !prev)}
-            className="relative z-50 p-2 text-white"
-            aria-label="Toggle navigation"
-          >
-            {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
-        </div>
+      <div className="flex items-center gap-2">
+        <Link
+          href="/login"
+          className="rounded-full bg-white/10 px-4 py-2 text-sm hover:bg-white/15"
+        >
+          Log in
+        </Link>
+        <MagneticButton href="/book-demo" className="text-sm px-4 py-2">
+          Book demo
+        </MagneticButton>
       </div>
+    </nav>
+  );
+}
 
-      {/* Mobile dropdown */}
+function MobileNav() {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <div className="md:hidden">
+      <button
+        type="button"
+        aria-label="Open menu"
+        onClick={() => setOpen(true)}
+        className="inline-flex items-center justify-center rounded-full border border-white/10 bg-black/20 p-2 hover:bg-black/40"
+      >
+        <Menu className="h-5 w-5" />
+      </button>
+
       {open && (
-        <div className="md:hidden border-t border-white/10 bg-black/90 backdrop-blur-md">
-          <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
+        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur">
+          <div className="absolute right-4 top-4 rounded-2xl border border-white/10 bg-black/90 p-4 w-[260px]">
+            <div className="mb-3 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/assets/logo.svg"
+                  alt="Attribix"
+                  width={24}
+                  height={24}
+                />
+                <span className="text-sm font-semibold">Attribix</span>
+              </div>
+              <button
+                type="button"
+                aria-label="Close menu"
                 onClick={() => setOpen(false)}
-                className={`py-1 text-sm ${
-                  isActive(item.href)
-                    ? "text-white"
-                    : "text-white/80 hover:text-white"
-                }`}
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/10 hover:bg-white/10"
               >
-                {item.label}
-              </Link>
-            ))}
+                <X className="h-4 w-4" />
+              </button>
+            </div>
 
-            <div className="mt-3 flex flex-col gap-2">
+            <nav className="flex flex-col gap-2 text-sm">
+              {navItems.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="rounded-full px-3 py-2 text-sm hover:bg-white/10"
+                >
+                  {item.label}
+                </Link>
+              ))}
+
+              <hr className="my-2 border-white/10" />
+
               <Link
                 href="/login"
                 onClick={() => setOpen(false)}
-                className="text-sm text-white/80 hover:text-white"
+                className="rounded-full bg-white/10 px-3 py-2 text-center text-sm hover:bg-white/15"
               >
                 Log in
               </Link>
               <Link
                 href="/book-demo"
                 onClick={() => setOpen(false)}
-                className="rounded-full bg-white px-4 py-2 text-sm font-medium text-black text-center shadow-md hover:bg-neutral-200 transition"
+                className="rounded-full bg-white px-3 py-2 text-center text-sm font-semibold text-black shadow-md hover:bg-neutral-200 transition"
               >
                 Book demo
               </Link>
-            </div>
+            </nav>
           </div>
         </div>
       )}
-    </nav>
+    </div>
   );
 }
 
-export default Navbar;
+export default function Navbar() {
+  return (
+    <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/20">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+        <Link href="/" className="flex items-center gap-2">
+          <Image src="/assets/logo.svg" alt="Attribix" width={28} height={28} />
+          <span className="font-semibold">Attribix</span>
+        </Link>
+
+        <DesktopNav />
+        <MobileNav />
+      </div>
+    </header>
+  );
+}

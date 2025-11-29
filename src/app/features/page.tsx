@@ -21,7 +21,15 @@ const money2 = (n: number) =>
 /* -----------------------------------------------------
    Tiny counter (ints) so numbers feel alive
 ----------------------------------------------------- */
-function CounterInt({ value, duration = 600, prefix = "" }: { value: number; duration?: number; prefix?: string }) {
+function CounterInt({
+  value,
+  duration = 600,
+  prefix = "",
+}: {
+  value: number;
+  duration?: number;
+  prefix?: string;
+}) {
   const [v, setV] = React.useState(value);
   const startRef = React.useRef<number | null>(null);
   const fromRef = React.useRef(value);
@@ -85,7 +93,7 @@ function Bars({ mixNew }: { mixNew: number }) {
 ----------------------------------------------------- */
 type ModelKind = "last" | "first" | "linear" | "decay";
 const modelLabel = (m: ModelKind) =>
-  ({ last: "Last Click", first: "First Click", linear: "Linear", decay: "Time‑decay" }[m]);
+  ({ last: "Last Click", first: "First Click", linear: "Linear", decay: "Time-decay" }[m]);
 
 /* -----------------------------------------------------
    Platforms + assumptions (editable defaults)
@@ -277,7 +285,7 @@ function Playground() {
 
       {/* KPIs */}
       <div className="mt-4 grid gap-3 sm:grid-cols-3">
-        <div className="rounded-xl border border-white/10 bg-white/5 p-3">
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
           <div className="text-xs text-white/70">ROAS (blended)</div>
           <div className="mt-1 text-2xl font-bold">
             {nf2(pg.blendedROAS)}
@@ -285,7 +293,7 @@ function Playground() {
           </div>
           <div className="text-[11px] text-white/60">Dollars back for each $1 spent.</div>
         </div>
-        <div className="rounded-xl border border-white/10 bg-white/5 p-3">
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
           <div className="text-xs text-white/70">Cost per Purchase</div>
           <div className="mt-1 text-2xl font-bold">
             {money2(pg.blendedCPP)}
@@ -293,7 +301,7 @@ function Playground() {
           </div>
           <div className="text-[11px] text-white/60">Average ad cost to get one purchase.</div>
         </div>
-        <div className="rounded-xl border border-white/10 bg-white/5 p-3">
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
           <div className="text-xs text-white/70">Estimated purchases</div>
           <div className="mt-1 text-2xl font-bold">
             <CounterInt value={pg.purchases} />
@@ -306,7 +314,7 @@ function Playground() {
       {/* Visual + Budget & Mix */}
       <div className="mt-4 grid gap-4 lg:grid-cols-12">
         {/* Chart & mix */}
-        <div className="lg:col-span-7 rounded-xl border border-white/10 bg-white/5 p-3">
+        <div className="lg:col-span-7 rounded-2xl border border-white/10 bg-white/5 p-3">
           <div className="text-xs text-white/70 mb-2">What the chart hints at</div>
           <Bars mixNew={pg.mixNew} />
           <div className="mt-2 text-[11px] text-white/60">
@@ -340,7 +348,7 @@ function Playground() {
 
         {/* Budget + platform alloc */}
         <div className="lg:col-span-5 grid gap-3">
-          <div className="rounded-xl border border-white/10 bg-white/5 p-3">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
             <div className="text-xs text-white/70 mb-1">Monthly ad budget</div>
             <input
               type="range"
@@ -363,7 +371,7 @@ function Playground() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-white/10 bg-white/5 p-3">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
             <div className="text-xs text-white/70">Estimated revenue</div>
             <div className="mt-1 text-2xl font-bold">{money0(pg.revenue)}</div>
           </div>
@@ -371,11 +379,11 @@ function Playground() {
       </div>
 
       {/* Platform allocation */}
-      <div className="mt-4 rounded-xl border border-white/10 bg-white/5 p-3">
+      <div className="mt-4 rounded-2xl border border-white/10 bg-white/5 p-3">
         <div className="text-xs text-white/70 mb-2">Split across platforms</div>
         <div className="grid gap-3 sm:grid-cols-3">
           {pg.platforms.map((p) => (
-            <div key={p.key} className="rounded-lg border border-white/10 bg-white/5 p-3">
+            <div key={p.key} className="rounded-xl border border-white/10 bg-white/5 p-3">
               <div className="flex items-center justify-between">
                 <div className="font-medium text-sm">{p.name}</div>
                 <span className={cx("h-2 w-2 rounded-full", p.color)} />
@@ -411,7 +419,7 @@ function Playground() {
 
       {/* Model picker + assumptions explainer */}
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
-        <div className="rounded-xl border border-white/10 bg-white/5 p-3">
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
           <div className="text-xs text-white/70 mb-1">Attribution model</div>
           <div className="flex flex-wrap gap-2">
             {(["last", "first", "linear", "decay"] as ModelKind[]).map((m) => (
@@ -431,18 +439,20 @@ function Playground() {
             ))}
           </div>
           <p className="mt-2 text-[11px] text-white/60 leading-relaxed">
-            Models change how we **credit** touch‑points (not the money in the bank). Use them to compare plans and defend decisions.
+            Models change how we <b>credit</b> touch-points (not the money in the bank). Use them to
+            compare plans and defend decisions.
           </p>
         </div>
 
-        <div className="rounded-xl border border-white/10 bg-white/5 p-3">
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
           <div className="text-xs text-white/70 mb-1">Assumptions (plain language)</div>
           <ul className="text-[12px] text-white/75 space-y-1">
             <li>
               <b>Returning</b> customers (warm): already know you → usually cheaper & higher ROAS.
             </li>
             <li>
-              <b>New</b> customers (prospecting): don’t know you yet → pricier & lower ROAS, but it’s how you grow.
+              <b>New</b> customers (prospecting): don’t know you yet → pricier & lower ROAS, but
+              it’s how you grow.
             </li>
             <li>
               Platform defaults above are editable in your real workspace; these are sensible demos.
@@ -458,32 +468,126 @@ function Playground() {
    Page shell
 ----------------------------------------------------- */
 export default function FeaturesPage() {
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-[#0F0620] via-[#0E1530] to-[#053B56] text-white">
-      {/* Nav */}
+      {/* Nav – aligned with main page menu */}
       <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/20">
         <div className="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Image alt="Attribix" src="/assets/logo.svg" width={24} height={24} />
             <span className="font-semibold">Attribix</span>
           </div>
+
+          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <Link href="/" className="opacity-80 hover:opacity-100">Home</Link>
-            <span className="opacity-100">Features</span>
-            <Link href="/pricing" className="opacity-80 hover:opacity-100">Pricing</Link>
-            <Link href="/login" className="rounded-full bg-white/10 px-4 py-2 hover:bg-white/15">Log in</Link>
+            <Link href="/features" className="opacity-100 relative">
+              Features
+            </Link>
+            <Link href="/#how" className="opacity-80 hover:opacity-100">
+              How it works
+            </Link>
+            <Link href="/#integrations" className="opacity-80 hover:opacity-100">
+              Integrations
+            </Link>
+            <Link href="/pricing" className="opacity-80 hover:opacity-100">
+              Pricing
+            </Link>
+
+            <div className="flex items-center gap-2">
+              <Link
+                href="/login"
+                className="rounded-full bg-white/10 px-4 py-2 hover:bg-white/15"
+              >
+                Log in
+              </Link>
+              <Link
+                href="/book-demo"
+                className="rounded-full bg-white px-4 py-2 text-sm font-medium text-black shadow-md hover:bg-neutral-200 transition"
+              >
+                Book demo
+              </Link>
+            </div>
           </nav>
+
+          {/* Mobile button */}
+          <button
+            type="button"
+            className="md:hidden inline-flex items-center justify-center rounded-full border border-white/20 bg-black/40 px-3 py-2 text-xs font-medium text-white/80 hover:bg-white/10"
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-label="Toggle navigation"
+          >
+            <span className="mr-1">Menu</span>
+            <span className="flex flex-col gap-[3px]">
+              <span className="h-[2px] w-4 bg-white rounded-full" />
+              <span className="h-[2px] w-4 bg-white rounded-full" />
+            </span>
+          </button>
         </div>
+
+        {/* Mobile menu */}
+        {mobileOpen && (
+          <div className="md:hidden border-t border-white/10 bg-black/70 backdrop-blur-sm">
+            <nav className="mx-auto max-w-7xl px-4 py-4 space-y-2 text-sm">
+              <Link
+                href="/features"
+                onClick={() => setMobileOpen(false)}
+                className="block py-1 text-white"
+              >
+                Features
+              </Link>
+              <Link
+                href="/#how"
+                onClick={() => setMobileOpen(false)}
+                className="block py-1 text-white/80 hover:text-white"
+              >
+                How it works
+              </Link>
+              <Link
+                href="/#integrations"
+                onClick={() => setMobileOpen(false)}
+                className="block py-1 text-white/80 hover:text-white"
+              >
+                Integrations
+              </Link>
+              <Link
+                href="/pricing"
+                onClick={() => setMobileOpen(false)}
+                className="block py-1 text-white/80 hover:text-white"
+              >
+                Pricing
+              </Link>
+
+              <div className="mt-3 flex flex-col gap-2">
+                <Link
+                  href="/login"
+                  onClick={() => setMobileOpen(false)}
+                  className="block rounded-lg border border-white/15 px-4 py-2 text-center text-sm text-white/90 hover:bg-white/10"
+                >
+                  Log in
+                </Link>
+                <Link
+                  href="/book-demo"
+                  onClick={() => setMobileOpen(false)}
+                  className="block rounded-lg bg-white text-center text-gray-900 px-4 py-2 font-semibold hover:bg-neutral-200"
+                >
+                  Book demo
+                </Link>
+              </div>
+            </nav>
+          </div>
+        )}
       </header>
 
-      {/* Main */}
+      {/* Main content (your original features layout) */}
       <main className="mx-auto max-w-7xl px-4 py-12 md:py-16">
         <div className="grid gap-6 lg:grid-cols-12">
           <section className="lg:col-span-5">
             <h1 className="text-3xl md:text-4xl font-extrabold">Attribution models</h1>
             <p className="mt-2 text-white/75">
-              Switch between <b>Last/First/Linear/Time‑decay</b> and see, in plain English,
-              how your <b>budget</b> and <b>platform split</b> change ROAS and cost per purchase.
+              Switch between <b>Last/First/Linear/Time-decay</b> and see, in plain English, how your{" "}
+              <b>budget</b> and <b>platform split</b> change ROAS and cost per purchase.
             </p>
 
             <div className="mt-4 grid gap-3">
@@ -494,18 +598,18 @@ export default function FeaturesPage() {
                 },
                 {
                   t: "First Click",
-                  d: "Rewards the first ad that brought them in — useful for finding real top‑of‑funnel winners.",
+                  d: "Rewards the first ad that brought them in — useful for finding real top-of-funnel winners.",
                 },
                 {
                   t: "Linear",
                   d: "Shares credit across steps — a balanced view when journeys have many touches.",
                 },
                 {
-                  t: "Time‑decay",
+                  t: "Time-decay",
                   d: "Gives a bit more weight to recent touches — closer to purchase gets slightly more credit.",
                 },
               ].map((c) => (
-                <div key={c.t} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                <div key={c.t} className="rounded-2xl border border-white/10 bg-white/5 p-4">
                   <div className="font-semibold">{c.t}</div>
                   <p className="text-sm text-white/70 mt-1">{c.d}</p>
                 </div>
@@ -522,13 +626,16 @@ export default function FeaturesPage() {
           <h3 className="text-xl font-bold mb-2">What you’ll learn here</h3>
           <ul className="list-disc pl-5 space-y-1 text-white/80 text-sm">
             <li>
-              The difference between <b>Returning</b> and <b>New</b> customers — and why healthy plans use both.
+              The difference between <b>Returning</b> and <b>New</b> customers — and why healthy
+              plans use both.
             </li>
             <li>
-              How changing your <b>platform split</b> (Meta / Google / TikTok) and <b>budget mix</b> affects ROAS, CPP and purchases.
+              How changing your <b>platform split</b> (Meta / Google / TikTok) and{" "}
+              <b>budget mix</b> affects ROAS, CPP and purchases.
             </li>
             <li>
-              Models change how we <b>tell the story</b> of credit — not the actual revenue in your bank account.
+              Models change how we <b>tell the story</b> of credit — not the actual revenue in your
+              bank account.
             </li>
           </ul>
         </div>
@@ -542,8 +649,12 @@ export default function FeaturesPage() {
             <span>Attribix</span>
           </div>
           <div className="flex gap-4">
-            <Link href="/privacy" className="hover:text-white/90">Privacy</Link>
-            <Link href="/terms" className="hover:text-white/90">Terms</Link>
+            <Link href="/privacy" className="hover:text-white/90">
+              Privacy
+            </Link>
+            <Link href="/terms" className="hover:text-white/90">
+              Terms
+            </Link>
           </div>
         </div>
       </footer>
