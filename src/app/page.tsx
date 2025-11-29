@@ -539,14 +539,16 @@ function CaseStudies({ items }: { items: CaseItem[] }) {
 }
 
 /* -----------------------------------------------------
-   Wave divider (soft glow)
+   Wave divider (soft, elegant glow instead of hard band)
 ----------------------------------------------------- */
 function WaveDivider() {
   return (
     <div className="relative h-16 -mb-8">
+      {/* subtle soft glow */}
       <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2">
         <div className="mx-auto h-10 max-w-5xl rounded-full bg-gradient-to-r from-cyan-400/0 via-cyan-400/18 to-cyan-400/0 blur-2xl opacity-80" />
       </div>
+      {/* faint separator line to give structure */}
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-white/0 via-white/8 to-white/0" />
     </div>
   );
@@ -581,7 +583,7 @@ function Sparkline({ w = 72, h = 22 }: { w?: number; h?: number }) {
 }
 
 /* -----------------------------------------------------
-   Animated number
+   Animated number (continuous from previous value)
 ----------------------------------------------------- */
 function Counter({
   from = 0,
@@ -596,7 +598,7 @@ function Counter({
   to: number;
   duration?: number;
   decimals?: number;
-  restartKey?: number;
+  restartKey?: number; // bump this to re-animate
   prefix?: string;
   suffix?: string;
 }) {
@@ -607,7 +609,7 @@ function Counter({
     let raf = 0;
     const start = performance.now();
     const d = Math.max(300, duration);
-    const startVal = prevTo.current;
+    const startVal = prevTo.current; // animate from last end value
     const endVal = to;
 
     const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
@@ -620,7 +622,7 @@ function Counter({
       if (t < 1) {
         raf = requestAnimationFrame(tick);
       } else {
-        prevTo.current = endVal;
+        prevTo.current = endVal; // lock in for next run
       }
     };
 
@@ -671,7 +673,7 @@ function KPICard({
 }
 
 /* -----------------------------------------------------
-   Hero Attribution Chart
+   Hero Attribution Chart (looping, KPIs update per event)
 ----------------------------------------------------- */
 type Bubble = { id: number; bar: number; label: string; cls: string; lane: number; life: number };
 function HeroAttributionChart() {
@@ -683,6 +685,7 @@ function HeroAttributionChart() {
   const [bubbles, setBubbles] = React.useState<Bubble[]>([]);
   const nextId = React.useRef(0);
 
+  // KPI step progression + pulse
   const [step, setStep] = React.useState(0);
   const [loopKey, setLoopKey] = React.useState(0);
   const [pulseKey, setPulseKey] = React.useState(0);
@@ -711,6 +714,7 @@ function HeroAttributionChart() {
     const runCycle = () => {
       if (cancelled) return;
 
+      // generate new smooth targets
       const targets: number[] = [];
       let v = 22 + Math.random() * 5;
       for (let i = 0; i < BAR_COUNT; i++) {
@@ -737,6 +741,7 @@ function HeroAttributionChart() {
           return;
         }
 
+        // animate bar i
         setHeights((prev) => {
           const copy = prev.slice();
           copy[i] = targets[i];
@@ -744,6 +749,7 @@ function HeroAttributionChart() {
         });
         setRevealed(i + 1);
 
+        // bubble event
         const plat = PLATFORMS[i % PLATFORMS.length];
         const id = nextId.current++;
         const lane = i % LANES;
@@ -766,6 +772,7 @@ function HeroAttributionChart() {
           setBubbles((prev) => prev.filter((b) => b.id !== id));
         }, life);
 
+        // advance KPI step + pulse
         setStep(i + 1);
         setPulseKey((k) => k + 1);
 
@@ -781,6 +788,7 @@ function HeroAttributionChart() {
     };
   }, []);
 
+  // KPI baselines and goals
   const roasFrom = 3.2,
     roasTo = 11.0;
   const purFrom = 180,
@@ -788,24 +796,29 @@ function HeroAttributionChart() {
   const cppFrom = 19.0,
     cppTo = 3.0;
 
+  // progress and interpolated values
   const p = Math.min(1, step / BAR_COUNT);
   const roasNow = roasFrom + (roasTo - roasFrom) * p;
   const purNow = Math.round(purFrom + (purTo - purFrom) * p);
   const cppNow = cppFrom + (cppTo - cppFrom) * p;
 
+  // deltas vs baseline (rounded)
   const roasDeltaNow = Math.round((roasNow / roasFrom - 1) * 100);
   const purDeltaNow = Math.round((purNow / purFrom - 1) * 100);
   const cppDeltaNow = Math.round((cppFrom / cppNow - 1) * 100);
 
+  // SSR-safe read
   const barEase =
     typeof window !== "undefined" && (window as any).__BAR_EASE_MS__
       ? (window as any).__BAR_EASE_MS__
       : 900;
 
+  // make Counter re-run each tick (but it starts from previous value now)
   const kRestart = loopKey * 1000 + step;
 
   return (
     <div className="relative overflow-visible">
+      {/* subtle animated glow behind the whole card */}
       <div
         aria-hidden
         className="pointer-events-none absolute -inset-10 -z-10 rounded-[28px] opacity-60 blur-2xl"
@@ -816,8 +829,10 @@ function HeroAttributionChart() {
         }}
       />
 
+      {/* top "search" pill */}
       <div className="h-6 w-40 rounded bg-white/10" />
 
+      {/* KPIs */}
       <div className="mt-4 grid grid-cols-3 gap-3">
         <div className="rounded-xl border border-white/10 bg-white/5 p-3">
           <div className="flex items-center gap-2">
@@ -890,6 +905,7 @@ function HeroAttributionChart() {
         </div>
       </div>
 
+      {/* Bars + bubbles */}
       <div className="relative mt-4 overflow-visible">
         <div
           className="h-44 rounded-xl border border-white/10 bg-white/5 px-3 pt-3 pb-2 relative overflow-visible grid items-end"
@@ -913,6 +929,7 @@ function HeroAttributionChart() {
             />
           ))}
 
+          {/* floating purchases */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 top-0 overflow-visible">
             {bubbles.map((b) => {
               const leftPct = Math.max(
@@ -944,6 +961,7 @@ function HeroAttributionChart() {
         </div>
       </div>
 
+      {/* Local CSS for animations */}
       <style jsx>{`
         @keyframes bubbleFade {
           0% {
@@ -1095,7 +1113,7 @@ export default function Home() {
       {/* NAV */}
       <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/20">
         <div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
-          {/* LOGO */}
+          {/* LOGO: now clickable to home */}
           <Link href="/" className="flex items-center gap-2">
             <Image src="/assets/logo.svg" alt="Attribix" width={28} height={28} />
             <span className="font-semibold">Attribix</span>
@@ -1151,13 +1169,10 @@ export default function Home() {
               >
                 Log in
               </Link>
-              {/* ✅ Book demo button now matches Pricing page style */}
-              <Link
-                href="/book-demo"
-                className="rounded-full bg-white px-4 py-2 text-sm font-medium text-black shadow-md hover:bg-neutral-200 transition"
-              >
+              {/* slimmer Book demo style (matches pricing page look) */}
+              <MagneticButton href="/book-demo" className="text-sm px-4 py-2">
                 Book demo
-              </Link>
+              </MagneticButton>
             </div>
           </nav>
 
@@ -1234,24 +1249,24 @@ export default function Home() {
         <div className="grid items-start gap-10 md:grid-cols-2">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs">
-              New — Ads Review & Attribution
+              New — Tracking, Attribution & Analytics
             </p>
             <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.05]">
               Smarter{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] via-[#2563EB] to-[#06B6D4]">
-                Attribution
+                Tracking
               </span>
               .<br className="hidden md:block" />
-              Bigger{" "}
+              Honest{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#06B6D4] via-[#22D3EE] to-[#60A5FA]">
-                Impact
+                Attribution
               </span>
               .
             </h1>
             <p className="mt-5 text-base sm:text-lg text-white/80 max-w-xl">
-              See which channels actually drive revenue. Connect Shopify or
-              WooCommerce, pipe in Meta/Google/TikTok, and make decisions with
-              real, trustworthy data.
+              Attribix replaces broken pixel data with a first-party tracking layer, server-side
+              events and clear attribution. See which channels actually drive revenue – then use
+              the analytics to scale what works.
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -1280,6 +1295,42 @@ export default function Home() {
         <DemoModal open={showDemo} onClose={() => setShowDemo(false)} />
       </section>
 
+      {/* TRACKING LAYER SECTION (wetracked-style positioning) */}
+      <section className="relative mx-auto max-w-7xl px-4 pb-12">
+        <div className="rounded-2xl border border-white/10 bg-white/5 px-5 py-6 md:px-8 md:py-7 flex flex-col md:flex-row gap-6 items-start md:items-center">
+          <div className="flex-1">
+            <h2 className="text-xl md:text-2xl font-semibold">
+              A tracking layer built for modern ads
+            </h2>
+            <p className="mt-2 text-sm md:text-base text-white/75 max-w-2xl">
+              Attribix sits between your store and the ad platforms. We track visitors with
+              first-party cookies, send clean events server-side and only then calculate
+              attribution and ROAS.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs md:text-sm w-full md:w-auto">
+            <div className="rounded-xl border border-white/15 bg-black/20 p-3">
+              <div className="font-medium mb-1">First-party IDs</div>
+              <p className="text-white/65">
+                Session + customer IDs that survive ITP, adblockers and cross-device journeys.
+              </p>
+            </div>
+            <div className="rounded-xl border border-white/15 bg-black/20 p-3">
+              <div className="font-medium mb-1">Server-side events</div>
+              <p className="text-white/65">
+                Purchases and key events sent via CAPI with deduping against your pixels.
+              </p>
+            </div>
+            <div className="rounded-xl border border-white/15 bg-black/20 p-3">
+              <div className="font-medium mb-1">Model-ready data</div>
+              <p className="text-white/65">
+                Clean event stream you can run attribution models and reports on instantly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* LOGO CLOUD */}
       <section className="relative mx-auto max-w-7xl px-4 py-10">
         <Reveal>
@@ -1306,24 +1357,24 @@ export default function Home() {
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {[
             {
-              t: "Accurate Tracking",
-              d: "Pixels + CAPI with deduplication and consent-aware capture.",
-              icon: "🎯",
+              t: "First-party tracking layer",
+              d: "Own your data with a lightweight script + server events instead of fragile browser pixels.",
+              icon: "🛰️",
+            },
+            {
+              t: "Server-side events (CAPI)",
+              d: "Meta CAPI, Google, TikTok and more with deduplication and consent-aware capture.",
+              icon: "🔐",
             },
             {
               t: "Attribution models",
-              d: "Last/First, Linear, Time-Decay, and position-based.",
+              d: "Last/First, Linear, Time-decay and position-based – all on top of clean data.",
               icon: "🧭",
             },
             {
-              t: "Ads Review",
-              d: "CPP, ROAS, revenue per ad — sortable and filterable.",
+              t: "Ads & analytics in one place",
+              d: "CPP, ROAS and revenue per ad with alerts when performance shifts.",
               icon: "📊",
-            },
-            {
-              t: "Real-time insights",
-              d: "Fresh metrics, alerts for high CPA or low ROAS.",
-              icon: "⚡",
             },
           ].map((f, i) => (
             <Reveal key={f.t} delay={100 + i * 80}>
@@ -1381,16 +1432,20 @@ export default function Home() {
         <SectionTitle>Get value in 3 steps</SectionTitle>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           {[
-            { n: "1", t: "Connect your store", d: "Shopify or WooCommerce in minutes." },
+            {
+              n: "1",
+              t: "Install the tracking layer",
+              d: "Drop the Attribix script or Shopify app and start sending clean events.",
+            },
             {
               n: "2",
-              t: "Link ad platforms",
-              d: "Meta, Google, TikTok OAuth — we sync spend and conversions.",
+              t: "Connect ad platforms",
+              d: "Meta, Google, TikTok OAuth – we sync spend and conversions via pixels + CAPI.",
             },
             {
               n: "3",
               t: "Decide with clarity",
-              d: "See which ads and channels actually drive revenue.",
+              d: "Use attribution + analytics to kill waste and scale the winners.",
             },
           ].map((s, i) => (
             <Reveal key={s.n} delay={100 + i * 100}>
@@ -1542,12 +1597,12 @@ export default function Home() {
             </div>
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div>
-                <h3 className="text-2xl font-extrabold">Ready to see true ROAS?</h3>
+                <h3 className="text-2xl font-extrabold">Ready to fix your tracking?</h3>
                 <p className="text-white/80">
-                  Open your analytics and review ads & attribution now.
+                  Launch Attribix and see tracking, attribution and analytics in one place.
                 </p>
               </div>
-              <MagneticButton href="/login">Launch Analytics</MagneticButton>
+              <MagneticButton href="/login">Launch Attribix</MagneticButton>
             </div>
           </NeonCard>
         </Reveal>
@@ -1556,6 +1611,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer id="contact" className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 py-8 text-sm text-white/60 flex items-center justify-between">
+          {/* footer logo now also links home */}
           <Link href="/" className="flex items-center gap-2">
             <Image src="/assets/logo.svg" alt="Attribix" width={20} height={20} />
             <span>Attribix</span>
