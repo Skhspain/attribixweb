@@ -1,4 +1,3 @@
-// src/app/pricing/page.tsx
 "use client";
 
 import React from "react";
@@ -13,10 +12,10 @@ export default function PricingPage() {
       {/* Nav – same structure as main page */}
       <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/20">
         <div className="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <Image src="/assets/logo.svg" alt="Attribix" width={24} height={24} />
             <span className="font-semibold">Attribix</span>
-          </div>
+          </Link>
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -53,7 +52,7 @@ export default function PricingPage() {
           <button
             type="button"
             className="md:hidden inline-flex items-center justify-center rounded-full border border-white/20 bg-black/40 px-3 py-2 text-xs font-medium text-white/80 hover:bg-white/10"
-            onClick={() => setMobileOpen((v) => !v)}
+            onClick={() => setMobileOpen(v => !v)}
             aria-label="Toggle navigation"
           >
             <span className="mr-1">Menu</span>

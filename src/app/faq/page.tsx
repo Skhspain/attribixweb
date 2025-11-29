@@ -1,4 +1,3 @@
-// src/app/faq/page.tsx
 "use client";
 
 import React from "react";
@@ -19,22 +18,22 @@ export default function FAQPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": items.map(i => ({
+    mainEntity: items.map(i => ({
       "@type": "Question",
-      "name": i.q,
-      "acceptedAnswer": { "@type": "Answer", "text": i.a }
-    }))
+      name: i.q,
+      acceptedAnswer: { "@type": "Answer", text: i.a },
+    })),
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0F0620] via-[#0E1530] to-[#053B56] text-white">
-      {/* Nav (same as homepage) */}
+      {/* Nav (aligned with homepage) */}
       <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/20">
         <div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <Image src="/assets/logo.svg" alt="Attribix" width={28} height={28} />
             <span className="font-semibold">Attribix</span>
-          </div>
+          </Link>
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm">
@@ -71,7 +70,7 @@ export default function FAQPage() {
           <button
             type="button"
             className="md:hidden inline-flex items-center justify-center rounded-full border border-white/20 bg-black/40 px-3 py-2 text-xs font-medium text-white/80 hover:bg-white/10"
-            onClick={() => setMobileOpen((v) => !v)}
+            onClick={() => setMobileOpen(v => !v)}
             aria-label="Toggle navigation"
           >
             <span className="mr-1">Menu</span>

@@ -539,16 +539,14 @@ function CaseStudies({ items }: { items: CaseItem[] }) {
 }
 
 /* -----------------------------------------------------
-   Wave divider (soft, elegant glow instead of hard band)
+   Wave divider (soft glow)
 ----------------------------------------------------- */
 function WaveDivider() {
   return (
     <div className="relative h-16 -mb-8">
-      {/* subtle soft glow */}
       <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2">
         <div className="mx-auto h-10 max-w-5xl rounded-full bg-gradient-to-r from-cyan-400/0 via-cyan-400/18 to-cyan-400/0 blur-2xl opacity-80" />
       </div>
-      {/* faint separator line to give structure */}
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-white/0 via-white/8 to-white/0" />
     </div>
   );
@@ -583,7 +581,7 @@ function Sparkline({ w = 72, h = 22 }: { w?: number; h?: number }) {
 }
 
 /* -----------------------------------------------------
-   Animated number (continuous from previous value)
+   Animated number
 ----------------------------------------------------- */
 function Counter({
   from = 0,
@@ -598,7 +596,7 @@ function Counter({
   to: number;
   duration?: number;
   decimals?: number;
-  restartKey?: number; // bump this to re-animate
+  restartKey?: number;
   prefix?: string;
   suffix?: string;
 }) {
@@ -609,7 +607,7 @@ function Counter({
     let raf = 0;
     const start = performance.now();
     const d = Math.max(300, duration);
-    const startVal = prevTo.current; // animate from last end value
+    const startVal = prevTo.current;
     const endVal = to;
 
     const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
@@ -622,7 +620,7 @@ function Counter({
       if (t < 1) {
         raf = requestAnimationFrame(tick);
       } else {
-        prevTo.current = endVal; // lock in for next run
+        prevTo.current = endVal;
       }
     };
 
@@ -673,7 +671,7 @@ function KPICard({
 }
 
 /* -----------------------------------------------------
-   Hero Attribution Chart (looping, KPIs update per event)
+   Hero Attribution Chart
 ----------------------------------------------------- */
 type Bubble = { id: number; bar: number; label: string; cls: string; lane: number; life: number };
 function HeroAttributionChart() {
@@ -685,7 +683,6 @@ function HeroAttributionChart() {
   const [bubbles, setBubbles] = React.useState<Bubble[]>([]);
   const nextId = React.useRef(0);
 
-  // KPI step progression + pulse
   const [step, setStep] = React.useState(0);
   const [loopKey, setLoopKey] = React.useState(0);
   const [pulseKey, setPulseKey] = React.useState(0);
@@ -714,7 +711,6 @@ function HeroAttributionChart() {
     const runCycle = () => {
       if (cancelled) return;
 
-      // generate new smooth targets
       const targets: number[] = [];
       let v = 22 + Math.random() * 5;
       for (let i = 0; i < BAR_COUNT; i++) {
@@ -741,7 +737,6 @@ function HeroAttributionChart() {
           return;
         }
 
-        // animate bar i
         setHeights((prev) => {
           const copy = prev.slice();
           copy[i] = targets[i];
@@ -749,7 +744,6 @@ function HeroAttributionChart() {
         });
         setRevealed(i + 1);
 
-        // bubble event
         const plat = PLATFORMS[i % PLATFORMS.length];
         const id = nextId.current++;
         const lane = i % LANES;
@@ -772,7 +766,6 @@ function HeroAttributionChart() {
           setBubbles((prev) => prev.filter((b) => b.id !== id));
         }, life);
 
-        // advance KPI step + pulse
         setStep(i + 1);
         setPulseKey((k) => k + 1);
 
@@ -788,7 +781,6 @@ function HeroAttributionChart() {
     };
   }, []);
 
-  // KPI baselines and goals
   const roasFrom = 3.2,
     roasTo = 11.0;
   const purFrom = 180,
@@ -796,29 +788,24 @@ function HeroAttributionChart() {
   const cppFrom = 19.0,
     cppTo = 3.0;
 
-  // progress and interpolated values
   const p = Math.min(1, step / BAR_COUNT);
   const roasNow = roasFrom + (roasTo - roasFrom) * p;
   const purNow = Math.round(purFrom + (purTo - purFrom) * p);
   const cppNow = cppFrom + (cppTo - cppFrom) * p;
 
-  // deltas vs baseline (rounded)
   const roasDeltaNow = Math.round((roasNow / roasFrom - 1) * 100);
   const purDeltaNow = Math.round((purNow / purFrom - 1) * 100);
   const cppDeltaNow = Math.round((cppFrom / cppNow - 1) * 100);
 
-  // SSR-safe read
   const barEase =
     typeof window !== "undefined" && (window as any).__BAR_EASE_MS__
       ? (window as any).__BAR_EASE_MS__
       : 900;
 
-  // make Counter re-run each tick (but it starts from previous value now)
   const kRestart = loopKey * 1000 + step;
 
   return (
     <div className="relative overflow-visible">
-      {/* subtle animated glow behind the whole card */}
       <div
         aria-hidden
         className="pointer-events-none absolute -inset-10 -z-10 rounded-[28px] opacity-60 blur-2xl"
@@ -829,10 +816,8 @@ function HeroAttributionChart() {
         }}
       />
 
-      {/* top "search" pill */}
       <div className="h-6 w-40 rounded bg-white/10" />
 
-      {/* KPIs */}
       <div className="mt-4 grid grid-cols-3 gap-3">
         <div className="rounded-xl border border-white/10 bg-white/5 p-3">
           <div className="flex items-center gap-2">
@@ -905,7 +890,6 @@ function HeroAttributionChart() {
         </div>
       </div>
 
-      {/* Bars + bubbles */}
       <div className="relative mt-4 overflow-visible">
         <div
           className="h-44 rounded-xl border border-white/10 bg-white/5 px-3 pt-3 pb-2 relative overflow-visible grid items-end"
@@ -929,7 +913,6 @@ function HeroAttributionChart() {
             />
           ))}
 
-          {/* floating purchases */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 top-0 overflow-visible">
             {bubbles.map((b) => {
               const leftPct = Math.max(
@@ -961,7 +944,6 @@ function HeroAttributionChart() {
         </div>
       </div>
 
-      {/* Local CSS for animations */}
       <style jsx>{`
         @keyframes bubbleFade {
           0% {
@@ -1113,10 +1095,11 @@ export default function Home() {
       {/* NAV */}
       <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/20">
         <div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          {/* LOGO */}
+          <Link href="/" className="flex items-center gap-2">
             <Image src="/assets/logo.svg" alt="Attribix" width={28} height={28} />
             <span className="font-semibold">Attribix</span>
-          </div>
+          </Link>
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm">
@@ -1168,9 +1151,13 @@ export default function Home() {
               >
                 Log in
               </Link>
-              <MagneticButton href="/book-demo" className="text-sm px-4 py-2">
+              {/* ✅ Book demo button now matches Pricing page style */}
+              <Link
+                href="/book-demo"
+                className="rounded-full bg-white px-4 py-2 text-sm font-medium text-black shadow-md hover:bg-neutral-200 transition"
+              >
                 Book demo
-              </MagneticButton>
+              </Link>
             </div>
           </nav>
 
@@ -1569,10 +1556,10 @@ export default function Home() {
       {/* FOOTER */}
       <footer id="contact" className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 py-8 text-sm text-white/60 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <Image src="/assets/logo.svg" alt="Attribix" width={20} height={20} />
             <span>Attribix</span>
-          </div>
+          </Link>
           <div className="flex gap-4">
             <CopyEmail email="hello@attribix.app" />
             <a href="/privacy" className="hover:text-white/90">

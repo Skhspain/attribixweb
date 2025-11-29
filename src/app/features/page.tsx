@@ -1,4 +1,3 @@
-// src/app/features/page.tsx
 "use client";
 
 import React from "react";
@@ -14,9 +13,17 @@ function cx(...xs: Array<string | false | null | undefined>) {
 const nf0 = (n: number) => n.toLocaleString(undefined, { maximumFractionDigits: 0 });
 const nf2 = (n: number) => n.toLocaleString(undefined, { maximumFractionDigits: 2 });
 const money0 = (n: number) =>
-  n.toLocaleString(undefined, { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+  n.toLocaleString(undefined, {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  });
 const money2 = (n: number) =>
-  n.toLocaleString(undefined, { style: "currency", currency: "USD", maximumFractionDigits: 2 });
+  n.toLocaleString(undefined, {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 2,
+  });
 
 /* -----------------------------------------------------
    Tiny counter (ints) so numbers feel alive
@@ -166,21 +173,20 @@ function usePlayground() {
   // Ensure allocations sum to ~100 when one changes
   const setAllocOne = (k: PlatformKey, valPct: number) => {
     const v = Math.max(0, Math.min(100, valPct));
-    const others = (Object.keys(alloc) as PlatformKey[]).filter((x) => x !== k);
+    const others = (Object.keys(alloc) as PlatformKey[]).filter(x => x !== k);
     const rest = 100 - v;
     const currSumOthers = others.reduce((s, x) => s + alloc[x], 0);
     const next: Record<PlatformKey, number> = { ...alloc, [k]: v };
     // spread remainder proportionally
-    others.forEach((x) => {
+    others.forEach(x => {
       const share = currSumOthers > 0 ? alloc[x] / currSumOthers : 1 / others.length;
       next[x] = Math.max(0, Math.round(rest * share));
     });
     // fix rounding drift
     const drift = 100 - (next.meta + next.google + next.tiktok);
     if (drift !== 0) {
-      // put drift on the largest bucket among others
       const tgt =
-        [k, ...others].sort((a, b) => next[b] - next[a]).find((x) => x !== k) || others[0];
+        [k, ...others].sort((a, b) => next[b] - next[a]).find(x => x !== k) || others[0];
       next[tgt] = Math.max(0, next[tgt] + drift);
     }
     setAlloc(next);
@@ -193,7 +199,7 @@ function usePlayground() {
   let revenue = 0;
   let purchases = 0;
 
-  platforms.forEach((p) => {
+  platforms.forEach(p => {
     const spend = budget * (alloc[p.key] / 100);
     const warmSpend = spend * (mixWarm / 100);
     const newSpend = spend * (mixNew / 100);
@@ -218,7 +224,7 @@ function usePlayground() {
     let r = 0;
     let pu = 0;
     const mw = 100 - baseMixNew;
-    platforms.forEach((p) => {
+    platforms.forEach(p => {
       const s = baseBudget * (baseAlloc[p.key] / 100);
       const ws = s * (mw / 100);
       const ns = s * (baseMixNew / 100);
@@ -252,7 +258,6 @@ function usePlayground() {
    KPI Chip helper
 ----------------------------------------------------- */
 function DeltaChip({ value, goodIsDown = false }: { value: number; goodIsDown?: boolean }) {
-  // Downward (smaller) can be good for CPP, so allow green when value < 0 if goodIsDown = true
   const good = goodIsDown ? value < 0 : value > 0;
   const cls = good
     ? "bg-emerald-500/15 text-emerald-300 border-emerald-400/20"
@@ -271,7 +276,6 @@ function DeltaChip({ value, goodIsDown = false }: { value: number; goodIsDown?: 
 function Playground() {
   const pg = usePlayground();
 
-  // deltas vs base
   const dROAS = ((pg.blendedROAS / pg.base.roas - 1) * 100) || 0;
   const dCPP = ((pg.blendedCPP / pg.base.cpp - 1) * 100) || 0;
   const dPUR = ((pg.purchases / pg.base.pur - 1) * 100) || 0;
@@ -331,7 +335,7 @@ function Playground() {
               max={100}
               step={1}
               value={pg.mixNew}
-              onChange={(e) => pg.setMixNew(Number(e.target.value))}
+              onChange={e => pg.setMixNew(Number(e.target.value))}
               className="w-full accent-indigo-400"
               aria-label="Budget mix slider"
             />
@@ -356,7 +360,7 @@ function Playground() {
               max={250000}
               step={500}
               value={pg.budget}
-              onChange={(e) => pg.setBudget(Number(e.target.value))}
+              onChange={e => pg.setBudget(Number(e.target.value))}
               className="w-full accent-cyan-400"
               aria-label="Monthly ad budget"
             />
@@ -365,7 +369,7 @@ function Playground() {
                 className="w-full rounded-md bg-black/20 border border-white/10 px-2 py-1 text-sm"
                 type="number"
                 value={pg.budget}
-                onChange={(e) => pg.setBudget(Math.max(0, Number(e.target.value || 0)))}
+                onChange={e => pg.setBudget(Math.max(0, Number(e.target.value || 0)))}
               />
               <span className="text-xs text-white/60">USD</span>
             </div>
@@ -382,7 +386,7 @@ function Playground() {
       <div className="mt-4 rounded-2xl border border-white/10 bg-white/5 p-3">
         <div className="text-xs text-white/70 mb-2">Split across platforms</div>
         <div className="grid gap-3 sm:grid-cols-3">
-          {pg.platforms.map((p) => (
+          {pg.platforms.map(p => (
             <div key={p.key} className="rounded-xl border border-white/10 bg-white/5 p-3">
               <div className="flex items-center justify-between">
                 <div className="font-medium text-sm">{p.name}</div>
@@ -394,7 +398,7 @@ function Playground() {
                 max={100}
                 step={1}
                 value={pg.alloc[p.key]}
-                onChange={(e) => pg.setAllocOne(p.key, Number(e.target.value))}
+                onChange={e => pg.setAllocOne(p.key, Number(e.target.value))}
                 className="mt-2 w-full accent-cyan-400"
                 aria-label={`${p.name} allocation`}
               />
@@ -422,7 +426,7 @@ function Playground() {
         <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
           <div className="text-xs text-white/70 mb-1">Attribution model</div>
           <div className="flex flex-wrap gap-2">
-            {(["last", "first", "linear", "decay"] as ModelKind[]).map((m) => (
+            {(["last", "first", "linear", "decay"] as ModelKind[]).map(m => (
               <button
                 key={m}
                 onClick={() => pg.setModel(m)}
@@ -430,7 +434,7 @@ function Playground() {
                   "px-3 py-1.5 rounded-lg border text-sm transition",
                   pg.model === m
                     ? "border-cyan-400/40 bg-cyan-400/15"
-                    : "border-white/10 hover:bg-white/5"
+                    : "border-white/10 hover:bg-white/5",
                 )}
                 title={modelLabel(m)}
               >
@@ -475,10 +479,10 @@ export default function FeaturesPage() {
       {/* Nav – aligned with main page menu */}
       <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/20">
         <div className="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <Image alt="Attribix" src="/assets/logo.svg" width={24} height={24} />
             <span className="font-semibold">Attribix</span>
-          </div>
+          </Link>
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -515,7 +519,7 @@ export default function FeaturesPage() {
           <button
             type="button"
             className="md:hidden inline-flex items-center justify-center rounded-full border border-white/20 bg-black/40 px-3 py-2 text-xs font-medium text-white/80 hover:bg-white/10"
-            onClick={() => setMobileOpen((v) => !v)}
+            onClick={() => setMobileOpen(v => !v)}
             aria-label="Toggle navigation"
           >
             <span className="mr-1">Menu</span>
@@ -608,7 +612,7 @@ export default function FeaturesPage() {
                   t: "Time-decay",
                   d: "Gives a bit more weight to recent touches — closer to purchase gets slightly more credit.",
                 },
-              ].map((c) => (
+              ].map(c => (
                 <div key={c.t} className="rounded-2xl border border-white/10 bg-white/5 p-4">
                   <div className="font-semibold">{c.t}</div>
                   <p className="text-sm text-white/70 mt-1">{c.d}</p>
@@ -644,10 +648,10 @@ export default function FeaturesPage() {
       {/* Footer */}
       <footer className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 py-8 text-sm text-white/60 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <Image src="/assets/logo.svg" alt="Attribix" width={20} height={20} />
             <span>Attribix</span>
-          </div>
+          </Link>
           <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-white/90">
               Privacy
