@@ -1,14 +1,10 @@
+// src/app/book-demo/page.tsx
 "use client";
 
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import BookDemoForm from "../../components/BookDemoForm";
-
-export const metadata = {
-  title: "Book a demo | Attribix",
-  description: "Book a live walkthrough of Attribix and get a tailored tracking plan.",
-};
 
 export default function BookDemoPage() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
