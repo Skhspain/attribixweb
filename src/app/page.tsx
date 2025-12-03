@@ -258,7 +258,6 @@ function Constellation() {
       if (!rafRef.current) rafRef.current = requestAnimationFrame(step);
     }
 
-    // Idle start
     const idleHandle: any =
       (window as any).requestIdleCallback
         ? (window as any).requestIdleCallback(start, { timeout: 1500 })
@@ -319,6 +318,23 @@ function Constellation() {
 }
 
 /* -----------------------------------------------------
+   Global grain / noise overlay
+----------------------------------------------------- */
+function NoiseOverlay() {
+  return (
+    <div
+      aria-hidden
+      className="pointer-events-none fixed inset-0 -z-30 opacity-[0.16] mix-blend-soft-light"
+      style={{
+        backgroundImage:
+          "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.13) 1px, transparent 0)",
+        backgroundSize: "3px 3px",
+      }}
+    />
+  );
+}
+
+/* -----------------------------------------------------
    3D Tilt + Neon/glass cards
 ----------------------------------------------------- */
 function TiltCard({
@@ -344,7 +360,8 @@ function TiltCard({
   }
   function onLeave() {
     const el = ref.current!;
-    el.style.transform = "perspective(900px) rotateX(0deg) rotateY(0deg) scale(1)";
+    el.style.transform =
+      "perspective(900px) rotateX(0deg) rotateY(0deg) scale(1)";
   }
   return (
     <div
@@ -373,6 +390,7 @@ function NeonCard({
         "relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm",
         "before:absolute before:inset-0 before:-z-10 before:rounded-[18px]",
         "before:bg-[radial-gradient(120px_60px_at_var(--mx,50%)_-20px,rgba(56,189,248,.25),transparent)]",
+        "after:absolute after:left-6 after:right-6 after:-bottom-5 after:h-8 after:rounded-full after:bg-cyan-400/10 after:blur-2xl after:opacity-60 after:-z-10",
         "transition-shadow duration-300 hover:shadow-[0_8px_40px_rgba(56,189,248,0.15)]",
         className
       )}
@@ -505,6 +523,43 @@ function Marquee({ items }: { items: MarqueeItem[] }) {
 }
 
 /* -----------------------------------------------------
+   Metrics strip (unused now, but kept in case)
+----------------------------------------------------- */
+function MetricsStrip() {
+  const reduce = usePrefersReducedMotion();
+  const metrics = [
+    "+36% tracked sales",
+    "CPP down 41%",
+    "ROAS 3.2 → 6.8",
+    "Fewer lost sales",
+    "Server-side + pixel together",
+    "Model-ready data",
+  ];
+  const list = [...metrics, ...metrics];
+  return (
+    <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5/80 backdrop-blur-sm">
+      <div
+        className="flex gap-8 py-3 px-4 text-xs sm:text-sm text-white/80 whitespace-nowrap will-change-transform"
+        style={
+          reduce
+            ? undefined
+            : {
+                animation: "metricsMarquee 30s linear infinite",
+              }
+        }
+      >
+        {list.map((m, i) => (
+          <div key={i} className="flex items-center gap-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+            <span>{m}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* -----------------------------------------------------
    Case studies grid
 ----------------------------------------------------- */
 type CaseItem = { brand: string; metric: string; summary: string; image?: string };
@@ -544,11 +599,9 @@ function CaseStudies({ items }: { items: CaseItem[] }) {
 function WaveDivider() {
   return (
     <div className="relative h-16 -mb-8">
-      {/* subtle soft glow */}
       <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2">
         <div className="mx-auto h-10 max-w-5xl rounded-full bg-gradient-to-r from-cyan-400/0 via-cyan-400/18 to-cyan-400/0 blur-2xl opacity-80" />
       </div>
-      {/* faint separator line to give structure */}
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-white/0 via-white/8 to-white/0" />
     </div>
   );
@@ -563,7 +616,10 @@ function Sparkline({ w = 72, h = 22 }: { w?: number; h?: number }) {
     const pts = Array.from({ length: 14 }, (_, i) => {
       const x = (i / (14 - 1)) * w;
       const y =
-        h - ((Math.sin(i * 0.7) + 1) / 2) * (h - 4) - 2 + (Math.random() * 2 - 1);
+        h -
+        ((Math.sin(i * 0.7) + 1) / 2) * (h - 4) -
+        2 +
+        (Math.random() * 2 - 1);
       return [x, y] as const;
     });
     const d = "M" + pts.map((p) => p.join(",")).join(" L ");
@@ -598,7 +654,7 @@ function Counter({
   to: number;
   duration?: number;
   decimals?: number;
-  restartKey?: number; // bump this to re-animate
+  restartKey?: number;
   prefix?: string;
   suffix?: string;
 }) {
@@ -609,7 +665,7 @@ function Counter({
     let raf = 0;
     const start = performance.now();
     const d = Math.max(300, duration);
-    const startVal = prevTo.current; // animate from last end value
+    const startVal = prevTo.current;
     const endVal = to;
 
     const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
@@ -622,7 +678,7 @@ function Counter({
       if (t < 1) {
         raf = requestAnimationFrame(tick);
       } else {
-        prevTo.current = endVal; // lock in for next run
+        prevTo.current = endVal;
       }
     };
 
@@ -675,7 +731,14 @@ function KPICard({
 /* -----------------------------------------------------
    Hero Attribution Chart (looping, KPIs update per event)
 ----------------------------------------------------- */
-type Bubble = { id: number; bar: number; label: string; cls: string; lane: number; life: number };
+type Bubble = {
+  id: number;
+  bar: number;
+  label: string;
+  cls: string;
+  lane: number;
+  life: number;
+};
 function HeroAttributionChart() {
   const BAR_COUNT = 36;
   const [heights, setHeights] = React.useState<number[]>(
@@ -685,7 +748,6 @@ function HeroAttributionChart() {
   const [bubbles, setBubbles] = React.useState<Bubble[]>([]);
   const nextId = React.useRef(0);
 
-  // KPI step progression + pulse
   const [step, setStep] = React.useState(0);
   const [loopKey, setLoopKey] = React.useState(0);
   const [pulseKey, setPulseKey] = React.useState(0);
@@ -714,7 +776,6 @@ function HeroAttributionChart() {
     const runCycle = () => {
       if (cancelled) return;
 
-      // generate new smooth targets
       const targets: number[] = [];
       let v = 22 + Math.random() * 5;
       for (let i = 0; i < BAR_COUNT; i++) {
@@ -741,7 +802,6 @@ function HeroAttributionChart() {
           return;
         }
 
-        // animate bar i
         setHeights((prev) => {
           const copy = prev.slice();
           copy[i] = targets[i];
@@ -749,7 +809,6 @@ function HeroAttributionChart() {
         });
         setRevealed(i + 1);
 
-        // bubble event
         const plat = PLATFORMS[i % PLATFORMS.length];
         const id = nextId.current++;
         const lane = i % LANES;
@@ -761,7 +820,9 @@ function HeroAttributionChart() {
             {
               id,
               bar: i,
-              label: `${plat.name}: +${Math.random() < 0.75 ? 1 : 2} Purchase`,
+              label: `${plat.name}: +${
+                Math.random() < 0.75 ? 1 : 2
+              } Purchase`,
               cls: plat.cls,
               lane,
               life,
@@ -772,7 +833,6 @@ function HeroAttributionChart() {
           setBubbles((prev) => prev.filter((b) => b.id !== id));
         }, life);
 
-        // advance KPI step + pulse
         setStep(i + 1);
         setPulseKey((k) => k + 1);
 
@@ -788,7 +848,6 @@ function HeroAttributionChart() {
     };
   }, []);
 
-  // KPI baselines and goals
   const roasFrom = 3.2,
     roasTo = 11.0;
   const purFrom = 180,
@@ -796,29 +855,24 @@ function HeroAttributionChart() {
   const cppFrom = 19.0,
     cppTo = 3.0;
 
-  // progress and interpolated values
   const p = Math.min(1, step / BAR_COUNT);
   const roasNow = roasFrom + (roasTo - roasFrom) * p;
   const purNow = Math.round(purFrom + (purTo - purFrom) * p);
   const cppNow = cppFrom + (cppTo - cppFrom) * p;
 
-  // deltas vs baseline (rounded)
   const roasDeltaNow = Math.round((roasNow / roasFrom - 1) * 100);
   const purDeltaNow = Math.round((purNow / purFrom - 1) * 100);
   const cppDeltaNow = Math.round((cppFrom / cppNow - 1) * 100);
 
-  // SSR-safe read
   const barEase =
     typeof window !== "undefined" && (window as any).__BAR_EASE_MS__
       ? (window as any).__BAR_EASE_MS__
       : 900;
 
-  // make Counter re-run each tick (but it starts from previous value now)
   const kRestart = loopKey * 1000 + step;
 
   return (
     <div className="relative overflow-visible">
-      {/* subtle animated glow behind the whole card */}
       <div
         aria-hidden
         className="pointer-events-none absolute -inset-10 -z-10 rounded-[28px] opacity-60 blur-2xl"
@@ -829,10 +883,8 @@ function HeroAttributionChart() {
         }}
       />
 
-      {/* top "search" pill */}
       <div className="h-6 w-40 rounded bg-white/10" />
 
-      {/* KPIs */}
       <div className="mt-4 grid grid-cols-3 gap-3">
         <div className="rounded-xl border border-white/10 bg-white/5 p-3">
           <div className="flex items-center gap-2">
@@ -905,7 +957,6 @@ function HeroAttributionChart() {
         </div>
       </div>
 
-      {/* Bars + bubbles */}
       <div className="relative mt-4 overflow-visible">
         <div
           className="h-44 rounded-xl border border-white/10 bg-white/5 px-3 pt-3 pb-2 relative overflow-visible grid items-end"
@@ -929,7 +980,6 @@ function HeroAttributionChart() {
             />
           ))}
 
-          {/* floating purchases */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 top-0 overflow-visible">
             {bubbles.map((b) => {
               const leftPct = Math.max(
@@ -961,7 +1011,6 @@ function HeroAttributionChart() {
         </div>
       </div>
 
-      {/* Local CSS for animations */}
       <style jsx>{`
         @keyframes bubbleFade {
           0% {
@@ -1018,7 +1067,7 @@ function HeroAttributionChart() {
 function SectionTitle({ children, id }: { children: React.ReactNode; id?: string }) {
   return (
     <div id={id} className="sticky top-16 z-10 mb-6">
-      <h2 className="relative inline-block text-3xl md:text-4xl font-extrabold">
+      <h2 className="relative inline-block text-3xl md:text-4xl font-extrabold animate-sectionTitle">
         {children}
         <span className="absolute -bottom-2 left-0 h-[3px] w-full rounded-full bg-gradient-to-r from-cyan-400/0 via-cyan-400/60 to-cyan-400/0" />
       </h2>
@@ -1064,7 +1113,9 @@ function CopyEmail({ email }: { email: string }) {
           await navigator.clipboard.writeText(email);
           setOk(true);
           setTimeout(() => setOk(false), 1200);
-        } catch {}
+        } catch {
+          // ignore
+        }
       }}
       className="hover:text-white/90 underline underline-offset-4"
       aria-label={`Copy ${email}`}
@@ -1109,11 +1160,11 @@ export default function Home() {
       <CursorSpotlight />
       <Aurora />
       <Constellation />
+      <NoiseOverlay />
 
       {/* NAV */}
       <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/20">
         <div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
-          {/* LOGO: now clickable to home */}
           <Link href="/" className="flex items-center gap-2">
             <Image src="/assets/logo.svg" alt="Attribix" width={28} height={28} />
             <span className="font-semibold">Attribix</span>
@@ -1169,10 +1220,12 @@ export default function Home() {
               >
                 Log in
               </Link>
-              {/* slimmer Book demo style (matches pricing page look) */}
-              <MagneticButton href="/book-demo" className="text-sm px-4 py-2">
+              <Link
+                href="/book-demo"
+                className="rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/20 backdrop-blur transition"
+              >
                 Book demo
-              </MagneticButton>
+              </Link>
             </div>
           </nav>
 
@@ -1249,24 +1302,24 @@ export default function Home() {
         <div className="grid items-start gap-10 md:grid-cols-2">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs">
-              New — Tracking, Attribution & Analytics
+              New — Ads Review & Attribution
             </p>
             <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.05]">
               Smarter{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] via-[#2563EB] to-[#06B6D4]">
-                Tracking
+                Attribution
               </span>
               .<br className="hidden md:block" />
-              Honest{" "}
+              Bigger{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#06B6D4] via-[#22D3EE] to-[#60A5FA]">
-                Attribution
+                Impact
               </span>
               .
             </h1>
             <p className="mt-5 text-base sm:text-lg text-white/80 max-w-xl">
-              Attribix replaces broken pixel data with a first-party tracking layer, server-side
-              events and clear attribution. See which channels actually drive revenue – then use
-              the analytics to scale what works.
+              Pixels were not built for today’s privacy rules. Attribix sits between your
+              store and the ad platforms, captures server-side events the pixels miss,
+              and shows you which ads actually drive revenue.
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -1286,6 +1339,18 @@ export default function Home() {
 
           <div className="relative mt-6 md:mt-0">
             <div className="absolute -inset-6 rounded-3xl bg-cyan-400/20 blur-2xl" />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -top-12 -right-10 h-40 w-40 rounded-full bg-cyan-400/35 blur-3xl opacity-70"
+              style={{ animation: "parallaxDrift 24s ease-in-out infinite alternate" }}
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute bottom-[-40px] left-[-30px] h-32 w-56 rounded-full bg-fuchsia-500/25 blur-3xl opacity-70"
+              style={{
+                animation: "parallaxDriftSlow 30s ease-in-out infinite alternate",
+              }}
+            />
             <div className="relative rounded-3xl border border-white/15 bg-white/5 backdrop-blur-sm p-4 shadow-2xl">
               <HeroAttributionChart />
             </div>
@@ -1295,57 +1360,114 @@ export default function Home() {
         <DemoModal open={showDemo} onClose={() => setShowDemo(false)} />
       </section>
 
-      {/* TRACKING LAYER SECTION (wetracked-style positioning) */}
-      <section className="relative mx-auto max-w-7xl px-4 pb-12">
-        <div className="rounded-2xl border border-white/10 bg-white/5 px-5 py-6 md:px-8 md:py-7 flex flex-col md:flex-row gap-6 items-start md:items-center">
-          <div className="flex-1">
-            <h2 className="text-xl md:text-2xl font-semibold">
-              A tracking layer built for modern ads
-            </h2>
-            <p className="mt-2 text-sm md:text-base text-white/75 max-w-2xl">
-              Attribix sits between your store and the ad platforms. We track visitors with
-              first-party cookies, send clean events server-side and only then calculate
-              attribution and ROAS.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs md:text-sm w-full md:w-auto">
-            <div className="rounded-xl border border-white/15 bg-black/20 p-3">
-              <div className="font-medium mb-1">First-party IDs</div>
-              <p className="text-white/65">
-                Session + customer IDs that survive ITP, adblockers and cross-device journeys.
+      {/* TRACKING + PROOF SECTION (replaces logo cloud + ticker) */}
+      <section className="relative mx-auto max-w-7xl px-4 pb-10 md:pb-16">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.18]"
+          style={{
+            background:
+              "radial-gradient(700px 260px at 0% 0%, rgba(34,211,238,0.35), transparent 60%), radial-gradient(700px 260px at 100% 100%, rgba(147,51,234,0.35), transparent 60%)",
+          }}
+        />
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1.1fr)] items-start">
+          <Reveal>
+            <NeonCard className="p-6 md:p-7" tilt={false}>
+              <div className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300/80">
+                Tracking layer
+              </div>
+              <h2 className="mt-3 text-2xl md:text-3xl font-extrabold">
+                Track more of the sales you&apos;re already getting.
+              </h2>
+              <p className="mt-3 text-sm md:text-base text-white/80">
+                Platform pixels miss a scary amount of sales — ad-blockers, iOS, slow
+                browsers, blocked cookies. Attribix pairs browser pixels with{" "}
+                <b>server-side events and first-party IDs</b>, so you see the true sales
+                picture, not just what the platforms choose to show.
               </p>
-            </div>
-            <div className="rounded-xl border border-white/15 bg-black/20 p-3">
-              <div className="font-medium mb-1">Server-side events</div>
-              <p className="text-white/65">
-                Purchases and key events sent via CAPI with deduping against your pixels.
+              <ul className="mt-4 space-y-2 text-sm text-white/80">
+                <li>✓ Server-side + pixel events with smart de-duplication.</li>
+                <li>✓ Better coverage on iOS and ad-blocked traffic.</li>
+                <li>✓ Automatic tracking checks when something breaks.</li>
+                <li>✓ Clean, model-ready events for attribution and reporting.</li>
+              </ul>
+              <p className="mt-4 text-xs text-white/60">
+                Goal: tracking that&apos;s as close as possible to reality — so every
+                budget decision is based on real sales, not guesswork.
               </p>
-            </div>
-            <div className="rounded-xl border border-white/15 bg-black/20 p-3">
-              <div className="font-medium mb-1">Model-ready data</div>
-              <p className="text-white/65">
-                Clean event stream you can run attribution models and reports on instantly.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+            </NeonCard>
+          </Reveal>
 
-      {/* LOGO CLOUD */}
-      <section className="relative mx-auto max-w-7xl px-4 py-10">
-        <Reveal>
-          <p className="text-center text-sm text-white/60 mb-6">
-            Trusted by growth-minded brands
-          </p>
-        </Reveal>
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-6 opacity-90">
-          {["Acme", "North", "Apex", "Tempo", "Nova", "Glow"].map((n, i) => (
-            <Reveal key={n} delay={i * 60}>
-              <NeonCard className="py-3 flex items-center justify-center">
-                <span className="text-white/70 text-sm">{n}</span>
-              </NeonCard>
-            </Reveal>
-          ))}
+          <Reveal delay={120}>
+            <div className="space-y-4">
+              <div className="text-xs text-white/60 uppercase tracking-[0.22em]">
+                Real-world impact
+              </div>
+              <div className="grid gap-4">
+                <NeonCard className="p-4 md:p-5">
+                  <div className="flex items-center justify-between gap-3">
+                    <div>
+                      <div className="text-xs text-white/60">Apex — fashion ecommerce</div>
+                      <div className="mt-1 text-sm font-semibold text-emerald-300">
+                        +22% more tracked sales
+                      </div>
+                    </div>
+                    <div className="text-right text-xs text-white/60">
+                      <div>Before: pixel only</div>
+                      <div>After: pixel + server-side</div>
+                    </div>
+                  </div>
+                  <p className="mt-3 text-xs md:text-sm text-white/75">
+                    Server-side events filled the gaps their pixels were missing. Same
+                    traffic, same spend — just more of the real sales finally showed up.
+                  </p>
+                </NeonCard>
+
+                <NeonCard className="p-4 md:p-5">
+                  <div className="flex items-center justify-between gap-3">
+                    <div>
+                      <div className="text-xs text-white/60">Tempo — DTC brand</div>
+                      <div className="mt-1 text-sm font-semibold text-emerald-300">
+                        ROAS 3.2 → 6.8
+                      </div>
+                    </div>
+                    <div className="text-right text-xs text-white/60">
+                      <div>Same budget</div>
+                      <div>Smarter allocation</div>
+                    </div>
+                  </div>
+                  <p className="mt-3 text-xs md:text-sm text-white/75">
+                    Once tracking was clean, it was obvious which channels and campaigns
+                    actually drove profit — so moving spend felt safe, not like a gamble.
+                  </p>
+                </NeonCard>
+
+                <NeonCard className="p-4 md:p-5">
+                  <div className="flex items-center justify-between gap-3">
+                    <div>
+                      <div className="text-xs text-white/60">Glow — beauty</div>
+                      <div className="mt-1 text-sm font-semibold text-emerald-300">
+                        Cost per sale ↓ 41%
+                      </div>
+                    </div>
+                    <div className="text-right text-xs text-white/60">
+                      <div>Kill the noise</div>
+                      <div>Feed the winners</div>
+                    </div>
+                  </div>
+                  <p className="mt-3 text-xs md:text-sm text-white/75">
+                    Honest reporting made it painless to kill weak ads and double down on
+                    what actually converted — without arguing over whose numbers were
+                    “right”.
+                  </p>
+                </NeonCard>
+              </div>
+              <p className="text-[11px] text-white/55">
+                These are examples, not promises. Pattern is the same: once tracking is
+                clean, scaling the right things gets much easier.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -1353,28 +1475,32 @@ export default function Home() {
 
       {/* FEATURES */}
       <section id="features" className="relative mx-auto max-w-7xl px-4 py-24">
-        <SectionTitle>Why teams pick Attribix</SectionTitle>
+        <SectionTitle>Why brands switch to Attribix</SectionTitle>
+        <p className="mt-2 text-white/70 max-w-2xl">
+          Real numbers. Real ROAS. Real results. Attribix cleans up tracking so your ad
+          decisions are based on truth — not broken pixels.
+        </p>
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {[
             {
-              t: "First-party tracking layer",
-              d: "Own your data with a lightweight script + server events instead of fragile browser pixels.",
-              icon: "🛰️",
+              t: "Clean tracking",
+              d: "Pixel + server-side tracking with de-duplication and privacy-safe capture.",
+              icon: "✨",
             },
             {
-              t: "Server-side events (CAPI)",
-              d: "Meta CAPI, Google, TikTok and more with deduplication and consent-aware capture.",
-              icon: "🔐",
-            },
-            {
-              t: "Attribution models",
-              d: "Last/First, Linear, Time-decay and position-based – all on top of clean data.",
+              t: "Honest attribution",
+              d: "See what actually drives revenue across channels — not just what gets last click.",
               icon: "🧭",
             },
             {
-              t: "Ads & analytics in one place",
-              d: "CPP, ROAS and revenue per ad with alerts when performance shifts.",
+              t: "Ads review that matters",
+              d: "CPP, ROAS and revenue by ad. Quickly see what to scale and what to cut.",
               icon: "📊",
+            },
+            {
+              t: "Decisions, not dashboards",
+              d: "Simple views that answer: where to spend more, where to stop, and what’s broken.",
+              icon: "⚡",
             },
           ].map((f, i) => (
             <Reveal key={f.t} delay={100 + i * 80}>
@@ -1397,7 +1523,15 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS MARQUEE */}
-      <section className="mx-auto max-w-7xl px-4 py-16">
+      <section className="relative mx-auto max-w-7xl px-4 py-16">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.12]"
+          style={{
+            backgroundImage:
+              "radial-gradient(700px 260px at 50% 0%, rgba(34,211,238,0.4), transparent 65%)",
+          }}
+        />
         <h3 className="text-2xl font-extrabold mb-4">Loved by performance teams</h3>
         <Marquee
           items={[
@@ -1428,93 +1562,135 @@ export default function Home() {
       <WaveDivider />
 
       {/* HOW IT WORKS */}
-      <section id="how" className="relative mx-auto max-w-7xl px-4 py-24">
-        <SectionTitle>Get value in 3 steps</SectionTitle>
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
-          {[
-            {
-              n: "1",
-              t: "Install the tracking layer",
-              d: "Drop the Attribix script or Shopify app and start sending clean events.",
-            },
-            {
-              n: "2",
-              t: "Connect ad platforms",
-              d: "Meta, Google, TikTok OAuth – we sync spend and conversions via pixels + CAPI.",
-            },
-            {
-              n: "3",
-              t: "Decide with clarity",
-              d: "Use attribution + analytics to kill waste and scale the winners.",
-            },
-          ].map((s, i) => (
-            <Reveal key={s.n} delay={100 + i * 100}>
-              <NeonCard className="p-5">
-                <TiltCard>
-                  <div className="text-4xl font-extrabold text-white/70">{s.n}</div>
-                  <div className="mt-3 text-lg font-semibold">{s.t}</div>
-                  <p className="mt-2 text-sm text-white/70">{s.d}</p>
-                </TiltCard>
-              </NeonCard>
-            </Reveal>
-          ))}
-        </div>
-        <div className="mx-auto mt-6 hidden md:block max-w-5xl">
-          <div className="h-0.5 w-full bg-gradient-to-r from-cyan-400/0 via-cyan-400/50 to-cyan-400/0" />
+      <section id="how" className="relative py-24">
+        <div className="absolute inset-0 -z-10 bg-black/25" />
+        <div className="mx-auto max-w-7xl px-4">
+          <SectionTitle>Get value in 3 steps</SectionTitle>
+
+          <div className="mt-8 rounded-3xl border border-white/10 bg-white/5/80 backdrop-blur-sm p-6 md:p-8">
+            <div className="grid gap-5 md:grid-cols-3">
+              {[
+                {
+                  n: "1",
+                  t: "Connect your store",
+                  d: "Install once on Shopify or WooCommerce. No fragile scripts or manual hacks.",
+                },
+                {
+                  n: "2",
+                  t: "Link ad platforms",
+                  d: "Connect Meta, Google and TikTok. We sync spend, conversions and server events.",
+                },
+                {
+                  n: "3",
+                  t: "Decide with clarity",
+                  d: "See which campaigns and creatives actually drive profit — then scale with confidence.",
+                },
+              ].map((s, i) => (
+                <Reveal key={s.n} delay={100 + i * 100}>
+                  <NeonCard className="p-5">
+                    <TiltCard>
+                      <div className="text-4xl font-extrabold text-white/70">{s.n}</div>
+                      <div className="mt-3 text-lg font-semibold">{s.t}</div>
+                      <p className="mt-2 text-sm text-white/70">{s.d}</p>
+                    </TiltCard>
+                  </NeonCard>
+                </Reveal>
+              ))}
+            </div>
+
+            <div className="mx-auto mt-6 hidden md:block max-w-5xl">
+              <div className="h-px w-full bg-gradient-to-r from-cyan-400/0 via-cyan-400/30 to-cyan-400/0" />
+            </div>
+          </div>
         </div>
       </section>
 
       {/* INTEGRATIONS */}
-      <section id="integrations" className="relative mx-auto max-w-7xl px-4 py-24">
-        <SectionTitle>Integrations</SectionTitle>
-        <p className="mt-2 text-white/70">
-          One click to connect your ad platforms and storefront.
-        </p>
-        <div className="mt-8 grid grid-cols-2 md:grid-cols-5 gap-4">
-          {["Meta", "Google", "TikTok", "Shopify", "WooCommerce"].map((n, i) => (
-            <Reveal key={n} delay={100 + i * 80}>
-              <NeonCard className="py-4 flex items-center justify-center group">
-                <TiltCard>
-                  <span className="text-sm text-white/80 group-hover:text-white transition">
-                    {n}
-                  </span>
-                </TiltCard>
-              </NeonCard>
-            </Reveal>
-          ))}
+      <section id="integrations" className="relative py-24">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 -z-10 opacity-25"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, rgba(148,163,184,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,0.08) 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
+        />
+        <div className="mx-auto max-w-7xl px-4">
+          <SectionTitle>Integrations</SectionTitle>
+          <p className="mt-2 text-white/70">
+            One click to connect your ad platforms and storefront.
+          </p>
+          <div className="mt-8 grid grid-cols-2 md:grid-cols-5 gap-4">
+            {["Meta", "Google", "TikTok", "Shopify", "WooCommerce"].map((n, i) => (
+              <Reveal key={n} delay={100 + i * 80}>
+                <NeonCard className="py-4 flex items-center justify-center group">
+                  <TiltCard>
+                    <span className="text-sm text-white/80 group-hover:text-white transition">
+                      {n}
+                    </span>
+                  </TiltCard>
+                </NeonCard>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       <WaveDivider />
 
       {/* CASE STUDIES */}
-      <section className="mx-auto max-w-7xl px-4 py-20">
-        <h3 className="text-2xl font-extrabold mb-4">Case studies</h3>
-        <CaseStudies
-          items={[
-            {
-              brand: "Apex",
-              metric: "+22% Purchases",
-              summary:
-                "Unified pixel + CAPI with de-dupe lifted tracked conversions.",
-            },
-            {
-              brand: "Tempo",
-              metric: "ROAS 3.2 → 6.8",
-              summary:
-                "Channel split + model comparison reallocated 34% of spend.",
-            },
-            {
-              brand: "Glow",
-              metric: "CPP ↓ 41%",
-              summary:
-                "Creative-level review surfaced winners and paused bleeders.",
-            },
-          ]}
-        />
+      <section className="relative py-20">
+        <div className="absolute inset-0 -z-10 bg-[#050819]/90" />
+        <div className="mx-auto max-w-7xl px-4">
+          <h3 className="text-2xl font-extrabold mb-2">
+            Know what works. Fix what doesn’t.
+          </h3>
+          <p className="text-white/70 max-w-2xl mb-8 text-sm">
+            These are examples, not guarantees. But the pattern is the same: once tracking
+            is clean, it’s easier to scale the right things.
+          </p>
+          <CaseStudies
+            items={[
+              {
+                brand: "Apex",
+                metric: "+22% tracked purchases",
+                summary: "Server-side events filled the gaps their pixels were missing.",
+              },
+              {
+                brand: "Tempo",
+                metric: "ROAS 3.2 → 6.8",
+                summary:
+                  "Channel split and model changes based on real, cleaned data.",
+              },
+              {
+                brand: "Glow",
+                metric: "CPP ↓ 41%",
+                summary:
+                  "Honest reporting made it obvious which ads to kill and which to push.",
+              },
+            ]}
+          />
+        </div>
       </section>
 
       <WaveDivider />
+
+      {/* SUMMARY STRIP BEFORE PRICING */}
+      <section className="relative py-6">
+        <div className="absolute inset-0 -z-10 bg-black/40" />
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-xs md:text-sm">
+            <p className="text-white/80">
+              Clean tracking → honest attribution → smarter decisions.
+            </p>
+            <p className="text-white/60">
+              Pixels were not built for today’s privacy rules. Attribix fills the gaps so
+              your ad data matches reality.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* PRICING */}
       <section id="pricing" className="relative mx-auto max-w-7xl px-4 py-24">
@@ -1597,12 +1773,13 @@ export default function Home() {
             </div>
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div>
-                <h3 className="text-2xl font-extrabold">Ready to fix your tracking?</h3>
+                <h3 className="text-2xl font-extrabold">Ready to see true ROAS?</h3>
                 <p className="text-white/80">
-                  Launch Attribix and see tracking, attribution and analytics in one place.
+                  Open your analytics and review ads, tracking and attribution in one
+                  place.
                 </p>
               </div>
-              <MagneticButton href="/login">Launch Attribix</MagneticButton>
+              <MagneticButton href="/login">Launch Analytics</MagneticButton>
             </div>
           </NeonCard>
         </Reveal>
@@ -1611,7 +1788,6 @@ export default function Home() {
       {/* FOOTER */}
       <footer id="contact" className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 py-8 text-sm text-white/60 flex items-center justify-between">
-          {/* footer logo now also links home */}
           <Link href="/" className="flex items-center gap-2">
             <Image src="/assets/logo.svg" alt="Attribix" width={20} height={20} />
             <span>Attribix</span>
@@ -1650,6 +1826,53 @@ export default function Home() {
         .animate-float-slower {
           animation: floatY 22s ease-in-out infinite;
         }
+
+        @keyframes metricsMarquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        @keyframes parallaxDrift {
+          0% {
+            transform: translate3d(0, 0, 0);
+          }
+          50% {
+            transform: translate3d(10px, -12px, 0);
+          }
+          100% {
+            transform: translate3d(-6px, 8px, 0);
+          }
+        }
+        @keyframes parallaxDriftSlow {
+          0% {
+            transform: translate3d(0, 0, 0);
+          }
+          50% {
+            transform: translate3d(-12px, 10px, 0);
+          }
+          100% {
+            transform: translate3d(8px, -6px, 0);
+          }
+        }
+
+        @keyframes sectionTitleIn {
+          0% {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-sectionTitle {
+          animation: sectionTitleIn 600ms ease-out both;
+        }
+
         html:focus-within {
           scroll-behavior: smooth;
         }
