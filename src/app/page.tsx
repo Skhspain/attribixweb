@@ -168,7 +168,7 @@ function Aurora() {
 }
 
 /* -----------------------------------------------------
-   Constellation canvas (idle start + pause on hidden)
+   Constellation canvas
 ----------------------------------------------------- */
 type Dot = { x: number; y: number; vx: number; vy: number; size: number };
 function Constellation() {
@@ -360,8 +360,7 @@ function TiltCard({
   }
   function onLeave() {
     const el = ref.current!;
-    el.style.transform =
-      "perspective(900px) rotateX(0deg) rotateY(0deg) scale(1)";
+    el.style.transform = "perspective(900px) rotateX(0deg) rotateY(0deg) scale(1)";
   }
   return (
     <div
@@ -523,37 +522,45 @@ function Marquee({ items }: { items: MarqueeItem[] }) {
 }
 
 /* -----------------------------------------------------
-   Metrics strip (unused now, but kept in case)
+   Metrics strip (kept, but not used right now)
 ----------------------------------------------------- */
 function MetricsStrip() {
   const reduce = usePrefersReducedMotion();
   const metrics = [
-    "+36% tracked sales",
+    "+36% tracked purchases",
     "CPP down 41%",
     "ROAS 3.2 → 6.8",
     "Fewer lost sales",
     "Server-side + pixel together",
     "Model-ready data",
   ];
-  const list = [...metrics, ...metrics];
+
+  const items = reduce ? metrics : [...metrics, ...metrics];
+
   return (
-    <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5/80 backdrop-blur-sm">
-      <div
-        className="flex gap-8 py-3 px-4 text-xs sm:text-sm text-white/80 whitespace-nowrap will-change-transform"
-        style={
-          reduce
-            ? undefined
-            : {
-                animation: "metricsMarquee 30s linear infinite",
-              }
-        }
-      >
-        {list.map((m, i) => (
-          <div key={i} className="flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
-            <span>{m}</span>
-          </div>
-        ))}
+    <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-cyan-500/25 via-transparent to-fuchsia-500/25 opacity-70" />
+      <div className="relative">
+        <div
+          className="flex items-center gap-4 py-3 px-4 text-xs sm:text-sm text-white/80 whitespace-nowrap will-change-transform"
+          style={
+            reduce
+              ? undefined
+              : {
+                  animation: "metricsMarquee 32s linear infinite",
+                }
+          }
+        >
+          {items.map((m, i) => (
+            <div
+              key={`${m}-${i}`}
+              className="inline-flex items-center gap-2 rounded-full border border-white/18 bg-black/40 px-3 py-1 shadow-[0_0_0_1px_rgba(15,23,42,0.7)]"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <span>{m}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -567,18 +574,13 @@ function CaseStudies({ items }: { items: CaseItem[] }) {
   return (
     <div className="grid gap-5 md:grid-cols-3">
       {items.map((c) => (
-        <NeonCard key={c.brand} className="p-5 group overflow-hidden">
-          <div
-            className="absolute inset-0 -z-10 opacity-25 group-hover:opacity-40 transition-opacity"
-            style={{
-              background:
-                c.image ??
-                "radial-gradient(600px 200px at 0% 0%, rgba(56,189,248,.25), transparent 50%)",
-            }}
-          />
+        <NeonCard
+          key={c.brand}
+          className="p-5 group overflow-hidden bg-gradient-to-br from-sky-500/10 via-transparent to-fuchsia-500/10"
+        >
           <div className="flex items-center justify-between">
             <div className="text-lg font-semibold">{c.brand}</div>
-            <div className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 text-[10px] text-emerald-200">
+            <div className="rounded-full border border-emerald-400/30 bg-emerald-400/15 px-2 py-0.5 text-[10px] text-emerald-200">
               {c.metric}
             </div>
           </div>
@@ -594,13 +596,13 @@ function CaseStudies({ items }: { items: CaseItem[] }) {
 }
 
 /* -----------------------------------------------------
-   Wave divider (soft, elegant glow instead of hard band)
+   Wave divider
 ----------------------------------------------------- */
 function WaveDivider() {
   return (
     <div className="relative h-16 -mb-8">
       <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2">
-        <div className="mx-auto h-10 max-w-5xl rounded-full bg-gradient-to-r from-cyan-400/0 via-cyan-400/18 to-cyan-400/0 blur-2xl opacity-80" />
+        <div className="mx-auto h-10 max-w-5xl rounded-full bg-gradient-to-r from-cyan-400/0 via-cyan-400/25 to-cyan-400/0 blur-2xl opacity-80" />
       </div>
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-white/0 via-white/8 to-white/0" />
     </div>
@@ -639,7 +641,7 @@ function Sparkline({ w = 72, h = 22 }: { w?: number; h?: number }) {
 }
 
 /* -----------------------------------------------------
-   Animated number (continuous from previous value)
+   Animated number
 ----------------------------------------------------- */
 function Counter({
   from = 0,
@@ -696,40 +698,7 @@ function Counter({
 }
 
 /* -----------------------------------------------------
-   KPI Card
------------------------------------------------------ */
-function KPICard({
-  label,
-  delta,
-  trend = "up",
-  children,
-}: {
-  label: string;
-  delta?: number;
-  trend?: "up" | "down";
-  children: React.ReactNode;
-}) {
-  const isCost = label.toLowerCase().includes("cost");
-  const green = "bg-emerald-500/15 text-emerald-300 border-emerald-400/20";
-  const red = "bg-rose-500/15 text-rose-300 border-rose-400/20";
-  const chip = isCost ? green : trend === "down" ? red : green;
-  return (
-    <div className="rounded-xl border border-white/10 bg-white/5 p-3">
-      <div className="flex items-center gap-2">
-        <div className="text-xs text-white/70">{label}</div>
-        {typeof delta === "number" && (
-          <span className={cx("text-[10px] px-1.5 py-0.5 rounded-full border", chip)}>
-            {delta > 0 ? "▲" : "▼"} {Math.abs(delta)}%
-          </span>
-        )}
-      </div>
-      <div className="mt-1 text-xl font-semibold">{children}</div>
-    </div>
-  );
-}
-
-/* -----------------------------------------------------
-   Hero Attribution Chart (looping, KPIs update per event)
+   Hero Attribution Chart
 ----------------------------------------------------- */
 type Bubble = {
   id: number;
@@ -820,9 +789,7 @@ function HeroAttributionChart() {
             {
               id,
               bar: i,
-              label: `${plat.name}: +${
-                Math.random() < 0.75 ? 1 : 2
-              } Purchase`,
+              label: `${plat.name}: +${Math.random() < 0.75 ? 1 : 2} Purchase`,
               cls: plat.cls,
               lane,
               life,
@@ -1066,7 +1033,7 @@ function HeroAttributionChart() {
 ----------------------------------------------------- */
 function SectionTitle({ children, id }: { children: React.ReactNode; id?: string }) {
   return (
-    <div id={id} className="sticky top-16 z-10 mb-6">
+    <div id={id} className="mb-6">
       <h2 className="relative inline-block text-3xl md:text-4xl font-extrabold animate-sectionTitle">
         {children}
         <span className="absolute -bottom-2 left-0 h-[3px] w-full rounded-full bg-gradient-to-r from-cyan-400/0 via-cyan-400/60 to-cyan-400/0" />
@@ -1155,7 +1122,6 @@ export default function Home() {
         }}
       />
 
-      {/* Global animated layers */}
       <ProgressHeader />
       <CursorSpotlight />
       <Aurora />
@@ -1170,10 +1136,9 @@ export default function Home() {
             <span className="font-semibold">Attribix</span>
           </Link>
 
-          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm">
             <Link
-              href="/features"
+              href="/#features"
               className={cx(
                 "opacity-80 hover:opacity-100 relative",
                 active === "features" &&
@@ -1229,7 +1194,6 @@ export default function Home() {
             </div>
           </nav>
 
-          {/* Mobile hamburger */}
           <button
             type="button"
             className="md:hidden inline-flex items-center justify-center rounded-full border border-white/20 px-3 py-2 text-xs font-medium text-white/80 hover:bg-white/10"
@@ -1244,12 +1208,11 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Mobile menu panel */}
         {mobileOpen && (
           <div className="md:hidden border-t border-white/10 bg-black/70 backdrop-blur-sm">
             <nav className="mx-auto max-w-7xl px-4 py-4 space-y-2 text-sm">
               <Link
-                href="/features"
+                href="/#features"
                 onClick={() => setMobileOpen(false)}
                 className="block py-1 text-white/80 hover:text-white"
               >
@@ -1360,175 +1323,84 @@ export default function Home() {
         <DemoModal open={showDemo} onClose={() => setShowDemo(false)} />
       </section>
 
-      {/* TRACKING + PROOF SECTION (replaces logo cloud + ticker) */}
-      <section className="relative mx-auto max-w-7xl px-4 pb-10 md:pb-16">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.18]"
-          style={{
-            background:
-              "radial-gradient(700px 260px at 0% 0%, rgba(34,211,238,0.35), transparent 60%), radial-gradient(700px 260px at 100% 100%, rgba(147,51,234,0.35), transparent 60%)",
-          }}
-        />
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1.1fr)] items-start">
-          <Reveal>
-            <NeonCard className="p-6 md:p-7" tilt={false}>
-              <div className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300/80">
-                Tracking layer
+      {/* COMBINED FEATURES SECTION (NO BRAND / METRIC CHIPS) */}
+      <section id="features" className="relative mx-auto max-w-7xl px-4 pb-20">
+        <Reveal>
+          <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-gradient-to-br from-slate-900/80 via-slate-900/40 to-slate-900/80 shadow-[0_28px_80px_rgba(15,23,42,0.95)]">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 -z-10 opacity-80"
+              style={{
+                background:
+                  "radial-gradient(700px 260px at 0% 0%, rgba(34,211,238,0.35), transparent 60%), radial-gradient(700px 260px at 100% 100%, rgba(168,85,247,0.4), transparent 60%)",
+              }}
+            />
+            <div className="grid gap-10 p-8 md:p-10 lg:p-12 md:grid-cols-[1.1fr,1.4fr] items-start">
+              <div className="space-y-4">
+                <p className="text-[11px] font-semibold tracking-[0.16em] text-cyan-300/80 uppercase">
+                  Built for performance brands
+                </p>
+                <h2 className="text-3xl md:text-4xl font-extrabold">
+                  Why brands switch to Attribix
+                </h2>
+                <p className="text-sm md:text-base text-white/75 max-w-md">
+                  Real numbers. Real ROAS. Real results. Attribix cleans up tracking so
+                  your ad decisions are based on truth — not broken pixels.
+                </p>
               </div>
-              <h2 className="mt-3 text-2xl md:text-3xl font-extrabold">
-                Track more of the sales you&apos;re already getting.
-              </h2>
-              <p className="mt-3 text-sm md:text-base text-white/80">
-                Platform pixels miss a scary amount of sales — ad-blockers, iOS, slow
-                browsers, blocked cookies. Attribix pairs browser pixels with{" "}
-                <b>server-side events and first-party IDs</b>, so you see the true sales
-                picture, not just what the platforms choose to show.
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-white/80">
-                <li>✓ Server-side + pixel events with smart de-duplication.</li>
-                <li>✓ Better coverage on iOS and ad-blocked traffic.</li>
-                <li>✓ Automatic tracking checks when something breaks.</li>
-                <li>✓ Clean, model-ready events for attribution and reporting.</li>
-              </ul>
-              <p className="mt-4 text-xs text-white/60">
-                Goal: tracking that&apos;s as close as possible to reality — so every
-                budget decision is based on real sales, not guesswork.
-              </p>
-            </NeonCard>
-          </Reveal>
 
-          <Reveal delay={120}>
-            <div className="space-y-4">
-              <div className="text-xs text-white/60 uppercase tracking-[0.22em]">
-                Real-world impact
+              <div className="grid gap-4 sm:grid-cols-2">
+                {[
+                  {
+                    t: "Clean tracking",
+                    d: "Pixel + server-side tracking with de-duplication and privacy-safe capture.",
+                    icon: "✨",
+                  },
+                  {
+                    t: "Honest attribution",
+                    d: "See what actually drives revenue across channels — not just last click.",
+                    icon: "🧭",
+                  },
+                  {
+                    t: "Ads review that matters",
+                    d: "CPP, ROAS and revenue by ad. Quickly see what to scale and what to cut.",
+                    icon: "📊",
+                  },
+                  {
+                    t: "Decisions, not dashboards",
+                    d: "Simple views that answer where to spend more, where to stop, and what’s broken.",
+                    icon: "⚡",
+                  },
+                ].map((f) => (
+                  <NeonCard
+                    key={f.t}
+                    className="p-4 group bg-gradient-to-br from-sky-500/10 via-slate-900/40 to-fuchsia-500/10"
+                  >
+                    <TiltCard>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xl opacity-80">{f.icon}</span>
+                        <div className="text-sm font-semibold">{f.t}</div>
+                      </div>
+                      <p className="mt-2 text-xs sm:text-[13px] text-white/70">{f.d}</p>
+                      <div className="mt-3 flex justify-end">
+                        <Sparkline />
+                      </div>
+                    </TiltCard>
+                  </NeonCard>
+                ))}
               </div>
-              <div className="grid gap-4">
-                <NeonCard className="p-4 md:p-5">
-                  <div className="flex items-center justify-between gap-3">
-                    <div>
-                      <div className="text-xs text-white/60">Apex — fashion ecommerce</div>
-                      <div className="mt-1 text-sm font-semibold text-emerald-300">
-                        +22% more tracked sales
-                      </div>
-                    </div>
-                    <div className="text-right text-xs text-white/60">
-                      <div>Before: pixel only</div>
-                      <div>After: pixel + server-side</div>
-                    </div>
-                  </div>
-                  <p className="mt-3 text-xs md:text-sm text-white/75">
-                    Server-side events filled the gaps their pixels were missing. Same
-                    traffic, same spend — just more of the real sales finally showed up.
-                  </p>
-                </NeonCard>
-
-                <NeonCard className="p-4 md:p-5">
-                  <div className="flex items-center justify-between gap-3">
-                    <div>
-                      <div className="text-xs text-white/60">Tempo — DTC brand</div>
-                      <div className="mt-1 text-sm font-semibold text-emerald-300">
-                        ROAS 3.2 → 6.8
-                      </div>
-                    </div>
-                    <div className="text-right text-xs text-white/60">
-                      <div>Same budget</div>
-                      <div>Smarter allocation</div>
-                    </div>
-                  </div>
-                  <p className="mt-3 text-xs md:text-sm text-white/75">
-                    Once tracking was clean, it was obvious which channels and campaigns
-                    actually drove profit — so moving spend felt safe, not like a gamble.
-                  </p>
-                </NeonCard>
-
-                <NeonCard className="p-4 md:p-5">
-                  <div className="flex items-center justify-between gap-3">
-                    <div>
-                      <div className="text-xs text-white/60">Glow — beauty</div>
-                      <div className="mt-1 text-sm font-semibold text-emerald-300">
-                        Cost per sale ↓ 41%
-                      </div>
-                    </div>
-                    <div className="text-right text-xs text-white/60">
-                      <div>Kill the noise</div>
-                      <div>Feed the winners</div>
-                    </div>
-                  </div>
-                  <p className="mt-3 text-xs md:text-sm text-white/75">
-                    Honest reporting made it painless to kill weak ads and double down on
-                    what actually converted — without arguing over whose numbers were
-                    “right”.
-                  </p>
-                </NeonCard>
-              </div>
-              <p className="text-[11px] text-white/55">
-                These are examples, not promises. Pattern is the same: once tracking is
-                clean, scaling the right things gets much easier.
-              </p>
             </div>
-          </Reveal>
-        </div>
-      </section>
-
-      <WaveDivider />
-
-      {/* FEATURES */}
-      <section id="features" className="relative mx-auto max-w-7xl px-4 py-24">
-        <SectionTitle>Why brands switch to Attribix</SectionTitle>
-        <p className="mt-2 text-white/70 max-w-2xl">
-          Real numbers. Real ROAS. Real results. Attribix cleans up tracking so your ad
-          decisions are based on truth — not broken pixels.
-        </p>
-        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {[
-            {
-              t: "Clean tracking",
-              d: "Pixel + server-side tracking with de-duplication and privacy-safe capture.",
-              icon: "✨",
-            },
-            {
-              t: "Honest attribution",
-              d: "See what actually drives revenue across channels — not just what gets last click.",
-              icon: "🧭",
-            },
-            {
-              t: "Ads review that matters",
-              d: "CPP, ROAS and revenue by ad. Quickly see what to scale and what to cut.",
-              icon: "📊",
-            },
-            {
-              t: "Decisions, not dashboards",
-              d: "Simple views that answer: where to spend more, where to stop, and what’s broken.",
-              icon: "⚡",
-            },
-          ].map((f, i) => (
-            <Reveal key={f.t} delay={100 + i * 80}>
-              <NeonCard className="p-5 group">
-                <TiltCard>
-                  <div className="flex items-center gap-2">
-                    <span className="text-xl opacity-80">{f.icon}</span>
-                    <div className="text-lg font-semibold">{f.t}</div>
-                  </div>
-                  <p className="mt-2 text-sm text-white/70">{f.d}</p>
-                  <div className="mt-4 flex justify-end">
-                    <Sparkline />
-                  </div>
-                  <div className="mt-2 h-px bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                </TiltCard>
-              </NeonCard>
-            </Reveal>
-          ))}
-        </div>
+          </div>
+        </Reveal>
       </section>
 
       {/* TESTIMONIALS MARQUEE */}
-      <section className="relative mx-auto max-w-7xl px-4 py-16">
+      <section className="relative mx-auto max-w-7xl px-4 pb-20">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.12]"
+          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.2]"
           style={{
-            backgroundImage:
+            background:
               "radial-gradient(700px 260px at 50% 0%, rgba(34,211,238,0.4), transparent 65%)",
           }}
         />
@@ -1563,12 +1435,16 @@ export default function Home() {
 
       {/* HOW IT WORKS */}
       <section id="how" className="relative py-24">
-        <div className="absolute inset-0 -z-10 bg-black/25" />
-        <div className="mx-auto max-w-7xl px-4">
-          <SectionTitle>Get value in 3 steps</SectionTitle>
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/25 via-transparent to-black/40" />
+        <div className="mx-auto max-w-7xl px-4 grid gap-10 md:grid-cols-[1.2fr,1fr] items-start">
+          <div>
+            <SectionTitle>Get value in 3 steps</SectionTitle>
+            <p className="text-white/75 max-w-xl">
+              No 30-page setup doc. Install once, connect your ad platforms, and start
+              seeing which campaigns actually drive sales.
+            </p>
 
-          <div className="mt-8 rounded-3xl border border-white/10 bg-white/5/80 backdrop-blur-sm p-6 md:p-8">
-            <div className="grid gap-5 md:grid-cols-3">
+            <div className="mt-8 space-y-4">
               {[
                 {
                   n: "1",
@@ -1585,23 +1461,45 @@ export default function Home() {
                   t: "Decide with clarity",
                   d: "See which campaigns and creatives actually drive profit — then scale with confidence.",
                 },
-              ].map((s, i) => (
-                <Reveal key={s.n} delay={100 + i * 100}>
-                  <NeonCard className="p-5">
-                    <TiltCard>
-                      <div className="text-4xl font-extrabold text-white/70">{s.n}</div>
-                      <div className="mt-3 text-lg font-semibold">{s.t}</div>
-                      <p className="mt-2 text-sm text-white/70">{s.d}</p>
-                    </TiltCard>
-                  </NeonCard>
-                </Reveal>
+              ].map((s) => (
+                <div key={s.n} className="flex gap-4">
+                  <div className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-fuchsia-500 text-sm font-bold">
+                    {s.n}
+                  </div>
+                  <div>
+                    <div className="font-semibold">{s.t}</div>
+                    <p className="text-sm text-white/70">{s.d}</p>
+                  </div>
+                </div>
               ))}
             </div>
-
-            <div className="mx-auto mt-6 hidden md:block max-w-5xl">
-              <div className="h-px w-full bg-gradient-to-r from-cyan-400/0 via-cyan-400/30 to-cyan-400/0" />
-            </div>
           </div>
+
+          <Reveal delay={150} className="md:mt-6">
+            <NeonCard
+              tilt={false}
+              className="p-5 bg-gradient-to-br from-cyan-500/10 via-slate-900/60 to-fuchsia-500/10"
+            >
+              <div className="text-xs font-semibold text-cyan-300 mb-1">
+                TRACKING THAT DOESN&apos;T FALL APART
+              </div>
+              <h3 className="text-lg font-bold">
+                Never lose sales just because tracking broke.
+              </h3>
+              <p className="mt-3 text-sm text-white/75">
+                Pixels miss a lot of sales because of ad blockers, iOS updates and strict
+                cookie rules. Attribix pairs pixel data with server-side tracking, so
+                those &quot;lost&quot; sales are recovered and your reports stay close to
+                reality.
+              </p>
+              <ul className="mt-4 space-y-1.5 text-sm text-white/75">
+                <li>• Server-side + browser tracking working together</li>
+                <li>• Recover sales pixels miss, especially on iOS and ad-blocked traffic</li>
+                <li>• Automatic tracking health checks so you see when something breaks</li>
+                <li>• Clean, model-ready data for attribution and future AI</li>
+              </ul>
+            </NeonCard>
+          </Reveal>
         </div>
       </section>
 
@@ -1612,21 +1510,21 @@ export default function Home() {
           className="pointer-events-none absolute inset-0 -z-10 opacity-25"
           style={{
             backgroundImage:
-              "linear-gradient(to right, rgba(148,163,184,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,0.08) 1px, transparent 1px)",
+              "linear-gradient(to right, rgba(148,163,184,0.12) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,0.12) 1px, transparent 1px)",
             backgroundSize: "40px 40px",
           }}
         />
         <div className="mx-auto max-w-7xl px-4">
           <SectionTitle>Integrations</SectionTitle>
-          <p className="mt-2 text-white/70">
-            One click to connect your ad platforms and storefront.
+          <p className="mt-2 text-white/75 max-w-xl">
+            One click to connect your ad platforms and storefront. No custom dev needed.
           </p>
           <div className="mt-8 grid grid-cols-2 md:grid-cols-5 gap-4">
             {["Meta", "Google", "TikTok", "Shopify", "WooCommerce"].map((n, i) => (
               <Reveal key={n} delay={100 + i * 80}>
-                <NeonCard className="py-4 flex items-center justify-center group">
+                <NeonCard className="py-4 flex items-center justify-center group bg-gradient-to-br from-sky-500/10 via-slate-900/50 to-fuchsia-500/10">
                   <TiltCard>
-                    <span className="text-sm text-white/80 group-hover:text-white transition">
+                    <span className="text-sm text-white/85 group-hover:text-white transition">
                       {n}
                     </span>
                   </TiltCard>
@@ -1641,12 +1539,12 @@ export default function Home() {
 
       {/* CASE STUDIES */}
       <section className="relative py-20">
-        <div className="absolute inset-0 -z-10 bg-[#050819]/90" />
+        <div className="absolute inset-0 -z-10 bg-[#050819]/95" />
         <div className="mx-auto max-w-7xl px-4">
           <h3 className="text-2xl font-extrabold mb-2">
-            Know what works. Fix what doesn’t.
+            Know what works. Fix what doesn&apos;t.
           </h3>
-          <p className="text-white/70 max-w-2xl mb-8 text-sm">
+          <p className="text-white/75 max-w-2xl mb-8 text-sm">
             These are examples, not guarantees. But the pattern is the same: once tracking
             is clean, it’s easier to scale the right things.
           </p>
@@ -1676,7 +1574,7 @@ export default function Home() {
 
       <WaveDivider />
 
-      {/* SUMMARY STRIP BEFORE PRICING */}
+      {/* SUMMARY STRIP */}
       <section className="relative py-6">
         <div className="absolute inset-0 -z-10 bg-black/40" />
         <div className="mx-auto max-w-7xl px-4">
@@ -1695,7 +1593,7 @@ export default function Home() {
       {/* PRICING */}
       <section id="pricing" className="relative mx-auto max-w-7xl px-4 py-24">
         <SectionTitle>Pricing</SectionTitle>
-        <p className="mt-2 text-white/70">Start free. Upgrade when you see value.</p>
+        <p className="mt-2 text-white/75">Start free. Upgrade when you see value.</p>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {[
             {
@@ -1723,7 +1621,7 @@ export default function Home() {
             <Reveal key={p.name} delay={100 + i * 120}>
               <NeonCard
                 className={cx(
-                  "p-6 relative",
+                  "p-6 relative bg-gradient-to-br from-sky-500/10 via-slate-900/60 to-fuchsia-500/10",
                   p.highlight &&
                     "ring-1 ring-cyan-400/40 shadow-[0_0_0_1px_rgba(34,211,238,0.15),0_25px_80px_-20px_rgba(34,211,238,0.25)]"
                 )}
@@ -1766,7 +1664,10 @@ export default function Home() {
       {/* CTA */}
       <section className="relative mx-auto max-w-7xl px-4 pb-24">
         <Reveal>
-          <NeonCard className="relative overflow-hidden p-6 md:p-10" tilt={false}>
+          <NeonCard
+            className="relative overflow-hidden p-6 md:p-10 bg-gradient-to-r from-cyan-500/20 via-transparent to-fuchsia-500/25"
+            tilt={false}
+          >
             <div className="absolute inset-0 -z-10 opacity-60">
               <div className="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-cyan-400/25 blur-2xl" />
               <div className="absolute right-0 -bottom-16 h-48 w-48 rounded-full bg-fuchsia-500/20 blur-3xl" />
