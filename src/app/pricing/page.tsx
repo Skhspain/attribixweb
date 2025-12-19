@@ -2,127 +2,21 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function PricingPage() {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0F0620] via-[#0E1530] to-[#053B56] text-white">
-      {/* Nav – same structure as main page */}
-      <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/20">
-        <div className="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <Image src="/assets/logo.svg" alt="Attribix" width={24} height={24} />
-            <span className="font-semibold">Attribix</span>
-          </Link>
-
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <Link href="/features" className="opacity-80 hover:opacity-100">
-              Features
-            </Link>
-            <Link href="/#how" className="opacity-80 hover:opacity-100">
-              How it works
-            </Link>
-            <Link href="/#integrations" className="opacity-80 hover:opacity-100">
-              Integrations
-            </Link>
-            <Link href="/pricing" className="opacity-100">
-              Pricing
-            </Link>
-
-            <div className="flex items-center gap-2">
-              <Link
-                href="/login"
-                className="rounded-full bg-white/10 px-4 py-2 hover:bg-white/15"
-              >
-                Log in
-              </Link>
-              <Link
-                href="/book-demo"
-                className="rounded-full bg-white px-4 py-2 text-sm font-medium text-black shadow-md hover:bg-neutral-200 transition"
-              >
-                Book demo
-              </Link>
-            </div>
-          </nav>
-
-          {/* Mobile button */}
-          <button
-            type="button"
-            className="md:hidden inline-flex items-center justify-center rounded-full border border-white/20 bg-black/40 px-3 py-2 text-xs font-medium text-white/80 hover:bg-white/10"
-            onClick={() => setMobileOpen(v => !v)}
-            aria-label="Toggle navigation"
-          >
-            <span className="mr-1">Menu</span>
-            <span className="flex flex-col gap-[3px]">
-              <span className="h-[2px] w-4 bg-white rounded-full" />
-              <span className="h-[2px] w-4 bg-white rounded-full" />
-            </span>
-          </button>
-        </div>
-
-        {/* Mobile menu */}
-        {mobileOpen && (
-          <div className="md:hidden border-t border-white/10 bg-black/70 backdrop-blur-sm">
-            <nav className="mx-auto max-w-7xl px-4 py-4 space-y-2 text-sm">
-              <Link
-                href="/features"
-                onClick={() => setMobileOpen(false)}
-                className="block py-1 text-white/80 hover:text-white"
-              >
-                Features
-              </Link>
-              <Link
-                href="/#how"
-                onClick={() => setMobileOpen(false)}
-                className="block py-1 text-white/80 hover:text-white"
-              >
-                How it works
-              </Link>
-              <Link
-                href="/#integrations"
-                onClick={() => setMobileOpen(false)}
-                className="block py-1 text-white/80 hover:text-white"
-              >
-                Integrations
-              </Link>
-              <Link
-                href="/pricing"
-                onClick={() => setMobileOpen(false)}
-                className="block py-1 text-white hover:text-white"
-              >
-                Pricing
-              </Link>
-
-              <div className="mt-3 flex flex-col gap-2">
-                <Link
-                  href="/login"
-                  onClick={() => setMobileOpen(false)}
-                  className="block rounded-lg border border-white/15 px-4 py-2 text-center text-sm text-white/90 hover:bg-white/10"
-                >
-                  Log in
-                </Link>
-                <Link
-                  href="/book-demo"
-                  onClick={() => setMobileOpen(false)}
-                  className="block rounded-lg bg-white text-center text-gray-900 px-4 py-2 font-semibold hover:bg-neutral-200"
-                >
-                  Book demo
-                </Link>
-              </div>
-            </nav>
-          </div>
-        )}
-      </header>
+    <div className="relative min-h-screen bg-gradient-to-br from-[#0F0620] via-[#0E1530] to-[#053B56] text-white">
+      <Header />
 
       {/* Header text */}
       <section className="mx-auto max-w-5xl px-4 pt-20 pb-10 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold">Pricing</h1>
         <p className="text-white/70 mt-4 max-w-2xl mx-auto text-sm md:text-base">
-          Simple, transparent pricing. Use this page to mirror whatever plans and numbers you show
-          on the homepage – or keep it high-level and push people to book a demo.
+          Simple, transparent pricing. Use this page to mirror whatever plans and
+          numbers you show on the homepage – or keep it high-level and push people
+          to book a demo.
         </p>
       </section>
 
@@ -177,8 +71,8 @@ export default function PricingPage() {
         </div>
 
         <div className="mt-10 text-center text-sm text-white/70">
-          Need exact numbers to match the homepage? Just update the prices and limits in these cards
-          so they’re 1:1 with your main pricing section.
+          Need exact numbers to match the homepage? Just update the prices and limits
+          in these cards so they’re 1:1 with your main pricing section.
           <br />
           Or skip the details and{" "}
           <Link href="/book-demo" className="text-cyan-300 hover:text-cyan-200 underline">
@@ -187,6 +81,8 @@ export default function PricingPage() {
           and we&apos;ll talk through it.
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

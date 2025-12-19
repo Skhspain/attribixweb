@@ -4,6 +4,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 /* -----------------------------------------------------
    Utilities
@@ -80,6 +82,7 @@ function Reveal({
 
 /* -----------------------------------------------------
    Scroll spy (active nav)
+   (kept for potential future use, not used now)
 ----------------------------------------------------- */
 function useScrollSpy(ids: string[], offset = 100) {
   const [active, setActive] = React.useState<string | null>(null);
@@ -1042,7 +1045,7 @@ function DemoModal({ open, onClose }: { open: boolean; onClose: () => void }) {
 }
 
 /* -----------------------------------------------------
-   Copy email helper
+   Copy email helper (only used in Footer component now)
 ----------------------------------------------------- */
 function CopyEmail({ email }: { email: string }) {
   const [ok, setOk] = React.useState(false);
@@ -1266,9 +1269,8 @@ function IntegrationsDiagram() {
    PAGE
 ----------------------------------------------------- */
 export default function Home() {
-  const active = useScrollSpy(["features", "how", "integrations", "pricing"], 120);
+  // const active = useScrollSpy(["features", "how", "integrations", "pricing"], 120);
   const [showDemo, setShowDemo] = React.useState(false);
-  const [mobileOpen, setMobileOpen] = React.useState(false);
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-[#0F0620] via-[#0E1530] to-[#053B56] text-white overflow-hidden">
@@ -1298,137 +1300,8 @@ export default function Home() {
       <Constellation />
       <NoiseOverlay />
 
-      {/* NAV */}
-      <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/20">
-        <div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <Image src="/assets/logo.svg" alt="Attribix" width={28} height={28} />
-            <span className="font-semibold">Attribix</span>
-          </Link>
-
-          <nav className="hidden md:flex items-center gap-8 text-sm">
-            <Link
-              href="/#features"
-              className={cx(
-                "opacity-80 hover:opacity-100 relative",
-                active === "features" &&
-                  "opacity-100 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
-              )}
-            >
-              Features
-            </Link>
-            <Link
-              href="/#how"
-              className={cx(
-                "opacity-80 hover:opacity-100 relative",
-                active === "how" &&
-                  "opacity-100 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
-              )}
-            >
-              How it works
-            </Link>
-            <Link
-              href="/#integrations"
-              className={cx(
-                "opacity-80 hover:opacity-100 relative",
-                active === "integrations" &&
-                  "opacity-100 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
-              )}
-            >
-              Integrations
-            </Link>
-            <Link
-              href="/pricing"
-              className={cx(
-                "opacity-80 hover:opacity-100 relative",
-                active === "pricing" &&
-                  "opacity-100 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
-              )}
-            >
-              Pricing
-            </Link>
-
-            <div className="flex items-center gap-2">
-              <Link
-                href="/login"
-                className="rounded-full bg-white/10 px-4 py-2 hover:bg-white/15"
-              >
-                Log in
-              </Link>
-              <Link
-                href="/book-demo"
-                className="rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/20 backdrop-blur transition"
-              >
-                Book demo
-              </Link>
-            </div>
-          </nav>
-
-          <button
-            type="button"
-            className="md:hidden inline-flex items-center justify-center rounded-full border border-white/20 px-3 py-2 text-xs font-medium text-white/80 hover:bg-white/10"
-            onClick={() => setMobileOpen((v) => !v)}
-            aria-label="Toggle navigation"
-          >
-            <span className="mr-1">Menu</span>
-            <span className="flex flex-col gap-[3px]">
-              <span className="h-[2px] w-4 bg-white rounded-full" />
-              <span className="h-[2px] w-4 bg-white rounded-full" />
-            </span>
-          </button>
-        </div>
-
-        {mobileOpen && (
-          <div className="md:hidden border-t border-white/10 bg-black/70 backdrop-blur-sm">
-            <nav className="mx-auto max-w-7xl px-4 py-4 space-y-2 text-sm">
-              <Link
-                href="/#features"
-                onClick={() => setMobileOpen(false)}
-                className="block py-1 text-white/80 hover:text-white"
-              >
-                Features
-              </Link>
-              <Link
-                href="/#how"
-                onClick={() => setMobileOpen(false)}
-                className="block py-1 text-white/80 hover:text-white"
-              >
-                How it works
-              </Link>
-              <Link
-                href="/#integrations"
-                onClick={() => setMobileOpen(false)}
-                className="block py-1 text-white/80 hover:text-white"
-              >
-                Integrations
-              </Link>
-              <Link
-                href="/pricing"
-                onClick={() => setMobileOpen(false)}
-                className="block py-1 text-white/80 hover:text-white"
-              >
-                Pricing
-              </Link>
-              <div className="mt-3 flex flex-col gap-2">
-                <Link
-                  href="/login"
-                  onClick={() => setMobileOpen(false)}
-                  className="block rounded-lg border border-white/20 px-4 py-2 text-center text-white/90 hover:bg-white/10"
-                >
-                  Log in
-                </Link>
-                <Link
-                  href="/book-demo"
-                  onClick={() => setMobileOpen(false)}
-                  className="block rounded-lg bg-white text-center text-gray-900 px-4 py-2 font-semibold"
-                >
-                  Book demo
-                </Link>
-              </div>
-            </nav>
-          </div>
-        )}
-      </header>
+      {/* SHARED NAV */}
+      <Header />
 
       {/* HERO */}
       <section className="relative mx-auto max-w-7xl px-4 py-20 md:py-28">
@@ -1885,24 +1758,8 @@ export default function Home() {
         </Reveal>
       </section>
 
-      {/* FOOTER */}
-      <footer id="contact" className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-4 py-8 text-sm text-white/60 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <Image src="/assets/logo.svg" alt="Attribix" width={20} height={20} />
-            <span>Attribix</span>
-          </Link>
-          <div className="flex gap-4">
-            <CopyEmail email="hello@attribix.app" />
-            <a href="/privacy" className="hover:text-white/90">
-              Privacy
-            </a>
-            <a href="/terms" className="hover:text-white/90">
-              Terms
-            </a>
-          </div>
-        </div>
-      </footer>
+      {/* SHARED FOOTER */}
+      <Footer />
 
       {/* global keyframes */}
       <style jsx global>{`

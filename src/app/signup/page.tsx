@@ -3,6 +3,8 @@
 
 import React from "react";
 import Link from "next/link";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 /* -----------------------------------------------------
    Utility
@@ -195,7 +197,7 @@ export default function SignupPage() {
         }
       `}</style>
 
-      <main className="relative min-h-screen bg-gradient-to-b from-[#050816] via-[#050816] to-[#020617] text-slate-50">
+      <div className="relative min-h-screen bg-gradient-to-b from-[#050816] via-[#050816] to-[#020617] text-slate-50">
         {/* Animated background glows + grid */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="attribix-glow attribix-glow-1" />
@@ -204,7 +206,9 @@ export default function SignupPage() {
           <div className="attribix-grid" />
         </div>
 
-        <div className="relative mx-auto flex max-w-5xl flex-col px-4 pb-20 pt-24 sm:px-6 lg:px-8">
+        <Header />
+
+        <main className="relative mx-auto flex max-w-5xl flex-col px-4 pb-20 pt-24 sm:px-6 lg:px-8">
           <div className="mx-auto w-full max-w-xl">
             {/* Heading */}
             <div className="mb-8 text-center">
@@ -263,7 +267,7 @@ export default function SignupPage() {
                       value={form.name}
                       onChange={handleChange}
                       className="w-full rounded-2xl border border-slate-700 bg-slate-900/80 px-3 py-2.5 text-sm text-slate-50 outline-none ring-0 transition focus:border-sky-400 focus:ring-2 focus:ring-sky-500/40"
-                      placeholder="Stian Henriksen"
+                      placeholder="Your Name"
                     />
                   </div>
 
@@ -450,8 +454,10 @@ export default function SignupPage() {
               </p>
             </div>
           </div>
-        </div>
-      </main>
+        </main>
+
+        <Footer />
+      </div>
     </>
   );
 }

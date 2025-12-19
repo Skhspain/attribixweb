@@ -13,22 +13,47 @@ export default function LoginPage() {
     e.preventDefault();
     setLoading(true);
     try {
-      // TODO: call your auth API; for now, simulate success and go to analytics
+      // TODO: Replace when backend auth is ready
       window.location.href = "/analytics";
     } finally {
       setLoading(false);
     }
   }
 
+  function loginWithFacebook() {
+    // This hits src/app/api/facebook/start/route.ts
+    window.location.href = "/api/facebook/start";
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0F0620] via-[#0E1530] to-[#053B56] text-white flex items-center justify-center px-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-6">
-          <div className="text-2xl font-bold">Log in to <span className="text-white/90">Attribix</span></div>
+          <div className="text-2xl font-bold">
+            Log in to <span className="text-white/90">Attribix</span>
+          </div>
           <p className="text-sm text-white/70 mt-1">Access your analytics dashboard</p>
         </div>
 
-        <form onSubmit={onSubmit} className="rounded-2xl border border-white/10 bg-white/10 backdrop-blur p-6">
+        {/* 🔵 FACEBOOK LOGIN BUTTON */}
+        <button
+          onClick={loginWithFacebook}
+          className="w-full rounded-xl bg-[#1877F2] text-white py-2.5 font-semibold text-sm hover:opacity-90 shadow-md"
+        >
+          Continue with Facebook
+        </button>
+
+        <div className="my-4 flex items-center gap-4">
+          <div className="h-px flex-1 bg-white/20" />
+          <span className="text-xs text-white/50">or</span>
+          <div className="h-px flex-1 bg-white/20" />
+        </div>
+
+        {/* EMAIL + PASSWORD LOGIN FORM */}
+        <form
+          onSubmit={onSubmit}
+          className="rounded-2xl border border-white/10 bg-white/10 backdrop-blur p-6"
+        >
           <label className="block">
             <span className="text-xs text-white/80">Email</span>
             <input
