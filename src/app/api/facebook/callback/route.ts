@@ -24,9 +24,7 @@ export async function GET(req: NextRequest) {
   }
 
   // 3) Exchange code -> access_token
-  const tokenUrl = new URL(
-    "https://graph.facebook.com/v20.0/oauth/access_token"
-  );
+  const tokenUrl = new URL("https://graph.facebook.com/v20.0/oauth/access_token");
   tokenUrl.searchParams.set("client_id", clientId);
   tokenUrl.searchParams.set("client_secret", clientSecret);
   tokenUrl.searchParams.set("redirect_uri", redirectUri);
@@ -55,8 +53,10 @@ export async function GET(req: NextRequest) {
   const accessToken = tokenData.access_token;
 
   // 4) OPTIONAL: send token to your Attribix API (Remix app) to store it
-  const apiBase = process.env.NEXT_PUBLIC_ATTRIBIX_API_BASE;
-  const apiKey = process.env.NEXT_PUBLIC_ATTRIBIX_API_KEY;
+  // Server-only Attribix backend credentials (do NOT use NEXT_PUBLIC for secrets)
+  const apiBase =
+    process.env.ATTRIBIX_API_BASE || process.env.NEXT_PUBLIC_ATTRIBIX_API_BASE;
+  const apiKey = process.env.ATTRIBIX_API_KEY;
 
   if (apiBase && apiKey) {
     try {
