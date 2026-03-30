@@ -248,16 +248,14 @@ export default function AgencyPage() {
 
               <div className="hidden md:block h-10 w-px bg-white/10" />
 
-              {/* CTA */}
-              <a
-                href="https://www.fiverr.com/agencies/bevitagency"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center rounded-2xl bg-[#1DBF73] px-6 py-3 hover:brightness-110 transition shadow-lg shrink-0"
+              {/* Scroll to reviews */}
+              <button
+                onClick={() => document.getElementById("reviews")?.scrollIntoView({ behavior: "smooth" })}
+                className="flex flex-col items-center rounded-2xl border border-white/15 bg-white/8 px-6 py-3 hover:bg-white/12 transition shrink-0 cursor-pointer"
               >
-                <span className="text-base font-extrabold text-white">Read all 158 reviews</span>
-                <span className="text-xs text-white/75 mt-0.5">Verified on Fiverr</span>
-              </a>
+                <span className="text-base font-extrabold text-white">Read client reviews</span>
+                <span className="text-xs text-white/50 mt-0.5">158 verified ↓</span>
+              </button>
 
             </div>
           </div>
@@ -327,7 +325,7 @@ export default function AgencyPage() {
       </section>
 
       {/* ── REVIEWS ── */}
-      <section className="relative py-20 overflow-hidden">
+      <section id="reviews" className="relative py-20 overflow-hidden">
         <div className="mx-auto max-w-6xl px-4 mb-10">
           <Reveal>
             <div className="flex items-end justify-between flex-wrap gap-4">
