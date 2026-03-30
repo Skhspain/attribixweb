@@ -167,14 +167,14 @@ export default function AgencyPage() {
 
         {/* Headline */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-[1.04] tracking-tight">
-          <span className="block text-white">Top Rated. 18 years of experience.</span>
+          <span className="block text-white">Top Rated since 2008.</span>
           <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-orange-400">
-            Your ads are in safe hands.
+            We scale ads that actually convert.
           </span>
         </h1>
 
         <p className="mt-7 text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
-          When you hand over your ad budget, you need to know it's in the right hands. We've spent 18 years building that trust — with 158 clients across 20+ countries, and a 100% satisfaction rate that speaks for itself.
+          Trusted by 150+ clients across 20+ countries. We don't just manage ads — we focus on what drives real revenue.
         </p>
 
         {/* CTAs */}
