@@ -79,7 +79,6 @@ export default function AdsTable({
       <table className="min-w-full text-sm">
         <thead className="bg-gray-50 border-b border-gray-200">
           <tr>
-            <th className="px-3 py-3 text-xs font-semibold uppercase tracking-wide text-gray-400 text-center w-10">#</th>
             {roasTarget > 0 && (
               <th className="px-3 py-3 text-xs font-semibold uppercase tracking-wide text-gray-400 text-center w-8" />
             )}
@@ -94,7 +93,7 @@ export default function AdsTable({
           </tr>
         </thead>
         <tbody>
-          {sorted.map((r, idx) => {
+          {sorted.map((r) => {
             const rowBg =
               r.positive === true
                 ? "bg-emerald-50/60"
@@ -107,10 +106,6 @@ export default function AdsTable({
                 key={r.id}
                 className={`border-t border-gray-100 hover:brightness-95 transition-colors ${rowBg}`}
               >
-                {/* Rank */}
-                <td className="px-3 py-3 text-center text-xs font-semibold text-gray-400">
-                  {idx + 1}
-                </td>
                 {/* Positive/negative indicator */}
                 {roasTarget > 0 && (
                   <td className="px-3 py-3 text-center">
@@ -184,7 +179,7 @@ export default function AdsTable({
           {sorted.length === 0 && (
             <tr>
               <td
-                colSpan={roasTarget > 0 ? 10 : 9}
+                colSpan={roasTarget > 0 ? 9 : 8}
                 className="px-4 py-10 text-center text-gray-400"
               >
                 No ads match your filters.
