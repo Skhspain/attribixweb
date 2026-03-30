@@ -1088,42 +1088,41 @@ type IntegrationNode = {
 };
 
 const INTEGRATION_NODES: IntegrationNode[] = [
-  // Storefronts (left)
-  {
-    id: "woocommerce",
-    label: "WooCommerce",
-    logo: "/assets/logos/woocommerce.svg",
-    angleDeg: 155,
-    radius: 170,
-  },
-  {
-    id: "shopify",
-    label: "Shopify",
-    logo: "/assets/logos/shopify.svg",
-    angleDeg: 210,
-    radius: 185,
-  },
-  // Ad platforms (right)
+  // Evenly spread at 72° intervals starting from top (-90°)
   {
     id: "tiktok",
     label: "TikTok",
     logo: "/assets/logos/tiktok.svg",
-    angleDeg: -40,
-    radius: 180,
+    angleDeg: -90,
+    radius: 175,
   },
   {
     id: "meta",
     label: "Meta",
     logo: "/assets/logos/meta.svg",
-    angleDeg: 20,
-    radius: 188,
+    angleDeg: -18,
+    radius: 180,
   },
   {
     id: "google",
     label: "Google",
     logo: "/assets/logos/google.svg",
-    angleDeg: 70,
+    angleDeg: 54,
+    radius: 175,
+  },
+  {
+    id: "woocommerce",
+    label: "WooCommerce",
+    logo: "/assets/logos/woocommerce.svg",
+    angleDeg: 126,
     radius: 178,
+  },
+  {
+    id: "shopify",
+    label: "Shopify",
+    logo: "/assets/logos/shopify.svg",
+    angleDeg: 198,
+    radius: 180,
   },
 ];
 
@@ -1156,18 +1155,17 @@ function IntegrationsDiagram() {
               cx={CENTER}
               cy={CENTER}
               r={104}
-              stroke="rgba(148,163,184,0.55)"
-              strokeWidth={1.1}
+              stroke="rgba(148,163,184,0.45)"
+              strokeWidth={1}
               fill="none"
             />
-            {/* mid dashed ring */}
+            {/* outer ring */}
             <circle
               cx={CENTER}
               cy={CENTER}
-              r={168}
-              stroke="rgba(148,163,184,0.38)"
+              r={190}
+              stroke="rgba(148,163,184,0.18)"
               strokeWidth={1}
-              strokeDasharray="4 8"
               fill="none"
             />
           </svg>
@@ -1572,44 +1570,34 @@ export default function Home() {
           }}
         />
 
-        <div className="mx-auto max-w-7xl px-4 grid gap-12 lg:grid-cols-[1.05fr,1.1fr] items-center">
+        <div className="mx-auto max-w-7xl px-4 grid gap-12 lg:grid-cols-[1fr,1.2fr] items-center">
           {/* Left copy */}
-          <div className="space-y-6 max-w-xl">
+          <div className="space-y-6 max-w-lg">
             <SectionTitle>Integrations</SectionTitle>
 
-            <div className="space-y-4 text-white/75">
-              <p className="text-base md:text-lg text-white/80 max-w-md">
-                One click to connect your ad platforms and storefront. No custom dev
-                needed — Attribix sits in the middle and keeps the data clean.
-              </p>
+            <p className="text-base md:text-lg text-white/80">
+              One click to connect your ad platforms and storefront. Attribix sits
+              in the middle and keeps the data clean — no custom dev needed.
+            </p>
 
-              <div className="space-y-2 text-sm md:text-base text-white/75">
-                <div className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                  <span>Meta, Google and TikTok all see the same cleaned events.</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-300" />
-                  <span>Shopify &amp; WooCommerce connected without fragile theme edits.</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-fuchsia-400" />
-                  <span>Server-side + pixel stitched together into one source of truth.</span>
-                </div>
+            <div className="space-y-2 text-sm md:text-base text-white/75">
+              <div className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
+                <span>Meta, Google and TikTok all see the same cleaned events.</span>
               </div>
-
-              <p className="pt-2 text-[11px] md:text-sm text-white/60 leading-relaxed max-w-md">
-                No custom dev needed. Install once, connect your platforms and let
-                Attribix keep the pipes clean in the background.
-              </p>
+              <div className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-cyan-300 shrink-0" />
+                <span>Shopify &amp; WooCommerce connected without fragile theme edits.</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-fuchsia-400 shrink-0" />
+                <span>Server-side + pixel stitched together into one source of truth.</span>
+              </div>
             </div>
           </div>
 
           {/* Right column */}
           <div className="relative">
-            <div className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/60">
-              CONNECTED STACK
-            </div>
             <IntegrationsDiagram />
           </div>
         </div>
