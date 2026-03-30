@@ -167,14 +167,14 @@ export default function AgencyPage() {
 
         {/* Headline */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-[1.04] tracking-tight">
-          <span className="block text-white">A global agency with 18 years of experience</span>
+          <span className="block text-white">Top Rated. 18 years of experience.</span>
           <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-orange-400">
-            and the results to back it up.
+            Your ads are in safe hands.
           </span>
         </h1>
 
         <p className="mt-7 text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
-          Meta and Google campaigns run by people who've been doing this since before the algorithm existed. 158 clients. 20+ countries. 100% satisfaction rate.
+          We run Meta and Google campaigns for businesses across 20+ countries. 158 clients in. 100% satisfaction rate. We know what works — and we'll make it work for you.
         </p>
 
         {/* CTAs */}
