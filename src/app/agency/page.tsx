@@ -167,9 +167,9 @@ export default function AgencyPage() {
 
         {/* Headline */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-[1.04] tracking-tight">
-          <span className="block text-white">Paid ads that</span>
+          <span className="block text-white">We run the ads.</span>
           <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-orange-400">
-            actually make money.
+            You run the business.
           </span>
         </h1>
 
@@ -196,75 +196,51 @@ export default function AgencyPage() {
         </div>
       </section>
 
-      {/* ── FIVERR TRUST STRIP ── */}
+      {/* ── FIVERR PROOF BAR ── */}
       <section className="mx-auto max-w-6xl px-4 pb-16">
         <Reveal>
-          <div className="relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden shadow-2xl">
-            <div className="h-1 w-full bg-gradient-to-r from-indigo-500 via-cyan-400 to-fuchsia-500" />
-            <div className="p-8 md:p-10 grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-8 md:gap-12 items-center">
+          <div className="relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden">
+            <div className="h-0.5 w-full bg-gradient-to-r from-indigo-500 via-cyan-400 to-fuchsia-500" />
+            <div className="px-8 py-6 flex flex-wrap items-center justify-between gap-6">
 
-              {/* Left: Fiverr branding + big number */}
-              <div className="flex flex-col gap-4 min-w-[160px]">
-                <div className="flex items-center gap-2.5">
-                  <svg className="h-7 w-7 shrink-0" viewBox="0 0 24 24" fill="none">
-                    <rect width="24" height="24" rx="7" fill="#1DBF73"/>
-                    <text x="4" y="17" fontSize="13" fontWeight="800" fill="white" fontFamily="Arial">f</text>
-                  </svg>
-                  <span className="text-lg font-extrabold text-white">Fiverr</span>
-                  <span className="rounded-full bg-amber-400/15 border border-amber-400/30 px-2 py-0.5 text-[10px] font-bold text-amber-300 uppercase tracking-wider">Top Rated</span>
-                </div>
-
-                <div>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-6xl font-extrabold text-white leading-none">158</span>
-                    <span className="text-2xl font-bold text-amber-400">★</span>
-                  </div>
-                  <div className="text-sm text-white/50 mt-1">verified 5-star reviews</div>
-                </div>
-
-                <div className="flex gap-4 text-sm">
-                  <div>
-                    <div className="font-bold text-white text-lg">100%</div>
-                    <div className="text-white/45 text-xs">satisfaction</div>
-                  </div>
-                  <div>
-                    <div className="font-bold text-white text-lg">20+</div>
-                    <div className="text-white/45 text-xs">countries</div>
-                  </div>
-                </div>
+              {/* Fiverr logo + badge */}
+              <div className="flex items-center gap-2.5">
+                <svg className="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none">
+                  <rect width="24" height="24" rx="6" fill="#1DBF73"/>
+                  <text x="4" y="17" fontSize="13" fontWeight="800" fill="white" fontFamily="Arial">f</text>
+                </svg>
+                <span className="text-base font-extrabold text-white">Fiverr</span>
+                <span className="rounded-full bg-amber-400/15 border border-amber-400/30 px-2 py-0.5 text-[10px] font-bold text-amber-300 uppercase tracking-wider">★ Top Rated</span>
               </div>
 
-              {/* Middle: full quotes, bigger and easier to read */}
-              <div className="space-y-4">
-                {[
-                  { text: "Went above and beyond both the effort, scope and time invested. Very professional and seems to really care about the client.", flag: "🇨🇿", from: "Czech Republic" },
-                  { text: "He exceeded all of my expectations. His help is invaluable — deeply knowledgeable and a pleasure to work with.", flag: "🇺🇸", from: "United States" },
-                  { text: "He is really the guy to turn to if you need help with Meta or Google Ads. Communication always on point.", flag: "🇳🇴", from: "Norway" },
-                ].map((q, i) => (
-                  <div key={i} className="flex items-start gap-3 rounded-2xl bg-white/5 border border-white/8 px-5 py-4">
-                    <span className="text-xl leading-none mt-0.5 shrink-0">{q.flag}</span>
-                    <div className="min-w-0">
-                      <p className="text-sm text-white/80 leading-relaxed">"{q.text}"</p>
-                      <p className="text-xs text-white/35 mt-1.5">{q.from}</p>
-                    </div>
-                    <svg className="ml-auto shrink-0 h-4 w-4 text-emerald-400 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                  </div>
-                ))}
-              </div>
+              {/* Divider */}
+              <div className="hidden md:block h-8 w-px bg-white/10" />
 
-              {/* Right: CTA */}
-              <div className="flex flex-col items-center md:items-end gap-3 md:min-w-[160px]">
-                <p className="text-xs text-white/40 text-center md:text-right max-w-[140px]">All reviews verified by Fiverr</p>
-                <a
-                  href="https://www.fiverr.com/agencies/bevitagency"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 rounded-2xl bg-[#1DBF73] px-5 py-3 text-sm font-bold text-white hover:brightness-110 transition shadow-lg"
-                >
-                  Read all reviews
-                  <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                </a>
-              </div>
+              {/* Stats */}
+              {[
+                { value: "158", label: "5-star reviews" },
+                { value: "5.0", label: "Average rating" },
+                { value: "100%", label: "Satisfaction rate" },
+                { value: "20+", label: "Countries served" },
+              ].map((s, i) => (
+                <React.Fragment key={s.label}>
+                  <div className="text-center">
+                    <div className="text-2xl font-extrabold text-white">{s.value}</div>
+                    <div className="text-xs text-white/45 mt-0.5">{s.label}</div>
+                  </div>
+                  {i < 3 && <div className="hidden md:block h-8 w-px bg-white/10" />}
+                </React.Fragment>
+              ))}
+
+              {/* CTA */}
+              <a
+                href="https://www.fiverr.com/agencies/bevitagency"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 rounded-xl bg-[#1DBF73] px-5 py-2.5 text-sm font-bold text-white hover:brightness-110 transition shadow-md shrink-0"
+              >
+                See all reviews ↗
+              </a>
             </div>
           </div>
         </Reveal>
