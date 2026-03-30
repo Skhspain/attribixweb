@@ -174,7 +174,7 @@ export default function AgencyPage() {
         </h1>
 
         <p className="mt-7 text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
-          We run Meta and Google campaigns for businesses across 20+ countries. 158 clients in. 100% satisfaction rate. We know what works — and we'll make it work for you.
+          When you hand over your ad budget, you need to know it's in the right hands. We've spent 18 years building that trust — with 158 clients across 20+ countries, and a 100% satisfaction rate that speaks for itself.
         </p>
 
         {/* CTAs */}
@@ -201,46 +201,64 @@ export default function AgencyPage() {
         <Reveal>
           <div className="relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden">
             <div className="h-0.5 w-full bg-gradient-to-r from-indigo-500 via-cyan-400 to-fuchsia-500" />
-            <div className="px-8 py-6 flex flex-wrap items-center justify-between gap-6">
+            <div className="px-8 py-7 flex flex-wrap items-center gap-6 md:gap-0 md:justify-between">
 
-              {/* Fiverr logo + badge */}
-              <div className="flex items-center gap-2.5">
-                <svg className="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none">
-                  <rect width="24" height="24" rx="6" fill="#1DBF73"/>
+              {/* Fiverr identity */}
+              <div className="flex items-center gap-3">
+                <svg className="h-9 w-9 shrink-0" viewBox="0 0 24 24" fill="none">
+                  <rect width="24" height="24" rx="7" fill="#1DBF73"/>
                   <text x="4" y="17" fontSize="13" fontWeight="800" fill="white" fontFamily="Arial">f</text>
                 </svg>
-                <span className="text-base font-extrabold text-white">Fiverr</span>
-                <span className="rounded-full bg-amber-400/15 border border-amber-400/30 px-2 py-0.5 text-[10px] font-bold text-amber-300 uppercase tracking-wider">★ Top Rated</span>
+                <div>
+                  <div className="text-base font-extrabold text-white leading-none">Fiverr</div>
+                  <div className="text-xs text-[#1DBF73] font-semibold mt-0.5">★ Top Rated Seller</div>
+                </div>
               </div>
 
-              {/* Divider */}
-              <div className="hidden md:block h-8 w-px bg-white/10" />
+              <div className="hidden md:block h-10 w-px bg-white/10" />
 
-              {/* Stats */}
-              {[
-                { value: "158", label: "5-star reviews" },
-                { value: "5.0", label: "Average rating" },
-                { value: "100%", label: "Satisfaction rate" },
-                { value: "20+", label: "Countries served" },
-              ].map((s, i) => (
-                <React.Fragment key={s.label}>
-                  <div className="text-center">
-                    <div className="text-2xl font-extrabold text-white">{s.value}</div>
-                    <div className="text-xs text-white/45 mt-0.5">{s.label}</div>
-                  </div>
-                  {i < 3 && <div className="hidden md:block h-8 w-px bg-white/10" />}
-                </React.Fragment>
-              ))}
+              {/* Star rating — the most human-readable proof */}
+              <div className="flex items-center gap-3">
+                <div className="flex gap-0.5">
+                  {[1,2,3,4,5].map(i => (
+                    <svg key={i} className="h-6 w-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                    </svg>
+                  ))}
+                </div>
+                <div>
+                  <span className="text-2xl font-extrabold text-white">5.0</span>
+                  <span className="text-sm text-white/50 ml-1.5">from 158 reviews</span>
+                </div>
+              </div>
+
+              <div className="hidden md:block h-10 w-px bg-white/10" />
+
+              {/* Two key stats */}
+              <div className="flex items-center gap-8">
+                <div>
+                  <div className="text-2xl font-extrabold text-white">100%</div>
+                  <div className="text-xs text-white/45 mt-0.5">Satisfaction rate</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-extrabold text-white">20+</div>
+                  <div className="text-xs text-white/45 mt-0.5">Countries</div>
+                </div>
+              </div>
+
+              <div className="hidden md:block h-10 w-px bg-white/10" />
 
               {/* CTA */}
               <a
                 href="https://www.fiverr.com/agencies/bevitagency"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-xl bg-[#1DBF73] px-5 py-2.5 text-sm font-bold text-white hover:brightness-110 transition shadow-md shrink-0"
+                className="flex flex-col items-center rounded-2xl bg-[#1DBF73] px-6 py-3 hover:brightness-110 transition shadow-lg shrink-0"
               >
-                See all reviews ↗
+                <span className="text-base font-extrabold text-white">Read all 158 reviews</span>
+                <span className="text-xs text-white/75 mt-0.5">Verified on Fiverr</span>
               </a>
+
             </div>
           </div>
         </Reveal>
