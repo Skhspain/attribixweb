@@ -319,9 +319,6 @@ export default function AdsReviewPage() {
         />
       </div>
 
-      {/* Top performers green cards */}
-      <TopPerformers rows={rowsCurrent} roasTarget={roasTarget} />
-
       {/* Positive/negative filter tabs */}
       {roasTarget > 0 && (
         <div className="mb-4 flex items-center gap-2">
@@ -354,81 +351,6 @@ export default function AdsReviewPage() {
         <AdsTable rows={rowsWithPrev} roasTarget={roasTarget} />
       </div>
     </>
-  );
-}
-
-/* ---------- TopPerformers ---------- */
-function TopPerformers({
-  rows,
-  roasTarget,
-}: {
-  rows: AdsRow[];
-  roasTarget: number;
-}) {
-  // Sort by ROAS descending, take top 3
-  const top3 = useMemo(() => {
-    return [...rows]
-      .map((r) => ({ ...r, roas: r.spend > 0 ? r.revenue / r.spend : 0 }))
-      .sort((a, b) => b.roas - a.roas)
-      .slice(0, 3);
-  }, [rows]);
-
-  if (top3.length === 0) return null;
-
-  const medals = ["🥇", "🥈", "🥉"];
-
-  return (
-    <div className="mb-6">
-      <div className="mb-2 text-sm font-semibold text-gray-500 uppercase tracking-wide">
-        Top Performing Ads
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {top3.map((r, i) => {
-          const isPositive = roasTarget > 0 ? r.roas >= roasTarget : true;
-          return (
-            <div
-              key={r.id}
-              className={`rounded-2xl border px-5 py-4 ${
-                i === 0
-                  ? "border-emerald-200 bg-emerald-50"
-                  : "border-gray-200 bg-white"
-              }`}
-            >
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-lg">{medals[i]}</span>
-                <span
-                  className={`text-xs font-semibold rounded-full px-2 py-0.5 ${
-                    isPositive
-                      ? "bg-emerald-100 text-emerald-700"
-                      : "bg-rose-100 text-rose-700"
-                  }`}
-                >
-                  {r.roas.toFixed(2)}× ROAS
-                </span>
-              </div>
-              <div className="font-semibold text-gray-900 text-sm truncate mb-0.5">
-                {r.name}
-              </div>
-              <div className="text-xs text-gray-500 truncate mb-3">{r.campaign}</div>
-              <div className="flex items-center gap-4 text-xs">
-                <div>
-                  <div className="text-gray-400">Revenue</div>
-                  <div className="font-semibold text-gray-800">${r.revenue.toLocaleString()}</div>
-                </div>
-                <div>
-                  <div className="text-gray-400">Spend</div>
-                  <div className="font-semibold text-gray-800">${r.spend.toLocaleString()}</div>
-                </div>
-                <div>
-                  <div className="text-gray-400">Purchases</div>
-                  <div className="font-semibold text-gray-800">{r.purchases}</div>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
   );
 }
 
