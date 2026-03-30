@@ -705,10 +705,6 @@ function HeroAttributionChart() {
       name: "Google",
       cls: "bg-gradient-to-r from-[#22D3EE] to-[#60A5FA] text-white/90 border-white/10",
     },
-    {
-      name: "TikTok",
-      cls: "bg-gradient-to-r from-[#ec4899] to-[#8b5cf6] text-white/90 border-white/10",
-    },
   ] as const;
 
   const LANES = 4;
@@ -1088,41 +1084,27 @@ type IntegrationNode = {
 };
 
 const INTEGRATION_NODES: IntegrationNode[] = [
-  // Evenly spread at 72° intervals starting from top (-90°)
-  {
-    id: "tiktok",
-    label: "TikTok",
-    logo: "/assets/logos/tiktok.svg",
-    angleDeg: -90,
-    radius: 175,
-  },
+  // Evenly spread at 120° intervals — clean triangle
   {
     id: "meta",
     label: "Meta",
     logo: "/assets/logos/meta.svg",
-    angleDeg: -18,
-    radius: 180,
+    angleDeg: -90,
+    radius: 178,
   },
   {
     id: "google",
     label: "Google",
     logo: "/assets/logos/google.svg",
-    angleDeg: 54,
-    radius: 175,
-  },
-  {
-    id: "woocommerce",
-    label: "WooCommerce",
-    logo: "/assets/logos/woocommerce.svg",
-    angleDeg: 126,
+    angleDeg: 30,
     radius: 178,
   },
   {
     id: "shopify",
     label: "Shopify",
     logo: "/assets/logos/shopify.svg",
-    angleDeg: 198,
-    radius: 180,
+    angleDeg: 150,
+    radius: 178,
   },
 ];
 
@@ -1343,7 +1325,7 @@ export default function Home() {
             </div>
 
             <p className="mt-4 text-xs text-white/60">
-              Works with Shopify &amp; WordPress (WooCommerce). No heavy setup.
+              Works with Shopify. No heavy setup.
             </p>
           </div>
 
@@ -1505,12 +1487,12 @@ export default function Home() {
                 {
                   n: "1",
                   t: "Connect your store",
-                  d: "Install once on Shopify or WooCommerce. No fragile scripts or manual hacks.",
+                  d: "Install once on Shopify. No fragile scripts or manual hacks.",
                 },
                 {
                   n: "2",
                   t: "Link ad platforms",
-                  d: "Connect Meta, Google and TikTok. We sync spend, conversions and server events.",
+                  d: "Connect Meta and Google. We sync spend, conversions and server events.",
                 },
                 {
                   n: "3",
@@ -1583,11 +1565,11 @@ export default function Home() {
             <div className="space-y-2 text-sm md:text-base text-white/75">
               <div className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
-                <span>Meta, Google and TikTok all see the same cleaned events.</span>
+                <span>Meta and Google both see the same cleaned, deduplicated events.</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-cyan-300 shrink-0" />
-                <span>Shopify &amp; WooCommerce connected without fragile theme edits.</span>
+                <span>Shopify connected without fragile theme edits or custom dev work.</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-fuchsia-400 shrink-0" />
