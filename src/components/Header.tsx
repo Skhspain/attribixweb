@@ -57,6 +57,16 @@ export default function Header() {
           >
             FAQ
           </Link>
+          <Link
+            href="/agency"
+            className={cx(
+              "opacity-80 hover:opacity-100 relative",
+              isActive("/agency") &&
+                "opacity-100 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
+            )}
+          >
+            Agency
+          </Link>
 
           <div className="flex items-center gap-2">
             <Link
@@ -122,6 +132,16 @@ export default function Header() {
               )}
             >
               FAQ
+            </Link>
+            <Link
+              href="/agency"
+              onClick={() => setMobileOpen(false)}
+              className={cx(
+                "block py-1 text-white/80 hover:text-white",
+                isActive("/agency") && "text-white"
+              )}
+            >
+              Agency
             </Link>
 
             <div className="mt-3 flex flex-col gap-2">
