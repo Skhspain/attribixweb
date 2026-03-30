@@ -80,30 +80,26 @@ const SERVICES = [
 ];
 
 const REVIEWS = [
-  {
-    quote: "Stian resolved a problem in our ad manager within hours and laid out a clear plan for our new campaign. Highly recommend.",
-    author: "R. M.",
-    role: "E-commerce founder",
-    stars: 5,
-  },
-  {
-    quote: "The results were nothing short of remarkable. Our Facebook ad performance improved dramatically after the setup.",
-    author: "A. K.",
-    role: "DTC brand owner",
-    stars: 5,
-  },
-  {
-    quote: "I've used Stian many times. He does a lot more than ordered and is responsive around the clock. Amazing.",
-    author: "T. H.",
-    role: "Growth marketer",
-    stars: 5,
-  },
-  {
-    quote: "Very knowledgeable — Stian really knows his stuff. Already excited to work on the next campaign together.",
-    author: "L. P.",
-    role: "Shopify store owner",
-    stars: 5,
-  },
+  { quote: "I'm totally satisfied with his services. He not only solved my problems but also keeps the bigger picture in mind at all times. His professionalism, reliability, and clear communication have truly impressed me. Highly recommended!", country: "Germany", service: "Marketing Consulting" },
+  { quote: "Stian has been amazing at managing our social media ads! He really understands what works and has helped us reach the right audience. We've seen great results, and it's been a pleasure working with him.", country: "United States", service: "Paid Social Media" },
+  { quote: "Went above and beyond both the effort, scope and time invested! Very professional and seems to really care to fix the problem of the client, not just to finalize the job. He helped me with things that were not even in my initial scope.", country: "Czech Republic", service: "Paid Social Media" },
+  { quote: "Stian is deeply knowledgeable about advertising and online platforms, creative, hard-working, and a pleasure to work with. I can't recommend him enough, his help is invaluable, and he exceeded all of my expectations.", country: "United States", service: "Paid Social Media" },
+  { quote: "Working with Bevit Agency was an outstanding experience. Their expertise in social media marketing, combined with a high level of professionalism, strategic thinking, and impeccable attention to detail, made our collaboration seamless.", country: "Bahamas", service: "Paid Social Media" },
+  { quote: "High professional level of setting up Meta business accounts and ad campaigns — great level of consultancy. Kind and attentive to all the details, pleasant to work with.", country: "Switzerland", service: "Paid Social Media" },
+  { quote: "Stian and team were exceptional to work with. Professional, analytical, and agile in thinking for our company to put its best paw forward.", country: "Australia", service: "Search Engine Marketing" },
+  { quote: "Very Polite and knowledgeable — I had some doubt about my campaign so I asked for a consultation and we were able to manage it within a few hours. All of my questions were answered.", country: "United Arab Emirates", service: "Marketing Consulting" },
+  { quote: "Stian knows exactly what he is doing. Following up every little detail, and communication has always been on point. He is really the guy to turn to if you need help with Meta or Google Ads.", country: "Norway", service: "Search Engine Marketing" },
+  { quote: "I really like working with Stian! Thank you for helping my business and consulting me!", country: "Saudi Arabia", service: "Paid Social Media" },
+  { quote: "It's the second time I've worked with Stian. He really knows his stuff. Very short response time and you always get clear answers. I really recommend Stian to anyone who needs help with ads.", country: "Norway", service: "Paid Social Media" },
+  { quote: "Easy to work with — Stian knows what to do to get a good result, and you get good advice along the way. Looking forward to working with him again.", country: "Norway", service: "Search Engine Marketing" },
+  { quote: "Exactly what we were looking for! Everything was explained very clearly, and I feel like I have a much better understanding of our marketing.", country: "United States", service: "Marketing Consulting" },
+  { quote: "Amazing job — Stian is very professional.", country: "Switzerland", service: "Search Engine Marketing" },
+  { quote: "Great service and attention to detail.", country: "United Kingdom", service: "Paid Social Media" },
+  { quote: "Very happy, always delivers.", country: "Sweden", service: "Search Engine Marketing" },
+  { quote: "Professional :)", country: "Canada", service: "Paid Social Media" },
+  { quote: "He did everything I needed and more. Very responsive and helpful throughout the whole process.", country: "Bahamas", service: "Paid Social Media" },
+  { quote: "Happy with the service — delivered exactly what was promised.", country: "Norway", service: "Paid Social Media" },
+  { quote: "Stian is very professional and knows Google Ads inside out. He optimised our campaigns and we saw immediate improvement.", country: "United Kingdom", service: "Search Engine Marketing" },
 ];
 
 const PROCESS = [
@@ -315,42 +311,84 @@ export default function AgencyPage() {
       </section>
 
       {/* ── REVIEWS ── */}
-      <section className="mx-auto max-w-6xl px-4 py-20">
-        <Reveal>
-          <h2 className="text-3xl md:text-4xl font-extrabold">What clients say</h2>
-          <p className="mt-3 text-white/65 max-w-md">From real Fiverr reviews — no edits, no made-up quotes.</p>
-        </Reveal>
-
-        <div className="mt-10 grid gap-5 sm:grid-cols-2">
-          {REVIEWS.map((r, i) => (
-            <Reveal key={r.author} delay={i * 80}>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-                <Stars count={r.stars} />
-                <blockquote className="mt-3 text-sm text-white/80 leading-relaxed">
-                  "{r.quote}"
-                </blockquote>
-                <div className="mt-4 text-xs text-white/45">
-                  {r.author} · {r.role}
-                </div>
+      <section className="relative py-20 overflow-hidden">
+        <div className="mx-auto max-w-6xl px-4 mb-10">
+          <Reveal>
+            <div className="flex items-end justify-between flex-wrap gap-4">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-extrabold">What clients say</h2>
+                <p className="mt-3 text-white/65 max-w-md">158 reviews · 5.0 stars · All verified on Fiverr.</p>
               </div>
-            </Reveal>
-          ))}
+              <div className="flex items-center gap-3">
+                <Stars />
+                <span className="text-2xl font-bold">5.0</span>
+                <span className="text-white/50 text-sm">/ 158 reviews</span>
+              </div>
+            </div>
+          </Reveal>
         </div>
 
-        {/* Fiverr attribution */}
-        <Reveal delay={200}>
-          <p className="mt-6 text-xs text-white/35 text-center">
-            Reviews sourced from{" "}
-            <a
-              href="https://www.fiverr.com/stanhenderson"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-white/60 transition"
-            >
-              fiverr.com/stanhenderson
-            </a>
-          </p>
-        </Reveal>
+        {/* Row 1 — scrolls left */}
+        <div className="relative mb-4">
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-[#0E1530] to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-[#0E1530] to-transparent" />
+          <div className="flex gap-4 review-scroll-left" style={{ width: "max-content" }}>
+            {[...REVIEWS.slice(0, 10), ...REVIEWS.slice(0, 10)].map((r, i) => (
+              <div key={i} className="w-[320px] shrink-0 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+                <div className="flex items-center justify-between mb-3">
+                  <Stars />
+                  <span className="text-[11px] text-white/40">{r.country}</span>
+                </div>
+                <blockquote className="text-sm text-white/80 leading-relaxed">"{r.quote}"</blockquote>
+                <div className="mt-3 text-[11px] text-cyan-400/70">{r.service}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Row 2 — scrolls right */}
+        <div className="relative">
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-[#0E1530] to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-[#0E1530] to-transparent" />
+          <div className="flex gap-4 review-scroll-right" style={{ width: "max-content" }}>
+            {[...REVIEWS.slice(10), ...REVIEWS.slice(10)].map((r, i) => (
+              <div key={i} className="w-[320px] shrink-0 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
+                <div className="flex items-center justify-between mb-3">
+                  <Stars />
+                  <span className="text-[11px] text-white/40">{r.country}</span>
+                </div>
+                <blockquote className="text-sm text-white/80 leading-relaxed">"{r.quote}"</blockquote>
+                <div className="mt-3 text-[11px] text-cyan-400/70">{r.service}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mx-auto max-w-6xl px-4 mt-8 text-center">
+          <a
+            href="https://www.fiverr.com/agencies/bevitagency"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-white/35 underline underline-offset-2 hover:text-white/60 transition"
+          >
+            View all 158 reviews on Fiverr →
+          </a>
+        </div>
+
+        <style jsx>{`
+          @keyframes scrollLeft {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          @keyframes scrollRight {
+            0%   { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+          }
+          .review-scroll-left  { animation: scrollLeft  40s linear infinite; }
+          .review-scroll-right { animation: scrollRight 40s linear infinite; }
+          .review-scroll-left:hover,
+          .review-scroll-right:hover { animation-play-state: paused; }
+        `}</style>
       </section>
 
       {/* ── WHY ATTRIBIX AGENCY ── */}
