@@ -185,39 +185,23 @@ export default function AgencyPage() {
           >
             Book a free strategy call →
           </Link>
-          <a
-            href="https://www.fiverr.com/agencies/bevitagency"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => document.getElementById("reviews")?.scrollIntoView({ behavior: "smooth" })}
             className="rounded-2xl border border-white/20 bg-white/5 px-8 py-4 text-sm font-semibold text-white/80 hover:bg-white/10 transition"
           >
-            158 reviews on Fiverr ↗
-          </a>
+            Read client reviews ↓
+          </button>
         </div>
       </section>
 
-      {/* ── FIVERR PROOF BAR ── */}
+      {/* ── PROOF BAR ── */}
       <section className="mx-auto max-w-6xl px-4 pb-16">
         <Reveal>
           <div className="relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden">
             <div className="h-0.5 w-full bg-gradient-to-r from-indigo-500 via-cyan-400 to-fuchsia-500" />
             <div className="px-8 py-7 flex flex-wrap items-center gap-6 md:gap-0 md:justify-between">
 
-              {/* Fiverr identity */}
-              <div className="flex items-center gap-3">
-                <svg className="h-9 w-9 shrink-0" viewBox="0 0 24 24" fill="none">
-                  <rect width="24" height="24" rx="7" fill="#1DBF73"/>
-                  <text x="4" y="17" fontSize="13" fontWeight="800" fill="white" fontFamily="Arial">f</text>
-                </svg>
-                <div>
-                  <div className="text-base font-extrabold text-white leading-none">Fiverr</div>
-                  <div className="text-xs text-[#1DBF73] font-semibold mt-0.5">★ Top Rated Seller</div>
-                </div>
-              </div>
-
-              <div className="hidden md:block h-10 w-px bg-white/10" />
-
-              {/* Star rating — the most human-readable proof */}
+              {/* Stars */}
               <div className="flex items-center gap-3">
                 <div className="flex gap-0.5">
                   {[1,2,3,4,5].map(i => (
@@ -234,8 +218,11 @@ export default function AgencyPage() {
 
               <div className="hidden md:block h-10 w-px bg-white/10" />
 
-              {/* Two key stats */}
               <div className="flex items-center gap-8">
+                <div>
+                  <div className="text-2xl font-extrabold text-white">150+</div>
+                  <div className="text-xs text-white/45 mt-0.5">Clients worldwide</div>
+                </div>
                 <div>
                   <div className="text-2xl font-extrabold text-white">100%</div>
                   <div className="text-xs text-white/45 mt-0.5">Satisfaction rate</div>
@@ -244,17 +231,20 @@ export default function AgencyPage() {
                   <div className="text-2xl font-extrabold text-white">20+</div>
                   <div className="text-xs text-white/45 mt-0.5">Countries</div>
                 </div>
+                <div>
+                  <div className="text-2xl font-extrabold text-white">18yrs</div>
+                  <div className="text-xs text-white/45 mt-0.5">Experience</div>
+                </div>
               </div>
 
               <div className="hidden md:block h-10 w-px bg-white/10" />
 
-              {/* Scroll to reviews */}
               <button
                 onClick={() => document.getElementById("reviews")?.scrollIntoView({ behavior: "smooth" })}
                 className="flex flex-col items-center rounded-2xl border border-white/15 bg-white/8 px-6 py-3 hover:bg-white/12 transition shrink-0 cursor-pointer"
               >
                 <span className="text-base font-extrabold text-white">Read client reviews</span>
-                <span className="text-xs text-white/50 mt-0.5">158 verified ↓</span>
+                <span className="text-xs text-white/50 mt-0.5">158 reviews ↓</span>
               </button>
 
             </div>
@@ -331,7 +321,7 @@ export default function AgencyPage() {
             <div className="flex items-end justify-between flex-wrap gap-4">
               <div>
                 <h2 className="text-3xl md:text-4xl font-extrabold">What clients say</h2>
-                <p className="mt-3 text-white/65 max-w-md">158 reviews · 5.0 stars · All verified on Fiverr.</p>
+                <p className="mt-3 text-white/65 max-w-md">158 verified reviews · 5.0 stars.</p>
               </div>
               <div className="flex items-center gap-3">
                 <Stars />
@@ -351,13 +341,7 @@ export default function AgencyPage() {
               <div key={i} className="w-[320px] shrink-0 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
                 <div className="flex items-center justify-between mb-3">
                   <Stars />
-                  <span className="flex items-center gap-1.5">
-                    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none">
-                      <rect width="24" height="24" rx="5" fill="#1DBF73"/>
-                      <text x="4.5" y="17" fontSize="13" fontWeight="800" fill="white" fontFamily="Arial">f</text>
-                    </svg>
-                    <span className="text-[10px] font-semibold text-emerald-400">Verified</span>
-                  </span>
+                  <span className="text-[11px] text-white/40">{r.country}</span>
                 </div>
                 <blockquote className="text-sm text-white/80 leading-relaxed">"{r.quote}"</blockquote>
                 <div className="mt-3 flex items-center justify-between">
@@ -378,13 +362,7 @@ export default function AgencyPage() {
               <div key={i} className="w-[320px] shrink-0 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
                 <div className="flex items-center justify-between mb-3">
                   <Stars />
-                  <span className="flex items-center gap-1.5">
-                    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none">
-                      <rect width="24" height="24" rx="5" fill="#1DBF73"/>
-                      <text x="4.5" y="17" fontSize="13" fontWeight="800" fill="white" fontFamily="Arial">f</text>
-                    </svg>
-                    <span className="text-[10px] font-semibold text-emerald-400">Verified</span>
-                  </span>
+                  <span className="text-[11px] text-white/40">{r.country}</span>
                 </div>
                 <blockquote className="text-sm text-white/80 leading-relaxed">"{r.quote}"</blockquote>
                 <div className="mt-3 flex items-center justify-between">
@@ -397,14 +375,7 @@ export default function AgencyPage() {
         </div>
 
         <div className="mx-auto max-w-6xl px-4 mt-8 text-center">
-          <a
-            href="https://www.fiverr.com/agencies/bevitagency"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-white/35 underline underline-offset-2 hover:text-white/60 transition"
-          >
-            View all 158 reviews on Fiverr →
-          </a>
+          <p className="text-xs text-white/30">158 verified client reviews</p>
         </div>
 
         <style jsx>{`
@@ -492,14 +463,6 @@ export default function AgencyPage() {
             >
               Book a free strategy call
             </Link>
-            <a
-              href="https://www.fiverr.com/stanhenderson"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-xl border border-white/20 px-8 py-3.5 text-sm font-medium hover:bg-white/8 transition"
-            >
-              View Fiverr profile →
-            </a>
           </div>
         </Reveal>
       </section>
