@@ -1108,146 +1108,170 @@ const INTEGRATION_NODES: IntegrationNode[] = [
   },
 ];
 
+const NODE_COLORS: Record<string, string> = {
+  meta: "#818cf8",
+  google: "#38bdf8",
+  shopify: "#4ade80",
+};
+
 function IntegrationsDiagram() {
   const SIZE = 520;
   const CENTER = SIZE / 2;
 
+  const coords = INTEGRATION_NODES.map((n) => {
+    const rad = (n.angleDeg * Math.PI) / 180;
+    return {
+      ...n,
+      x: CENTER + n.radius * Math.cos(rad),
+      y: CENTER + n.radius * Math.sin(rad),
+      color: NODE_COLORS[n.id] ?? "#38bdf8",
+    };
+  });
+
   return (
     <>
-      <div className="relative mx-auto h-[440px] w-[440px] lg:h-[520px] lg:w-[520px]">
-        {/* Background glow */}
+      <div className="relative mx-auto h-[420px] w-[420px] lg:h-[500px] lg:w-[500px]">
+
+        {/* Soft ambient glow behind everything */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 rounded-[32px] blur-3xl opacity-80"
+          className="pointer-events-none absolute inset-[-40px] -z-10 rounded-full opacity-60 blur-3xl"
           style={{
             background:
-              "radial-gradient(circle at 50% 35%, rgba(56,189,248,0.4), transparent 65%), radial-gradient(circle at 50% 100%, rgba(168,85,247,0.3), transparent 75%)",
+              "radial-gradient(circle at 50% 50%, rgba(56,189,248,0.18) 0%, rgba(168,85,247,0.12) 45%, transparent 70%)",
           }}
         />
 
-        {/* Rings */}
-        <div className="absolute inset-0">
-          <svg
-            viewBox={`0 0 ${SIZE} ${SIZE}`}
-            className="h-full w-full"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            {/* inner ring */}
-            <circle
-              cx={CENTER}
-              cy={CENTER}
-              r={104}
-              stroke="rgba(148,163,184,0.45)"
-              strokeWidth={1}
-              fill="none"
-            />
-            {/* outer ring */}
-            <circle
-              cx={CENTER}
-              cy={CENTER}
-              r={190}
-              stroke="rgba(148,163,184,0.18)"
-              strokeWidth={1}
-              fill="none"
-            />
-          </svg>
-        </div>
-
-        {/* Lines + nodes */}
-        {INTEGRATION_NODES.map((node, index) => {
-          const angleRad = (node.angleDeg * Math.PI) / 180;
-          const x = CENTER + node.radius * Math.cos(angleRad);
-          const y = CENTER + node.radius * Math.sin(angleRad);
-
-          return (
-            <React.Fragment key={node.id}>
-              {/* Line from hub to node */}
-              <div
-                aria-hidden
-                className="absolute h-[1.5px] rounded-full opacity-90"
-                style={{
-                  left: CENTER,
-                  top: CENTER,
-                  width: node.radius,
-                  transformOrigin: "0 50%",
-                  transform: `rotate(${node.angleDeg}deg)`,
-                  backgroundImage:
-                    "linear-gradient(90deg, rgba(56,189,248,0), rgba(56,189,248,0.9), rgba(244,114,182,0.85))",
-                  backgroundSize: "200% 100%",
-                  animation: "dataFlow 14s linear infinite",
-                  animationDelay: `${index * 0.6}s`,
-                }}
-              />
-
-              {/* Logo pill at end of line */}
-              <div
-                className="absolute flex items-center gap-2 rounded-2xl bg-slate-950/80 px-4 py-1.5 shadow-[0_14px_30px_rgba(15,23,42,0.85)] ring-1 ring-cyan-300/20 backdrop-blur-sm"
-                style={{
-                  left: x,
-                  top: y,
-                  transform: "translate(-50%, -50%)",
-                }}
+        {/* SVG layer — rings, gradient lines, traveling dots */}
+        <svg
+          viewBox={`0 0 ${SIZE} ${SIZE}`}
+          className="absolute inset-0 h-full w-full overflow-visible"
+          aria-hidden
+        >
+          <defs>
+            {coords.map((n) => (
+              <linearGradient
+                key={`lg-${n.id}`}
+                id={`lg-${n.id}`}
+                x1={CENTER} y1={CENTER}
+                x2={n.x} y2={n.y}
+                gradientUnits="userSpaceOnUse"
               >
-                <div className="relative flex h-8 w-8 items-center justify-center rounded-xl bg-slate-900/90 ring-1 ring-white/15 overflow-hidden">
-                  <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-br from-cyan-400/45 via-transparent to-fuchsia-400/35 opacity-70" />
-                  <Image
-                    src={node.logo}
-                    alt={node.label}
-                    width={18}
-                    height={18}
-                    className="relative object-contain"
-                  />
-                </div>
-                <div className="text-[13px] font-medium tracking-[0.01em] text-white">
-                  {node.label}
-                </div>
-              </div>
-            </React.Fragment>
-          );
-        })}
+                <stop offset="0%"   stopColor={n.color} stopOpacity={0.05} />
+                <stop offset="55%"  stopColor={n.color} stopOpacity={0.7} />
+                <stop offset="100%" stopColor={n.color} stopOpacity={0.9} />
+              </linearGradient>
+            ))}
+            <radialGradient id="hubHalo" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stopColor="rgba(56,189,248,0.35)" />
+              <stop offset="100%" stopColor="transparent" />
+            </radialGradient>
+          </defs>
 
-        {/* Center hub – bigger logo + pulse */}
-        <div className="absolute left-1/2 top-1/2 z-10 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-cyan-300/80 bg-slate-950/98 shadow-[0_0_60px_rgba(15,23,42,0.95)]">
+          {/* Hub ambient halo */}
+          <circle cx={CENTER} cy={CENTER} r={72} fill="url(#hubHalo)" />
+
+          {/* Rings */}
+          <circle cx={CENTER} cy={CENTER} r={82}  stroke="rgba(148,163,184,0.30)" strokeWidth={1}   fill="none" />
+          <circle cx={CENTER} cy={CENTER} r={145} stroke="rgba(148,163,184,0.13)" strokeWidth={1}   fill="none" strokeDasharray="3 9" />
+          <circle cx={CENTER} cy={CENTER} r={202} stroke="rgba(148,163,184,0.07)" strokeWidth={0.8} fill="none" />
+
+          {/* Gradient lines */}
+          {coords.map((n) => (
+            <line
+              key={`line-${n.id}`}
+              x1={CENTER} y1={CENTER}
+              x2={n.x}    y2={n.y}
+              stroke={`url(#lg-${n.id})`}
+              strokeWidth={1.5}
+            />
+          ))}
+
+          {/* Traveling dots — flow inward from node → hub */}
+          {coords.map((n, i) => (
+            <circle key={`dot-${n.id}`} r={3} fill={n.color}>
+              <animateMotion
+                dur={`${2.4 + i * 0.5}s`}
+                begin={`${i * 0.8}s`}
+                repeatCount="indefinite"
+                path={`M ${n.x} ${n.y} L ${CENTER} ${CENTER}`}
+              />
+              <animate
+                attributeName="opacity"
+                values="0;1;1;0"
+                keyTimes="0;0.08;0.82;1"
+                dur={`${2.4 + i * 0.5}s`}
+                begin={`${i * 0.8}s`}
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="r"
+                values="2;3.5;2.5;1.5"
+                dur={`${2.4 + i * 0.5}s`}
+                begin={`${i * 0.8}s`}
+                repeatCount="indefinite"
+              />
+            </circle>
+          ))}
+        </svg>
+
+        {/* Platform pills */}
+        {coords.map((n) => (
+          <div
+            key={n.id}
+            className="absolute"
+            style={{ left: n.x, top: n.y, transform: "translate(-50%, -50%)" }}
+          >
+            {/* Per-platform color glow halo */}
+            <div
+              className="pointer-events-none absolute inset-0 -z-10 rounded-2xl opacity-50 blur-xl"
+              style={{ background: n.color, transform: "scale(1.5)" }}
+            />
+            <div className="relative flex items-center gap-2.5 rounded-2xl border border-white/10 bg-slate-950/92 px-4 py-2.5 shadow-[0_16px_40px_rgba(5,7,20,0.9)] backdrop-blur-sm">
+              <div className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-slate-900 ring-1 ring-white/10">
+                <Image src={n.logo} alt={n.label} width={18} height={18} className="object-contain" />
+              </div>
+              <span className="text-[13px] font-medium text-white">{n.label}</span>
+              {/* Live status dot */}
+              <span
+                className="h-2 w-2 shrink-0 rounded-full"
+                style={{ background: "#4ade80", boxShadow: "0 0 7px rgba(74,222,128,0.85)" }}
+              />
+            </div>
+          </div>
+        ))}
+
+        {/* Center hub */}
+        <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
+          {/* Outer pulse ring */}
           <div
             aria-hidden
-            className="hub-pulse absolute inset-[-16px] rounded-full border border-cyan-400/18"
+            className="hub-pulse pointer-events-none absolute rounded-full border border-cyan-400/25"
+            style={{ inset: -22 }}
           />
-          <div className="absolute inset-4 rounded-full border border-white/14 opacity-85" />
-          <div className="relative flex flex-col items-center text-center">
-            <div className="mb-2 flex h-14 w-14 items-center justify-center rounded-3xl bg-black/90 ring-1 ring-white/30">
-              <Image src="/assets/logo.svg" alt="Attribix" width={26} height={26} />
-            </div>
-            <span className="mt-0.5 text-[13px] font-semibold tracking-wide text-white">
-              Attribix
-            </span>
+          {/* Second pulse ring, offset timing */}
+          <div
+            aria-hidden
+            className="hub-pulse-2 pointer-events-none absolute rounded-full border border-cyan-400/15"
+            style={{ inset: -36 }}
+          />
+          {/* Hub circle */}
+          <div className="relative flex h-[96px] w-[96px] flex-col items-center justify-center rounded-full border border-cyan-300/50 bg-slate-950 shadow-[0_0_0_1px_rgba(56,189,248,0.08),0_0_50px_rgba(56,189,248,0.22),inset_0_0_24px_rgba(56,189,248,0.06)]">
+            <div className="absolute inset-[6px] rounded-full border border-white/[0.07]" />
+            <Image src="/assets/logo.svg" alt="Attribix" width={28} height={28} className="mb-1" />
+            <span className="text-[11px] font-semibold tracking-wide text-white/90">Attribix</span>
           </div>
         </div>
-
-        {/* Caption */}
-        <p className="absolute left-1/2 bottom-0 w-full -translate-x-1/2 text-center text-[12px] md:text-[13px] text-white/70 leading-relaxed">
-          One clean conversion stream pushed to every platform — so reports line up instead
-          of fighting each other.
-        </p>
       </div>
 
       <style jsx>{`
         @keyframes hubPulse {
-          0% {
-            opacity: 0;
-            transform: scale(0.88);
-          }
-          45% {
-            opacity: 0.7;
-            transform: scale(1);
-          }
-          100% {
-            opacity: 0;
-            transform: scale(1.12);
-          }
+          0%   { opacity: 0;   transform: scale(0.88); }
+          40%  { opacity: 0.7; transform: scale(1);    }
+          100% { opacity: 0;   transform: scale(1.18); }
         }
-        .hub-pulse {
-          animation: hubPulse 3.8s ease-out infinite;
-        }
+        .hub-pulse  { animation: hubPulse 3.2s ease-out infinite; }
+        .hub-pulse-2 { animation: hubPulse 3.2s ease-out 1.6s infinite; }
       `}</style>
     </>
   );
