@@ -69,8 +69,7 @@ function Reveal({
       ref={ref}
       className={cx(
         "transition-all duration-700 will-change-transform",
-        "opacity-0 translate-y-6",
-        seen && "opacity-100 translate-y-0",
+        seen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6",
         className
       )}
       style={{ transitionDelay: `${delay}ms` }}
@@ -1029,16 +1028,25 @@ function DemoModal({ open, onClose }: { open: boolean; onClose: () => void }) {
       onClick={onClose}
     >
       <div
-        className="w-full max-w-3xl aspect-video bg-black rounded-2xl overflow-hidden ring-1 ring-white/10"
+        className="w-full max-w-lg bg-slate-900 rounded-2xl overflow-hidden ring-1 ring-white/10 p-8 text-center"
         onClick={(e) => e.stopPropagation()}
       >
-        <iframe
-          className="w-full h-full"
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&modestbranding=1"
-          title="Attribix demo"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowFullScreen
-        />
+        <div className="flex items-center justify-center w-16 h-16 rounded-full bg-cyan-400/15 ring-1 ring-cyan-400/30 mx-auto mb-4">
+          <svg className="w-7 h-7 text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </div>
+        <h3 className="text-xl font-bold text-white mb-2">Demo video coming soon</h3>
+        <p className="text-white/60 text-sm mb-6">
+          Want to see Attribix in action? Book a live walkthrough with our team.
+        </p>
+        <Link
+          href="/book-demo"
+          className="inline-block rounded-xl bg-white text-gray-900 px-6 py-3 text-sm font-semibold hover:bg-neutral-200 transition"
+          onClick={onClose}
+        >
+          Book a live demo
+        </Link>
       </div>
     </div>
   );
