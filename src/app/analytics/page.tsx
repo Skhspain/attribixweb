@@ -7,10 +7,6 @@ import Link from "next/link";
 import { overview, sessionsBySource, recent, integrations } from "./data";
 import { ADS } from "./ads/data";
 
-const OverviewChart = dynamic(
-  () => import("./Charts").then((m) => m.OverviewChart),
-  { ssr: false }
-);
 const SessionsBySourceChart = dynamic(
   () => import("./Charts").then((m) => m.SessionsBySourceChart),
   { ssr: false }
@@ -202,7 +198,42 @@ export default function AnalyticsPage() {
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         <div className="ax-card ax-card-body min-w-0">
           <h2 className="mb-3 text-base font-medium">Overview</h2>
-          <OverviewChart data={overview} />
+          <table className="ax-table w-full">
+            <thead>
+              <tr>
+                <th>Month</th>
+                <th className="text-right">Revenue</th>
+                <th className="text-right">vs Prev</th>
+              </tr>
+            </thead>
+            <tbody>
+              {overview.map((row, i) => {
+                const prev = i > 0 ? overview[i - 1].value : null;
+                const delta = prev !== null ? ((row.value - prev) / prev) * 100 : null;
+                return (
+                  <tr key={row.month}>
+                    <td className="font-medium">{row.month}</td>
+                    <td className="text-right">${row.value.toLocaleString()}</td>
+                    <td className="text-right">
+                      {delta !== null ? (
+                        <span
+                          className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${
+                            delta >= 0
+                              ? "bg-emerald-50 text-emerald-600"
+                              : "bg-rose-50 text-rose-600"
+                          }`}
+                        >
+                          {delta >= 0 ? "▲" : "▼"} {Math.abs(delta).toFixed(1)}%
+                        </span>
+                      ) : (
+                        <span className="text-slate-400 text-xs">–</span>
+                      )}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
         <div className="ax-card ax-card-body min-w-0">
           <h2 className="mb-3 text-base font-medium">Sessions by Source</h2>
