@@ -6,13 +6,42 @@ import { AdsRow, ADS } from "./data";
 import AdsTable from "./AdsTable";
 
 type Platform = "Meta" | "Google" | "TikTok";
-const PLATFORMS: Platform[] = ["Meta", "Google", "TikTok"];
+const PLATFORMS: Platform[] = ["Meta", "Google"];
+
+type PerfFilter = "all" | "positive" | "negative";
 
 type Preset = "7d" | "30d" | "90d" | "custom";
+
+const ROAS_TARGET_KEY = "attribix_roas_target";
 
 export default function AdsReviewPage() {
   const [platform, setPlatform] = useState<Platform>("Meta");
   const [query, setQuery] = useState("");
+  const [perfFilter, setPerfFilter] = useState<PerfFilter>("all");
+
+  // ROAS target — persisted to localStorage
+  const [roasTarget, setRoasTarget] = useState<number>(0);
+  const [roasInput, setRoasInput] = useState<string>("");
+
+  useEffect(() => {
+    const stored = localStorage.getItem(ROAS_TARGET_KEY);
+    if (stored) {
+      const n = parseFloat(stored);
+      if (!isNaN(n) && n > 0) { setRoasTarget(n); setRoasInput(String(n)); }
+    }
+  }, []);
+
+  function applyRoasTarget() {
+    const n = parseFloat(roasInput);
+    if (!isNaN(n) && n > 0) {
+      setRoasTarget(n);
+      localStorage.setItem(ROAS_TARGET_KEY, String(n));
+    } else {
+      setRoasTarget(0);
+      setRoasInput("");
+      localStorage.removeItem(ROAS_TARGET_KEY);
+    }
+  }
 
   // timeframe state
   const [preset, setPreset] = useState<Preset>("30d");
@@ -47,16 +76,22 @@ export default function AdsReviewPage() {
     setRowsPrev(previous);
   }, [platform, from, to, prevFrom, prevTo]);
 
-  // search filter
-  const rows = useMemo(
-    () =>
-      rowsCurrent.filter((r) =>
-        `${r.campaign} ${r.adset ?? ""} ${r.name}`
-          .toLowerCase()
-          .includes(query.toLowerCase())
-      ),
-    [rowsCurrent, query]
-  );
+  // search + perf filter
+  const rows = useMemo(() => {
+    return rowsCurrent.filter((r) => {
+      const matchQuery = `${r.campaign} ${r.adset ?? ""} ${r.name}`
+        .toLowerCase()
+        .includes(query.toLowerCase());
+      if (!matchQuery) return false;
+      if (perfFilter !== "all" && roasTarget > 0) {
+        const roas = r.spend > 0 ? r.revenue / r.spend : 0;
+        const isPositive = roas >= roasTarget;
+        if (perfFilter === "positive" && !isPositive) return false;
+        if (perfFilter === "negative" && isPositive) return false;
+      }
+      return true;
+    });
+  }, [rowsCurrent, query, perfFilter, roasTarget]);
 
   // build a map of previous-period by id for row deltas (AdsTable already shows per-metric deltas via prev* fields)
   const rowsWithPrev = useMemo(() => {
@@ -71,6 +106,17 @@ export default function AdsReviewPage() {
       };
     });
   }, [rows, rowsPrev]);
+
+  // positive/negative counts based on ROAS target
+  const perfCounts = useMemo(() => {
+    if (roasTarget <= 0) return { positive: 0, negative: 0 };
+    let positive = 0, negative = 0;
+    rowsCurrent.forEach((r) => {
+      const roas = r.spend > 0 ? r.revenue / r.spend : 0;
+      roas >= roasTarget ? positive++ : negative++;
+    });
+    return { positive, negative };
+  }, [rowsCurrent, roasTarget]);
 
   const kpis = useMemo(() => {
     const sum = (rs: AdsRow[], fn: (r: AdsRow) => number) =>
@@ -108,7 +154,52 @@ export default function AdsReviewPage() {
 
   return (
     <>
-      <h1 className="text-3xl font-extrabold text-gray-900 mb-8">Ads Review</h1>
+      <h1 className="text-3xl font-extrabold text-gray-900 mb-6">Ads Review</h1>
+
+      {/* ROAS Target bar */}
+      <div className="mb-6 flex flex-wrap items-center gap-4 rounded-2xl border border-gray-200 bg-white px-5 py-4">
+        <div className="flex-1 min-w-[200px]">
+          <div className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Target ROAS</div>
+          <div className="flex items-center gap-2">
+            <input
+              type="number"
+              min="0"
+              step="0.1"
+              value={roasInput}
+              onChange={(e) => setRoasInput(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && applyRoasTarget()}
+              placeholder="e.g. 3.0"
+              className="w-28 rounded-xl border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <button
+              onClick={applyRoasTarget}
+              className="rounded-xl bg-gray-900 text-white px-4 py-2 text-sm font-medium hover:bg-gray-700 transition"
+            >
+              Set
+            </button>
+            {roasTarget > 0 && (
+              <span className="text-sm text-gray-500">
+                Current target: <strong className="text-gray-900">{roasTarget.toFixed(1)}×</strong>
+              </span>
+            )}
+          </div>
+        </div>
+
+        {roasTarget > 0 && (
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1.5 rounded-xl bg-emerald-50 border border-emerald-200 px-3 py-2">
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              <span className="text-sm font-semibold text-emerald-700">{perfCounts.positive}</span>
+              <span className="text-xs text-emerald-600">profitable</span>
+            </div>
+            <div className="flex items-center gap-1.5 rounded-xl bg-rose-50 border border-rose-200 px-3 py-2">
+              <span className="h-2 w-2 rounded-full bg-rose-500" />
+              <span className="text-sm font-semibold text-rose-700">{perfCounts.negative}</span>
+              <span className="text-xs text-rose-600">underperforming</span>
+            </div>
+          </div>
+        )}
+      </div>
 
       {/* Platform tabs + search + timeframe */}
       <div className="flex flex-col gap-3 mb-6 lg:flex-row lg:items-center lg:justify-between">
@@ -228,9 +319,36 @@ export default function AdsReviewPage() {
         />
       </div>
 
+      {/* Positive/negative filter tabs */}
+      {roasTarget > 0 && (
+        <div className="mb-4 flex items-center gap-2">
+          {(["all", "positive", "negative"] as PerfFilter[]).map((f) => (
+            <button
+              key={f}
+              onClick={() => setPerfFilter(f)}
+              className={`rounded-xl px-4 py-2 text-sm font-medium transition ${
+                perfFilter === f
+                  ? f === "positive"
+                    ? "bg-emerald-600 text-white"
+                    : f === "negative"
+                    ? "bg-rose-600 text-white"
+                    : "bg-gray-900 text-white"
+                  : "border border-gray-200 bg-white text-gray-600 hover:bg-gray-50"
+              }`}
+            >
+              {f === "all"
+                ? `All ads (${rowsCurrent.length})`
+                : f === "positive"
+                ? `↑ Profitable (${perfCounts.positive})`
+                : `↓ Underperforming (${perfCounts.negative})`}
+            </button>
+          ))}
+        </div>
+      )}
+
       {/* Table */}
       <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden">
-        <AdsTable rows={rowsWithPrev} />
+        <AdsTable rows={rowsWithPrev} roasTarget={roasTarget} />
       </div>
     </>
   );
