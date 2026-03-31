@@ -318,15 +318,12 @@ export default function AgencyPage() {
       <section id="reviews" className="relative py-20 overflow-hidden">
         <div className="mx-auto max-w-6xl px-4 mb-10">
           <Reveal>
-            <div className="flex items-end justify-between flex-wrap gap-4">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-extrabold">What clients say</h2>
-                <p className="mt-3 text-white/65 max-w-md">158 verified reviews · 5.0 stars.</p>
-              </div>
-              <div className="flex items-center gap-3">
+            <div className="flex items-center gap-4 flex-wrap">
+              <h2 className="text-3xl md:text-4xl font-extrabold">What clients say</h2>
+              <div className="flex items-center gap-2">
                 <Stars />
-                <span className="text-2xl font-bold">5.0</span>
-                <span className="text-white/50 text-sm">/ 158 reviews</span>
+                <span className="text-xl font-bold">5.0</span>
+                <span className="text-white/45 text-sm">· 158 reviews</span>
               </div>
             </div>
           </Reveal>
@@ -341,13 +338,10 @@ export default function AgencyPage() {
               <div key={i} className="w-[320px] shrink-0 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
                 <div className="flex items-center justify-between mb-3">
                   <Stars />
-                  <span className="text-[11px] text-white/40">{r.country}</span>
+                  <span className="text-[11px] text-white/40">{r.service}</span>
                 </div>
                 <blockquote className="text-sm text-white/80 leading-relaxed">"{r.quote}"</blockquote>
-                <div className="mt-3 flex items-center justify-between">
-                  <span className="text-[11px] text-cyan-400/70">{r.service}</span>
-                  <span className="text-[11px] text-white/35">{r.country}</span>
-                </div>
+                <div className="mt-3 text-[11px] text-white/35">{r.country}</div>
               </div>
             ))}
           </div>
@@ -362,20 +356,23 @@ export default function AgencyPage() {
               <div key={i} className="w-[320px] shrink-0 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
                 <div className="flex items-center justify-between mb-3">
                   <Stars />
-                  <span className="text-[11px] text-white/40">{r.country}</span>
+                  <span className="text-[11px] text-white/40">{r.service}</span>
                 </div>
                 <blockquote className="text-sm text-white/80 leading-relaxed">"{r.quote}"</blockquote>
-                <div className="mt-3 flex items-center justify-between">
-                  <span className="text-[11px] text-cyan-400/70">{r.service}</span>
-                  <span className="text-[11px] text-white/35">{r.country}</span>
-                </div>
+                <div className="mt-3 text-[11px] text-white/35">{r.country}</div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="mx-auto max-w-6xl px-4 mt-8 text-center">
-          <p className="text-xs text-white/30">158 verified client reviews</p>
+        <div className="mx-auto max-w-6xl px-4 mt-12 text-center">
+          <p className="text-white/40 text-sm mb-4">Convinced? Let's talk.</p>
+          <Link
+            href="/book-demo"
+            className="inline-block rounded-2xl bg-white text-gray-900 px-8 py-4 text-sm font-bold shadow-lg hover:bg-neutral-100 transition"
+          >
+            Book a free strategy call →
+          </Link>
         </div>
 
         <style jsx>{`
