@@ -299,24 +299,30 @@ body,
   display: block;
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
-  color: #334155; /* slate-700 */
+  color: #475569; /* slate-600 */
+  font-size: 0.875rem;
+  transition: background 0.15s, color 0.15s;
 }
-.ax .sidebar-link:hover { background: #f1f5f9; }     /* slate-100 */
-.ax .sidebar-link-active {
+.ax .sidebar-link:hover {
   background: #f1f5f9;
+  color: #0f172a;
+}
+.ax .sidebar-link-active {
+  background: linear-gradient(135deg, #eef2ff 0%, #f0fdfa 100%);
+  color: #4f46e5;
   font-weight: 600;
   position: relative;
 }
-/* Meta-style left accent bar for the active item */
+/* Brand gradient left accent bar for the active item */
 .ax .sidebar-link-active::before {
   content: "";
   position: absolute;
   left: -1px;
-  top: 8px;
-  bottom: 8px;
+  top: 6px;
+  bottom: 6px;
   width: 3px;
   border-radius: 9999px;
-  background: var(--brand-600);
+  background: linear-gradient(to bottom, #6366f1, #06b6d4);
 }
 
 /* Recharts tweaks scoped to analytics */
