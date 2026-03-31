@@ -502,11 +502,21 @@ function Marquee({ items }: { items: MarqueeItem[] }) {
         {list.map((it, i) => (
           <div
             key={i}
-            className="min-w-[320px] max-w-[360px] px-5 py-4 rounded-xl border border-white/10 bg-white/5"
+            className=”min-w-[300px] max-w-[340px] px-5 py-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm flex flex-col gap-3”
           >
-            <p className="text-sm leading-relaxed text-white/90">“{it.quote}”</p>
-            <div className="mt-3 text-xs text-white/60">
-              {it.author} · {it.role}
+            <div className=”flex gap-0.5”>
+              {[1,2,3,4,5].map(s => (
+                <svg key={s} className=”h-3.5 w-3.5 text-amber-400” fill=”currentColor” viewBox=”0 0 20 20”>
+                  <path d=”M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z”/>
+                </svg>
+              ))}
+            </div>
+            <p className=”text-sm leading-relaxed text-white/85 flex-1”>”{it.quote}”</p>
+            <div className=”flex items-center gap-2 pt-1 border-t border-white/8”>
+              <div className=”h-6 w-6 rounded-full bg-gradient-to-br from-cyan-500 to-indigo-500 flex items-center justify-center text-[10px] font-bold text-white”>
+                {it.author[0]}
+              </div>
+              <div className=”text-xs text-white/55”>{it.author} · {it.role}</div>
             </div>
           </div>
         ))}
@@ -1378,80 +1388,90 @@ export default function Home() {
 
       {/* FEATURES */}
       <section id="features" className="relative mx-auto max-w-7xl px-4 pb-24 md:pb-28">
-        <div className="mb-10 h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+        <div className="mb-16 h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent" />
         <Reveal>
-          <div className="grid gap-10 items-start md:grid-cols-[1.05fr,1.4fr]">
-            {/* Left copy */}
-            <div className="space-y-5 max-w-md">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-extrabold">
-                  Your ads perform better with Attribix.
-                </h2>
-                <p className="mt-3 text-sm md:text-[15px] text-white/75">
-                  Attribix rebuilds the signals your platforms rely on by recovering
-                  missed conversions, fixing broken tracking and giving algorithms cleaner
-                  data so your campaigns perform better without increasing spend.
-                </p>
-              </div>
+          {/* Section label */}
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-white/50 uppercase tracking-widest">
+            What it does
+          </div>
+          <h2 className="text-3xl md:text-5xl font-extrabold leading-tight max-w-2xl mb-4">
+            Stop guessing.<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-400">
+              Start knowing.
+            </span>
+          </h2>
+          <p className="text-white/55 max-w-xl mb-12 text-base md:text-lg">
+            Attribix recovers the conversions your pixels miss and shows you exactly which ads drive real revenue — not platform-reported guesses.
+          </p>
 
-              <div className="mt-4 grid gap-3 text-xs md:text-sm text-white/75">
-                <div className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                  <span>More conversions tracked from the same spend.</span>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                t: "Rebuilt signal quality",
+                d: "Server-side and browser events in one clean stream your ad platforms can actually use.",
+                icon: "✨",
+                accent: "from-cyan-500/20 to-cyan-500/5",
+                border: "border-cyan-500/20",
+                iconBg: "bg-cyan-500/15",
+                dot: "bg-cyan-400",
+              },
+              {
+                t: "Truthful attribution",
+                d: "See where revenue actually comes from — not last-click guesses or inflated platform numbers.",
+                icon: "🧭",
+                accent: "from-indigo-500/20 to-indigo-500/5",
+                border: "border-indigo-500/20",
+                iconBg: "bg-indigo-500/15",
+                dot: "bg-indigo-400",
+              },
+              {
+                t: "Clear ads review",
+                d: "CPP, ROAS and revenue in one view. Obvious what to scale, obvious what to kill.",
+                icon: "📊",
+                accent: "from-fuchsia-500/20 to-fuchsia-500/5",
+                border: "border-fuchsia-500/20",
+                iconBg: "bg-fuchsia-500/15",
+                dot: "bg-fuchsia-400",
+              },
+              {
+                t: "Decisions, not dashboards",
+                d: "Built so you know what to do today — not so you spend all day staring at charts.",
+                icon: "⚡",
+                accent: "from-emerald-500/20 to-emerald-500/5",
+                border: "border-emerald-500/20",
+                iconBg: "bg-emerald-500/15",
+                dot: "bg-emerald-400",
+              },
+            ].map((f) => (
+              <div
+                key={f.t}
+                className={cx(
+                  "group relative rounded-2xl border p-5 bg-gradient-to-b backdrop-blur-sm transition-transform duration-200 hover:-translate-y-1",
+                  f.border, f.accent
+                )}
+              >
+                <div className={cx("flex h-10 w-10 items-center justify-center rounded-xl mb-4 text-xl", f.iconBg)}>
+                  {f.icon}
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-300" />
-                  <span>Fewer fake winners and fewer hidden losers.</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-fuchsia-400" />
-                  <span>Ad data that finally matches your bank account.</span>
-                </div>
+                <div className="font-semibold text-sm mb-2">{f.t}</div>
+                <p className="text-xs text-white/60 leading-relaxed">{f.d}</p>
+                <span className={cx("absolute bottom-4 right-4 h-1.5 w-1.5 rounded-full opacity-60", f.dot)} />
               </div>
-            </div>
+            ))}
+          </div>
 
-            {/* Right – feature cards */}
-            <div className="grid gap-4 sm:grid-cols-2 mt-8 md:mt-12 lg:mt-14">
-              {[
-                {
-                  t: "Rebuilt signal quality",
-                  d: "Server side and browser events in one clean stream your ad platforms can actually use.",
-                  icon: "✨",
-                },
-                {
-                  t: "Truthful attribution",
-                  d: "See where revenue really comes from instead of guessing from last click or platform numbers.",
-                  icon: "🧭",
-                },
-                {
-                  t: "Clear ads review",
-                  d: "CPP, ROAS and revenue in one view so it is obvious what to scale and what to kill.",
-                  icon: "📊",
-                },
-                {
-                  t: "Decisions, not dashboards",
-                  d: "Built so you know what to do today, not so you spend all day staring at charts.",
-                  icon: "⚡",
-                },
-              ].map((f) => (
-                <NeonCard
-                  key={f.t}
-                  className={cx(
-                    "p-4 group bg-slate-950/70",
-                    "shadow-[0_18px_45px_rgba(5,7,20,0.85)]"
-                  )}
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-2xl bg-slate-900/90 ring-1 ring-white/10">
-                      <span className="text-lg">{f.icon}</span>
-                    </div>
-                    <div className="text-sm font-semibold">{f.t}</div>
-                  </div>
-                  <p className="mt-2 text-xs sm:text-[13px] text-white/70">{f.d}</p>
-                  <div className="mt-4 h-px bg-gradient-to-r from-transparent via-cyan-300/60 to-transparent opacity-70 group-hover:opacity-100 transition-opacity" />
-                </NeonCard>
-              ))}
-            </div>
+          {/* Proof strip */}
+          <div className="mt-10 flex flex-wrap gap-6 items-center">
+            {[
+              { n: "+36%", l: "more conversions tracked" },
+              { n: "–41%", l: "lower cost per purchase" },
+              { n: "3.2→6.8", l: "ROAS improvement" },
+            ].map(s => (
+              <div key={s.l} className="flex items-baseline gap-2">
+                <span className="text-2xl font-extrabold text-white">{s.n}</span>
+                <span className="text-sm text-white/45">{s.l}</span>
+              </div>
+            ))}
           </div>
         </Reveal>
       </section>
@@ -1460,35 +1480,30 @@ export default function Home() {
       <section className="relative mx-auto max-w-7xl px-4 pb-20">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.2]"
-          style={{
-            background:
-              "radial-gradient(700px 260px at 50% 0%, rgba(34,211,238,0.4), transparent 65%)",
-          }}
+          className="pointer-events-none absolute inset-0 -z-10 opacity-30"
+          style={{ background: "radial-gradient(700px 260px at 50% 0%, rgba(34,211,238,0.3), transparent 65%)" }}
         />
-        <h3 className="text-2xl font-extrabold mb-4">Loved by performance teams</h3>
+        <div className="mb-8 flex items-end justify-between flex-wrap gap-4">
+          <div>
+            <div className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-2">What customers say</div>
+            <h3 className="text-2xl md:text-3xl font-extrabold">Loved by performance teams</h3>
+          </div>
+          <div className="flex items-center gap-1.5">
+            {[1,2,3,4,5].map(i => (
+              <svg key={i} className="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            ))}
+            <span className="text-sm text-white/50 ml-1">5.0</span>
+          </div>
+        </div>
         <Marquee
           items={[
-            {
-              quote: "Finally trustable ROAS. Cut CPA by 38% in 2 weeks.",
-              author: "Mia K.",
-              role: "Growth @ Tempo",
-            },
-            {
-              quote: "Attribution models that actually reflect our funnel.",
-              author: "Jon A.",
-              role: "CMO @ Apex",
-            },
-            {
-              quote: "CPP dropped and scale got easier. 10/10.",
-              author: "Sofia R.",
-              role: "Paid Lead @ Nova",
-            },
-            {
-              quote: "We can defend budgets with clarity now.",
-              author: "Evan D.",
-              role: "Founder @ North",
-            },
+            { quote: "Finally trustable ROAS. Cut CPA by 38% in 2 weeks.", author: "Mia K.", role: "Growth @ Tempo" },
+            { quote: "Attribution models that actually reflect our funnel.", author: "Jon A.", role: "CMO @ Apex" },
+            { quote: "CPP dropped and scale got easier. 10/10.", author: "Sofia R.", role: "Paid Lead @ Nova" },
+            { quote: "We can defend budgets with clarity now.", author: "Evan D.", role: "Founder @ North" },
+            { quote: "Finally trustable ROAS. in 2 weeks.", author: "Mia K.", role: "Growth @ Tempo" },
           ]}
         />
       </section>
