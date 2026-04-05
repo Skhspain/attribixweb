@@ -1386,92 +1386,227 @@ export default function TestPage() {
         <DemoModal open={showDemo} onClose={() => setShowDemo(false)} />
       </section>
 
-      {/* FEATURES */}
-      <section id="features" className="relative mx-auto max-w-7xl px-4 pb-24 md:pb-28">
+      {/* FEATURES — D+A layout */}
+      <section id="features" className="relative mx-auto max-w-7xl px-4 pb-24 md:pb-32">
         <div className="mb-16 h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent" />
-        <Reveal>
-          {/* Section label */}
+
+        {/* Section header */}
+        <Reveal className="text-center mb-20">
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-white/50 uppercase tracking-widest">
-            What it does
+            What you get
           </div>
-          <h2 className="text-3xl md:text-5xl font-extrabold leading-tight max-w-2xl mb-4">
-            Stop guessing.<br />
+          <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">
+            Everything your store needs.
+            <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-400">
-              Start knowing.
+              In one place.
             </span>
           </h2>
-          <p className="text-white/55 max-w-xl mb-12 text-base md:text-lg">
-            Attribix recovers the conversions your pixels miss and shows you exactly which ads drive real revenue — not platform-reported guesses.
-          </p>
+        </Reveal>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                t: "Rebuilt signal quality",
-                d: "Server-side and browser events in one clean stream your ad platforms can actually use.",
-                icon: "✨",
-                accent: "from-cyan-500/20 to-cyan-500/5",
-                border: "border-cyan-500/20",
-                iconBg: "bg-cyan-500/15",
-                dot: "bg-cyan-400",
-              },
-              {
-                t: "Truthful attribution",
-                d: "See where revenue actually comes from — not last-click guesses or inflated platform numbers.",
-                icon: "🧭",
-                accent: "from-indigo-500/20 to-indigo-500/5",
-                border: "border-indigo-500/20",
-                iconBg: "bg-indigo-500/15",
-                dot: "bg-indigo-400",
-              },
-              {
-                t: "Clear ads review",
-                d: "CPP, ROAS and revenue in one view. Obvious what to scale, obvious what to kill.",
-                icon: "📊",
-                accent: "from-fuchsia-500/20 to-fuchsia-500/5",
-                border: "border-fuchsia-500/20",
-                iconBg: "bg-fuchsia-500/15",
-                dot: "bg-fuchsia-400",
-              },
-              {
-                t: "Decisions, not dashboards",
-                d: "Built so you know what to do today — not so you spend all day staring at charts.",
-                icon: "⚡",
-                accent: "from-emerald-500/20 to-emerald-500/5",
-                border: "border-emerald-500/20",
-                iconBg: "bg-emerald-500/15",
-                dot: "bg-emerald-400",
-              },
-            ].map((f) => (
-              <div
-                key={f.t}
-                className={cx(
-                  "group relative rounded-2xl border p-5 bg-gradient-to-b backdrop-blur-sm transition-transform duration-200 hover:-translate-y-1",
-                  f.border, f.accent
-                )}
-              >
-                <div className={cx("flex h-10 w-10 items-center justify-center rounded-xl mb-4 text-xl", f.iconBg)}>
-                  {f.icon}
-                </div>
-                <div className="font-semibold text-sm mb-2">{f.t}</div>
-                <p className="text-xs text-white/60 leading-relaxed">{f.d}</p>
-                <span className={cx("absolute bottom-4 right-4 h-1.5 w-1.5 rounded-full opacity-60", f.dot)} />
-              </div>
-            ))}
+        {/* GROUP 1 — Know which ads work */}
+        <Reveal className="grid gap-12 md:gap-16 md:grid-cols-2 items-center mb-28">
+          {/* Copy — left */}
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/25 bg-cyan-500/8 px-3 py-1 text-xs font-semibold text-cyan-400 uppercase tracking-widest">
+              Know which ads work
+            </div>
+            <h3 className="text-2xl md:text-3xl font-extrabold leading-snug">
+              Your ad data has gaps.<br />We fill them.
+            </h3>
+            <p className="text-white/60 leading-relaxed">
+              iOS updates, ad blockers and cookie restrictions mean your pixels miss a significant share of conversions. Attribix adds server-side tracking alongside your pixel so every sale is captured — and your ROAS reflects reality.
+            </p>
+            <ul className="space-y-3">
+              {[
+                { label: "Server-side + pixel tracking combined", color: "bg-cyan-400" },
+                { label: "Meta & Google Ads data in one view", color: "bg-indigo-400" },
+                { label: "UTM builder for clean campaign tracking", color: "bg-fuchsia-400" },
+                { label: "Visitor flow analysis", color: "bg-emerald-400" },
+              ].map(f => (
+                <li key={f.label} className="flex items-center gap-3 text-sm text-white/75">
+                  <span className={cx("h-1.5 w-1.5 rounded-full shrink-0", f.color)} />
+                  {f.label}
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Proof strip */}
-          <div className="mt-10 flex flex-wrap gap-6 items-center">
-            {[
-              { n: "+36%", l: "more conversions tracked" },
-              { n: "–41%", l: "lower cost per purchase" },
-              { n: "3.2→6.8", l: "ROAS improvement" },
-            ].map(s => (
-              <div key={s.l} className="flex items-baseline gap-2">
-                <span className="text-2xl font-extrabold text-white">{s.n}</span>
-                <span className="text-sm text-white/45">{s.l}</span>
+          {/* Visual — right: ads performance mock */}
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-3xl bg-cyan-500/10 blur-2xl" />
+            <div className="relative rounded-2xl border border-white/10 bg-slate-950/80 backdrop-blur-sm p-5 space-y-3">
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-semibold text-white/50 uppercase tracking-widest">Ad performance</span>
+                <span className="text-[10px] text-emerald-400 flex items-center gap-1">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 inline-block" style={{ boxShadow: "0 0 5px rgba(74,222,128,0.8)" }} />
+                  Live
+                </span>
               </div>
-            ))}
+              {[
+                { name: "Meta — Retargeting", roas: "6.8x", cpp: "$4.20", trend: "+28%", good: true },
+                { name: "Google — Shopping", roas: "4.1x", cpp: "$7.80", trend: "+12%", good: true },
+                { name: "Meta — Prospecting", roas: "1.9x", cpp: "$24.50", trend: "-8%", good: false },
+              ].map(row => (
+                <div key={row.name} className="flex items-center justify-between rounded-xl border border-white/6 bg-white/3 px-4 py-3">
+                  <div>
+                    <div className="text-sm font-medium text-white/90">{row.name}</div>
+                    <div className="text-xs text-white/40 mt-0.5">CPP {row.cpp}</div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-sm font-bold text-white">{row.roas}</div>
+                    <div className={cx("text-[11px] font-semibold mt-0.5", row.good ? "text-emerald-400" : "text-rose-400")}>{row.trend}</div>
+                  </div>
+                </div>
+              ))}
+              <div className="pt-1 flex gap-2">
+                {[40, 55, 48, 62, 70, 58, 75, 80, 72, 88].map((h, i) => (
+                  <div key={i} className="flex-1 rounded-t" style={{ height: `${h * 0.6}px`, background: "linear-gradient(to top, rgba(99,102,241,0.5), rgba(34,211,238,0.8))" }} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* GROUP 2 — Grow your audience */}
+        <Reveal className="grid gap-12 md:gap-16 md:grid-cols-2 items-center mb-28">
+          {/* Visual — left: newsletter + reviews mock */}
+          <div className="relative order-2 md:order-1">
+            <div className="absolute -inset-4 rounded-3xl bg-fuchsia-500/10 blur-2xl" />
+            <div className="relative rounded-2xl border border-white/10 bg-slate-950/80 backdrop-blur-sm p-5 space-y-3">
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-semibold text-white/50 uppercase tracking-widest">Audience</span>
+              </div>
+              {/* Subscriber stat */}
+              <div className="rounded-xl border border-fuchsia-500/20 bg-fuchsia-500/5 px-4 py-3 flex items-center justify-between">
+                <div>
+                  <div className="text-xs text-white/50">Newsletter subscribers</div>
+                  <div className="text-2xl font-extrabold text-white mt-0.5">4,821</div>
+                </div>
+                <div className="text-right">
+                  <div className="text-xs text-emerald-400 font-semibold">+143 this week</div>
+                  <div className="text-xs text-white/35 mt-0.5">42.3% open rate</div>
+                </div>
+              </div>
+              {/* Recent reviews */}
+              <div className="space-y-2">
+                {[
+                  { name: "Sarah M.", stars: 5, text: "Incredible experience, will buy again." },
+                  { name: "James T.", stars: 5, text: "Fast shipping, exactly as described." },
+                ].map(r => (
+                  <div key={r.name} className="rounded-xl border border-white/6 bg-white/3 px-4 py-3">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="h-5 w-5 rounded-full bg-gradient-to-br from-fuchsia-500 to-indigo-500 flex items-center justify-center text-[9px] font-bold text-white">{r.name[0]}</div>
+                      <span className="text-xs font-medium text-white/80">{r.name}</span>
+                      <span className="text-amber-400 text-[10px]">{"★".repeat(r.stars)}</span>
+                    </div>
+                    <p className="text-xs text-white/50">{r.text}</p>
+                  </div>
+                ))}
+              </div>
+              {/* Social post */}
+              <div className="rounded-xl border border-indigo-500/20 bg-indigo-500/5 px-4 py-3 flex items-center justify-between">
+                <div>
+                  <div className="text-xs text-white/50">Scheduled post</div>
+                  <div className="text-sm font-medium text-white/80 mt-0.5">Summer sale — going live in 2h</div>
+                </div>
+                <span className="text-[10px] text-indigo-400 border border-indigo-400/30 rounded-full px-2 py-0.5">Scheduled</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Copy — right */}
+          <div className="space-y-6 order-1 md:order-2">
+            <div className="inline-flex items-center gap-2 rounded-full border border-fuchsia-500/25 bg-fuchsia-500/8 px-3 py-1 text-xs font-semibold text-fuchsia-400 uppercase tracking-widest">
+              Grow your audience
+            </div>
+            <h3 className="text-2xl md:text-3xl font-extrabold leading-snug">
+              Turn one-time buyers<br />into loyal customers.
+            </h3>
+            <p className="text-white/60 leading-relaxed">
+              Collect reviews automatically, grow your newsletter, capture leads, and schedule social content — all from the same platform. No extra tools, no extra cost.
+            </p>
+            <ul className="space-y-3">
+              {[
+                { label: "Newsletter with unlimited sends on Pro", color: "bg-fuchsia-400" },
+                { label: "Automated review collection", color: "bg-pink-400" },
+                { label: "Lead capture forms", color: "bg-indigo-400" },
+                { label: "Social calendar & post scheduling", color: "bg-purple-400" },
+              ].map(f => (
+                <li key={f.label} className="flex items-center gap-3 text-sm text-white/75">
+                  <span className={cx("h-1.5 w-1.5 rounded-full shrink-0", f.color)} />
+                  {f.label}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
+
+        {/* GROUP 3 — Understand your store */}
+        <Reveal className="grid gap-12 md:gap-16 md:grid-cols-2 items-center">
+          {/* Copy — left */}
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/8 px-3 py-1 text-xs font-semibold text-emerald-400 uppercase tracking-widest">
+              Understand your store
+            </div>
+            <h3 className="text-2xl md:text-3xl font-extrabold leading-snug">
+              More visibility.<br />Less guesswork.
+            </h3>
+            <p className="text-white/60 leading-relaxed">
+              Know how your store ranks, what products are getting found, and make sure your product feed is clean and complete before Meta and Google reject it.
+            </p>
+            <ul className="space-y-3">
+              {[
+                { label: "SEO audit — unlimited scans", color: "bg-emerald-400" },
+                { label: "Product feed for Google & Meta", color: "bg-teal-400" },
+                { label: "Feed error detection & fixes", color: "bg-cyan-400" },
+                { label: "90 or 365 days of analytics history", color: "bg-sky-400" },
+              ].map(f => (
+                <li key={f.label} className="flex items-center gap-3 text-sm text-white/75">
+                  <span className={cx("h-1.5 w-1.5 rounded-full shrink-0", f.color)} />
+                  {f.label}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Visual — right: SEO + feed mock */}
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-3xl bg-emerald-500/10 blur-2xl" />
+            <div className="relative rounded-2xl border border-white/10 bg-slate-950/80 backdrop-blur-sm p-5 space-y-3">
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-semibold text-white/50 uppercase tracking-widest">Store health</span>
+              </div>
+              {/* SEO score */}
+              <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 px-4 py-3 flex items-center justify-between">
+                <div>
+                  <div className="text-xs text-white/50">SEO score</div>
+                  <div className="text-2xl font-extrabold text-white mt-0.5">84<span className="text-sm font-normal text-white/40">/100</span></div>
+                </div>
+                <div className="h-12 w-12 rounded-full border-4 border-emerald-400/40 flex items-center justify-center">
+                  <span className="text-emerald-400 text-sm font-bold">B+</span>
+                </div>
+              </div>
+              {/* Feed status */}
+              <div className="space-y-2">
+                <div className="text-xs text-white/40 px-1">Product feed status</div>
+                {[
+                  { name: "Google Shopping feed", status: "Active", ok: true, count: "1,240 products" },
+                  { name: "Meta catalogue", status: "Active", ok: true, count: "1,240 products" },
+                  { name: "Missing descriptions", status: "3 issues", ok: false, count: "Fix required" },
+                ].map(row => (
+                  <div key={row.name} className="flex items-center justify-between rounded-xl border border-white/6 bg-white/3 px-4 py-3">
+                    <div>
+                      <div className="text-sm font-medium text-white/90">{row.name}</div>
+                      <div className="text-xs text-white/35 mt-0.5">{row.count}</div>
+                    </div>
+                    <span className={cx("text-[11px] font-semibold px-2 py-0.5 rounded-full border", row.ok ? "text-emerald-400 border-emerald-400/25 bg-emerald-400/10" : "text-amber-400 border-amber-400/25 bg-amber-400/10")}>
+                      {row.status}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </Reveal>
       </section>
