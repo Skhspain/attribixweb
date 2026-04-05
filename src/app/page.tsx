@@ -1307,7 +1307,7 @@ export default function Home() {
             applicationCategory: "BusinessApplication",
             operatingSystem: "Web",
             offers: [
-              { "@type": "Offer", name: "Starter", price: "29", priceCurrency: "USD" },
+              { "@type": "Offer", name: "Starter", price: "39", priceCurrency: "USD" },
               { "@type": "Offer", name: "Growth", price: "79", priceCurrency: "USD" },
               { "@type": "Offer", name: "Pro", price: "149", priceCurrency: "USD" },
             ],
@@ -1687,7 +1687,7 @@ export default function Home() {
           {[
             {
               name: "Starter",
-              price: 29,
+              price: 39,
               note: "14-day free trial",
               features: ["300 orders tracked/mo", "Meta & Google Ads data", "30 days history", "UTM builder"],
               highlight: false,
