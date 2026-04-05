@@ -1288,6 +1288,88 @@ function IntegrationsDiagram() {
 }
 
 /* -----------------------------------------------------
+   Feature Summary Strip
+----------------------------------------------------- */
+const SUMMARY_FEATURES = [
+  { icon: "📧", label: "Newsletter", sub: "Send to your list" },
+  { icon: "⭐", label: "Reviews", sub: "Auto-collect & display" },
+  { icon: "📅", label: "Social calendar", sub: "Plan & schedule posts" },
+  { icon: "🔍", label: "SEO audit", sub: "Unlimited scans" },
+  { icon: "🎯", label: "Lead capture", sub: "Turn visitors into leads" },
+  { icon: "📊", label: "Analytics", sub: "Up to 365 days history" },
+  { icon: "🛍️", label: "Product feed", sub: "Google & Meta" },
+  { icon: "🔗", label: "UTM builder", sub: "Clean campaign tracking" },
+];
+
+function FeatureSummaryStrip() {
+  const [active, setActive] = React.useState(0);
+  const reduce = usePrefersReducedMotion();
+
+  React.useEffect(() => {
+    if (reduce) return;
+    const iv = setInterval(() => setActive(a => (a + 1) % SUMMARY_FEATURES.length), 1800);
+    return () => clearInterval(iv);
+  }, [reduce]);
+
+  const doubled = [...SUMMARY_FEATURES, ...SUMMARY_FEATURES];
+
+  return (
+    <div className="relative py-16 overflow-hidden">
+      {/* Top + bottom lines */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/12 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/12 to-transparent" />
+      {/* Subtle bg */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-black/20" />
+
+      <Reveal className="mx-auto max-w-7xl px-4 mb-8 text-center">
+        <p className="text-xs font-semibold uppercase tracking-widest text-white/35">Everything else included</p>
+      </Reveal>
+
+      {/* Scrolling strip */}
+      <div className="relative overflow-hidden">
+        {/* Fade edges */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-[#0e1530] to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-[#0e1530] to-transparent" />
+
+        <div
+          className="flex gap-4 will-change-transform"
+          style={reduce ? undefined : { animation: "summaryScroll 28s linear infinite" }}
+        >
+          {doubled.map((f, i) => {
+            const isActive = i % SUMMARY_FEATURES.length === active;
+            return (
+              <div
+                key={i}
+                className={cx(
+                  "shrink-0 flex items-center gap-3 rounded-2xl border px-5 py-3.5 transition-all duration-500 cursor-default",
+                  isActive
+                    ? "border-white/20 bg-white/10 shadow-[0_0_24px_rgba(255,255,255,0.06)] scale-105"
+                    : "border-white/6 bg-white/3"
+                )}
+              >
+                <span className="text-xl">{f.icon}</span>
+                <div>
+                  <div className={cx("text-sm font-semibold transition-colors duration-300", isActive ? "text-white" : "text-white/60")}>
+                    {f.label}
+                  </div>
+                  <div className="text-xs text-white/35">{f.sub}</div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <style jsx global>{`
+          @keyframes summaryScroll {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+        `}</style>
+      </div>
+    </div>
+  );
+}
+
+/* -----------------------------------------------------
    Live Ads Panel
 ----------------------------------------------------- */
 function LiveAdsPanel() {
@@ -1645,21 +1727,24 @@ export default function TestPage() {
         <DemoModal open={showDemo} onClose={() => setShowDemo(false)} />
       </section>
 
+      {/* FEATURE SUMMARY STRIP */}
+      <FeatureSummaryStrip />
+
       {/* FEATURES — cinematic full-width alternating rows */}
       <section id="features" className="relative overflow-hidden">
 
         {/* Section header */}
-        <div className="relative mx-auto max-w-7xl px-4 pt-4 pb-24 text-center">
+        <div className="relative mx-auto max-w-7xl px-4 pt-4 pb-16 text-center">
           <div className="mb-16 h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent" />
           <Reveal>
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-white/50 uppercase tracking-widest">
-              What you get
+              The core
             </div>
             <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">
-              Everything your store needs.
+              Built for one thing.
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-400">
-                In one place.
+                Knowing what actually works.
               </span>
             </h2>
           </Reveal>
