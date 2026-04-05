@@ -12,8 +12,8 @@ function cx(...xs: Array<string | false | null | undefined>) {
 const PLANS = [
   {
     name: "Starter",
-    monthly: 29,
-    yearly: 264,
+    monthly: 39,
+    yearly: 354,
     highlight: false,
     badge: null,
     features: [
