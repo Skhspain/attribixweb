@@ -1024,6 +1024,512 @@ function SectionTitle({ children, id }: { children: React.ReactNode; id?: string
 }
 
 /* -----------------------------------------------------
+   Feature panels (live animated)
+----------------------------------------------------- */
+function LiveAdsPanel() {
+  const rows = [
+    { name: "Meta — Retargeting", roas: 6.8, cpp: 4.2, trend: 28, good: true },
+    { name: "Google — Shopping", roas: 4.1, cpp: 7.8, trend: 12, good: true },
+    { name: "Meta — Prospecting", roas: 1.9, cpp: 24.5, trend: -8, good: false },
+  ];
+  const [tick, setTick] = React.useState(0);
+  const [events, setEvents] = React.useState<{ id: number; label: string; cls: string }[]>([]);
+  const nextId = React.useRef(0);
+
+  React.useEffect(() => {
+    const iv = setInterval(() => setTick(t => t + 1), 2200);
+    return () => clearInterval(iv);
+  }, []);
+
+  React.useEffect(() => {
+    const labels = ["Meta: +1 Purchase", "Google: +1 Purchase", "Meta: +2 Purchases", "Google: +1 Purchase"];
+    const clss = [
+      "bg-gradient-to-r from-[#2563EB] to-[#9333EA]",
+      "bg-gradient-to-r from-[#22D3EE] to-[#60A5FA]",
+      "bg-gradient-to-r from-[#2563EB] to-[#9333EA]",
+      "bg-gradient-to-r from-[#22D3EE] to-[#60A5FA]",
+    ];
+    const id = nextId.current++;
+    const idx = id % labels.length;
+    setEvents(prev => [...prev.slice(-4), { id, label: labels[idx], cls: clss[idx] }]);
+    const t = setTimeout(() => setEvents(prev => prev.filter(e => e.id !== id)), 2000);
+    return () => clearTimeout(t);
+  }, [tick]);
+
+  const bars = [38, 52, 44, 60, 68, 55, 72, 78, 70, 85, 62, 74, 80, 68, 90];
+
+  return (
+    <div className="relative rounded-2xl border border-white/10 bg-[#07091a] overflow-hidden">
+      <div className="flex items-center justify-between px-5 pt-4 pb-3 border-b border-white/[0.06]">
+        <span className="text-xs font-semibold text-white/50 uppercase tracking-widest">Ad performance</span>
+        <span className="flex items-center gap-1.5 text-[11px] text-emerald-400 font-medium">
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          Live
+        </span>
+      </div>
+      <div className="px-5 pt-4 pb-2 flex items-end gap-1.5 h-28">
+        {bars.map((h, i) => (
+          <div key={i} className="flex-1 rounded-t transition-all duration-700"
+            style={{
+              height: `${h + Math.sin((tick + i) * 0.7) * 6}%`,
+              background: "linear-gradient(to top, rgba(99,102,241,0.6), rgba(34,211,238,0.9))",
+              boxShadow: "0 0 6px rgba(34,211,238,0.3)",
+            }}
+          />
+        ))}
+      </div>
+      <div className="relative h-10 mx-5 mb-1 overflow-hidden">
+        {events.map(e => (
+          <div key={e.id}
+            className={`absolute left-0 top-1 text-white text-[10px] font-medium px-2.5 py-1 rounded-full border border-white/10 ${e.cls}`}
+            style={{ animation: "panelEvt 2s ease-in-out forwards" }}>
+            {e.label}
+          </div>
+        ))}
+      </div>
+      <div className="px-4 pb-4 space-y-2">
+        {rows.map((row) => (
+          <div key={row.name} className="flex items-center justify-between rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3">
+            <div>
+              <div className="text-sm font-medium text-white/90">{row.name}</div>
+              <div className="text-xs text-white/35 mt-0.5">CPP ${row.cpp.toFixed(2)}</div>
+            </div>
+            <div className="text-right">
+              <div className="text-sm font-bold text-white">{row.roas}x</div>
+              <div className={cx("text-[11px] font-semibold mt-0.5", row.good ? "text-emerald-400" : "text-rose-400")}>
+                {row.trend > 0 ? "+" : ""}{row.trend}%
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <style jsx>{`
+        @keyframes panelEvt {
+          0%   { opacity:0; transform: translateX(-8px); }
+          12%  { opacity:1; transform: translateX(0); }
+          75%  { opacity:1; }
+          100% { opacity:0; transform: translateX(8px); }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+function AttributionPanel() {
+  const channels = [
+    { name: "Meta Ads", reported: 4.2, real: 2.8, color: "#818cf8" },
+    { name: "Google Ads", reported: 3.8, real: 3.1, color: "#38bdf8" },
+    { name: "Email", reported: 1.2, real: 2.4, color: "#f472b6" },
+    { name: "Organic", reported: 0.8, real: 1.9, color: "#4ade80" },
+  ];
+  const [showReal, setShowReal] = React.useState(false);
+  React.useEffect(() => {
+    const t1 = setTimeout(() => setShowReal(true), 1200);
+    const iv = setInterval(() => setShowReal(r => !r), 3400);
+    return () => { clearTimeout(t1); clearInterval(iv); };
+  }, []);
+
+  return (
+    <div className="relative rounded-2xl border border-white/10 bg-[#07091a] overflow-hidden">
+      <div className="flex items-center justify-between px-5 pt-4 pb-3 border-b border-white/[0.06]">
+        <span className="text-xs font-semibold text-white/50 uppercase tracking-widest">Attribution</span>
+        <div className="flex items-center gap-2 text-[11px]">
+          <span className={cx("transition-colors duration-500", !showReal ? "text-white/50" : "text-white/30")}>Platform reported</span>
+          <div className="w-8 h-4 rounded-full bg-white/10 relative cursor-pointer" onClick={() => setShowReal(r => !r)}>
+            <div className={cx("absolute top-0.5 h-3 w-3 rounded-full transition-all duration-500", showReal ? "left-4 bg-indigo-400" : "left-0.5 bg-white/30")} />
+          </div>
+          <span className={cx("transition-colors duration-500", showReal ? "text-indigo-300" : "text-white/30")}>True ROAS</span>
+        </div>
+      </div>
+      <div className="px-5 py-4 space-y-3">
+        {channels.map(ch => {
+          const val = showReal ? ch.real : ch.reported;
+          const maxVal = 4.5;
+          return (
+            <div key={ch.name}>
+              <div className="flex items-center justify-between mb-1.5">
+                <span className="text-sm text-white/80">{ch.name}</span>
+                <span className={cx("text-sm font-bold tabular-nums transition-all duration-700",
+                  showReal && ch.real > ch.reported ? "text-emerald-400" :
+                  showReal && ch.real < ch.reported ? "text-rose-400" : "text-white")}>
+                  {val.toFixed(1)}x ROAS
+                </span>
+              </div>
+              <div className="h-2 rounded-full bg-white/[0.06] overflow-hidden">
+                <div className="h-full rounded-full transition-all duration-700"
+                  style={{ width: `${(val / maxVal) * 100}%`, background: `linear-gradient(to right, ${ch.color}88, ${ch.color})`, boxShadow: `0 0 8px ${ch.color}60` }}
+                />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="px-5 pb-4">
+        <div className={cx("rounded-xl px-4 py-3 text-xs transition-all duration-700 border",
+          showReal ? "bg-indigo-500/10 border-indigo-500/20 text-indigo-300" : "bg-white/[0.03] border-white/[0.06] text-white/40")}>
+          {showReal ? "Email is your best channel. Meta is overstated by 33%." : "Viewing platform-reported data. Toggle for true attribution."}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function AudiencePanel() {
+  const [count, setCount] = React.useState(4821);
+  const [reviews, setReviews] = React.useState([
+    { name: "Sarah M.", text: "Incredible experience, will buy again.", stars: 5 },
+    { name: "James T.", text: "Fast shipping, exactly as described.", stars: 5 },
+  ]);
+  const [newReview, setNewReview] = React.useState(false);
+  const allReviews = [
+    { name: "Alex R.", text: "Best purchase this year. Highly recommended.", stars: 5 },
+    { name: "Emma L.", text: "Exceeded all expectations!", stars: 5 },
+    { name: "Carlos M.", text: "Great quality and super fast delivery.", stars: 5 },
+  ];
+  const nextReview = React.useRef(0);
+  React.useEffect(() => {
+    const iv = setInterval(() => {
+      setCount(c => c + Math.floor(Math.random() * 3 + 1));
+      setNewReview(true);
+      const r = allReviews[nextReview.current % allReviews.length];
+      nextReview.current++;
+      setReviews(prev => [r, ...prev.slice(0, 1)]);
+      setTimeout(() => setNewReview(false), 600);
+    }, 3200);
+    return () => clearInterval(iv);
+  }, []);
+
+  return (
+    <div className="relative rounded-2xl border border-white/10 bg-[#07091a] overflow-hidden">
+      <div className="flex items-center justify-between px-5 pt-4 pb-3 border-b border-white/[0.06]">
+        <span className="text-xs font-semibold text-white/50 uppercase tracking-widest">Audience</span>
+        <span className="text-[11px] text-fuchsia-400 font-medium">Growing</span>
+      </div>
+      <div className="mx-4 mt-4 rounded-xl border border-fuchsia-500/20 bg-fuchsia-500/5 px-4 py-3 flex items-center justify-between">
+        <div>
+          <div className="text-xs text-white/50">Newsletter subscribers</div>
+          <div className={cx("text-2xl font-extrabold text-white mt-0.5 tabular-nums transition-all duration-300", newReview && "text-fuchsia-300")}>
+            {count.toLocaleString()}
+          </div>
+        </div>
+        <div className="text-right">
+          <div className="text-xs text-emerald-400 font-semibold">+143 this week</div>
+          <div className="text-xs text-white/35 mt-0.5">42.3% open rate</div>
+        </div>
+      </div>
+      <div className="px-4 mt-3 space-y-2 pb-4">
+        <div className="text-xs text-white/35 px-1 mb-1">Recent reviews</div>
+        {reviews.map((r, i) => (
+          <div key={r.name + i}
+            className="rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3 transition-all duration-500"
+            style={{ opacity: i === 0 && newReview ? 0 : 1, transform: i === 0 && newReview ? "translateY(-6px)" : "translateY(0)" }}>
+            <div className="flex items-center gap-2 mb-1">
+              <div className="h-5 w-5 rounded-full bg-gradient-to-br from-fuchsia-500 to-indigo-500 flex items-center justify-center text-[9px] font-bold text-white shrink-0">{r.name[0]}</div>
+              <span className="text-xs font-medium text-white/80">{r.name}</span>
+              <span className="text-amber-400 text-[10px]">{"★".repeat(r.stars)}</span>
+            </div>
+            <p className="text-xs text-white/50">{r.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ReviewsPanel() {
+  const allReviews = [
+    { name: "Sarah M.", text: "Incredible experience, will buy again.", stars: 5, country: "🇺🇸" },
+    { name: "James T.", text: "Fast shipping, exactly as described.", stars: 5, country: "🇬🇧" },
+    { name: "Alex R.", text: "Best purchase this year. Highly recommended.", stars: 5, country: "🇩🇪" },
+    { name: "Emma L.", text: "Exceeded all my expectations!", stars: 5, country: "🇦🇺" },
+    { name: "Carlos M.", text: "Great quality and super fast delivery.", stars: 5, country: "🇧🇷" },
+  ];
+  const [visible, setVisible] = React.useState(allReviews.slice(0, 3));
+  const next = React.useRef(3);
+  const [leads, setLeads] = React.useState(47);
+  React.useEffect(() => {
+    const iv = setInterval(() => {
+      const r = allReviews[next.current % allReviews.length];
+      next.current++;
+      setVisible(prev => [r, ...prev.slice(0, 2)]);
+      setLeads(l => l + Math.floor(Math.random() * 2 + 1));
+    }, 2800);
+    return () => clearInterval(iv);
+  }, []);
+
+  return (
+    <div className="relative rounded-2xl border border-white/10 bg-[#07091a] overflow-hidden">
+      <div className="flex items-center justify-between px-5 pt-4 pb-3 border-b border-white/[0.06]">
+        <span className="text-xs font-semibold text-white/50 uppercase tracking-widest">Reviews & leads</span>
+        <span className="flex items-center gap-1.5 text-[11px] text-pink-400 font-medium">
+          <span className="h-1.5 w-1.5 rounded-full bg-pink-400 animate-pulse" />
+          Live
+        </span>
+      </div>
+      <div className="mx-4 mt-4 rounded-xl border border-pink-500/20 bg-pink-500/5 px-4 py-3 flex items-center justify-between">
+        <div>
+          <div className="text-xs text-white/40">New leads today</div>
+          <div className="text-2xl font-extrabold text-white tabular-nums">{leads}</div>
+        </div>
+        <div className="text-right">
+          <div className="text-xs text-emerald-400 font-semibold">+12 from popup</div>
+          <div className="text-xs text-white/30 mt-0.5">+35 from checkout</div>
+        </div>
+      </div>
+      <div className="px-4 mt-3 space-y-2 pb-4">
+        {visible.map((r, i) => (
+          <div key={r.name + r.text}
+            className="rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3 transition-all duration-500"
+            style={{ opacity: i === 0 ? 1 : 0.75 - i * 0.15 }}>
+            <div className="flex items-center gap-2 mb-1">
+              <div className="h-5 w-5 rounded-full bg-gradient-to-br from-pink-500 to-indigo-500 flex items-center justify-center text-[9px] font-bold text-white shrink-0">{r.name[0]}</div>
+              <span className="text-xs font-medium text-white/80">{r.name}</span>
+              <span className="text-amber-400 text-[10px]">{"★".repeat(r.stars)}</span>
+              <span className="ml-auto text-xs">{r.country}</span>
+            </div>
+            <p className="text-xs text-white/50">{r.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function StoreHealthPanel() {
+  const [score, setScore] = React.useState(61);
+  const [feedRows, setFeedRows] = React.useState([
+    { name: "Google Shopping feed", status: "Fixing…", ok: false, count: "1,240 products" },
+    { name: "Meta catalogue", status: "Active", ok: true, count: "1,240 products" },
+    { name: "Missing descriptions", status: "3 issues", ok: false, count: "Fix required" },
+  ]);
+  React.useEffect(() => {
+    const steps = [
+      () => { setScore(72); },
+      () => { setFeedRows(r => r.map((row, i) => i === 0 ? { ...row, status: "Active", ok: true } : row)); setScore(80); },
+      () => { setFeedRows(r => r.map((row, i) => i === 2 ? { ...row, status: "Fixed", ok: true, count: "All good" } : row)); setScore(91); },
+      () => {
+        setScore(61);
+        setFeedRows([
+          { name: "Google Shopping feed", status: "Fixing…", ok: false, count: "1,240 products" },
+          { name: "Meta catalogue", status: "Active", ok: true, count: "1,240 products" },
+          { name: "Missing descriptions", status: "3 issues", ok: false, count: "Fix required" },
+        ]);
+      },
+    ];
+    const iv = setInterval(() => {
+      setScore(s => {
+        const idx = s < 72 ? 0 : s < 80 ? 1 : s < 91 ? 2 : 3;
+        steps[(idx + 1) % steps.length]();
+        return s;
+      });
+    }, 2200);
+    return () => clearInterval(iv);
+  }, []);
+
+  const grade = score >= 90 ? "A" : score >= 80 ? "B+" : score >= 70 ? "B" : "C+";
+  const scoreColor = score >= 80 ? "text-emerald-400" : score >= 70 ? "text-cyan-400" : "text-amber-400";
+  const ringColor = score >= 80 ? "border-emerald-400/50" : score >= 70 ? "border-cyan-400/50" : "border-amber-400/50";
+
+  return (
+    <div className="relative rounded-2xl border border-white/10 bg-[#07091a] overflow-hidden">
+      <div className="flex items-center justify-between px-5 pt-4 pb-3 border-b border-white/[0.06]">
+        <span className="text-xs font-semibold text-white/50 uppercase tracking-widest">Store health</span>
+        <span className="flex items-center gap-1.5 text-[11px] text-emerald-400 font-medium">
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          Auto-fixing
+        </span>
+      </div>
+      <div className="mx-4 mt-4 rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-3 flex items-center justify-between">
+        <div>
+          <div className="text-xs text-white/50">SEO score</div>
+          <div className={cx("text-3xl font-extrabold mt-0.5 tabular-nums transition-all duration-700", scoreColor)}>
+            {score}<span className="text-sm font-normal text-white/30">/100</span>
+          </div>
+        </div>
+        <div className={cx("h-14 w-14 rounded-full border-4 flex items-center justify-center transition-all duration-700", ringColor)}>
+          <span className={cx("text-lg font-bold transition-all duration-700", scoreColor)}>{grade}</span>
+        </div>
+      </div>
+      <div className="px-4 mt-3 space-y-2 pb-5">
+        <div className="text-xs text-white/35 px-1 mb-1">Product feed status</div>
+        {feedRows.map(row => (
+          <div key={row.name} className="flex items-center justify-between rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3 transition-all duration-500">
+            <div>
+              <div className="text-sm font-medium text-white/90">{row.name}</div>
+              <div className="text-xs text-white/35 mt-0.5">{row.count}</div>
+            </div>
+            <span className={cx("text-[11px] font-semibold px-2 py-0.5 rounded-full border transition-all duration-500",
+              row.ok ? "text-emerald-400 border-emerald-400/25 bg-emerald-400/10" : "text-amber-400 border-amber-400/25 bg-amber-400/10")}>
+              {row.status}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const SPOTLIGHT_FEATURES = [
+  {
+    tag: "Ad tracking",
+    headline: "Your pixel misses more than you think.",
+    sub: "Server-side tracking + pixel combined. Every conversion captured — even on iOS and ad-blocked traffic.",
+    color: "from-cyan-400 to-indigo-400",
+    glow: "rgba(56,189,248,0.15)",
+    pills: ["Server-side events", "Meta & Google", "UTM builder", "Visitor flow"],
+    Panel: () => <LiveAdsPanel />,
+  },
+  {
+    tag: "Attribution",
+    headline: "Meta says 4x. Shopify says 2x. We fix that.",
+    sub: "See where revenue actually comes from. Not last-click guesses or inflated platform numbers.",
+    color: "from-indigo-400 to-fuchsia-400",
+    glow: "rgba(99,102,241,0.15)",
+    pills: ["True ROAS", "Cross-channel", "No last-click bias", "Clean data"],
+    Panel: () => <AttributionPanel />,
+  },
+  {
+    tag: "Newsletter & email",
+    headline: "Grow your list. Keep customers coming back.",
+    sub: "Send campaigns to your subscribers directly from Attribix. Up to unlimited sends on Pro.",
+    color: "from-fuchsia-400 to-pink-400",
+    glow: "rgba(168,85,247,0.15)",
+    pills: ["Unlimited sends", "Subscriber growth", "Open rate tracking", "Segmentation"],
+    Panel: () => <AudiencePanel />,
+  },
+  {
+    tag: "Reviews & leads",
+    headline: "Social proof on autopilot.",
+    sub: "Automatically collect reviews after purchase and capture leads with built-in forms.",
+    color: "from-pink-400 to-orange-400",
+    glow: "rgba(236,72,153,0.15)",
+    pills: ["Auto-collect", "Display on store", "Lead forms", "Inbox management"],
+    Panel: () => <ReviewsPanel />,
+  },
+  {
+    tag: "Social & SEO",
+    headline: "More reach. Less manual work.",
+    sub: "Schedule social posts, track your SEO score, and run unlimited audits — all in one place.",
+    color: "from-emerald-400 to-teal-400",
+    glow: "rgba(52,211,153,0.15)",
+    pills: ["Unlimited SEO scans", "Social scheduling", "Post calendar", "Keyword tracking"],
+    Panel: () => <StoreHealthPanel />,
+  },
+];
+
+function FeatureShowcase() {
+  const [activeIdx, setActiveIdx] = React.useState(0);
+  const [animKey, setAnimKey] = React.useState(0);
+  const sectionRefs = React.useRef<(HTMLDivElement | null)[]>([]);
+
+  React.useEffect(() => {
+    const observers = SPOTLIGHT_FEATURES.map((_, i) => {
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveIdx(i);
+            setAnimKey(k => k + 1);
+          }
+        },
+        { threshold: 0.4, rootMargin: "-10% 0px -40% 0px" }
+      );
+      if (sectionRefs.current[i]) obs.observe(sectionRefs.current[i]!);
+      return obs;
+    });
+    return () => observers.forEach(o => o.disconnect());
+  }, []);
+
+  const f = SPOTLIGHT_FEATURES[activeIdx];
+
+  return (
+    <section id="features" className="relative py-24">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />
+
+      <Reveal className="mx-auto max-w-2xl px-4 text-center mb-24">
+        <p className="text-[11px] uppercase tracking-[0.2em] text-white/25 font-semibold mb-4">Platform features</p>
+        <h2 className="text-4xl md:text-5xl font-black leading-tight text-white">
+          One platform.{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-400">
+            Every channel covered.
+          </span>
+        </h2>
+      </Reveal>
+
+      <div className="mx-auto max-w-7xl px-4">
+        <div className="grid lg:grid-cols-2 gap-0 lg:gap-20 items-start">
+
+          {/* Left — scrollable copy */}
+          <div>
+            {SPOTLIGHT_FEATURES.map((feat, i) => (
+              <div
+                key={feat.tag}
+                ref={(el) => { sectionRefs.current[i] = el; }}
+                className="min-h-[65vh] flex flex-col justify-center py-16"
+              >
+                <div className="space-y-7 max-w-lg">
+                  <div className="flex items-center gap-4">
+                    <span className={cx("font-mono text-xs font-bold tracking-widest transition-colors duration-400",
+                      i === activeIdx ? "text-white/60" : "text-white/15")}>
+                      0{i + 1}
+                    </span>
+                    <div className={cx("h-px flex-1 bg-gradient-to-r transition-all duration-500",
+                      i === activeIdx ? "from-white/20 to-transparent" : "from-white/6 to-transparent")} />
+                  </div>
+                  <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.09] bg-white/[0.04] px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white/45">
+                    {feat.tag}
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-black leading-[1.1]">
+                    <span className={cx("text-transparent bg-clip-text bg-gradient-to-r", feat.color)}>
+                      {feat.headline}
+                    </span>
+                  </h3>
+                  <p className="text-lg text-white/45 leading-relaxed">{feat.sub}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {feat.pills.map(pill => (
+                      <span key={pill} className="text-xs rounded-full px-3 py-1.5 border border-white/[0.09] bg-white/[0.04] text-white/50 font-medium">
+                        {pill}
+                      </span>
+                    ))}
+                  </div>
+                  {/* Mobile: panel inline */}
+                  <div className="lg:hidden mt-6">
+                    <feat.Panel />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Right — sticky panel */}
+          <div className="hidden lg:block sticky top-24">
+            <div
+              className="pointer-events-none absolute -inset-8 -z-10 rounded-3xl blur-3xl opacity-50 transition-all duration-700"
+              style={{ background: `radial-gradient(circle, ${f.glow}, transparent 70%)` }}
+            />
+            <div key={animKey} style={{ animation: "sfPanelIn 0.4s ease-out both" }}>
+              <f.Panel />
+            </div>
+            <div className="mt-6 flex items-center justify-center gap-2">
+              {SPOTLIGHT_FEATURES.map((_, i) => (
+                <div key={i} className={cx("rounded-full transition-all duration-300",
+                  i === activeIdx ? "w-6 h-1.5 bg-white" : "w-1.5 h-1.5 bg-white/15")} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style jsx global>{`
+        @keyframes sfPanelIn {
+          0%   { opacity: 0; transform: translateY(10px) scale(0.98); }
+          100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+/* -----------------------------------------------------
    Grid background (replaces Aurora gradient)
 ----------------------------------------------------- */
 function GridBackground() {
@@ -1704,95 +2210,9 @@ export default function Home() {
         <DemoModal open={showDemo} onClose={() => setShowDemo(false)} />
       </section>
 
-      {/* FEATURES */}
-      <section id="features" className="relative mx-auto max-w-7xl px-4 pb-24 md:pb-28">
-        <div className="mb-16 h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent" />
-        <Reveal>
-          {/* Section label */}
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-white/50 uppercase tracking-widest">
-            What it does
-          </div>
-          <h2 className="text-3xl md:text-5xl font-extrabold leading-tight max-w-2xl mb-4">
-            Stop guessing.<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-400">
-              Start knowing.
-            </span>
-          </h2>
-          <p className="text-white/55 max-w-xl mb-12 text-base md:text-lg">
-            Attribix recovers the conversions your pixels miss and shows you exactly which ads drive real revenue — not platform-reported guesses.
-          </p>
+      {/* FEATURES — sticky scroll showcase */}
+      <FeatureShowcase />
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                t: "Rebuilt signal quality",
-                d: "Server-side and browser events in one clean stream your ad platforms can actually use.",
-                icon: "✨",
-                accent: "from-cyan-500/20 to-cyan-500/5",
-                border: "border-cyan-500/20",
-                iconBg: "bg-cyan-500/15",
-                dot: "bg-cyan-400",
-              },
-              {
-                t: "Truthful attribution",
-                d: "See where revenue actually comes from — not last-click guesses or inflated platform numbers.",
-                icon: "🧭",
-                accent: "from-indigo-500/20 to-indigo-500/5",
-                border: "border-indigo-500/20",
-                iconBg: "bg-indigo-500/15",
-                dot: "bg-indigo-400",
-              },
-              {
-                t: "Clear ads review",
-                d: "CPP, ROAS and revenue in one view. Obvious what to scale, obvious what to kill.",
-                icon: "📊",
-                accent: "from-fuchsia-500/20 to-fuchsia-500/5",
-                border: "border-fuchsia-500/20",
-                iconBg: "bg-fuchsia-500/15",
-                dot: "bg-fuchsia-400",
-              },
-              {
-                t: "Decisions, not dashboards",
-                d: "Built so you know what to do today — not so you spend all day staring at charts.",
-                icon: "⚡",
-                accent: "from-emerald-500/20 to-emerald-500/5",
-                border: "border-emerald-500/20",
-                iconBg: "bg-emerald-500/15",
-                dot: "bg-emerald-400",
-              },
-            ].map((f) => (
-              <div
-                key={f.t}
-                className={cx(
-                  "group relative rounded-2xl border p-5 bg-gradient-to-b backdrop-blur-sm transition-transform duration-200 hover:-translate-y-1",
-                  f.border, f.accent
-                )}
-              >
-                <div className={cx("flex h-10 w-10 items-center justify-center rounded-xl mb-4 text-xl", f.iconBg)}>
-                  {f.icon}
-                </div>
-                <div className="font-semibold text-sm mb-2">{f.t}</div>
-                <p className="text-xs text-white/60 leading-relaxed">{f.d}</p>
-                <span className={cx("absolute bottom-4 right-4 h-1.5 w-1.5 rounded-full opacity-60", f.dot)} />
-              </div>
-            ))}
-          </div>
-
-          {/* Proof strip */}
-          <div className="mt-10 flex flex-wrap gap-6 items-center">
-            {[
-              { n: "+36%", l: "more conversions tracked" },
-              { n: "–41%", l: "lower cost per purchase" },
-              { n: "3.2→6.8", l: "ROAS improvement" },
-            ].map(s => (
-              <div key={s.l} className="flex items-baseline gap-2">
-                <span className="text-2xl font-extrabold text-white">{s.n}</span>
-                <span className="text-sm text-white/45">{s.l}</span>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </section>
 
       {/* TESTIMONIALS MARQUEE */}
       <section className="relative mx-auto max-w-7xl px-4 pb-20">
