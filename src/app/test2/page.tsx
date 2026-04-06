@@ -1623,6 +1623,281 @@ function HeroDashboardCard() {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
+   Bento hero cards
+───────────────────────────────────────────────────────────────────────────── */
+function BentoAdTracking() {
+  const [tick, setTick] = React.useState(0);
+  const [evt, setEvt] = React.useState<{ id: number; text: string; color: string } | null>(null);
+  const nextId = React.useRef(0);
+  const bars = [35, 48, 42, 58, 64, 52, 70, 76, 68, 84, 60, 72, 78, 66, 88, 74, 90, 82];
+
+  React.useEffect(() => {
+    const iv = setInterval(() => setTick(t => t + 1), 1900);
+    return () => clearInterval(iv);
+  }, []);
+
+  React.useEffect(() => {
+    const opts = [
+      { text: "Meta: +1 Purchase  $67", color: "#818cf8" },
+      { text: "Google: +2 Purchases  $118", color: "#38bdf8" },
+      { text: "Meta: +1 Purchase  $54", color: "#818cf8" },
+      { text: "Email: +3 Purchases  $201", color: "#f472b6" },
+    ];
+    const id = nextId.current++;
+    setEvt({ id, ...opts[id % opts.length] });
+    const t = setTimeout(() => setEvt(null), 1700);
+    return () => clearTimeout(t);
+  }, [tick]);
+
+  return (
+    <div className="h-full flex flex-col gap-3">
+      <div className="flex items-center justify-between">
+        <span className="text-[11px] font-bold uppercase tracking-wider text-cyan-400">Ad tracking</span>
+        <span className="flex items-center gap-1.5 text-[10px] text-emerald-400 font-semibold">
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />Live
+        </span>
+      </div>
+      <div className="flex items-end gap-[3px] h-24">
+        {bars.map((h, i) => (
+          <div key={i} className="flex-1 rounded-t transition-all duration-700"
+            style={{
+              height: `${h + Math.sin((tick + i) * 0.65) * 9}%`,
+              background: "linear-gradient(to top, rgba(99,102,241,0.55), rgba(34,211,238,0.95))",
+              boxShadow: "0 0 4px rgba(34,211,238,0.35)",
+            }}
+          />
+        ))}
+      </div>
+      <div className="relative h-7 overflow-hidden">
+        {evt && (
+          <div key={evt.id}
+            className="absolute inset-0 flex items-center gap-2 text-[11px] font-semibold text-white rounded-lg px-2.5 py-1"
+            style={{ background: `${evt.color}18`, border: `1px solid ${evt.color}35`, animation: "bentoEvt 1.7s ease-in-out forwards" }}>
+            <span className="h-1.5 w-1.5 rounded-full shrink-0 animate-pulse" style={{ background: evt.color }} />
+            {evt.text}
+          </div>
+        )}
+      </div>
+      <div className="grid grid-cols-3 gap-2 mt-auto">
+        {[
+          { l: "ROAS", v: "6.8×", c: "#67e8f9" },
+          { l: "CPP", v: "$4.20", c: "#a5b4fc" },
+          { l: "Conv.", v: "+36%", c: "#86efac" },
+        ].map(m => (
+          <div key={m.l} className="rounded-xl bg-white/[0.04] border border-white/[0.07] px-2 py-2 text-center">
+            <div className="text-[9px] text-white/30 mb-0.5 uppercase tracking-wide">{m.l}</div>
+            <div className="text-sm font-black tabular-nums" style={{ color: m.c }}>{m.v}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function BentoAttribution() {
+  const [showReal, setShowReal] = React.useState(false);
+  React.useEffect(() => {
+    const t = setTimeout(() => setShowReal(true), 1200);
+    const iv = setInterval(() => setShowReal(r => !r), 3000);
+    return () => { clearTimeout(t); clearInterval(iv); };
+  }, []);
+  const channels = [
+    { name: "Meta", rep: 4.2, real: 2.8, color: "#818cf8" },
+    { name: "Google", rep: 3.8, real: 3.1, color: "#38bdf8" },
+    { name: "Email", rep: 1.2, real: 2.4, color: "#f472b6" },
+    { name: "Organic", rep: 0.8, real: 1.9, color: "#4ade80" },
+  ];
+  return (
+    <div className="h-full flex flex-col gap-2">
+      <div className="flex items-center justify-between">
+        <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-400">Attribution</span>
+        <span className={cx("text-[10px] font-semibold px-2 py-0.5 rounded-full border transition-all duration-500",
+          showReal ? "text-indigo-300 border-indigo-400/30 bg-indigo-400/10" : "text-white/30 border-white/10 bg-white/[0.03]")}>
+          {showReal ? "True ROAS" : "Platform"}
+        </span>
+      </div>
+      <div className="flex-1 space-y-2.5">
+        {channels.map(ch => {
+          const v = showReal ? ch.real : ch.rep;
+          return (
+            <div key={ch.name}>
+              <div className="flex justify-between text-[10px] mb-1">
+                <span className="text-white/45">{ch.name}</span>
+                <span className={cx("font-bold tabular-nums transition-colors duration-500",
+                  showReal && ch.real > ch.rep ? "text-emerald-400" : showReal && ch.real < ch.rep ? "text-rose-400" : "text-white/55")}>
+                  {v.toFixed(1)}×
+                </span>
+              </div>
+              <div className="h-1.5 rounded-full bg-white/[0.06]">
+                <div className="h-full rounded-full transition-all duration-700"
+                  style={{ width: `${(v / 4.5) * 100}%`, background: `linear-gradient(to right, ${ch.color}66, ${ch.color})` }} />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className={cx("text-[10px] rounded-lg px-2.5 py-1.5 border transition-all duration-700",
+        showReal ? "text-indigo-300 border-indigo-400/20 bg-indigo-400/8" : "text-white/25 border-white/[0.06] bg-white/[0.02]")}>
+        {showReal ? "Email is your real best channel." : "Toggle to see true attribution →"}
+      </div>
+    </div>
+  );
+}
+
+function BentoEmail() {
+  const [count, setCount] = React.useState(4821);
+  React.useEffect(() => {
+    const iv = setInterval(() => setCount(c => c + Math.floor(Math.random() * 3 + 1)), 2600);
+    return () => clearInterval(iv);
+  }, []);
+  return (
+    <div className="h-full flex flex-col gap-2">
+      <div className="flex items-center justify-between">
+        <span className="text-[11px] font-bold uppercase tracking-wider text-purple-400">Email</span>
+        <span className="text-[10px] text-emerald-400 font-semibold">Growing</span>
+      </div>
+      <div className="rounded-xl border border-purple-500/20 bg-purple-500/8 px-3 py-2.5">
+        <div className="text-[9px] text-white/35 mb-0.5 uppercase tracking-wide">Subscribers</div>
+        <div className="text-2xl font-black text-white tabular-nums leading-none">{count.toLocaleString()}</div>
+        <div className="text-[10px] text-emerald-400 mt-1">+143 this week · 42% open rate</div>
+      </div>
+      <div className="flex-1 rounded-xl border border-white/[0.06] bg-white/[0.02] px-3 py-2">
+        <div className="text-[9px] text-white/25 uppercase tracking-wide mb-1.5">Latest campaign</div>
+        <div className="text-xs font-semibold text-white/75 mb-1">Summer sale is live 🎉</div>
+        <div className="flex items-center gap-2 text-[10px]">
+          <span className="text-emerald-400 font-semibold">2.4k opens</span>
+          <span className="text-white/20">·</span>
+          <span className="text-white/35">38 orders</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function BentoReviews() {
+  const all = [
+    { name: "Sarah M.", text: "Incredible. Will buy again!", stars: 5, flag: "🇺🇸" },
+    { name: "James T.", text: "Fast shipping, as described.", stars: 5, flag: "🇬🇧" },
+    { name: "Alex R.", text: "Best purchase this year!", stars: 5, flag: "🇩🇪" },
+    { name: "Emma L.", text: "Exceeded all expectations!", stars: 5, flag: "🇦🇺" },
+  ];
+  const [idx, setIdx] = React.useState(0);
+  const [leads, setLeads] = React.useState(47);
+  React.useEffect(() => {
+    const iv = setInterval(() => {
+      setIdx(i => (i + 1) % all.length);
+      setLeads(l => l + Math.floor(Math.random() * 2 + 1));
+    }, 2800);
+    return () => clearInterval(iv);
+  }, []);
+  const r = all[idx];
+  return (
+    <div className="h-full flex flex-col gap-2">
+      <div className="flex items-center justify-between">
+        <span className="text-[11px] font-bold uppercase tracking-wider text-pink-400">Reviews & leads</span>
+        <span className="text-[10px] font-semibold text-pink-400">
+          <span className="h-1.5 w-1.5 rounded-full bg-pink-400 animate-pulse inline-block mr-1" />Live
+        </span>
+      </div>
+      <div key={idx} className="flex-1 rounded-xl border border-pink-500/15 bg-pink-500/5 px-3 py-2.5" style={{ animation: "bentoFade 0.35s ease-out" }}>
+        <div className="text-amber-400 text-sm mb-1">★★★★★</div>
+        <p className="text-xs text-white/60 italic leading-relaxed">"{r.text}"</p>
+        <div className="text-[10px] text-white/25 mt-1.5">{r.flag} {r.name}</div>
+      </div>
+      <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] px-3 py-2 flex justify-between items-center">
+        <span className="text-[10px] text-white/35">New leads today</span>
+        <span className="text-base font-black text-white tabular-nums">{leads}</span>
+      </div>
+    </div>
+  );
+}
+
+function BentoSocial() {
+  const posts = [
+    { day: "Mon", time: "10 am", ch: "Instagram", color: "#f472b6", done: true },
+    { day: "Wed", time: "2 pm",  ch: "Facebook",  color: "#818cf8", done: true },
+    { day: "Thu", time: "11 am", ch: "Instagram", color: "#f472b6", done: false },
+    { day: "Fri", time: "3 pm",  ch: "X",         color: "#e2e8f0", done: false },
+  ];
+  return (
+    <div className="h-full flex flex-col gap-2">
+      <div className="flex items-center justify-between">
+        <span className="text-[11px] font-bold uppercase tracking-wider text-orange-400">Social calendar</span>
+        <span className="text-[10px] text-white/25">This week</span>
+      </div>
+      <div className="flex-1 space-y-1.5">
+        {posts.map((p, i) => (
+          <div key={i} className="flex items-center gap-2 rounded-lg border border-white/[0.05] bg-white/[0.03] px-2.5 py-1.5">
+            <div className="h-1.5 w-1.5 rounded-full shrink-0" style={{ background: p.color }} />
+            <span className="text-[10px] text-white/55 flex-1">{p.ch}</span>
+            <span className="text-[10px] text-white/20">{p.day} {p.time}</span>
+            <span className={cx("text-[10px] font-bold", p.done ? "text-emerald-400" : "text-white/15")}>
+              {p.done ? "✓" : "○"}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function BentoSEO() {
+  const [score, setScore] = React.useState(61);
+  React.useEffect(() => {
+    const steps = [72, 81, 91, 61];
+    let i = 0;
+    const iv = setInterval(() => { setScore(steps[i % steps.length]); i++; }, 2000);
+    return () => clearInterval(iv);
+  }, []);
+  const color = score >= 85 ? "#34d399" : score >= 72 ? "#22d3ee" : "#fbbf24";
+  const grade = score >= 90 ? "A" : score >= 80 ? "B+" : score >= 70 ? "B" : "C+";
+  const circumference = 2 * Math.PI * 20;
+  return (
+    <div className="h-full flex flex-col gap-2">
+      <div className="flex items-center justify-between">
+        <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-400">SEO audit</span>
+        <span className="text-[10px] font-semibold text-emerald-400">Auto-fix on</span>
+      </div>
+      <div className="flex items-center gap-3">
+        <div className="relative h-14 w-14 shrink-0">
+          <svg viewBox="0 0 48 48" className="h-full w-full -rotate-90">
+            <circle cx="24" cy="24" r="20" stroke="rgba(255,255,255,0.07)" strokeWidth="4.5" fill="none" />
+            <circle cx="24" cy="24" r="20" stroke={color} strokeWidth="4.5" fill="none"
+              strokeDasharray={circumference}
+              strokeDashoffset={circumference * (1 - score / 100)}
+              style={{ transition: "stroke-dashoffset 0.9s ease, stroke 0.5s ease" }}
+              strokeLinecap="round"
+            />
+          </svg>
+          <div className="absolute inset-0 flex flex-col items-center justify-center leading-none">
+            <span className="text-sm font-black tabular-nums" style={{ color }}>{score}</span>
+          </div>
+        </div>
+        <div>
+          <div className="text-base font-bold text-white">{grade} — {score >= 85 ? "Good" : score >= 72 ? "Fair" : "Needs work"}</div>
+          <div className="text-[10px] text-white/30 mt-0.5">3 issues auto-fixing…</div>
+        </div>
+      </div>
+      <div className="flex-1 space-y-1.5">
+        {[
+          { label: "Missing meta tags", fixed: score >= 72 },
+          { label: "Unoptimised images", fixed: score >= 81 },
+          { label: "Broken product links", fixed: score >= 91 },
+        ].map((issue) => (
+          <div key={issue.label} className={cx(
+            "flex items-center gap-2 text-[10px] rounded-lg px-2.5 py-1.5 border transition-all duration-700",
+            issue.fixed ? "border-emerald-400/20 bg-emerald-400/5 text-emerald-400" : "border-amber-400/15 bg-amber-400/5 text-amber-400/70"
+          )}>
+            <span className="shrink-0">{issue.fixed ? "✓" : "⚠"}</span>
+            {issue.label}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
    PAGE
 ───────────────────────────────────────────────────────────────────────────── */
 export default function Test2Page() {
@@ -1638,119 +1913,127 @@ export default function Test2Page() {
       <Header />
 
       {/* ── HERO ── */}
-      <section className="relative min-h-[96vh] flex items-center pt-24 pb-16 overflow-hidden">
+      <section className="relative pt-28 pb-20 overflow-hidden">
         <div
-          className="pointer-events-none absolute inset-x-0 top-0 h-full -z-10"
-          style={{ background: "radial-gradient(ellipse 80% 60% at 30% 20%, rgba(99,102,241,0.14), transparent 65%)" }}
-        />
-        <div
-          className="pointer-events-none absolute right-0 top-0 bottom-0 w-[55vw] h-full -z-10"
-          style={{ background: "radial-gradient(ellipse 80% 60% at 70% 50%, rgba(6,182,212,0.07), transparent 65%)" }}
+          className="pointer-events-none absolute inset-0 -z-10"
+          style={{ background: "radial-gradient(ellipse 90% 55% at 50% 0%, rgba(99,102,241,0.18), transparent 65%)" }}
         />
 
-        <div className="mx-auto max-w-7xl px-4 w-full grid lg:grid-cols-[1fr_1.05fr] gap-14 xl:gap-20 items-center">
+        {/* Headline */}
+        <div className="mx-auto max-w-4xl px-4 text-center mb-14">
+          <Reveal>
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-white/[0.09] bg-white/[0.04] px-4 py-1.5 text-xs text-white/40 font-medium mb-7">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+              For Shopify stores &nbsp;·&nbsp; Free 14-day trial
+            </div>
+          </Reveal>
 
-          {/* Left — copy */}
-          <div>
-            <Reveal>
-              <div className="inline-flex items-center gap-2.5 rounded-full border border-white/[0.09] bg-white/[0.04] px-4 py-1.5 text-xs text-white/40 font-medium mb-8">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-                For Shopify stores &nbsp;·&nbsp; Free 14-day trial
-              </div>
-            </Reveal>
+          <Reveal delay={30}>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-[1.0] tracking-tight text-white mb-5">
+              Stop paying for<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-400 to-fuchsia-500">
+                6 separate tools.
+              </span>
+            </h1>
+          </Reveal>
 
-            <Reveal delay={40}>
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-[1.0] tracking-tight text-white mb-6">
-                One platform.
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-400 to-fuchsia-500">
-                  <Typewriter words={[
-                    "Track your ads.",
-                    "Grow your list.",
-                    "Collect reviews.",
-                    "Schedule social.",
-                    "Fix your SEO.",
-                  ]} />
-                </span>
-              </h1>
-            </Reveal>
+          <Reveal delay={70}>
+            <p className="text-lg text-white/40 max-w-xl mx-auto mb-8 leading-relaxed">
+              Attribix combines ad tracking, attribution, email, reviews, social scheduling, and SEO into one dashboard — built for Shopify.
+            </p>
+          </Reveal>
 
-            <Reveal delay={100}>
-              <p className="text-lg text-white/40 leading-relaxed mb-8 max-w-lg">
-                Attribix replaces 5 separate tools with a single dashboard — ad tracking, attribution, email, reviews, social scheduling, and SEO. Built for Shopify stores that want to grow without the chaos.
-              </p>
-            </Reveal>
-
-            {/* Feature pills — staggered fade-in */}
-            <Reveal delay={160}>
-              <div className="flex flex-wrap gap-2 mb-9">
-                {[
-                  { label: "Ad tracking",      color: "rgba(34,211,238,0.15)",  border: "rgba(34,211,238,0.25)",  text: "#67e8f9" },
-                  { label: "Attribution",       color: "rgba(99,102,241,0.15)",  border: "rgba(99,102,241,0.25)",  text: "#a5b4fc" },
-                  { label: "Email & newsletter",color: "rgba(168,85,247,0.15)",  border: "rgba(168,85,247,0.25)",  text: "#d8b4fe" },
-                  { label: "Reviews & leads",   color: "rgba(236,72,153,0.15)",  border: "rgba(236,72,153,0.25)",  text: "#f9a8d4" },
-                  { label: "Social calendar",   color: "rgba(249,115,22,0.12)",  border: "rgba(249,115,22,0.2)",   text: "#fdba74" },
-                  { label: "SEO audit",         color: "rgba(52,211,153,0.15)",  border: "rgba(52,211,153,0.25)",  text: "#6ee7b7" },
-                ].map((f, i) => (
-                  <span
-                    key={f.label}
-                    className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold"
-                    style={{
-                      background: f.color,
-                      border: `1px solid ${f.border}`,
-                      color: f.text,
-                      animation: `t2pillIn 0.4s ease-out ${i * 60}ms both`,
-                    }}
-                  >
-                    <span className="h-1 w-1 rounded-full shrink-0" style={{ background: f.text }} />
-                    {f.label}
-                  </span>
-                ))}
-              </div>
-            </Reveal>
-
-            <Reveal delay={220}>
-              <div className="flex flex-wrap items-center gap-4 mb-9">
-                <MagneticButton href="/login" className="text-base px-9 py-4">
-                  Start free trial →
-                </MagneticButton>
-                <Link href="/pricing" className="text-sm text-white/35 hover:text-white/80 transition-colors underline underline-offset-4 decoration-white/15">
-                  See pricing
-                </Link>
-              </div>
-
-              {/* Social proof */}
-              <div className="flex items-center gap-3">
-                <div className="flex -space-x-2">
-                  {["#4f46e5", "#0891b2", "#7c3aed", "#be185d", "#059669"].map((c, i) => (
-                    <div
-                      key={i}
-                      className="h-8 w-8 rounded-full border-2 border-[#030712] flex items-center justify-center text-white text-[10px] font-bold shrink-0"
-                      style={{ background: c }}
-                    >
-                      {["M", "J", "A", "S", "E"][i]}
-                    </div>
-                  ))}
-                </div>
-                <div>
-                  <div className="flex gap-0.5 mb-0.5">
-                    {[1,2,3,4,5].map(s => (
-                      <svg key={s} className="h-3 w-3 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                      </svg>
-                    ))}
-                  </div>
-                  <div className="text-xs text-white/25">Loved by 500+ Shopify stores</div>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* Right — dashboard card */}
-          <Reveal delay={260} className="hidden lg:block">
-            <HeroDashboardCard />
+          <Reveal delay={110}>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <MagneticButton href="/login" className="text-base px-9 py-4">
+                Start free trial →
+              </MagneticButton>
+              <Link href="/pricing" className="text-sm text-white/35 hover:text-white/70 transition-colors underline underline-offset-4 decoration-white/15">
+                See pricing
+              </Link>
+            </div>
           </Reveal>
         </div>
+
+        {/* Bento grid */}
+        <div className="mx-auto max-w-6xl px-4">
+          <div
+            className="grid grid-cols-1 md:grid-cols-3 gap-3"
+            style={{ gridAutoRows: "180px" }}
+          >
+            {/* Ad Tracking — large (2×2) */}
+            <div
+              className="md:col-span-2 md:row-span-2 rounded-2xl border border-white/[0.09] bg-[#07091a] p-5 relative overflow-hidden group hover:-translate-y-0.5 transition-transform duration-300"
+              style={{ animation: "bentoIn 0.5s ease-out 0ms both" }}
+            >
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-cyan-500/[0.08] via-transparent to-indigo-500/[0.05] rounded-2xl" />
+              <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" style={{ boxShadow: "inset 0 0 0 1px rgba(34,211,238,0.2)" }} />
+              <BentoAdTracking />
+            </div>
+
+            {/* Attribution */}
+            <div
+              className="rounded-2xl border border-white/[0.09] bg-[#07091a] p-4 relative overflow-hidden group hover:-translate-y-0.5 transition-transform duration-300"
+              style={{ animation: "bentoIn 0.5s ease-out 80ms both" }}
+            >
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-indigo-500/[0.08] to-transparent rounded-2xl" />
+              <BentoAttribution />
+            </div>
+
+            {/* Email */}
+            <div
+              className="rounded-2xl border border-white/[0.09] bg-[#07091a] p-4 relative overflow-hidden group hover:-translate-y-0.5 transition-transform duration-300"
+              style={{ animation: "bentoIn 0.5s ease-out 140ms both" }}
+            >
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-purple-500/[0.08] to-transparent rounded-2xl" />
+              <BentoEmail />
+            </div>
+
+            {/* Reviews */}
+            <div
+              className="rounded-2xl border border-white/[0.09] bg-[#07091a] p-4 relative overflow-hidden group hover:-translate-y-0.5 transition-transform duration-300"
+              style={{ animation: "bentoIn 0.5s ease-out 200ms both" }}
+            >
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-pink-500/[0.08] to-transparent rounded-2xl" />
+              <BentoReviews />
+            </div>
+
+            {/* Social */}
+            <div
+              className="rounded-2xl border border-white/[0.09] bg-[#07091a] p-4 relative overflow-hidden group hover:-translate-y-0.5 transition-transform duration-300"
+              style={{ animation: "bentoIn 0.5s ease-out 260ms both" }}
+            >
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-orange-500/[0.07] to-transparent rounded-2xl" />
+              <BentoSocial />
+            </div>
+
+            {/* SEO */}
+            <div
+              className="rounded-2xl border border-white/[0.09] bg-[#07091a] p-4 relative overflow-hidden group hover:-translate-y-0.5 transition-transform duration-300"
+              style={{ animation: "bentoIn 0.5s ease-out 320ms both" }}
+            >
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-emerald-500/[0.08] to-transparent rounded-2xl" />
+              <BentoSEO />
+            </div>
+          </div>
+        </div>
+
+        <style jsx global>{`
+          @keyframes bentoIn {
+            0%   { opacity: 0; transform: translateY(16px) scale(0.97); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+          }
+          @keyframes bentoEvt {
+            0%   { opacity: 0; transform: translateX(-6px); }
+            10%  { opacity: 1; transform: translateX(0); }
+            80%  { opacity: 1; }
+            100% { opacity: 0; transform: translateX(6px); }
+          }
+          @keyframes bentoFade {
+            0%   { opacity: 0; transform: translateY(-4px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+        `}</style>
       </section>
 
       {/* ── METRICS TICKER ── */}
