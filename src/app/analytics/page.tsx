@@ -137,6 +137,10 @@ export default function AnalyticsPage() {
 
   const confirmed = m.confirmedRevenue ?? m.revenue;
 
+  // Detect currency from live data
+  const currencyCode = liveData?.recentPurchases?.[0]?.currency || "USD";
+  const currencySymbol = currencyCode === "NOK" ? "kr " : currencyCode === "EUR" ? "€" : currencyCode === "GBP" ? "£" : "$";
+
   return (
     <div className="min-w-0 px-4 py-6 md:px-6 md:py-8">
       <header className="mb-6 flex items-center justify-between">
@@ -179,7 +183,7 @@ export default function AnalyticsPage() {
         <div className="ax-card ax-card-body">
           <div className="ax-metric-label">Revenue</div>
           <div className="ax-metric-value">
-            <AnimatedNumber value={m.revenue} prefix="$" />
+            <AnimatedNumber value={m.revenue} prefix={currencySymbol} />
           </div>
         </div>
       </section>
@@ -189,13 +193,13 @@ export default function AnalyticsPage() {
         <div className="ax-card ax-card-body">
           <div className="ax-metric-label">Ad Spend</div>
           <div className="ax-metric-value">
-            <AnimatedNumber value={m.adspend} prefix="$" />
+            <AnimatedNumber value={m.adspend} prefix={currencySymbol} />
           </div>
         </div>
         <div className="ax-card ax-card-body">
           <div className="ax-metric-label">Confirmed Revenue (Ads)</div>
           <div className="ax-metric-value">
-            <AnimatedNumber value={confirmed} prefix="$" />
+            <AnimatedNumber value={confirmed} prefix={currencySymbol} />
           </div>
         </div>
         <div className="ax-card ax-card-body">
@@ -280,7 +284,7 @@ export default function AnalyticsPage() {
                 ? liveData!.recentPurchases.map((p) => (
                     <tr key={p.id}>
                       <td>{new Date(p.createdAt).toLocaleDateString()}</td>
-                      <td className="text-right">${p.totalValue.toFixed(2)}</td>
+                      <td className="text-right">{currencySymbol}{p.totalValue.toFixed(2)}</td>
                       <td>{p.utmSource || "direct"}</td>
                     </tr>
                   ))
