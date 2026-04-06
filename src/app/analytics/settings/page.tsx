@@ -1,7 +1,130 @@
 // src/app/analytics/settings/page.tsx
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useAuth } from "@clerk/nextjs";
+import { attribixFetch } from "@/lib/api";
+
+function ConnectStoreSection() {
+  const { getToken } = useAuth();
+  const [accountId, setAccountId] = useState<string>("");
+  const [shops, setShops] = useState<string[]>([]);
+  const [newShop, setNewShop] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [connecting, setConnecting] = useState(false);
+  const [message, setMessage] = useState<string | null>(null);
+
+  async function loadAccount() {
+    setLoading(true);
+    try {
+      const token = await getToken();
+      const res = await attribixFetch("/api/standalone/provision", token);
+      const data = await res.json();
+      if (data.ok) {
+        setAccountId(data.accountId || data.orgId || "");
+        setShops(data.shops || []);
+      }
+    } catch (e) {
+      console.error("Failed to load account:", e);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function connectStore() {
+    if (!newShop.trim()) return;
+    setConnecting(true);
+    setMessage(null);
+    try {
+      const token = await getToken();
+      const res = await attribixFetch("/api/standalone/connect-store", token, {
+        method: "POST",
+        body: JSON.stringify({ shop: newShop.trim() }),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        setMessage("Store connected!");
+        setNewShop("");
+        loadAccount();
+      } else {
+        setMessage(data.error || "Failed to connect store");
+      }
+    } catch (e) {
+      setMessage("Failed to connect store");
+    } finally {
+      setConnecting(false);
+    }
+  }
+
+  useEffect(() => { loadAccount(); }, []);
+
+  if (loading) return <div className="text-sm text-gray-500">Loading account...</div>;
+
+  return (
+    <section className="bg-white border border-gray-200 rounded-2xl p-4 mb-8">
+      <h2 className="text-sm font-semibold text-gray-700 mb-3">Your Account</h2>
+
+      <div className="mb-4">
+        <span className="text-xs text-gray-500">Account ID</span>
+        <div className="mt-1 flex items-center gap-2">
+          <code className="rounded-lg bg-gray-100 px-3 py-1.5 text-sm font-mono text-gray-800 select-all">
+            {accountId}
+          </code>
+          <button
+            type="button"
+            onClick={() => { navigator.clipboard.writeText(accountId); setMessage("Copied!"); }}
+            className="text-xs text-blue-600 hover:text-blue-800"
+          >
+            Copy
+          </button>
+        </div>
+        <p className="mt-1 text-xs text-gray-400">
+          Use this ID in your WooCommerce plugin settings (Settings → Attribix → Account ID)
+        </p>
+      </div>
+
+      {shops.length > 0 && (
+        <div className="mb-4">
+          <span className="text-xs text-gray-500">Connected Stores</span>
+          <div className="mt-1 space-y-1">
+            {shops.map((s) => (
+              <div key={s} className="flex items-center gap-2 rounded-lg bg-emerald-50 border border-emerald-200 px-3 py-1.5 text-sm">
+                <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                {s}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div>
+        <span className="text-xs text-gray-500">Connect a Shopify Store</span>
+        <div className="mt-1 flex items-center gap-2">
+          <input
+            type="text"
+            value={newShop}
+            onChange={(e) => setNewShop(e.target.value)}
+            placeholder="your-store.myshopify.com"
+            className="flex-1 rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button
+            type="button"
+            onClick={connectStore}
+            disabled={connecting || !newShop.trim()}
+            className="px-4 py-2 rounded-xl bg-gray-900 text-white text-sm hover:opacity-90 disabled:opacity-50"
+          >
+            {connecting ? "Connecting..." : "Connect"}
+          </button>
+        </div>
+        {message && (
+          <p className={`mt-2 text-xs ${message.includes("!") ? "text-emerald-600" : "text-red-500"}`}>
+            {message}
+          </p>
+        )}
+      </div>
+    </section>
+  );
+}
 
 export default function SettingsPage() {
   // Basic state (stub). Replace with loader/fetch and real save.
@@ -91,6 +214,8 @@ export default function SettingsPage() {
   return (
     <>
       <h1 className="text-3xl font-extrabold text-gray-900 mb-8">Settings</h1>
+
+      <ConnectStoreSection />
 
       <form onSubmit={onSubmit} className="space-y-8">
         <Section title="Store & Basics">
