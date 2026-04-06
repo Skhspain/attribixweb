@@ -1288,6 +1288,333 @@ function IntegrationsDiagram() {
 }
 
 /* -----------------------------------------------------
+   Feature Spotlight — full-width cycling showcase
+----------------------------------------------------- */
+const SPOTLIGHT_FEATURES = [
+  {
+    tag: "Ad tracking",
+    headline: "Your pixel misses more than you think.",
+    sub: "Server-side tracking + pixel combined. Every conversion captured — even on iOS and ad-blocked traffic.",
+    color: "from-cyan-400 to-indigo-400",
+    glow: "rgba(56,189,248,0.15)",
+    Panel: () => <LiveAdsPanel />,
+  },
+  {
+    tag: "Attribution",
+    headline: "Meta says 4x. Shopify says 2x. We fix that.",
+    sub: "See where revenue actually comes from. Not last-click guesses or inflated platform numbers.",
+    color: "from-indigo-400 to-fuchsia-400",
+    glow: "rgba(99,102,241,0.15)",
+    Panel: () => <AttributionPanel />,
+  },
+  {
+    tag: "Newsletter & email",
+    headline: "Grow your list. Keep customers coming back.",
+    sub: "Send campaigns to your subscribers directly from Attribix. Up to unlimited sends on Pro.",
+    color: "from-fuchsia-400 to-pink-400",
+    glow: "rgba(168,85,247,0.15)",
+    Panel: () => <AudiencePanel />,
+  },
+  {
+    tag: "Reviews & leads",
+    headline: "Social proof on autopilot.",
+    sub: "Automatically collect reviews after purchase and capture leads with built-in forms.",
+    color: "from-pink-400 to-orange-400",
+    glow: "rgba(236,72,153,0.15)",
+    Panel: () => <ReviewsPanel />,
+  },
+  {
+    tag: "Social & SEO",
+    headline: "More reach. Less manual work.",
+    sub: "Schedule social posts, track your SEO score, and run unlimited audits — all in one place.",
+    color: "from-emerald-400 to-teal-400",
+    glow: "rgba(52,211,153,0.15)",
+    Panel: () => <StoreHealthPanel />,
+  },
+];
+
+function FeatureSpotlight() {
+  const [active, setActive] = React.useState(0);
+  const [animKey, setAnimKey] = React.useState(0);
+  const reduce = usePrefersReducedMotion();
+
+  React.useEffect(() => {
+    if (reduce) return;
+    const iv = setInterval(() => {
+      setActive(a => (a + 1) % SPOTLIGHT_FEATURES.length);
+      setAnimKey(k => k + 1);
+    }, 4500);
+    return () => clearInterval(iv);
+  }, [reduce]);
+
+  const f = SPOTLIGHT_FEATURES[active];
+
+  return (
+    <section id="features" className="relative overflow-hidden py-4">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/12 to-transparent" />
+
+      {/* Header */}
+      <Reveal className="mx-auto max-w-7xl px-4 pt-16 pb-12 text-center">
+        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-white/50 uppercase tracking-widest">
+          What Attribix does
+        </div>
+        <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">
+          One platform.
+          <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-400">
+            Everything your store needs.
+          </span>
+        </h2>
+      </Reveal>
+
+      {/* Tab bar */}
+      <div className="mx-auto max-w-7xl px-4 mb-10">
+        <div className="flex flex-wrap justify-center gap-2">
+          {SPOTLIGHT_FEATURES.map((feat, i) => (
+            <button
+              key={feat.tag}
+              onClick={() => { setActive(i); setAnimKey(k => k + 1); }}
+              className={cx(
+                "rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300",
+                i === active
+                  ? `bg-gradient-to-r ${feat.color} text-white shadow-lg scale-105`
+                  : "border border-white/10 bg-white/5 text-white/50 hover:text-white/80 hover:bg-white/8"
+              )}
+            >
+              {feat.tag}
+            </button>
+          ))}
+        </div>
+
+        {/* Progress bar */}
+        {!reduce && (
+          <div className="mt-4 mx-auto max-w-xs h-0.5 rounded-full bg-white/8 overflow-hidden">
+            <div
+              key={animKey}
+              className={cx("h-full rounded-full bg-gradient-to-r", f.color)}
+              style={{ animation: "spotlightProgress 4.5s linear forwards" }}
+            />
+          </div>
+        )}
+      </div>
+
+      {/* Spotlight panel */}
+      <div
+        key={animKey}
+        className="mx-auto max-w-7xl px-4 pb-20"
+        style={{ animation: "spotlightFadeIn 0.5s ease-out forwards" }}
+      >
+        {/* Glow behind */}
+        <div
+          className="pointer-events-none absolute left-1/2 -translate-x-1/2 w-[800px] h-[400px] -z-10 blur-3xl opacity-60 rounded-full"
+          style={{ background: `radial-gradient(ellipse, ${f.glow}, transparent 70%)` }}
+        />
+
+        <div className="grid gap-12 lg:grid-cols-2 items-center">
+          {/* Copy */}
+          <div className="space-y-6">
+            <div className={cx("inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-widest",
+              "border-white/15 bg-white/5 text-white/60")}>
+              {f.tag}
+            </div>
+            <h3 className="text-3xl md:text-4xl font-extrabold leading-[1.1]">
+              <span className={cx("text-transparent bg-clip-text bg-gradient-to-r", f.color)}>
+                {f.headline}
+              </span>
+            </h3>
+            <p className="text-white/60 text-lg leading-relaxed max-w-lg">{f.sub}</p>
+
+            {/* Feature dots */}
+            <div className="flex flex-wrap gap-3 pt-2">
+              {active === 0 && ["Server-side events", "Meta & Google", "UTM builder", "Visitor flow"].map(l => (
+                <span key={l} className="text-xs border border-cyan-500/20 bg-cyan-500/8 text-cyan-300 rounded-full px-3 py-1">{l}</span>
+              ))}
+              {active === 1 && ["True ROAS", "Cross-channel", "No last-click bias", "Clean data"].map(l => (
+                <span key={l} className="text-xs border border-indigo-500/20 bg-indigo-500/8 text-indigo-300 rounded-full px-3 py-1">{l}</span>
+              ))}
+              {active === 2 && ["Up to unlimited sends", "Subscriber growth", "Open rate tracking", "Segmentation"].map(l => (
+                <span key={l} className="text-xs border border-fuchsia-500/20 bg-fuchsia-500/8 text-fuchsia-300 rounded-full px-3 py-1">{l}</span>
+              ))}
+              {active === 3 && ["Auto-collect", "Display on store", "Lead forms", "Inbox management"].map(l => (
+                <span key={l} className="text-xs border border-pink-500/20 bg-pink-500/8 text-pink-300 rounded-full px-3 py-1">{l}</span>
+              ))}
+              {active === 4 && ["Unlimited SEO scans", "Social scheduling", "Post calendar", "Keyword tracking"].map(l => (
+                <span key={l} className="text-xs border border-emerald-500/20 bg-emerald-500/8 text-emerald-300 rounded-full px-3 py-1">{l}</span>
+              ))}
+            </div>
+          </div>
+
+          {/* Animated panel */}
+          <div className="relative">
+            <f.Panel />
+          </div>
+        </div>
+      </div>
+
+      <style jsx global>{`
+        @keyframes spotlightProgress {
+          0%   { width: 0%; }
+          100% { width: 100%; }
+        }
+        @keyframes spotlightFadeIn {
+          0%   { opacity: 0; transform: translateY(12px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+/* -----------------------------------------------------
+   Attribution Panel
+----------------------------------------------------- */
+function AttributionPanel() {
+  const channels = [
+    { name: "Meta Ads", reported: 4.2, real: 2.8, color: "#818cf8" },
+    { name: "Google Ads", reported: 3.8, real: 3.1, color: "#38bdf8" },
+    { name: "Email", reported: 1.2, real: 2.4, color: "#f472b6" },
+    { name: "Organic", reported: 0.8, real: 1.9, color: "#4ade80" },
+  ];
+  const [showReal, setShowReal] = React.useState(false);
+  const [tick, setTick] = React.useState(0);
+
+  React.useEffect(() => {
+    const t1 = setTimeout(() => setShowReal(true), 1200);
+    const iv = setInterval(() => setTick(t => t + 1), 3000);
+    return () => { clearTimeout(t1); clearInterval(iv); };
+  }, []);
+
+  return (
+    <div className="relative rounded-2xl border border-white/10 bg-slate-950/90 backdrop-blur-sm overflow-hidden">
+      <div className="flex items-center justify-between px-5 pt-4 pb-3 border-b border-white/6">
+        <span className="text-xs font-semibold text-white/50 uppercase tracking-widest">Attribution</span>
+        <div className="flex items-center gap-2 text-[11px]">
+          <span className={cx("transition-colors duration-500", !showReal ? "text-white/50" : "text-white/30")}>Platform reported</span>
+          <div className="w-8 h-4 rounded-full bg-white/10 relative cursor-pointer" onClick={() => setShowReal(r => !r)}>
+            <div className={cx("absolute top-0.5 h-3 w-3 rounded-full transition-all duration-500",
+              showReal ? "left-4 bg-indigo-400" : "left-0.5 bg-white/30")} />
+          </div>
+          <span className={cx("transition-colors duration-500", showReal ? "text-indigo-300" : "text-white/30")}>True ROAS</span>
+        </div>
+      </div>
+
+      <div className="px-5 py-4 space-y-3">
+        {channels.map(ch => {
+          const val = showReal ? ch.real : ch.reported;
+          const maxVal = 4.5;
+          return (
+            <div key={ch.name}>
+              <div className="flex items-center justify-between mb-1.5">
+                <span className="text-sm text-white/80">{ch.name}</span>
+                <span className={cx("text-sm font-bold tabular-nums transition-all duration-700",
+                  showReal && ch.real > ch.reported ? "text-emerald-400" :
+                  showReal && ch.real < ch.reported ? "text-rose-400" : "text-white")}>
+                  {val.toFixed(1)}x ROAS
+                </span>
+              </div>
+              <div className="h-2 rounded-full bg-white/6 overflow-hidden">
+                <div
+                  className="h-full rounded-full transition-all duration-700"
+                  style={{
+                    width: `${(val / maxVal) * 100}%`,
+                    background: `linear-gradient(to right, ${ch.color}88, ${ch.color})`,
+                    boxShadow: `0 0 8px ${ch.color}60`,
+                  }}
+                />
+              </div>
+              {showReal && ch.real !== ch.reported && (
+                <div className={cx("text-[10px] mt-1 transition-all duration-500",
+                  ch.real > ch.reported ? "text-emerald-400" : "text-rose-400")}>
+                  {ch.real > ch.reported ? `↑ Actually better than reported` : `↓ Platform was overstating by ${((ch.reported / ch.real - 1) * 100).toFixed(0)}%`}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="px-5 pb-4">
+        <div className={cx("rounded-xl px-4 py-3 text-xs transition-all duration-700 border",
+          showReal
+            ? "bg-indigo-500/10 border-indigo-500/20 text-indigo-300"
+            : "bg-white/3 border-white/6 text-white/40")}>
+          {showReal
+            ? "Email is your best channel. Meta is overstated by 33%."
+            : "Viewing platform-reported data. Toggle for true attribution."}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* -----------------------------------------------------
+   Reviews Panel
+----------------------------------------------------- */
+function ReviewsPanel() {
+  const allReviews = [
+    { name: "Sarah M.", text: "Incredible experience, will buy again.", stars: 5, country: "🇺🇸" },
+    { name: "James T.", text: "Fast shipping, exactly as described.", stars: 5, country: "🇬🇧" },
+    { name: "Alex R.", text: "Best purchase this year. Highly recommended.", stars: 5, country: "🇩🇪" },
+    { name: "Emma L.", text: "Exceeded all my expectations!", stars: 5, country: "🇦🇺" },
+    { name: "Carlos M.", text: "Great quality and super fast delivery.", stars: 5, country: "🇧🇷" },
+  ];
+  const [visible, setVisible] = React.useState(allReviews.slice(0, 3));
+  const next = React.useRef(3);
+  const [leads, setLeads] = React.useState(47);
+
+  React.useEffect(() => {
+    const iv = setInterval(() => {
+      const r = allReviews[next.current % allReviews.length];
+      next.current++;
+      setVisible(prev => [r, ...prev.slice(0, 2)]);
+      setLeads(l => l + Math.floor(Math.random() * 2 + 1));
+    }, 2800);
+    return () => clearInterval(iv);
+  }, []);
+
+  return (
+    <div className="relative rounded-2xl border border-white/10 bg-slate-950/90 backdrop-blur-sm overflow-hidden">
+      <div className="flex items-center justify-between px-5 pt-4 pb-3 border-b border-white/6">
+        <span className="text-xs font-semibold text-white/50 uppercase tracking-widest">Reviews & leads</span>
+        <span className="flex items-center gap-1.5 text-[11px] text-pink-400 font-medium">
+          <span className="h-1.5 w-1.5 rounded-full bg-pink-400 animate-pulse" />
+          Live
+        </span>
+      </div>
+
+      {/* Lead stat */}
+      <div className="mx-4 mt-4 rounded-xl border border-pink-500/20 bg-pink-500/5 px-4 py-3 flex items-center justify-between">
+        <div>
+          <div className="text-xs text-white/40">New leads today</div>
+          <div className="text-2xl font-extrabold text-white tabular-nums">{leads}</div>
+        </div>
+        <div className="text-right">
+          <div className="text-xs text-emerald-400 font-semibold">+12 from popup</div>
+          <div className="text-xs text-white/30 mt-0.5">+35 from checkout</div>
+        </div>
+      </div>
+
+      {/* Reviews */}
+      <div className="px-4 mt-3 space-y-2 pb-4">
+        {visible.map((r, i) => (
+          <div key={r.name + r.text}
+            className="rounded-xl border border-white/6 bg-white/3 px-4 py-3 transition-all duration-500"
+            style={{ opacity: i === 0 ? 1 : 0.75 - i * 0.15 }}>
+            <div className="flex items-center gap-2 mb-1">
+              <div className="h-5 w-5 rounded-full bg-gradient-to-br from-pink-500 to-indigo-500 flex items-center justify-center text-[9px] font-bold text-white shrink-0">{r.name[0]}</div>
+              <span className="text-xs font-medium text-white/80">{r.name}</span>
+              <span className="text-amber-400 text-[10px]">{"★".repeat(r.stars)}</span>
+              <span className="ml-auto text-xs">{r.country}</span>
+            </div>
+            <p className="text-xs text-white/50">{r.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* -----------------------------------------------------
    Feature Summary Strip
 ----------------------------------------------------- */
 const SUMMARY_FEATURES = [
@@ -1727,162 +2054,8 @@ export default function TestPage() {
         <DemoModal open={showDemo} onClose={() => setShowDemo(false)} />
       </section>
 
-      {/* FEATURE SUMMARY STRIP */}
-      <FeatureSummaryStrip />
-
-      {/* FEATURES — cinematic full-width alternating rows */}
-      <section id="features" className="relative overflow-hidden">
-
-        {/* Section header */}
-        <div className="relative mx-auto max-w-7xl px-4 pt-4 pb-16 text-center">
-          <div className="mb-16 h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent" />
-          <Reveal>
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-white/50 uppercase tracking-widest">
-              The core
-            </div>
-            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">
-              Built for one thing.
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-400">
-                Knowing what actually works.
-              </span>
-            </h2>
-          </Reveal>
-        </div>
-
-        {/* ── ROW 1 — Know which ads work ── */}
-        <div className="relative py-28 md:py-36 overflow-hidden">
-          {/* Full-width background glow */}
-          <div aria-hidden className="pointer-events-none absolute inset-0 -z-10"
-            style={{ background: "radial-gradient(900px 600px at 70% 50%, rgba(56,189,248,0.09), transparent 65%)" }} />
-          <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
-          <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />
-
-          <div className="mx-auto max-w-7xl px-4 grid gap-16 lg:grid-cols-2 items-center">
-            {/* Copy */}
-            <Reveal className="space-y-7">
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/25 bg-cyan-500/10 px-3 py-1 text-xs font-semibold text-cyan-400 uppercase tracking-widest">
-                Know which ads work
-              </div>
-              <h3 className="text-3xl md:text-4xl font-extrabold leading-[1.1]">
-                Your ad data has gaps.<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">We fill them.</span>
-              </h3>
-              <p className="text-white/60 text-lg leading-relaxed max-w-lg">
-                iOS, ad blockers and cookie rules mean your pixels miss a real share of sales. Attribix pairs server-side tracking with your pixel so every conversion is captured — and your ROAS reflects reality.
-              </p>
-              <ul className="space-y-4">
-                {[
-                  { label: "Server-side + pixel tracking combined", color: "bg-cyan-400", glow: "rgba(34,211,238,0.5)" },
-                  { label: "Meta & Google Ads data in one view", color: "bg-indigo-400", glow: "rgba(99,102,241,0.5)" },
-                  { label: "UTM builder for clean campaign tracking", color: "bg-fuchsia-400", glow: "rgba(168,85,247,0.5)" },
-                  { label: "Visitor flow analysis", color: "bg-emerald-400", glow: "rgba(52,211,153,0.5)" },
-                ].map(f => (
-                  <li key={f.label} className="flex items-center gap-3 text-base text-white/80">
-                    <span className={cx("h-2 w-2 rounded-full shrink-0", f.color)} style={{ boxShadow: `0 0 8px ${f.glow}` }} />
-                    {f.label}
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-
-            {/* Animated visual */}
-            <Reveal delay={150} className="relative">
-              <div className="absolute -inset-8 rounded-3xl opacity-60 blur-3xl"
-                style={{ background: "radial-gradient(circle at 60% 40%, rgba(56,189,248,0.2), rgba(99,102,241,0.15), transparent 70%)" }} />
-              <LiveAdsPanel />
-            </Reveal>
-          </div>
-        </div>
-
-        {/* ── ROW 2 — Grow your audience ── */}
-        <div className="relative py-28 md:py-36 overflow-hidden">
-          <div aria-hidden className="pointer-events-none absolute inset-0 -z-10"
-            style={{ background: "radial-gradient(900px 600px at 30% 50%, rgba(168,85,247,0.09), transparent 65%)" }} />
-          <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-fuchsia-400/20 to-transparent" />
-          <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />
-
-          <div className="mx-auto max-w-7xl px-4 grid gap-16 lg:grid-cols-2 items-center">
-            {/* Visual — left on desktop */}
-            <Reveal delay={150} className="relative order-2 lg:order-1">
-              <div className="absolute -inset-8 rounded-3xl opacity-60 blur-3xl"
-                style={{ background: "radial-gradient(circle at 40% 60%, rgba(168,85,247,0.2), rgba(236,72,153,0.15), transparent 70%)" }} />
-              <AudiencePanel />
-            </Reveal>
-
-            {/* Copy — right on desktop */}
-            <Reveal className="space-y-7 order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 rounded-full border border-fuchsia-500/25 bg-fuchsia-500/10 px-3 py-1 text-xs font-semibold text-fuchsia-400 uppercase tracking-widest">
-                Grow your audience
-              </div>
-              <h3 className="text-3xl md:text-4xl font-extrabold leading-[1.1]">
-                Turn one-time buyers<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-pink-400">into loyal customers.</span>
-              </h3>
-              <p className="text-white/60 text-lg leading-relaxed max-w-lg">
-                Collect reviews automatically, grow your newsletter, capture leads, and schedule social content — all from the same platform. No extra tools, no extra cost.
-              </p>
-              <ul className="space-y-4">
-                {[
-                  { label: "Newsletter — up to unlimited sends", color: "bg-fuchsia-400", glow: "rgba(168,85,247,0.5)" },
-                  { label: "Automated review collection", color: "bg-pink-400", glow: "rgba(236,72,153,0.5)" },
-                  { label: "Lead capture forms", color: "bg-indigo-400", glow: "rgba(99,102,241,0.5)" },
-                  { label: "Social calendar & post scheduling", color: "bg-purple-400", glow: "rgba(147,51,234,0.5)" },
-                ].map(f => (
-                  <li key={f.label} className="flex items-center gap-3 text-base text-white/80">
-                    <span className={cx("h-2 w-2 rounded-full shrink-0", f.color)} style={{ boxShadow: `0 0 8px ${f.glow}` }} />
-                    {f.label}
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-          </div>
-        </div>
-
-        {/* ── ROW 3 — Understand your store ── */}
-        <div className="relative py-28 md:py-36 overflow-hidden">
-          <div aria-hidden className="pointer-events-none absolute inset-0 -z-10"
-            style={{ background: "radial-gradient(900px 600px at 65% 50%, rgba(52,211,153,0.08), transparent 65%)" }} />
-          <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent" />
-
-          <div className="mx-auto max-w-7xl px-4 grid gap-16 lg:grid-cols-2 items-center">
-            {/* Copy */}
-            <Reveal className="space-y-7">
-              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400 uppercase tracking-widest">
-                Understand your store
-              </div>
-              <h3 className="text-3xl md:text-4xl font-extrabold leading-[1.1]">
-                More visibility.<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">Less guesswork.</span>
-              </h3>
-              <p className="text-white/60 text-lg leading-relaxed max-w-lg">
-                Know how your store ranks, what products are getting found, and keep your product feed clean before Meta and Google reject it.
-              </p>
-              <ul className="space-y-4">
-                {[
-                  { label: "SEO audit — unlimited scans", color: "bg-emerald-400", glow: "rgba(52,211,153,0.5)" },
-                  { label: "Product feed for Google & Meta", color: "bg-teal-400", glow: "rgba(45,212,191,0.5)" },
-                  { label: "Feed error detection & fixes", color: "bg-cyan-400", glow: "rgba(34,211,238,0.5)" },
-                  { label: "Up to 365 days of analytics history", color: "bg-sky-400", glow: "rgba(56,189,248,0.5)" },
-                ].map(f => (
-                  <li key={f.label} className="flex items-center gap-3 text-base text-white/80">
-                    <span className={cx("h-2 w-2 rounded-full shrink-0", f.color)} style={{ boxShadow: `0 0 8px ${f.glow}` }} />
-                    {f.label}
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-
-            {/* Animated visual */}
-            <Reveal delay={150} className="relative">
-              <div className="absolute -inset-8 rounded-3xl opacity-60 blur-3xl"
-                style={{ background: "radial-gradient(circle at 50% 50%, rgba(52,211,153,0.18), rgba(34,211,238,0.12), transparent 70%)" }} />
-              <StoreHealthPanel />
-            </Reveal>
-          </div>
-        </div>
-
-      </section>
+      {/* FEATURE SPOTLIGHT */}
+      <FeatureSpotlight />
 
       {/* TESTIMONIALS MARQUEE */}
       <section className="relative mx-auto max-w-7xl px-4 pb-20">
