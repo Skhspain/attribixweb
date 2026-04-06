@@ -27,6 +27,44 @@ export default function NewsletterPage() {
   const subscribers = data?.subscribers || [];
   const campaigns = data?.campaigns || [];
 
+  const [showAddSub, setShowAddSub] = React.useState(false);
+  const [newSub, setNewSub] = React.useState({ email: "", firstName: "", lastName: "" });
+  const [showNewCampaign, setShowNewCampaign] = React.useState(false);
+  const [newCampaign, setNewCampaign] = React.useState({ name: "", subject: "" });
+
+  async function addSubscriber() {
+    if (!newSub.email) return;
+    try {
+      const token = await getToken();
+      await attribixFetch("/api/standalone/newsletter/update", token, {
+        method: "POST", body: JSON.stringify({ action: "add-subscriber", ...newSub }),
+      });
+      setShowAddSub(false); setNewSub({ email: "", firstName: "", lastName: "" }); load();
+    } catch (e) { console.error(e); }
+  }
+
+  async function unsubscribe(email: string) {
+    if (!confirm(`Unsubscribe ${email}?`)) return;
+    try {
+      const token = await getToken();
+      await attribixFetch("/api/standalone/newsletter/update", token, {
+        method: "POST", body: JSON.stringify({ action: "unsubscribe", email }),
+      });
+      load();
+    } catch (e) { console.error(e); }
+  }
+
+  async function createCampaign() {
+    if (!newCampaign.name) return;
+    try {
+      const token = await getToken();
+      await attribixFetch("/api/standalone/newsletter/update", token, {
+        method: "POST", body: JSON.stringify({ action: "create-campaign", ...newCampaign }),
+      });
+      setShowNewCampaign(false); setNewCampaign({ name: "", subject: "" }); load();
+    } catch (e) { console.error(e); }
+  }
+
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-bold">Newsletter</h1>
@@ -58,38 +96,68 @@ export default function NewsletterPage() {
       {loading && <div className="text-center py-8 text-slate-400">Loading...</div>}
 
       {!loading && tab === "subscribers" && (
-        <div className="rounded-xl border bg-white overflow-hidden">
-          <table className="w-full text-sm">
-            <thead className="bg-slate-50 border-b">
-              <tr>
-                <th className="text-left px-4 py-3 font-medium text-slate-600">Email</th>
-                <th className="text-left px-4 py-3 font-medium text-slate-600">Name</th>
-                <th className="text-left px-4 py-3 font-medium text-slate-600">Status</th>
-                <th className="text-left px-4 py-3 font-medium text-slate-600">Source</th>
-                <th className="text-left px-4 py-3 font-medium text-slate-600">Subscribed</th>
-              </tr>
-            </thead>
-            <tbody>
-              {subscribers.length === 0 && <tr><td colSpan={5} className="px-4 py-8 text-center text-slate-400">No subscribers yet</td></tr>}
-              {subscribers.map((s: any) => (
-                <tr key={s.id} className="border-b last:border-0 hover:bg-slate-50">
-                  <td className="px-4 py-3 font-medium">{s.email}</td>
-                  <td className="px-4 py-3">{[s.firstName, s.lastName].filter(Boolean).join(" ") || "—"}</td>
-                  <td className="px-4 py-3">
-                    <span className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${s.status === "subscribed" ? "bg-emerald-50 text-emerald-600" : "bg-slate-100 text-slate-500"}`}>
-                      {s.status}
-                    </span>
-                  </td>
-                  <td className="px-4 py-3 text-slate-500">{s.source || s.utmSource || "—"}</td>
-                  <td className="px-4 py-3 text-slate-500">{new Date(s.createdAt).toLocaleDateString()}</td>
+        <>
+          <div className="flex justify-end">
+            <button onClick={() => setShowAddSub(!showAddSub)} className="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:opacity-90">+ Add Subscriber</button>
+          </div>
+          {showAddSub && (
+            <div className="rounded-xl border bg-white p-4 flex gap-3 items-end">
+              <input placeholder="Email *" value={newSub.email} onChange={(e) => setNewSub({ ...newSub, email: e.target.value })} className="rounded-lg border px-3 py-2 text-sm flex-1" />
+              <input placeholder="First name" value={newSub.firstName} onChange={(e) => setNewSub({ ...newSub, firstName: e.target.value })} className="rounded-lg border px-3 py-2 text-sm" />
+              <input placeholder="Last name" value={newSub.lastName} onChange={(e) => setNewSub({ ...newSub, lastName: e.target.value })} className="rounded-lg border px-3 py-2 text-sm" />
+              <button onClick={addSubscriber} className="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm">Add</button>
+            </div>
+          )}
+          <div className="rounded-xl border bg-white overflow-hidden">
+            <table className="w-full text-sm">
+              <thead className="bg-slate-50 border-b">
+                <tr>
+                  <th className="text-left px-4 py-3 font-medium text-slate-600">Email</th>
+                  <th className="text-left px-4 py-3 font-medium text-slate-600">Name</th>
+                  <th className="text-left px-4 py-3 font-medium text-slate-600">Status</th>
+                  <th className="text-left px-4 py-3 font-medium text-slate-600">Source</th>
+                  <th className="text-left px-4 py-3 font-medium text-slate-600">Subscribed</th>
+                  <th className="text-left px-4 py-3 font-medium text-slate-600"></th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody>
+                {subscribers.length === 0 && <tr><td colSpan={6} className="px-4 py-8 text-center text-slate-400">No subscribers yet</td></tr>}
+                {subscribers.map((s: any) => (
+                  <tr key={s.id} className="border-b last:border-0 hover:bg-slate-50">
+                    <td className="px-4 py-3 font-medium">{s.email}</td>
+                    <td className="px-4 py-3">{[s.firstName, s.lastName].filter(Boolean).join(" ") || "—"}</td>
+                    <td className="px-4 py-3">
+                      <span className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${s.status === "subscribed" ? "bg-emerald-50 text-emerald-600" : "bg-slate-100 text-slate-500"}`}>
+                        {s.status}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3 text-slate-500">{s.source || s.utmSource || "—"}</td>
+                    <td className="px-4 py-3 text-slate-500">{new Date(s.createdAt).toLocaleDateString()}</td>
+                    <td className="px-4 py-3">
+                      {s.status === "subscribed" && (
+                        <button onClick={() => unsubscribe(s.email)} className="text-xs text-slate-400 hover:text-red-500">Unsubscribe</button>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
       )}
 
       {!loading && tab === "campaigns" && (
+        <>
+        <div className="flex justify-end">
+          <button onClick={() => setShowNewCampaign(!showNewCampaign)} className="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:opacity-90">+ New Campaign</button>
+        </div>
+        {showNewCampaign && (
+          <div className="rounded-xl border bg-white p-4 flex gap-3 items-end">
+            <input placeholder="Campaign name *" value={newCampaign.name} onChange={(e) => setNewCampaign({ ...newCampaign, name: e.target.value })} className="rounded-lg border px-3 py-2 text-sm flex-1" />
+            <input placeholder="Subject line" value={newCampaign.subject} onChange={(e) => setNewCampaign({ ...newCampaign, subject: e.target.value })} className="rounded-lg border px-3 py-2 text-sm flex-1" />
+            <button onClick={createCampaign} className="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm">Create</button>
+          </div>
+        )}
         <div className="rounded-xl border bg-white overflow-hidden">
           <table className="w-full text-sm">
             <thead className="bg-slate-50 border-b">
@@ -124,6 +192,7 @@ export default function NewsletterPage() {
             </tbody>
           </table>
         </div>
+        </>
       )}
     </div>
   );

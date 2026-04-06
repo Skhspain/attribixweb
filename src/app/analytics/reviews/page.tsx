@@ -86,34 +86,91 @@ export default function ReviewsPage() {
         {loading && <div className="text-center py-8 text-slate-400">Loading...</div>}
         {!loading && reviews.length === 0 && <div className="text-center py-8 text-slate-400">No reviews yet</div>}
         {reviews.map((r: any) => (
-          <div key={r.id} className="rounded-xl border bg-white p-5">
-            <div className="flex items-start justify-between">
-              <div>
-                <div className="flex items-center gap-2">
-                  <Stars rating={r.rating} />
-                  <span className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${STATUS_COLORS[r.status] || "bg-slate-100"}`}>
-                    {r.status}
-                  </span>
-                  {r.verifiedPurchase && (
-                    <span className="inline-block rounded-full px-2 py-0.5 text-xs font-medium bg-blue-50 text-blue-600">Verified</span>
-                  )}
-                </div>
-                {r.title && <h3 className="font-semibold mt-2">{r.title}</h3>}
-                <p className="text-sm text-slate-600 mt-1">{r.body}</p>
-                <div className="text-xs text-slate-400 mt-2">
-                  {r.reviewerName} · {r.productTitle || "Product"} · {new Date(r.createdAt).toLocaleDateString()}
-                </div>
-              </div>
-            </div>
-            {r.reply && (
-              <div className="mt-3 pl-4 border-l-2 border-slate-200">
-                <div className="text-xs text-slate-500 font-medium">Store reply</div>
-                <p className="text-sm text-slate-600 mt-1">{r.reply}</p>
-              </div>
-            )}
-          </div>
+          <ReviewCard key={r.id} review={r} getToken={getToken} onUpdate={load} />
         ))}
       </div>
+    </div>
+  );
+}
+
+function ReviewCard({ review: r, getToken, onUpdate }: { review: any; getToken: () => Promise<string | null>; onUpdate: () => void }) {
+  const [replyText, setReplyText] = React.useState(r.reply || "");
+  const [showReply, setShowReply] = React.useState(false);
+  const [saving, setSaving] = React.useState(false);
+
+  async function updateReview(data: any) {
+    setSaving(true);
+    try {
+      const token = await getToken();
+      await attribixFetch("/api/standalone/reviews/update", token, {
+        method: "POST",
+        body: JSON.stringify({ id: r.id, ...data }),
+      });
+      onUpdate();
+    } catch (e) { console.error(e); }
+    setSaving(false);
+  }
+
+  return (
+    <div className="rounded-xl border bg-white p-5">
+      <div className="flex items-start justify-between">
+        <div className="flex-1">
+          <div className="flex items-center gap-2">
+            <Stars rating={r.rating} />
+            <span className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${STATUS_COLORS[r.status] || "bg-slate-100"}`}>
+              {r.status}
+            </span>
+            {r.verifiedPurchase && (
+              <span className="inline-block rounded-full px-2 py-0.5 text-xs font-medium bg-blue-50 text-blue-600">Verified</span>
+            )}
+          </div>
+          {r.title && <h3 className="font-semibold mt-2">{r.title}</h3>}
+          <p className="text-sm text-slate-600 mt-1">{r.body}</p>
+          <div className="text-xs text-slate-400 mt-2">
+            {r.reviewerName} · {r.productTitle || "Product"} · {new Date(r.createdAt).toLocaleDateString()}
+          </div>
+        </div>
+        <div className="flex gap-2 ml-4">
+          {r.status === "pending" && (
+            <>
+              <button onClick={() => updateReview({ status: "approved" })} disabled={saving}
+                className="px-3 py-1.5 rounded-lg text-xs font-medium bg-emerald-50 text-emerald-700 hover:bg-emerald-100 disabled:opacity-50">
+                Approve
+              </button>
+              <button onClick={() => updateReview({ status: "rejected" })} disabled={saving}
+                className="px-3 py-1.5 rounded-lg text-xs font-medium bg-red-50 text-red-700 hover:bg-red-100 disabled:opacity-50">
+                Reject
+              </button>
+            </>
+          )}
+          <button onClick={() => setShowReply(!showReply)}
+            className="px-3 py-1.5 rounded-lg text-xs font-medium border hover:bg-slate-50">
+            {r.reply ? "Edit Reply" : "Reply"}
+          </button>
+        </div>
+      </div>
+
+      {r.reply && !showReply && (
+        <div className="mt-3 pl-4 border-l-2 border-slate-200">
+          <div className="text-xs text-slate-500 font-medium">Store reply</div>
+          <p className="text-sm text-slate-600 mt-1">{r.reply}</p>
+        </div>
+      )}
+
+      {showReply && (
+        <div className="mt-3 border-t pt-3">
+          <textarea value={replyText} onChange={(e) => setReplyText(e.target.value)}
+            rows={3} placeholder="Write your reply..."
+            className="w-full rounded-lg border px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 outline-none" />
+          <div className="flex gap-2 mt-2">
+            <button onClick={() => { updateReview({ reply: replyText }); setShowReply(false); }} disabled={saving || !replyText.trim()}
+              className="px-4 py-1.5 rounded-lg text-sm bg-gray-900 text-white hover:opacity-90 disabled:opacity-50">
+              {saving ? "Saving..." : "Save Reply"}
+            </button>
+            <button onClick={() => setShowReply(false)} className="px-4 py-1.5 rounded-lg text-sm border hover:bg-slate-50">Cancel</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
