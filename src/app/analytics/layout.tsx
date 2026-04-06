@@ -11,11 +11,15 @@ export default function AnalyticsLayout({ children }: { children: React.ReactNod
 
   const links = [
     { href: "/analytics", label: "Overview" },
-    { href: "/analytics/sessions", label: "Sessions" },
     { href: "/analytics/ads", label: "Ads Review" },
     { href: "/analytics/attribution", label: "Attribution" },
     { href: "/analytics/attribution/customerlist", label: "Customer List" },
-    { href: "/analytics/recommendations", label: "Recommendations" },
+    { href: "/analytics/orders", label: "Orders" },
+
+    // --- Marketing section ---
+    { href: "/analytics/newsletter", label: "Newsletter", section: "MARKETING" } as any,
+    { href: "/analytics/leads", label: "Lead Center" },
+    { href: "/analytics/reviews", label: "Reviews" },
 
     // --- Site Intelligence section ---
     { href: "/analytics/sitemap", label: "Sitemap", section: "SITE INTELLIGENCE" } as any,
