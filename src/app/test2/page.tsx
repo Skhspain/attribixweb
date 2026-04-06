@@ -1456,152 +1456,164 @@ function FinalCTA() {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   Hero Visual — floating parallax cards (lightweight)
+   Hero Dashboard Card
 ───────────────────────────────────────────────────────────────────────────── */
-function HeroVisual() {
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const [mx, setMx] = React.useState(0);
-  const [my, setMy] = React.useState(0);
-  const [purchases, setPurchases] = React.useState(127);
-  const [roas, setRoas] = React.useState(11.2);
-  const [notification, setNotification] = React.useState<{ id: number; label: string } | null>(null);
-  const notifId = React.useRef(0);
+function HeroDashboardCard() {
+  const channels = [
+    { name: "Meta Ads", color: "#818cf8", spend: "$1,240", roas: 6.8, pct: 88 },
+    { name: "Google Ads", color: "#38bdf8", spend: "$880",  roas: 5.1, pct: 66 },
+    { name: "Email",      color: "#f472b6", spend: "$0",    roas: 9.2, pct: 100 },
+    { name: "Organic",    color: "#4ade80", spend: "$0",    roas: 4.4, pct: 57 },
+  ];
+
+  const [purchases, setPurchases] = React.useState(243);
+  const [revenue, setRevenue] = React.useState(8_412);
+  const [toast, setToast] = React.useState<{ id: number; text: string; color: string } | null>(null);
+  const toastId = React.useRef(0);
+  const [bars, setBars] = React.useState(channels.map(c => c.pct));
 
   React.useEffect(() => {
-    function onMove(e: MouseEvent) {
-      const el = containerRef.current;
-      if (!el) return;
-      const r = el.getBoundingClientRect();
-      setMx((e.clientX - r.left - r.width / 2) / r.width);
-      setMy((e.clientY - r.top - r.height / 2) / r.height);
-    }
-    window.addEventListener("mousemove", onMove, { passive: true });
-    return () => window.removeEventListener("mousemove", onMove);
-  }, []);
-
-  React.useEffect(() => {
-    const events = [
-      "Meta: +2 Purchases",
-      "Google: +1 Purchase",
-      "Meta: +1 Purchase",
-      "Organic: +1 Purchase",
+    const toasts = [
+      { text: "Meta: +2 Purchases  $118", color: "#818cf8" },
+      { text: "Google: +1 Purchase  $54", color: "#38bdf8" },
+      { text: "Email: +3 Purchases  $201", color: "#f472b6" },
+      { text: "Meta: +1 Purchase  $67", color: "#818cf8" },
     ];
+    let i = 0;
     const iv = setInterval(() => {
-      setPurchases(p => p + Math.floor(Math.random() * 3 + 1));
-      setRoas(r => Math.min(13.9, +(r + (Math.random() * 0.2 - 0.05)).toFixed(1)));
-      const id = notifId.current++;
-      setNotification({ id, label: events[id % events.length] });
-      setTimeout(() => setNotification(null), 2800);
-    }, 3200);
+      const add = Math.floor(Math.random() * 4 + 1);
+      const rev = Math.floor(Math.random() * 180 + 40);
+      setPurchases(p => p + add);
+      setRevenue(r => r + rev);
+      setBars(b => b.map(v => Math.max(40, Math.min(100, v + (Math.random() * 8 - 4)))));
+      const id = toastId.current++;
+      const t = toasts[i % toasts.length]; i++;
+      setToast({ id, ...t });
+      setTimeout(() => setToast(null), 2600);
+    }, 2800);
     return () => clearInterval(iv);
   }, []);
 
-  const px = (depth: number) => ({
-    transform: `translate3d(${mx * depth * 22}px, ${my * depth * 16}px, 0)`,
-    transition: "transform 0.18s ease-out",
-    willChange: "transform",
-  });
-
-  const sparkBars = [40, 55, 48, 62, 70, 58, 75, 80, 72, 88, 65, 78, 85, 70, 94];
+  const sparkBars = [32, 44, 38, 52, 60, 50, 66, 72, 64, 80, 58, 70, 76, 62, 88, 74, 92, 84, 96, 88];
 
   return (
-    <div ref={containerRef} className="relative w-full select-none" style={{ height: "480px" }}>
-      {/* Ambient glow */}
+    <div className="relative">
+      {/* Outer glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 rounded-3xl blur-3xl opacity-40"
-        style={{ background: "radial-gradient(circle at 55% 45%, rgba(99,102,241,0.55), rgba(6,182,212,0.3), transparent 72%)" }}
+        className="pointer-events-none absolute -inset-10 -z-10 rounded-[40px] blur-3xl"
+        style={{ background: "radial-gradient(circle at 55% 45%, rgba(99,102,241,0.35), rgba(6,182,212,0.2), transparent 70%)", opacity: 0.7 }}
       />
 
-      {/* Card 1 — ROAS (top-right, shallowest depth) */}
-      <div className="absolute top-0 right-6 w-56" style={px(0.35)}>
-        <div className="rounded-2xl border border-white/[0.09] bg-[#060c1a]/95 backdrop-blur-xl p-5 shadow-[0_32px_80px_rgba(0,0,0,0.7)]">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-xs text-white/35 font-medium uppercase tracking-widest">ROAS</span>
-            <span className="text-[10px] text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 rounded-full px-2 py-0.5 font-semibold">
-              ▲ 248%
-            </span>
+      <div className="rounded-3xl border border-white/[0.09] bg-[#07091a]/98 backdrop-blur-xl shadow-[0_48px_120px_rgba(0,0,0,0.85)] overflow-hidden">
+
+        {/* Window bar */}
+        <div className="flex items-center gap-2 px-5 py-3.5 border-b border-white/[0.06] bg-white/[0.02]">
+          <div className="flex gap-1.5">
+            <div className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
+            <div className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
+            <div className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
           </div>
-          <div className="text-5xl font-black text-white tabular-nums leading-none mb-1">{roas}×</div>
-          <div className="text-[11px] text-white/30 mb-4">True attribution vs platform reported</div>
-          {/* Sparkline */}
-          <div className="flex items-end gap-0.5 h-10">
-            {sparkBars.map((h, i) => (
-              <div
-                key={i}
-                className="flex-1 rounded-t"
-                style={{
-                  height: `${h}%`,
-                  background: "linear-gradient(to top, rgba(99,102,241,0.5), rgba(34,211,238,0.85))",
-                  boxShadow: i === sparkBars.length - 1 ? "0 0 8px rgba(34,211,238,0.6)" : undefined,
-                }}
-              />
+          <div className="flex-1 flex justify-center">
+            <span className="text-[11px] text-white/20 font-medium">attribix.app/dashboard</span>
+          </div>
+          <span className="flex items-center gap-1.5 text-[10px] text-emerald-400 font-medium">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            Live
+          </span>
+        </div>
+
+        <div className="p-5">
+          {/* Top metrics row */}
+          <div className="grid grid-cols-3 gap-3 mb-5">
+            {[
+              { label: "Revenue today", value: `$${revenue.toLocaleString()}`, delta: "+24%", good: true },
+              { label: "Purchases", value: purchases, delta: "+18%", good: true },
+              { label: "Avg. ROAS", value: "6.9×", delta: "+248%", good: true },
+            ].map(m => (
+              <div key={m.label} className="rounded-xl border border-white/[0.07] bg-white/[0.03] px-3 py-3">
+                <div className="text-[10px] text-white/30 mb-1.5 font-medium">{m.label}</div>
+                <div className="text-xl font-black text-white tabular-nums leading-none">{m.value}</div>
+                <div className="text-[10px] text-emerald-400 font-semibold mt-1">{m.delta}</div>
+              </div>
             ))}
           </div>
-        </div>
-      </div>
 
-      {/* Card 2 — Live purchases (middle-right, deepest depth) */}
-      <div className="absolute top-40 right-2 w-52" style={px(0.75)}>
-        <div className="rounded-2xl border border-white/[0.09] bg-[#060c1a]/95 backdrop-blur-xl p-4 shadow-[0_32px_80px_rgba(0,0,0,0.7)]">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-            <span className="text-[11px] text-white/35 font-medium uppercase tracking-widest">Live today</span>
+          {/* Sparkline */}
+          <div className="mb-5 rounded-xl border border-white/[0.07] bg-white/[0.02] px-4 py-3">
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-[11px] text-white/35 font-medium">Revenue this week</span>
+              <span className="text-[10px] text-cyan-400 font-semibold">↑ Trending</span>
+            </div>
+            <div className="flex items-end gap-1 h-16">
+              {sparkBars.map((h, i) => (
+                <div
+                  key={i}
+                  className="flex-1 rounded-t transition-all duration-700"
+                  style={{
+                    height: `${h}%`,
+                    background: i >= sparkBars.length - 4
+                      ? "linear-gradient(to top, rgba(99,102,241,0.7), rgba(34,211,238,1))"
+                      : "linear-gradient(to top, rgba(99,102,241,0.25), rgba(34,211,238,0.4))",
+                    boxShadow: i === sparkBars.length - 1 ? "0 0 12px rgba(34,211,238,0.7)" : undefined,
+                  }}
+                />
+              ))}
+            </div>
           </div>
-          <div className="text-4xl font-black text-white tabular-nums">{purchases}</div>
-          <div className="text-xs text-white/30 mt-1 mb-3">purchases tracked</div>
-          {notification && (
+
+          {/* Channel breakdown */}
+          <div className="rounded-xl border border-white/[0.07] bg-white/[0.02] px-4 py-4">
+            <div className="flex items-center justify-between mb-4">
+              <span className="text-[11px] text-white/35 font-medium uppercase tracking-wider">Channels</span>
+              <span className="text-[10px] text-indigo-300 border border-indigo-400/20 bg-indigo-400/10 rounded-full px-2 py-0.5">True ROAS</span>
+            </div>
+            <div className="space-y-3.5">
+              {channels.map((ch, i) => (
+                <div key={ch.name}>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <div className="flex items-center gap-2">
+                      <div className="h-1.5 w-1.5 rounded-full shrink-0" style={{ background: ch.color }} />
+                      <span className="text-sm text-white/75 font-medium">{ch.name}</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-[11px] text-white/30">{ch.spend}</span>
+                      <span className="text-sm font-black tabular-nums" style={{ color: ch.color }}>
+                        {ch.roas}×
+                      </span>
+                    </div>
+                  </div>
+                  <div className="h-1.5 rounded-full bg-white/[0.05] overflow-hidden">
+                    <div
+                      className="h-full rounded-full transition-all duration-700"
+                      style={{ width: `${bars[i]}%`, background: `linear-gradient(to right, ${ch.color}55, ${ch.color})` }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Toast */}
+        <div className="relative h-10 px-5 pb-3 overflow-hidden">
+          {toast && (
             <div
-              key={notification.id}
-              className="text-[10px] rounded-lg px-3 py-2 bg-indigo-500/12 border border-indigo-500/20 text-indigo-300 font-medium"
-              style={{ animation: "t2notify 2.8s ease-in-out forwards" }}
+              key={toast.id}
+              className="absolute bottom-3 left-5 flex items-center gap-2 rounded-lg px-3 py-1.5 border border-white/[0.09] bg-[#07091a] text-[11px] font-medium text-white/80"
+              style={{ boxShadow: `0 0 12px ${toast.color}30`, animation: "t2toast 2.6s ease-in-out forwards" }}
             >
-              {notification.label}
+              <span className="h-1.5 w-1.5 rounded-full shrink-0 animate-pulse" style={{ background: toast.color }} />
+              {toast.text}
             </div>
           )}
         </div>
       </div>
 
-      {/* Card 3 — CPP before/after (bottom, mid depth) */}
-      <div className="absolute bottom-0 right-16 w-48" style={px(0.55)}>
-        <div className="rounded-2xl border border-white/[0.09] bg-[#060c1a]/95 backdrop-blur-xl p-4 shadow-[0_32px_80px_rgba(0,0,0,0.7)]">
-          <div className="text-[11px] text-white/35 font-medium uppercase tracking-widest mb-3">Cost / Purchase</div>
-          <div className="flex items-center gap-4">
-            <div>
-              <div className="text-[10px] text-white/20 mb-1">Before</div>
-              <div className="text-xl font-bold text-rose-400 line-through decoration-rose-400/40">$19.00</div>
-            </div>
-            <div className="text-white/15 text-lg">→</div>
-            <div>
-              <div className="text-[10px] text-white/20 mb-1">After</div>
-              <div className="text-xl font-bold text-emerald-400">$3.20</div>
-            </div>
-          </div>
-          <div className="mt-3 h-1.5 rounded-full bg-white/5 overflow-hidden">
-            <div className="h-full rounded-full bg-gradient-to-r from-rose-500 to-emerald-400"
-              style={{ width: "83%", transition: "width 1s ease-out" }} />
-          </div>
-          <div className="text-[10px] text-emerald-400 mt-1.5 font-semibold">-83% reduction</div>
-        </div>
-      </div>
-
-      {/* Floating connecting lines (SVG) */}
-      <svg className="pointer-events-none absolute inset-0 w-full h-full" aria-hidden>
-        <defs>
-          <linearGradient id="hv-line1" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="rgba(99,102,241,0)" />
-            <stop offset="50%" stopColor="rgba(99,102,241,0.25)" />
-            <stop offset="100%" stopColor="rgba(99,102,241,0)" />
-          </linearGradient>
-        </defs>
-        <line x1="0" y1="120" x2="75%" y2="100" stroke="url(#hv-line1)" strokeWidth="1" />
-        <line x1="0" y1="280" x2="80%" y2="280" stroke="url(#hv-line1)" strokeWidth="1" />
-      </svg>
-
       <style jsx global>{`
-        @keyframes t2notify {
-          0%   { opacity: 0; transform: translateY(4px); }
-          12%  { opacity: 1; transform: translateY(0); }
+        @keyframes t2toast {
+          0%   { opacity: 0; transform: translateY(6px); }
+          10%  { opacity: 1; transform: translateY(0); }
           80%  { opacity: 1; }
           100% { opacity: 0; transform: translateY(-4px); }
         }
@@ -1626,74 +1638,85 @@ export default function Test2Page() {
       <Header />
 
       {/* ── HERO ── */}
-      <section className="relative min-h-[92vh] flex items-center pt-24 pb-10 overflow-hidden">
-        {/* Top radial */}
+      <section className="relative min-h-[96vh] flex items-center pt-24 pb-16 overflow-hidden">
         <div
           className="pointer-events-none absolute inset-x-0 top-0 h-full -z-10"
-          style={{ background: "radial-gradient(ellipse 70% 55% at 40% 10%, rgba(99,102,241,0.13), transparent 65%)" }}
+          style={{ background: "radial-gradient(ellipse 80% 60% at 30% 20%, rgba(99,102,241,0.14), transparent 65%)" }}
         />
-        {/* Bottom right glow */}
         <div
-          className="pointer-events-none absolute right-0 bottom-0 w-[60vw] h-[60vh] -z-10"
-          style={{ background: "radial-gradient(circle at 80% 80%, rgba(6,182,212,0.07), transparent 65%)" }}
+          className="pointer-events-none absolute right-0 top-0 bottom-0 w-[55vw] h-full -z-10"
+          style={{ background: "radial-gradient(ellipse 80% 60% at 70% 50%, rgba(6,182,212,0.07), transparent 65%)" }}
         />
 
-        <div className="mx-auto max-w-7xl px-4 w-full grid lg:grid-cols-2 gap-16 items-center">
+        <div className="mx-auto max-w-7xl px-4 w-full grid lg:grid-cols-[1fr_1.05fr] gap-14 xl:gap-20 items-center">
 
           {/* Left — copy */}
-          <div className="max-w-xl">
+          <div>
             <Reveal>
-              <div className="inline-flex items-center gap-2.5 rounded-full border border-white/[0.09] bg-white/[0.04] px-4 py-1.5 text-xs text-white/45 font-medium mb-8">
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-white/[0.09] bg-white/[0.04] px-4 py-1.5 text-xs text-white/40 font-medium mb-8">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-                Shopify native &nbsp;·&nbsp; 14-day free trial &nbsp;·&nbsp; No setup
+                For Shopify stores &nbsp;·&nbsp; Free 14-day trial
               </div>
             </Reveal>
 
             <Reveal delay={60}>
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-[1.0] tracking-tight text-white mb-6">
-                Stop guessing.
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-[1.0] tracking-tight text-white mb-7">
+                More sales.
+                <br />
+                Same ad spend.
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-400 to-fuchsia-500">
-                  <Typewriter words={["Know your ROAS.", "Own your data.", "Scale smarter.", "Track everything."]} />
+                  <Typewriter words={["Finally.", "For real.", "Guaranteed.", "Starting today."]} />
                 </span>
               </h1>
             </Reveal>
 
             <Reveal delay={120}>
-              <p className="text-lg text-white/40 leading-relaxed mb-9">
-                Pixels miss up to 40% of conversions. Attribix closes the gap — server-side tracking so your ad platforms finally agree with Shopify.
+              <p className="text-xl text-white/40 leading-relaxed mb-9 max-w-lg">
+                Your ads are working harder than you think. Attribix shows you exactly which ones — so you stop wasting money and double down on what actually converts.
               </p>
             </Reveal>
 
             <Reveal delay={180}>
-              <div className="flex flex-wrap items-center gap-4 mb-9">
-                <MagneticButton href="/login" className="text-base px-8 py-4">
+              <div className="flex flex-wrap items-center gap-4 mb-10">
+                <MagneticButton href="/login" className="text-base px-9 py-4">
                   Start free trial →
                 </MagneticButton>
-                <Link href="/pricing" className="text-sm text-white/40 hover:text-white/80 transition-colors underline underline-offset-4">
+                <Link href="/pricing" className="text-sm text-white/35 hover:text-white/80 transition-colors underline underline-offset-4 decoration-white/15">
                   See pricing
                 </Link>
               </div>
-              <div className="flex items-center gap-3 text-xs text-white/25">
+
+              {/* Social proof */}
+              <div className="flex items-center gap-3">
                 <div className="flex -space-x-2">
                   {["#4f46e5", "#0891b2", "#7c3aed", "#be185d", "#059669"].map((c, i) => (
                     <div
                       key={i}
-                      className="h-7 w-7 rounded-full border-2 border-[#030712] flex items-center justify-center text-white text-[9px] font-bold shrink-0"
+                      className="h-8 w-8 rounded-full border-2 border-[#030712] flex items-center justify-center text-white text-[10px] font-bold shrink-0"
                       style={{ background: c }}
                     >
                       {["M", "J", "A", "S", "E"][i]}
                     </div>
                   ))}
                 </div>
-                <span>Trusted by 500+ Shopify stores</span>
+                <div>
+                  <div className="flex gap-0.5 mb-0.5">
+                    {[1,2,3,4,5].map(s => (
+                      <svg key={s} className="h-3 w-3 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      </svg>
+                    ))}
+                  </div>
+                  <div className="text-xs text-white/25">Loved by 500+ Shopify stores</div>
+                </div>
               </div>
             </Reveal>
           </div>
 
-          {/* Right — floating parallax cards */}
-          <Reveal delay={280} className="hidden lg:block">
-            <HeroVisual />
+          {/* Right — dashboard card */}
+          <Reveal delay={260} className="hidden lg:block">
+            <HeroDashboardCard />
           </Reveal>
         </div>
       </section>
