@@ -2018,22 +2018,6 @@ export default function Test2Page() {
           </div>
         </div>
 
-        <style jsx global>{`
-          @keyframes bentoIn {
-            0%   { opacity: 0; transform: translateY(16px) scale(0.97); }
-            100% { opacity: 1; transform: translateY(0) scale(1); }
-          }
-          @keyframes bentoEvt {
-            0%   { opacity: 0; transform: translateX(-6px); }
-            10%  { opacity: 1; transform: translateX(0); }
-            80%  { opacity: 1; }
-            100% { opacity: 0; transform: translateX(6px); }
-          }
-          @keyframes bentoFade {
-            0%   { opacity: 0; transform: translateY(-4px); }
-            100% { opacity: 1; transform: translateY(0); }
-          }
-        `}</style>
       </section>
 
       {/* ── METRICS TICKER ── */}
@@ -2063,6 +2047,20 @@ export default function Test2Page() {
         @keyframes t2pillIn {
           0%   { opacity: 0; transform: translateY(6px) scale(0.95); }
           100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @keyframes bentoIn {
+          0%   { opacity: 0; transform: translateY(16px) scale(0.97); }
+          100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @keyframes bentoEvt {
+          0%   { opacity: 0; transform: translateX(-6px); }
+          10%  { opacity: 1; transform: translateX(0); }
+          80%  { opacity: 1; }
+          100% { opacity: 0; transform: translateX(6px); }
+        }
+        @keyframes bentoFade {
+          0%   { opacity: 0; transform: translateY(-4px); }
+          100% { opacity: 1; transform: translateY(0); }
         }
       `}</style>
     </div>
