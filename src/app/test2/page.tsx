@@ -1659,26 +1659,58 @@ export default function Test2Page() {
               </div>
             </Reveal>
 
-            <Reveal delay={60}>
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-[1.0] tracking-tight text-white mb-7">
-                More sales.
-                <br />
-                Same ad spend.
+            <Reveal delay={40}>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-[1.0] tracking-tight text-white mb-6">
+                One platform.
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-400 to-fuchsia-500">
-                  <Typewriter words={["Finally.", "For real.", "Guaranteed.", "Starting today."]} />
+                  <Typewriter words={[
+                    "Track your ads.",
+                    "Grow your list.",
+                    "Collect reviews.",
+                    "Schedule social.",
+                    "Fix your SEO.",
+                  ]} />
                 </span>
               </h1>
             </Reveal>
 
-            <Reveal delay={120}>
-              <p className="text-xl text-white/40 leading-relaxed mb-9 max-w-lg">
-                Your ads are working harder than you think. Attribix shows you exactly which ones — so you stop wasting money and double down on what actually converts.
+            <Reveal delay={100}>
+              <p className="text-lg text-white/40 leading-relaxed mb-8 max-w-lg">
+                Attribix replaces 5 separate tools with a single dashboard — ad tracking, attribution, email, reviews, social scheduling, and SEO. Built for Shopify stores that want to grow without the chaos.
               </p>
             </Reveal>
 
-            <Reveal delay={180}>
-              <div className="flex flex-wrap items-center gap-4 mb-10">
+            {/* Feature pills — staggered fade-in */}
+            <Reveal delay={160}>
+              <div className="flex flex-wrap gap-2 mb-9">
+                {[
+                  { label: "Ad tracking",      color: "rgba(34,211,238,0.15)",  border: "rgba(34,211,238,0.25)",  text: "#67e8f9" },
+                  { label: "Attribution",       color: "rgba(99,102,241,0.15)",  border: "rgba(99,102,241,0.25)",  text: "#a5b4fc" },
+                  { label: "Email & newsletter",color: "rgba(168,85,247,0.15)",  border: "rgba(168,85,247,0.25)",  text: "#d8b4fe" },
+                  { label: "Reviews & leads",   color: "rgba(236,72,153,0.15)",  border: "rgba(236,72,153,0.25)",  text: "#f9a8d4" },
+                  { label: "Social calendar",   color: "rgba(249,115,22,0.12)",  border: "rgba(249,115,22,0.2)",   text: "#fdba74" },
+                  { label: "SEO audit",         color: "rgba(52,211,153,0.15)",  border: "rgba(52,211,153,0.25)",  text: "#6ee7b7" },
+                ].map((f, i) => (
+                  <span
+                    key={f.label}
+                    className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold"
+                    style={{
+                      background: f.color,
+                      border: `1px solid ${f.border}`,
+                      color: f.text,
+                      animation: `t2pillIn 0.4s ease-out ${i * 60}ms both`,
+                    }}
+                  >
+                    <span className="h-1 w-1 rounded-full shrink-0" style={{ background: f.text }} />
+                    {f.label}
+                  </span>
+                ))}
+              </div>
+            </Reveal>
+
+            <Reveal delay={220}>
+              <div className="flex flex-wrap items-center gap-4 mb-9">
                 <MagneticButton href="/login" className="text-base px-9 py-4">
                   Start free trial →
                 </MagneticButton>
@@ -1743,6 +1775,13 @@ export default function Test2Page() {
       <FinalCTA />
 
       <Footer />
+
+      <style jsx global>{`
+        @keyframes t2pillIn {
+          0%   { opacity: 0; transform: translateY(6px) scale(0.95); }
+          100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+      `}</style>
     </div>
   );
 }
