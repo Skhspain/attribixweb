@@ -137,9 +137,21 @@ export default function AnalyticsPage() {
 
   const confirmed = m.confirmedRevenue ?? m.revenue;
 
-  // Detect currency from live data
+  // Detect currency from live data and format using Intl
   const currencyCode = liveData?.recentPurchases?.[0]?.currency || "USD";
-  const currencySymbol = currencyCode === "NOK" ? "kr " : currencyCode === "EUR" ? "€" : currencyCode === "GBP" ? "£" : "$";
+
+  function fmtMoney(value: number): string {
+    try {
+      return new Intl.NumberFormat(undefined, {
+        style: "currency",
+        currency: currencyCode,
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+      }).format(value);
+    } catch {
+      return `${currencyCode} ${value.toFixed(0)}`;
+    }
+  }
 
   return (
     <div className="min-w-0 px-4 py-6 md:px-6 md:py-8">
@@ -183,7 +195,7 @@ export default function AnalyticsPage() {
         <div className="ax-card ax-card-body">
           <div className="ax-metric-label">Revenue</div>
           <div className="ax-metric-value">
-            <AnimatedNumber value={m.revenue} prefix={currencySymbol} />
+            {fmtMoney(m.revenue)}
           </div>
         </div>
       </section>
@@ -193,13 +205,13 @@ export default function AnalyticsPage() {
         <div className="ax-card ax-card-body">
           <div className="ax-metric-label">Ad Spend</div>
           <div className="ax-metric-value">
-            <AnimatedNumber value={m.adspend} prefix={currencySymbol} />
+            {fmtMoney(m.adspend)}
           </div>
         </div>
         <div className="ax-card ax-card-body">
           <div className="ax-metric-label">Confirmed Revenue (Ads)</div>
           <div className="ax-metric-value">
-            <AnimatedNumber value={confirmed} prefix={currencySymbol} />
+            {fmtMoney(confirmed)}
           </div>
         </div>
         <div className="ax-card ax-card-body">
@@ -284,7 +296,7 @@ export default function AnalyticsPage() {
                 ? liveData!.recentPurchases.map((p) => (
                     <tr key={p.id}>
                       <td>{new Date(p.createdAt).toLocaleDateString()}</td>
-                      <td className="text-right">{currencySymbol}{p.totalValue.toFixed(2)}</td>
+                      <td className="text-right">{fmtMoney(p.totalValue)}</td>
                       <td>{p.utmSource || "direct"}</td>
                     </tr>
                   ))
