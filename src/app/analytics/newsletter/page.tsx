@@ -2,10 +2,12 @@
 
 import React from "react";
 import { useAuth } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 import { attribixFetch } from "@/lib/api";
 
 export default function NewsletterPage() {
   const { getToken } = useAuth();
+  const router = useRouter();
   const [data, setData] = React.useState<any>(null);
   const [loading, setLoading] = React.useState(true);
   const [tab, setTab] = React.useState<"subscribers" | "campaigns">("subscribers");
@@ -58,10 +60,15 @@ export default function NewsletterPage() {
     if (!newCampaign.name) return;
     try {
       const token = await getToken();
-      await attribixFetch("/api/standalone/newsletter/update", token, {
+      const res = await attribixFetch("/api/standalone/newsletter/update", token, {
         method: "POST", body: JSON.stringify({ action: "create-campaign", ...newCampaign }),
       });
-      setShowNewCampaign(false); setNewCampaign({ name: "", subject: "" }); load();
+      const data = await res.json();
+      if (data.ok && data.campaign?.id) {
+        router.push(`/analytics/newsletter/campaign/${data.campaign.id}`);
+      } else {
+        setShowNewCampaign(false); setNewCampaign({ name: "", subject: "" }); load();
+      }
     } catch (e) { console.error(e); }
   }
 
@@ -173,8 +180,8 @@ export default function NewsletterPage() {
             <tbody>
               {campaigns.length === 0 && <tr><td colSpan={6} className="px-4 py-8 text-center text-slate-400">No campaigns yet</td></tr>}
               {campaigns.map((c: any) => (
-                <tr key={c.id} className="border-b last:border-0 hover:bg-slate-50">
-                  <td className="px-4 py-3 font-medium">{c.name}</td>
+                <tr key={c.id} className="border-b last:border-0 hover:bg-slate-50 cursor-pointer" onClick={() => router.push(`/analytics/newsletter/campaign/${c.id}`)}>
+                  <td className="px-4 py-3 font-medium text-blue-600 hover:underline">{c.name}</td>
                   <td className="px-4 py-3">
                     <span className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${
                       c.status === "sent" ? "bg-emerald-50 text-emerald-600" :

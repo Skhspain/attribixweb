@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { useAuth } from "@clerk/nextjs";
 import { attribixFetch } from "@/lib/api";
 
@@ -49,7 +50,12 @@ export default function ReviewsPage() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Reviews</h1>
+      <div className="flex items-center justify-between">
+        <h1 className="text-2xl font-bold">Reviews</h1>
+        <Link href="/analytics/reviews/settings" className="px-4 py-2 rounded-lg border text-sm hover:bg-slate-50">
+          Review Settings & Widget
+        </Link>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div className="rounded-xl border bg-white p-5">
