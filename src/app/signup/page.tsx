@@ -71,8 +71,7 @@ export default function SignupPage() {
 
             <div className="flex justify-center">
               <SignUp
-                routing="hash"
-                afterSignUpUrl="/analytics"
+                forceRedirectUrl="/analytics"
                 appearance={{
                   elements: {
                     rootBox: "w-full max-w-xl",

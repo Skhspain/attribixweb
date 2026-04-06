@@ -16,8 +16,7 @@ export default function LoginPage() {
 
         <div className="flex justify-center">
           <SignIn
-            routing="hash"
-            afterSignInUrl="/analytics"
+            forceRedirectUrl="/analytics"
             appearance={{
               elements: {
                 rootBox: "w-full",
@@ -25,7 +24,7 @@ export default function LoginPage() {
                 headerTitle: "hidden",
                 headerSubtitle: "hidden",
                 socialButtonsBlockButton:
-                  "rounded-xl bg-[#1877F2] text-white hover:opacity-90 shadow-md",
+                  "rounded-xl bg-[#4285F4] text-white hover:opacity-90 shadow-md",
                 formFieldInput:
                   "rounded-xl border border-white/20 bg-white/90 text-gray-900 px-3 py-2 text-sm",
                 formButtonPrimary:
