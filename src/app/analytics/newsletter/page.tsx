@@ -156,15 +156,8 @@ export default function NewsletterPage() {
       {!loading && tab === "campaigns" && (
         <>
         <div className="flex justify-end">
-          <button onClick={() => setShowNewCampaign(!showNewCampaign)} className="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:opacity-90">+ New Campaign</button>
+          <button onClick={() => router.push("/analytics/newsletter/templates")} className="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:opacity-90">+ New Campaign</button>
         </div>
-        {showNewCampaign && (
-          <div className="rounded-xl border bg-white p-4 flex gap-3 items-end">
-            <input placeholder="Campaign name *" value={newCampaign.name} onChange={(e) => setNewCampaign({ ...newCampaign, name: e.target.value })} className="rounded-lg border px-3 py-2 text-sm flex-1" />
-            <input placeholder="Subject line" value={newCampaign.subject} onChange={(e) => setNewCampaign({ ...newCampaign, subject: e.target.value })} className="rounded-lg border px-3 py-2 text-sm flex-1" />
-            <button onClick={createCampaign} className="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm">Create</button>
-          </div>
-        )}
         <div className="rounded-xl border bg-white overflow-hidden">
           <table className="w-full text-sm">
             <thead className="bg-slate-50 border-b">
