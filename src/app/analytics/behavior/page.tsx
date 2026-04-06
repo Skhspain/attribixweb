@@ -1,9 +1,11 @@
 "use client";
 
 import * as React from "react";
+import { useAuth } from "@clerk/nextjs";
+import { attribixFetch } from "@/lib/api";
 
-/* Demo data */
-const steps = [
+/* Demo data (fallback) */
+const demoSteps = [
   {
     label: "1st page",
     pages: [
@@ -46,7 +48,7 @@ const steps = [
   },
 ];
 
-const metrics = [
+const demoMetrics = [
   { label: "TOTAL VISITS (30D)", value: "12,500", change: "+3.2%", positive: true },
   { label: "CONVERSIONS", value: "1,200", change: "+6.8%", positive: true },
   { label: "AD SPEND", value: "$4,500", change: "-2.1%", positive: false },
@@ -54,6 +56,25 @@ const metrics = [
 ];
 
 export default function BehaviorOverviewPage() {
+  const { getToken } = useAuth();
+  const [steps, setSteps] = React.useState(demoSteps);
+  const [metrics, setMetrics] = React.useState(demoMetrics);
+
+  React.useEffect(() => {
+    async function load() {
+      try {
+        const token = await getToken();
+        const res = await attribixFetch("/api/standalone/behavior?days=30", token);
+        const data = await res.json();
+        if (data.ok) {
+          if (data.steps?.length > 0) setSteps(data.steps);
+          if (data.metrics?.length > 0) setMetrics(data.metrics);
+        }
+      } catch (e) { console.error("Behavior fetch failed:", e); }
+    }
+    load();
+  }, []);
+
   return (
     <div className="space-y-8">
       <h1 className="text-2xl font-bold">Behavior overview</h1>

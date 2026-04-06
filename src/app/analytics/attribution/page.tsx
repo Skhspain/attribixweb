@@ -1,7 +1,9 @@
 // src/app/analytics/attribution/page.tsx
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import { useAuth } from "@clerk/nextjs";
+import { attribixFetch } from "@/lib/api";
 import { CUSTOMERS } from "./data";
 import { attribute, fmtCurrency, type Model } from "./logic";
 
@@ -13,12 +15,39 @@ const MODELS: { key: Model; label: string }[] = [
 ];
 
 export default function AttributionOverviewPage() {
+  const { getToken } = useAuth();
   const [model, setModel] = useState<Model>("last");
+  const [liveData, setLiveData] = useState<any>(null);
 
-  const { channels, totalRevenue, totalConversions } = useMemo(
-    () => attribute(CUSTOMERS, model),
-    [model]
-  );
+  useEffect(() => {
+    async function load() {
+      try {
+        const token = await getToken();
+        const res = await attribixFetch("/api/standalone/attribution?days=30", token);
+        const data = await res.json();
+        if (data.ok && data.hasData) setLiveData(data);
+      } catch (e) { console.error("Attribution fetch failed:", e); }
+    }
+    load();
+  }, []);
+
+  const { channels, totalRevenue, totalConversions } = useMemo(() => {
+    if (liveData?.channelRows?.length > 0) {
+      const modelKey = model === "last" ? "revenueLastTouch" : model === "first" ? "revenueFirstTouch" : model === "linear" ? "revenueLinear" : "revenueTimeDecay";
+      const total = liveData.channelRows.reduce((s: number, r: any) => s + (r[modelKey] || 0), 0);
+      return {
+        channels: liveData.channelRows.map((r: any) => ({
+          name: r.channel,
+          revenue: r[modelKey] || 0,
+          share: total > 0 ? (r[modelKey] || 0) / total : 0,
+          conversions: r.orders,
+        })),
+        totalRevenue: total,
+        totalConversions: liveData.totalTrackedOrders || 0,
+      };
+    }
+    return attribute(CUSTOMERS, model);
+  }, [model, liveData]);
 
   const aov = totalConversions > 0 ? totalRevenue / totalConversions : 0;
 

@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import { useAuth } from "@clerk/nextjs";
+import { attribixFetch } from "@/lib/api";
 
 /** ---------------------------------------------------------
  *  DEMO DATA (replace with your real data source)
@@ -195,9 +197,24 @@ const TABS = ["Last-Click", "First-Click", "Linear", "Time-Decay"] as const;
 type Tab = typeof TABS[number];
 
 export default function CustomerListPage() {
+  const { getToken } = useAuth();
   const [tab, setTab] = React.useState<Tab>("Last-Click");
   const [query, setQuery] = React.useState("");
-  const [rows] = React.useState<Customer[]>(ALL_CUSTOMERS);
+  const [rows, setRows] = React.useState<Customer[]>(ALL_CUSTOMERS);
+
+  React.useEffect(() => {
+    async function load() {
+      try {
+        const token = await getToken();
+        const res = await attribixFetch("/api/standalone/customers?days=90", token);
+        const data = await res.json();
+        if (data.ok && data.customers?.length > 0) {
+          setRows(data.customers);
+        }
+      } catch (e) { console.error("Customer list fetch failed:", e); }
+    }
+    load();
+  }, []);
 
   const filtered = React.useMemo(() => {
     const q = query.trim().toLowerCase();
