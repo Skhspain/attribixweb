@@ -694,7 +694,7 @@ type Bubble = {
 };
 
 function HeroAttributionChart() {
-  const BAR_COUNT = 36;
+  const BAR_COUNT = 20;
   const [heights, setHeights] = React.useState<number[]>(
     Array.from({ length: BAR_COUNT }, () => 0)
   );
@@ -718,7 +718,7 @@ function HeroAttributionChart() {
   ] as const;
 
   const LANES = 4;
-  const MAX_BUBBLES = 6;
+  const MAX_BUBBLES = 3;
 
   React.useEffect(() => {
     let cancelled = false;
@@ -739,8 +739,8 @@ function HeroAttributionChart() {
       setStep(0);
       setLoopKey((k) => k + 1);
 
-      const STEP_MS = 720;
-      const BAR_EASE_MS = 920;
+      const STEP_MS = 1100;
+      const BAR_EASE_MS = 1000;
       if (typeof window !== "undefined") {
         (window as any).__BAR_EASE_MS__ = BAR_EASE_MS;
       }
@@ -782,7 +782,7 @@ function HeroAttributionChart() {
         }, life);
 
         setStep(i + 1);
-        setPulseKey((k) => k + 1);
+        if (i % 5 === 4) setPulseKey((k) => k + 1);
 
         setTimeout(() => lift(i + 1), STEP_MS);
       };

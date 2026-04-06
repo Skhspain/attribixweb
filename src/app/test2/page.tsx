@@ -1456,6 +1456,161 @@ function FinalCTA() {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
+   Hero Visual — floating parallax cards (lightweight)
+───────────────────────────────────────────────────────────────────────────── */
+function HeroVisual() {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const [mx, setMx] = React.useState(0);
+  const [my, setMy] = React.useState(0);
+  const [purchases, setPurchases] = React.useState(127);
+  const [roas, setRoas] = React.useState(11.2);
+  const [notification, setNotification] = React.useState<{ id: number; label: string } | null>(null);
+  const notifId = React.useRef(0);
+
+  React.useEffect(() => {
+    function onMove(e: MouseEvent) {
+      const el = containerRef.current;
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      setMx((e.clientX - r.left - r.width / 2) / r.width);
+      setMy((e.clientY - r.top - r.height / 2) / r.height);
+    }
+    window.addEventListener("mousemove", onMove, { passive: true });
+    return () => window.removeEventListener("mousemove", onMove);
+  }, []);
+
+  React.useEffect(() => {
+    const events = [
+      "Meta: +2 Purchases",
+      "Google: +1 Purchase",
+      "Meta: +1 Purchase",
+      "Organic: +1 Purchase",
+    ];
+    const iv = setInterval(() => {
+      setPurchases(p => p + Math.floor(Math.random() * 3 + 1));
+      setRoas(r => Math.min(13.9, +(r + (Math.random() * 0.2 - 0.05)).toFixed(1)));
+      const id = notifId.current++;
+      setNotification({ id, label: events[id % events.length] });
+      setTimeout(() => setNotification(null), 2800);
+    }, 3200);
+    return () => clearInterval(iv);
+  }, []);
+
+  const px = (depth: number) => ({
+    transform: `translate3d(${mx * depth * 22}px, ${my * depth * 16}px, 0)`,
+    transition: "transform 0.18s ease-out",
+    willChange: "transform",
+  });
+
+  const sparkBars = [40, 55, 48, 62, 70, 58, 75, 80, 72, 88, 65, 78, 85, 70, 94];
+
+  return (
+    <div ref={containerRef} className="relative w-full select-none" style={{ height: "480px" }}>
+      {/* Ambient glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 rounded-3xl blur-3xl opacity-40"
+        style={{ background: "radial-gradient(circle at 55% 45%, rgba(99,102,241,0.55), rgba(6,182,212,0.3), transparent 72%)" }}
+      />
+
+      {/* Card 1 — ROAS (top-right, shallowest depth) */}
+      <div className="absolute top-0 right-6 w-56" style={px(0.35)}>
+        <div className="rounded-2xl border border-white/[0.09] bg-[#060c1a]/95 backdrop-blur-xl p-5 shadow-[0_32px_80px_rgba(0,0,0,0.7)]">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs text-white/35 font-medium uppercase tracking-widest">ROAS</span>
+            <span className="text-[10px] text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 rounded-full px-2 py-0.5 font-semibold">
+              ▲ 248%
+            </span>
+          </div>
+          <div className="text-5xl font-black text-white tabular-nums leading-none mb-1">{roas}×</div>
+          <div className="text-[11px] text-white/30 mb-4">True attribution vs platform reported</div>
+          {/* Sparkline */}
+          <div className="flex items-end gap-0.5 h-10">
+            {sparkBars.map((h, i) => (
+              <div
+                key={i}
+                className="flex-1 rounded-t"
+                style={{
+                  height: `${h}%`,
+                  background: "linear-gradient(to top, rgba(99,102,241,0.5), rgba(34,211,238,0.85))",
+                  boxShadow: i === sparkBars.length - 1 ? "0 0 8px rgba(34,211,238,0.6)" : undefined,
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Card 2 — Live purchases (middle-right, deepest depth) */}
+      <div className="absolute top-40 right-2 w-52" style={px(0.75)}>
+        <div className="rounded-2xl border border-white/[0.09] bg-[#060c1a]/95 backdrop-blur-xl p-4 shadow-[0_32px_80px_rgba(0,0,0,0.7)]">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+            <span className="text-[11px] text-white/35 font-medium uppercase tracking-widest">Live today</span>
+          </div>
+          <div className="text-4xl font-black text-white tabular-nums">{purchases}</div>
+          <div className="text-xs text-white/30 mt-1 mb-3">purchases tracked</div>
+          {notification && (
+            <div
+              key={notification.id}
+              className="text-[10px] rounded-lg px-3 py-2 bg-indigo-500/12 border border-indigo-500/20 text-indigo-300 font-medium"
+              style={{ animation: "t2notify 2.8s ease-in-out forwards" }}
+            >
+              {notification.label}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Card 3 — CPP before/after (bottom, mid depth) */}
+      <div className="absolute bottom-0 right-16 w-48" style={px(0.55)}>
+        <div className="rounded-2xl border border-white/[0.09] bg-[#060c1a]/95 backdrop-blur-xl p-4 shadow-[0_32px_80px_rgba(0,0,0,0.7)]">
+          <div className="text-[11px] text-white/35 font-medium uppercase tracking-widest mb-3">Cost / Purchase</div>
+          <div className="flex items-center gap-4">
+            <div>
+              <div className="text-[10px] text-white/20 mb-1">Before</div>
+              <div className="text-xl font-bold text-rose-400 line-through decoration-rose-400/40">$19.00</div>
+            </div>
+            <div className="text-white/15 text-lg">→</div>
+            <div>
+              <div className="text-[10px] text-white/20 mb-1">After</div>
+              <div className="text-xl font-bold text-emerald-400">$3.20</div>
+            </div>
+          </div>
+          <div className="mt-3 h-1.5 rounded-full bg-white/5 overflow-hidden">
+            <div className="h-full rounded-full bg-gradient-to-r from-rose-500 to-emerald-400"
+              style={{ width: "83%", transition: "width 1s ease-out" }} />
+          </div>
+          <div className="text-[10px] text-emerald-400 mt-1.5 font-semibold">-83% reduction</div>
+        </div>
+      </div>
+
+      {/* Floating connecting lines (SVG) */}
+      <svg className="pointer-events-none absolute inset-0 w-full h-full" aria-hidden>
+        <defs>
+          <linearGradient id="hv-line1" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="rgba(99,102,241,0)" />
+            <stop offset="50%" stopColor="rgba(99,102,241,0.25)" />
+            <stop offset="100%" stopColor="rgba(99,102,241,0)" />
+          </linearGradient>
+        </defs>
+        <line x1="0" y1="120" x2="75%" y2="100" stroke="url(#hv-line1)" strokeWidth="1" />
+        <line x1="0" y1="280" x2="80%" y2="280" stroke="url(#hv-line1)" strokeWidth="1" />
+      </svg>
+
+      <style jsx global>{`
+        @keyframes t2notify {
+          0%   { opacity: 0; transform: translateY(4px); }
+          12%  { opacity: 1; transform: translateY(0); }
+          80%  { opacity: 1; }
+          100% { opacity: 0; transform: translateY(-4px); }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
    PAGE
 ───────────────────────────────────────────────────────────────────────────── */
 export default function Test2Page() {
@@ -1471,70 +1626,76 @@ export default function Test2Page() {
       <Header />
 
       {/* ── HERO ── */}
-      <section className="relative pt-28 pb-10 md:pt-36 md:pb-12">
+      <section className="relative min-h-[92vh] flex items-center pt-24 pb-10 overflow-hidden">
+        {/* Top radial */}
         <div
-          className="pointer-events-none absolute inset-x-0 top-0 h-[70vh]"
-          style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(99,102,241,0.12), transparent 70%)" }}
+          className="pointer-events-none absolute inset-x-0 top-0 h-full -z-10"
+          style={{ background: "radial-gradient(ellipse 70% 55% at 40% 10%, rgba(99,102,241,0.13), transparent 65%)" }}
+        />
+        {/* Bottom right glow */}
+        <div
+          className="pointer-events-none absolute right-0 bottom-0 w-[60vw] h-[60vh] -z-10"
+          style={{ background: "radial-gradient(circle at 80% 80%, rgba(6,182,212,0.07), transparent 65%)" }}
         />
 
-        {/* Headline block */}
-        <div className="mx-auto max-w-4xl px-4 text-center">
-          <Reveal>
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-white/[0.09] bg-white/[0.04] px-4 py-1.5 text-xs text-white/45 font-medium mb-10">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
-              Shopify native &nbsp;·&nbsp; No setup required &nbsp;·&nbsp; 14-day free trial
-            </div>
-          </Reveal>
+        <div className="mx-auto max-w-7xl px-4 w-full grid lg:grid-cols-2 gap-16 items-center">
 
-          <Reveal delay={80}>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.0] tracking-tight text-white mb-6">
-              Stop guessing.
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-400 to-fuchsia-500">
-                <Typewriter words={["Know your ROAS.", "Own your data.", "Scale smarter.", "Track everything."]} />
-              </span>
-            </h1>
-          </Reveal>
-
-          <Reveal delay={160}>
-            <p className="text-lg md:text-xl text-white/40 max-w-2xl mx-auto leading-relaxed mb-10">
-              Pixels miss up to 40% of conversions. Attribix closes the gap with server-side tracking so your ad platforms finally agree with Shopify.
-            </p>
-          </Reveal>
-
-          <Reveal delay={240}>
-            <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
-              <MagneticButton href="/login" className="text-base px-8 py-4">
-                Start free trial →
-              </MagneticButton>
-              <Link href="/pricing" className="text-sm text-white/40 hover:text-white/80 transition-colors underline underline-offset-4">
-                See pricing
-              </Link>
-            </div>
-            {/* Social proof avatars */}
-            <div className="flex items-center justify-center gap-3 text-xs text-white/25">
-              <div className="flex -space-x-2">
-                {["#4f46e5", "#0891b2", "#7c3aed", "#be185d", "#059669"].map((c, i) => (
-                  <div
-                    key={i}
-                    className="h-7 w-7 rounded-full border-2 border-[#030712] flex items-center justify-center text-white text-[9px] font-bold shrink-0"
-                    style={{ background: c }}
-                  >
-                    {["M", "J", "A", "S", "E"][i]}
-                  </div>
-                ))}
+          {/* Left — copy */}
+          <div className="max-w-xl">
+            <Reveal>
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-white/[0.09] bg-white/[0.04] px-4 py-1.5 text-xs text-white/45 font-medium mb-8">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                Shopify native &nbsp;·&nbsp; 14-day free trial &nbsp;·&nbsp; No setup
               </div>
-              <span>Trusted by 500+ Shopify stores</span>
-            </div>
+            </Reveal>
+
+            <Reveal delay={60}>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-[1.0] tracking-tight text-white mb-6">
+                Stop guessing.
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-400 to-fuchsia-500">
+                  <Typewriter words={["Know your ROAS.", "Own your data.", "Scale smarter.", "Track everything."]} />
+                </span>
+              </h1>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <p className="text-lg text-white/40 leading-relaxed mb-9">
+                Pixels miss up to 40% of conversions. Attribix closes the gap — server-side tracking so your ad platforms finally agree with Shopify.
+              </p>
+            </Reveal>
+
+            <Reveal delay={180}>
+              <div className="flex flex-wrap items-center gap-4 mb-9">
+                <MagneticButton href="/login" className="text-base px-8 py-4">
+                  Start free trial →
+                </MagneticButton>
+                <Link href="/pricing" className="text-sm text-white/40 hover:text-white/80 transition-colors underline underline-offset-4">
+                  See pricing
+                </Link>
+              </div>
+              <div className="flex items-center gap-3 text-xs text-white/25">
+                <div className="flex -space-x-2">
+                  {["#4f46e5", "#0891b2", "#7c3aed", "#be185d", "#059669"].map((c, i) => (
+                    <div
+                      key={i}
+                      className="h-7 w-7 rounded-full border-2 border-[#030712] flex items-center justify-center text-white text-[9px] font-bold shrink-0"
+                      style={{ background: c }}
+                    >
+                      {["M", "J", "A", "S", "E"][i]}
+                    </div>
+                  ))}
+                </div>
+                <span>Trusted by 500+ Shopify stores</span>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Right — floating parallax cards */}
+          <Reveal delay={280} className="hidden lg:block">
+            <HeroVisual />
           </Reveal>
         </div>
-
-        {/* Browser mockup */}
-        <Reveal delay={360} className="mx-auto max-w-5xl px-4 mt-16">
-          <BrowserMockup>
-            <HeroAttributionChart />
-          </BrowserMockup>
-        </Reveal>
       </section>
 
       {/* ── METRICS TICKER ── */}
