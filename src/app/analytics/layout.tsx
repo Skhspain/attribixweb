@@ -11,6 +11,8 @@ export default function AnalyticsLayout({ children }: { children: React.ReactNod
 
   const links = [
     { href: "/analytics", label: "Overview" },
+    { href: "/analytics/meta-ads", label: "Meta Ads" },
+    { href: "/analytics/google-ads", label: "Google Ads" },
     { href: "/analytics/ads", label: "Ads Review" },
     { href: "/analytics/attribution", label: "Attribution" },
     { href: "/analytics/attribution/customerlist", label: "Customer List" },
@@ -18,14 +20,19 @@ export default function AnalyticsLayout({ children }: { children: React.ReactNod
 
     // --- Marketing section ---
     { href: "/analytics/newsletter", label: "Newsletter", section: "MARKETING" } as any,
+    { href: "/analytics/newsletter/flows", label: "Automation Flows" },
+    { href: "/analytics/newsletter/settings", label: "Email Settings" },
     { href: "/analytics/leads", label: "Lead Center" },
     { href: "/analytics/reviews", label: "Reviews" },
 
     // --- Site Intelligence section ---
     { href: "/analytics/sitemap", label: "Sitemap", section: "SITE INTELLIGENCE" } as any,
     { href: "/analytics/behavior", label: "Behavior overview" },
+    { href: "/analytics/seo", label: "SEO Audit" },
+    { href: "/analytics/feeds", label: "Product Feeds" },
     // ----------------------------------
 
+    { href: "/analytics/billing", label: "Plans & Billing", section: "ACCOUNT" } as any,
     { href: "/analytics/settings", label: "Settings" },
   ];
 
