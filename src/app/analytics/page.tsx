@@ -4,6 +4,8 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import { useAuth } from "@clerk/nextjs";
+import { attribixFetch, type OverviewData } from "@/lib/api";
 import { overview, sessionsBySource, recent, integrations } from "./data";
 import { ADS } from "./ads/data";
 
@@ -75,6 +77,8 @@ type OverviewResponse = {
 };
 
 export default function AnalyticsPage() {
+  const { getToken } = useAuth();
+  const [liveData, setLiveData] = React.useState<OverviewData | null>(null);
   const [data, setData] = React.useState<OverviewResponse | null>(null);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState<string | null>(null);
@@ -84,19 +88,30 @@ export default function AnalyticsPage() {
     setError(null);
 
     try {
-      // IMPORTANT: call our Next.js server proxy (no API key in the browser)
-      const res = await fetch("/api/report/overview", { cache: "no-store" });
+      const token = await getToken();
+      const res = await attribixFetch("/api/standalone/overview?days=30", token);
       if (!res.ok) {
         const txt = await res.text();
         throw new Error(txt || `Request failed (${res.status})`);
       }
-      const json = (await res.json()) as OverviewResponse;
-      setData(json);
+      const json = (await res.json()) as OverviewData;
+      setLiveData(json);
+
+      // Map to the existing OverviewResponse shape for backward compat
+      setData({
+        range: { from: json.period.since, to: new Date().toISOString() },
+        metrics: {
+          visits: json.metrics.totalEvents,
+          conversions: json.metrics.orders,
+          revenue: json.metrics.revenue,
+          adspend: json.metrics.spend,
+          roas: json.metrics.roas || null,
+          cpp: json.metrics.orders > 0 ? json.metrics.spend / json.metrics.orders : null,
+        },
+      });
     } catch (e: any) {
       console.error("Failed to load overview:", e);
-      setError(
-        typeof e?.message === "string" ? e.message : "Failed to load overview"
-      );
+      setError(typeof e?.message === "string" ? e.message : "Failed to load overview");
       setData(null);
     } finally {
       setLoading(false);
@@ -105,6 +120,7 @@ export default function AnalyticsPage() {
 
   React.useEffect(() => {
     load();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const m =
@@ -237,30 +253,44 @@ export default function AnalyticsPage() {
         </div>
         <div className="ax-card ax-card-body min-w-0">
           <h2 className="mb-3 text-base font-medium">Sessions by Source</h2>
-          <SessionsBySourceChart data={sessionsBySource} />
+          <SessionsBySourceChart
+            data={
+              liveData?.sources?.length
+                ? liveData.sources.map((s) => ({ source: s.source, sessions: s.count }))
+                : sessionsBySource
+            }
+          />
         </div>
       </section>
 
       {/* Table + Integrations */}
       <section className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div className="ax-card ax-card-body lg:col-span-2">
-          <h3 className="mb-3 text-base font-medium">Recent Activity</h3>
+          <h3 className="mb-3 text-base font-medium">Recent Purchases</h3>
           <table className="ax-table w-full">
             <thead>
               <tr>
                 <th>Date</th>
-                <th>User</th>
-                <th>Activity</th>
+                <th className="text-right">Revenue</th>
+                <th>Source</th>
               </tr>
             </thead>
             <tbody>
-              {recent.map((r) => (
-                <tr key={r.date + r.user}>
-                  <td>{r.date}</td>
-                  <td>{r.user}</td>
-                  <td>{r.activity}</td>
-                </tr>
-              ))}
+              {(liveData?.recentPurchases || []).length > 0
+                ? liveData!.recentPurchases.map((p) => (
+                    <tr key={p.id}>
+                      <td>{new Date(p.createdAt).toLocaleDateString()}</td>
+                      <td className="text-right">${p.totalValue.toFixed(2)}</td>
+                      <td>{p.utmSource || "direct"}</td>
+                    </tr>
+                  ))
+                : recent.map((r) => (
+                    <tr key={r.date + r.user}>
+                      <td>{r.date}</td>
+                      <td className="text-right">–</td>
+                      <td>{r.activity}</td>
+                    </tr>
+                  ))}
             </tbody>
           </table>
         </div>

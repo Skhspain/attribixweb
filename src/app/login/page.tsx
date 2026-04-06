@@ -1,30 +1,9 @@
-// src/app/login/page.tsx
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { SignIn } from "@clerk/nextjs";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  async function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setLoading(true);
-    try {
-      // TODO: Replace when backend auth is ready
-      window.location.href = "/analytics";
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  function loginWithFacebook() {
-    // This hits src/app/api/facebook/start/route.ts
-    window.location.href = "/api/facebook/start";
-  }
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0F0620] via-[#0E1530] to-[#053B56] text-white flex items-center justify-center px-4">
       <div className="w-full max-w-md">
@@ -35,68 +14,31 @@ export default function LoginPage() {
           <p className="text-sm text-white/70 mt-1">Access your analytics dashboard</p>
         </div>
 
-        {/* 🔵 FACEBOOK LOGIN BUTTON */}
-        <button
-          onClick={loginWithFacebook}
-          className="w-full rounded-xl bg-[#1877F2] text-white py-2.5 font-semibold text-sm hover:opacity-90 shadow-md"
-        >
-          Continue with Facebook
-        </button>
-
-        <div className="my-4 flex items-center gap-4">
-          <div className="h-px flex-1 bg-white/20" />
-          <span className="text-xs text-white/50">or</span>
-          <div className="h-px flex-1 bg-white/20" />
+        <div className="flex justify-center">
+          <SignIn
+            routing="hash"
+            afterSignInUrl="/analytics"
+            appearance={{
+              elements: {
+                rootBox: "w-full",
+                card: "bg-white/10 backdrop-blur border border-white/10 rounded-2xl shadow-none",
+                headerTitle: "hidden",
+                headerSubtitle: "hidden",
+                socialButtonsBlockButton:
+                  "rounded-xl bg-[#1877F2] text-white hover:opacity-90 shadow-md",
+                formFieldInput:
+                  "rounded-xl border border-white/20 bg-white/90 text-gray-900 px-3 py-2 text-sm",
+                formButtonPrimary:
+                  "rounded-xl bg-white text-gray-900 px-4 py-2 font-semibold hover:opacity-90",
+                footerActionLink: "text-sky-300 hover:text-sky-200",
+              },
+            }}
+          />
         </div>
-
-        {/* EMAIL + PASSWORD LOGIN FORM */}
-        <form
-          onSubmit={onSubmit}
-          className="rounded-2xl border border-white/10 bg-white/10 backdrop-blur p-6"
-        >
-          <label className="block">
-            <span className="text-xs text-white/80">Email</span>
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-white/20 bg-white/90 text-gray-900 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="you@company.com"
-            />
-          </label>
-
-          <label className="block mt-4">
-            <span className="text-xs text-white/80">Password</span>
-            <input
-              type="password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 w-full rounded-xl border border-white/20 bg-white/90 text-gray-900 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="••••••••"
-            />
-          </label>
-
-          <button
-            type="submit"
-            disabled={loading}
-            className="mt-5 w-full rounded-xl bg-white text-gray-900 px-4 py-2 font-semibold hover:opacity-90 disabled:opacity-60"
-          >
-            {loading ? "Logging in…" : "Log in"}
-          </button>
-
-          <div className="mt-4 text-xs text-white/70 text-center">
-            Don’t have an account?{" "}
-            <Link href="/signup" className="underline underline-offset-2">
-              Sign up
-            </Link>
-          </div>
-        </form>
 
         <div className="text-center mt-4">
           <Link href="/" className="text-xs text-white/70 hover:text-white/90">
-            ← Back to home
+            &larr; Back to home
           </Link>
         </div>
       </div>

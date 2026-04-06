@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { UserButton } from "@clerk/nextjs";
 import "../globals.css";
 
 export default function AnalyticsLayout({ children }: { children: React.ReactNode }) {
@@ -67,7 +68,8 @@ export default function AnalyticsLayout({ children }: { children: React.ReactNod
           })}
         </nav>
 
-        <div className="px-5 py-4 border-t border-slate-100">
+        <div className="px-5 py-4 border-t border-slate-100 flex items-center gap-3">
+          <UserButton afterSignOutUrl="/" />
           <div className="text-[11px] text-slate-400 font-medium">Attribix v1.0</div>
         </div>
       </aside>
