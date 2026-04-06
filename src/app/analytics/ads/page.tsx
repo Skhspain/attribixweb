@@ -2,6 +2,8 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
+import { useAuth } from "@clerk/nextjs";
+import { attribixFetch } from "@/lib/api";
 import { AdsRow, ADS } from "./data";
 import AdsTable from "./AdsTable";
 
@@ -56,25 +58,51 @@ export default function AdsReviewPage() {
     [from, windowDays]
   );
 
-  // mimic fetch on timeframe/platform change (wire to API later)
+  const { getToken } = useAuth();
   const [rowsCurrent, setRowsCurrent] = useState<AdsRow[]>([]);
   const [rowsPrev, setRowsPrev] = useState<AdsRow[]>([]);
+  const [loadingAds, setLoadingAds] = useState(false);
+
   useEffect(() => {
-    // TODO: Replace with real fetch to your API:
-    // fetch(`/api/ads?platform=${platform}&from=${from}&to=${to}`).then(...)
-    // fetch(`/api/ads?platform=${platform}&from=${prevFrom}&to=${prevTo}`).then(...)
-    // For now we return the mock ADS filtered by platform.
-    const current = ADS.filter((r) => r.platform === platform);
-    // Derive "previous" values from prev* fields (in your backend, return real previous-period aggregates)
-    const previous = current.map((r) => ({
-      ...r,
-      spend: r.prevSpend,
-      purchases: r.prevPurchases,
-      revenue: r.prevRevenue,
-    }));
-    setRowsCurrent(current);
-    setRowsPrev(previous);
-  }, [platform, from, to, prevFrom, prevTo]);
+    async function fetchAds() {
+      setLoadingAds(true);
+      try {
+        const token = await getToken();
+        const res = await attribixFetch(`/api/standalone/ads?days=${windowDays}`, token);
+        const data = await res.json();
+        if (data.ok && data.ads?.length > 0) {
+          const filtered = data.ads.filter((r: AdsRow) => r.platform === platform);
+          setRowsCurrent(filtered);
+          const previous = filtered.map((r: AdsRow) => ({
+            ...r,
+            spend: r.prevSpend,
+            purchases: r.prevPurchases,
+            revenue: r.prevRevenue,
+          }));
+          setRowsPrev(previous);
+        } else {
+          // Fallback to demo data if no real ads
+          const current = ADS.filter((r) => r.platform === platform);
+          const previous = current.map((r) => ({
+            ...r,
+            spend: r.prevSpend,
+            purchases: r.prevPurchases,
+            revenue: r.prevRevenue,
+          }));
+          setRowsCurrent(current);
+          setRowsPrev(previous);
+        }
+      } catch (e) {
+        console.error("Failed to fetch ads:", e);
+        const current = ADS.filter((r) => r.platform === platform);
+        setRowsCurrent(current);
+        setRowsPrev(current.map((r) => ({ ...r, spend: r.prevSpend, purchases: r.prevPurchases, revenue: r.prevRevenue })));
+      } finally {
+        setLoadingAds(false);
+      }
+    }
+    fetchAds();
+  }, [platform, windowDays]);
 
   // search + perf filter
   const rows = useMemo(() => {
