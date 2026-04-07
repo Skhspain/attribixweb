@@ -31,14 +31,13 @@ export default function CampaignEditorPage() {
     async function load() {
       try {
         const token = await getToken();
-        const res = await attribixFetch("/api/standalone/newsletter", token);
+        const res = await attribixFetch(`/api/standalone/newsletter/campaign/${campaignId}`, token);
         const data = await res.json();
-        const c = data.campaigns?.find((c: any) => c.id === campaignId);
-        if (c) {
-          setCampaign(c);
-          setName(c.name || "");
-          setSubject(c.subject || "");
-          setPreviewText(c.previewText || "");
+        if (data.ok && data.campaign) {
+          setCampaign(data.campaign);
+          setName(data.campaign.name || "");
+          setSubject(data.campaign.subject || "");
+          setPreviewText(data.campaign.previewText || "");
         }
       } catch (e) { console.error(e); }
       setLoading(false);
@@ -60,7 +59,19 @@ export default function CampaignEditorPage() {
         appearance: { theme: "light", panels: { tools: { dock: "right" } } },
         features: { textEditor: { tables: true, emojis: true } },
       });
-      setUnlayerReady(true);
+
+      // Load existing design or HTML template
+      window.unlayer.addEventListener("editor:ready", () => {
+        if (campaign.designJson) {
+          try {
+            const design = typeof campaign.designJson === "string" ? JSON.parse(campaign.designJson) : campaign.designJson;
+            window.unlayer.loadDesign(design);
+          } catch (e) { console.error("Failed to load design JSON:", e); }
+        } else if (campaign.htmlContent) {
+          window.unlayer.loadDesign({ html: campaign.htmlContent, classic: true });
+        }
+        setUnlayerReady(true);
+      });
     }
 
     if (window.unlayer) { initUnlayer(); return; }
