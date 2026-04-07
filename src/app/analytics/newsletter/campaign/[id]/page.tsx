@@ -70,7 +70,16 @@ export default function CampaignEditorPage() {
         id: "unlayer-editor",
         displayMode: "email",
         locale: "en-US",
-        appearance: { theme: "light", panels: { tools: { dock: "right" } } },
+        appearance: {
+          theme: "light",
+          panels: { tools: { dock: "right" } },
+        },
+        customCSS: [
+          `.blockbuilder-branding { display: none !important; }`,
+          `.blockbuilder-footer { display: none !important; }`,
+          `body { overflow-x: hidden !important; }`,
+          `.blockbuilder-content-tools { overflow: hidden !important; }`,
+        ],
         features: {
           textEditor: { tables: true, emojis: true },
           preview: true,
