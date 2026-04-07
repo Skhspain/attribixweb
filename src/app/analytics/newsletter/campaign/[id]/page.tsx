@@ -144,6 +144,7 @@ export default function CampaignEditorPage() {
       const result = await res.json();
       if (result.ok) {
         setSendStatus("sent");
+        setTimeout(() => router.push("/analytics/newsletter/analytics"), 2000);
       } else {
         setSendStatus("error");
         setSendError(result.error || "Failed to send");

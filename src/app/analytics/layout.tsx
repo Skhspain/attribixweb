@@ -20,6 +20,7 @@ export default function AnalyticsLayout({ children }: { children: React.ReactNod
 
     // --- Marketing section ---
     { href: "/analytics/newsletter", label: "Newsletter", section: "MARKETING" } as any,
+    { href: "/analytics/newsletter/analytics", label: "Email Analytics" },
     { href: "/analytics/newsletter/flows", label: "Automation Flows" },
     { href: "/analytics/newsletter/settings", label: "Email Settings" },
     { href: "/analytics/leads", label: "Lead Center" },
