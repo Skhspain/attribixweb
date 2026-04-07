@@ -90,8 +90,8 @@ export default function CampaignEditorPage() {
             window.unlayer.loadDesign(design);
           } catch (e) { console.error("Failed to load design JSON:", e); }
         } else if (campaign.htmlContent) {
-          // Load HTML without classic mode — auto-converts to blocks
-          window.unlayer.loadDesign({ html: replacePlaceholders(campaign.htmlContent) });
+          // Load HTML in classic mode — complex table HTML can't auto-convert
+          window.unlayer.loadDesign({ html: replacePlaceholders(campaign.htmlContent), classic: true });
         }
         setUnlayerReady(true);
       });
