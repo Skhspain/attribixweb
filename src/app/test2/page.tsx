@@ -1430,7 +1430,7 @@ function FinalCTA() {
             14-day free trial. No card required. Connect Shopify in under 2 minutes.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-5">
-            <MagneticButton href="/login" className="text-base px-9 py-4">
+            <MagneticButton href="/login" className="text-base px-9 py-4" onClick={trackTrialClick}>
               Start free trial →
             </MagneticButton>
             <Link
@@ -1900,6 +1900,18 @@ function BentoSEO() {
 /* ─────────────────────────────────────────────────────────────────────────────
    PAGE
 ───────────────────────────────────────────────────────────────────────────── */
+function trackTrialClick() {
+  const eventId = crypto.randomUUID();
+  if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+    (window as any).fbq("track", "Lead", {}, { eventID: eventId });
+  }
+  fetch("/api/fb-event", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ eventName: "Lead", eventId }),
+  }).catch(() => {});
+}
+
 export default function Test2Page() {
   return (
     <div className="relative min-h-screen text-white overflow-hidden">
