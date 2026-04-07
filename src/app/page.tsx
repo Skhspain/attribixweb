@@ -1406,7 +1406,7 @@ export default function Home() {
 
             <Reveal delay={220}>
               <div className="flex flex-wrap items-center gap-4 mb-9">
-                <MagneticButton href="/login" className="text-base px-9 py-4" onClick={trackTrialClick}>
+                <MagneticButton href="/signup" className="text-base px-9 py-4" onClick={trackTrialClick}>
                   Start free trial →
                 </MagneticButton>
                 <button

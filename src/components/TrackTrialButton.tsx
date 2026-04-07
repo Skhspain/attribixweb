@@ -30,7 +30,7 @@ export default function TrackTrialButton({
   }
 
   return (
-    <MagneticButton href="/login" className={className} onClick={handleClick}>
+    <MagneticButton href="/signup" className={className} onClick={handleClick}>
       {children}
     </MagneticButton>
   );
