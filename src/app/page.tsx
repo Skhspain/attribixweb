@@ -1290,6 +1290,18 @@ function IntegrationsDiagram() {
 /* -----------------------------------------------------
    PAGE
 ----------------------------------------------------- */
+function trackTrialClick() {
+  const eventId = crypto.randomUUID();
+  if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+    (window as any).fbq("track", "Lead", {}, { eventID: eventId });
+  }
+  fetch("/api/fb-event", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ eventName: "Lead", eventId }),
+  }).catch(() => {});
+}
+
 export default function Home() {
   // const active = useScrollSpy(["features", "how", "integrations", "pricing"], 120);
   const [showDemo, setShowDemo] = React.useState(false);
@@ -1358,9 +1370,84 @@ export default function Home() {
               </button>
             </div>
 
+<<<<<<< HEAD
             <p className="mt-4 text-xs text-white/60">
               Works with Shopify. No heavy setup.
             </p>
+=======
+            <Reveal delay={100}>
+              <p className="text-lg text-white/40 leading-relaxed mb-8 max-w-lg">
+                Attribix replaces 5 separate tools with a single dashboard — ad tracking, attribution, email, reviews, social scheduling, and SEO. Built for Shopify stores that want to grow without the chaos.
+              </p>
+            </Reveal>
+
+            {/* Feature pills */}
+            <Reveal delay={160}>
+              <div className="flex flex-wrap gap-2 mb-9">
+                {[
+                  { label: "Ad tracking",        color: "rgba(34,211,238,0.15)",  border: "rgba(34,211,238,0.25)",  text: "#67e8f9" },
+                  { label: "Attribution",         color: "rgba(99,102,241,0.15)",  border: "rgba(99,102,241,0.25)",  text: "#a5b4fc" },
+                  { label: "Email & newsletter",  color: "rgba(168,85,247,0.15)",  border: "rgba(168,85,247,0.25)",  text: "#d8b4fe" },
+                  { label: "Reviews & leads",     color: "rgba(236,72,153,0.15)",  border: "rgba(236,72,153,0.25)",  text: "#f9a8d4" },
+                  { label: "Social calendar",     color: "rgba(249,115,22,0.12)",  border: "rgba(249,115,22,0.2)",   text: "#fdba74" },
+                  { label: "SEO audit",           color: "rgba(52,211,153,0.15)",  border: "rgba(52,211,153,0.25)",  text: "#6ee7b7" },
+                ].map((f, i) => (
+                  <span
+                    key={f.label}
+                    className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold"
+                    style={{
+                      background: f.color,
+                      border: `1px solid ${f.border}`,
+                      color: f.text,
+                      animation: `t2pillIn 0.4s ease-out ${i * 60}ms both`,
+                    }}
+                  >
+                    <span className="h-1 w-1 rounded-full shrink-0" style={{ background: f.text }} />
+                    {f.label}
+                  </span>
+                ))}
+              </div>
+            </Reveal>
+
+            <Reveal delay={220}>
+              <div className="flex flex-wrap items-center gap-4 mb-9">
+                <MagneticButton href="/login" className="text-base px-9 py-4" onClick={trackTrialClick}>
+                  Start free trial →
+                </MagneticButton>
+                <button
+                  onClick={() => setShowDemo(true)}
+                  className="text-sm text-white/35 hover:text-white/80 transition-colors underline underline-offset-4 decoration-white/15"
+                >
+                  Watch demo
+                </button>
+              </div>
+
+              {/* Social proof */}
+              <div className="flex items-center gap-3">
+                <div className="flex -space-x-2">
+                  {["#4f46e5", "#0891b2", "#7c3aed", "#be185d", "#059669"].map((c, i) => (
+                    <div
+                      key={i}
+                      className="h-8 w-8 rounded-full border-2 border-[#030712] flex items-center justify-center text-white text-[10px] font-bold shrink-0"
+                      style={{ background: c }}
+                    >
+                      {["M", "J", "A", "S", "E"][i]}
+                    </div>
+                  ))}
+                </div>
+                <div>
+                  <div className="flex gap-0.5 mb-0.5">
+                    {[1,2,3,4,5].map(s => (
+                      <svg key={s} className="h-3 w-3 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      </svg>
+                    ))}
+                  </div>
+                  <div className="text-xs text-white/25">Loved by 500+ Shopify stores</div>
+                </div>
+              </div>
+            </Reveal>
+>>>>>>> claude/eloquent-mendel
           </div>
 
           <div className="relative mt-6 md:mt-0">

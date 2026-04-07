@@ -74,15 +74,23 @@ export default function CampaignEditorPage() {
         features: { textEditor: { tables: true, emojis: true } },
       });
 
-      // Load existing design or HTML template
+      // Load existing design or HTML template — replace placeholders with real values
       window.unlayer.addEventListener("editor:ready", () => {
+        const replacePlaceholders = (str: string) => str
+          .replace(/\{\{shop_url\}\}/gi, "https://yourstore.com")
+          .replace(/\{\{shop\}\}/gi, "Your Store")
+          .replace(/\{\{first_name\}\}/gi, "Customer")
+          .replace(/\{\{name\}\}/gi, "Customer")
+          .replace(/\{\{email\}\}/gi, "customer@example.com");
+
         if (campaign.designJson) {
           try {
-            const design = typeof campaign.designJson === "string" ? JSON.parse(campaign.designJson) : campaign.designJson;
+            const json = typeof campaign.designJson === "string" ? campaign.designJson : JSON.stringify(campaign.designJson);
+            const design = JSON.parse(replacePlaceholders(json));
             window.unlayer.loadDesign(design);
           } catch (e) { console.error("Failed to load design JSON:", e); }
         } else if (campaign.htmlContent) {
-          window.unlayer.loadDesign({ html: campaign.htmlContent, classic: true });
+          window.unlayer.loadDesign({ html: replacePlaceholders(campaign.htmlContent), classic: true });
         }
         setUnlayerReady(true);
       });
