@@ -27,6 +27,27 @@ export default function ReviewsPage() {
   const [totalApproved, setTotalApproved] = React.useState(0);
   const [loading, setLoading] = React.useState(true);
   const [filter, setFilter] = React.useState<string>("all");
+  const [showCreate, setShowCreate] = React.useState(false);
+  const [newReview, setNewReview] = React.useState({ reviewerName: "", reviewerEmail: "", productTitle: "", rating: "5", title: "", body: "" });
+  const [creating, setCreating] = React.useState(false);
+
+  async function createReview() {
+    if (!newReview.reviewerName || !newReview.body) return;
+    setCreating(true);
+    try {
+      const token = await getToken();
+      await attribixFetch("/api/standalone/reviews/create", token, {
+        method: "POST",
+        body: JSON.stringify(newReview),
+      });
+      setShowCreate(false);
+      setNewReview({ reviewerName: "", reviewerEmail: "", productTitle: "", rating: "5", title: "", body: "" });
+      // Reload
+      setFilter(filter);
+      window.location.reload();
+    } catch (e) { console.error(e); }
+    setCreating(false);
+  }
 
   React.useEffect(() => {
     async function load() {
@@ -52,10 +73,66 @@ export default function ReviewsPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold">Reviews</h1>
-        <Link href="/analytics/reviews/settings" className="px-4 py-2 rounded-lg border text-sm hover:bg-slate-50">
-          Review Settings & Widget
-        </Link>
+        <div className="flex gap-2">
+          <button onClick={() => setShowCreate(!showCreate)} className="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:opacity-90">
+            + Write Review
+          </button>
+          <Link href="/analytics/reviews/settings" className="px-4 py-2 rounded-lg border text-sm hover:bg-slate-50">
+            Settings & Widget
+          </Link>
+        </div>
       </div>
+
+      {showCreate && (
+        <div className="rounded-xl border bg-white p-5 space-y-4">
+          <h3 className="font-semibold">Write a Review</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div>
+              <label className="text-xs text-slate-500 block mb-1">Reviewer Name *</label>
+              <input value={newReview.reviewerName} onChange={(e) => setNewReview({ ...newReview, reviewerName: e.target.value })}
+                placeholder="John Doe" className="w-full rounded-lg border px-3 py-2 text-sm" />
+            </div>
+            <div>
+              <label className="text-xs text-slate-500 block mb-1">Email</label>
+              <input value={newReview.reviewerEmail} onChange={(e) => setNewReview({ ...newReview, reviewerEmail: e.target.value })}
+                placeholder="john@example.com" type="email" className="w-full rounded-lg border px-3 py-2 text-sm" />
+            </div>
+            <div>
+              <label className="text-xs text-slate-500 block mb-1">Product</label>
+              <input value={newReview.productTitle} onChange={(e) => setNewReview({ ...newReview, productTitle: e.target.value })}
+                placeholder="Product name" className="w-full rounded-lg border px-3 py-2 text-sm" />
+            </div>
+            <div>
+              <label className="text-xs text-slate-500 block mb-1">Rating *</label>
+              <div className="flex gap-1 mt-1">
+                {[1, 2, 3, 4, 5].map((r) => (
+                  <button key={r} type="button" onClick={() => setNewReview({ ...newReview, rating: String(r) })}
+                    className={`text-2xl ${parseInt(newReview.rating) >= r ? "text-amber-400" : "text-slate-200"}`}>
+                    ★
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div>
+            <label className="text-xs text-slate-500 block mb-1">Review Title</label>
+            <input value={newReview.title} onChange={(e) => setNewReview({ ...newReview, title: e.target.value })}
+              placeholder="Great product!" className="w-full rounded-lg border px-3 py-2 text-sm" />
+          </div>
+          <div>
+            <label className="text-xs text-slate-500 block mb-1">Review *</label>
+            <textarea value={newReview.body} onChange={(e) => setNewReview({ ...newReview, body: e.target.value })}
+              placeholder="Write your review..." rows={3} className="w-full rounded-lg border px-3 py-2 text-sm" />
+          </div>
+          <div className="flex gap-2">
+            <button onClick={createReview} disabled={creating || !newReview.reviewerName || !newReview.body}
+              className="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:opacity-90 disabled:opacity-50">
+              {creating ? "Saving..." : "Publish Review"}
+            </button>
+            <button onClick={() => setShowCreate(false)} className="px-4 py-2 rounded-lg border text-sm hover:bg-slate-50">Cancel</button>
+          </div>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div className="rounded-xl border bg-white p-5">
