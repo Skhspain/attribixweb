@@ -72,7 +72,7 @@ export default function CampaignEditorPage() {
         locale: "en-US",
         appearance: {
           theme: "light",
-          panels: { tools: { dock: "right" } },
+          panels: { tools: { dock: "right", collapsible: true, defaultCollapsed: true } },
         },
         customCSS: [
           `.blockbuilder-branding { display: none !important; }`,
