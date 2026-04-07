@@ -79,6 +79,8 @@ export default function CampaignEditorPage() {
           `.blockbuilder-footer { display: none !important; }`,
           `body { overflow-x: hidden !important; }`,
           `.blockbuilder-content-tools { overflow: hidden !important; }`,
+          `.blockbuilder-preferences { width: 0 !important; min-width: 0 !important; overflow: hidden !important; transition: width 0.3s !important; }`,
+          `.blockbuilder-preferences:hover, .blockbuilder-preferences:focus-within, .blockbuilder-preferences.active { width: 360px !important; min-width: 360px !important; }`,
         ],
         features: {
           textEditor: { tables: true, emojis: true },
