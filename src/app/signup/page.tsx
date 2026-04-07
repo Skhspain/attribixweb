@@ -2,109 +2,152 @@
 
 import Link from "next/link";
 import { SignUp } from "@clerk/nextjs";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 export default function SignupPage() {
   return (
     <>
       <style jsx global>{`
-        .attribix-glow {
-          position: absolute;
-          border-radius: 9999px;
-          filter: blur(80px);
-          opacity: 0.7;
-          mix-blend-mode: screen;
+        .su-glow-a {
+          position: absolute; border-radius: 9999px; filter: blur(90px); pointer-events: none;
         }
-        .attribix-glow-1 {
-          width: 420px; height: 420px; top: -140px; left: -140px;
-          background: radial-gradient(circle at 30% 0%, #4f46e5, transparent 60%);
-          animation: attribix-float-1 26s ease-in-out infinite;
+        @keyframes su-float {
+          0%,100% { transform: translateY(0) scale(1); }
+          50%      { transform: translateY(-18px) scale(1.04); }
         }
-        .attribix-glow-2 {
-          width: 380px; height: 380px; top: -160px; right: -80px;
-          background: radial-gradient(circle at 70% 10%, #06b6d4, transparent 60%);
-          animation: attribix-float-2 30s ease-in-out infinite;
-        }
-        .attribix-glow-3 {
-          width: 520px; height: 520px; bottom: -240px; left: 50%;
-          background: radial-gradient(circle at 50% 100%, #0ea5e9, transparent 65%);
-          animation: attribix-float-3 32s ease-in-out infinite;
-        }
-        .attribix-grid {
-          position: absolute; inset: 0;
-          background-image: linear-gradient(to right, rgba(148,163,184,0.04) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(148,163,184,0.04) 1px, transparent 1px);
-          background-size: 80px 80px;
-          mask-image: radial-gradient(circle at center, black 0, transparent 75%);
-          opacity: 0.6;
-        }
-        @keyframes attribix-float-1 { 0%,100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(6%,8%,0) scale(1.05); } }
-        @keyframes attribix-float-2 { 0%,100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(-5%,10%,0) scale(1.03); } }
-        @keyframes attribix-float-3 { 0%,100% { transform: translate3d(-50%,0,0) scale(1); } 50% { transform: translate3d(-50%,-6%,0) scale(1.06); } }
+        /* Override Clerk card to be transparent so our bg shows */
+        .cl-card { background: transparent !important; box-shadow: none !important; border: none !important; }
+        .cl-internal-b3fm6y { display: none !important; } /* hides Clerk header */
+        .cl-headerTitle, .cl-headerSubtitle { display: none !important; }
       `}</style>
 
-      <div className="relative min-h-screen bg-gradient-to-b from-[#050816] via-[#050816] to-[#020617] text-slate-50">
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="attribix-glow attribix-glow-1" />
-          <div className="attribix-glow attribix-glow-2" />
-          <div className="attribix-glow attribix-glow-3" />
-          <div className="attribix-grid" />
-        </div>
+      <div className="min-h-screen bg-[#030712] text-white flex">
 
-        <Header />
+        {/* ── LEFT PANEL ── */}
+        <div className="hidden lg:flex flex-col justify-between w-[52%] relative overflow-hidden bg-gradient-to-br from-[#0d1117] to-[#030712] px-14 py-12">
+          {/* Glows */}
+          <div className="su-glow-a w-[500px] h-[500px] -top-32 -left-32 bg-indigo-600/25" style={{ animation: "su-float 14s ease-in-out infinite" }} />
+          <div className="su-glow-a w-[400px] h-[400px] bottom-0 right-0 bg-cyan-500/15" style={{ animation: "su-float 18s ease-in-out infinite reverse" }} />
+          {/* Grid */}
+          <div className="pointer-events-none absolute inset-0"
+            style={{
+              backgroundImage: "linear-gradient(rgba(148,163,184,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.04) 1px, transparent 1px)",
+              backgroundSize: "72px 72px",
+            }}
+          />
 
-        <main className="relative mx-auto flex max-w-5xl flex-col px-4 pb-20 pt-24 sm:px-6 lg:px-8">
-          <div className="mx-auto w-full max-w-xl">
-            <div className="mb-8 text-center">
-              <h1 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
-                Create your Attribix account
-              </h1>
-              <p className="mt-2 text-sm text-slate-400 sm:text-base">
-                One login for your{" "}
-                <span className="bg-gradient-to-r from-[#4f46e5] via-[#06b6d4] to-[#38bdf8] bg-clip-text font-semibold text-transparent">
-                  analytics
-                </span>
-                , attribution and reporting.
-              </p>
-            </div>
+          {/* Logo */}
+          <div className="relative z-10">
+            <Link href="/" className="flex items-center gap-2.5 group">
+              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-400 flex items-center justify-center text-white font-bold text-sm">A</div>
+              <span className="font-semibold text-lg tracking-tight">Attribix</span>
+            </Link>
+          </div>
 
-            <div className="flex justify-center">
-              <SignUp
-                forceRedirectUrl="/analytics"
-                appearance={{
-                  elements: {
-                    rootBox: "w-full max-w-xl",
-                    card: "rounded-3xl border border-slate-800/80 bg-slate-950/70 shadow-[0_20px_60px_rgba(15,23,42,0.85)] backdrop-blur-xl p-6 sm:p-8",
-                    headerTitle: "hidden",
-                    headerSubtitle: "hidden",
-                    socialButtonsBlockButton:
-                      "rounded-full border border-slate-700 bg-slate-900/70 px-4 py-2.5 text-sm font-medium text-slate-100 hover:border-slate-500",
-                    formFieldInput:
-                      "rounded-2xl border border-slate-700 bg-slate-900/80 px-3 py-2.5 text-sm text-slate-50 focus:border-sky-400 focus:ring-2 focus:ring-sky-500/40",
-                    formFieldLabel:
-                      "text-xs font-medium uppercase tracking-[0.18em] text-slate-400",
-                    formButtonPrimary:
-                      "rounded-full bg-white text-slate-900 px-6 py-2.5 text-sm font-semibold shadow-[0_18px_45px_rgba(15,23,42,0.55)] hover:bg-slate-100",
-                    footerActionLink: "font-medium text-sky-300 hover:text-sky-200",
-                  },
-                }}
-              />
-            </div>
+          {/* Main copy */}
+          <div className="relative z-10">
+            <p className="text-xs font-semibold uppercase tracking-widest text-cyan-400 mb-4">Free 14-day trial</p>
+            <h2 className="text-4xl xl:text-5xl font-bold leading-tight mb-6">
+              Stop guessing.<br />
+              <span className="bg-gradient-to-r from-indigo-400 via-cyan-400 to-sky-300 bg-clip-text text-transparent">
+                Start knowing.
+              </span>
+            </h2>
+            <p className="text-white/50 text-lg leading-relaxed max-w-sm">
+              One dashboard for ad tracking, attribution, email, reviews, social scheduling, and SEO — built for Shopify.
+            </p>
 
-            <div className="mt-6 text-center text-xs text-slate-500">
-              <p>
-                Need help getting started?{" "}
-                <Link href="/book-demo" className="font-medium text-sky-300 hover:text-sky-200">
-                  Book a demo
-                </Link>{" "}
-                and we'll set up Attribix together.
-              </p>
+            {/* Feature list */}
+            <ul className="mt-8 space-y-3">
+              {[
+                "iOS-proof attribution via server-side events",
+                "True ROAS across Meta, Google & Email",
+                "Automated review collection & SEO fixes",
+                "No credit card required to start",
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-3 text-sm text-white/60">
+                  <span className="flex-shrink-0 h-5 w-5 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center">
+                    <svg className="h-3 w-3 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Social proof */}
+          <div className="relative z-10">
+            <div className="flex items-center gap-3 p-4 rounded-2xl bg-white/[0.04] border border-white/[0.08]">
+              <div className="h-10 w-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-sm font-bold shrink-0">S</div>
+              <div>
+                <p className="text-sm text-white/80">"Cut our CPP by 41% in the first month."</p>
+                <p className="text-xs text-white/30 mt-0.5">Sarah K. · Shopify store owner</p>
+              </div>
             </div>
           </div>
-        </main>
+        </div>
 
-        <Footer />
+        {/* ── RIGHT PANEL ── */}
+        <div className="flex-1 flex flex-col justify-center items-center px-6 py-12 relative bg-[#030712]">
+          <div className="su-glow-a w-[600px] h-[600px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-indigo-600/10" />
+
+          <div className="relative z-10 w-full max-w-md">
+            {/* Mobile logo */}
+            <div className="lg:hidden mb-8 flex justify-center">
+              <Link href="/" className="flex items-center gap-2.5">
+                <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-indigo-500 to-cyan-400 flex items-center justify-center text-white font-bold text-sm">A</div>
+                <span className="font-semibold text-lg tracking-tight">Attribix</span>
+              </Link>
+            </div>
+
+            <div className="mb-7">
+              <h1 className="text-2xl font-bold">Create your account</h1>
+              <p className="text-white/40 text-sm mt-1">14-day free trial · No credit card required</p>
+            </div>
+
+            <SignUp
+              forceRedirectUrl="/analytics"
+              appearance={{
+                variables: {
+                  colorBackground: "#0d1117",
+                  colorText: "#f8fafc",
+                  colorTextSecondary: "#94a3b8",
+                  colorInputBackground: "#0f172a",
+                  colorInputText: "#f8fafc",
+                  colorPrimary: "#6366f1",
+                  borderRadius: "12px",
+                },
+                elements: {
+                  rootBox: "w-full",
+                  card: "bg-[#0d1117] border border-white/[0.08] rounded-2xl shadow-2xl p-7",
+                  headerTitle: "hidden",
+                  headerSubtitle: "hidden",
+                  socialButtonsBlockButton: "!rounded-xl !border !border-white/10 !bg-white/[0.05] hover:!bg-white/10 !text-white !text-sm",
+                  dividerLine: "!bg-white/10",
+                  dividerText: "!text-white/30 !text-xs",
+                  formFieldLabel: "!text-white/50 !text-xs !font-medium !uppercase !tracking-wider",
+                  formFieldInput: "!rounded-xl !border !border-white/10 !bg-white/[0.05] !text-white !text-sm focus:!border-indigo-500 focus:!ring-1 focus:!ring-indigo-500/50",
+                  formButtonPrimary: "!rounded-xl !bg-white !text-gray-900 !font-semibold !text-sm hover:!bg-white/90",
+                  footerActionText: "!text-white/40 !text-sm",
+                  footerActionLink: "!text-indigo-400 hover:!text-indigo-300 !text-sm !font-medium",
+                  identityPreviewText: "!text-white/70",
+                  identityPreviewEditButtonIcon: "!text-indigo-400",
+                  alertText: "!text-red-400 !text-sm",
+                  formFieldErrorText: "!text-red-400 !text-xs",
+                },
+              }}
+            />
+
+            <p className="mt-5 text-center text-xs text-white/25">
+              Need help?{" "}
+              <Link href="/book-demo" className="text-indigo-400 hover:text-indigo-300">
+                Book a setup call
+              </Link>
+            </p>
+          </div>
+        </div>
+
       </div>
     </>
   );
