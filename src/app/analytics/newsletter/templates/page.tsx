@@ -59,6 +59,7 @@ export default function TemplateGalleryPage() {
           name: selectedTemplate?.name || "Untitled campaign",
           subject: "",
           htmlContent: selectedTemplate?.html || "",
+          designJson: (selectedTemplate as any)?.design ? JSON.stringify((selectedTemplate as any).design) : null,
         }),
       });
       const data = await res.json();
