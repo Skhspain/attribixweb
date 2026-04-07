@@ -1290,7 +1290,14 @@ function IntegrationsDiagram() {
 /* -----------------------------------------------------
    PAGE
 ----------------------------------------------------- */
+function gtagEvent(name: string, params?: Record<string, unknown>) {
+  if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+    (window as any).gtag("event", name, params);
+  }
+}
+
 function trackTrialClick() {
+  gtagEvent("trial_click", { event_category: "cta" });
   const eventId = crypto.randomUUID();
   if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
     (window as any).fbq("track", "Lead", {}, { eventID: eventId });
@@ -1302,9 +1309,24 @@ function trackTrialClick() {
   }).catch(() => {});
 }
 
+function trackDemoClick() {
+  gtagEvent("demo_click", { event_category: "cta" });
+}
+
 export default function Home() {
   // const active = useScrollSpy(["features", "how", "integrations", "pricing"], 120);
   const [showDemo, setShowDemo] = React.useState(false);
+
+  React.useEffect(() => {
+    const el = document.getElementById("pricing");
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { gtagEvent("pricing_view"); obs.disconnect(); } },
+      { threshold: 0.2 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-[#0F0620] via-[#0E1530] to-[#053B56] text-white overflow-hidden">
@@ -1363,7 +1385,7 @@ export default function Home() {
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <MagneticButton href="/login">Open Dashboard</MagneticButton>
               <button
-                onClick={() => setShowDemo(true)}
+                onClick={() => { trackDemoClick(); setShowDemo(true); }}
                 className="rounded-xl border border-white/20 px-5 py-3 hover:bg-white/10 text-sm"
               >
                 Watch demo
@@ -1410,7 +1432,7 @@ export default function Home() {
                   Start free trial →
                 </MagneticButton>
                 <button
-                  onClick={() => setShowDemo(true)}
+                  onClick={() => { trackDemoClick(); setShowDemo(true); }}
                   className="text-sm text-white/35 hover:text-white/80 transition-colors underline underline-offset-4 decoration-white/15"
                 >
                   Watch demo
