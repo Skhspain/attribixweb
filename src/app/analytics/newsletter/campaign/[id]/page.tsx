@@ -71,7 +71,21 @@ export default function CampaignEditorPage() {
         displayMode: "email",
         locale: "en-US",
         appearance: { theme: "light", panels: { tools: { dock: "right" } } },
-        features: { textEditor: { tables: true, emojis: true } },
+        features: {
+          textEditor: { tables: true, emojis: true },
+          preview: true,
+          undoRedo: true,
+        },
+        tools: {
+          button: { enabled: true },
+          image: { enabled: true },
+          text: { enabled: true },
+          divider: { enabled: true },
+          heading: { enabled: true },
+          html: { enabled: true },
+          social: { enabled: true },
+          video: { enabled: true },
+        },
       });
 
       // Load existing design or HTML template — replace placeholders with real values
@@ -261,7 +275,7 @@ export default function CampaignEditorPage() {
           <span className="text-sm font-medium">Email Designer</span>
           {!unlayerReady && <span className="text-xs text-slate-400">Loading editor...</span>}
         </div>
-        <div ref={editorRef} id="unlayer-editor" style={{ minHeight: 600 }} />
+        <div ref={editorRef} id="unlayer-editor" style={{ minHeight: "calc(100vh - 300px)", height: "auto" }} />
       </div>
     </div>
   );
