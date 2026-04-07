@@ -25,6 +25,10 @@ export default function CampaignEditorPage() {
   const [saveStatus, setSaveStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
   const [sendStatus, setSendStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [sendError, setSendError] = useState("");
+  const [recipientFilter, setRecipientFilter] = useState<"all" | "source" | "status">("all");
+  const [filterValue, setFilterValue] = useState("");
+  const [recipientCount, setRecipientCount] = useState<number | null>(null);
+  const [subscriberSources, setSubscriberSources] = useState<string[]>([]);
 
   // Load campaign data
   useEffect(() => {
@@ -41,6 +45,16 @@ export default function CampaignEditorPage() {
         }
       } catch (e) { console.error(e); }
       setLoading(false);
+
+      // Fetch subscriber count + sources
+      try {
+        const token2 = await getToken();
+        const subRes = await attribixFetch("/api/standalone/newsletter", token2);
+        const subData = await subRes.json();
+        setRecipientCount(subData.stats?.subscribed || 0);
+        const sources = [...new Set((subData.subscribers || []).map((s: any) => s.source || s.utmSource).filter(Boolean))] as string[];
+        setSubscriberSources(sources);
+      } catch (e) { console.error(e); }
     }
     load();
   }, [campaignId]);
@@ -189,6 +203,45 @@ export default function CampaignEditorPage() {
           <input value={previewText} onChange={(e) => setPreviewText(e.target.value)} disabled={isSent}
             placeholder="Text shown in inbox preview..."
             className="w-full rounded-lg border px-3 py-2 text-sm" />
+        </div>
+      </div>
+
+      {/* Recipient targeting */}
+      <div className="rounded-xl border bg-white p-5 space-y-4">
+        <div className="flex items-center justify-between">
+          <h2 className="text-sm font-semibold">Recipients</h2>
+          <span className="text-sm text-slate-500">
+            {recipientFilter === "all"
+              ? `${recipientCount ?? "..."} subscribed`
+              : `Filtered — ${recipientFilter}: ${filterValue}`}
+          </span>
+        </div>
+        <div className="flex gap-3 items-center">
+          <select value={recipientFilter} onChange={(e) => { setRecipientFilter(e.target.value as any); setFilterValue(""); }}
+            disabled={isSent} className="rounded-lg border px-3 py-2 text-sm">
+            <option value="all">All subscribers</option>
+            <option value="source">By source</option>
+            <option value="status">By status</option>
+          </select>
+          {recipientFilter === "source" && (
+            <select value={filterValue} onChange={(e) => setFilterValue(e.target.value)}
+              disabled={isSent} className="rounded-lg border px-3 py-2 text-sm">
+              <option value="">Select source...</option>
+              {subscriberSources.map((s) => <option key={s} value={s}>{s}</option>)}
+              <option value="post_purchase">Post-purchase</option>
+              <option value="popup">Popup</option>
+              <option value="manual">Manual</option>
+              <option value="import">Import</option>
+            </select>
+          )}
+          {recipientFilter === "status" && (
+            <select value={filterValue} onChange={(e) => setFilterValue(e.target.value)}
+              disabled={isSent} className="rounded-lg border px-3 py-2 text-sm">
+              <option value="">Select status...</option>
+              <option value="subscribed">Subscribed</option>
+              <option value="unsubscribed">Unsubscribed</option>
+            </select>
+          )}
         </div>
       </div>
 
