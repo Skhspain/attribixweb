@@ -56,6 +56,17 @@ export default function NewsletterPage() {
     } catch (e) { console.error(e); }
   }
 
+  async function deleteCampaign(id: string, name: string) {
+    if (!confirm(`Delete campaign "${name}"? This cannot be undone.`)) return;
+    try {
+      const token = await getToken();
+      await attribixFetch("/api/standalone/newsletter/update", token, {
+        method: "POST", body: JSON.stringify({ action: "delete-campaign", id }),
+      });
+      load();
+    } catch (e) { console.error(e); }
+  }
+
   async function createCampaign() {
     if (!newCampaign.name) return;
     try {
@@ -167,14 +178,16 @@ export default function NewsletterPage() {
                 <th className="text-right px-4 py-3 font-medium text-slate-600">Recipients</th>
                 <th className="text-right px-4 py-3 font-medium text-slate-600">Opens</th>
                 <th className="text-right px-4 py-3 font-medium text-slate-600">Clicks</th>
+                <th className="text-right px-4 py-3 font-medium text-slate-600">Revenue</th>
                 <th className="text-left px-4 py-3 font-medium text-slate-600">Sent</th>
+                <th className="text-left px-4 py-3 font-medium text-slate-600"></th>
               </tr>
             </thead>
             <tbody>
-              {campaigns.length === 0 && <tr><td colSpan={6} className="px-4 py-8 text-center text-slate-400">No campaigns yet</td></tr>}
+              {campaigns.length === 0 && <tr><td colSpan={8} className="px-4 py-8 text-center text-slate-400">No campaigns yet</td></tr>}
               {campaigns.map((c: any) => (
-                <tr key={c.id} className="border-b last:border-0 hover:bg-slate-50 cursor-pointer" onClick={() => router.push(`/analytics/newsletter/campaign/${c.id}`)}>
-                  <td className="px-4 py-3 font-medium text-blue-600 hover:underline">{c.name}</td>
+                <tr key={c.id} className="border-b last:border-0 hover:bg-slate-50">
+                  <td className="px-4 py-3 font-medium text-blue-600 hover:underline cursor-pointer" onClick={() => router.push(`/analytics/newsletter/campaign/${c.id}`)}>{c.name}</td>
                   <td className="px-4 py-3">
                     <span className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ${
                       c.status === "sent" ? "bg-emerald-50 text-emerald-600" :
@@ -186,7 +199,12 @@ export default function NewsletterPage() {
                   <td className="px-4 py-3 text-right">{c.recipientCount}</td>
                   <td className="px-4 py-3 text-right">{c.openCount}</td>
                   <td className="px-4 py-3 text-right">{c.clickCount}</td>
+                  <td className="px-4 py-3 text-right">{c.revenueAttributed ? `$${c.revenueAttributed.toFixed(0)}` : "—"}</td>
                   <td className="px-4 py-3 text-slate-500">{c.sentAt ? new Date(c.sentAt).toLocaleDateString() : "—"}</td>
+                  <td className="px-4 py-3">
+                    <button onClick={(e) => { e.stopPropagation(); deleteCampaign(c.id, c.name); }}
+                      className="text-xs text-slate-400 hover:text-red-500">Delete</button>
+                  </td>
                 </tr>
               ))}
             </tbody>

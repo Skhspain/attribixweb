@@ -1370,11 +1370,6 @@ export default function Home() {
               </button>
             </div>
 
-<<<<<<< HEAD
-            <p className="mt-4 text-xs text-white/60">
-              Works with Shopify. No heavy setup.
-            </p>
-=======
             <Reveal delay={100}>
               <p className="text-lg text-white/40 leading-relaxed mb-8 max-w-lg">
                 Attribix replaces 5 separate tools with a single dashboard — ad tracking, attribution, email, reviews, social scheduling, and SEO. Built for Shopify stores that want to grow without the chaos.
@@ -1447,7 +1442,6 @@ export default function Home() {
                 </div>
               </div>
             </Reveal>
->>>>>>> claude/eloquent-mendel
           </div>
 
           <div className="relative mt-6 md:mt-0">
