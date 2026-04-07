@@ -89,9 +89,8 @@ export default function CampaignEditorPage() {
             const design = JSON.parse(replacePlaceholders(json));
             window.unlayer.loadDesign(design);
           } catch (e) { console.error("Failed to load design JSON:", e); }
-        } else if (campaign.htmlContent) {
-          window.unlayer.loadDesign({ html: replacePlaceholders(campaign.htmlContent), classic: true });
         }
+        // Don't load raw HTML into Unlayer — start with blank canvas for proper blocks
         setUnlayerReady(true);
       });
     }
