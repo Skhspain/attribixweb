@@ -269,6 +269,13 @@ export default function CampaignEditorPage() {
         </div>
       </div>
 
+      {/* Hide Unlayer branding + fix scroll */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        #unlayer-editor iframe { max-width: 100% !important; width: 100% !important; }
+        #unlayer-editor > div { overflow: hidden !important; }
+        .powered-by-unlayer, [class*="powered-by"] { display: none !important; visibility: hidden !important; }
+      `}} />
+
       {/* Unlayer email editor */}
       <div className="rounded-xl border bg-white overflow-hidden">
         <div className="px-4 py-3 border-b bg-slate-50 flex items-center justify-between">
