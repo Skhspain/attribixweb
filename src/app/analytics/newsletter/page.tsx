@@ -57,7 +57,7 @@ export default function NewsletterPage() {
   }
 
   async function deleteCampaign(id: string, name: string) {
-    if (!confirm(`Delete campaign "${name}"? This cannot be undone.`)) return;
+    if (!confirm(`Delete newsletter "${name}"? This cannot be undone.`)) return;
     try {
       const token = await getToken();
       await attribixFetch("/api/standalone/newsletter/update", token, {
@@ -97,7 +97,7 @@ export default function NewsletterPage() {
           <div className="text-2xl font-bold mt-1 text-slate-400">{stats.unsubscribed}</div>
         </div>
         <div className="rounded-xl border bg-white p-5">
-          <div className="text-xs text-slate-500">Campaigns Sent</div>
+          <div className="text-xs text-slate-500">Newsletters Sent</div>
           <div className="text-2xl font-bold mt-1">{campaigns.filter((c: any) => c.status === "sent").length}</div>
         </div>
       </div>
@@ -106,7 +106,7 @@ export default function NewsletterPage() {
         {(["subscribers", "campaigns"] as const).map((t) => (
           <button key={t} onClick={() => setTab(t)}
             className={`px-4 py-2 text-sm font-medium border-b-2 -mb-px ${tab === t ? "border-gray-900 text-gray-900" : "border-transparent text-slate-500 hover:text-slate-700"}`}>
-            {t === "subscribers" ? "Subscribers" : "Campaigns"}
+            {t === "subscribers" ? "Subscribers" : "Newsletters"}
           </button>
         ))}
       </div>

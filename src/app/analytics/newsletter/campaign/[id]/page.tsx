@@ -201,7 +201,7 @@ export default function CampaignEditorPage() {
           <button onClick={() => router.push("/analytics/newsletter")} className="text-sm text-slate-500 hover:text-slate-700 mb-2">
             &larr; Back to Newsletter
           </button>
-          <h1 className="text-2xl font-bold">Edit Campaign</h1>
+          <h1 className="text-2xl font-bold">Edit Newsletter</h1>
         </div>
         <div className="flex gap-2">
           <button onClick={handleSave} disabled={saveStatus === "saving" || isSent}
@@ -211,7 +211,7 @@ export default function CampaignEditorPage() {
           {!isSent && (
             <button onClick={handleSend} disabled={sendStatus === "sending" || !subject}
               className="px-4 py-2 rounded-lg bg-emerald-600 text-white text-sm hover:bg-emerald-700 disabled:opacity-50">
-              {sendStatus === "sending" ? "Sending..." : sendStatus === "sent" ? "Sent ✓" : "Send Campaign"}
+              {sendStatus === "sending" ? "Sending..." : sendStatus === "sent" ? "Sent ✓" : "Send Newsletter"}
             </button>
           )}
           {isSent && <span className="px-4 py-2 rounded-lg bg-emerald-50 text-emerald-600 text-sm font-medium">Sent</span>}
@@ -223,7 +223,7 @@ export default function CampaignEditorPage() {
       {/* Campaign details */}
       <div className="rounded-xl border bg-white p-5 grid grid-cols-1 md:grid-cols-3 gap-4">
         <div>
-          <label className="text-xs text-slate-500 block mb-1">Campaign Name</label>
+          <label className="text-xs text-slate-500 block mb-1">Newsletter Name</label>
           <input value={name} onChange={(e) => setName(e.target.value)} disabled={isSent}
             className="w-full rounded-lg border px-3 py-2 text-sm" />
         </div>
