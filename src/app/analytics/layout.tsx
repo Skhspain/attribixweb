@@ -33,6 +33,8 @@ export default function AnalyticsLayout({ children }: { children: React.ReactNod
     { href: "/analytics/feeds", label: "Product Feeds" },
     // ----------------------------------
 
+    { href: "/analytics/utm", label: "UTM Builder", section: "TOOLS" } as any,
+
     { href: "/analytics/billing", label: "Plans & Billing", section: "ACCOUNT" } as any,
     { href: "/analytics/settings", label: "Settings" },
   ];
