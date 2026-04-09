@@ -13,6 +13,7 @@ export default function AnalyticsLayout({ children }: { children: React.ReactNod
     { href: "/analytics", label: "Overview" },
     { href: "/analytics/meta-ads", label: "Meta Ads" },
     { href: "/analytics/google-ads", label: "Google Ads" },
+    { href: "/analytics/tiktok-ads", label: "TikTok Ads" },
     { href: "/analytics/ads", label: "Ads Review" },
     { href: "/analytics/attribution", label: "Attribution" },
     { href: "/analytics/attribution/customerlist", label: "Customer List" },
