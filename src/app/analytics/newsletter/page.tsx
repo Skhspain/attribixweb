@@ -56,7 +56,7 @@ export default function NewsletterPage() {
     } catch (e) { console.error(e); }
   }
 
-  async function deleteCampaign(id: string, name: string) {
+  async function deleteNewsletter(id: string, name: string) {
     if (!confirm(`Delete newsletter "${name}"? This cannot be undone.`)) return;
     try {
       const token = await getToken();
@@ -167,13 +167,13 @@ export default function NewsletterPage() {
       {!loading && tab === "campaigns" && (
         <>
         <div className="flex justify-end">
-          <button onClick={() => router.push("/analytics/newsletter/templates")} className="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:opacity-90">+ New Campaign</button>
+          <button onClick={() => router.push("/analytics/newsletter/templates")} className="px-4 py-2 rounded-lg bg-gray-900 text-white text-sm hover:opacity-90">+ New Newsletter</button>
         </div>
         <div className="rounded-xl border bg-white overflow-hidden">
           <table className="w-full text-sm">
             <thead className="bg-slate-50 border-b">
               <tr>
-                <th className="text-left px-4 py-3 font-medium text-slate-600">Campaign</th>
+                <th className="text-left px-4 py-3 font-medium text-slate-600">Newsletter</th>
                 <th className="text-left px-4 py-3 font-medium text-slate-600">Status</th>
                 <th className="text-right px-4 py-3 font-medium text-slate-600">Recipients</th>
                 <th className="text-right px-4 py-3 font-medium text-slate-600">Opens</th>
@@ -184,7 +184,7 @@ export default function NewsletterPage() {
               </tr>
             </thead>
             <tbody>
-              {campaigns.length === 0 && <tr><td colSpan={8} className="px-4 py-8 text-center text-slate-400">No campaigns yet</td></tr>}
+              {campaigns.length === 0 && <tr><td colSpan={8} className="px-4 py-8 text-center text-slate-400">No newsletters yet</td></tr>}
               {campaigns.map((c: any) => (
                 <tr key={c.id} className="border-b last:border-0 hover:bg-slate-50">
                   <td className="px-4 py-3 font-medium text-blue-600 hover:underline cursor-pointer" onClick={() => router.push(`/analytics/newsletter/campaign/${c.id}`)}>{c.name}</td>
@@ -202,7 +202,7 @@ export default function NewsletterPage() {
                   <td className="px-4 py-3 text-right">{c.revenueAttributed ? `$${c.revenueAttributed.toFixed(0)}` : "—"}</td>
                   <td className="px-4 py-3 text-slate-500">{c.sentAt ? new Date(c.sentAt).toLocaleDateString() : "—"}</td>
                   <td className="px-4 py-3">
-                    <button onClick={(e) => { e.stopPropagation(); deleteCampaign(c.id, c.name); }}
+                    <button onClick={(e) => { e.stopPropagation(); deleteNewsletter(c.id, c.name); }}
                       className="text-xs text-slate-400 hover:text-red-500">Delete</button>
                   </td>
                 </tr>

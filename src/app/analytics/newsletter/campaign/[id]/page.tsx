@@ -189,8 +189,8 @@ export default function CampaignEditorPage() {
     }
   }, [campaignId, handleSave]);
 
-  if (loading) return <div className="p-8 text-slate-400">Loading campaign...</div>;
-  if (!campaign) return <div className="p-8 text-red-500">Campaign not found</div>;
+  if (loading) return <div className="p-8 text-slate-400">Loading newsletter...</div>;
+  if (!campaign) return <div className="p-8 text-red-500">Newsletter not found</div>;
 
   const isSent = campaign.status === "sent" || campaign.status === "sending";
 

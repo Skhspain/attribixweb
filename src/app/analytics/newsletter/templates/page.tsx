@@ -56,7 +56,7 @@ export default function TemplateGalleryPage() {
         method: "POST",
         body: JSON.stringify({
           action: "create-campaign",
-          name: selectedTemplate?.name || "Untitled campaign",
+          name: selectedTemplate?.name || "Untitled newsletter",
           subject: "",
           htmlContent: selectedTemplate?.html || "",
           designJson: (selectedTemplate as any)?.design ? JSON.stringify((selectedTemplate as any).design) : null,
@@ -75,7 +75,7 @@ export default function TemplateGalleryPage() {
       {/* Top bar */}
       <div className="sticky top-0 z-50 bg-white border-b px-6 flex items-center justify-between h-[60px]">
         <div className="flex items-center gap-4">
-          <a href="/analytics/newsletter" className="text-sm text-slate-500 hover:text-slate-700">← Campaigns</a>
+          <a href="/analytics/newsletter" className="text-sm text-slate-500 hover:text-slate-700">← Newsletters</a>
           <span className="text-slate-300">/</span>
           <span className="text-sm font-semibold">Choose a template</span>
           <span className="text-sm text-slate-400">— {templates.length + 1} templates</span>
