@@ -14,13 +14,16 @@ export default function AnalyticsLayout({ children }: { children: React.ReactNod
     { href: "/analytics/meta-ads", label: "Meta Ads" },
     { href: "/analytics/google-ads", label: "Google Ads" },
     { href: "/analytics/tiktok-ads", label: "TikTok Ads" },
+    { href: "/analytics/creative", label: "Creative Analytics" },
     { href: "/analytics/ads", label: "Ads Review" },
     { href: "/analytics/attribution", label: "Attribution" },
     { href: "/analytics/attribution/customerlist", label: "Customer List" },
+    { href: "/analytics/products", label: "Products" },
     { href: "/analytics/orders", label: "Orders" },
 
     // --- Marketing section ---
     { href: "/analytics/newsletter", label: "Newsletter", section: "MARKETING" } as any,
+    { href: "/analytics/newsletter/subscribers", label: "Subscribers" },
     { href: "/analytics/newsletter/analytics", label: "Email Analytics" },
     { href: "/analytics/newsletter/flows", label: "Automation Flows" },
     { href: "/analytics/newsletter/settings", label: "Email Settings" },
