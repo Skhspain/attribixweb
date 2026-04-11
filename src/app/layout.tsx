@@ -7,6 +7,9 @@ import FacebookPixel from "@/components/FacebookPixel";
 export const metadata: Metadata = {
   title: "Attribix",
   description: "Smarter Attribution. Bigger Impact.",
+  verification: {
+    google: "78Mov8JY9-aDSccHncqb6tmzMRQVVqGYqsJF9gGWD0k",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
