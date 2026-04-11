@@ -12,7 +12,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="text-sm text-white/70 mb-8">
-            Last updated: 8 December 2025
+            Last updated: 11 April 2026
           </p>
 
           <div className="space-y-8 text-sm md:text-[15px] text-white/75 leading-relaxed bg-black/30 border border-white/10 rounded-2xl p-6 md:p-8">
@@ -69,6 +69,36 @@ export default function PrivacyPage() {
                 <li>
                   To generate anonymous, aggregated statistics that help us
                   improve product performance.
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-lg font-semibold mb-2">
+                3a. Google Ads and advertising platform data
+              </h2>
+              <p className="mb-2">
+                Attribix integrates with advertising platforms including Google Ads, Meta (Facebook/Instagram), and others to provide attribution and performance reporting. In connection with these integrations:
+              </p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>
+                  We access Google Ads data (including campaign performance, conversion data, and cost metrics) solely to provide attribution reporting to you as our customer. We do not use this data for any other purpose, including advertising to end users or profiling.
+                </li>
+                <li>
+                  Google Ads data accessed via the Google Ads API is used only to display reporting within your Attribix dashboard and is not shared with any third party.
+                </li>
+                <li>
+                  Our use of Google Ads API data complies with{" "}
+                  <a href="https://developers.google.com/terms/api-services-user-data-policy" className="underline underline-offset-4 text-cyan-300 hover:text-cyan-200" target="_blank" rel="noopener noreferrer">
+                    Google API Services User Data Policy
+                  </a>
+                  , including the Limited Use requirements.
+                </li>
+                <li>
+                  We use Google Analytics (GA4) on our website to understand visitor behaviour. Google Analytics may use cookies to collect anonymised usage data. You can opt out via{" "}
+                  <a href="https://tools.google.com/dlpage/gaoptout" className="underline underline-offset-4 text-cyan-300 hover:text-cyan-200" target="_blank" rel="noopener noreferrer">
+                    Google&apos;s opt-out browser add-on
+                  </a>.
                 </li>
               </ul>
             </section>
