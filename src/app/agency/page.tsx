@@ -167,7 +167,7 @@ export default function AgencyPage() {
 
         {/* Headline */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-[1.04] tracking-tight">
-          <span className="block text-white">Top Rated since 2008.</span>
+          <span className="block text-white">Top Rated since 2019.</span>
           <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-orange-400">
             We scale ads that actually convert.
           </span>
@@ -180,7 +180,7 @@ export default function AgencyPage() {
         {/* CTAs */}
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <Link
-            href="/book-demo"
+            href="/agency/consultation"
             className="rounded-2xl bg-white px-8 py-4 text-sm font-bold text-gray-900 shadow-lg hover:bg-neutral-100 transition"
           >
             Book a free strategy call →
@@ -375,7 +375,7 @@ export default function AgencyPage() {
               Book a paid consultation →
             </Link>
             <Link
-              href="/book-demo"
+              href="/agency/consultation"
               className="inline-block rounded-2xl border border-white/20 text-white px-8 py-4 text-sm font-semibold hover:bg-white/8 transition"
             >
               Free strategy call
@@ -423,7 +423,7 @@ export default function AgencyPage() {
                     revenue — not platform-reported ROAS.
                   </p>
                   <Link
-                    href="/book-demo"
+                    href="/agency/consultation"
                     className="mt-6 inline-block rounded-xl bg-white text-gray-900 px-6 py-3 text-sm font-semibold hover:bg-neutral-100 transition"
                   >
                     Book a free strategy call
@@ -463,7 +463,7 @@ export default function AgencyPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Link
-              href="/book-demo"
+              href="/agency/consultation"
               className="rounded-xl bg-white text-gray-900 px-8 py-3.5 font-semibold text-sm shadow-md hover:bg-neutral-100 transition"
             >
               Book a free strategy call

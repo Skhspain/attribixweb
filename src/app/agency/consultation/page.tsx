@@ -120,7 +120,7 @@ export default function ConsultationPage() {
             <div className="h-3 w-px bg-white/15 hidden sm:block" />
             <span>150+ clients</span>
             <div className="h-3 w-px bg-white/15 hidden sm:block" />
-            <span>Top Rated since 2008</span>
+            <span>Top Rated since 2019</span>
           </div>
         </Reveal>
       </section>
