@@ -1384,12 +1384,6 @@ export default function Home() {
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <MagneticButton href="/login">Open Dashboard</MagneticButton>
-              <button
-                onClick={() => { trackDemoClick(); setShowDemo(true); }}
-                className="rounded-xl border border-white/20 px-5 py-3 hover:bg-white/10 text-sm"
-              >
-                Watch demo
-              </button>
             </div>
 
             <Reveal delay={100}>
@@ -1431,12 +1425,6 @@ export default function Home() {
                 <MagneticButton href="/signup" className="text-base px-9 py-4" onClick={trackTrialClick}>
                   Start free trial →
                 </MagneticButton>
-                <button
-                  onClick={() => { trackDemoClick(); setShowDemo(true); }}
-                  className="text-sm text-white/35 hover:text-white/80 transition-colors underline underline-offset-4 decoration-white/15"
-                >
-                  Watch demo
-                </button>
               </div>
 
               {/* Social proof */}
