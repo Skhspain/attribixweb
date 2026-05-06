@@ -81,8 +81,14 @@ export default function LoginPage() {
           </div>
         </div>
 
-        <div className="text-center mt-6">
-          <Link href="/" className="text-xs text-white/40 hover:text-white/70 transition-colors">
+        <div className="text-center mt-6 space-y-2">
+          <p className="text-sm text-white/40">
+            Don&apos;t have an account?{" "}
+            <Link href="/signup" className="text-cyan-400 hover:text-cyan-300 transition-colors font-medium">
+              Sign up free
+            </Link>
+          </p>
+          <Link href="/" className="block text-xs text-white/30 hover:text-white/60 transition-colors">
             &larr; Back to home
           </Link>
         </div>
