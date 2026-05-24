@@ -5,23 +5,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-/* ─────────────────────────────────────────────
-   Utilities
-───────────────────────────────────────────── */
 function cx(...xs: Array<string | false | null | undefined>) {
   return xs.filter(Boolean).join(" ");
-}
-
-function usePrefersReducedMotion() {
-  const [prefers, setPrefers] = React.useState(false);
-  React.useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setPrefers(mq.matches);
-    const onChange = (e: MediaQueryListEvent) => setPrefers(e.matches);
-    mq.addEventListener?.("change", onChange);
-    return () => mq.removeEventListener?.("change", onChange);
-  }, []);
-  return prefers;
 }
 
 function useReveal(threshold = 0.15) {
@@ -69,9 +54,6 @@ function Reveal({
   );
 }
 
-/* ─────────────────────────────────────────────
-   Reusable CTA button
-───────────────────────────────────────────── */
 function CtaButton({
   href,
   children,
@@ -98,9 +80,6 @@ function CtaButton({
   );
 }
 
-/* ─────────────────────────────────────────────
-   Stat card
-───────────────────────────────────────────── */
 function StatCard({
   value,
   label,
@@ -120,9 +99,6 @@ function StatCard({
   );
 }
 
-/* ─────────────────────────────────────────────
-   Feature card
-───────────────────────────────────────────── */
 function FeatureCard({
   icon,
   title,
@@ -147,9 +123,6 @@ function FeatureCard({
   );
 }
 
-/* ─────────────────────────────────────────────
-   Testimonial card
-───────────────────────────────────────────── */
 function TestimonialCard({
   quote,
   name,
@@ -184,9 +157,6 @@ function TestimonialCard({
   );
 }
 
-/* ─────────────────────────────────────────────
-   FAQ accordion item
-───────────────────────────────────────────── */
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = React.useState(false);
   return (
@@ -215,144 +185,123 @@ function FaqItem({ q, a }: { q: string; a: string }) {
   );
 }
 
-/* ─────────────────────────────────────────────
-   ROAS Comparison widget (animated bars)
-───────────────────────────────────────────── */
-function RoasComparison() {
+function AttributionDiagram() {
   const { ref, seen } = useReveal();
-  const reduced = usePrefersReducedMotion();
-  const progress = seen && !reduced ? 1 : 0;
 
-  const bars = [
-    { label: "Meta Ads Claims", value: 4.8, color: "from-blue-500 to-blue-400", textColor: "text-blue-400", note: "Inflated (pixel-only)" },
-    { label: "Google Ads Claims", value: 5.2, color: "from-emerald-500 to-emerald-400", textColor: "text-emerald-400", note: "Inflated (last-click)" },
-    { label: "Attribix True ROAS", value: 2.9, color: "from-indigo-500 to-cyan-400", textColor: "text-cyan-300", note: "Accurate (server-side)" },
+  const channels = [
+    { label: "Meta Ads", color: "from-blue-500 to-blue-400", reported: "4.8x", real: "2.4x", textColor: "text-blue-400" },
+    { label: "Google Ads", color: "from-emerald-500 to-emerald-400", reported: "5.2x", real: "3.1x", textColor: "text-emerald-400" },
   ];
-  const max = 6;
 
   return (
-    <div
-      ref={ref}
-      className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
-    >
+    <div ref={ref} className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
       <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-white/40">
-        Real example — Shopify store, $50k/mo spend
+        Illustrative example — Shopify store, $50k/mo ad spend
       </p>
       <h3 className="mb-6 text-base font-semibold text-white">
-        What your ad platforms report vs. what&apos;s real
+        Platform-reported ROAS vs. server-side attributed ROAS
       </h3>
-      <div className="space-y-5">
-        {bars.map((bar, i) => (
-          <div key={bar.label}>
-            <div className="mb-1.5 flex items-center justify-between">
-              <span className="text-sm text-white/70">{bar.label}</span>
-              <span className={cx("text-sm font-bold", bar.textColor)}>{bar.value}x ROAS</span>
+      <div className="space-y-6">
+        {channels.map((ch, i) => (
+          <div key={ch.label}>
+            <div className="mb-2 flex items-center justify-between">
+              <span className="text-sm font-medium text-white/70">{ch.label}</span>
             </div>
-            <div className="h-3 w-full overflow-hidden rounded-full bg-white/10">
-              <div
-                className={cx("h-full rounded-full bg-gradient-to-r transition-all duration-1000", bar.color)}
-                style={{
-                  width: `${(bar.value / max) * 100 * progress}%`,
-                  transitionDelay: `${i * 150}ms`,
-                }}
-              />
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <p className="mb-1.5 text-xs text-white/40">Platform reports</p>
+                <div className="h-2.5 w-full overflow-hidden rounded-full bg-white/10">
+                  <div
+                    className={cx("h-full rounded-full bg-gradient-to-r opacity-40 transition-all duration-1000", ch.color)}
+                    style={{ width: seen ? "96%" : "0%", transitionDelay: `${i * 150}ms` }}
+                  />
+                </div>
+                <p className={cx("mt-1 text-sm font-bold", ch.textColor)}>{ch.reported} ROAS</p>
+              </div>
+              <div>
+                <p className="mb-1.5 text-xs text-white/40">Attribix server-side</p>
+                <div className="h-2.5 w-full overflow-hidden rounded-full bg-white/10">
+                  <div
+                    className={cx("h-full rounded-full bg-gradient-to-r transition-all duration-1000", ch.color)}
+                    style={{ width: seen ? `${(parseFloat(ch.real) / 6) * 100}%` : "0%", transitionDelay: `${i * 150 + 200}ms` }}
+                  />
+                </div>
+                <p className="mt-1 text-sm font-bold text-cyan-300">{ch.real} ROAS</p>
+              </div>
             </div>
-            <p className="mt-1 text-xs text-white/40">{bar.note}</p>
           </div>
         ))}
       </div>
       <div className="mt-5 rounded-xl border border-cyan-500/20 bg-cyan-500/5 px-4 py-3">
         <p className="text-xs text-cyan-300">
-          <strong>Result:</strong> Without Attribix, this store was overspending by ~40% on ads that appeared profitable but weren&apos;t.
+          <strong>Outcome:</strong> Accurate attribution allowed this store to reallocate budget toward genuinely profitable campaigns — recovering 38% of previously misdirected spend.
         </p>
       </div>
     </div>
   );
 }
 
-/* ─────────────────────────────────────────────
-   Main page
-───────────────────────────────────────────── */
 export default function AdsLandingPage() {
   return (
     <div className="min-h-screen bg-[#050819] font-sans text-white antialiased">
 
-      {/* ── Aurora background ── */}
-      <div
-        aria-hidden
-        className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
-      >
+      {/* Aurora background */}
+      <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute -left-40 -top-40 h-[700px] w-[700px] rounded-full bg-indigo-600/10 blur-[120px]" />
         <div className="absolute right-0 top-1/3 h-[500px] w-[500px] rounded-full bg-cyan-500/[0.08] blur-[100px]" />
         <div className="absolute bottom-0 left-1/3 h-[400px] w-[400px] rounded-full bg-fuchsia-600/6 blur-[100px]" />
       </div>
 
-      {/* ════════════════════════════════════════
-          MINIMAL HEADER (no nav distractions)
-      ════════════════════════════════════════ */}
+      {/* ── HEADER ── */}
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050819]/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
           <Link href="/" className="flex items-center gap-2.5">
-            <Image src="/assets/icons/logo.svg" alt="Attribix" width={28} height={28} />
+            <Image src="/assets/logo.svg" alt="Attribix" width={28} height={28} />
             <span className="text-base font-bold tracking-tight text-white">Attribix</span>
           </Link>
-          <div className="flex items-center gap-3">
-            <Link
-              href="/login"
-              className="hidden text-sm text-white/60 transition-colors hover:text-white sm:block"
-            >
-              Sign in
-            </Link>
-            <CtaButton href="/signup" className="py-2.5 text-xs">
-              Start free trial
-            </CtaButton>
-          </div>
+          <CtaButton href="/book-demo" className="py-2.5 text-xs">
+            Book a free consultation
+          </CtaButton>
         </div>
       </header>
 
-      {/* ════════════════════════════════════════
-          HERO
-      ════════════════════════════════════════ */}
+      {/* ── HERO ── */}
       <section className="relative px-5 pb-20 pt-20 text-center">
-        {/* Ad badge */}
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-500/25 bg-cyan-500/10 px-4 py-1.5 text-xs font-semibold text-cyan-300">
           <span className="flex h-1.5 w-1.5 rounded-full bg-cyan-400" />
-          Built for Meta & Google Ads marketers
+          Server-side attribution for Shopify
         </div>
 
         <h1 className="mx-auto max-w-3xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-          Your ads are{" "}
+          Attribution you can{" "}
           <span className="bg-gradient-to-r from-white via-cyan-200 to-cyan-400 bg-clip-text text-transparent">
-            lying to you.
+            actually rely on.
           </span>
-          <br />
-          Here&apos;s the truth.
         </h1>
 
         <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/60 sm:text-lg">
-          Meta claims 4.8x ROAS. Google claims 5.2x. Your bank account tells a
-          different story. Attribix gives Shopify stores{" "}
-          <strong className="text-white/90">accurate, server-side attribution</strong>{" "}
-          so you know exactly which ads are profitable — and which are burning cash.
+          Platform ROAS numbers are often inflated by double-counting, iOS blind spots,
+          and last-click bias. Attribix gives Shopify stores{" "}
+          <strong className="text-white/90">server-side, de-duplicated attribution</strong>{" "}
+          — so every budget decision is grounded in what actually converted.
         </p>
 
         <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-          <CtaButton href="/signup" className="w-full sm:w-auto">
-            Start free — 14 days
+          <CtaButton href="/book-demo" className="w-full sm:w-auto">
+            Book a free consultation
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </CtaButton>
-          <CtaButton href="/book-demo" variant="outline" className="w-full sm:w-auto">
-            Book a 20-min demo
+          <CtaButton href="/pricing" variant="outline" className="w-full sm:w-auto">
+            View pricing
           </CtaButton>
         </div>
 
-        <p className="mt-4 text-xs text-white/35">No credit card required · Connects in 5 minutes · Cancel anytime</p>
+        <p className="mt-4 text-xs text-white/35">No commitment required · Connects in under 5 minutes</p>
 
-        {/* Trust logos */}
         <div className="mt-14 flex flex-wrap items-center justify-center gap-6">
-          <p className="w-full text-xs font-medium uppercase tracking-widest text-white/30">Tracks your ads on</p>
+          <p className="w-full text-xs font-medium uppercase tracking-widest text-white/30">Works across</p>
           {[
             { src: "/assets/logos/meta.svg", alt: "Meta", w: 64 },
             { src: "/assets/logos/google.svg", alt: "Google Ads", w: 96 },
@@ -370,62 +319,57 @@ export default function AdsLandingPage() {
         </div>
       </section>
 
-      {/* ════════════════════════════════════════
-          STATS STRIP
-      ════════════════════════════════════════ */}
+      {/* ── STATS ── */}
       <section className="border-y border-white/10 bg-white/[0.02] px-5 py-12">
         <div className="mx-auto grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4">
-          <StatCard value="37%" label="Average wasted ad spend recovered" delay={0} />
-          <StatCard value="2.1×" label="Improvement in true ROAS clarity" delay={100} />
-          <StatCard value="98%" label="Attribution accuracy (server-side)" delay={200} />
-          <StatCard value="5 min" label="Time to connect Shopify + ads" delay={300} />
+          <StatCard value="37%" label="Average misdirected spend recovered" delay={0} />
+          <StatCard value="98%" label="Attribution accuracy via server-side" delay={100} />
+          <StatCard value="2.1×" label="Improvement in ROAS visibility" delay={200} />
+          <StatCard value="< 5 min" label="Time to connect Shopify and ad accounts" delay={300} />
         </div>
       </section>
 
-      {/* ════════════════════════════════════════
-          THE PROBLEM
-      ════════════════════════════════════════ */}
+      {/* ── THE PROBLEM ── */}
       <section className="px-5 py-24">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <div className="mb-4 text-center text-xs font-semibold uppercase tracking-widest text-indigo-400">
-              The problem
+              The challenge
             </div>
             <h2 className="mb-4 text-center text-3xl font-extrabold tracking-tight sm:text-4xl">
-              Ad attribution broke — and most stores don&apos;t know it
+              Standard pixel tracking is no longer sufficient
             </h2>
             <p className="mx-auto mb-16 max-w-2xl text-center text-base leading-relaxed text-white/55">
-              iOS 14+, Chrome blocking third-party cookies, and aggressive ad blockers means
-              your pixel misses up to <strong className="text-white">40% of real conversions.</strong>{" "}
-              Both Meta and Google fill the gaps with statistical modeling — and both claim
-              credit for the same sale.
+              iOS 14+, third-party cookie deprecation, and ad blockers mean client-side
+              pixels miss up to <strong className="text-white">40% of real conversions.</strong>{" "}
+              Meta and Google fill those gaps with statistical modelling — and both
+              platforms frequently claim credit for the same order.
             </p>
           </Reveal>
 
           <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
-            {/* Pain points */}
             <Reveal delay={100}>
               <div className="space-y-4">
                 {[
                   {
                     emoji: "🔁",
-                    title: "Double-counted conversions",
-                    body: "Meta and Google each claim the same purchase. Add them up and your combined ROAS looks great — until you check bank revenue.",
+                    title: "Cross-platform double-counting",
+                    body: "Meta and Google each attribute the same purchase to their own campaigns. Combined, the numbers look strong — until they're reconciled against actual Shopify revenue.",
                   },
                   {
                     emoji: "👁️",
-                    title: "Blind spots from iOS privacy",
-                    body: "iOS 14.5+ opt-outs block the Meta pixel for ~65% of iPhone users. Those sales still happen — they're just invisible to your ad manager.",
+                    title: "iOS privacy blind spots",
+                    body: "Roughly 65% of iPhone users have opted out of tracking. Those conversions still happen — they simply don't reach your ad manager via the pixel.",
                   },
                   {
                     emoji: "📉",
-                    title: "Optimizing toward the wrong signals",
-                    body: "When your ad platform optimizes on inflated conversion data, it finds audiences that look like converters — but aren't profitable in reality.",
+                    title: "Optimising on inaccurate signals",
+                    body: "When platforms optimise based on inflated conversion data, they surface audiences that appear profitable but aren't — compounding the misallocation over time.",
                   },
                   {
                     emoji: "⏱️",
-                    title: "Hours lost across multiple dashboards",
-                    body: "Switching between Meta Business Suite, Google Ads, and Shopify admin to reconcile numbers is a full-time job — and the numbers never match.",
+                    title: "Manual reconciliation overhead",
+                    body: "Cross-referencing Meta Business Suite, Google Ads, and Shopify admin to build a coherent picture is time-intensive and rarely conclusive.",
                   },
                 ].map((item) => (
                   <div
@@ -442,30 +386,27 @@ export default function AdsLandingPage() {
               </div>
             </Reveal>
 
-            {/* ROAS comparison widget */}
             <Reveal delay={200}>
-              <RoasComparison />
+              <AttributionDiagram />
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* ════════════════════════════════════════
-          THE SOLUTION
-      ════════════════════════════════════════ */}
+      {/* ── THE SOLUTION ── */}
       <section className="border-t border-white/10 bg-gradient-to-b from-indigo-950/30 to-transparent px-5 py-24">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <div className="mb-4 text-center text-xs font-semibold uppercase tracking-widest text-cyan-400">
-              The solution
+              How Attribix works
             </div>
             <h2 className="mb-4 text-center text-3xl font-extrabold tracking-tight sm:text-4xl">
-              One source of truth for every ad dollar
+              A single, accurate source of truth
             </h2>
             <p className="mx-auto mb-16 max-w-xl text-center text-base leading-relaxed text-white/55">
-              Attribix stitches server-side events with browser signals to build
-              a complete, de-duplicated picture of every conversion — across Meta,
-              Google, and your Shopify storefront.
+              Attribix combines server-side event firing with browser-level signals
+              to build a complete, de-duplicated conversion picture — matched against
+              real Shopify orders.
             </p>
           </Reveal>
 
@@ -477,8 +418,8 @@ export default function AdsLandingPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               }
-              title="Server-side conversion API"
-              body="Events fire directly from your Shopify store's server — completely bypassing iOS restrictions, ad blockers, and cookie limits."
+              title="Server-side Conversions API"
+              body="Events fire directly from your Shopify store's server — bypassing iOS restrictions, browser-based ad blockers, and cookie limitations entirely."
             />
             <FeatureCard
               delay={100}
@@ -487,8 +428,8 @@ export default function AdsLandingPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               }
-              title="True ROAS — not platform ROAS"
-              body="See revenue actually attributed to each campaign, ad set, and ad — reconciled against real Shopify orders, not modeled estimates."
+              title="True ROAS, not platform ROAS"
+              body="Revenue is attributed per campaign, ad set, and ad — reconciled against real Shopify orders, not platform-modelled estimates."
             />
             <FeatureCard
               delay={200}
@@ -498,7 +439,7 @@ export default function AdsLandingPage() {
                 </svg>
               }
               title="Cross-channel de-duplication"
-              body="When Meta and Google both claim the same sale, Attribix uses your chosen attribution model to assign credit once — and only once."
+              body="When Meta and Google both claim a conversion, Attribix applies your chosen attribution model and assigns credit once — and only once."
             />
             <FeatureCard
               delay={300}
@@ -507,8 +448,8 @@ export default function AdsLandingPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               }
-              title="Unified ads dashboard"
-              body="Meta Ads, Google Ads, and Shopify revenue side-by-side in one view. No more tab-switching or spreadsheet reconciliation."
+              title="Unified performance dashboard"
+              body="Meta Ads, Google Ads, and Shopify revenue in one view — with consistent definitions and no manual reconciliation required."
             />
             <FeatureCard
               delay={400}
@@ -518,7 +459,7 @@ export default function AdsLandingPage() {
                 </svg>
               }
               title="UTM & campaign tracking"
-              body="Built-in UTM builder and campaign tracking so every paid click is tagged, attributed, and reported against real revenue from the start."
+              body="Built-in UTM management ensures every paid click is tagged, tracked, and reported against real revenue from day one."
             />
             <FeatureCard
               delay={500}
@@ -527,21 +468,19 @@ export default function AdsLandingPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               }
-              title="Connect in 5 minutes"
-              body="No code, no developer needed. Install the Shopify app, connect your ad accounts, and see your real attribution data immediately."
+              title="Native Shopify integration"
+              body="No theme edits, no developer required. Connect your Shopify store and ad accounts in minutes — server-side tracking activates automatically."
             />
           </div>
         </div>
       </section>
 
-      {/* ════════════════════════════════════════
-          HOW IT WORKS
-      ════════════════════════════════════════ */}
+      {/* ── HOW IT WORKS ── */}
       <section className="border-t border-white/10 px-5 py-24">
         <div className="mx-auto max-w-4xl">
           <Reveal>
             <div className="mb-4 text-center text-xs font-semibold uppercase tracking-widest text-indigo-400">
-              How it works
+              Getting started
             </div>
             <h2 className="mb-16 text-center text-3xl font-extrabold tracking-tight sm:text-4xl">
               Up and running in three steps
@@ -549,27 +488,25 @@ export default function AdsLandingPage() {
           </Reveal>
 
           <div className="relative grid gap-8 sm:grid-cols-3">
-            {/* Connector line */}
             <div
               aria-hidden
               className="absolute left-1/6 right-1/6 top-8 hidden h-px bg-gradient-to-r from-indigo-500/30 via-cyan-500/30 to-indigo-500/30 sm:block"
             />
-
             {[
               {
                 step: "01",
-                title: "Install the Shopify app",
-                body: "Add Attribix from the Shopify app store. Server-side tracking activates automatically — no theme edits required.",
+                title: "Book a consultation",
+                body: "We'll walk through your current attribution setup, identify gaps, and show you what accurate data looks like for your specific store.",
               },
               {
                 step: "02",
-                title: "Connect Meta & Google",
-                body: "Authorize your Meta Business Suite and Google Ads accounts. Attribix pulls spend, impressions, and clicks in real time.",
+                title: "Connect in minutes",
+                body: "Install the Shopify app, authorise your Meta and Google accounts. Server-side tracking goes live immediately — no code changes needed.",
               },
               {
                 step: "03",
-                title: "See your real ROAS",
-                body: "Within minutes, your dashboard shows de-duplicated, server-side attributed revenue for every campaign. No guesswork.",
+                title: "Make better decisions",
+                body: "Your dashboard shows de-duplicated, server-side attributed revenue per campaign. Budget decisions become straightforward.",
               },
             ].map((item, i) => (
               <Reveal key={item.step} delay={i * 150}>
@@ -586,39 +523,37 @@ export default function AdsLandingPage() {
         </div>
       </section>
 
-      {/* ════════════════════════════════════════
-          TESTIMONIALS
-      ════════════════════════════════════════ */}
+      {/* ── TESTIMONIALS ── */}
       <section className="border-t border-white/10 bg-gradient-to-b from-indigo-950/20 to-transparent px-5 py-24">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <div className="mb-4 text-center text-xs font-semibold uppercase tracking-widest text-cyan-400">
-              Social proof
+              Client results
             </div>
             <h2 className="mb-16 text-center text-3xl font-extrabold tracking-tight sm:text-4xl">
-              What Shopify stores are saying
+              What accurate attribution changes
             </h2>
           </Reveal>
 
           <div className="grid gap-5 sm:grid-cols-3">
             <TestimonialCard
               delay={0}
-              metric="+$28k recovered ad spend in 60 days"
-              quote="We thought our Meta campaigns were crushing it at 5x ROAS. Attribix showed us the real number was 2.3x. Painful — but we immediately reallocated budget and our profitability jumped."
+              metric="38% of ad spend reallocated to higher-ROI campaigns"
+              quote="We had assumed our Meta campaigns were performing well based on reported ROAS. Server-side attribution told a different story — and allowed us to make budget decisions we could actually justify."
               name="Sarah K."
               role="Founder, Apex Skin · Shopify Plus"
             />
             <TestimonialCard
               delay={100}
-              metric="Cut monthly ad spend by 22%, same revenue"
-              quote="The cross-channel de-duplication alone was worth it. Google and Meta were both claiming our email-assisted orders. We were funding both platforms for work email was doing for free."
+              metric="22% reduction in monthly spend, same revenue"
+              quote="The cross-channel de-duplication was the key insight. Google and Meta were both claiming credit for orders that email had assisted. Once we saw the real picture, the reallocation was obvious."
               name="Marcus T."
               role="Head of Growth, Tempo Gear"
             />
             <TestimonialCard
               delay={200}
-              metric="3x faster reporting — one dashboard"
-              quote="Before Attribix I spent Monday mornings reconciling numbers across four tabs. Now I open one dashboard and immediately know where to shift budget. Game-changer for a lean team."
+              metric="Reporting time reduced from half a day to minutes"
+              quote="Previously, building a reliable weekly performance view meant pulling data from three platforms and reconciling manually. Attribix replaced that entire process with a single dashboard."
               name="Priya M."
               role="Performance Marketing Lead, Glow Collective"
             />
@@ -626,142 +561,15 @@ export default function AdsLandingPage() {
         </div>
       </section>
 
-      {/* ════════════════════════════════════════
-          PRICING
-      ════════════════════════════════════════ */}
-      <section className="border-t border-white/10 px-5 py-24">
-        <div className="mx-auto max-w-4xl">
-          <Reveal>
-            <div className="mb-4 text-center text-xs font-semibold uppercase tracking-widest text-indigo-400">
-              Pricing
-            </div>
-            <h2 className="mb-3 text-center text-3xl font-extrabold tracking-tight sm:text-4xl">
-              Start free. Scale as you grow.
-            </h2>
-            <p className="mx-auto mb-16 max-w-md text-center text-base text-white/55">
-              14-day free trial on all plans. No credit card required.
-            </p>
-          </Reveal>
-
-          <div className="grid gap-5 sm:grid-cols-3">
-            {[
-              {
-                name: "Starter",
-                price: "$39",
-                period: "/mo",
-                highlight: false,
-                badge: null,
-                desc: "Perfect for stores starting with paid ads",
-                features: [
-                  "300 orders tracked / month",
-                  "Meta & Google Ads data",
-                  "Server-side conversion API",
-                  "UTM builder",
-                  "30 days analytics history",
-                ],
-              },
-              {
-                name: "Growth",
-                price: "$79",
-                period: "/mo",
-                highlight: true,
-                badge: "Most popular",
-                desc: "For scaling stores that need full attribution",
-                features: [
-                  "2,500 orders tracked / month",
-                  "Full cross-channel attribution",
-                  "De-duplication across platforms",
-                  "90 days analytics history",
-                  "Product feed — Google & Meta",
-                  "Priority support",
-                ],
-              },
-              {
-                name: "Pro",
-                price: "$149",
-                period: "/mo",
-                highlight: false,
-                badge: null,
-                desc: "For high-volume stores and agencies",
-                features: [
-                  "Unlimited orders tracked",
-                  "365 days analytics history",
-                  "Visitor flow analysis",
-                  "Custom attribution windows",
-                  "Agency multi-store management",
-                  "Dedicated onboarding",
-                ],
-              },
-            ].map((plan, i) => (
-              <Reveal key={plan.name} delay={i * 100}>
-                <div
-                  className={cx(
-                    "relative flex h-full flex-col rounded-2xl border p-6 transition-all duration-300",
-                    plan.highlight
-                      ? "border-cyan-500/40 bg-gradient-to-b from-indigo-900/40 to-cyan-900/10 shadow-[0_0_60px_rgba(6,182,212,0.12)]"
-                      : "border-white/10 bg-white/5"
-                  )}
-                >
-                  {plan.badge && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                      <span className="rounded-full bg-cyan-500 px-3 py-1 text-xs font-bold text-white shadow-[0_0_16px_rgba(6,182,212,0.5)]">
-                        {plan.badge}
-                      </span>
-                    </div>
-                  )}
-                  <div className="mb-4">
-                    <p className="text-sm font-semibold text-white/60">{plan.name}</p>
-                    <div className="mt-1 flex items-end gap-1">
-                      <span className="text-4xl font-extrabold text-white">{plan.price}</span>
-                      <span className="mb-1 text-sm text-white/40">{plan.period}</span>
-                    </div>
-                    <p className="mt-2 text-xs text-white/50">{plan.desc}</p>
-                  </div>
-                  <ul className="mb-6 flex-1 space-y-2">
-                    {plan.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2 text-sm text-white/70">
-                        <svg className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    href="/signup"
-                    className={cx(
-                      "block rounded-full py-3 text-center text-sm font-semibold transition-all duration-200",
-                      plan.highlight
-                        ? "bg-white text-slate-900 hover:bg-cyan-50 shadow-[0_0_24px_rgba(255,255,255,0.15)]"
-                        : "border border-white/20 text-white hover:border-cyan-400/40 hover:bg-white/5"
-                    )}
-                  >
-                    Start free trial
-                  </Link>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal delay={300}>
-            <p className="mt-8 text-center text-xs text-white/35">
-              All plans include 14-day free trial · No setup fees · Cancel anytime
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════════
-          FAQ
-      ════════════════════════════════════════ */}
+      {/* ── FAQ ── */}
       <section className="border-t border-white/10 bg-gradient-to-b from-indigo-950/15 to-transparent px-5 py-24">
         <div className="mx-auto max-w-2xl">
           <Reveal>
             <div className="mb-4 text-center text-xs font-semibold uppercase tracking-widest text-indigo-400">
-              FAQ
+              Common questions
             </div>
             <h2 className="mb-12 text-center text-3xl font-extrabold tracking-tight sm:text-4xl">
-              Common questions
+              Frequently asked
             </h2>
           </Reveal>
 
@@ -769,28 +577,28 @@ export default function AdsLandingPage() {
             <div className="rounded-2xl border border-white/10 bg-white/5 px-6 backdrop-blur-sm">
               {[
                 {
-                  q: "How is Attribix different from the Meta pixel or Google tag?",
-                  a: "The Meta pixel and Google tag are client-side tools — they fire from the visitor's browser. If that visitor has iOS privacy enabled, an ad blocker, or a strict browser setting, the event never reaches the platform. Attribix fires conversion events directly from your Shopify store's server, so nothing is blocked. We also stitch browser and server signals together to avoid duplicate events.",
+                  q: "How does server-side attribution differ from the Meta pixel or Google tag?",
+                  a: "The Meta pixel and Google tag are client-side tools — they fire from the visitor's browser. If that visitor has iOS privacy enabled, an ad blocker, or a strict browser setting, the event never reaches the platform. Attribix fires conversion events directly from your Shopify store's server, so nothing is blocked. Browser and server signals are then stitched together to avoid duplicate events.",
                 },
                 {
-                  q: "Does it work with Shopify's built-in tracking?",
-                  a: "Yes. Attribix is installed as a Shopify app and integrates natively with Shopify's order and customer data. You don't need to edit your theme, add custom code, or modify checkout. The app handles everything automatically.",
+                  q: "Does it integrate with Shopify's native checkout?",
+                  a: "Yes. Attribix is installed as a Shopify app and integrates natively with Shopify's order and customer data. No theme edits, custom code, or checkout modifications are required.",
                 },
                 {
-                  q: "Will this affect how Meta and Google optimize my campaigns?",
-                  a: "Yes — positively. When you send more accurate server-side conversion data back to Meta (via Conversions API) and Google (via Enhanced Conversions), the platforms' algorithms have better signals to optimize against. Most stores see improved campaign performance within 2–4 weeks of enabling server-side events.",
+                  q: "Will sending better conversion data to Meta and Google affect campaign performance?",
+                  a: "Typically, yes — positively. When you send accurate server-side conversion data to Meta (via Conversions API) and Google (via Enhanced Conversions), the platforms' algorithms have better signals to optimise against. Most stores see measurable improvement within two to four weeks.",
                 },
                 {
-                  q: "What's the difference between 'platform ROAS' and 'true ROAS'?",
-                  a: "Platform ROAS is what Meta or Google reports in their own ad manager — it's often inflated because they use their own attribution models, include view-through conversions, and don't account for conversions also claimed by other channels. True ROAS in Attribix is reconciled against your actual Shopify revenue, de-duplicated across channels, using your chosen attribution window and model.",
+                  q: "What's the difference between platform ROAS and the ROAS Attribix reports?",
+                  a: "Platform ROAS is calculated by each ad platform using its own attribution model — often including view-through conversions and conversions also claimed by other channels. Attribix ROAS is reconciled against actual Shopify revenue, de-duplicated across channels, using your chosen attribution window.",
                 },
                 {
-                  q: "How long does setup take?",
-                  a: "Most stores are fully connected in under 5 minutes. You install the Shopify app, click to authorize Meta and Google, and server-side tracking is live. Historical data imports start immediately. No developer or code changes required.",
+                  q: "How long does initial setup take?",
+                  a: "Most stores are fully connected in under five minutes. You install the Shopify app, authorise Meta and Google, and server-side tracking is live. Historical data imports begin immediately.",
                 },
                 {
-                  q: "Is there a free trial?",
-                  a: "Yes — every plan starts with a 14-day free trial. No credit card required to start. You can connect all your accounts and see your real attribution data during the trial period before deciding whether to continue.",
+                  q: "What does the free consultation involve?",
+                  a: "We review your current tracking and attribution setup, identify where data is likely being lost or double-counted, and walk through what accurate attribution looks like for your store specifically. No obligations — it's a working session, not a sales call.",
                 },
               ].map((item) => (
                 <FaqItem key={item.q} q={item.q} a={item.a} />
@@ -800,51 +608,47 @@ export default function AdsLandingPage() {
         </div>
       </section>
 
-      {/* ════════════════════════════════════════
-          FINAL CTA
-      ════════════════════════════════════════ */}
+      {/* ── FINAL CTA ── */}
       <section className="border-t border-white/10 px-5 py-24">
         <Reveal>
           <div className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-900/50 via-[#050819] to-cyan-900/30 px-8 py-16 text-center backdrop-blur-sm">
-            {/* Glow blobs */}
             <div aria-hidden className="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full bg-indigo-500/15 blur-3xl" />
             <div aria-hidden className="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl" />
 
             <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-cyan-400">
-              Ready to find out?
+              Get started
             </p>
             <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-              See your real ad performance — free for 14 days
+              See what your attribution data actually shows
             </h2>
             <p className="mx-auto mb-8 max-w-md text-base leading-relaxed text-white/55">
-              Stop optimizing toward numbers your ad platforms made up. Connect Attribix
-              today and know exactly which campaigns drive profit.
+              Book a free consultation and we&apos;ll walk through your current setup,
+              identify where data is being lost, and show you what accurate attribution
+              looks like for your store.
             </p>
             <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <CtaButton href="/signup">
-                Start free trial — no card needed
+              <CtaButton href="/book-demo">
+                Book a free consultation
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </CtaButton>
-              <CtaButton href="/book-demo" variant="outline">
-                Talk to a human first
+              <CtaButton href="/pricing" variant="outline">
+                View pricing
               </CtaButton>
             </div>
             <p className="mt-5 text-xs text-white/35">
-              14-day free trial · Connects in 5 minutes · No developer needed
+              No commitment required · Connects in under 5 minutes
             </p>
           </div>
         </Reveal>
       </section>
 
-      {/* ════════════════════════════════════════
-          MINIMAL FOOTER
-      ════════════════════════════════════════ */}
+      {/* ── FOOTER ── */}
       <footer className="border-t border-white/10 px-5 py-8">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 sm:flex-row sm:justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/assets/icons/logo.svg" alt="Attribix" width={20} height={20} />
+            <Image src="/assets/logo.svg" alt="Attribix" width={20} height={20} />
             <span className="text-sm font-semibold text-white/70">Attribix</span>
           </Link>
           <div className="flex gap-6 text-xs text-white/35">
