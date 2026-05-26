@@ -128,7 +128,7 @@ export default function AdsAgencyPage() {
             <span className="text-base font-bold tracking-tight text-white">Attribix</span>
           </Link>
           <Link
-            href="/book-demo"
+            href="/consultation"
             className="rounded-full border border-white/15 px-5 py-2.5 text-xs font-semibold text-white/60 transition-colors hover:border-white/30 hover:text-white"
           >
             Book a consultation
@@ -159,7 +159,7 @@ export default function AdsAgencyPage() {
 
           <div className="mt-10">
             <Link
-              href="/book-demo"
+              href="/consultation"
               className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-semibold text-slate-900 transition-all duration-200 hover:bg-cyan-50 shadow-[0_0_32px_rgba(255,255,255,0.10)]"
             >
               Book a free consultation
@@ -299,7 +299,7 @@ export default function AdsAgencyPage() {
             </p>
 
             <Link
-              href="/book-demo"
+              href="/consultation"
               className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-semibold text-slate-900 transition-all duration-200 hover:bg-cyan-50 shadow-[0_0_32px_rgba(255,255,255,0.10)]"
             >
               Book a free consultation
