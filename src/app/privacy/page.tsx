@@ -12,7 +12,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="text-sm text-white/70 mb-8">
-            Last updated: 11 April 2026
+            Last updated: 17 June 2026
           </p>
 
           <div className="space-y-8 text-sm md:text-[15px] text-white/75 leading-relaxed bg-black/30 border border-white/10 rounded-2xl p-6 md:p-8">
@@ -99,6 +99,38 @@ export default function PrivacyPage() {
                   <a href="https://tools.google.com/dlpage/gaoptout" className="underline underline-offset-4 text-cyan-300 hover:text-cyan-200" target="_blank" rel="noopener noreferrer">
                     Google&apos;s opt-out browser add-on
                   </a>.
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-lg font-semibold mb-2">
+                3b. Data protection and security mechanisms
+              </h2>
+              <p className="mb-2">
+                We take the security of personal data and sensitive information seriously. The following mechanisms are in place to protect data we collect and process:
+              </p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>
+                  <span className="font-semibold">Encryption in transit</span> – All data transmitted between your browser, your store, and Attribix servers is encrypted using TLS (HTTPS). API communications with Google, Meta, and other ad platforms are made exclusively over encrypted connections.
+                </li>
+                <li>
+                  <span className="font-semibold">Encryption at rest</span> – Sensitive data including OAuth tokens, API credentials, and personal data stored in our databases is encrypted at rest.
+                </li>
+                <li>
+                  <span className="font-semibold">OAuth token handling</span> – When you connect a Google account (e.g., Google Ads), we store only the OAuth access and refresh tokens required to retrieve your ad performance data on your behalf. These tokens are stored in encrypted form, are scoped to the minimum permissions required, and are never shared with third parties.
+                </li>
+                <li>
+                  <span className="font-semibold">Access controls</span> – Access to data is restricted to authorised personnel who need it to operate and support the service. We enforce role-based access controls and audit internal access to sensitive systems.
+                </li>
+                <li>
+                  <span className="font-semibold">Data minimisation</span> – We request only the OAuth scopes and data necessary to provide the attribution and reporting features you have requested. We do not access, store, or use data beyond what is needed for these purposes.
+                </li>
+                <li>
+                  <span className="font-semibold">Token revocation</span> – You may revoke Attribix&apos;s access to your Google account at any time via your{" "}
+                  <a href="https://myaccount.google.com/permissions" className="underline underline-offset-4 text-cyan-300 hover:text-cyan-200" target="_blank" rel="noopener noreferrer">
+                    Google Account permissions
+                  </a>. Upon revocation or account deletion, associated tokens are removed from our systems.
                 </li>
               </ul>
             </section>
