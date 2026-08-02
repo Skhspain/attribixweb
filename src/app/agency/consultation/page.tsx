@@ -90,9 +90,9 @@ export default function ConsultationPage() {
       <section className="relative mx-auto max-w-4xl px-4 pt-24 pb-16 text-center">
         {/* Breadcrumb */}
         <div className="mb-6 flex items-center justify-center gap-2 text-xs text-white/40">
-          <Link href="/agency" className="hover:text-white/70 transition-colors">Agency</Link>
+          <Link href="/managed-services" className="hover:text-white/70 transition-colors">Managed services</Link>
           <span>/</span>
-          <span className="text-white/60">Book a Consultation</span>
+          <span className="text-white/60">Paid consultation</span>
         </div>
 
         <Reveal>
@@ -156,10 +156,10 @@ export default function ConsultationPage() {
             </div>
 
             <Link
-              href="/agency"
+              href="/managed-services"
               className="inline-flex items-center gap-1.5 text-sm text-white/40 hover:text-white/70 transition-colors"
             >
-              ← Back to Agency
+              ← Back to Managed services
             </Link>
           </Reveal>
 
@@ -196,12 +196,12 @@ export default function ConsultationPage() {
       <section className="mx-auto max-w-2xl px-4 pb-24 text-center">
         <Reveal>
           <p className="text-white/40 text-sm">
-            Prefer to reach out first?{" "}
-            <Link href="/agency#reviews" className="text-white/70 underline underline-offset-4 hover:text-white transition-colors">
-              Read client reviews
+            Prefer to send details in writing first?{" "}
+            <Link href="/managed-services/inquiry" className="text-white/70 underline underline-offset-4 hover:text-white transition-colors">
+              Send an inquiry
             </Link>
             {" "}or{" "}
-            <Link href="/agency" className="text-white/70 underline underline-offset-4 hover:text-white transition-colors">
+            <Link href="/managed-services" className="text-white/70 underline underline-offset-4 hover:text-white transition-colors">
               learn about our services
             </Link>
             .
