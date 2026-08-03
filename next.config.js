@@ -3,6 +3,15 @@ const path = require("path");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/agency",
+        destination: "/managed-services",
+        permanent: true,
+      },
+    ];
+  },
   eslint: {
     // Allow production builds even when ESLint errors exist
     ignoreDuringBuilds: true,
