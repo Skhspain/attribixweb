@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Google Ads Management for Shopify | Attribix Managed Services",
+  title: "Google Ads Management for Shopify | Attribix",
   description:
     "Google Ads management for Shopify stores across Search, Shopping and Performance Max — Merchant Center, conversion tracking, and reporting against real revenue.",
-  alternates: { canonical: "https://attribix.app/managed-services/google-ads" },
+  alternates: { canonical: "https://www.attribix.app/ad-management/google-ads" },
   openGraph: {
     title: "Google Ads Management for Shopify | Attribix",
     description: "Full Google Ads management for Shopify stores, run by the team behind Attribix.",
-    url: "https://attribix.app/managed-services/google-ads",
+    url: "https://www.attribix.app/ad-management/google-ads",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Attribix" }],
   },
 };
 

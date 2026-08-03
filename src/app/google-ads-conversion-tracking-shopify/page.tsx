@@ -40,10 +40,12 @@ export default function GoogleAdsTrackingPage() {
               click.
             </p>
             <p>
-              The result is a gap in the same direction every time: Google
-              Ads under-counts. It rarely over-counts on its own, which is
-              part of why the gap is easy to miss — the number that&apos;s
-              wrong is the one you never see.
+              Depending on the implementation, Google Ads can undercount
+              purchases that were never observed in the first place, or
+              overcount them when multiple tags or conversion actions record
+              the same order. The two problems point in opposite directions,
+              which is exactly why they&apos;re easy to miss in the same
+              account — one masks the other in the total.
             </p>
           </div>
         </Reveal>
@@ -92,11 +94,28 @@ export default function GoogleAdsTrackingPage() {
           </Reveal>
           <Reveal delay={140}>
             <p className="mt-5 text-sm text-white/45 max-w-2xl">
-              Most Google Ads conversion values freeze at checkout and never
-              adjust for the refund. Over enough orders, that gap compounds
+              Standard purchase implementations often retain the original
+              checkout value unless later refunds or cancellations are sent
+              back through conversion adjustments. Where that adjustment
+              step isn&apos;t set up, the gap compounds over enough orders
               into a ROAS figure that looks better in Ads Manager than the
               store&apos;s bank balance would suggest.
             </p>
+          </Reveal>
+
+          <Reveal delay={180} className="mt-6">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+              <p className="text-xs font-semibold uppercase tracking-wide text-white/40 mb-4">How a refund reaches the conversion, if it's wired up</p>
+              <div className="flex flex-wrap items-center gap-2 text-sm">
+                {["Shopify order", "Original checkout value", "Google Ads conversion", "Refund or cancellation", "Adjusted net result"].map((step, i, arr) => (
+                  <div key={step} className="flex items-center gap-2">
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-white/70">{step}</span>
+                    {i < arr.length - 1 && <span aria-hidden className="text-white/25">→</span>}
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 text-xs text-white/35">Conceptual — depends on conversion adjustments being configured for the account.</p>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -125,10 +144,12 @@ export default function GoogleAdsTrackingPage() {
             <h3 className="font-semibold text-white">Duplicate conversions</h3>
             <p className="mt-3 text-sm text-white/60 leading-relaxed">
               The most common cause on Shopify is running both Shopify&apos;s
-              native Google & YouTube channel integration and a separate
-              Google tag, each logging its own conversion action for the
-              same order. Google Ads doesn&apos;t automatically know they
-              refer to the same sale.
+              native Google &amp; YouTube channel integration and a separate,
+              custom Google tag, each logging its own conversion action for
+              the same order. If both are set as a primary conversion action
+              used for bidding, Google Ads counts and optimises against the
+              order twice — a secondary action, used for reporting only,
+              doesn&apos;t carry the same risk.
             </p>
           </Reveal>
           <Reveal delay={80}>
@@ -140,6 +161,39 @@ export default function GoogleAdsTrackingPage() {
               the gap in aggregate; it doesn&apos;t recover any individual
               customer&apos;s data.
             </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* OVER/UNDERCOUNT CAUSES */}
+      <section className="mx-auto max-w-3xl px-4 py-10">
+        <Reveal>
+          <h2 className="text-2xl md:text-3xl font-extrabold">What pushes the number in each direction</h2>
+        </Reveal>
+        <div className="mt-6 grid gap-8 sm:grid-cols-2 text-sm">
+          <Reveal delay={40}>
+            <p className="font-semibold text-white mb-2">Can overcount</p>
+            <ul className="space-y-2 text-white/60 leading-relaxed list-disc list-inside">
+              <li>Duplicate tags firing on the same page</li>
+              <li>Multiple primary purchase conversion actions</li>
+              <li>Duplicate conversion actions from Shopify's app plus a custom tag</li>
+              <li>Incorrect event or trigger setup</li>
+              <li>Incorrect revenue values in the event</li>
+              <li>Attribution settings crediting more than one interaction</li>
+              <li>Repeated purchase events on page refresh or back-navigation</li>
+            </ul>
+          </Reveal>
+          <Reveal delay={80}>
+            <p className="font-semibold text-white mb-2">Can undercount</p>
+            <ul className="space-y-2 text-white/60 leading-relaxed list-disc list-inside">
+              <li>Browser restrictions on third-party scripts</li>
+              <li>Missing or declined consent</li>
+              <li>Ad blockers</li>
+              <li>Checkout implementations that skip the confirmation page</li>
+              <li>Missing customer identifiers for matching</li>
+              <li>Cross-device customer journeys</li>
+              <li>Incorrectly configured tags</li>
+            </ul>
           </Reveal>
         </div>
       </section>
@@ -161,13 +215,16 @@ export default function GoogleAdsTrackingPage() {
         <div className="absolute inset-0 -z-10 bg-black/15" />
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>
-            <h2 className="text-xl md:text-2xl font-extrabold">What Attribix checks</h2>
+            <h2 className="text-xl md:text-2xl font-extrabold">What Attribix sends, and what it doesn&apos;t control</h2>
             <p className="mt-4 text-white/60 leading-relaxed text-sm max-w-2xl">
-              Attribix compares what Google Ads reports against actual
-              Shopify order data — net of refunds and adjusted for what
-              really shipped — and flags accounts where the two have drifted
-              apart, rather than requiring you to notice the gap yourself in
-              two separate dashboards.
+              Attribix sends purchase and enhanced-conversion data from your
+              Shopify orders to Google Ads, and shows that alongside
+              Google&apos;s own reported numbers so the gap is visible
+              instead of buried across two separate dashboards. It doesn&apos;t
+              control your Merchant Center feed, your account&apos;s
+              conversion-action configuration, or how Google Ads itself
+              models consent-restricted traffic — those stay in Google Ads
+              and Merchant Center directly.
             </p>
           </Reveal>
         </div>
@@ -185,8 +242,23 @@ export default function GoogleAdsTrackingPage() {
         </Reveal>
         <p className="mt-6 text-sm text-white/35">
           Want your Google Ads account managed?{" "}
-          <Link href="/managed-services" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
-            See managed services
+          <Link href="/ad-management/google-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+            See Google Ads management
+          </Link>
+          , or{" "}
+          <Link href="/ad-management/inquiry" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+            ask about tracking setup
+          </Link>
+          .
+        </p>
+        <p className="mt-3 text-sm text-white/35">
+          See how this fits into{" "}
+          <Link href="/shopify-attribution" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+            Shopify attribution
+          </Link>{" "}
+          and{" "}
+          <Link href="/shopify-roas-tracking" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+            ROAS tracking
           </Link>
           .
         </p>

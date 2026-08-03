@@ -16,21 +16,21 @@ const SERVICES = [
     title: "Ongoing Meta & Google Ads management",
     desc: "Full management of your Meta and Google Ads accounts — strategy, creative direction, budget allocation and day-to-day optimisation, reviewed against real Shopify revenue instead of platform-reported ROAS.",
     fit: "For brands who want campaigns run for them, month over month.",
-    href: "/managed-services/meta-ads",
+    href: "/ad-management/meta-ads",
     cta: "See Meta & Google Ads management",
   },
   {
-    title: "Advertising account audit",
-    desc: "A structured review of your existing Meta and/or Google Ads accounts: account structure, budget allocation, tracking setup and creative performance, with a written list of specific, prioritised fixes.",
+    title: "Advertising audit (paid)",
+    desc: "A structured, paid review of your existing Meta and/or Google Ads accounts: account structure, budget allocation, tracking setup and creative performance, delivered as a written report with prioritised fixes. Separate from the free consultation call — a fixed-scope engagement with a defined deliverable, not a conversation.",
     fit: "For brands who want a second opinion or a clear starting point before committing to ongoing management.",
-    href: "/managed-services/inquiry",
+    href: "/ad-management/inquiry",
     cta: "Ask about an audit",
   },
   {
     title: "Tracking and attribution setup",
-    desc: "We set up or repair your server-side tracking and attribution — connecting Meta, Google and Shopify so conversions, revenue and customer journeys are recorded correctly, whether or not we manage your ad spend.",
+    desc: "We review and set up your Shopify tracking, Meta Pixel and Conversions API, and Google Ads purchase and enhanced conversions — including event deduplication, Consent Mode and attribution setup — so conversions and revenue are recorded correctly, whether or not we manage your ad spend.",
     fit: "For brands who manage ads in-house but want tracking they can trust.",
-    href: "/managed-services/inquiry",
+    href: "/ad-management/inquiry",
     cta: "Ask about tracking setup",
   },
 ];
@@ -91,24 +91,6 @@ const PROCESS = [
   },
 ];
 
-const CASE_STUDIES = [
-  {
-    label: "Meta Ads · Apparel",
-    situation: "Ad Manager reported a healthy ROAS, but Shopify revenue told a different story.",
-    change: "Account restructure, creative testing cadence, and server-side event tracking.",
-  },
-  {
-    label: "Google Ads · Home goods",
-    situation: "Search and Shopping spend split across campaigns with no clear view of which was driving orders.",
-    change: "Consolidated account structure, Performance Max review, and enhanced conversions setup.",
-  },
-  {
-    label: "Tracking only · No managed ads",
-    situation: "In-house team running ads, but couldn't trust the numbers Meta and Google were reporting.",
-    change: "Server-side Shopify, Meta and Google attribution setup via Attribix — no campaign management involved.",
-  },
-];
-
 const FAQ_ITEMS = [
   {
     q: "How is this different from just using Attribix on its own?",
@@ -116,10 +98,10 @@ const FAQ_ITEMS = [
   },
   {
     q: "What's the relationship between Attribix and bevit?",
-    a: "bevit is the advertising agency; Attribix is the tracking platform bevit built to fix the attribution problems it kept running into for clients. Managed services are delivered by the bevit team.",
+    a: "bevit is the advertising team; Attribix is the tracking platform bevit built to work through the attribution problems it kept running into for clients. Ad Management is delivered by the bevit team.",
   },
   {
-    q: "Do I need to use Attribix to work with your agency?",
+    q: "Do I need to use Attribix to work with you on ads?",
     a: "No, but we typically set up Attribix tracking alongside any ongoing management, because it's how we make sure campaign decisions are based on real Shopify revenue.",
   },
   {
@@ -140,12 +122,23 @@ const FAQ_ITEMS = [
   },
 ];
 
+const FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
 /* -----------------------------------------------------
    Page
 ----------------------------------------------------- */
-export default function ManagedServicesPage() {
+export default function AdManagementPage() {
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-[#0F0620] via-[#0E1530] to-[#053B56] text-white overflow-hidden">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }} />
       <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute -top-32 -left-32 h-[600px] w-[600px] rounded-full bg-indigo-600/8 blur-3xl" />
         <div className="absolute top-1/2 -right-40 h-[500px] w-[500px] rounded-full bg-cyan-500/6 blur-3xl" />
@@ -156,7 +149,7 @@ export default function ManagedServicesPage() {
       {/* ── 1. HERO ── */}
       <section className="relative mx-auto max-w-4xl px-4 pt-24 pb-14 md:pt-32 md:pb-16 text-center">
         <Reveal>
-          <Eyebrow>Managed by the team behind Attribix</Eyebrow>
+          <Eyebrow>Ad management by the team behind Attribix</Eyebrow>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
             Meta &amp; Google Ads management for Shopify stores
           </h1>
@@ -192,26 +185,22 @@ export default function ManagedServicesPage() {
       <section className="mx-auto max-w-3xl px-4 py-14">
         <Reveal>
           <Eyebrow>Why we also run ads</Eyebrow>
-          <h2 className="text-2xl md:text-3xl font-extrabold">Built by marketers, not just developers</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold">Attribix was built from real advertising work</h2>
           <div className="mt-5 space-y-4 text-white/65 leading-relaxed">
             <p>
-              Attribix started because we ran Meta and Google Ads for Shopify
-              stores ourselves — first through <strong className="text-white/85">bevit</strong>, our advertising
-              agency, and later inside Attribix, the tracking platform we
-              built to fix the reporting problems we kept running into.
+              Attribix was created by the team behind <strong className="text-white/85">bevit</strong> after
+              years of managing Meta and Google Ads and dealing with
+              incomplete, conflicting and misleading platform reports. The
+              software helps us connect campaign decisions with Shopify
+              orders, server-side events and customer journeys.
             </p>
             <p>
-              Most attribution tools are built by engineers who have never
-              managed a real ad budget. Attribix was built by the marketers
-              at bevit, after years of watching Meta and Google under- and
-              over-report the same conversion.
-            </p>
-            <p>
-              Managed services are an optional extension of that same work.
-              The bevit team runs your campaigns, using Attribix to see what
-              the ad platforms can&apos;t. You&apos;re not hiring two vendors and
-              hoping they talk to each other — it&apos;s one team, one data
-              source, one accountable relationship.
+              Many attribution platforms are developed separately from the
+              teams making daily campaign decisions. Attribix grew directly
+              out of our work managing real Meta and Google Ads accounts —
+              Ad Management is the optional service for businesses that want
+              the same team to manage their campaigns directly, using that
+              same data.
             </p>
           </div>
         </Reveal>
@@ -290,30 +279,17 @@ export default function ManagedServicesPage() {
         </div>
       </section>
 
-      {/* ── 6. CASE STUDIES ── */}
-      <section className="mx-auto max-w-6xl px-4 py-16">
+      {/* ── 6. EXPERIENCE ── */}
+      <section className="mx-auto max-w-3xl px-4 py-16">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold">Case studies</h2>
-          <p className="mt-3 text-white/60 max-w-xl">
-            A sample of the kind of work we do. Full write-ups with verified
-            metrics are being prepared — reach out if you&apos;d like specifics
-            for your category.
+          <h2 className="text-2xl md:text-3xl font-extrabold">Experience across ecommerce and performance advertising</h2>
+          <p className="mt-5 text-white/65 leading-relaxed">
+            We have managed Meta and Google Ads for businesses across
+            ecommerce, services and digital products. Verified case studies
+            are currently being prepared. Send us an inquiry to discuss
+            experience relevant to your business and advertising channels.
           </p>
         </Reveal>
-        <div className="mt-9 divide-y divide-white/10 border-t border-white/10">
-          {CASE_STUDIES.map((c, i) => (
-            <Reveal key={c.label} delay={i * 60}>
-              <div className="grid gap-2 py-6 sm:grid-cols-[220px_1fr_1fr] sm:gap-8">
-                <div>
-                  <p className="text-sm font-semibold text-white">{c.label}</p>
-                  <p className="mt-1 text-[11px] italic text-white/35">Placeholder — pending verified metrics</p>
-                </div>
-                <p className="text-sm text-white/60 leading-relaxed">{c.situation}</p>
-                <p className="text-sm text-white/60 leading-relaxed">{c.change}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
       </section>
 
       {/* ── 7. FOUR-STEP PROCESS ── */}

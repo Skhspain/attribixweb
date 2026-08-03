@@ -92,7 +92,7 @@ export default function ConsultationForm() {
       <div>
         <label className={labelClass}>Platforms you&apos;re currently running</label>
         <div className="mt-2 flex flex-wrap gap-2">
-          {["Meta Ads", "Google Ads", "TikTok Ads", "Other"].map((platform) => (
+          {["Meta Ads", "Google Ads", "Other"].map((platform) => (
             <label
               key={platform}
               className="flex cursor-pointer items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2 text-xs text-white/50 transition has-[:checked]:border-cyan-500/40 has-[:checked]:bg-cyan-500/[0.08] has-[:checked]:text-white"
