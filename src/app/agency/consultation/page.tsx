@@ -90,7 +90,7 @@ export default function ConsultationPage() {
       <section className="relative mx-auto max-w-4xl px-4 pt-24 pb-16 text-center">
         {/* Breadcrumb */}
         <div className="mb-6 flex items-center justify-center gap-2 text-xs text-white/40">
-          <Link href="/managed-services" className="hover:text-white/70 transition-colors">Managed services</Link>
+          <Link href="/ad-management" className="hover:text-white/70 transition-colors">Ad management</Link>
           <span>/</span>
           <span className="text-white/60">Paid consultation</span>
         </div>
@@ -156,10 +156,10 @@ export default function ConsultationPage() {
             </div>
 
             <Link
-              href="/managed-services"
+              href="/ad-management"
               className="inline-flex items-center gap-1.5 text-sm text-white/40 hover:text-white/70 transition-colors"
             >
-              ← Back to Managed services
+              ← Back to Ad management
             </Link>
           </Reveal>
 
@@ -197,11 +197,11 @@ export default function ConsultationPage() {
         <Reveal>
           <p className="text-white/40 text-sm">
             Prefer to send details in writing first?{" "}
-            <Link href="/managed-services/inquiry" className="text-white/70 underline underline-offset-4 hover:text-white transition-colors">
+            <Link href="/ad-management/inquiry" className="text-white/70 underline underline-offset-4 hover:text-white transition-colors">
               Send an inquiry
             </Link>
             {" "}or{" "}
-            <Link href="/managed-services" className="text-white/70 underline underline-offset-4 hover:text-white transition-colors">
+            <Link href="/ad-management" className="text-white/70 underline underline-offset-4 hover:text-white transition-colors">
               learn about our services
             </Link>
             .

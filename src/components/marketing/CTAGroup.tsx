@@ -12,8 +12,8 @@ const secondaryClass =
  */
 export function ManagedServicesCTA({
   className,
-  inquiryHref = "/managed-services/inquiry",
-  consultationHref = "/consultation",
+  inquiryHref = "/ad-management/inquiry",
+  consultationHref = "/ad-management/consultation",
 }: {
   className?: string;
   inquiryHref?: string;

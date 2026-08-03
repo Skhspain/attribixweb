@@ -29,11 +29,34 @@ const FAQ_ITEMS = [
     q: "Do I need to change my ad platform settings to use this?",
     a: "No. Attribix reads campaign and spend data from Meta and Google as they're already set up, and reconciles it against Shopify orders. It doesn't require you to change bidding or reporting settings on either platform.",
   },
+  {
+    q: "What happens to orders that show up as direct traffic?",
+    a: "Direct traffic — visits with no referrer or campaign parameters — gets attributed where the evidence supports it (a matching prior session, for example) and left as direct where it doesn't. We don't force a source onto a visit just to close the gap.",
+  },
+  {
+    q: "How often does the data refresh?",
+    a: "Order and ad platform data sync on a regular schedule rather than instantly on every event. For most stores that means reporting reflects same-day or next-day activity, not a live feed down to the second.",
+  },
+  {
+    q: "What happens when an order is refunded?",
+    a: "Refunded orders are reflected in Shopify's own order data, and attribution reporting follows that — a fully refunded order shouldn't continue counting as revenue indefinitely.",
+  },
 ];
+
+const FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
 
 export default function ShopifyAttributionPage() {
   return (
     <ProductPageShell>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }} />
       {/* HERO */}
       <section className="relative mx-auto max-w-3xl px-4 pt-24 pb-14 md:pt-32">
         <Reveal>
@@ -221,6 +244,42 @@ export default function ShopifyAttributionPage() {
         </Reveal>
       </section>
 
+      {/* SETUP OVERVIEW */}
+      <section className="relative py-14">
+        <div className="absolute inset-0 -z-10 bg-black/15" />
+        <div className="mx-auto max-w-3xl px-4">
+          <Reveal>
+            <h2 className="text-2xl md:text-3xl font-extrabold">What gets connected</h2>
+          </Reveal>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            <Reveal delay={40}>
+              <div>
+                <p className="text-sm font-semibold text-white">Data sources</p>
+                <p className="mt-1.5 text-sm text-white/55 leading-relaxed">Shopify order data, Meta Ads spend and campaign data, and Google Ads spend and campaign data — read from each platform's own reporting API.</p>
+              </div>
+            </Reveal>
+            <Reveal delay={80}>
+              <div>
+                <p className="text-sm font-semibold text-white">Attribution window</p>
+                <p className="mt-1.5 text-sm text-white/55 leading-relaxed">Configurable rather than fixed, since a 7-day and a 30-day window will genuinely disagree on the same orders — there's no single window that's correct for every business.</p>
+              </div>
+            </Reveal>
+            <Reveal delay={120}>
+              <div>
+                <p className="text-sm font-semibold text-white">Setup</p>
+                <p className="mt-1.5 text-sm text-white/55 leading-relaxed">Connect your Shopify store and your Meta and Google ad accounts. No code changes to your theme or checkout are required for the connections themselves.</p>
+              </div>
+            </Reveal>
+            <Reveal delay={160}>
+              <div>
+                <p className="text-sm font-semibold text-white">Direct traffic and refunds</p>
+                <p className="mt-1.5 text-sm text-white/55 leading-relaxed">Visits with no campaign source stay labelled as direct rather than being forced onto a channel, and refunded orders follow Shopify's own order data.</p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* WHO IT'S FOR */}
       <section className="relative py-14">
         <div className="absolute inset-0 -z-10 bg-black/15" />
@@ -232,8 +291,8 @@ export default function ShopifyAttributionPage() {
               paid ads on Meta and Google that need a single, reconciled view
               of what&apos;s driving revenue — whether ads are managed
               in-house, by an agency, or by our own{" "}
-              <Link href="/managed-services" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
-                managed services team
+              <Link href="/ad-management" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                ad management team
               </Link>
               . If you&apos;re only spending on one channel with no
               cross-channel overlap, platform reporting alone may be enough —
@@ -242,6 +301,35 @@ export default function ShopifyAttributionPage() {
             </p>
           </Reveal>
         </div>
+      </section>
+
+      {/* RELATED READING */}
+      <section className="mx-auto max-w-3xl px-4 py-10">
+        <Reveal>
+          <h2 className="text-xl md:text-2xl font-extrabold">Related reading</h2>
+          <ul className="mt-4 space-y-2 text-sm">
+            <li>
+              <Link href="/server-side-tracking-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                How server-side tracking closes part of the browser tracking gap
+              </Link>
+            </li>
+            <li>
+              <Link href="/meta-capi-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                How the Meta Conversions API works alongside the Pixel
+              </Link>
+            </li>
+            <li>
+              <Link href="/google-ads-conversion-tracking-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Why Google Ads and Shopify report different revenue
+              </Link>
+            </li>
+            <li>
+              <Link href="/shopify-roas-tracking" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Why platform-reported ROAS shouldn't just be added together
+              </Link>
+            </li>
+          </ul>
+        </Reveal>
       </section>
 
       {/* FAQ */}
@@ -257,10 +345,15 @@ export default function ShopifyAttributionPage() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold">See your real attribution numbers</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
-            Connect your Shopify store, Meta and Google accounts, and see
-            your first reconciled report in minutes.
+            Connect your Shopify store, Meta and Google accounts, and see how
+            your own orders reconcile against platform-reported numbers.
           </p>
           <ProductCTA className="mt-8 justify-center" />
+          <p className="mt-6 text-sm text-white/35">
+            <Link href="/pricing" className="text-white/60 underline underline-offset-4 hover:text-white">
+              See plans and pricing
+            </Link>
+          </p>
         </Reveal>
       </section>
     </ProductPageShell>

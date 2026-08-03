@@ -137,10 +137,9 @@ export default function MetaCapiPage() {
               <li>Check Events Manager for duplicate rates and match quality over the following week, not the first hour.</li>
             </ol>
             <p className="mt-5 text-sm text-white/45 max-w-2xl">
-              Attribix handles the server-side event sending and event ID
-              matching automatically once your Meta account is connected,
-              and flags when match quality or duplicate rates drift outside
-              a normal range.
+              Attribix sends the matching server-side events once your Meta
+              account is connected, using a shared event ID across the
+              Pixel and server event so Meta can deduplicate them.
             </p>
           </Reveal>
         </div>
@@ -171,8 +170,23 @@ export default function MetaCapiPage() {
         </Reveal>
         <p className="mt-6 text-sm text-white/35">
           Want this set up for you instead?{" "}
-          <Link href="/managed-services" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
-            See managed tracking and attribution services
+          <Link href="/ad-management/inquiry" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+            Ask about tracking and attribution setup
+          </Link>
+          , or see{" "}
+          <Link href="/ad-management/meta-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+            Meta Ads management
+          </Link>
+          .
+        </p>
+        <p className="mt-3 text-sm text-white/35">
+          See how this fits into the bigger picture:{" "}
+          <Link href="/server-side-tracking-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+            server-side tracking
+          </Link>{" "}
+          and{" "}
+          <Link href="/shopify-attribution" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+            Shopify attribution
           </Link>
           .
         </p>

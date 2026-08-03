@@ -19,8 +19,8 @@ export default function ServerSideTrackingPage() {
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             A growing share of Shopify orders happen without the browser ever
             reporting them. Server-side tracking sends the same purchase
-            event from your server instead, closing most — not all — of that
-            gap.
+            event from your server instead, reducing the gap created by
+            browser-side tracking loss.
           </p>
           <ProductCTA className="mt-9" />
         </Reveal>
@@ -79,6 +79,21 @@ export default function ServerSideTrackingPage() {
           </div>
           <p className="mt-3 text-xs text-white/35">Simplified — illustrative, not a literal network diagram.</p>
         </Reveal>
+
+        <Reveal delay={80} className="mt-6">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <p className="text-xs font-semibold uppercase tracking-wide text-white/40 mb-4">What one purchase event goes through</p>
+            <div className="flex flex-wrap items-center gap-2 text-sm">
+              {["Browser event received", "Server event received", "Shared event ID", "Deduplicated", "Purchase recorded"].map((step, i, arr) => (
+                <div key={step} className="flex items-center gap-2">
+                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-white/70">{step}</span>
+                  {i < arr.length - 1 && <span aria-hidden className="text-white/25">→</span>}
+                </div>
+              ))}
+            </div>
+            <p className="mt-4 text-xs text-white/35">Conceptual — the actual sequence per order depends on which events your store and ad accounts send.</p>
+          </div>
+        </Reveal>
       </section>
 
       {/* WHAT CHANGES */}
@@ -126,10 +141,11 @@ export default function ServerSideTrackingPage() {
                 <div>
                   <p className="font-semibold text-white text-sm">Purchase value accuracy</p>
                   <p className="mt-1.5 text-sm text-white/55 leading-relaxed">
-                    Server events are built from the actual Shopify order —
-                    so refunds, discount codes, and currency conversion are
-                    reflected correctly, instead of whatever value the
-                    browser happened to capture at the moment of checkout.
+                    Server events are built from the actual Shopify order,
+                    so they can account for refunds, discount codes and
+                    currency conversion — rather than the raw value the
+                    browser captured at the moment of checkout, before any
+                    of that was known.
                   </p>
                 </div>
               </div>
@@ -202,6 +218,17 @@ export default function ServerSideTrackingPage() {
           </p>
           <ProductCTA className="mt-8 justify-center" />
         </Reveal>
+        <p className="mt-6 text-sm text-white/35">
+          See how this feeds into{" "}
+          <Link href="/shopify-attribution" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+            Shopify attribution
+          </Link>{" "}
+          reporting, or{" "}
+          <Link href="/ad-management/inquiry" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+            ask about tracking and attribution setup
+          </Link>
+          .
+        </p>
       </section>
     </ProductPageShell>
   );

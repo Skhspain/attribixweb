@@ -23,12 +23,12 @@ const COLUMNS = [
     ],
   },
   {
-    heading: "Managed services",
+    heading: "Ad management",
     links: [
-      { label: "Overview", href: "/managed-services" },
-      { label: "Meta Ads management", href: "/managed-services/meta-ads" },
-      { label: "Google Ads management", href: "/managed-services/google-ads" },
-      { label: "Send inquiry", href: "/managed-services/inquiry" },
+      { label: "Overview", href: "/ad-management" },
+      { label: "Meta Ads management", href: "/ad-management/meta-ads" },
+      { label: "Google Ads management", href: "/ad-management/google-ads" },
+      { label: "Send inquiry", href: "/ad-management/inquiry" },
     ],
   },
   {

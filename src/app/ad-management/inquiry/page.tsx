@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import InquiryForm from "@/components/InquiryForm";
 import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 
-export default function ManagedServicesInquiryPage() {
+export default function AdManagementInquiryPage() {
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-[#0F0620] via-[#0E1530] to-[#053B56] text-white">
       <Header />
@@ -14,7 +14,7 @@ export default function ManagedServicesInquiryPage() {
       <main className="mx-auto max-w-6xl px-4 py-16 md:py-24">
         <Breadcrumbs
           items={[
-            { label: "Managed services", href: "/managed-services" },
+            { label: "Ad management", href: "/ad-management" },
             { label: "Send inquiry" },
           ]}
         />
@@ -36,15 +36,15 @@ export default function ManagedServicesInquiryPage() {
             <div className="mt-10 space-y-4 text-sm text-white/50 max-w-md">
               <p>
                 Prefer to talk it through first? You can{" "}
-                <Link href="/consultation" className="text-white/80 underline underline-offset-4 hover:text-white">
+                <Link href="/ad-management/consultation" className="text-white/80 underline underline-offset-4 hover:text-white">
                   book a free consultation call
                 </Link>{" "}
                 instead.
               </p>
               <p>
                 Want to read about the services first?{" "}
-                <Link href="/managed-services" className="text-white/80 underline underline-offset-4 hover:text-white">
-                  Go back to Managed services
+                <Link href="/ad-management" className="text-white/80 underline underline-offset-4 hover:text-white">
+                  Go back to Ad management
                 </Link>
                 .
               </p>

@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     description: "30 minutes. We review your ad accounts and tell you what we find. No pitch, no obligation.",
     url: "https://attribix.app/consultation",
   },
+  robots: { index: false, follow: true },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

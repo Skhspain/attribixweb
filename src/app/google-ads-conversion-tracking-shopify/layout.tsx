@@ -4,11 +4,12 @@ export const metadata: Metadata = {
   title: "Google Ads Conversion Tracking for Shopify | Attribix",
   description:
     "Why Google Ads and Shopify rarely agree on revenue, how enhanced conversions and Consent Mode fit in, and what to check across Search, Shopping and Performance Max.",
-  alternates: { canonical: "https://attribix.app/google-ads-conversion-tracking-shopify" },
+  alternates: { canonical: "https://www.attribix.app/google-ads-conversion-tracking-shopify" },
   openGraph: {
     title: "Google Ads Conversion Tracking for Shopify | Attribix",
     description: "Purchase tracking, enhanced conversions and revenue accuracy for Shopify stores running Google Ads.",
-    url: "https://attribix.app/google-ads-conversion-tracking-shopify",
+    url: "https://www.attribix.app/google-ads-conversion-tracking-shopify",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Attribix" }],
   },
 };
 
