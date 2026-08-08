@@ -18,6 +18,14 @@ practice for canonical tags.
 
 `attribix.com` is a legacy domain kept alive only to 301 old links onto
 `www.attribix.app` (see `next.config.js`). Never link to it internally.
+Verified live: `attribix.com/<path>` currently redirects in two hops
+(`attribix.com` → `www.attribix.com` → `www.attribix.app/<path>`) — the
+first hop is a Vercel domain-level redirect outside this repo, not
+something `next.config.js` controls. The path is preserved correctly end
+to end, it's just not a single hop. **MANUAL ACTION**: collapse this in
+Vercel's domain settings (point `attribix.com` straight at
+`www.attribix.app`) if the extra hop needs to go — nobody with repo-only
+access can fix this from code.
 
 ## URL conventions
 
@@ -43,6 +51,15 @@ practice for canonical tags.
 ## Schema architecture
 
 - Root layout (`src/app/layout.tsx`): `Organization` + `WebSite` JSON-LD.
+  **Always render JSON-LD as a plain `<script type="application/ld+json">`
+  tag, never as `next/script`'s `<Script>` component without
+  `strategy="beforeInteractive"`.** `<Script>` defaults to
+  `afterInteractive`, which only injects the tag after client-side
+  hydration — a real browser sees it, but curl, most crawlers, and social
+  unfurlers that don't execute JS never do. This exact bug shipped once
+  (the Organization/WebSite blocks were `next/script`-wrapped and missing
+  from the server-rendered HTML) and was caught only by checking raw HTML,
+  not by checking the rendered DOM in a browser.
 - Homepage (`src/app/page.tsx`): `SoftwareApplication` JSON-LD with the real
   pricing tiers.
 - Pages with a genuine FAQ section use `FAQPage` JSON-LD generated from the
