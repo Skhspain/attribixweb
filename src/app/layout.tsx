@@ -47,12 +47,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body className="bg-[#0f172a] text-white antialiased">
-          <Script
+          <script
             id="org-jsonld"
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_JSON_LD) }}
           />
-          <Script
+          <script
             id="website-jsonld"
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_JSON_LD) }}
