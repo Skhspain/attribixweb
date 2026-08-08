@@ -318,8 +318,8 @@ export default function TermsPage() {
               Bevit Agency, Altea, Spain
               <br />
               Email:{" "}
-              <a href="mailto:support@attribix.com" className="underline">
-                support@attribix.com
+              <a href="mailto:hello@attribix.app" className="underline">
+                hello@attribix.app
               </a>
             </p>
           </section>

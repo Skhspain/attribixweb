@@ -5,10 +5,45 @@ import ProductPageShell from "@/components/marketing/ProductPageShell";
 import { Reveal } from "@/components/marketing/Reveal";
 import Eyebrow from "@/components/marketing/Eyebrow";
 import { ProductCTA } from "@/components/marketing/CTAGroup";
+import FAQList from "@/components/marketing/FAQList";
+
+const FAQ_ITEMS = [
+  {
+    q: "What is server-side tracking for Shopify?",
+    a: "Sending purchase and other conversion events to Meta and Google directly from a server, alongside what the browser reports — so events blocked or dropped client-side still arrive.",
+  },
+  {
+    q: "Does server-side tracking replace the Meta Pixel?",
+    a: "No. Pixel and server-side events are meant to run together, each catching what the other misses, matched by a shared event ID so the same purchase isn't counted twice.",
+  },
+  {
+    q: "Does server-side tracking get around consent requirements?",
+    a: "No. Server-side events still depend on the customer having consented to tracking and on having enough identifying data — an email or phone number, for example — to match the event. It closes a technical gap, not a legal one.",
+  },
+  {
+    q: "Will this fix ad blockers entirely?",
+    a: "It recovers a meaningful share of what ad blockers and browser restrictions remove, but some visitors decline tracking entirely and some journeys don't leave enough signal to reconstruct. Expect improvement, not completeness.",
+  },
+  {
+    q: "How is this different from Shopify's native Meta or Google integrations?",
+    a: "Shopify's native app integrations typically send a basic server-side purchase event. Attribix adds deduplication and reconciles that event against your actual order data across Meta and Google at once.",
+  },
+];
+
+const FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
 
 export default function ServerSideTrackingPage() {
   return (
     <ProductPageShell>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }} />
       {/* HERO */}
       <section className="mx-auto max-w-3xl px-4 pt-24 pb-12 md:pt-32">
         <Reveal>
@@ -206,6 +241,33 @@ export default function ServerSideTrackingPage() {
             </p>
           </Reveal>
         </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="mx-auto max-w-3xl px-4 py-14">
+        <Reveal>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-8">Common questions</h2>
+          <FAQList items={FAQ_ITEMS} />
+        </Reveal>
+      </section>
+
+      {/* RELATED READING */}
+      <section className="mx-auto max-w-3xl px-4 py-10">
+        <Reveal>
+          <h2 className="text-xl md:text-2xl font-extrabold">Related reading</h2>
+          <ul className="mt-4 space-y-2 text-sm">
+            <li>
+              <Link href="/resources/shopify-server-side-tracking-guide" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Shopify server-side tracking: complete guide
+              </Link>
+            </li>
+            <li>
+              <Link href="/resources/meta-pixel-vs-capi-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Meta Pixel vs Conversions API for Shopify
+              </Link>
+            </li>
+          </ul>
+        </Reveal>
       </section>
 
       {/* CTA */}

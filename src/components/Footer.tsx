@@ -6,6 +6,7 @@ const COLUMNS = [
   {
     heading: "Attribution & tracking",
     links: [
+      { label: "Resources", href: "/resources" },
       { label: "Shopify attribution", href: "/shopify-attribution" },
       { label: "Server-side tracking", href: "/server-side-tracking-shopify" },
       { label: "Meta CAPI for Shopify", href: "/meta-capi-shopify" },
@@ -18,6 +19,7 @@ const COLUMNS = [
     links: [
       { label: "Features", href: "/features" },
       { label: "Pricing", href: "/pricing" },
+      { label: "Free tools", href: "/tools" },
       { label: "Book demo", href: "/book-demo" },
       { label: "Log in", href: "/login" },
     ],
@@ -34,6 +36,7 @@ const COLUMNS = [
   {
     heading: "Company",
     links: [
+      { label: "About", href: "/about" },
       { label: "FAQ", href: "/faq" },
       { label: "Partners", href: "/partners" },
       { label: "Privacy", href: "/privacy" },

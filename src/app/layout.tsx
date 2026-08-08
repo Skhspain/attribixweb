@@ -6,21 +6,21 @@ import FacebookPixel from "@/components/FacebookPixel";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.attribix.app"),
-  title: "Attribix — Smarter Attribution for Shopify",
-  description: "Attribix gives Shopify stores iOS-proof attribution, true ROAS across Meta & Google, email, reviews, social scheduling and SEO — in one dashboard.",
+  title: "Shopify Attribution & Server-Side Tracking | Attribix",
+  description: "Attribix gives Shopify stores accurate attribution, server-side tracking and true ROAS across Meta and Google Ads. See which campaigns actually drive revenue.",
   verification: { google: "78Mov8JY9-aDSccHncqb6tmzMRQVVqGYqsJF9gGWD0k" },
   openGraph: {
     type: "website",
     siteName: "Attribix",
-    title: "Attribix — Smarter Attribution for Shopify",
-    description: "iOS-proof attribution, true ROAS, email, reviews, SEO — one dashboard for Shopify stores.",
+    title: "Shopify Attribution & Server-Side Tracking | Attribix",
+    description: "Accurate attribution, server-side tracking and true ROAS across Meta and Google Ads for Shopify stores.",
     url: "https://www.attribix.app",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Attribix dashboard" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Attribix — Smarter Attribution for Shopify",
-    description: "iOS-proof attribution, true ROAS, email, reviews, SEO — one dashboard for Shopify stores.",
+    title: "Shopify Attribution & Server-Side Tracking | Attribix",
+    description: "Accurate attribution, server-side tracking and true ROAS across Meta and Google Ads for Shopify stores.",
     images: ["/og-image.png"],
   },
   alternates: { canonical: "https://www.attribix.app" },

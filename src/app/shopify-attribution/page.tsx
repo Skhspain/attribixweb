@@ -328,6 +328,21 @@ export default function ShopifyAttributionPage() {
                 Why platform-reported ROAS shouldn't just be added together
               </Link>
             </li>
+            <li>
+              <Link href="/resources/shopify-attribution-models" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Shopify attribution models explained
+              </Link>
+            </li>
+            <li>
+              <Link href="/resources/why-shopify-meta-sales-dont-match" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Why Shopify and Meta Ads show different sales numbers
+              </Link>
+            </li>
+            <li>
+              <Link href="/resources/true-roas-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                How to calculate true ROAS on Shopify
+              </Link>
+            </li>
           </ul>
         </Reveal>
       </section>

@@ -5,6 +5,40 @@ import ProductPageShell from "@/components/marketing/ProductPageShell";
 import { Reveal } from "@/components/marketing/Reveal";
 import Eyebrow from "@/components/marketing/Eyebrow";
 import { ProductCTA } from "@/components/marketing/CTAGroup";
+import FAQList from "@/components/marketing/FAQList";
+
+const FAQ_ITEMS = [
+  {
+    q: "What is Meta CAPI?",
+    a: "The Conversions API is Meta's server-to-server method for sending events like Purchase directly to Meta from your backend, instead of relying only on the browser-based Pixel.",
+  },
+  {
+    q: "Do I need both the Pixel and CAPI?",
+    a: "Most Shopify stores get the best coverage running both together, deduplicated by a shared event ID, so browser and server events reinforce each other rather than double-count.",
+  },
+  {
+    q: "What is Event Match Quality?",
+    a: "Meta's score for how confidently it can match your events to a real Facebook or Instagram user, based on how much hashed customer data — email, phone, external ID — you send with each event.",
+  },
+  {
+    q: "Does a higher Event Match Quality score mean perfect attribution?",
+    a: "No. It means Meta can match more events to known users, which usually improves optimization and reporting — but matching an event to a person isn't the same as knowing which ad caused the purchase.",
+  },
+  {
+    q: "Can CAPI track customers who declined consent?",
+    a: "No. CAPI still requires the same consent and privacy compliance as the Pixel — it changes how an event reaches Meta, not whether you're allowed to send it.",
+  },
+];
+
+const FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
 
 const PROBLEMS = [
   { problem: "Purchases undercounted on iOS", cause: "Safari trims cookie lifespan and blocks some pixel requests outright." },
@@ -16,6 +50,7 @@ const PROBLEMS = [
 export default function MetaCapiPage() {
   return (
     <ProductPageShell>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }} />
       {/* HERO */}
       <section className="mx-auto max-w-3xl px-4 pt-24 pb-12 md:pt-32">
         <Reveal>
@@ -158,6 +193,38 @@ export default function MetaCapiPage() {
         </Reveal>
       </section>
 
+      {/* FAQ */}
+      <section className="mx-auto max-w-3xl px-4 py-14">
+        <Reveal>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-8">Common questions</h2>
+          <FAQList items={FAQ_ITEMS} />
+        </Reveal>
+      </section>
+
+      {/* RELATED READING */}
+      <section className="mx-auto max-w-3xl px-4 py-10">
+        <Reveal>
+          <h2 className="text-xl md:text-2xl font-extrabold">Related reading</h2>
+          <ul className="mt-4 space-y-2 text-sm">
+            <li>
+              <Link href="/resources/meta-pixel-vs-capi-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Meta Pixel vs Conversions API for Shopify
+              </Link>
+            </li>
+            <li>
+              <Link href="/resources/meta-event-match-quality-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Meta Event Match Quality for Shopify explained
+              </Link>
+            </li>
+            <li>
+              <Link href="/resources/fix-duplicate-meta-purchases-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                How to fix duplicate purchases in Meta Ads for Shopify
+              </Link>
+            </li>
+          </ul>
+        </Reveal>
+      </section>
+
       {/* CTA */}
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Reveal>
@@ -187,6 +254,10 @@ export default function MetaCapiPage() {
           and{" "}
           <Link href="/shopify-attribution" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
             Shopify attribution
+          </Link>{" "}
+          and{" "}
+          <Link href="/shopify-roas-tracking" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+            ROAS tracking
           </Link>
           .
         </p>
