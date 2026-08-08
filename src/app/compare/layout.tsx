@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Attribix Comparisons | Attribix",
+  title: "How Attribix Compares | Attribix",
   description: "How Attribix compares to other Shopify attribution and tracking tools.",
   alternates: { canonical: "https://www.attribix.app/compare" },
   robots: { index: false, follow: true },

@@ -7,6 +7,7 @@ import Eyebrow from "@/components/marketing/Eyebrow";
 import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import { ProductCTA } from "@/components/marketing/CTAGroup";
 import FAQList from "@/components/marketing/FAQList";
+import DiagramFrame from "@/components/marketing/DiagramFrame";
 
 const MISTAKES = [
   { title: "No shared event ID", note: "Browser and server events for the same order aren't linked, so Meta or Google count the purchase twice." },
@@ -120,6 +121,34 @@ export default function Page() {
               <li>The enriched event is sent server-to-server to Meta's Conversions API and/or Google's server-side conversion endpoint.</li>
               <li>A shared event ID, generated once per order, is attached to both this server event and its browser-side counterpart so the platform can deduplicate them.</li>
             </ol>
+
+            <div className="mt-8">
+              <DiagramFrame caption="Two independent paths for the same event, reconciled by a shared ID.">
+                <svg viewBox="0 0 600 220" className="w-full h-auto" role="img" aria-label="Diagram showing Shopify checkout feeding both a browser tracking path and a server tracking path, with the browser path vulnerable to ad blockers and cookie loss while the server path goes directly to Meta and Google.">
+                  <rect x="235" y="10" width="130" height="46" rx="10" className="fill-white/5" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+                  <text x="300" y="38" textAnchor="middle" className="fill-white text-[13px] font-semibold">Shopify checkout</text>
+
+                  <line x1="300" y1="56" x2="150" y2="90" stroke="rgba(56,189,248,0.4)" strokeWidth="1.5" />
+                  <line x1="300" y1="56" x2="450" y2="90" stroke="rgba(168,85,247,0.4)" strokeWidth="1.5" />
+
+                  <rect x="60" y="90" width="180" height="50" rx="10" className="fill-cyan-400/5" stroke="rgba(56,189,248,0.35)" strokeWidth="1" />
+                  <text x="150" y="112" textAnchor="middle" className="fill-white text-[12px] font-semibold">Browser (Pixel)</text>
+                  <text x="150" y="128" textAnchor="middle" className="fill-white/50 text-[10px]">blocked by ad blockers, ITP, closed tabs</text>
+
+                  <rect x="360" y="90" width="180" height="50" rx="10" className="fill-fuchsia-400/5" stroke="rgba(168,85,247,0.35)" strokeWidth="1" />
+                  <text x="450" y="112" textAnchor="middle" className="fill-white text-[12px] font-semibold">Server (webhook)</text>
+                  <text x="450" y="128" textAnchor="middle" className="fill-white/50 text-[10px]">independent of the customer's browser</text>
+
+                  <line x1="150" y1="140" x2="150" y2="168" stroke="rgba(56,189,248,0.4)" strokeWidth="1.5" />
+                  <line x1="450" y1="140" x2="450" y2="168" stroke="rgba(168,85,247,0.4)" strokeWidth="1.5" />
+
+                  <rect x="90" y="168" width="420" height="42" rx="10" className="fill-emerald-400/10" stroke="rgba(52,211,153,0.4)" strokeWidth="1" />
+                  <text x="300" y="194" textAnchor="middle" className="fill-white text-[12px] font-semibold">
+                    Deduplicated by shared event ID → Meta CAPI + Google Ads
+                  </text>
+                </svg>
+              </DiagramFrame>
+            </div>
           </Reveal>
         </div>
       </section>

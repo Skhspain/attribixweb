@@ -157,6 +157,11 @@ export default function Page() {
               </Link>
             </li>
             <li>
+              <Link href="/tools/roas-calculator" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                ROAS calculator
+              </Link>
+            </li>
+            <li>
               <Link href="/shopify-attribution" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Shopify attribution software
               </Link>

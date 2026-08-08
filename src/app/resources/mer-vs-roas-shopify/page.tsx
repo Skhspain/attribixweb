@@ -7,6 +7,7 @@ import Eyebrow from "@/components/marketing/Eyebrow";
 import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import { ProductCTA } from "@/components/marketing/CTAGroup";
 import FAQList from "@/components/marketing/FAQList";
+import DiagramFrame from "@/components/marketing/DiagramFrame";
 
 const FAQ_ITEMS = [
   {
@@ -112,6 +113,26 @@ export default function Page() {
               attribution-window changes, tracking gaps, or cross-platform
               double-counting.
             </p>
+
+            <div className="mt-8">
+              <DiagramFrame caption="ROAS divides by what a model attributes. MER divides by everything.">
+                <svg viewBox="0 0 600 170" className="w-full h-auto" role="img" aria-label="Diagram contrasting ROAS, which divides ad-attributed revenue by ad spend, against MER, which divides total store revenue by total marketing spend.">
+                  <rect x="10" y="10" width="280" height="150" rx="12" className="fill-cyan-400/5" stroke="rgba(56,189,248,0.35)" strokeWidth="1" />
+                  <text x="150" y="34" textAnchor="middle" className="fill-white text-[13px] font-semibold">ROAS</text>
+                  <text x="150" y="60" textAnchor="middle" className="fill-white/60 text-[11px]">Attributed revenue (subset)</text>
+                  <line x1="60" y1="72" x2="240" y2="72" stroke="rgba(255,255,255,0.25)" strokeWidth="1" />
+                  <text x="150" y="90" textAnchor="middle" className="fill-white/60 text-[11px]">Ad spend (one platform)</text>
+                  <text x="150" y="130" textAnchor="middle" className="fill-white/40 text-[10px]">Depends on the attribution model</text>
+
+                  <rect x="310" y="10" width="280" height="150" rx="12" className="fill-fuchsia-400/5" stroke="rgba(168,85,247,0.35)" strokeWidth="1" />
+                  <text x="450" y="34" textAnchor="middle" className="fill-white text-[13px] font-semibold">MER</text>
+                  <text x="450" y="60" textAnchor="middle" className="fill-white/60 text-[11px]">Total store revenue (all)</text>
+                  <line x1="360" y1="72" x2="540" y2="72" stroke="rgba(255,255,255,0.25)" strokeWidth="1" />
+                  <text x="450" y="90" textAnchor="middle" className="fill-white/60 text-[11px]">Total marketing spend</text>
+                  <text x="450" y="130" textAnchor="middle" className="fill-white/40 text-[10px]">No attribution model involved</text>
+                </svg>
+              </DiagramFrame>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -172,6 +193,11 @@ export default function Page() {
             <li>
               <Link href="/resources/true-roas-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How to calculate true ROAS on Shopify
+              </Link>
+            </li>
+            <li>
+              <Link href="/tools/mer-calculator" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                MER calculator
               </Link>
             </li>
           </ul>

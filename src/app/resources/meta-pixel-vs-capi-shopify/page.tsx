@@ -7,6 +7,7 @@ import Eyebrow from "@/components/marketing/Eyebrow";
 import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import { ProductCTA } from "@/components/marketing/CTAGroup";
 import FAQList from "@/components/marketing/FAQList";
+import DiagramFrame from "@/components/marketing/DiagramFrame";
 
 const FAQ_ITEMS = [
   {
@@ -146,6 +147,39 @@ export default function Page() {
               purchase once. Skip this and duplicate purchases in Ads
               Manager is the most common symptom.
             </p>
+
+            <div className="mt-8">
+              <DiagramFrame caption="Simplified — illustrative, not literal API payload structure.">
+                <svg viewBox="0 0 600 190" className="w-full h-auto" role="img" aria-label="Diagram showing a browser Pixel event and a server CAPI event both carrying the same event ID, matched by Meta into a single counted purchase.">
+                  <rect x="10" y="20" width="190" height="56" rx="12" className="fill-white/5" stroke="rgba(56,189,248,0.4)" strokeWidth="1" />
+                  <text x="105" y="44" textAnchor="middle" className="fill-white text-[13px] font-semibold">Browser</text>
+                  <text x="105" y="62" textAnchor="middle" className="fill-white/60 text-[11px]">Pixel purchase event</text>
+
+                  <rect x="10" y="114" width="190" height="56" rx="12" className="fill-white/5" stroke="rgba(168,85,247,0.4)" strokeWidth="1" />
+                  <text x="105" y="138" textAnchor="middle" className="fill-white text-[13px] font-semibold">Server</text>
+                  <text x="105" y="156" textAnchor="middle" className="fill-white/60 text-[11px]">CAPI purchase event</text>
+
+                  <line x1="200" y1="48" x2="270" y2="95" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5" />
+                  <line x1="200" y1="142" x2="270" y2="95" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5" />
+
+                  <rect x="270" y="65" width="130" height="60" rx="12" className="fill-white/5" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+                  <text x="335" y="90" textAnchor="middle" className="fill-white text-[12px] font-semibold">Matched by</text>
+                  <text x="335" y="106" textAnchor="middle" className="fill-cyan-300 text-[12px] font-mono">event_id</text>
+
+                  <line x1="400" y1="95" x2="460" y2="95" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5" markerEnd="url(#arrow)" />
+
+                  <rect x="460" y="65" width="130" height="60" rx="12" className="fill-emerald-400/10" stroke="rgba(52,211,153,0.4)" strokeWidth="1" />
+                  <text x="525" y="88" textAnchor="middle" className="fill-white text-[12px] font-semibold">One purchase</text>
+                  <text x="525" y="104" textAnchor="middle" className="fill-white/60 text-[11px]">in Ads Manager</text>
+
+                  <defs>
+                    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                      <path d="M0,0 L8,4 L0,8 Z" fill="rgba(255,255,255,0.4)" />
+                    </marker>
+                  </defs>
+                </svg>
+              </DiagramFrame>
+            </div>
           </Reveal>
         </div>
       </section>

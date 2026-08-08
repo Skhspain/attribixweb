@@ -19,6 +19,7 @@ const COLUMNS = [
     links: [
       { label: "Features", href: "/features" },
       { label: "Pricing", href: "/pricing" },
+      { label: "Free tools", href: "/tools" },
       { label: "Book demo", href: "/book-demo" },
       { label: "Log in", href: "/login" },
     ],
@@ -35,6 +36,7 @@ const COLUMNS = [
   {
     heading: "Company",
     links: [
+      { label: "About", href: "/about" },
       { label: "FAQ", href: "/faq" },
       { label: "Partners", href: "/partners" },
       { label: "Privacy", href: "/privacy" },
