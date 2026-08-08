@@ -1345,7 +1345,7 @@ export default function Home() {
               { "@type": "Offer", name: "Growth", price: "79", priceCurrency: "USD" },
               { "@type": "Offer", name: "Pro", price: "149", priceCurrency: "USD" },
             ],
-            url: "https://attribix.app",
+            url: "https://www.attribix.app",
           }),
         }}
       />
@@ -1363,23 +1363,26 @@ export default function Home() {
       <section className="relative mx-auto max-w-7xl px-4 py-20 md:py-28">
         <div className="grid items-start gap-10 md:grid-cols-2">
           <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold text-white/50 uppercase tracking-widest">
+              Smarter Attribution. Bigger Impact.
+            </div>
             <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.05]">
-              Smarter{" "}
+              Shopify{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] via-[#2563EB] to-[#06B6D4]">
                 Attribution
               </span>
-              .
-              <br />
-              Bigger{" "}
+              {" "}&amp; Server-Side{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#06B6D4] via-[#2563EB] to-[#9333EA]">
-                Impact
+                Tracking
               </span>
-              .
             </h1>
             <p className="mt-4 text-base sm:text-lg text-white/80 max-w-xl">
               Pixels were not built for today’s privacy rules. Attribix sits between your
-              store and the ad platforms, captures server-side events the pixels miss, and
-              shows you which ads actually drive revenue.
+              Shopify store and Meta and Google Ads, captures the{" "}
+              <Link href="/server-side-tracking-shopify" className="underline decoration-white/30 underline-offset-2 hover:decoration-white/70">
+                server-side events
+              </Link>{" "}
+              pixels miss, and shows you true ROAS — which campaigns actually drive revenue.
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -1435,6 +1438,7 @@ export default function Home() {
               {
                 t: "Rebuilt signal quality",
                 d: "Server-side and browser events in one clean stream your ad platforms can actually use.",
+                href: "/server-side-tracking-shopify",
                 icon: "✨",
                 accent: "from-cyan-500/20 to-cyan-500/5",
                 border: "border-cyan-500/20",
@@ -1444,6 +1448,7 @@ export default function Home() {
               {
                 t: "Truthful attribution",
                 d: "See where revenue actually comes from — not last-click guesses or inflated platform numbers.",
+                href: "/shopify-attribution",
                 icon: "🧭",
                 accent: "from-indigo-500/20 to-indigo-500/5",
                 border: "border-indigo-500/20",
@@ -1481,6 +1486,11 @@ export default function Home() {
                 </div>
                 <div className="font-semibold text-sm mb-2">{f.t}</div>
                 <p className="text-xs text-white/60 leading-relaxed">{f.d}</p>
+                {f.href && (
+                  <Link href={f.href} className="mt-3 inline-block text-xs text-white/50 underline decoration-white/20 underline-offset-2 hover:text-white/80 hover:decoration-white/50">
+                    Learn more →
+                  </Link>
+                )}
                 <span className={cx("absolute bottom-4 right-4 h-1.5 w-1.5 rounded-full opacity-60", f.dot)} />
               </div>
             ))}

@@ -5,10 +5,45 @@ import ProductPageShell from "@/components/marketing/ProductPageShell";
 import { Reveal } from "@/components/marketing/Reveal";
 import Eyebrow from "@/components/marketing/Eyebrow";
 import { ProductCTA } from "@/components/marketing/CTAGroup";
+import FAQList from "@/components/marketing/FAQList";
+
+const FAQ_ITEMS = [
+  {
+    q: "What is ROAS?",
+    a: "Return on ad spend — revenue attributed to advertising divided by what you spent on it. On its own it's a ratio, not a profit figure.",
+  },
+  {
+    q: "What is MER?",
+    a: "Marketing efficiency ratio — total store revenue divided by total ad spend across every channel, with no attribution model involved. It moves less than platform ROAS because it doesn't depend on who gets the credit.",
+  },
+  {
+    q: "What's the difference between MER and ROAS?",
+    a: "ROAS relies on attributing individual orders to individual ads or platforms. MER skips attribution entirely and compares total revenue to total spend, which makes it steadier but less useful for deciding which specific campaign to scale.",
+  },
+  {
+    q: "Why doesn't my blended ROAS match Meta's or Google's reported ROAS?",
+    a: "Meta and Google each calculate ROAS only from the orders their own attribution model credits to them — and both platforms often claim credit for the same order, so their combined ROAS routinely overstates blended reality.",
+  },
+  {
+    q: "Is a higher ROAS always better?",
+    a: "Not necessarily. A campaign can show a high ROAS on orders that would likely have happened anyway, while a lower-ROAS campaign might be reaching genuinely new customers. ROAS measures efficiency, not incrementality.",
+  },
+];
+
+const FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
 
 export default function ShopifyRoasPage() {
   return (
     <ProductPageShell>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }} />
       {/* HERO */}
       <section className="mx-auto max-w-3xl px-4 pt-24 pb-12 md:pt-32">
         <Reveal>
@@ -198,6 +233,33 @@ export default function ShopifyRoasPage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="mx-auto max-w-3xl px-4 py-14">
+        <Reveal>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-8">Common questions</h2>
+          <FAQList items={FAQ_ITEMS} />
+        </Reveal>
+      </section>
+
+      {/* RELATED READING */}
+      <section className="mx-auto max-w-3xl px-4 py-10">
+        <Reveal>
+          <h2 className="text-xl md:text-2xl font-extrabold">Related reading</h2>
+          <ul className="mt-4 space-y-2 text-sm">
+            <li>
+              <Link href="/resources/true-roas-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                How to calculate true ROAS on Shopify
+              </Link>
+            </li>
+            <li>
+              <Link href="/resources/mer-vs-roas-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                MER vs ROAS for Shopify
+              </Link>
+            </li>
+          </ul>
+        </Reveal>
+      </section>
+
       {/* CTA */}
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Reveal>
@@ -208,6 +270,17 @@ export default function ShopifyRoasPage() {
           </p>
           <ProductCTA className="mt-8 justify-center" />
         </Reveal>
+        <p className="mt-6 text-sm text-white/35">
+          See how this fits into{" "}
+          <Link href="/shopify-attribution" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+            Shopify attribution
+          </Link>{" "}
+          and{" "}
+          <Link href="/meta-capi-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+            Meta Conversions API
+          </Link>
+          .
+        </p>
       </section>
     </ProductPageShell>
   );

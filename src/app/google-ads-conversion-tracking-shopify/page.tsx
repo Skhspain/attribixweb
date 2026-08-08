@@ -5,10 +5,45 @@ import ProductPageShell from "@/components/marketing/ProductPageShell";
 import { Reveal } from "@/components/marketing/Reveal";
 import Eyebrow from "@/components/marketing/Eyebrow";
 import { ProductCTA } from "@/components/marketing/CTAGroup";
+import FAQList from "@/components/marketing/FAQList";
+
+const FAQ_ITEMS = [
+  {
+    q: "What are Google Enhanced Conversions?",
+    a: "A feature that sends hashed first-party customer data, like email, alongside a standard conversion, so Google can match conversions it would otherwise miss due to cookie or click-ID loss.",
+  },
+  {
+    q: "Why are Google Ads purchases sometimes duplicated?",
+    a: "Usually because more than one tag or app is separately firing a conversion for the same order — a manual gtag snippet, a Shopify app integration, and Google's own sync layered on top of each other.",
+  },
+  {
+    q: "Why does Google Ads revenue differ from Shopify's revenue?",
+    a: "Different conversion windows, conversion-date-vs-order-date accounting, and the fact that Google Ads value doesn't automatically adjust for refunds, discounts, tax or shipping the way a Shopify order total does.",
+  },
+  {
+    q: "Does Consent Mode affect how much Google Ads can track?",
+    a: "Yes. Without ad-storage consent, Google models some conversions rather than observing them directly, which affects how conversion counts and value get reported.",
+  },
+  {
+    q: "Does Performance Max need separate tracking setup?",
+    a: "PMax uses the same conversion actions as Search and Shopping campaigns, so accurate purchase tracking benefits all three — there's no separate tracking layer specific to PMax.",
+  },
+];
+
+const FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
 
 export default function GoogleAdsTrackingPage() {
   return (
     <ProductPageShell>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }} />
       {/* HERO */}
       <section className="mx-auto max-w-3xl px-4 pt-24 pb-12 md:pt-32">
         <Reveal>
@@ -230,6 +265,33 @@ export default function GoogleAdsTrackingPage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="mx-auto max-w-3xl px-4 py-14">
+        <Reveal>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-8">Common questions</h2>
+          <FAQList items={FAQ_ITEMS} />
+        </Reveal>
+      </section>
+
+      {/* RELATED READING */}
+      <section className="mx-auto max-w-3xl px-4 py-10">
+        <Reveal>
+          <h2 className="text-xl md:text-2xl font-extrabold">Related reading</h2>
+          <ul className="mt-4 space-y-2 text-sm">
+            <li>
+              <Link href="/resources/google-ads-shopify-revenue-doesnt-match" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Why Google Ads and Shopify revenue don&apos;t match
+              </Link>
+            </li>
+            <li>
+              <Link href="/resources/enhanced-conversions-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Enhanced Conversions for Shopify explained
+              </Link>
+            </li>
+          </ul>
+        </Reveal>
+      </section>
+
       {/* CTA */}
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Reveal>
@@ -259,6 +321,10 @@ export default function GoogleAdsTrackingPage() {
           and{" "}
           <Link href="/shopify-roas-tracking" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
             ROAS tracking
+          </Link>{" "}
+          and{" "}
+          <Link href="/server-side-tracking-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+            server-side tracking
           </Link>
           .
         </p>

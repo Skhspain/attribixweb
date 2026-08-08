@@ -67,6 +67,16 @@ export default function Header() {
           >
             Ad Management
           </Link>
+          <Link
+            href="/resources"
+            className={cx(
+              "opacity-80 hover:opacity-100 relative",
+              isActive("/resources") &&
+                "opacity-100 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
+            )}
+          >
+            Resources
+          </Link>
 
           <div className="flex items-center gap-2">
             <Link
@@ -142,6 +152,16 @@ export default function Header() {
               )}
             >
               Ad Management
+            </Link>
+            <Link
+              href="/resources"
+              onClick={() => setMobileOpen(false)}
+              className={cx(
+                "block py-1 text-white/80 hover:text-white",
+                isActive("/resources") && "text-white"
+              )}
+            >
+              Resources
             </Link>
 
             <div className="mt-3 flex flex-col gap-2">

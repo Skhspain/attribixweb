@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/analytics", "/api"],
       },
     ],
-    sitemap: "https://attribix.app/sitemap.xml",
+    sitemap: "https://www.attribix.app/sitemap.xml",
   };
 }

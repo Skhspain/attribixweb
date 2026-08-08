@@ -6,6 +6,7 @@ const COLUMNS = [
   {
     heading: "Attribution & tracking",
     links: [
+      { label: "Resources", href: "/resources" },
       { label: "Shopify attribution", href: "/shopify-attribution" },
       { label: "Server-side tracking", href: "/server-side-tracking-shopify" },
       { label: "Meta CAPI for Shopify", href: "/meta-capi-shopify" },
