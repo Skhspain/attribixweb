@@ -888,7 +888,7 @@ function HeroAttributionChart() {
           </div>
         </div>
         <div className="mt-2 text-[10px] text-white/50">
-          Live preview • Conversions increasing • Tracking improving
+          Illustrative dashboard preview • Sample data, not customer results
         </div>
       </div>
 
@@ -1440,7 +1440,7 @@ export default function Home() {
             <SectionTitle>Get value in 3 steps</SectionTitle>
             <p className="text-white/75 max-w-xl">
               No 30-page setup doc. Install once, connect your ad platforms, and start
-              seeing which campaigns actually drive sales.
+              seeing which campaigns are connected to actual sales.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -1458,7 +1458,7 @@ export default function Home() {
                 {
                   n: "3",
                   t: "Decide with clarity",
-                  d: "See which campaigns and creatives actually drive profit and then scale with confidence.",
+                  d: "See which campaigns and creatives are associated with stronger attributed revenue and ROAS, then scale with confidence.",
                 },
               ].map((s) => (
                 <div key={s.n} className="flex gap-4">
@@ -1526,7 +1526,7 @@ export default function Home() {
             <div className="space-y-2 text-sm md:text-base text-white/75">
               <div className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
-                <span>Meta and Google both see the same cleaned, deduplicated events.</span>
+                <span>Meta and Google each receive clean, deduplicated event data.</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-cyan-300 shrink-0" />
@@ -1653,8 +1653,9 @@ export default function Home() {
                       <li key={f}>• {f}</li>
                     ))}
                   </ul>
-                  <a
-                    href="#contact"
+                  <Link
+                    href="/signup"
+                    onClick={trackTrialClick}
                     className={cx(
                       "mt-6 inline-block rounded-lg border px-4 py-2 transition",
                       p.highlight
@@ -1663,7 +1664,7 @@ export default function Home() {
                     )}
                   >
                     Get started
-                  </a>
+                  </Link>
                 </TiltCard>
               </NeonCard>
             </Reveal>

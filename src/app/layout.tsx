@@ -32,7 +32,7 @@ const ORG_JSON_LD = {
   name: "Attribix",
   url: "https://www.attribix.app",
   logo: "https://www.attribix.app/assets/logo.svg",
-  sameAs: [],
+  sameAs: ["https://apps.shopify.com/attribix-app"],
 };
 
 const WEBSITE_JSON_LD = {

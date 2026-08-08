@@ -579,7 +579,7 @@ export default function FeaturesPage() {
               Attribution Features
             </p>
             <h1 className="text-3xl md:text-4xl font-extrabold">
-              Attribution models, made simple
+              Shopify attribution &amp; tracking, made simple
             </h1>
             <p className="mt-2 text-white/75">
               Switch between <b>Last / First / Linear / Time-decay</b> and
@@ -669,8 +669,9 @@ export default function FeaturesPage() {
                   First-party IDs
                 </div>
                 <p className="text-white/70 text-[13px]">
-                  Durable session &amp; customer IDs that survive ITP,
-                  adblockers and cross-device journeys.
+                  First-party identifiers help maintain more consistent
+                  measurement across sessions where browser-based tracking
+                  is limited.
                 </p>
               </div>
               <div className="rounded-xl border border-white/12 bg-black/30 px-4 py-3">
@@ -688,8 +689,8 @@ export default function FeaturesPage() {
                 </div>
                 <p className="text-white/70 text-[13px]">
                   Clean, joined event stream so Attribix can run attribution
-                  models and reports instantly — similar to what tools like
-                  wetracked.io promise, but tightly integrated with your store.
+                  models and reports instantly, tightly integrated with your
+                  store.
                 </p>
               </div>
             </div>

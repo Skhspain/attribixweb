@@ -179,11 +179,12 @@ export default function ServerSideTrackingPage() {
                 <div>
                   <p className="font-semibold text-white text-sm">Purchase value accuracy</p>
                   <p className="mt-1.5 text-sm text-white/55 leading-relaxed">
-                    Server events are built from the actual Shopify order,
-                    so they can account for refunds, discount codes and
-                    currency conversion — rather than the raw value the
-                    browser captured at the moment of checkout, before any
-                    of that was known.
+                    Because server events are built from Shopify order data
+                    rather than the raw value the browser captured at
+                    checkout, purchase values can be reconciled against
+                    discount codes and currency conversion from the start —
+                    and against later refunds or order updates when the
+                    integration sends the corresponding adjustments.
                   </p>
                 </div>
               </div>
@@ -261,7 +262,7 @@ export default function ServerSideTrackingPage() {
           <ul className="mt-4 space-y-2 text-sm">
             <li>
               <Link href="/resources/shopify-server-side-tracking-guide" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
-                Shopify server-side tracking: complete guide
+                How Shopify server-side tracking works (technical guide)
               </Link>
             </li>
             <li>
