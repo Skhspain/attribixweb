@@ -148,3 +148,66 @@ mentions beats any volume of low-quality links.
 
 Don't let most of the time go to endlessly rewriting titles and meta
 descriptions — that's the 15% bucket, not the whole job.
+
+## Shopify App Store — MANUAL / ONGOING MARKETING WORK
+
+Not editable from this repo — the listing lives in the Shopify Partner
+Dashboard. Corrected copy to paste in manually, replacing any wording
+built around "Pixel-accurate tracking for every sale," "track every sale
+to its source," or similar absolute claims:
+
+**Primary positioning**: Shopify attribution and server-side conversion
+tracking for Meta and Google Ads.
+
+**Suggested intro paragraph**: "Attribix connects your Shopify orders
+with Meta and Google Ads campaign data, giving you clearer attribution
+and a more complete view of ROAS. Server-side tracking reduces
+browser-side tracking gaps, so fewer conversions go unmeasured — compare
+what each ad platform reports against what actually happened in your
+store."
+
+**Suggested feature bullets**:
+- Shopify attribution — connect orders to the campaigns that brought
+  them in
+- Server-side conversion tracking — reduce tracking gaps from ad
+  blockers and browser restrictions
+- Meta Conversions API — purchase and lead events sent server-to-server,
+  deduplicated against your Pixel
+- Google Ads conversion tracking — reconcile Google-reported conversions
+  against actual Shopify orders
+- ROAS and MER reporting — compare platform-reported ROAS with blended,
+  order-based numbers
+- Email, reviews, social scheduling and SEO tools are still real product
+  features (verified in `attribix-app`) — keep them, but as secondary
+  bullets below the attribution/tracking positioning, not the headline.
+
+**Never use**: iOS-proof, pixel-perfect, track every sale, 100%
+accurate, perfect attribution, every conversion, ground truth, guaranteed
+tracking recovery.
+
+## Pricing — verify against the Shopify Partner Dashboard before touching anything
+
+Three different numbers exist across this codebase and its sibling repo
+(`attribix-app`) for the Starter plan, and none of them can be confirmed
+as the actual billed price from source code — the app uses **Shopify
+Managed Pricing**, meaning the real dollar amounts live entirely in the
+Shopify Partner Dashboard, not in any repo:
+
+- **This website** (`/pricing`, homepage, `SoftwareApplication` schema):
+  Starter $39/mo, 14-day trial.
+- **`attribix-app/app/services/plan.server.ts`** (code comment): `//
+  "smallest-plan" in Shopify Partner Dashboard = entry-level "$39/month"
+  plan` — matches the website.
+- **`attribix-app/docs/MARKETING_BRIEF.md`**: "New stores — $19/mo," "all
+  plans include a 7-day free trial" — matches neither the website nor the
+  plan.server.ts comment.
+- **Shopify App Store listing** (per report, not independently verified):
+  reportedly $49/mo Starter.
+
+Growth ($79/mo) and Pro ($149/mo) agree across the website and the
+marketing brief. Only Starter's price and the trial length are in
+dispute, and in three different directions. **Before changing anything**,
+check the Partner Dashboard billing configuration directly — that's the
+only true source of truth — then align the website, `MARKETING_BRIEF.md`,
+and the App Store listing to match it. Do not average the numbers or
+guess; align everything to whatever the Dashboard actually charges.

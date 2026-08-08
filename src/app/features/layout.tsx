@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Features — Ad Tracking, Attribution, Email, Reviews, SEO | Attribix",
-  description: "Attribix combines ad tracking, iOS-proof attribution, email marketing, review collection, social scheduling and SEO audits into one Shopify dashboard.",
+  title: "Shopify Attribution & Tracking Features | Attribix",
+  description: "Explore Attribix features for Shopify attribution, Meta and Google conversion tracking, server-side events, ROAS reporting and campaign measurement.",
   alternates: { canonical: "https://www.attribix.app/features" },
-  openGraph: { title: "Features | Attribix", description: "All 6 tools Shopify stores need — in one dashboard.", url: "https://www.attribix.app/features" },
+  openGraph: { title: "Shopify Attribution & Tracking Features | Attribix", description: "Attribution, server-side tracking, Meta CAPI, Google Ads tracking and ROAS reporting for Shopify stores.", url: "https://www.attribix.app/features" },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

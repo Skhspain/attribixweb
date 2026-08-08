@@ -40,7 +40,7 @@ export default function SignupPage() {
 
           <ul className="space-y-2.5">
             {[
-              "iOS-proof attribution via server-side events",
+              "Server-side events reduce iOS and browser tracking gaps",
               "True ROAS across Meta, Google & Email",
               "Automated reviews & SEO fixes",
               "No credit card required",

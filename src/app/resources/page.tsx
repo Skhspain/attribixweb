@@ -50,8 +50,8 @@ const CORE_GUIDES = [
 
 const GUIDES = [
   {
-    title: "Shopify Server-Side Tracking: Complete Guide",
-    desc: "The cornerstone guide — event architecture, deduplication, consent, testing and the mistakes that undo it.",
+    title: "How Shopify Server-Side Tracking Works",
+    desc: "A technical guide — architecture, Meta and Google deduplication, consent, testing and common implementation mistakes.",
     category: "Server-Side Tracking",
     href: "/resources/shopify-server-side-tracking-guide",
   },

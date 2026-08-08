@@ -45,8 +45,8 @@ const FAQ_JSON_LD = {
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Shopify Server-Side Tracking: Complete Guide",
-  description: "How server-side tracking works for Shopify stores running Meta and Google Ads — architecture, deduplication, consent, testing and common mistakes.",
+  headline: "How Shopify Server-Side Tracking Works: Architecture, Consent & Testing",
+  description: "A technical guide to Shopify server-side tracking: browser vs server events, Meta and Google deduplication, consent, testing and common implementation mistakes.",
   datePublished: "2026-08-08",
   dateModified: "2026-08-08",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
@@ -75,15 +75,21 @@ export default function Page() {
       <section className="mx-auto max-w-3xl px-4 pt-24 pb-10 md:pt-32">
         <Reveal>
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Server-side tracking guide" }]} />
-          <Eyebrow>Server-Side Tracking · Cornerstone guide</Eyebrow>
+          <Eyebrow>Server-Side Tracking · Technical guide</Eyebrow>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
-            Shopify server-side tracking: the complete guide
+            How Shopify server-side tracking works
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             Server-side tracking sends conversion events to Meta and Google
             directly from your backend instead of relying only on the
             customer&apos;s browser. Here&apos;s how the pieces fit together, what it
             actually fixes, and where implementations typically go wrong.
+          </p>
+          <p className="mt-4 text-sm text-white/40 leading-relaxed">
+            Looking for Attribix&apos;s Shopify server-side tracking solution?{" "}
+            <Link href="/server-side-tracking-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              See how it works →
+            </Link>
           </p>
         </Reveal>
       </section>

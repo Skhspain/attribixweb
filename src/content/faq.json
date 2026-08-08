@@ -1,34 +1,30 @@
 [
   {
-    "q": "Does Attribix work with Shopify and WordPress?",
-    "a": "Yes—Shopify and WooCommerce are supported. Connect your store and start streaming events quickly."
+    "q": "Does Attribix work with Shopify and WooCommerce?",
+    "a": "Yes — Shopify and WooCommerce are both supported. Connect your store and start streaming events."
   },
   {
     "q": "How do you track conversions accurately?",
-    "a": "Client-side pixels plus server-side APIs with deduplication and robust match keys (hashed email/phone, fbp/fbc, event_id)."
+    "a": "Attribix combines browser-side and server-side conversion signals. Meta CAPI uses matching parameters and event deduplication; Google Ads uses its own conversion and transaction-ID mechanisms — each platform's own method is used to avoid double-counting."
   },
   {
     "q": "Which attribution models are available?",
-    "a": "Last‑Click, First‑Click, Linear, Time‑Decay. Position‑based (40‑20‑40) is available in Settings."
+    "a": "Last-click, first-click, linear and time-decay — compare them directly in your attribution dashboard, with last-click, first-click or linear available as your account's default model in Settings."
   },
   {
     "q": "How is privacy handled?",
-    "a": "Consent Mode v2, TCF pass‑through, IP anonymization, region‑based disables, and configurable retention."
+    "a": "Attribix supports Google Consent Mode v2, and implements the data-request and deletion webhooks Shopify requires of every app. See our Privacy Policy for full details on what's collected and how it's handled."
   },
   {
-    "q": "Can I export or use an API?",
-    "a": "Yes—CSV exports plus webhooks and a token‑based API for automation."
+    "q": "Can I export my data?",
+    "a": "Yes — CSV exports are available throughout the dashboard, and lead data can be pushed to your own systems via webhook."
   },
   {
-    "q": "Do you support UTM/channel rules?",
-    "a": "Map UTM keys, define grouping rules (contains/regex), and exclude self‑referrals."
-  },
-  {
-    "q": "How do refunds, tax & shipping affect revenue?",
-    "a": "Choose gross/net/confirmed revenue and whether taxes/shipping are included; refunds can be immediate or when processed."
+    "q": "How do refunds, tax and shipping affect revenue?",
+    "a": "Revenue is captured from your Shopify order total at the time of purchase. It doesn't automatically re-adjust if an order is later refunded or edited — for periods with significant refund activity, cross-check against Shopify's own reporting."
   },
   {
     "q": "Is there a free trial?",
-    "a": "Yes—verify tracking and reports during the trial before upgrading."
+    "a": "Yes — verify tracking and reports during the trial before upgrading."
   }
 ]
