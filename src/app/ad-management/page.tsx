@@ -335,18 +335,6 @@ export default function AdManagementPage() {
             </Reveal>
           ))}
         </div>
-        <Reveal delay={100}>
-          <div className="mt-8 text-center">
-            <a
-              href="https://www.fiverr.com/"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              className="text-sm font-semibold text-cyan-400 hover:text-cyan-300 underline underline-offset-4"
-            >
-              Read all verified reviews →
-            </a>
-          </div>
-        </Reveal>
       </section>
 
       {/* ── 9. WHO IT'S FOR ── */}
