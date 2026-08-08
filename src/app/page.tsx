@@ -183,6 +183,8 @@ function Constellation() {
   const rafRef = React.useRef<number | null>(null);
 
   React.useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     const c = canvasRef.current!;
     const ctx = c.getContext("2d")!;
     let w = (c.width = window.innerWidth);
@@ -194,7 +196,7 @@ function Constellation() {
     }
     window.addEventListener("resize", resize);
 
-    const COUNT = 70;
+    const COUNT = 45;
     dotsRef.current = Array.from({ length: COUNT }, () => ({
       x: Math.random() * w,
       y: Math.random() * h,
@@ -722,6 +724,14 @@ function HeroAttributionChart() {
 
   React.useEffect(() => {
     let cancelled = false;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const targets = Array.from({ length: BAR_COUNT }, (_, i) => 20 + i * 3);
+      setHeights(targets);
+      setRevealed(BAR_COUNT);
+      setStep(BAR_COUNT);
+      return;
+    }
 
     const runCycle = () => {
       if (cancelled) return;
@@ -1378,11 +1388,11 @@ export default function Home() {
             </h1>
             <p className="mt-4 text-base sm:text-lg text-white/80 max-w-xl">
               Pixels were not built for today’s privacy rules. Attribix sits between your
-              Shopify store and Meta and Google Ads, captures the{" "}
+              Shopify store and Meta and Google Ads, connects{" "}
               <Link href="/server-side-tracking-shopify" className="underline decoration-white/30 underline-offset-2 hover:decoration-white/70">
-                server-side events
+                server-side and browser signals
               </Link>{" "}
-              pixels miss, and shows you true ROAS — which campaigns actually drive revenue.
+              to reduce tracking loss, and gives you a clearer view of ROAS — which campaigns actually drive revenue.
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -1430,7 +1440,7 @@ export default function Home() {
             </span>
           </h2>
           <p className="text-white/55 max-w-xl mb-12 text-base md:text-lg">
-            Attribix recovers the conversions your pixels miss and shows you exactly which ads drive real revenue — not platform-reported guesses.
+            Attribix recovers conversions your pixels miss and shows you a clearer picture of which ads drive real revenue — not platform-reported guesses.
           </p>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -1509,6 +1519,7 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <p className="mt-3 text-xs text-white/35">Illustrative example, not an average or guaranteed result.</p>
         </Reveal>
       </section>
 
@@ -1565,16 +1576,16 @@ export default function Home() {
                 TRACKING THAT DOES NOT FALL APART
               </div>
               <h3 className="text-lg font-bold">
-                Never lose sales just because tracking broke.
+                Lose fewer sales to tracking gaps.
               </h3>
               <p className="mt-3 text-sm text-white/75">
                 Pixels miss a lot of sales because of ad blockers, iOS updates and strict
-                cookie rules. Attribix pairs pixel data with server-side tracking so those
-                lost sales are recovered and your reports stay close to reality.
+                cookie rules. Attribix pairs pixel data with server-side tracking to recover
+                more of those lost sales and keep your reports closer to reality.
               </p>
               <ul className="mt-4 space-y-1.5 text-sm text-white/75">
                 <li>• Server-side and browser tracking working together</li>
-                <li>• Recover sales pixels miss, especially on iOS and ad-blocked traffic</li>
+                <li>• Recover more sales pixels miss, especially on iOS and ad-blocked traffic</li>
                 <li>• Automatic tracking health checks so you see when something breaks</li>
                 <li>• Clean, model-ready data for attribution and future AI</li>
               </ul>

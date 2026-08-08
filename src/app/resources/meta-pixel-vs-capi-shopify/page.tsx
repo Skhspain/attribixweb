@@ -121,9 +121,11 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What CAPI adds</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             The Conversions API sends the same kind of event — a purchase, a
-            lead — directly from your server to Meta, bypassing the
-            browser entirely. It doesn't care about ad blockers or cookie
-            lifespan, because it never touches the customer's browser. It
+            lead — server-to-server, directly from your backend to Meta,
+            rather than relying only on browser-side delivery. It isn't
+            affected by ad blockers or cookie lifespan, because it never
+            depends on the customer's browser successfully sending the
+            request. It
             depends instead on your server actually knowing the order
             happened, which for a Shopify store means firing it from an
             order webhook or a checkout completion event.
