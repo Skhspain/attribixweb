@@ -48,11 +48,18 @@ const nextConfig = {
     ];
   },
   eslint: {
-    // Allow production builds even when ESLint errors exist
+    // As of 2026-08-08: `npm run lint` is clean everywhere except /src/app/analytics,
+    // /src/app/api and two shared components (~106 pre-existing errors: no-explicit-any,
+    // no-unused-vars, one Clerk prop mismatch, missing `load` identifiers). None are in
+    // the public marketing site. Fix those in a dedicated pass before removing this.
     ignoreDuringBuilds: true,
   },
   typescript: {
-    // Allow builds even with TS errors
+    // As of 2026-08-08: `npm run typecheck` is clean everywhere except /src/app/analytics
+    // (8 pre-existing errors: an implicit-any param, a Clerk UserButton prop mismatch,
+    // and four `Cannot find name 'load'` references in newsletter/reviews pages that look
+    // like a missing import). None are in the public marketing site. Fix those in a
+    // dedicated pass before removing this.
     ignoreBuildErrors: true,
   },
   webpack(config) {

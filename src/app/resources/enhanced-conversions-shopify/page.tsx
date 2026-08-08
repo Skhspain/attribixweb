@@ -74,7 +74,7 @@ export default function Page() {
             Enhanced Conversions send Google hashed first-party customer data
             alongside a standard conversion, so it can match conversions that
             cookie loss or click-ID expiry would otherwise drop. It improves
-            matching. It doesn't fix a broken conversion setup underneath it.
+            matching. It doesn&apos;t fix a broken conversion setup underneath it.
           </p>
         </Reveal>
       </section>
@@ -106,7 +106,7 @@ export default function Page() {
               a browser blocked or shortened the lifespan of the click-ID
               cookie between the click and the purchase, or because the
               purchase happened on a different device than the click. It
-              doesn't create new attribution logic — it just gives Google a
+              doesn&apos;t create new attribution logic — it just gives Google a
               second way to recognize a conversion it would otherwise have
               missed entirely.
             </p>
@@ -117,14 +117,14 @@ export default function Page() {
       {/* WHAT IT DOESN'T FIX */}
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What it isn't</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What it isn&apos;t</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Enhanced Conversions aren't attribution magic. They don't
-            resolve duplicate conversion actions, don't reconcile refunds
-            after the fact, and don't change which attribution model or
-            window Google Ads is using. If your Google Ads revenue doesn't
-            match Shopify's for one of those reasons, turning on Enhanced
-            Conversions won't move the needle — the underlying issue sits
+            Enhanced Conversions aren&apos;t attribution magic. They don&apos;t
+            resolve duplicate conversion actions, don&apos;t reconcile refunds
+            after the fact, and don&apos;t change which attribution model or
+            window Google Ads is using. If your Google Ads revenue doesn&apos;t
+            match Shopify&apos;s for one of those reasons, turning on Enhanced
+            Conversions won&apos;t move the needle — the underlying issue sits
             somewhere else.
           </p>
         </Reveal>
@@ -141,8 +141,8 @@ export default function Page() {
               (browser-side, using the same hashed data pattern as the
               Pixel) or server-side, sent directly from your backend at the
               time of purchase. The server-side version has the same
-              advantage server-side tracking has generally: it doesn't
-              depend on the customer's browser successfully completing the
+              advantage server-side tracking has generally: it doesn&apos;t
+              depend on the customer&apos;s browser successfully completing the
               request.
             </p>
           </Reveal>
@@ -156,7 +156,7 @@ export default function Page() {
           <p className="text-white/60 leading-relaxed text-sm">
             Enhanced Conversions still operate within whatever consent the
             customer has given, governed the same way any other conversion
-            tracking is. Turning the feature on doesn't expand what you're
+            tracking is. Turning the feature on doesn&apos;t expand what you&apos;re
             allowed to measure — it only improves matching within that
             boundary.
           </p>
@@ -183,7 +183,7 @@ export default function Page() {
             </li>
             <li>
               <Link href="/resources/google-ads-shopify-revenue-doesnt-match" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
-                Why Google Ads and Shopify revenue don't match
+                Why Google Ads and Shopify revenue don&apos;t match
               </Link>
             </li>
             <li>

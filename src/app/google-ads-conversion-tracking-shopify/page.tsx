@@ -140,7 +140,7 @@ export default function GoogleAdsTrackingPage() {
 
           <Reveal delay={180} className="mt-6">
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-              <p className="text-xs font-semibold uppercase tracking-wide text-white/40 mb-4">How a refund reaches the conversion, if it's wired up</p>
+              <p className="text-xs font-semibold uppercase tracking-wide text-white/40 mb-4">How a refund reaches the conversion, if it&apos;s wired up</p>
               <div className="flex flex-wrap items-center gap-2 text-sm">
                 {["Shopify order", "Original checkout value", "Google Ads conversion", "Refund or cancellation", "Adjusted net result"].map((step, i, arr) => (
                   <div key={step} className="flex items-center gap-2">
@@ -211,7 +211,7 @@ export default function GoogleAdsTrackingPage() {
             <ul className="space-y-2 text-white/60 leading-relaxed list-disc list-inside">
               <li>Duplicate tags firing on the same page</li>
               <li>Multiple primary purchase conversion actions</li>
-              <li>Duplicate conversion actions from Shopify's app plus a custom tag</li>
+              <li>Duplicate conversion actions from Shopify&apos;s app plus a custom tag</li>
               <li>Incorrect event or trigger setup</li>
               <li>Incorrect revenue values in the event</li>
               <li>Attribution settings crediting more than one interaction</li>

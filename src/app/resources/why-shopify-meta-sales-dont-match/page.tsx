@@ -77,9 +77,9 @@ export default function Page() {
             Why Shopify and Meta Ads show different sales numbers
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            Meta's Ads Manager and your Shopify orders page are measuring two
+            Meta&apos;s Ads Manager and your Shopify orders page are measuring two
             different things, on two different windows, with two different
-            standards of evidence. The gap between them isn't a bug — it's
+            standards of evidence. The gap between them isn&apos;t a bug — it&apos;s
             what you should expect.
           </p>
         </Reveal>
@@ -91,11 +91,11 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">A transaction record vs. an attribution model</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             Shopify records a fact: an order was placed, for this amount, at
-            this time. Meta doesn't have access to that fact directly — it
+            this time. Meta doesn&apos;t have access to that fact directly — it
             estimates which of its ads probably caused a purchase, using its
             own attribution model, and reports revenue against that estimate.
             One is a ledger. The other is a model built on incomplete
-            visibility into what happened outside Meta's own properties.
+            visibility into what happened outside Meta&apos;s own properties.
           </p>
         </Reveal>
       </section>
@@ -107,7 +107,7 @@ export default function Page() {
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Attribution windows count different time periods</h2>
             <p className="text-white/60 leading-relaxed text-sm">
-              Meta's default attribution setting credits a purchase to an ad
+              Meta&apos;s default attribution setting credits a purchase to an ad
               if it happened within a set window after a click or a view —
               commonly 7 days after a click, 1 day after a view, though this
               is configurable per ad account. A customer who saw an ad on
@@ -125,11 +125,11 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">View-through credit inflates the count</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             Click-through attribution — someone clicked the ad, then bought —
-            is the more defensible half of Meta's number. View-through
+            is the more defensible half of Meta&apos;s number. View-through
             attribution credits a purchase to an ad the customer saw but
             never clicked, based on the assumption that the impression
             influenced the decision. That assumption is unverifiable at the
-            individual level. It's also the single biggest reason Meta's
+            individual level. It&apos;s also the single biggest reason Meta&apos;s
             reported sales run higher than what a click-only view would show.
           </p>
         </Reveal>
@@ -144,12 +144,12 @@ export default function Page() {
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               A customer scrolls Instagram on their phone, then buys on a
               laptop an hour later. Meta can sometimes bridge that with
-              logged-in identity signals, sometimes can't. Separately, Meta
+              logged-in identity signals, sometimes can&apos;t. Separately, Meta
               and Google frequently claim the same order — a customer who saw
               a Meta ad and later searched the brand name on Google can show
-              up as a conversion in both platforms' reporting, each unaware
-              of the other's claim. Add both platforms' numbers together and
-              you'll usually overstate total attributed revenue.
+              up as a conversion in both platforms&apos; reporting, each unaware
+              of the other&apos;s claim. Add both platforms&apos; numbers together and
+              you&apos;ll usually overstate total attributed revenue.
             </p>
           </Reveal>
         </div>
@@ -162,14 +162,14 @@ export default function Page() {
           <p className="text-white/60 leading-relaxed text-sm">
             Browser restrictions, ad blockers and declined tracking consent
             reduce what Meta can observe directly — which, on its own, would
-            undercount Meta's true influence. Server-side tracking (Meta
+            undercount Meta&apos;s true influence. Server-side tracking (Meta
             Conversions API) recovers some of that lost signal, but it still
             depends on the customer having consented and on enough matching
             data being sent. The undercounting pressure from tracking loss
             and the overcounting pressure from view-through credit and
             cross-platform double-claiming are pulling in opposite
             directions at the same time — which is part of why the gap
-            between platforms isn't consistent from month to month.
+            between platforms isn&apos;t consistent from month to month.
           </p>
         </Reveal>
       </section>
@@ -179,17 +179,17 @@ export default function Page() {
         <div className="absolute inset-0 -z-10 bg-black/15" />
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>
-            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What's actually worth checking</h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What&apos;s actually worth checking</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-              Chasing an exact match between Meta and Shopify isn't a
-              realistic goal — the two systems aren't measuring the same
-              thing by design. What's worth checking is whether the{" "}
+              Chasing an exact match between Meta and Shopify isn&apos;t a
+              realistic goal — the two systems aren&apos;t measuring the same
+              thing by design. What&apos;s worth checking is whether the{" "}
               <em>ratio</em> between them stays roughly stable over time. A
               sudden jump — Meta suddenly reporting 40% more or less than
               usual relative to Shopify — is a signal something changed:
               a tracking break, a new attribution setting, or a duplicate
-              event issue. That's a more useful question than "why don't
-              these two numbers match."
+              event issue. That&apos;s a more useful question than &quot;why don&apos;t
+              these two numbers match.&quot;
             </p>
           </Reveal>
         </div>

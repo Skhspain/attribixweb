@@ -139,8 +139,8 @@ export default function UTMBuilderPage() {
       <div className="rounded-xl border bg-white p-5">
         <h3 className="text-sm font-semibold mb-3">Tips</h3>
         <ul className="text-sm text-slate-500 space-y-2">
-          <li>• Use <strong>lowercase</strong> for all UTM values — "Facebook" and "facebook" are tracked separately</li>
-          <li>• Use <strong>underscores</strong> instead of spaces — "summer_sale" not "summer sale"</li>
+          <li>• Use <strong>lowercase</strong> for all UTM values — &quot;Facebook&quot; and &quot;facebook&quot; are tracked separately</li>
+          <li>• Use <strong>underscores</strong> instead of spaces — &quot;summer_sale&quot; not &quot;summer sale&quot;</li>
           <li>• Be <strong>consistent</strong> — use the same source/medium naming across all campaigns</li>
           <li>• UTM data shows up in your <strong>Attribution</strong> and <strong>Orders</strong> pages within minutes</li>
         </ul>

@@ -18,7 +18,7 @@ export default function ComparePage() {
             How Attribix compares
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            We're not publishing comparison pages until we can verify the
+            We&apos;re not publishing comparison pages until we can verify the
             other side of them — current pricing, current feature sets, and
             an honest read of who each tool actually suits.
           </p>
@@ -28,13 +28,13 @@ export default function ComparePage() {
       {/* HONEST STATE */}
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Why there's nothing here yet</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Why there&apos;s nothing here yet</h2>
           <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
             Competitor pricing and feature sets change, and a comparison
             built on stale or unverified information is worse than no
-            comparison at all. When we publish one, it'll cover pricing and
-            features we've actually verified, be honest about which tool
-            fits which store, and won't pretend every alternative is worse
+            comparison at all. When we publish one, it&apos;ll cover pricing and
+            features we&apos;ve actually verified, be honest about which tool
+            fits which store, and won&apos;t pretend every alternative is worse
             across the board.
           </p>
         </Reveal>

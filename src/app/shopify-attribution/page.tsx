@@ -197,7 +197,7 @@ export default function ShopifyAttributionPage() {
                 <tr className="border-b border-white/10 text-left text-white/40 text-xs uppercase tracking-wide">
                   <th className="py-2 pr-4 font-medium">Model</th>
                   <th className="py-2 pr-4 font-medium">Credit assigned</th>
-                  <th className="py-2 font-medium">What it's good for</th>
+                  <th className="py-2 font-medium">What it&apos;s good for</th>
                 </tr>
               </thead>
               <tbody>
@@ -255,13 +255,13 @@ export default function ShopifyAttributionPage() {
             <Reveal delay={40}>
               <div>
                 <p className="text-sm font-semibold text-white">Data sources</p>
-                <p className="mt-1.5 text-sm text-white/55 leading-relaxed">Shopify order data, Meta Ads spend and campaign data, and Google Ads spend and campaign data — read from each platform's own reporting API.</p>
+                <p className="mt-1.5 text-sm text-white/55 leading-relaxed">Shopify order data, Meta Ads spend and campaign data, and Google Ads spend and campaign data — read from each platform&apos;s own reporting API.</p>
               </div>
             </Reveal>
             <Reveal delay={80}>
               <div>
                 <p className="text-sm font-semibold text-white">Attribution window</p>
-                <p className="mt-1.5 text-sm text-white/55 leading-relaxed">Configurable rather than fixed, since a 7-day and a 30-day window will genuinely disagree on the same orders — there's no single window that's correct for every business.</p>
+                <p className="mt-1.5 text-sm text-white/55 leading-relaxed">Configurable rather than fixed, since a 7-day and a 30-day window will genuinely disagree on the same orders — there&apos;s no single window that&apos;s correct for every business.</p>
               </div>
             </Reveal>
             <Reveal delay={120}>
@@ -273,7 +273,7 @@ export default function ShopifyAttributionPage() {
             <Reveal delay={160}>
               <div>
                 <p className="text-sm font-semibold text-white">Direct traffic and refunds</p>
-                <p className="mt-1.5 text-sm text-white/55 leading-relaxed">Visits with no campaign source stay labelled as direct rather than being forced onto a channel, and refunded orders follow Shopify's own order data.</p>
+                <p className="mt-1.5 text-sm text-white/55 leading-relaxed">Visits with no campaign source stay labelled as direct rather than being forced onto a channel, and refunded orders follow Shopify&apos;s own order data.</p>
               </div>
             </Reveal>
           </div>
@@ -325,7 +325,7 @@ export default function ShopifyAttributionPage() {
             </li>
             <li>
               <Link href="/shopify-roas-tracking" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
-                Why platform-reported ROAS shouldn't just be added together
+                Why platform-reported ROAS shouldn&apos;t just be added together
               </Link>
             </li>
             <li>

@@ -143,7 +143,7 @@ export default function MetaCapiPage() {
               <thead>
                 <tr className="border-b border-white/10 text-left text-white/40 text-xs uppercase tracking-wide">
                   <th className="py-2 pr-4 font-medium">What you see</th>
-                  <th className="py-2 font-medium">What's usually happening</th>
+                  <th className="py-2 font-medium">What&apos;s usually happening</th>
                 </tr>
               </thead>
               <tbody>
@@ -189,6 +189,14 @@ export default function MetaCapiPage() {
             consent hasn&apos;t been given, the corresponding server event
             shouldn&apos;t be sent either — the API changes how data travels,
             not whether the customer&apos;s decision applies.
+          </p>
+          <p className="mt-4 text-white/60 leading-relaxed text-sm max-w-2xl">
+            Running Google Ads as well? Google uses its own conversion setup
+            rather than Meta&apos;s event ID — see{" "}
+            <Link href="/google-ads-conversion-tracking-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              Google Ads conversion tracking for Shopify
+            </Link>
+            .
           </p>
         </Reveal>
       </section>

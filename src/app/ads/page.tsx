@@ -73,42 +73,6 @@ function ServiceCard({
   );
 }
 
-function TestimonialCard({
-  quote,
-  name,
-  role,
-  result,
-  delay = 0,
-}: {
-  quote: string;
-  name: string;
-  role: string;
-  result: string;
-  delay?: number;
-}) {
-  return (
-    <Reveal delay={delay}>
-      <div className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/5 p-7 backdrop-blur-sm">
-        <blockquote className="flex-1 text-sm leading-relaxed text-white/65 italic">
-          &ldquo;{quote}&rdquo;
-        </blockquote>
-        <div className="mt-6 border-t border-white/10 pt-5 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 text-xs font-bold text-white">
-              {name[0]}
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-white">{name}</p>
-              <p className="text-xs text-white/35">{role}</p>
-            </div>
-          </div>
-          <p className="text-xs font-semibold text-cyan-400 text-right max-w-[110px] leading-snug">{result}</p>
-        </div>
-      </div>
-    </Reveal>
-  );
-}
-
 export default function AdsAgencyPage() {
   return (
     <div className="min-h-screen bg-[#050819] font-sans text-white antialiased">
@@ -238,42 +202,6 @@ export default function AdsAgencyPage() {
               delay={500}
               title="Honest reporting"
               body="No vanity metrics. You see real revenue, real ROAS, and real recommendations — including when we think you should spend less."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* ── TESTIMONIALS ── */}
-      <section className="border-t border-white/[0.06] bg-gradient-to-b from-indigo-950/20 to-transparent px-5 py-28">
-        <div className="mx-auto max-w-6xl">
-          <Reveal>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-cyan-400">Client results</p>
-            <h2 className="mb-16 max-w-lg text-3xl font-extrabold tracking-tight sm:text-4xl">
-              The work tends to speak for itself.
-            </h2>
-          </Reveal>
-
-          <div className="grid gap-5 sm:grid-cols-3">
-            <TestimonialCard
-              delay={0}
-              result="Best revenue quarter on record"
-              quote="They restructured our entire Meta account in the first month. We'd been wasting budget on audiences that looked right but weren't. The shift was immediately visible in revenue."
-              name="Sarah K."
-              role="Founder, Apex Skin · Shopify Plus"
-            />
-            <TestimonialCard
-              delay={100}
-              result="22% less spend, same revenue"
-              quote="Most agencies want you to spend more — it's how they justify their fee. Attribix told us to cut two campaigns entirely. They were right. That budget went somewhere it actually worked."
-              name="Marcus T."
-              role="Head of Growth, Tempo Gear"
-            />
-            <TestimonialCard
-              delay={200}
-              result="Google ROAS up 2.4× in 6 weeks"
-              quote="We'd been running the same Google structure for two years assuming it was fine. It wasn't. Within six weeks of them taking over, the numbers were completely different."
-              name="Priya M."
-              role="Performance Lead, Glow Collective"
             />
           </div>
         </div>

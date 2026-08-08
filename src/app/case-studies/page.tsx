@@ -18,7 +18,7 @@ export default function CaseStudiesPage() {
             Case studies
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            We're putting together real case studies from actual Attribix
+            We&apos;re putting together real case studies from actual Attribix
             implementations — the tracking setup before, what changed, and
             what the data showed afterward.
           </p>
@@ -30,11 +30,11 @@ export default function CaseStudiesPage() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Nothing published here yet</h2>
           <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-            We'd rather publish this page empty than fill it with
+            We&apos;d rather publish this page empty than fill it with
             illustrative numbers dressed up as results. When a case study
-            goes up, it'll show a real store, a real tracking setup, and
+            goes up, it&apos;ll show a real store, a real tracking setup, and
             real before-and-after data — with client approval, and with the
-            same honesty about limitations you'll find throughout this site.
+            same honesty about limitations you&apos;ll find throughout this site.
           </p>
         </Reveal>
       </section>
@@ -45,7 +45,7 @@ export default function CaseStudiesPage() {
           <h2 className="text-2xl md:text-3xl font-extrabold">See what Attribix shows for your own store</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             Connect your store and ad accounts and see your own numbers
-            instead of waiting on someone else's.
+            instead of waiting on someone else&apos;s.
           </p>
           <ProductCTA className="mt-8 justify-center" />
         </Reveal>

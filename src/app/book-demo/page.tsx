@@ -1,15 +1,10 @@
 "use client";
 
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BookDemoForm from "../../components/BookDemoForm";
 
 export default function BookDemoPage() {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-[#0F0620] via-[#0E1530] to-[#053B56] text-white">
       <Header />

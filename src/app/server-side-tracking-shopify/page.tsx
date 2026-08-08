@@ -119,7 +119,7 @@ export default function ServerSideTrackingPage() {
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
             <p className="text-xs font-semibold uppercase tracking-wide text-white/40 mb-4">What one purchase event goes through</p>
             <div className="flex flex-wrap items-center gap-2 text-sm">
-              {["Browser event received", "Server event received", "Shared event ID", "Deduplicated", "Purchase recorded"].map((step, i, arr) => (
+              {["Browser signal", "Server-side signal", "Platform-specific matching", "Duplicate prevention", "Purchase recorded"].map((step, i, arr) => (
                 <div key={step} className="flex items-center gap-2">
                   <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-white/70">{step}</span>
                   {i < arr.length - 1 && <span aria-hidden className="text-white/25">→</span>}
@@ -159,13 +159,16 @@ export default function ServerSideTrackingPage() {
               <div className="flex gap-5">
                 <span className="mt-0.5 shrink-0 text-2xl font-extrabold text-white/10">02</span>
                 <div>
-                  <p className="font-semibold text-white text-sm">Deduplication</p>
+                  <p className="font-semibold text-white text-sm">Duplicate prevention</p>
                   <p className="mt-1.5 text-sm text-white/55 leading-relaxed">
                     Running both a browser pixel and a server event for the
                     same purchase means the ad platform could count it twice.
-                    A shared event ID tells Meta or Google &ldquo;these are the
-                    same purchase&rdquo; so it&apos;s counted once, not that one
-                    method wins over the other.
+                    Meta and Google handle this differently: Meta can
+                    deduplicate matching browser and server events using a
+                    shared event ID, while Google Ads relies on its own
+                    conversion-action setup and unique transaction identifiers
+                    to prevent the same purchase from being counted more than
+                    once.
                   </p>
                 </div>
               </div>
@@ -264,6 +267,11 @@ export default function ServerSideTrackingPage() {
             <li>
               <Link href="/resources/meta-pixel-vs-capi-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Meta Pixel vs Conversions API for Shopify
+              </Link>
+            </li>
+            <li>
+              <Link href="/shopify-roas-tracking" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Shopify ROAS tracking
               </Link>
             </li>
           </ul>

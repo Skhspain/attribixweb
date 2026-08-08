@@ -4,7 +4,7 @@ import MagneticButton from "@/components/MagneticButton";
 
 declare global {
   interface Window {
-    fbq: (...args: unknown[]) => void;
+    fbq?: (...args: unknown[]) => void;
   }
 }
 

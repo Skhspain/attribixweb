@@ -59,9 +59,9 @@ export default function Page() {
             How to fix duplicate purchases in Meta Ads for Shopify
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            If Ads Manager shows more purchases than Shopify's order count,
-            the same sale is almost certainly being reported twice. It's
-            usually one of a small number of causes, and it's usually
+            If Ads Manager shows more purchases than Shopify&apos;s order count,
+            the same sale is almost certainly being reported twice. It&apos;s
+            usually one of a small number of causes, and it&apos;s usually
             fixable in an afternoon.
           </p>
         </Reveal>
@@ -70,9 +70,9 @@ export default function Page() {
       {/* HOW TO SPOT IT */}
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">How to confirm it's actually duplication</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">How to confirm it&apos;s actually duplication</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Compare Ads Manager's reported purchase count against Shopify's
+            Compare Ads Manager&apos;s reported purchase count against Shopify&apos;s
             order count for the same date range and, if possible, the same
             attributed customers. A gap that roughly tracks with order
             volume — say, consistently 15-20% higher — points to systematic
@@ -125,9 +125,9 @@ export default function Page() {
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Why this is worth fixing quickly</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-              Duplicate purchases don't just distort your reporting — they
-              distort Meta's automated bidding, which optimizes toward
-              whatever conversion signal it's receiving. If that signal is
+              Duplicate purchases don&apos;t just distort your reporting — they
+              distort Meta&apos;s automated bidding, which optimizes toward
+              whatever conversion signal it&apos;s receiving. If that signal is
               inflated, budget gets pushed toward audiences and placements
               that look artificially efficient. Fixing deduplication is one
               of the few tracking issues that directly changes how your
