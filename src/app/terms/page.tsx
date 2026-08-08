@@ -6,13 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 /* -----------------------------------------------------
-   Small helpers
------------------------------------------------------ */
-function cx(...xs: Array<string | false | null | undefined>) {
-  return xs.filter(Boolean).join(" ");
-}
-
-/* -----------------------------------------------------
    Copy email helper (same as on home)
 ----------------------------------------------------- */
 function CopyEmail({ email }: { email: string }) {

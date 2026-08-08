@@ -53,7 +53,7 @@ export default function Page() {
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             An attribution model decides which touchpoint gets credit for a
-            sale. There's no model that's objectively correct — each one
+            sale. There&apos;s no model that&apos;s objectively correct — each one
             answers a slightly different question, and picking one is a
             deliberate trade-off, not a technical detail.
           </p>
@@ -71,7 +71,7 @@ export default function Page() {
             purchase. Ask five different attribution models who gets credit
             for that sale, and you get five different answers — none of them
             wrong, because none of them are describing an objective fact.
-            They're describing a rule you chose to apply.
+            They&apos;re describing a rule you chose to apply.
           </p>
         </Reveal>
       </section>
@@ -106,10 +106,10 @@ export default function Page() {
             counts. A 7-day click / 1-day view window will produce a
             noticeably different attributed-revenue number than a 28-day
             click / 1-day view window applied to the exact same orders —
-            without either being more "accurate." Longer windows generally
+            without either being more &quot;accurate.&quot; Longer windows generally
             attribute more revenue to advertising; shorter windows attribute
             less. Neither is measuring something different about your
-            customers — they're just drawing the line at a different point.
+            customers — they&apos;re just drawing the line at a different point.
           </p>
         </Reveal>
       </section>
@@ -123,11 +123,11 @@ export default function Page() {
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               Meta and Google each apply their own attribution model, on
               their own window, using only the touchpoints they can see on
-              their own platform. Meta doesn't know about the Google search
+              their own platform. Meta doesn&apos;t know about the Google search
               that happened between the ad view and the purchase. Google
-              doesn't know about the Instagram scroll. Each platform reports
+              doesn&apos;t know about the Instagram scroll. Each platform reports
               as if its own touchpoints were the whole story, because from
-              where it's sitting, they're all it can observe. That's the
+              where it&apos;s sitting, they&apos;re all it can observe. That&apos;s the
               root cause of most Meta-vs-Google attribution disagreements —
               not a bug in either platform, but a structural limit of
               single-platform measurement.
@@ -139,16 +139,16 @@ export default function Page() {
       {/* PICKING ONE */}
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">There's no universally "right" model to pick</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">There&apos;s no universally &quot;right&quot; model to pick</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             The honest framing is that an attribution model is a lens, not a
             measurement instrument. Last-click tends to undervalue
             top-of-funnel discovery spend. First-click tends to overvalue it.
             Data-driven models are the most balanced in theory but require
             enough conversion volume to be statistically stable, and their
-            internal logic isn't fully auditable. What matters more than
-            picking the "correct" model is picking one, being consistent
-            about which one you're looking at, and not comparing numbers
+            internal logic isn&apos;t fully auditable. What matters more than
+            picking the &quot;correct&quot; model is picking one, being consistent
+            about which one you&apos;re looking at, and not comparing numbers
             produced under different models as if they were the same
             metric.
           </p>
@@ -185,7 +185,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold">See your orders under a consistent model</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             Attribix applies one clear methodology across Meta and Google, so
-            you're comparing campaigns on the same terms.
+            you&apos;re comparing campaigns on the same terms.
           </p>
           <ProductCTA className="mt-8 justify-center" />
         </Reveal>

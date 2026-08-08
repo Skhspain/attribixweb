@@ -49,12 +49,12 @@ export default function Page() {
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Google Ads vs Shopify revenue" }]} />
           <Eyebrow>Google Ads Tracking</Eyebrow>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
-            Why Google Ads and Shopify revenue don't match
+            Why Google Ads and Shopify revenue don&apos;t match
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            Five separate mechanics all push Google Ads' reported revenue
-            away from Shopify's order total, usually at the same time and in
-            different directions. Here's what's actually happening.
+            Five separate mechanics all push Google Ads&apos; reported revenue
+            away from Shopify&apos;s order total, usually at the same time and in
+            different directions. Here&apos;s what&apos;s actually happening.
           </p>
         </Reveal>
       </section>
@@ -81,8 +81,8 @@ export default function Page() {
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Performance Max makes accurate value more important, not less</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-              PMax's automated bidding optimizes directly against whatever
-              conversion value it's given. It doesn't add a new source of
+              PMax&apos;s automated bidding optimizes directly against whatever
+              conversion value it&apos;s given. It doesn&apos;t add a new source of
               mismatch on its own, but because it leans on conversion value
               more heavily than manually managed Search or Shopping
               campaigns, any existing tracking error — duplicate
@@ -96,13 +96,13 @@ export default function Page() {
       {/* WHAT TO CHECK */}
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What's actually worth checking</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What&apos;s actually worth checking</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Start with Google Ads' own conversion action settings — confirm
-            there's exactly one primary conversion action for Purchase, not
+            Start with Google Ads&apos; own conversion action settings — confirm
+            there&apos;s exactly one primary conversion action for Purchase, not
             a primary and a secondary both counting. Then check whether
             refunds are being reported back to Google Ads at all (they
-            usually aren't, by default). Then compare the ratio between the
+            usually aren&apos;t, by default). Then compare the ratio between the
             two systems over a stable period rather than chasing an exact
             daily match, which conversion-date-vs-order-date timing alone
             makes unlikely.

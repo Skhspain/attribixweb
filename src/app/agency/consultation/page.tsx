@@ -131,7 +131,7 @@ export default function ConsultationPage() {
 
           {/* Left — what's included */}
           <Reveal className="space-y-5">
-            <h2 className="text-xl font-bold text-white/90">What's included</h2>
+            <h2 className="text-xl font-bold text-white/90">What&apos;s included</h2>
 
             <div className="space-y-4">
               {INCLUDES.map((item, i) => (
@@ -152,7 +152,7 @@ export default function ConsultationPage() {
             {/* Trust note */}
             <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-4 text-sm text-white/60 leading-relaxed">
               <span className="text-cyan-400 font-semibold">Honest advice only.</span>{" "}
-              If we don't think paid ads are your biggest lever right now, we'll tell you — and point you in the right direction instead.
+              If we don&apos;t think paid ads are your biggest lever right now, we&apos;ll tell you — and point you in the right direction instead.
             </div>
 
             <Link

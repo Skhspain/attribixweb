@@ -60,16 +60,16 @@ export default function AboutPage() {
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Two ways to work with the same team</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-              Most Shopify stores using Attribix run it as self-serve
-              software — connect Shopify, Meta and Google, and see
-              attribution and tracking in one dashboard. Some also work with
-              bevit directly for{" "}
+              Shopify stores can use Attribix as self-serve software —
+              connecting Shopify, Meta and Google to view attribution and
+              tracking in one dashboard. Businesses that want more can
+              separately work with bevit directly for{" "}
               <Link href="/ad-management" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Ad Management
               </Link>
               , where the same team runs the campaigns using the same
               underlying data. The two are separate, optional paths — using
-              Attribix doesn't require using Ad Management, and vice versa.
+              Attribix doesn&apos;t require using Ad Management, and vice versa.
             </p>
           </Reveal>
         </div>
@@ -78,7 +78,7 @@ export default function AboutPage() {
       {/* WHERE */}
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Who's behind it</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Who&apos;s behind it</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             Attribix is operated by bevit. Legal and contact details are in
             the{" "}

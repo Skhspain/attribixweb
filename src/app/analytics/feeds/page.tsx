@@ -70,9 +70,9 @@ export default function FeedsPage() {
           <strong>Setup steps:</strong>
           <ol className="list-decimal ml-4 mt-2 space-y-1">
             <li>Go to Google Merchant Center → Products → Feeds</li>
-            <li>Click "Add product feed" → choose "Scheduled fetch"</li>
+            <li>Click &quot;Add product feed&quot; → choose &quot;Scheduled fetch&quot;</li>
             <li>Paste the Product Feed URL above</li>
-            <li>Set fetch schedule to "Daily"</li>
+            <li>Set fetch schedule to &quot;Daily&quot;</li>
             <li>For Reviews: go to Merchant Center → Reviews → Settings → paste Reviews Feed URL</li>
           </ol>
         </div>
@@ -101,7 +101,7 @@ export default function FeedsPage() {
       {/* Pinterest / Microsoft */}
       <section className="rounded-xl border bg-white p-5">
         <h2 className="font-semibold mb-2">Other Platforms</h2>
-        <p className="text-sm text-slate-500">The same product feed URL works with Pinterest Shopping, Microsoft Shopping, and Amazon — just paste it in each platform's catalog settings.</p>
+        <p className="text-sm text-slate-500">The same product feed URL works with Pinterest Shopping, Microsoft Shopping, and Amazon — just paste it in each platform&apos;s catalog settings.</p>
       </section>
     </div>
   );

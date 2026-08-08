@@ -69,7 +69,7 @@ export default function MerCalculatorPage() {
                   onChange={(e) => setRevenue(e.target.value)}
                   className={inputClass}
                 />
-                <p className="mt-1.5 text-xs text-white/35">For the period you're measuring — not just ad-attributed revenue.</p>
+                <p className="mt-1.5 text-xs text-white/35">For the period you&apos;re measuring — not just ad-attributed revenue.</p>
               </div>
               <div>
                 <label className={labelClass}>Total marketing spend ($)</label>
@@ -98,7 +98,7 @@ export default function MerCalculatorPage() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">How this is calculated</h2>
           <p className="text-sm text-white/60 leading-relaxed max-w-2xl">
             MER is total revenue ÷ total marketing spend. Unlike ROAS, it
-            doesn't rely on any platform crediting specific orders to
+            doesn&apos;t rely on any platform crediting specific orders to
             specific ads — which makes it steadier, but less useful for
             comparing individual campaigns. See{" "}
             <Link href="/resources/mer-vs-roas-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">

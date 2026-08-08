@@ -44,8 +44,8 @@ export default function Page() {
             How to calculate true ROAS on Shopify
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            "Platform ROAS," "blended ROAS" and "true ROAS" get used
-            interchangeably, but they're three different calculations that
+            &quot;Platform ROAS,&quot; &quot;blended ROAS&quot; and &quot;true ROAS&quot; get used
+            interchangeably, but they&apos;re three different calculations that
             can produce three noticeably different numbers from the same
             spend and the same orders.
           </p>
@@ -58,12 +58,12 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Platform ROAS: what Meta or Google reports on its own</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             This is the ROAS shown inside Ads Manager or Google Ads itself —
-            attributed revenue from that platform's own model, divided by
-            that platform's own spend. It only counts orders that platform's
+            attributed revenue from that platform&apos;s own model, divided by
+            that platform&apos;s own spend. It only counts orders that platform&apos;s
             attribution decided to credit to itself, using its own window
-            and model. It's the least reliable of the three for judging
+            and model. It&apos;s the least reliable of the three for judging
             total business impact, because it was never designed to
-            represent anything beyond that platform's own view.
+            represent anything beyond that platform&apos;s own view.
           </p>
         </Reveal>
       </section>
@@ -76,13 +76,13 @@ export default function Page() {
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Blended ROAS: combining spend against attributed revenue</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               Blended ROAS adds Meta and Google spend together and divides by
-              their combined attributed revenue. It's a step closer to
+              their combined attributed revenue. It&apos;s a step closer to
               reality, but it inherits a problem from both platforms:
               because Meta and Google each independently attribute some of
               the same orders to themselves, simply adding their reported
               revenue together double-counts the overlap. Blended ROAS
               calculated this way is still usually inflated — just less
-              inflated than either platform's number alone.
+              inflated than either platform&apos;s number alone.
             </p>
           </Reveal>
         </div>
@@ -96,10 +96,10 @@ export default function Page() {
             True ROAS steps outside platform attribution entirely: total ad
             spend across every channel, divided by actual Shopify revenue
             for a comparable period — net of refunds, with discounts and tax
-            treated consistently. It doesn't try to credit specific orders
+            treated consistently. It doesn&apos;t try to credit specific orders
             to specific ads. It answers a plainer question: for what you
             spent on advertising, how much did the store actually take in.
-            That's closer to what MER measures, covered in more detail on
+            That&apos;s closer to what MER measures, covered in more detail on
             the MER vs ROAS page.
           </p>
         </Reveal>
@@ -112,14 +112,14 @@ export default function Page() {
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Refunds, discounts, tax and revenue windows</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-              Even "actual Shopify revenue" isn't a single obvious figure.
+              Even &quot;actual Shopify revenue&quot; isn&apos;t a single obvious figure.
               Gross sales, net sales after discounts and refunds, and
               revenue including tax and shipping can each tell a different
               ROAS story from the same underlying orders. A refund processed
               two weeks after the sale rarely gets reflected back into
               platform-reported ROAS at all, but it should reduce true ROAS
-              if you're calculating it from net revenue. Decide which
-              revenue figure you're using and apply it consistently — mixing
+              if you&apos;re calculating it from net revenue. Decide which
+              revenue figure you&apos;re using and apply it consistently — mixing
               gross platform numbers against net Shopify numbers is a common
               way the comparison gets distorted without anyone noticing.
             </p>
@@ -133,9 +133,9 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What Attribix shows instead</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             Attribix combines Meta and Google spend with net Shopify revenue
-            and shows blended ROAS and true ROAS alongside each platform's
+            and shows blended ROAS and true ROAS alongside each platform&apos;s
             own reported number — so the gap between them is visible, rather
-            than something you'd only notice by reconciling spreadsheets
+            than something you&apos;d only notice by reconciling spreadsheets
             manually.
           </p>
         </Reveal>

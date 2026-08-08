@@ -80,32 +80,6 @@ function Reveal({
 }
 
 /* -----------------------------------------------------
-   Scroll spy (active nav)
-   (kept for potential future use, not used now)
------------------------------------------------------ */
-function useScrollSpy(ids: string[], offset = 100) {
-  const [active, setActive] = React.useState<string | null>(null);
-  React.useEffect(() => {
-    const els = ids
-      .map((id) => document.getElementById(id))
-      .filter(Boolean) as HTMLElement[];
-    if (!els.length) return;
-    const obs = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible?.target) setActive((visible.target as HTMLElement).id);
-      },
-      { rootMargin: `-${offset}px 0px -60% 0px`, threshold: [0, 0.3, 0.6] }
-    );
-    els.forEach((el) => obs.observe(el));
-    return () => obs.disconnect();
-  }, [ids, offset]);
-  return active;
-}
-
-/* -----------------------------------------------------
    Cursor spotlight
 ----------------------------------------------------- */
 function CursorSpotlight() {
@@ -445,10 +419,12 @@ function MagneticButton({
   href,
   children,
   className = "",
+  onClick,
 }: {
   href: string;
   children: React.ReactNode;
   className?: string;
+  onClick?: () => void;
 }) {
   const ref = React.useRef<HTMLSpanElement | null>(null);
   function onMove(e: React.MouseEvent<HTMLAnchorElement>) {
@@ -467,6 +443,7 @@ function MagneticButton({
       href={href}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
+      onClick={onClick}
       className={cx(
         "relative inline-flex items-center justify-center rounded-xl bg-white text-gray-900 px-5 py-3 font-semibold transition-transform will-change-transform",
         "shadow-[0_10px_40px_-10px_rgba(255,255,255,.25)] hover:shadow-[0_14px_50px_-12px_rgba(255,255,255,.35)]",
@@ -513,7 +490,7 @@ function Marquee({ items }: { items: MarqueeItem[] }) {
                 </svg>
               ))}
             </div>
-            <p className="text-sm leading-relaxed text-white/85 flex-1">"{it.quote}"</p>
+            <p className="text-sm leading-relaxed text-white/85 flex-1">&quot;{it.quote}&quot;</p>
             <div className="flex items-center gap-2 pt-1 border-t border-white/8">
               <div className="h-6 w-6 rounded-full bg-gradient-to-br from-cyan-500 to-indigo-500 flex items-center justify-center text-[10px] font-bold text-white">
                 {it.author[0]}
@@ -538,74 +515,20 @@ function Marquee({ items }: { items: MarqueeItem[] }) {
 }
 
 /* -----------------------------------------------------
-   Metrics strip (kept, not used right now)
+   Use cases grid
 ----------------------------------------------------- */
-function MetricsStrip() {
-  const reduce = usePrefersReducedMotion();
-  const metrics = [
-    "+36% tracked purchases",
-    "CPP down 41%",
-    "ROAS 3.2 → 6.8",
-    "Fewer lost sales",
-    "Server-side + pixel together",
-    "Model-ready data",
-  ];
+type UseCaseItem = { title: string; desc: string };
 
-  const items = reduce ? metrics : [...metrics, ...metrics];
-
+function UseCases({ items }: { items: UseCaseItem[] }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-cyan-500/25 via-transparent to-fuchsia-500/25 opacity-70" />
-      <div className="relative">
-        <div
-          className="flex items-center gap-4 py-3 px-4 text-xs sm:text-sm text-white/80 whitespace-nowrap will-change-transform"
-          style={
-            reduce
-              ? undefined
-              : {
-                  animation: "metricsMarquee 32s linear infinite",
-                }
-          }
-        >
-          {items.map((m, i) => (
-            <div
-              key={`${m}-${i}`}
-              className="inline-flex items-center gap-2 rounded-full border border-white/18 bg-black/40 px-3 py-1 shadow-[0_0_0_1px_rgba(15,23,42,0.7)]"
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              <span>{m}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* -----------------------------------------------------
-   Case studies grid
------------------------------------------------------ */
-type CaseItem = { brand: string; metric: string; summary: string; image?: string };
-
-function CaseStudies({ items }: { items: CaseItem[] }) {
-  return (
-    <div className="grid gap-5 md:grid-cols-3">
+    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {items.map((c) => (
         <NeonCard
-          key={c.brand}
-          className="p-5 group overflow-hidden bg-gradient-to-br from-sky-500/10 via-transparent to-fuchsia-500/10"
+          key={c.title}
+          className="p-5 bg-gradient-to-br from-sky-500/10 via-transparent to-fuchsia-500/10"
         >
-          <div className="flex items-center justify-between">
-            <div className="text-lg font-semibold">{c.brand}</div>
-            <div className="rounded-full border border-emerald-400/30 bg-emerald-400/15 px-2 py-0.5 text-[10px] text-emerald-200">
-              {c.metric}
-            </div>
-          </div>
-          <p className="mt-3 text-sm text-white/70">{c.summary}</p>
-          <div className="mt-4 h-px bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-          <div className="mt-3 text-xs text-white/60 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
-            View breakdown →
-          </div>
+          <div className="text-base font-semibold text-white">{c.title}</div>
+          <p className="mt-3 text-sm text-white/70">{c.desc}</p>
         </NeonCard>
       ))}
     </div>
@@ -1324,7 +1247,6 @@ function trackDemoClick() {
 }
 
 export default function Home() {
-  // const active = useScrollSpy(["features", "how", "integrations", "pricing"], 120);
   const [showDemo, setShowDemo] = React.useState(false);
 
   React.useEffect(() => {
@@ -1440,7 +1362,7 @@ export default function Home() {
             </span>
           </h2>
           <p className="text-white/55 max-w-xl mb-12 text-base md:text-lg">
-            Attribix recovers conversions your pixels miss and shows you a clearer picture of which ads drive real revenue — not platform-reported guesses.
+            Attribix recovers conversions your pixels miss and helps you connect campaign activity to actual Shopify orders — not platform-reported guesses.
           </p>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -1456,8 +1378,8 @@ export default function Home() {
                 dot: "bg-cyan-400",
               },
               {
-                t: "Truthful attribution",
-                d: "See where revenue actually comes from — not last-click guesses or inflated platform numbers.",
+                t: "Reconciled attribution",
+                d: "Compare where revenue is credited against actual Shopify orders — not last-click guesses or inflated platform numbers.",
                 href: "/shopify-attribution",
                 icon: "🧭",
                 accent: "from-indigo-500/20 to-indigo-500/5",
@@ -1505,21 +1427,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-
-          {/* Proof strip */}
-          <div className="mt-10 flex flex-wrap gap-6 items-center">
-            {[
-              { n: "+36%", l: "more conversions tracked" },
-              { n: "–41%", l: "lower cost per purchase" },
-              { n: "3.2→6.8", l: "ROAS improvement" },
-            ].map(s => (
-              <div key={s.l} className="flex items-baseline gap-2">
-                <span className="text-2xl font-extrabold text-white">{s.n}</span>
-                <span className="text-sm text-white/45">{s.l}</span>
-              </div>
-            ))}
-          </div>
-          <p className="mt-3 text-xs text-white/35">Illustrative example, not an average or guaranteed result.</p>
         </Reveal>
       </section>
 
@@ -1627,7 +1534,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-fuchsia-400 shrink-0" />
-                <span>Server-side + pixel stitched together into one source of truth.</span>
+                <span>Server-side and pixel data reconciled into one consistent view.</span>
               </div>
             </div>
           </div>
@@ -1641,35 +1548,34 @@ export default function Home() {
 
       <WaveDivider />
 
-      {/* CASE STUDIES */}
+      {/* USE CASES */}
       <section className="relative py-20">
         <div className="absolute inset-0 -z-10 bg-[#050819]/95" />
         <div className="mx-auto max-w-7xl px-4">
           <h3 className="text-2xl font-extrabold mb-2">
-            Know what works. Fix what does not.
+            Built for the decisions performance marketers make every day
           </h3>
           <p className="text-white/75 max-w-2xl mb-8 text-sm">
-            These are examples, not guarantees. But the pattern is the same: once tracking
-            is clean it is easier to scale the right things.
+            Attribix is organized around the questions you&apos;re actually asking
+            when you review campaigns, not around a dashboard for its own sake.
           </p>
-          <CaseStudies
+          <UseCases
             items={[
               {
-                brand: "Apex",
-                metric: "+22% tracked purchases",
-                summary: "Server-side events filled the gaps their pixels were missing.",
+                title: "Attribution",
+                desc: "Understand which channels receive credit for orders.",
               },
               {
-                brand: "Tempo",
-                metric: "ROAS 3.2 → 6.8",
-                summary:
-                  "Channel split and model changes based on real, cleaned data.",
+                title: "Tracking",
+                desc: "See whether browser and server events are reaching the ad platforms correctly.",
               },
               {
-                brand: "Glow",
-                metric: "CPP ↓ 41%",
-                summary:
-                  "Honest reporting made it obvious which ads to kill and which to push.",
+                title: "Measurement",
+                desc: "Compare attributed campaign results with actual Shopify revenue.",
+              },
+              {
+                title: "Optimization",
+                desc: "Use cleaner conversion data when deciding where to increase or reduce spend.",
               },
             ]}
           />
@@ -1688,7 +1594,7 @@ export default function Home() {
             </p>
             <p className="text-white/60">
               Pixels were not built for today’s privacy rules. Attribix fills the gaps so
-              your ad data matches reality.
+              your ad reporting is easier to compare against actual Shopify revenue.
             </p>
           </div>
         </div>

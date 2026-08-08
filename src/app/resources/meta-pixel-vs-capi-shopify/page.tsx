@@ -72,9 +72,9 @@ export default function Page() {
             Meta Pixel vs Conversions API for Shopify
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            The Pixel and the Conversions API aren't competing options —
-            they're two different routes for the same event, each catching
-            what the other misses. The question isn't which one to use. It's
+            The Pixel and the Conversions API aren&apos;t competing options —
+            they&apos;re two different routes for the same event, each catching
+            what the other misses. The question isn&apos;t which one to use. It&apos;s
             how to run both without counting the same purchase twice.
           </p>
         </Reveal>
@@ -85,10 +85,10 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What the Pixel sees</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            The Meta Pixel is JavaScript running in the customer's browser.
+            The Meta Pixel is JavaScript running in the customer&apos;s browser.
             It fires when a page loads or an action happens — a product
             view, an add-to-cart, a purchase — and sends that event straight
-            from the browser to Meta. It's fast to set up and gives Meta
+            from the browser to Meta. It&apos;s fast to set up and gives Meta
             direct browser-side signal, but it only works if the browser
             actually lets the request through.
           </p>
@@ -102,13 +102,13 @@ export default function Page() {
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Where browser tracking breaks down</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-              Ad blockers stop the Pixel request outright. Safari's Intelligent
+              Ad blockers stop the Pixel request outright. Safari&apos;s Intelligent
               Tracking Prevention trims how long identifiers survive. A slow
               connection can mean the customer completes checkout and closes
               the tab before the purchase event finishes firing. None of these
               are edge cases — on iOS traffic in particular, browser-side
               purchase tracking commonly misses a meaningful share of real
-              orders, and that share isn't visible anywhere in Ads Manager;
+              orders, and that share isn&apos;t visible anywhere in Ads Manager;
               it just looks like the ad performed worse than it did.
             </p>
           </Reveal>
@@ -122,9 +122,9 @@ export default function Page() {
           <p className="text-white/60 leading-relaxed text-sm">
             The Conversions API sends the same kind of event — a purchase, a
             lead — server-to-server, directly from your backend to Meta,
-            rather than relying only on browser-side delivery. It isn't
+            rather than relying only on browser-side delivery. It isn&apos;t
             affected by ad blockers or cookie lifespan, because it never
-            depends on the customer's browser successfully sending the
+            depends on the customer&apos;s browser successfully sending the
             request. It
             depends instead on your server actually knowing the order
             happened, which for a Shopify store means firing it from an
@@ -142,7 +142,7 @@ export default function Page() {
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               If the Pixel fires for a purchase and the server also fires a
               CAPI event for the same purchase, Meta will count two sales
-              unless it's told otherwise. The fix is a shared{" "}
+              unless it&apos;s told otherwise. The fix is a shared{" "}
               <code className="text-cyan-300">event_id</code> — the same
               identifier attached to both the browser and server event for
               that order. Meta uses it to recognize the pair and count the
@@ -189,12 +189,12 @@ export default function Page() {
       {/* CONSENT */}
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">CAPI doesn't get around consent</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">CAPI doesn&apos;t get around consent</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            It's tempting to think of server-side tracking as a way past
-            browser-based tracking restrictions. It isn't. CAPI changes the
+            It&apos;s tempting to think of server-side tracking as a way past
+            browser-based tracking restrictions. It isn&apos;t. CAPI changes the
             route data travels — server to server instead of browser to
-            server — not whether you're allowed to send it. A customer who
+            server — not whether you&apos;re allowed to send it. A customer who
             declined tracking consent should be excluded from both the
             Pixel and the server-side event, the same way they would be
             excluded from any other tracking method.

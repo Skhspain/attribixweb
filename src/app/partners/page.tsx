@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -222,7 +221,7 @@ export default function PartnersPage() {
           <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-10 text-center">
             <div className="text-4xl mb-3">🎉</div>
             <h3 className="text-xl font-bold mb-2">Application received!</h3>
-            <p className="text-white/50 text-sm">We'll be in touch within 2 business days at the email you provided.</p>
+            <p className="text-white/50 text-sm">We&apos;ll be in touch within 2 business days at the email you provided.</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-8 space-y-5">
@@ -250,7 +249,7 @@ export default function PartnersPage() {
               </select>
             </div>
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-white/40 mb-2">Anything else you'd like us to know?</label>
+              <label className="block text-xs font-semibold uppercase tracking-wider text-white/40 mb-2">Anything else you&apos;d like us to know?</label>
               <textarea name="message" value={form.message} onChange={handleChange} rows={3} placeholder="Tell us about your agency and clients..." className="w-full rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm text-white placeholder-white/20 focus:border-indigo-500/60 focus:outline-none resize-none" />
             </div>
             <button type="submit" className="w-full rounded-xl bg-white text-gray-900 py-3.5 font-bold text-sm hover:bg-slate-100 transition shadow-lg">

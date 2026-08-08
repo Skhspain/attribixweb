@@ -52,10 +52,10 @@ export default function Page() {
             Meta Event Match Quality for Shopify explained
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            Event Match Quality is Meta's confidence score for how well it
+            Event Match Quality is Meta&apos;s confidence score for how well it
             can tie a server-side event to a real Facebook or Instagram
-            account. It's a useful diagnostic. It's not a scoreboard, and
-            chasing a perfect number isn't the point.
+            account. It&apos;s a useful diagnostic. It&apos;s not a scoreboard, and
+            chasing a perfect number isn&apos;t the point.
           </p>
         </Reveal>
       </section>
@@ -68,8 +68,8 @@ export default function Page() {
             Every server event you send — a purchase through the Conversions
             API, for example — includes some hashed customer parameters.
             Meta compares those against its own user data and estimates how
-            confidently it can say "this event belongs to this specific
-            account." That confidence is what shows up as Event Match
+            confidently it can say &quot;this event belongs to this specific
+            account.&quot; That confidence is what shows up as Event Match
             Quality in Events Manager, on a rough scale rather than a
             precise measurement.
           </p>
@@ -94,7 +94,7 @@ export default function Page() {
               More matching parameters generally means a higher score. But a
               checkout that only ever collects an email will structurally
               never reach the same score as one that also has a phone number
-              and a click ID — that's not a problem to fix, it's a ceiling
+              and a click ID — that&apos;s not a problem to fix, it&apos;s a ceiling
               set by what data actually exists.
             </p>
           </Reveal>
@@ -104,7 +104,7 @@ export default function Page() {
       {/* WHAT IT ISN'T */}
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Why a perfect score isn't the goal</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Why a perfect score isn&apos;t the goal</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             A high Event Match Quality score means Meta is confident it
             matched the event to the right person. It says nothing about
@@ -123,12 +123,12 @@ export default function Page() {
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Use it as a diagnostic, not a target</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-              The useful signal isn't the absolute number — it's a sudden
+              The useful signal isn&apos;t the absolute number — it&apos;s a sudden
               drop. If EMQ falls sharply from one week to the next, that
               usually means a field stopped being sent: a checkout change
               dropped the phone number field, a theme update broke the
               click-ID capture, or a tracking app update silently reduced
-              what's included in the payload. Investigate the drop. Don't
+              what&apos;s included in the payload. Investigate the drop. Don&apos;t
               spend time trying to inch a stable, moderate score higher for
               its own sake.
             </p>
@@ -144,8 +144,8 @@ export default function Page() {
             Every customer parameter sent for matching — email, phone,
             external ID — is hashed before it leaves your server. Meta never
             receives it in plain text. And none of this bypasses consent
-            requirements: if a customer hasn't agreed to tracking, their
-            event (and its matching parameters) shouldn't be sent, regardless
+            requirements: if a customer hasn&apos;t agreed to tracking, their
+            event (and its matching parameters) shouldn&apos;t be sent, regardless
             of what it would do for your match rate.
           </p>
         </Reveal>
@@ -181,7 +181,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold">Check your current match quality</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             Connect your store and Meta account to see your Event Match
-            Quality trend and what's driving it.
+            Quality trend and what&apos;s driving it.
           </p>
           <ProductCTA className="mt-8 justify-center" />
         </Reveal>

@@ -73,7 +73,7 @@ export default function Page() {
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             ROAS depends on attribution — a model deciding which revenue
-            counts as "from" advertising. MER skips that decision entirely.
+            counts as &quot;from&quot; advertising. MER skips that decision entirely.
             That difference is why they move differently, and why neither
             one alone tells the whole story.
           </p>
@@ -106,10 +106,10 @@ export default function Page() {
               Marketing efficiency ratio is simpler by design: total store
               revenue for a period, divided by total marketing spend for
               that same period. No individual order is credited to any
-              specific ad. It doesn't try to answer "which campaign caused
-              this sale" — it answers "given what I spent on marketing
-              overall, how much did the business bring in." That makes it
-              far steadier than platform ROAS, since it isn't exposed to
+              specific ad. It doesn&apos;t try to answer &quot;which campaign caused
+              this sale&quot; — it answers &quot;given what I spent on marketing
+              overall, how much did the business bring in.&quot; That makes it
+              far steadier than platform ROAS, since it isn&apos;t exposed to
               attribution-window changes, tracking gaps, or cross-platform
               double-counting.
             </p>
@@ -144,11 +144,11 @@ export default function Page() {
           <p className="text-white/60 leading-relaxed text-sm">
             ROAS is more useful at the campaign or ad-set level, where you
             need enough granularity to compare one creative or audience
-            against another — MER doesn't break down that far. MER is more
-            useful at the business level, for questions like "is our overall
-            marketing spend sustainable relative to revenue," where
+            against another — MER doesn&apos;t break down that far. MER is more
+            useful at the business level, for questions like &quot;is our overall
+            marketing spend sustainable relative to revenue,&quot; where
             attribution noise would otherwise make the trend hard to read.
-            Neither replaces the other; they're suited to different
+            Neither replaces the other; they&apos;re suited to different
             altitudes of the same decision.
           </p>
         </Reveal>
@@ -162,7 +162,7 @@ export default function Page() {
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What neither metric proves</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               Neither ROAS nor MER proves incrementality — that the ad spend
-              caused sales that wouldn't have happened anyway. A high MER
+              caused sales that wouldn&apos;t have happened anyway. A high MER
               can coexist with a business that would have sold nearly as
               much through organic and repeat demand alone. Both metrics
               measure efficiency against spend, not the counterfactual of

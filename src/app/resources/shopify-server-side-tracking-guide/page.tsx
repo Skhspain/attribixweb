@@ -10,7 +10,7 @@ import FAQList from "@/components/marketing/FAQList";
 import DiagramFrame from "@/components/marketing/DiagramFrame";
 
 const MISTAKES = [
-  { title: "No shared event ID", note: "Browser and server events for the same order aren't linked, so Meta or Google count the purchase twice." },
+  { title: "No link between browser and server events", note: "Without Meta's shared event ID or a consistent transaction/order ID in Google's conversion setup, the platform has no way to know the browser and server events are the same order — so it counts the purchase twice." },
   { title: "Server events sent regardless of consent", note: "The server-side path is built to fire unconditionally, ignoring the same consent choice the browser-side tracking respects." },
   { title: "Only email as a matching parameter", note: "Works, but leaves match quality lower than it needs to be — phone number and order/customer IDs strengthen it meaningfully." },
   { title: "Testing with one order and calling it done", note: "A single successful test order doesn't reveal timing issues, webhook retries, or edge cases like partial refunds and edited orders." },
@@ -82,7 +82,7 @@ export default function Page() {
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             Server-side tracking sends conversion events to Meta and Google
             directly from your backend instead of relying only on the
-            customer's browser. Here's how the pieces fit together, what it
+            customer&apos;s browser. Here&apos;s how the pieces fit together, what it
             actually fixes, and where implementations typically go wrong.
           </p>
         </Reveal>
@@ -91,16 +91,16 @@ export default function Page() {
       {/* WHY IT EXISTS */}
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Why browser-only tracking isn't enough anymore</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Why browser-only tracking isn&apos;t enough anymore</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             Browser-based tracking depends on a chain of things going right:
             the page has to load fully, a script has to execute, a cookie
             has to persist, and no ad blocker or browser privacy feature can
-            interrupt it. Safari's Intelligent Tracking Prevention shortens
+            interrupt it. Safari&apos;s Intelligent Tracking Prevention shortens
             cookie lifespans. Ad blockers stop pixel requests before they
             fire. A customer who closes the tab a second early loses the
             event entirely. None of this is rare — on iOS traffic
-            especially, it's the default condition, not an edge case.
+            especially, it&apos;s the default condition, not an edge case.
           </p>
         </Reveal>
       </section>
@@ -116,15 +116,15 @@ export default function Page() {
               shape regardless of platform:
             </p>
             <ol className="space-y-3 text-sm text-white/65 leading-relaxed list-decimal list-inside">
-              <li>An order or checkout event fires on Shopify's side — typically a webhook (order creation, checkout completion).</li>
-              <li>That event is enriched with customer matching data — hashed email, phone, or an external/order ID — and any browser-side identifiers (like Meta's click ID) that were captured earlier in the session.</li>
-              <li>The enriched event is sent server-to-server to Meta's Conversions API and/or Google's server-side conversion endpoint.</li>
-              <li>A shared event ID, generated once per order, is attached to both this server event and its browser-side counterpart so the platform can deduplicate them.</li>
+              <li>An order or checkout event fires on Shopify&apos;s side — typically a webhook (order creation, checkout completion).</li>
+              <li>That event is enriched with customer matching data — hashed email, phone, or an external/order ID — and any browser-side identifiers (like Meta&apos;s click ID) that were captured earlier in the session.</li>
+              <li>The enriched event is sent server-to-server to Meta&apos;s Conversions API and/or Google&apos;s server-side conversion endpoint.</li>
+              <li>The platform matches and deduplicates the server event against its browser-side counterpart using its own method — a shared event ID for Meta, or a unique transaction/order ID tied to the conversion action for Google Ads.</li>
             </ol>
 
             <div className="mt-8">
-              <DiagramFrame caption="Two independent paths for the same event, reconciled by a shared ID.">
-                <svg viewBox="0 0 600 220" className="w-full h-auto" role="img" aria-label="Diagram showing Shopify checkout feeding both a browser tracking path and a server tracking path, with the browser path vulnerable to ad blockers and cookie loss while the server path goes directly to Meta and Google.">
+              <DiagramFrame caption="Two independent paths for the same event. Meta and Google each handle matching and duplicate prevention their own way.">
+                <svg viewBox="0 0 600 220" className="w-full h-auto" role="img" aria-label="Diagram showing Shopify checkout feeding both a browser tracking path and a server tracking path, with the browser path vulnerable to ad blockers and cookie loss while the server path goes directly to Meta and Google, each applying its own platform-specific matching and deduplication.">
                   <rect x="235" y="10" width="130" height="46" rx="10" className="fill-white/5" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
                   <text x="300" y="38" textAnchor="middle" className="fill-white text-[13px] font-semibold">Shopify checkout</text>
 
@@ -137,14 +137,14 @@ export default function Page() {
 
                   <rect x="360" y="90" width="180" height="50" rx="10" className="fill-fuchsia-400/5" stroke="rgba(168,85,247,0.35)" strokeWidth="1" />
                   <text x="450" y="112" textAnchor="middle" className="fill-white text-[12px] font-semibold">Server (webhook)</text>
-                  <text x="450" y="128" textAnchor="middle" className="fill-white/50 text-[10px]">independent of the customer's browser</text>
+                  <text x="450" y="128" textAnchor="middle" className="fill-white/50 text-[10px]">independent of the customer&apos;s browser</text>
 
                   <line x1="150" y1="140" x2="150" y2="168" stroke="rgba(56,189,248,0.4)" strokeWidth="1.5" />
                   <line x1="450" y1="140" x2="450" y2="168" stroke="rgba(168,85,247,0.4)" strokeWidth="1.5" />
 
                   <rect x="90" y="168" width="420" height="42" rx="10" className="fill-emerald-400/10" stroke="rgba(52,211,153,0.4)" strokeWidth="1" />
                   <text x="300" y="194" textAnchor="middle" className="fill-white text-[12px] font-semibold">
-                    Deduplicated by shared event ID → Meta CAPI + Google Ads
+                    Platform-specific matching and deduplication → Purchase recorded
                   </text>
                 </svg>
               </DiagramFrame>
@@ -178,12 +178,14 @@ export default function Page() {
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Deduplication and consent are not optional extras</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               Two things separate a working server-side setup from a broken
-              one that just adds noise. First, deduplication: without a
-              shared event ID across the browser and server paths, every
-              order gets counted twice. Second, consent: a server-side event
-              must respect the same tracking consent decision as the browser
-              event it pairs with — server-side isn't a way to track a
-              customer who declined tracking, it's a more reliable way to
+              one that just adds noise. First, duplicate prevention: without
+              a consistent link between the browser and server paths — a
+              shared event ID for Meta, a unique transaction ID tied to the
+              right conversion action for Google Ads — every order gets
+              counted twice. Second, consent: a server-side event must
+              respect the same tracking consent decision as the browser
+              event it pairs with — server-side isn&apos;t a way to track a
+              customer who declined tracking, it&apos;s a more reliable way to
               track a customer who agreed to it.
             </p>
           </Reveal>
@@ -215,7 +217,7 @@ export default function Page() {
               Place a handful of real test orders across different
               conditions — desktop and mobile, with and without an ad
               blocker, with a fresh session and a returning one. Check each
-              platform's event-testing tool for whether the server event
+              platform&apos;s event-testing tool for whether the server event
               arrived, whether it deduplicated correctly against the browser
               event, and what match quality it received. Then keep watching
               for the first week of real traffic — synthetic test orders
@@ -233,7 +235,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What to realistically expect</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             Server-side tracking recovers a meaningful share of the orders
-            browser-only tracking was missing — it doesn't produce complete
+            browser-only tracking was missing — it doesn&apos;t produce complete
             tracking. Customers who decline consent stay excluded, as they
             should. Guest checkouts with minimal data still get weaker
             matches than accounts with phone and order history. And no
@@ -287,7 +289,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold">See what your current setup is missing</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             Connect your Shopify store and see which purchase events are
-            currently making it to Meta and Google — and which aren't.
+            currently making it to Meta and Google — and which aren&apos;t.
           </p>
           <ProductCTA className="mt-8 justify-center" />
         </Reveal>
