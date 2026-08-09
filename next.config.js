@@ -30,6 +30,21 @@ const nextConfig = {
         destination: "/ad-management/inquiry",
         permanent: true,
       },
+      {
+        source: "/ads",
+        destination: "/ad-management",
+        permanent: true,
+      },
+      {
+        source: "/consultation",
+        destination: "/ad-management/consultation",
+        permanent: true,
+      },
+      {
+        source: "/agency/consultation",
+        destination: "/ad-management/consultation",
+        permanent: true,
+      },
       // Consolidate the .com domain onto the canonical .app marketing site.
       // App-level redirect only — does not touch vercel.json or Vercel's
       // domain-level www/apex settings, so it can't loop against them.

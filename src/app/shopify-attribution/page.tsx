@@ -39,7 +39,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What happens when an order is refunded?",
-    a: "Refunded orders are reflected in Shopify's own order data, and attribution reporting follows that — a fully refunded order shouldn't continue counting as revenue indefinitely.",
+    a: "Revenue is captured from the order total at the time of purchase and doesn't automatically re-adjust if the order is later refunded. For periods with significant refund activity, cross-check against Shopify's own reporting.",
   },
 ];
 
@@ -273,7 +273,7 @@ export default function ShopifyAttributionPage() {
             <Reveal delay={160}>
               <div>
                 <p className="text-sm font-semibold text-white">Direct traffic and refunds</p>
-                <p className="mt-1.5 text-sm text-white/55 leading-relaxed">Visits with no campaign source stay labelled as direct rather than being forced onto a channel, and refunded orders follow Shopify&apos;s own order data.</p>
+                <p className="mt-1.5 text-sm text-white/55 leading-relaxed">Visits with no campaign source stay labelled as direct rather than being forced onto a channel. Revenue is captured at time of purchase and doesn&apos;t automatically re-adjust for later refunds — cross-check against Shopify for periods with heavy refund activity.</p>
               </div>
             </Reveal>
           </div>

@@ -12,7 +12,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="text-sm text-white/70 mb-8">
-            Last updated: 17 June 2026
+            Last updated: 9 August 2026
           </p>
 
           <div className="space-y-8 text-sm md:text-[15px] text-white/75 leading-relaxed bg-black/30 border border-white/10 rounded-2xl p-6 md:p-8">
@@ -46,6 +46,15 @@ export default function PrivacyPage() {
                   parameters sent from your store or ad platforms to Attribix.
                   This data is used to provide attribution and reporting
                   features to you.
+                </li>
+                <li>
+                  <span className="font-semibold">Contact and inquiry data</span>{" "}
+                  – such as your name, email address, business details and
+                  message when you submit a form on this website (for example
+                  to book a demo, send an ad management inquiry, or express
+                  partner interest). This is sent directly to our team by
+                  email so we can respond to you; it is not added to a
+                  marketing list automatically.
                 </li>
               </ul>
             </section>
@@ -133,6 +142,44 @@ export default function PrivacyPage() {
                   </a>. Upon revocation or account deletion, associated tokens are removed from our systems.
                 </li>
               </ul>
+            </section>
+
+            <section>
+              <h2 className="text-lg font-semibold mb-2">
+                3c. Cookies and tracking on this website
+              </h2>
+              <p className="mb-2">This website (attribix.app) uses three kinds of cookies and local storage:</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>
+                  <span className="font-semibold">Strictly necessary</span> – used for
+                  login and session security on account pages (via Clerk, our
+                  authentication provider). These are required for the site to
+                  function and don&apos;t require consent.
+                </li>
+                <li>
+                  <span className="font-semibold">Analytics</span> – Google Analytics
+                  (GA4), used to understand which pages get visited. This is
+                  off by default and only loads if you accept analytics
+                  cookies.
+                </li>
+                <li>
+                  <span className="font-semibold">Marketing</span> – the Meta Pixel,
+                  used to measure the performance of our own ads. This is off
+                  by default and the Pixel script does not load at all until
+                  you accept marketing cookies.
+                </li>
+              </ul>
+              <p className="mt-2">
+                When you first visit, a banner lets you accept all cookies,
+                reject non-essential cookies, or choose analytics and
+                marketing individually. We use Google&apos;s Consent Mode to
+                tell Google&apos;s own tags whether you&apos;ve consented, and
+                we don&apos;t load the Meta Pixel at all until marketing
+                consent is granted — it isn&apos;t just told to stay quiet.
+                Your choice is stored in your browser (it doesn&apos;t sync
+                across devices) and you can change it at any time using the
+                &quot;Cookie preferences&quot; link in the footer.
+              </p>
             </section>
 
             <section>

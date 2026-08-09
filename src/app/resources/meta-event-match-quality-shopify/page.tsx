@@ -139,11 +139,13 @@ export default function Page() {
       {/* PRIVACY */}
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Matching data is still hashed, and still governed by consent</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Identifiable customer data is hashed, and still governed by consent</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Every customer parameter sent for matching — email, phone,
-            external ID — is hashed before it leaves your server. Meta never
-            receives it in plain text. And none of this bypasses consent
+            Email, phone and external ID — the identifiers that directly
+            name a customer — are hashed before they leave your server;
+            Meta never receives them in plain text. IP address and user
+            agent, which Meta also uses for matching, are sent as-is, as
+            Meta&apos;s own spec requires. None of this bypasses consent
             requirements: if a customer hasn&apos;t agreed to tracking, their
             event (and its matching parameters) shouldn&apos;t be sent, regardless
             of what it would do for your match rate.
@@ -178,10 +180,11 @@ export default function Page() {
       {/* CTA */}
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold">Check your current match quality</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold">Improve your Event Match Quality</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
-            Connect your store and Meta account to see your Event Match
-            Quality trend and what&apos;s driving it.
+            Connect your store and Meta account to send server-side events
+            with stronger matching parameters — then track the effect on
+            Event Match Quality in Meta Events Manager.
           </p>
           <ProductCTA className="mt-8 justify-center" />
         </Reveal>

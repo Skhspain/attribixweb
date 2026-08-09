@@ -100,6 +100,8 @@ export default function Header() {
           className="md:hidden inline-flex items-center justify-center rounded-full border border-white/20 bg-black/40 px-3 py-2 text-xs font-medium text-white/80 hover:bg-white/10"
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="Toggle navigation"
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-nav"
         >
           <span className="mr-1">Menu</span>
           <span className="flex flex-col gap-[3px]">
@@ -111,7 +113,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-white/10 bg-black/70 backdrop-blur-sm">
+        <div id="mobile-nav" className="md:hidden border-t border-white/10 bg-black/70 backdrop-blur-sm">
           <nav className="mx-auto max-w-7xl px-4 py-4 space-y-2 text-sm">
             <Link
               href="/features"

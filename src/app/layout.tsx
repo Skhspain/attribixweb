@@ -3,6 +3,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import Script from "next/script";
 import "./globals.css";
 import FacebookPixel from "@/components/FacebookPixel";
+import ConsentBanner from "@/components/ConsentBanner";
+import { CONSENT_STORAGE_KEY } from "@/lib/consent";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.attribix.app"),
@@ -57,14 +59,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_JSON_LD) }}
           />
-          <Script src="https://www.googletagmanager.com/gtag/js?id=G-19LWBH2P53" strategy="afterInteractive" />
-          <Script id="gtag-init" strategy="afterInteractive">{`
+          {/* Consent Mode default must be queued before gtag.js processes anything. */}
+          <Script id="consent-default" strategy="beforeInteractive">{`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            var stored = null;
+            try { stored = JSON.parse(localStorage.getItem('${CONSENT_STORAGE_KEY}')); } catch (e) {}
+            var analyticsGranted = stored && stored.analytics ? 'granted' : 'denied';
+            var marketingGranted = stored && stored.marketing ? 'granted' : 'denied';
+            gtag('consent', 'default', {
+              analytics_storage: analyticsGranted,
+              ad_storage: marketingGranted,
+              ad_user_data: marketingGranted,
+              ad_personalization: marketingGranted,
+            });
+          `}</Script>
+          <Script src="https://www.googletagmanager.com/gtag/js?id=G-19LWBH2P53" strategy="afterInteractive" />
+          <Script id="gtag-init" strategy="afterInteractive">{`
             gtag('js', new Date());
             gtag('config', 'G-19LWBH2P53');
           `}</Script>
           <FacebookPixel />
+          <ConsentBanner />
           {children}
         </body>
       </html>

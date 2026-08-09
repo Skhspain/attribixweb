@@ -132,11 +132,13 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What Attribix shows instead</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Attribix combines Meta and Google spend with net Shopify revenue
-            and shows blended ROAS and true ROAS alongside each platform&apos;s
-            own reported number — so the gap between them is visible, rather
-            than something you&apos;d only notice by reconciling spreadsheets
-            manually.
+            Attribix combines Meta and Google spend into a blended ROAS
+            figure alongside each platform&apos;s own reported number, so the
+            gap between them is visible instead of something you&apos;d only
+            notice by reconciling spreadsheets manually. True ROAS — spend
+            against your full Shopify revenue, ad-attributed or not — is
+            something you calculate from those numbers rather than a single
+            metric Attribix labels for you.
           </p>
         </Reveal>
       </section>
@@ -173,10 +175,10 @@ export default function Page() {
       {/* CTA */}
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold">See your blended and true ROAS</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold">See your blended ROAS</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
-            Connect your store and ad accounts to compare platform-reported
-            ROAS against actual Shopify revenue.
+            Connect your store and ad accounts to compare blended and
+            platform-reported ROAS against actual Shopify revenue.
           </p>
           <ProductCTA className="mt-8 justify-center" />
         </Reveal>

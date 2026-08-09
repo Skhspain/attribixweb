@@ -60,9 +60,10 @@ export default function Page() {
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             If Ads Manager shows more purchases than Shopify&apos;s order count,
-            the same sale is almost certainly being reported twice. It&apos;s
-            usually one of a small number of causes, and it&apos;s usually
-            fixable in an afternoon.
+            event duplication is one of the more common explanations — Pixel
+            and server-side events firing for the same order without a shared
+            ID. It&apos;s not the only explanation, but when it is the cause,
+            it&apos;s usually fixable in an afternoon.
           </p>
         </Reveal>
       </section>
@@ -72,13 +73,21 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">How to confirm it&apos;s actually duplication</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Compare Ads Manager&apos;s reported purchase count against Shopify&apos;s
-            order count for the same date range and, if possible, the same
-            attributed customers. A gap that roughly tracks with order
-            volume — say, consistently 15-20% higher — points to systematic
-            duplication rather than a one-off glitch. A gap that spikes on
-            specific days is more likely tied to a deploy, app update, or
-            theme change on that date.
+            Before assuming duplication, rule out the other usual reasons the
+            two numbers disagree: Meta&apos;s own attribution window crediting
+            view-through or click conversions Shopify wouldn&apos;t count the
+            same way, modeled conversions, cross-device journeys, or simply
+            comparing different date ranges — covered on the{" "}
+            <Link href="/google-ads-conversion-tracking-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              revenue-gap page
+            </Link>
+            . If the gap survives that check, compare Ads Manager&apos;s
+            reported purchase count against Shopify&apos;s order count for the
+            same date range and, if possible, the same attributed customers. A
+            gap that roughly tracks with order volume — say, consistently
+            15-20% higher — points to systematic duplication rather than a
+            one-off glitch. A gap that spikes on specific days is more likely
+            tied to a deploy, app update, or theme change on that date.
           </p>
         </Reveal>
       </section>
@@ -164,10 +173,11 @@ export default function Page() {
       {/* CTA */}
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold">Check your account for duplicate events</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold">Get purchase events deduplicated properly</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
-            Connect your store and Meta account to see duplicate rates
-            against your actual Shopify orders.
+            Connect your store and Meta account so Pixel and server-side
+            events share a matching event ID — then check your duplicate
+            rate in Meta Events Manager.
           </p>
           <ProductCTA className="mt-8 justify-center" />
         </Reveal>

@@ -1,148 +1,20 @@
 // src/app/terms/page.tsx
 "use client";
 
-import React from "react";
-import Image from "next/image";
 import Link from "next/link";
-
-/* -----------------------------------------------------
-   Copy email helper (same as on home)
------------------------------------------------------ */
-function CopyEmail({ email }: { email: string }) {
-  const [ok, setOk] = React.useState(false);
-  return (
-    <button
-      onClick={async () => {
-        try {
-          await navigator.clipboard.writeText(email);
-          setOk(true);
-          setTimeout(() => setOk(false), 1200);
-        } catch {
-          // ignore
-        }
-      }}
-      className="hover:text-white/90 underline underline-offset-4"
-      aria-label={`Copy ${email}`}
-    >
-      {ok ? "Copied!" : email}
-    </button>
-  );
-}
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 /* -----------------------------------------------------
    PAGE
 ----------------------------------------------------- */
 export default function TermsPage() {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-[#0F0620] via-[#0E1530] to-[#053B56] text-white overflow-hidden">
-      {/* HEADER (same as privacy + home) */}
-      <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/20 border-b border-white/10">
-        <div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <Image src="/assets/logo.svg" alt="Attribix" width={28} height={28} />
-            <span className="font-semibold">Attribix</span>
-          </Link>
-
-          <nav className="hidden md:flex items-center gap-8 text-sm">
-            <Link href="/#features" className="opacity-80 hover:opacity-100">
-              Features
-            </Link>
-            <Link href="/#how" className="opacity-80 hover:opacity-100">
-              How it works
-            </Link>
-            <Link href="/#integrations" className="opacity-80 hover:opacity-100">
-              Integrations
-            </Link>
-            <Link href="/pricing" className="opacity-80 hover:opacity-100">
-              Pricing
-            </Link>
-
-            <div className="flex items-center gap-2">
-              <Link
-                href="/login"
-                className="rounded-full bg-white/10 px-4 py-2 hover:bg-white/15"
-              >
-                Log in
-              </Link>
-              <Link
-                href="/book-demo"
-                className="rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/20 backdrop-blur transition"
-              >
-                Book demo
-              </Link>
-            </div>
-          </nav>
-
-          <button
-            type="button"
-            className="md:hidden inline-flex items-center justify-center rounded-full border border-white/20 px-3 py-2 text-xs font-medium text-white/80 hover:bg-white/10"
-            onClick={() => setMobileOpen((v) => !v)}
-            aria-label="Toggle navigation"
-          >
-            <span className="mr-1">Menu</span>
-            <span className="flex flex-col gap-[3px]">
-              <span className="h-[2px] w-4 bg-white rounded-full" />
-              <span className="h-[2px] w-4 bg-white rounded-full" />
-            </span>
-          </button>
-        </div>
-
-        {mobileOpen && (
-          <div className="md:hidden border-t border-white/10 bg-black/70 backdrop-blur-sm">
-            <nav className="mx-auto max-w-7xl px-4 py-4 space-y-2 text-sm">
-              <Link
-                href="/#features"
-                onClick={() => setMobileOpen(false)}
-                className="block py-1 text-white/80 hover:text-white"
-              >
-                Features
-              </Link>
-              <Link
-                href="/#how"
-                onClick={() => setMobileOpen(false)}
-                className="block py-1 text-white/80 hover:text-white"
-              >
-                How it works
-              </Link>
-              <Link
-                href="/#integrations"
-                onClick={() => setMobileOpen(false)}
-                className="block py-1 text-white/80 hover:text-white"
-              >
-                Integrations
-              </Link>
-              <Link
-                href="/pricing"
-                onClick={() => setMobileOpen(false)}
-                className="block py-1 text-white/80 hover:text-white"
-              >
-                Pricing
-              </Link>
-              <div className="mt-3 flex flex-col gap-2">
-                <Link
-                  href="/login"
-                  onClick={() => setMobileOpen(false)}
-                  className="block rounded-lg border border-white/20 px-4 py-2 text-center text-white/90 hover:bg-white/10"
-                >
-                  Log in
-                </Link>
-                <Link
-                  href="/book-demo"
-                  onClick={() => setMobileOpen(false)}
-                  className="block rounded-lg bg-white text-center text-gray-900 px-4 py-2 font-semibold"
-                >
-                  Book demo
-                </Link>
-              </div>
-            </nav>
-          </div>
-        )}
-      </header>
+    <div className="relative min-h-screen bg-gradient-to-br from-[#0F0620] via-[#0E1530] to-[#053B56] text-white flex flex-col">
+      <Header />
 
       {/* MAIN CONTENT */}
-      <main className="mx-auto max-w-3xl px-6 py-16 md:py-24">
+      <main className="flex-1 mx-auto max-w-3xl px-6 py-16 md:py-24 w-full">
         <h1 className="text-3xl md:text-4xl font-semibold mb-4">Terms of Service</h1>
         <p className="text-sm text-white/70 mb-10">Last updated: 08 December 2025</p>
 
@@ -319,24 +191,7 @@ export default function TermsPage() {
         </div>
       </main>
 
-      {/* FOOTER (same as home) */}
-      <footer id="contact" className="border-t border-white/10 bg-black/40">
-        <div className="mx-auto max-w-7xl px-4 py-8 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-2">
-            <Image src="/assets/logo.svg" alt="Attribix" width={20} height={20} />
-            <span>Attribix</span>
-          </Link>
-          <div className="flex flex-wrap items-center gap-4">
-            <CopyEmail email="hello@attribix.app" />
-            <Link href="/privacy" className="hover:text-white/90">
-              Privacy
-            </Link>
-            <Link href="/terms" className="hover:text-white/90">
-              Terms
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -35,14 +35,14 @@ export default function SignupPage() {
             </span>
           </h2>
           <p className="text-white/45 text-[15px] leading-relaxed mb-8">
-            One dashboard for ad tracking, attribution, email, reviews, social scheduling, and SEO — built for Shopify.
+            Server-side tracking and attribution for Meta and Google Ads — built for Shopify.
           </p>
 
           <ul className="space-y-2.5">
             {[
               "Server-side events reduce iOS and browser tracking gaps",
-              "True ROAS across Meta, Google & Email",
-              "Automated reviews & SEO fixes",
+              "Clearer ROAS across Meta and Google Ads",
+              "Connects directly to your Shopify store",
               "No credit card required",
             ].map((t) => (
               <li key={t} className="flex items-center gap-2.5 text-sm text-white/55">

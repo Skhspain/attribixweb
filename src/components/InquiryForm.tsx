@@ -57,8 +57,24 @@ export default function InquiryForm() {
     });
     payload.services = services.map(String);
 
-    // TODO: wire up to /api/inquiry or CRM
-    console.log("Ad management inquiry:", payload);
+    try {
+      const res = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({ ok: false }));
+
+      if (!res.ok || !data.ok) {
+        setError(data.error || "Something went wrong. Please try again.");
+        setSubmitting(false);
+        return;
+      }
+    } catch {
+      setError("Something went wrong. Please try again.");
+      setSubmitting(false);
+      return;
+    }
 
     if (typeof window !== "undefined") {
       window.gtag?.("event", "generate_lead", { form: "ad_management_inquiry" });

@@ -337,6 +337,9 @@ function Playground() {
           Answer “what if we…” in seconds.
         </div>
       </div>
+      <div className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-amber-300/20 bg-amber-400/10 px-2.5 py-1 text-[11px] text-amber-200/90">
+        Illustrative simulator — these numbers respond to the sliders below, not your store&apos;s actual data.
+      </div>
 
       {/* KPIs */}
       <div className="mt-4 grid gap-3 sm:grid-cols-3">
@@ -582,11 +585,11 @@ export default function FeaturesPage() {
               Shopify attribution &amp; tracking, made simple
             </h1>
             <p className="mt-2 text-white/75">
-              Switch between <b>Last / First / Linear / Time-decay</b> and
-              instantly see how <b>ROAS, cost per purchase and total sales</b>{" "}
-              move when you change budget and channel mix. Perfect for answering
-              “what if we move 20% from Meta to Google?” without touching a
-              single live campaign.
+              Switch between <b>Last / First / Linear / Time-decay</b> and see
+              how <b>ROAS, cost per purchase and total sales</b> would move
+              under each model. The simulator below uses illustrative numbers
+              to show the concept — connect your store to see it with your
+              own data.
             </p>
 
             <div className="mt-4 grid gap-3">
