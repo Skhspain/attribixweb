@@ -32,7 +32,7 @@ const SCOPE = [
 const FAQ_ITEMS = [
   {
     q: "Do you manage Shopping and Performance Max, or only Search?",
-    a: "All three, where relevant to your catalogue. For most Shopify stores, Shopping and Performance Max carry more of the budget than Search alone.",
+    a: "All three, where relevant to your catalogue. In our experience running Shopify accounts, Shopping and Performance Max usually carry more of the budget than Search alone.",
   },
   {
     q: "Will you fix our Merchant Center feed issues?",

@@ -171,7 +171,7 @@ export default function PricingPage() {
               </ul>
 
               <Link
-                href="/login"
+                href="/signup"
                 className={cx(
                   "rounded-xl py-3 text-sm font-semibold text-center transition",
                   plan.highlight

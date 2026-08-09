@@ -242,14 +242,13 @@ export default function AdManagementPage() {
               The difference is what we&apos;re optimising against
             </h2>
             <p className="mt-5 text-white/65 leading-relaxed max-w-3xl">
-              Most agencies make decisions from the numbers Meta and Google
-              report inside their own ad managers — numbers shaped by cookie
-              loss, attribution windows, and each platform&apos;s incentive to
-              take credit for the sale. We built Attribix because we
-              didn&apos;t trust those numbers either. When we manage your ads,
-              we&apos;re not just watching ROAS in Ads Manager — we&apos;re
-              watching what actually shipped in Shopify, tied back to the ad,
-              the campaign and the customer journey that led to it.
+              Ad-manager numbers are shaped by cookie loss, attribution
+              windows, and each platform&apos;s incentive to take credit for
+              the sale — which is why we built Attribix in the first place.
+              When we manage your ads, we&apos;re not just watching ROAS in
+              Ads Manager — we&apos;re watching what actually shipped in
+              Shopify, tied back to the ad, the campaign and the customer
+              journey that led to it.
             </p>
           </Reveal>
 

@@ -223,11 +223,13 @@ export default function ShopifyRoasPage() {
           <Reveal>
             <h2 className="text-xl md:text-2xl font-extrabold">What Attribix shows instead</h2>
             <p className="mt-4 text-white/60 leading-relaxed text-sm max-w-2xl">
-              Attribix combines Meta and Google spend with net Shopify
-              revenue and shows blended ROAS and MER alongside each
-              platform&apos;s own reported number — so the gap between them
-              is visible, rather than something you&apos;d only notice by
-              reconciling spreadsheets manually.
+              Attribix combines Meta and Google spend into a blended ROAS
+              figure alongside each platform&apos;s own reported number, so
+              the gap between them is visible rather than something
+              you&apos;d only notice by reconciling spreadsheets manually.
+              MER — total store revenue over total spend — is a separate
+              calculation you can make from your Shopify and ad platform
+              numbers directly.
             </p>
           </Reveal>
         </div>

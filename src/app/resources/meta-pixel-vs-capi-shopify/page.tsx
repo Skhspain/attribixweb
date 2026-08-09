@@ -242,10 +242,11 @@ export default function Page() {
       {/* CTA */}
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold">See your Pixel and CAPI coverage</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold">Run Pixel and server-side events together</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
-            Connect your store and Meta account to see which purchases are
-            landing through the Pixel, the server event, or neither.
+            Connect your store and Meta account to send matched Pixel and
+            server-side purchase events, so a blocked or missed browser
+            event isn&apos;t the only chance Meta gets to see the sale.
           </p>
           <ProductCTA className="mt-8 justify-center" />
         </Reveal>

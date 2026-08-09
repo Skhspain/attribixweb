@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import CopyEmail from "./CopyEmail";
+import CookiePreferencesButton from "./CookiePreferencesButton";
 
 const COLUMNS = [
   {
@@ -79,6 +80,7 @@ export default function Footer() {
         <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/40">
           <p>© {new Date().getFullYear()} Attribix — a bevit product.</p>
           <div className="flex items-center gap-4">
+            <CookiePreferencesButton />
             <CopyEmail email="hello@attribix.app" />
           </div>
         </div>

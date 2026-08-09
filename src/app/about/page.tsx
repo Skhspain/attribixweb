@@ -80,8 +80,8 @@ export default function AboutPage() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Who&apos;s behind it</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Attribix is operated by bevit. Legal and contact details are in
-            the{" "}
+            Attribix is operated by Bevit Agency, based in Altea, Spain. Legal
+            and contact details are in the{" "}
             <Link href="/terms" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               Terms of Service
             </Link>{" "}

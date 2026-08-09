@@ -40,7 +40,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How long before we see results?",
-    a: "Most accounts need three to four weeks of stable spend before the data is reliable enough to make real optimisation decisions. We'll tell you honestly if something looks off before that point.",
+    a: "In our experience, most accounts need three to four weeks of stable spend before the data is reliable enough to make real optimisation decisions. We'll tell you honestly if something looks off before that point.",
   },
 ];
 
