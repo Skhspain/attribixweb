@@ -1,0 +1,179 @@
+// src/app/analytics/ads/data.ts
+
+export type AdsRow = {
+  id: string;
+  platform: "Meta" | "Google" | "TikTok";
+  name: string;       // Ad name
+  campaign: string;
+  adset?: string;     // Ad group / ad set (optional for Google)
+
+  // Current period
+  spend: number;
+  purchases: number;
+  revenue: number;
+
+  // Previous period (same length window, e.g., prior 30d)
+  prevSpend: number;
+  prevPurchases: number;
+  prevRevenue: number;
+};
+
+export const ADS: AdsRow[] = [
+  // Meta
+  {
+    id: "m1",
+    platform: "Meta",
+    name: "UGC – Hook A",
+    campaign: "Prospecting – Broad – US",
+    adset: "18–54 Broad",
+    spend: 820,
+    purchases: 42,
+    revenue: 3150,
+    prevSpend: 760,
+    prevPurchases: 38,
+    prevRevenue: 2920,
+  },
+  {
+    id: "m2",
+    platform: "Meta",
+    name: "Static – Benefit 3",
+    campaign: "Remarketing – 7d View/ATC",
+    adset: "All Visitors 7d",
+    spend: 410,
+    purchases: 28,
+    revenue: 1800,
+    prevSpend: 430,
+    prevPurchases: 26,
+    prevRevenue: 1650,
+  },
+  {
+    id: "m3",
+    platform: "Meta",
+    name: "Video – Testimonial",
+    campaign: "Prospecting – Broad – US",
+    adset: "25–45 Interest",
+    spend: 540,
+    purchases: 11,
+    revenue: 680,
+    prevSpend: 490,
+    prevPurchases: 14,
+    prevRevenue: 920,
+  },
+  {
+    id: "m4",
+    platform: "Meta",
+    name: "Carousel – Product Range",
+    campaign: "Remarketing – 7d View/ATC",
+    adset: "Add to Cart 7d",
+    spend: 290,
+    purchases: 4,
+    revenue: 310,
+    prevSpend: 260,
+    prevPurchases: 9,
+    prevRevenue: 680,
+  },
+  {
+    id: "m5",
+    platform: "Meta",
+    name: "Static – Discount 20%",
+    campaign: "Remarketing – 30d",
+    adset: "Past Purchasers",
+    spend: 180,
+    purchases: 22,
+    revenue: 1240,
+    prevSpend: 160,
+    prevPurchases: 18,
+    prevRevenue: 990,
+  },
+  {
+    id: "m6",
+    platform: "Meta",
+    name: "UGC – Hook B",
+    campaign: "Prospecting – Lookalike",
+    adset: "LLA 2% Purchasers",
+    spend: 620,
+    purchases: 8,
+    revenue: 490,
+    prevSpend: 580,
+    prevPurchases: 12,
+    prevRevenue: 780,
+  },
+  {
+    id: "m7",
+    platform: "Meta",
+    name: "Reels – Unboxing",
+    campaign: "Prospecting – Broad – US",
+    adset: "18–54 Broad",
+    spend: 370,
+    purchases: 31,
+    revenue: 2100,
+    prevSpend: 310,
+    prevPurchases: 24,
+    prevRevenue: 1620,
+  },
+  {
+    id: "m8",
+    platform: "Meta",
+    name: "Static – USP Stack",
+    campaign: "Prospecting – Lookalike",
+    adset: "LLA 5% Visitors",
+    spend: 450,
+    purchases: 5,
+    revenue: 390,
+    prevSpend: 420,
+    prevPurchases: 7,
+    prevRevenue: 510,
+  },
+
+  // Google
+  {
+    id: "g1",
+    platform: "Google",
+    name: "PMax – Shopping",
+    campaign: "PMax – US",
+    spend: 1450,
+    purchases: 70,
+    revenue: 5600,
+    prevSpend: 1500,
+    prevPurchases: 64,
+    prevRevenue: 5280,
+  },
+  {
+    id: "g2",
+    platform: "Google",
+    name: "Search – Brand",
+    campaign: "Brand – Exact",
+    spend: 260,
+    purchases: 33,
+    revenue: 1200,
+    prevSpend: 240,
+    prevPurchases: 28,
+    prevRevenue: 980,
+  },
+
+  // TikTok
+  {
+    id: "t1",
+    platform: "TikTok",
+    name: "Creator Spark #14",
+    campaign: "Prospecting – Interests",
+    spend: 520,
+    purchases: 20,
+    revenue: 1600,
+    prevSpend: 470,
+    prevPurchases: 18,
+    prevRevenue: 1420,
+  },
+  {
+    id: "t2",
+    platform: "TikTok",
+    name: "Carousel – Offer",
+    campaign: "Retargeting – 14d",
+    spend: 300,
+    purchases: 16,
+    revenue: 980,
+    prevSpend: 310,
+    prevPurchases: 14,
+    prevRevenue: 900,
+  },
+];

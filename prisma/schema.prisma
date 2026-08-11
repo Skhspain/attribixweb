@@ -1,0 +1,40 @@
+// attribixweb/prisma/schema.prisma
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL_RO")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Keep enum/model names identical to attribix-app
+enum AdPlatform {
+  META
+  GOOGLE
+  TIKTOK
+}
+
+model AdDailyStat {
+  id          String      @id @default(cuid())
+  shopId      String
+  platform    AdPlatform
+  accountId   String
+  campaignId  String
+  adsetId     String?
+  adId        String?
+  date        DateTime
+
+  impressions Int
+  clicks      Int
+  spend       Float
+  conversions Int
+  revenue     Float?
+
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  @@index([shopId, platform, date])
+  @@index([platform, accountId, date])
+}
