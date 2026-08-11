@@ -1,10 +1,40 @@
-/* File: attribixweb/attribixweb/src/app/globals.css */
+/* File: src/app/globals.css */
+
+/* ———————————————————————————————— */
+/*   Tailwind base, components, utilities   */
+/* ———————————————————————————————— */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Brand tokens (shared site + analytics) ===== */
+:root {
+  --brand-600: #4f46e5; /* indigo-600 */
+  --brand-500: #6366f1;
+  --accent-600: #0891b2; /* cyan-600 */
+  --accent-500: #06b6d4;
+
+  /* Logo blue used in charts (Sessions by Source bars) */
+  /* If you prefer the lighter variant, change to #0ea5ff */
+  --logo-blue: #0e7eff;
+}
 
 /* = Reset & base = */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 html,
 body,
@@ -183,11 +213,11 @@ body,
   inset: 0;
   background: linear-gradient(
     60deg,
-    rgba(0,   0,   0,   0.95) 0%,
-    rgba(0,   0,   0,   0.95) 60%,   /* hold black through 60% */
-    rgba(192,132,252,0.5)      65%,   /* start pink */
-    rgba(192,132,252,0.5)      80%,   /* end pink */
-    rgba(0,   0,   0,   0.95) 100%
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.95) 60%,
+    rgba(192, 132, 252, 0.5) 65%,
+    rgba(192, 132, 252, 0.5) 80%,
+    rgba(0, 0, 0, 0.95) 100%
   );
   background-size: 600% 600%;
   filter: blur(160px) saturate(1.5);
@@ -202,12 +232,12 @@ body,
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(0,   0,    0,    0.85) 0%,
-    rgba(0,   0,    0,    0.85) 20%,
-    rgba(0,   64,  119,   0.6) 30%,
-    rgba(192,132,252,0.4)      40%, /* softer pink */
-    rgba(0,   64,  119,   0.6) 50%,
-    rgba(0,   0,    0,    0.85)100%
+    rgba(0, 0, 28, 0.85) 0%,
+    rgba(0, 0, 28, 0.85) 20%,
+    rgba(0, 64, 119, 0.6) 30%,
+    rgba(192, 132, 252, 0.4) 40%,
+    rgba(0, 64, 119, 0.6) 50%,
+    rgba(0, 0, 0, 0.85) 100%
   );
   background-size: 400% 400%;
   filter: blur(100px) saturate(2);
@@ -215,89 +245,120 @@ body,
   z-index: 2;
 }
 
-/* lift form content above the effects */
-.login-header,
-.login-form,
-.signup-prompt {
-  position: relative;
-  z-index: 3;
-}
-
-/* inline logo + heading */
-.login-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-.login-header .logo {
-  height: 1.5rem;
-}
-.login-header h2 {
-  margin: 0;
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #fff;
-}
-
-/* form card */
-.login-form {
-  background: rgba(0, 4, 22, 0.85);
-  padding: 2rem;
-  border-radius: 1rem;
-  max-width: 400px;
-  width: 100%;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-/* labels */
-.login-form label {
-  font-weight: 600;
-}
-
-/* inputs */
-.login-form input {
-  padding: 0.75rem 1rem;
-  border: 1px solid #334155;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  background: #0f172a;
-  color: #fff;
-}
-.login-form input:focus {
-  outline: none;
-  border-color: #3b82f6;
-}
-
-/* submit button */
-.login-form .cta {
-  margin-top: 1.5rem;
-}
-
-/* sign-up prompt */
-.signup-prompt {
-  text-align: center;
-  font-size: 0.9rem;
-}
-.signup-prompt a {
-  color: #3b82f6;
-  font-weight: 600;
-  text-decoration: none;
-}
-.signup-prompt a:hover {
-  text-decoration: underline;
-}
-
 /* = Keyframe animations = */
 @keyframes aurora-back {
-  0%   { background-position: 0% 20%; }
+  0% { background-position: 0% 20%; }
   100% { background-position: 100% 80%; }
 }
 @keyframes aurora-front {
-  0%   { background-position: 100% 50%; }
+  0% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+/* ———————————————————————————————— */
+/*  Custom utilities injected via Tailwind’s @layer      */
+/* ———————————————————————————————— */
+@layer utilities {
+  /* fixes Sidebar width in analytics layout (legacy) */
+  .w-56 { width: 14rem !important; }
+}
+
+/* =========================
+   Analytics-only light theme
+   (scoped to a wrapper .ax)
+   ========================= */
+.ax {
+  --ax-bg: #f8fafc;        /* slate-50 */
+  --ax-card: #ffffff;      /* white */
+  --ax-border: #e2e8f0;    /* slate-200 */
+  --ax-text: #0f172a;      /* slate-900 */
+  --ax-muted: #64748b;     /* slate-500 */
+  background-color: var(--ax-bg);
+  color: var(--ax-text) !important; /* override global body { color:#fff } */
+}
+
+/* Neutralize purple visited links ONLY inside analytics */
+.ax a,
+.ax a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Cards, metrics, tables */
+.ax .ax-card {
+  background: var(--ax-card);
+  border: 1px solid var(--ax-border);
+  border-radius: 1rem;
+  box-shadow:
+    0 1px 1px rgba(0,0,0,0.04),
+    0 8px 24px -12px rgba(15, 23, 42, 0.18);
+}
+.ax .ax-card-body { padding: 1rem; }
+.ax .ax-metric-label { color: var(--ax-muted); font-size: .875rem; }
+.ax .ax-metric-value { margin-top: .25rem; font-weight: 600; font-size: 1.5rem; }
+
+.ax .ax-table { width: 100%; font-size: .875rem; }
+.ax .ax-table thead th {
+  text-align: left; color: var(--ax-muted); padding: .5rem 1.5rem .5rem 0;
+}
+.ax .ax-table tbody tr { border-bottom: 1px solid var(--ax-border); }
+.ax .ax-table td { padding: .5rem 1.5rem .5rem 0; }
+
+/* Sidebar links inside analytics (consolidated) */
+.ax .sidebar-link,
+.ax .sidebar-link:visited {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  color: #475569; /* slate-600 */
+  font-size: 0.875rem;
+  transition: background 0.15s, color 0.15s;
+}
+.ax .sidebar-link:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+.ax .sidebar-link-active {
+  background: linear-gradient(135deg, #eef2ff 0%, #f0fdfa 100%);
+  color: #4f46e5;
+  font-weight: 600;
+  position: relative;
+}
+/* Brand gradient left accent bar for the active item */
+.ax .sidebar-link-active::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
+  border-radius: 9999px;
+  background: linear-gradient(to bottom, #6366f1, #06b6d4);
+}
+
+/* Recharts tweaks scoped to analytics */
+.ax .recharts-cartesian-grid-horizontal line,
+.ax .recharts-cartesian-grid-vertical line { stroke: #e2e8f0; }        /* slate-200 */
+.ax .recharts-cartesian-axis-tick-value { fill: #64748b; }              /* slate-500 */
+.ax .recharts-default-tooltip {
+  background: #fff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: .75rem !important;
+  padding: .5rem .75rem !important;
+  box-shadow:
+    0 1px 1px rgba(0,0,0,.04),
+    0 8px 24px -12px rgba(15,23,42,.18) !important;
+}
+
+/* --- Analytics layout grid (left sidebar) --- */
+.ax-grid { display: grid; grid-template-columns: 1fr; }
+@media (min-width: 768px) {
+  .ax-grid { grid-template-columns: 280px minmax(0, 1fr); }
+}
+
+/* Sticky left rail (Meta-style) */
+.ax-sticky {
+  position: sticky;
+  top: 0;
+  height: 100dvh; /* full viewport height with mobile-safe unit */
 }
