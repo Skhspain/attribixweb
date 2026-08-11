@@ -6,6 +6,28 @@ import { Reveal } from "@/components/marketing/Reveal";
 import Eyebrow from "@/components/marketing/Eyebrow";
 import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import { ProductCTA } from "@/components/marketing/CTAGroup";
+import FAQList from "@/components/marketing/FAQList";
+
+const FAQ_ITEMS = [
+  {
+    q: "How do you calculate blended ROAS for a Shopify store?",
+    a: "Add spend across every ad platform you run, then divide it into a single revenue figure you've defined consistently — either combined platform-attributed revenue (still inflated by cross-platform overlap) or actual Shopify revenue for the period (closer to true ROAS). The formula matters less than picking one revenue definition and sticking with it.",
+  },
+  {
+    q: "Is blended ROAS the same as true ROAS?",
+    a: "Not quite. Blended ROAS commonly still uses each platform's attributed revenue added together, which keeps the double-counting problem. True ROAS replaces that with actual Shopify revenue, which removes it.",
+  },
+];
+
+const FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
@@ -34,6 +56,7 @@ export default function Page() {
     <ProductPageShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ARTICLE_JSON_LD) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_JSON_LD) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }} />
 
       {/* HERO */}
       <section className="mx-auto max-w-3xl px-4 pt-24 pb-10 md:pt-32">
@@ -140,6 +163,14 @@ export default function Page() {
             something you calculate from those numbers rather than a single
             metric Attribix labels for you.
           </p>
+        </Reveal>
+      </section>
+
+      {/* FAQ */}
+      <section className="mx-auto max-w-3xl px-4 py-14">
+        <Reveal>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-8">Common questions</h2>
+          <FAQList items={FAQ_ITEMS} />
         </Reveal>
       </section>
 

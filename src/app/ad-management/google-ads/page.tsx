@@ -146,6 +146,19 @@ export default function GoogleAdsManagementPage() {
         </Reveal>
       </section>
 
+      {/* RELATED READING */}
+      <section className="mx-auto max-w-3xl px-4 py-10">
+        <Reveal>
+          <h2 className="text-xl md:text-2xl font-extrabold mb-4">Diagnosing a problem yourself first?</h2>
+          <ul className="space-y-2 text-sm">
+            <li><Link href="/resources/google-ads-clicks-no-sales" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Google Ads getting clicks but no sales? What to check first</Link></li>
+            <li><Link href="/resources/performance-max-no-sales" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Performance Max spending but getting no sales</Link></li>
+            <li><Link href="/resources/what-does-a-google-ads-agency-do" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">What does a Google Ads agency actually do?</Link></li>
+            <li><Link href="/resources/how-to-choose-a-google-ads-agency" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How to choose a Google Ads agency for ecommerce</Link></li>
+          </ul>
+        </Reveal>
+      </section>
+
       {/* FAQ */}
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>

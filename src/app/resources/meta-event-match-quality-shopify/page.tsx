@@ -6,6 +6,32 @@ import { Reveal } from "@/components/marketing/Reveal";
 import Eyebrow from "@/components/marketing/Eyebrow";
 import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import { ProductCTA } from "@/components/marketing/CTAGroup";
+import FAQList from "@/components/marketing/FAQList";
+
+const FAQ_ITEMS = [
+  {
+    q: "What counts as a good Event Match Quality score?",
+    a: "Meta and most practitioners treat a score of roughly 6 to 8 as solid for a typical Shopify checkout. Scores above that are possible with more identifiers, but the realistic ceiling depends on what data your checkout actually collects — it isn't a target every store can reach.",
+  },
+  {
+    q: "Does a higher EMQ score mean higher ROAS?",
+    a: "Not directly. EMQ measures how confidently Meta can match an event to a real account, which helps Meta's optimization use the signal you're already sending — it doesn't make the underlying purchase any more or less likely to have been caused by the ad.",
+  },
+  {
+    q: "Is EMQ the same thing as Event Match Quality shown per-event vs. account-wide?",
+    a: "Events Manager shows EMQ per event type (Purchase, AddToCart, and so on), not one single account-wide number. A drop in one event's score doesn't necessarily mean the others are affected — check the specific event that matters to you.",
+  },
+];
+
+const FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
 
 const PARAMETERS = [
   { name: "Hashed email", note: "Usually the single biggest contributor — most Shopify checkouts collect it by default." },
@@ -42,6 +68,7 @@ export default function Page() {
     <ProductPageShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ARTICLE_JSON_LD) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_JSON_LD) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }} />
 
       {/* HERO */}
       <section className="mx-auto max-w-3xl px-4 pt-24 pb-10 md:pt-32">
@@ -150,6 +177,14 @@ export default function Page() {
             event (and its matching parameters) shouldn&apos;t be sent, regardless
             of what it would do for your match rate.
           </p>
+        </Reveal>
+      </section>
+
+      {/* FAQ */}
+      <section className="mx-auto max-w-3xl px-4 py-14">
+        <Reveal>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-8">Common questions</h2>
+          <FAQList items={FAQ_ITEMS} />
         </Reveal>
       </section>
 

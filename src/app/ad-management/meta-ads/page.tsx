@@ -148,6 +148,19 @@ export default function MetaAdsManagementPage() {
         </Reveal>
       </section>
 
+      {/* RELATED READING */}
+      <section className="mx-auto max-w-3xl px-4 py-10">
+        <Reveal>
+          <h2 className="text-xl md:text-2xl font-extrabold mb-4">Diagnosing a problem yourself first?</h2>
+          <ul className="space-y-2 text-sm">
+            <li><Link href="/resources/meta-ads-clicks-no-sales" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Meta Ads getting clicks but no sales? Diagnose it first</Link></li>
+            <li><Link href="/resources/meta-ads-roas-dropped" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Meta Ads ROAS dropped suddenly? Ads, website or tracking</Link></li>
+            <li><Link href="/resources/what-does-a-meta-ads-agency-do" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">What does a Meta Ads agency actually do?</Link></li>
+            <li><Link href="/resources/how-to-choose-a-meta-ads-agency" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How to choose a Meta Ads agency for ecommerce</Link></li>
+          </ul>
+        </Reveal>
+      </section>
+
       {/* FAQ */}
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>

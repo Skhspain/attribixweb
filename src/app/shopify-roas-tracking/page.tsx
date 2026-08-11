@@ -28,6 +28,10 @@ const FAQ_ITEMS = [
     q: "Is a higher ROAS always better?",
     a: "Not necessarily. A campaign can show a high ROAS on orders that would likely have happened anyway, while a lower-ROAS campaign might be reaching genuinely new customers. ROAS measures efficiency, not incrementality.",
   },
+  {
+    q: "Which ROAS number should I actually trust — Meta's, Google's, or Shopify's?",
+    a: "None of them is \"wrong,\" and none is the full picture on its own. Platform ROAS tells you how a platform scores its own attributed orders. Blended ROAS across platforms is closer to reality but still inflated by cross-platform overlap. MER, built from total Shopify revenue against total spend, is the steadiest number when you need one figure to anchor a decision — use platform ROAS for campaign-level tactics, and MER or blended ROAS for the bigger picture.",
+  },
 ];
 
 const FAQ_JSON_LD = {
@@ -256,6 +260,16 @@ export default function ShopifyRoasPage() {
             <li>
               <Link href="/resources/mer-vs-roas-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 MER vs ROAS for Shopify
+              </Link>
+            </li>
+            <li>
+              <Link href="/resources/ad-platforms-report-more-revenue-than-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Why Meta and Google both claim the same Shopify sale
+              </Link>
+            </li>
+            <li>
+              <Link href="/resources/shopify-revenue-up-roas-down" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Revenue is up but Meta and Google ROAS are down
               </Link>
             </li>
           </ul>

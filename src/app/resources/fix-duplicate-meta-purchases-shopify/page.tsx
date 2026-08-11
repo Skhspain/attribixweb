@@ -8,7 +8,7 @@ import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import { ProductCTA } from "@/components/marketing/CTAGroup";
 
 const CAUSES = [
-  { title: "Pixel and CAPI without a shared event ID", note: "Both fire for the same order, Meta has no way to know they're the same event, and counts two purchases." },
+  { title: "Pixel and CAPI firing without a shared event ID", note: "Running both is expected and recommended by Meta — the browser and server paths are meant to catch what the other misses. It only becomes duplication when the two events for the same order don't carry a matching event_id, which is what tells Meta to treat them as one purchase instead of two." },
   { title: "More than one tracking app installed", note: "A Shopify tracking or analytics app and a separately configured Pixel snippet can both fire a purchase event for the same order." },
   { title: "Theme code alongside an app", note: "A Pixel snippet added directly to the theme, left in place after installing a tracking app that also fires purchase events." },
   { title: "A tag manager plus a native integration", note: "Google Tag Manager or a similar tool firing a purchase tag while Shopify's native Meta channel integration also fires its own event." },
@@ -164,6 +164,11 @@ export default function Page() {
             <li>
               <Link href="/resources/meta-event-match-quality-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Meta Event Match Quality explained
+              </Link>
+            </li>
+            <li>
+              <Link href="/resources/meta-ads-shows-sales-shopify-no-orders" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Meta Ads shows sales but Shopify has no matching orders
               </Link>
             </li>
           </ul>

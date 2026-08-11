@@ -343,6 +343,11 @@ export default function ShopifyAttributionPage() {
                 How to calculate true ROAS on Shopify
               </Link>
             </li>
+            <li>
+              <Link href="/resources/ad-platforms-report-more-revenue-than-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Why Meta and Google both claim the same Shopify sale
+              </Link>
+            </li>
           </ul>
         </Reveal>
       </section>

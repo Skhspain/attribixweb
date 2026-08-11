@@ -275,6 +275,11 @@ export default function ServerSideTrackingPage() {
                 Shopify ROAS tracking
               </Link>
             </li>
+            <li>
+              <Link href="/resources/ios-ad-blockers-shopify-tracking-loss" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                iOS, ad blockers and privacy: how much tracking are you losing?
+              </Link>
+            </li>
           </ul>
         </Reveal>
       </section>

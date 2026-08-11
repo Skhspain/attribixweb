@@ -288,6 +288,21 @@ export default function GoogleAdsTrackingPage() {
                 Enhanced Conversions for Shopify explained
               </Link>
             </li>
+            <li>
+              <Link href="/resources/google-ads-not-tracking-shopify-purchases" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Google Ads not tracking Shopify purchases: step-by-step diagnosis
+              </Link>
+            </li>
+            <li>
+              <Link href="/resources/performance-max-no-sales" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Performance Max spending but getting no sales
+              </Link>
+            </li>
+            <li>
+              <Link href="/resources/google-consent-mode-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Consent Mode on Shopify: why Google Ads conversions may change
+              </Link>
+            </li>
           </ul>
         </Reveal>
       </section>

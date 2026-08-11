@@ -6,6 +6,32 @@ import { Reveal } from "@/components/marketing/Reveal";
 import Eyebrow from "@/components/marketing/Eyebrow";
 import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import { ProductCTA } from "@/components/marketing/CTAGroup";
+import FAQList from "@/components/marketing/FAQList";
+
+const FAQ_ITEMS = [
+  {
+    q: "Should Google Ads revenue ever exactly equal Shopify revenue?",
+    a: "No. Google Ads only reports the subset of orders its own attribution model credits to Google Ads clicks, using its own window and conversion-date logic — it was never going to equal your total Shopify revenue, which includes every channel.",
+  },
+  {
+    q: "How do I know if it's duplication rather than one of these five mechanics?",
+    a: "Duplication tends to show up as a consistent, proportional overcount — Google reporting a fixed percentage more conversions than Shopify orders, week after week. See the dedicated duplicate-conversions guide for the specific settings to check.",
+  },
+  {
+    q: "Does Performance Max make this worse?",
+    a: "Not on its own — but because PMax leans harder on conversion value for bidding than manually managed campaigns, any existing tracking error has a bigger downstream effect on where it spends.",
+  },
+];
+
+const FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
 
 const CAUSES = [
   { title: "Conversion date vs. order date", note: "Google logs a conversion when the tag fires, near checkout. Shopify logs the order at the moment it's placed. A late-firing tag or a delayed webhook shifts which day's report each shows up in." },
@@ -42,6 +68,7 @@ export default function Page() {
     <ProductPageShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ARTICLE_JSON_LD) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_JSON_LD) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }} />
 
       {/* HERO */}
       <section className="mx-auto max-w-3xl px-4 pt-24 pb-10 md:pt-32">
@@ -110,6 +137,14 @@ export default function Page() {
         </Reveal>
       </section>
 
+      {/* FAQ */}
+      <section className="mx-auto max-w-3xl px-4 py-14">
+        <Reveal>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-8">Common questions</h2>
+          <FAQList items={FAQ_ITEMS} />
+        </Reveal>
+      </section>
+
       {/* RELATED */}
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
@@ -123,6 +158,16 @@ export default function Page() {
             <li>
               <Link href="/resources/enhanced-conversions-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Enhanced Conversions for Shopify explained
+              </Link>
+            </li>
+            <li>
+              <Link href="/resources/google-ads-duplicate-conversions-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Duplicate Google Ads conversions on Shopify
+              </Link>
+            </li>
+            <li>
+              <Link href="/resources/ad-platforms-report-more-revenue-than-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Why Meta and Google both claim the same Shopify sale
               </Link>
             </li>
             <li>

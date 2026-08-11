@@ -200,6 +200,16 @@ export default function Page() {
                 MER calculator
               </Link>
             </li>
+            <li>
+              <Link href="/resources/shopify-advertising-budget-how-much-to-spend" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                How much should a Shopify store spend on ads?
+              </Link>
+            </li>
+            <li>
+              <Link href="/resources/when-to-scale-ad-budget" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Your ads are profitable: when should you increase budget?
+              </Link>
+            </li>
           </ul>
         </Reveal>
       </section>

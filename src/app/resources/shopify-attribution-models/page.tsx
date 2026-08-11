@@ -6,6 +6,32 @@ import { Reveal } from "@/components/marketing/Reveal";
 import Eyebrow from "@/components/marketing/Eyebrow";
 import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import { ProductCTA } from "@/components/marketing/CTAGroup";
+import FAQList from "@/components/marketing/FAQList";
+
+const FAQ_ITEMS = [
+  {
+    q: "Which attribution model should I use — first-click, last-click or data-driven?",
+    a: "There's no universally correct choice. Last-click is the simplest to reason about and the default most platforms ship with. Data-driven is the most balanced in theory but needs real order volume to be statistically stable. Pick one, apply it consistently, and don't compare numbers produced under different models as if they were the same metric.",
+  },
+  {
+    q: "Why do Meta and Google always seem to use different models by default?",
+    a: "Each platform ships with its own default attribution settings, tuned to how it evaluates its own campaigns — that's a business decision by each platform, not a technical constraint you're stuck with everywhere.",
+  },
+  {
+    q: "Does a longer attribution window mean more accurate attribution?",
+    a: "No — it means more revenue gets attributed to advertising, not necessarily more correctly. A longer window pulls in more delayed purchases, some of which the ad genuinely influenced and some of which would have happened regardless.",
+  },
+];
+
+const FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
 
 const MODELS = [
   { name: "First-click", rewards: "The first touchpoint that brought the customer into your world.", weakness: "Ignores everything that happened after — including the touchpoint that actually closed the sale." },
@@ -42,6 +68,7 @@ export default function Page() {
     <ProductPageShell>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ARTICLE_JSON_LD) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_JSON_LD) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }} />
 
       {/* HERO */}
       <section className="mx-auto max-w-3xl px-4 pt-24 pb-10 md:pt-32">
@@ -155,6 +182,14 @@ export default function Page() {
         </Reveal>
       </section>
 
+      {/* FAQ */}
+      <section className="mx-auto max-w-3xl px-4 py-14">
+        <Reveal>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-8">Common questions</h2>
+          <FAQList items={FAQ_ITEMS} />
+        </Reveal>
+      </section>
+
       {/* RELATED */}
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
@@ -173,6 +208,16 @@ export default function Page() {
             <li>
               <Link href="/resources/true-roas-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How to calculate true ROAS on Shopify
+              </Link>
+            </li>
+            <li>
+              <Link href="/resources/view-through-conversions-explained" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                View-through conversions: should you count them?
+              </Link>
+            </li>
+            <li>
+              <Link href="/resources/meta-attribution-window-roas" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Why changing your Meta attribution window changes your ROAS
               </Link>
             </li>
           </ul>

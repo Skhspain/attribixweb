@@ -377,6 +377,20 @@ export default function AdManagementPage() {
         </Reveal>
       </section>
 
+      {/* ── 10b. RELATED READING ── */}
+      <section className="mx-auto max-w-3xl px-4 pb-4">
+        <Reveal>
+          <h2 className="text-xl md:text-2xl font-extrabold mb-4">Deciding whether to hire an agency?</h2>
+          <ul className="space-y-2 text-sm">
+            <li><Link href="/resources/marketing-agency-vs-in-house" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Marketing agency vs in-house: which is better for Meta and Google Ads?</Link></li>
+            <li><Link href="/resources/ecommerce-marketing-agency-cost" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How much does an ecommerce marketing agency cost?</Link></li>
+            <li><Link href="/resources/when-to-hire-a-marketing-agency" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">When should you hire an ecommerce marketing agency?</Link></li>
+            <li><Link href="/resources/how-to-choose-a-meta-ads-agency" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How to choose a Meta Ads agency for ecommerce</Link></li>
+            <li><Link href="/resources/how-to-choose-a-google-ads-agency" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How to choose a Google Ads agency for ecommerce</Link></li>
+          </ul>
+        </Reveal>
+      </section>
+
       {/* ── 11. FINAL CTA ── */}
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Reveal>
