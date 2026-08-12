@@ -12,15 +12,15 @@ import DiagramFrame from "@/components/marketing/DiagramFrame";
 const FAQ_ITEMS = [
   {
     q: "How much Shopify tracking does iOS actually lose?",
-    a: "There's no fixed, reliable percentage — it depends on how much of your traffic is Safari and iOS in-app browsers, your customers' consent choices, and how quickly people buy after seeing an ad. Treat any source that quotes a specific recovery or loss percentage with skepticism; the honest answer is 'a real and often meaningful share, not a fixed number.'",
+    a: "There's no fixed, reliable percentage. It depends on how much of your traffic is Safari and iOS in-app browsers, your customers' consent choices, and how quickly people buy after seeing an ad. Treat any source that quotes a specific recovery or loss percentage with skepticism; the honest answer is 'a real and often meaningful share, not a fixed number.'",
   },
   {
     q: "Do ad blockers and Safari's ITP cause the same kind of tracking loss?",
-    a: "No. Ad blockers stop a pixel's network request outright — a binary block. ITP is narrower: it restricts cookie lifespan and blocks third-party cookies, which mainly damages multi-session and cross-site tracking rather than blocking every request.",
+    a: "No. Ad blockers stop a pixel's network request outright, a binary block. ITP is narrower: it restricts cookie lifespan and blocks third-party cookies, which mainly damages multi-session and cross-site tracking rather than blocking every request.",
   },
   {
     q: "Does server-side tracking (CAPI) fully fix iOS and ad blocker tracking loss?",
-    a: "No — it recovers a meaningful share of the otherwise-missed signal, not all of it. It still depends on the customer having consented and on your server having enough identifying data to match the event to the right person.",
+    a: "No. It recovers a meaningful share of the otherwise-missed signal, not all of it. It still depends on the customer having consented and on your server having enough identifying data to match the event to the right person.",
   },
   {
     q: "How can I tell if I'm actually losing iOS tracking, or if my ads just underperform on iOS?",
@@ -83,7 +83,7 @@ export default function Page() {
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             Some real Shopify orders never show up as a conversion in Meta
-            or Google Ads at all — not because the ad didn&apos;t work, but
+            or Google Ads at all, not because the ad didn&apos;t work, but
             because Safari&apos;s tracking restrictions, an ad blocker, or a
             declined consent prompt stopped the browser-based purchase
             event from ever reaching the ad platform. There&apos;s no clean
@@ -101,14 +101,14 @@ export default function Page() {
           <p className="text-white/60 leading-relaxed text-sm">
             ITP is Safari&apos;s built-in anti-tracking system, and it&apos;s
             the default on every iPhone and iPad, since Safari is the
-            system browser there — it also runs on macOS Safari and inside
+            system browser there. It also runs on macOS Safari and inside
             many iOS in-app browsers that use Apple&apos;s WebKit engine.
             Two of its restrictions matter most for ad tracking. First, it
             blocks third-party cookies outright, which is the mechanism
             most cross-site ad tracking historically relied on. Second, it
             caps the lifespan of first-party cookies set via JavaScript for
-            domains it classifies as having tracking capability — commonly
-            down to about seven days — rather than the months or years a
+            domains it classifies as having tracking capability, commonly
+            down to about seven days, rather than the months or years a
             cookie might otherwise persist. A customer who saw an ad,
             didn&apos;t buy that session, and returned more than a week
             later on Safari can look to the ad platform like a fresh,
@@ -139,13 +139,13 @@ export default function Page() {
               closer to a wall. It typically works from a maintained list
               of known tracking and advertising domains and request
               patterns, and it stops the browser from ever sending the
-              request to those domains — the Meta Pixel or Google tag
+              request to those domains: the Meta Pixel or Google tag
               script simply never loads, or its request to log an event
               never leaves the browser. There&apos;s no cookie lifespan to
               reason about because there&apos;s no successful request in
               the first place. Anyone running an ad blocker who completes a
               purchase on your Shopify store is, from the ad platform&apos;s
-              perspective, invisible for that order — full stop, not
+              perspective, invisible for that order, full stop, not
               partially tracked.
             </p>
           </Reveal>
@@ -162,8 +162,8 @@ export default function Page() {
             applies by default with no extra installation required, unlike
             a desktop ad blocker extension that a smaller share of users
             actively install. A large amount of iOS traffic also arrives
-            through in-app browsers — someone tapping a link inside
-            Instagram or another app rather than opening full Safari —
+            through in-app browsers, someone tapping a link inside
+            Instagram or another app rather than opening full Safari,
             which can behave differently again depending on how that
             in-app browser handles cookies and scripts. And Apple&apos;s
             broader privacy positioning across the platform, including
@@ -187,7 +187,7 @@ export default function Page() {
             <div className="mt-2 space-y-4 text-white/60 leading-relaxed text-sm max-w-2xl">
               <p>
                 This isn&apos;t something to assume from general knowledge
-                about iOS — it&apos;s something to check against your own
+                about iOS. It&apos;s something to check against your own
                 data. A few concrete comparisons are more useful than
                 intuition:
               </p>
@@ -229,7 +229,7 @@ export default function Page() {
           <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
             The mechanism is straightforward and easy to misread. Spend on
             a campaign is recorded accurately regardless of tracking
-            loss — the ad platform always knows what it charged you.
+            loss: the ad platform always knows what it charged you.
             Attributed revenue is what gets undercounted, because it
             depends on the purchase event successfully reaching the
             platform. Divide accurate spend by undercounted revenue and
@@ -248,7 +248,7 @@ export default function Page() {
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>
             <h2 className="text-xl md:text-2xl font-extrabold mb-6">Where an order can drop out before the platform sees it</h2>
-            <DiagramFrame caption="Illustrative — the browser-only path has more places a real order can fail to register as a conversion.">
+            <DiagramFrame caption="Illustrative: the browser-only path has more places a real order can fail to register as a conversion.">
               <svg viewBox="0 0 620 220" className="w-full h-auto" role="img" aria-label="Diagram showing a customer purchase path where ITP, an ad blocker, or a network drop can each independently prevent the browser purchase event from reaching the ad platform, versus a server-side path triggered by the order webhook.">
                 <rect x="20" y="20" width="180" height="50" rx="10" className="fill-white/5" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
                 <text x="110" y="50" textAnchor="middle" className="fill-white text-[12px] font-semibold">Real Shopify order</text>
@@ -303,7 +303,7 @@ export default function Page() {
             the pixel script, because it never asks the browser to be the
             one to report the purchase. It depends instead on your server
             reliably knowing the order happened, and on having enough
-            matching data — usually a hashed email or phone number — to
+            matching data, usually a hashed email or phone number, to
             let the platform connect that order back to the right ad
             interaction.
           </p>
@@ -319,7 +319,7 @@ export default function Page() {
             <div className="mt-2 space-y-4 text-white/60 leading-relaxed text-sm max-w-2xl">
               <p>
                 Server-side tracking recovers a meaningful share of the
-                otherwise-missed signal — it does not recover all of it,
+                otherwise-missed signal. It does not recover all of it,
                 and any claim of complete or near-complete recovery, with a
                 specific percentage attached, isn&apos;t something to
                 trust. A few concrete limits are worth naming directly:
@@ -330,7 +330,7 @@ export default function Page() {
                 from the server-side event exactly as they&apos;d be
                 excluded from the browser event. Server-side tracking
                 changes the route data travels, not whether you&apos;re
-                allowed to send it — it never bypasses consent, and no
+                allowed to send it. It never bypasses consent, and no
                 legitimate implementation of it does.
               </p>
               <p>
@@ -345,7 +345,7 @@ export default function Page() {
               <p>
                 <strong className="text-white/85">It doesn&apos;t reconstruct the original journey.</strong>{" "}
                 A server-side purchase event confirms an order happened and
-                offers matching signals for the platform to work with — it
+                offers matching signals for the platform to work with. It
                 doesn&apos;t hand back the exact click or impression path
                 that ITP&apos;s cookie expiry already erased. The platform&apos;s
                 own matching logic decides what to credit; server-side

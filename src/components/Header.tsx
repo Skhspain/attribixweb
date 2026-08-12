@@ -14,8 +14,11 @@ const RESOURCES_CATEGORIES = [
   { label: "Meta Ads", href: "/resources#meta-ads" },
   { label: "Google Ads", href: "/resources#google-ads" },
   { label: "Shopify Growth", href: "/resources#shopify-growth" },
-  { label: "Attribution & Measurement", href: "/resources#attribution" },
+  { label: "CRO & Landing Pages", href: "/resources#cro-landing-pages" },
+  { label: "Attribution & Analytics", href: "/resources#attribution" },
   { label: "Tracking & Privacy", href: "/resources#tracking" },
+  { label: "Email & Retention", href: "/resources#email-retention" },
+  { label: "Creative & Offers", href: "/resources#creative-offers" },
   { label: "Marketing & Agency", href: "/resources#marketing-agency" },
 ];
 

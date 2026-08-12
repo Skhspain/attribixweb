@@ -11,15 +11,15 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "Is percentage of ad spend always a conflict of interest?",
-    a: "Not automatically, but it introduces a real incentive that a good agency has to actively work against rather than one that doesn't exist. An agency on percentage-of-spend that recommends cutting your budget when returns are falling is acting against its own short-term fee — worth noticing, and worth asking about directly.",
+    a: "Not automatically, but it introduces a real incentive that a good agency has to actively work against rather than one that doesn't exist. An agency on percentage-of-spend that recommends cutting your budget when returns are falling is acting against its own short-term fee, which is worth noticing, and worth asking about directly.",
   },
   {
     q: "Can a flat fee agency still be motivated to perform well?",
-    a: "Yes — reputation, retention and referrals matter regardless of fee structure, and a flat-fee agency that delivers poor results loses the client just as a percentage-of-spend agency does. Fee structure shapes incentives at the margin; it doesn't remove the basic business incentive to keep clients happy.",
+    a: "Yes. Reputation, retention and referrals matter regardless of fee structure, and a flat-fee agency that delivers poor results loses the client just as a percentage-of-spend agency does. Fee structure shapes incentives at the margin; it doesn't remove the basic business incentive to keep clients happy.",
   },
   {
     q: "Should the fee percentage go down as spend gets larger?",
-    a: "Often, yes, and many agencies build this in — a tapering rate (a higher percentage on the first tranche of spend, lower on the rest) reflects that managing $50,000/month isn't ten times the work of managing $5,000/month. If an agency's percentage doesn't taper at all, ask why.",
+    a: "Often, yes, and many agencies build this in: a tapering rate (a higher percentage on the first tranche of spend, lower on the rest) reflects that managing $50,000/month isn't ten times the work of managing $5,000/month. If an agency's percentage doesn't taper at all, ask why.",
   },
   {
     q: "How does Attribix's ad management pricing work?",
@@ -85,7 +85,7 @@ export default function Page() {
             aligns an agency&apos;s revenue with your budget growing, which is
             a different thing from aligning it with your results improving.
             A flat fee removes that specific conflict but introduces a
-            different one — no direct financial incentive tied to your
+            different one: no direct financial incentive tied to your
             account getting harder to manage well. The fairest structures,
             in practice, price against how complex the account is, not
             spend alone.
@@ -103,17 +103,17 @@ export default function Page() {
               it scales the fee automatically as the account grows, without
               anyone having to renegotiate a flat number every time spend
               increases. It also loosely ties the agency&apos;s income to your
-              growth — if your budget is expanding, presumably something is
+              growth: if your budget is expanding, presumably something is
               working, and the agency benefits alongside you.
             </p>
             <p>
               <strong className="text-white/85">The risk sits in that word &quot;loosely.&quot;</strong>{" "}
               An agency paid a percentage of spend earns more when you spend
-              more — full stop. That&apos;s not the same as earning more when
+              more, full stop. That&apos;s not the same as earning more when
               your account performs better. A store can increase ad spend
-              well past the point of strong marginal returns — where each
+              well past the point of strong marginal returns (where each
               additional dollar spent brings back less than the one before
-              it — and an agency on pure percentage-of-spend still earns
+              it), and an agency on pure percentage-of-spend still earns
               more for recommending that increase. Most agencies won&apos;t
               push spend recklessly because it damages the relationship and
               their reputation, but the financial incentive to scale budget
@@ -142,7 +142,7 @@ export default function Page() {
               <p>
                 <strong className="text-white/85">The risk runs the other direction.</strong>{" "}
                 An account genuinely does get harder to manage well as it
-                grows — more creative variants to test, more audiences to
+                grows: more creative variants to test, more audiences to
                 monitor, more budget decisions to make across campaign
                 types. A flat fee agreed at a smaller account size doesn&apos;t
                 automatically adjust as that complexity increases, which can
@@ -161,8 +161,8 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What actually deserves to set the price: complexity, not spend</h2>
           <div className="space-y-4 text-white/65 leading-relaxed text-sm">
             <p>
-              Both models are really trying to approximate the same thing —
-              how much genuine work managing your account well requires —
+              Both models are really trying to approximate the same thing:
+              how much genuine work managing your account well requires,
               using an imperfect proxy. Percentage of spend uses budget size
               as the proxy. Flat fee uses a fixed estimate made at signup as
               the proxy. Neither directly measures the thing that actually
@@ -172,15 +172,15 @@ export default function Page() {
               A $30,000/month account running one evergreen campaign on one
               channel can be less work than a $10,000/month account running
               five channels, a large catalogue, and frequent promotional
-              changes. Spend alone doesn&apos;t capture that difference — and
+              changes. Spend alone doesn&apos;t capture that difference, and
               neither does a flat number picked before either side really
               knew how the account would evolve.
             </p>
             <p>
               The structures that tend to hold up best over time are the
-              ones that revisit pricing against actual account complexity —
-              number of channels managed, catalogue size, creative
-              production volume, reporting depth expected — on a set
+              ones that revisit pricing against actual account complexity
+              (number of channels managed, catalogue size, creative
+              production volume, reporting depth expected) on a set
               schedule, rather than locking in indefinitely to whatever
               number or percentage was agreed at the start. Some agencies
               do this with a tapering percentage (lower rate as spend
@@ -206,11 +206,11 @@ export default function Page() {
               </li>
               <li>
                 If flat fee: under what conditions does the fee get
-                revisited — added channels, catalogue growth, more
+                revisited: added channels, catalogue growth, more
                 creative volume?
               </li>
               <li>
-                Either way: what specifically does the fee cover — strategy
+                Either way: what specifically does the fee cover, strategy
                 and management only, or also creative production, landing
                 pages, and reporting depth?
               </li>

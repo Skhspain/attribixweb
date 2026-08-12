@@ -11,15 +11,15 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "Is Google Ads management mostly about bidding?",
-    a: "Bidding is one part, and increasingly automated bidding does much of the mechanical work itself. The higher-value work is usually feeding that automation good inputs — clean tracking, a healthy feed, sensible account structure — and catching where it's optimizing toward the wrong thing.",
+    a: "Bidding is one part, and increasingly automated bidding does much of the mechanical work itself. The higher-value work is usually feeding that automation good inputs (clean tracking, a healthy feed, sensible account structure) and catching where it's optimizing toward the wrong thing.",
   },
   {
     q: "Do I still need someone managing Performance Max, since it's automated?",
-    a: "Yes, arguably more than with manual campaign types. PMax makes fewer decisions visible to you, which means the inputs — conversion tracking accuracy, feed quality, asset groups, audience signals — matter more, not less, and someone needs to be checking them.",
+    a: "Yes, arguably more than with manual campaign types. PMax makes fewer decisions visible to you, which means the inputs (conversion tracking accuracy, feed quality, asset groups, audience signals) matter more, not less, and someone needs to be checking them.",
   },
   {
     q: "What should reporting from a Google Ads agency actually include?",
-    a: "At minimum: spend, conversions and conversion value by campaign, how those compare to actual Shopify revenue (not just what Google Ads reports), and a clear explanation of what changed and why — not just a dashboard screenshot.",
+    a: "At minimum: spend, conversions and conversion value by campaign, how those compare to actual Shopify revenue (not just what Google Ads reports), and a clear explanation of what changed and why, not just a dashboard screenshot.",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function Page() {
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             Less bid-tweaking than people expect, more account-structure
             and data-quality work than people expect. Automated bidding
-            handles a lot of the mechanical decisions now — the job is
+            handles a lot of the mechanical decisions now. The job is
             mostly about making sure it's optimizing toward accurate,
             meaningful signals.
           </p>
@@ -84,7 +84,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Account audit and structure</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             Before changing anything, a proper engagement starts by
-            reviewing what's actually there — campaign structure, how
+            reviewing what's actually there: campaign structure, how
             budget is split across Search, Shopping and Performance Max,
             what conversion actions exist and which one is primary, and
             whether historical performance data is even reliable enough to
@@ -130,8 +130,8 @@ export default function Page() {
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Conversion tracking as ongoing work, not a setup task</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-              Tracking breaks — a theme update, a checkout change, a
-              consent-banner update — and automated bidding degrades
+              Tracking breaks (a theme update, a checkout change, a
+              consent-banner update) and automated bidding degrades
               quietly when it does, because it keeps optimizing toward
               whatever signal it's still receiving, even if that signal is
               now wrong. Ongoing verification of the purchase event,
@@ -148,8 +148,8 @@ export default function Page() {
           <p className="text-white/60 leading-relaxed text-sm">
             Budget pacing, bid strategy selection and target adjustments
             are part of the job, but the more useful work is reconciling
-            what Google Ads reports against what Shopify actually recorded
-            — so decisions get made on real business performance, not just
+            what Google Ads reports against what Shopify actually recorded,
+            so decisions get made on real business performance, not just
             a platform-reported ROAS that might already be off.
           </p>
         </Reveal>

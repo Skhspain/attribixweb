@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Why Meta Ads Work One Week and Fail the Next",
     description:
-      "Purchase volume, auction dynamics and rolling windows — why weekly Meta Ads swings usually aren't the emergency they look like.",
+      "Purchase volume, auction dynamics and rolling windows: why weekly Meta Ads swings usually aren't the emergency they look like.",
     url: "https://www.attribix.app/resources/why-meta-ads-work-one-week-fail-next",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Attribix" }],
   },

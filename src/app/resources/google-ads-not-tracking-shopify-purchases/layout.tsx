@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Google Ads Not Tracking Shopify Purchases? Step-by-Step Diagnosis",
   description:
-    "A step-by-step checklist for Google Ads not tracking Shopify purchases — from primary conversion action and tag presence through transaction IDs, GA4 import, Enhanced Conversions and consent, ending with a real test order.",
+    "A step-by-step checklist for Google Ads not tracking Shopify purchases: from primary conversion action and tag presence through transaction IDs, GA4 import, Enhanced Conversions and consent, ending with a real test order.",
   alternates: { canonical: "https://www.attribix.app/resources/google-ads-not-tracking-shopify-purchases" },
   openGraph: {
     title: "Google Ads Not Tracking Shopify Purchases? Step-by-Step Diagnosis",

@@ -11,7 +11,7 @@ const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Google Ads Search Terms: What Should Ecommerce Advertisers Look For?",
-  description: "How to read the Google Ads search terms report for a Shopify store — intent, wasted spend, opportunities, and judging queries by profit instead of CPC.",
+  description: "How to read the Google Ads search terms report for a Shopify store: intent, wasted spend, opportunities, and judging queries by profit instead of CPC.",
   datePublished: "2026-08-11",
   dateModified: "2026-08-11",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
@@ -92,7 +92,7 @@ export default function Page() {
             </p>
             <p className="mt-4 text-white/60 leading-relaxed text-sm max-w-2xl">
               Use negative keywords to block clear waste, but avoid becoming
-              so aggressive that you remove useful discovery traffic — a
+              so aggressive that you remove useful discovery traffic, a
               tradeoff covered in more depth in{" "}
               <Link href="/resources/broad-vs-phrase-vs-exact-match-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 broad match vs phrase match vs exact match for ecommerce
@@ -134,7 +134,7 @@ export default function Page() {
               A term with expensive clicks may still be excellent if it
               converts. A cheap term with lots of traffic can be terrible if
               nobody buys. Evaluate search terms through conversion value
-              and profit, not CPC alone — which means the search terms
+              and profit, not CPC alone, which means the search terms
               report is only as useful as the{" "}
               <Link href="/google-ads-conversion-tracking-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 conversion tracking

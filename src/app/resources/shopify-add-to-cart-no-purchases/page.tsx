@@ -11,7 +11,7 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "Is a high add-to-cart, low-checkout pattern always a bad sign?",
-    a: "Not always — some shoppers use the cart to save items and compare, or check out later on another device. But if the gap is large and consistent, it's usually telling you something real about what happens right after someone commits to a product.",
+    a: "Not always. Some shoppers use the cart to save items and compare, or check out later on another device. But if the gap is large and consistent, it's usually telling you something real about what happens right after someone commits to a product.",
   },
   {
     q: "Where do I actually see the reasons people abandoned?",
@@ -72,7 +72,7 @@ export default function Page() {
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             Someone adding a product to cart has already told you the
             product and price got their attention. Something specific is
-            stopping them right after that — and it&apos;s usually visible
+            stopping them right after that, and it&apos;s usually visible
             in Shopify&apos;s own abandoned checkout data if you look at it
             directly instead of guessing.
           </p>
@@ -104,8 +104,8 @@ export default function Page() {
               A delivery estimate that&apos;s longer than the shopper
               expected, or the absence of a payment method they trust or
               prefer, both show up as add-to-cart without checkout
-              completion. This is worth checking by device and region too
-              — a missing Buy Now Pay Later option or wallet-based payment
+              completion. This is worth checking by device and region too:
+              a missing Buy Now Pay Later option or wallet-based payment
               tends to matter more on mobile, where typing in full card
               details is more friction than on desktop.
             </p>
@@ -118,7 +118,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">The discount field as a trust signal, not just a feature</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             An empty discount code box at checkout can send some shoppers
-            looking elsewhere for a code before they finish buying — and
+            looking elsewhere for a code before they finish buying, and
             not all of them come back. If you run frequent promotions,
             this can quietly cost you completed orders from people who
             would have paid full price if the box hadn&apos;t suggested
@@ -167,7 +167,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold">Not sure which one it is?</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             If you&apos;ve checked the obvious causes and carts are still
-            piling up without orders, send us an inquiry — we can look at
+            piling up without orders, send us an inquiry: we can look at
             the store and the checkout together.
           </p>
           <ManagedServicesCTA className="mt-8 justify-center" />

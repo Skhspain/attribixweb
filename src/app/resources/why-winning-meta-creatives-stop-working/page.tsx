@@ -12,7 +12,7 @@ const ARTICLE_JSON_LD = {
   "@type": "Article",
   headline: "Why Winning Meta Ad Creatives Stop Working",
   description:
-    "Fatigue is only one explanation. Why a winning Meta creative can decline — repetition, a shifting market, a weakening website, or a tracking change — and how to tell them apart.",
+    "Fatigue is only one explanation. Why a winning Meta creative can decline: repetition, a shifting market, a weakening website, or a tracking change, and how to tell them apart.",
   datePublished: "2026-08-11",
   dateModified: "2026-08-11",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },

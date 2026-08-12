@@ -11,7 +11,7 @@ const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Why Google Search Ads Get Clicks but Low-Quality Traffic",
-  description: "Clearer intent mapping — search term, ad, landing page, offer — beats simply narrowing keywords.",
+  description: "Clearer intent mapping (search term, ad, landing page, offer) beats simply narrowing keywords.",
   datePublished: "2026-08-11",
   dateModified: "2026-08-11",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },

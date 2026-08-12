@@ -70,7 +70,7 @@ export default function Page() {
             Should you import GA4 purchases into Google Ads on Shopify?
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            Google Ads can track a Shopify purchase two different ways — a
+            Google Ads can track a Shopify purchase two different ways: a
             native conversion action, or an imported GA4 conversion. They
             aren&apos;t interchangeable, and using both as your primary
             optimization signal is the fastest way to end up with
@@ -84,8 +84,8 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Two different paths to the same event</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             The native path sends a purchase conversion directly to Google
-            Ads — usually via the Google &amp; YouTube Shopify app or a
-            manually placed tag — built specifically to feed Google
+            Ads (usually via the Google &amp; YouTube Shopify app or a
+            manually placed tag) built specifically to feed Google
             Ads&apos; bidding systems. The GA4 path records the purchase in
             Google Analytics first, as one event among everything else
             GA4 tracks across every channel, and then imports a version of
@@ -102,7 +102,7 @@ export default function Page() {
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               GA4&apos;s own attribution model decides which touchpoint
               gets credit for a purchase before that conversion is ever
-              imported into Google Ads — which can differ from how
+              imported into Google Ads, which can differ from how
               Google Ads would have credited the same order natively.
               Enhanced Conversions, which improves identity matching using
               hashed customer data, is a feature of the native tag and
@@ -120,7 +120,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Marking both as primary is the real risk</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             The most common problem isn&apos;t choosing one path over the
-            other — it&apos;s having both active as primary conversion
+            other. It&apos;s having both active as primary conversion
             actions for the same goal, which counts each real purchase
             twice and inflates reported conversions. If you want GA4
             import available for reference or cross-channel analysis, set
@@ -141,7 +141,7 @@ export default function Page() {
               simpler, more purpose-built choice. If GA4 is already your
               cross-channel source of truth and you want Google Ads
               decisions to align with how you're measuring every other
-              channel, importing from GA4 has a stronger case — as long as
+              channel, importing from GA4 has a stronger case, as long as
               it's the only primary source, not an addition to the native
               tag.
             </p>

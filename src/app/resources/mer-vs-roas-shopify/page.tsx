@@ -12,11 +12,11 @@ import DiagramFrame from "@/components/marketing/DiagramFrame";
 const FAQ_ITEMS = [
   {
     q: "What is ROAS?",
-    a: "Return on ad spend — revenue attributed to advertising divided by what you spent on it. It depends entirely on which attribution model produced the revenue figure.",
+    a: "Return on ad spend: revenue attributed to advertising divided by what you spent on it. It depends entirely on which attribution model produced the revenue figure.",
   },
   {
     q: "What is MER?",
-    a: "Marketing efficiency ratio — total store revenue divided by total marketing spend, with no attribution model involved at all.",
+    a: "Marketing efficiency ratio: total store revenue divided by total marketing spend, with no attribution model involved at all.",
   },
   {
     q: "Which one should I use to decide what to scale?",
@@ -72,7 +72,7 @@ export default function Page() {
             MER vs ROAS for Shopify
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            ROAS depends on attribution — a model deciding which revenue
+            ROAS depends on attribution: a model deciding which revenue
             counts as &quot;from&quot; advertising. MER skips that decision entirely.
             That difference is why they move differently, and why neither
             one alone tells the whole story.
@@ -107,7 +107,7 @@ export default function Page() {
               revenue for a period, divided by total marketing spend for
               that same period. No individual order is credited to any
               specific ad. It doesn&apos;t try to answer &quot;which campaign caused
-              this sale&quot; — it answers &quot;given what I spent on marketing
+              this sale&quot;; it answers &quot;given what I spent on marketing
               overall, how much did the business bring in.&quot; That makes it
               far steadier than platform ROAS, since it isn&apos;t exposed to
               attribution-window changes, tracking gaps, or cross-platform
@@ -144,7 +144,7 @@ export default function Page() {
           <p className="text-white/60 leading-relaxed text-sm">
             ROAS is more useful at the campaign or ad-set level, where you
             need enough granularity to compare one creative or audience
-            against another — MER doesn&apos;t break down that far. MER is more
+            against another; MER doesn&apos;t break down that far. MER is more
             useful at the business level, for questions like &quot;is our overall
             marketing spend sustainable relative to revenue,&quot; where
             attribution noise would otherwise make the trend hard to read.
@@ -161,7 +161,7 @@ export default function Page() {
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What neither metric proves</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-              Neither ROAS nor MER proves incrementality — that the ad spend
+              Neither ROAS nor MER proves incrementality: that the ad spend
               caused sales that wouldn&apos;t have happened anyway. A high MER
               can coexist with a business that would have sold nearly as
               much through organic and repeat demand alone. Both metrics

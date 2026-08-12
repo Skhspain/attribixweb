@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Should You Pause a Meta Ad That Has No Sales?",
   description:
-    "Zero sales doesn't mean a bad ad — it depends on spend relative to target CPA and what happened earlier in the funnel. How to make a pause decision for a reason.",
+    "Zero sales doesn't mean a bad ad. It depends on spend relative to target CPA and what happened earlier in the funnel. How to make a pause decision for a reason.",
   alternates: { canonical: "https://www.attribix.app/resources/should-you-pause-meta-ad-no-sales" },
   openGraph: {
     title: "Should You Pause a Meta Ad That Has No Sales?",

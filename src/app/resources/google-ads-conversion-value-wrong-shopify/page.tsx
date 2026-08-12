@@ -11,7 +11,7 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "Should conversion value include tax and shipping?",
-    a: "There's no single correct answer enforced by Google Ads — it depends on what your implementation sends. What matters is consistency: if the native tag and any imported GA4 value are built from different definitions of the order total, they'll disagree even though both are technically working.",
+    a: "There's no single correct answer enforced by Google Ads: it depends on what your implementation sends. What matters is consistency: if the native tag and any imported GA4 value are built from different definitions of the order total, they'll disagree even though both are technically working.",
   },
   {
     q: "Why does Performance Max care more about this than Search?",
@@ -19,7 +19,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Can currency issues affect stores that only sell in one currency?",
-    a: "Less commonly, but it's still worth checking the conversion action's currency setting against the store's actual transaction currency directly rather than assuming they match — a mismatch here silently multiplies or divides every reported value by the conversion rate difference.",
+    a: "Less commonly, but it's still worth checking the conversion action's currency setting against the store's actual transaction currency directly rather than assuming they match. A mismatch here silently multiplies or divides every reported value by the conversion rate difference.",
   },
 ];
 
@@ -37,7 +37,7 @@ const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Google Ads Conversion Value Is Wrong on Shopify",
-  description: "What determines the value Google Ads reports for a Shopify order, and the specific mechanics — subtotal vs total, currency, duplication, GA4 import — that make it diverge from the real order total.",
+  description: "What determines the value Google Ads reports for a Shopify order, and the specific mechanics (subtotal vs total, currency, duplication, GA4 import) that make it diverge from the real order total.",
   datePublished: "2026-08-11",
   dateModified: "2026-08-11",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
@@ -72,7 +72,7 @@ export default function Page() {
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             A wrong conversion value almost never comes from a single
-            obvious bug — it&apos;s usually one of a handful of definitional
+            obvious bug. It&apos;s usually one of a handful of definitional
             mismatches: what counts as &quot;value&quot; in the first place, which
             currency it&apos;s reported in, whether duplicate conversions are
             doubling it, or whether a GA4 import and the native tag disagree
@@ -91,12 +91,12 @@ export default function Page() {
             The conversion value Google Ads reports comes from whatever
             number the implementation decides to pass as the purchase
             event&apos;s value parameter at the moment it fires. There&apos;s no
-            single Shopify-mandated definition of that number — it can be
+            single Shopify-mandated definition of that number: it can be
             cart subtotal, order total including tax and shipping, or total
             minus a discount code, depending entirely on how the theme,
             the Google &amp; YouTube app, or a manual GTM setup populates it.
             The value is only &quot;wrong&quot; relative to whatever you expected it
-            to represent — which is exactly why it&apos;s worth confirming what
+            to represent, which is exactly why it&apos;s worth confirming what
             your own setup actually sends before assuming a bug.
           </p>
         </Reveal>
@@ -109,7 +109,7 @@ export default function Page() {
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">One order, two different reported values</h2>
             <p className="text-white/65 leading-relaxed text-sm">
-              Illustrative example — a single $95 order, where the native
+              Illustrative example: a single $95 order, where the native
               Google tag sends the full checkout total and a GA4-imported
               conversion action sends subtotal only:
             </p>
@@ -150,7 +150,7 @@ export default function Page() {
           </Reveal>
           <Reveal delay={140}>
             <p className="mt-5 text-sm text-white/45 max-w-2xl">
-              Neither number is necessarily wrong on its own — both are
+              Neither number is necessarily wrong on its own. Both are
               internally consistent with how each path defines value. The
               problem is having both live as conversion actions
               simultaneously, reporting two different revenue figures for
@@ -170,7 +170,7 @@ export default function Page() {
             account&apos;s billing currency, and the conversion action isn&apos;t
             explicitly configured to declare the currency it&apos;s receiving,
             Google Ads can treat the incoming number as face value in the
-            wrong currency rather than converting it — which either
+            wrong currency rather than converting it, which either
             multiplies or divides every reported figure by whatever the
             exchange rate happens to be. Multi-currency Shopify stores are
             especially exposed here, since the value passed can come from
@@ -213,7 +213,7 @@ export default function Page() {
             it. The per-order figure looks right when you spot-check one
             order; the total looks wrong because it&apos;s doubled across every
             order that hit the same duplication. Worth checking count and
-            value together rather than value alone — see{" "}
+            value together rather than value alone. See{" "}
             <Link href="/resources/google-ads-duplicate-conversions-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               duplicate Google Ads conversions on Shopify
             </Link>{" "}
@@ -234,9 +234,9 @@ export default function Page() {
               conversion. A refund or cancellation reported back to Google
               Ads as a conversion adjustment references the transaction ID
               to find which recorded conversion to reduce. If the ID on the
-              adjustment doesn&apos;t match the ID on the original event — a
+              adjustment doesn&apos;t match the ID on the original event (a
               common gap when refunds are handled through a different system
-              or app than the original purchase tracking — the value never
+              or app than the original purchase tracking) the value never
               gets corrected, and the original, pre-refund figure stays in
               Google Ads&apos; reporting indefinitely.
             </p>

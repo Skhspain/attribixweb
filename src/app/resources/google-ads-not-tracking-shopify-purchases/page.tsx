@@ -11,39 +11,39 @@ import FAQList from "@/components/marketing/FAQList";
 const STEPS = [
   {
     title: "Is the right conversion action actually set as Primary?",
-    body: "Google Ads only reports and bids against conversion actions marked Primary — a Secondary action still logs data but doesn't show up in the headline Conversions column or feed automated bidding. If a Purchase action exists but got left as Secondary during setup, or a different action entirely (like a newsletter signup) is marked Primary instead, purchases can be recording correctly and still look invisible from where you're looking.",
+    body: "Google Ads only reports and bids against conversion actions marked Primary. A Secondary action still logs data but doesn't show up in the headline Conversions column or feed automated bidding. If a Purchase action exists but got left as Secondary during setup, or a different action entirely (like a newsletter signup) is marked Primary instead, purchases can be recording correctly and still look invisible from where you're looking.",
   },
   {
     title: "Is the Google tag actually live on the store?",
-    body: "Check the storefront itself, not the theme editor or a preview link — a tag added to an unpublished theme or a draft of the Google & YouTube channel setup won't fire for real customers. A browser's network tab or a tag-inspection extension on the live site will show whether the base tag is present at all before you go further.",
+    body: "Check the storefront itself, not the theme editor or a preview link: a tag added to an unpublished theme or a draft of the Google & YouTube channel setup won't fire for real customers. A browser's network tab or a tag-inspection extension on the live site will show whether the base tag is present at all before you go further.",
   },
   {
     title: "Is it specifically the purchase event, not just a page view?",
-    body: "The base Google tag firing on every page (which supports remarketing and basic measurement) is a separate thing from the conversion event tied to the order confirmation step. It's possible for the base tag to work fine sitewide while the purchase-specific event on the thank-you or order-status page never fires — check that the confirmation page itself is actually loading and triggering the conversion snippet, not just that the site has a tag somewhere.",
+    body: "The base Google tag firing on every page (which supports remarketing and basic measurement) is a separate thing from the conversion event tied to the order confirmation step. It's possible for the base tag to work fine sitewide while the purchase-specific event on the thank-you or order-status page never fires. Check that the confirmation page itself is actually loading and triggering the conversion snippet, not just that the site has a tag somewhere.",
   },
   {
     title: "Do the conversion ID and label match the conversion action exactly?",
-    body: "If the tag was hardcoded manually rather than deployed through the Google & YouTube app, a copy-paste mismatch between the conversion ID/label shown in the Google Ads UI and what's actually in the snippet is a common, easy-to-miss cause. The values have to match the specific conversion action character for character — a stale ID from a recreated action is enough to break it silently.",
+    body: "If the tag was hardcoded manually rather than deployed through the Google & YouTube app, a copy-paste mismatch between the conversion ID/label shown in the Google Ads UI and what's actually in the snippet is a common, easy-to-miss cause. The values have to match the specific conversion action character for character; a stale ID from a recreated action is enough to break it silently.",
   },
   {
     title: "Is the transaction ID unique per order?",
-    body: "Each purchase event should carry the Shopify order ID or order name as its transaction identifier. A missing transaction ID, or a static placeholder value used across every order, breaks Google's ability to tell one order apart from another — which shows up either as conversions silently dropping or, in the opposite direction, as the same value getting recounted on page reloads.",
+    body: "Each purchase event should carry the Shopify order ID or order name as its transaction identifier. A missing transaction ID, or a static placeholder value used across every order, breaks Google's ability to tell one order apart from another, which shows up either as conversions silently dropping or, in the opposite direction, as the same value getting recounted on page reloads.",
   },
   {
     title: "Are value and currency actually populated?",
-    body: "A purchase event with an empty or zero value still counts toward conversion count, but it wrecks value-based bidding and revenue reporting — the order shows up as a conversion worth nothing. Currency has to match (or be explicitly declared against) the store's transaction currency; a value passed without a currency, or in the wrong one, distorts every revenue figure downstream even when the count is accurate.",
+    body: "A purchase event with an empty or zero value still counts toward conversion count, but it wrecks value-based bidding and revenue reporting: the order shows up as a conversion worth nothing. Currency has to match (or be explicitly declared against) the store's transaction currency; a value passed without a currency, or in the wrong one, distorts every revenue figure downstream even when the count is accurate.",
   },
   {
-    title: "Which implementation is actually live — the Shopify app, or manual GTM?",
-    body: "Purchases can be tracked through Shopify's built-in Google & YouTube channel integration, or through a manually configured Google Tag Manager container in the theme, or, on stores with a longer history, both at once because a migration was never finished. Confirm which one you believe is active is actually the one live on the store — a disconnected app with an old manual snippet still assumed removed is a common way tracking quietly stops.",
+    title: "Which implementation is actually live: the Shopify app, or manual GTM?",
+    body: "Purchases can be tracked through Shopify's built-in Google & YouTube channel integration, or through a manually configured Google Tag Manager container in the theme, or, on stores with a longer history, both at once because a migration was never finished. Confirm which one you believe is active is actually the one live on the store. A disconnected app with an old manual snippet still assumed removed is a common way tracking quietly stops.",
   },
   {
     title: "Is GA4 import involved, and is GA4 itself tracking purchases correctly?",
-    body: "If the Google Ads conversion action is set up to import a GA4 event rather than use its own native tag, that import is only as good as GA4's own ecommerce tracking. If GA4 isn't capturing the purchase event correctly in the first place — wrong event name, missing parameters — the import brings the same gap into Google Ads. Import processing also runs on its own delay, so check GA4's Realtime and standard ecommerce reports directly rather than assuming the import lag explains everything.",
+    body: "If the Google Ads conversion action is set up to import a GA4 event rather than use its own native tag, that import is only as good as GA4's own ecommerce tracking. If GA4 isn't capturing the purchase event correctly in the first place (wrong event name, missing parameters), the import brings the same gap into Google Ads. Import processing also runs on its own delay, so check GA4's Realtime and standard ecommerce reports directly rather than assuming the import lag explains everything.",
   },
   {
     title: "Is Enhanced Conversions configured correctly, or missing entirely?",
-    body: "Enhanced Conversions send hashed customer data alongside the standard conversion to improve matching — they don't create the underlying conversion record. Misconfigured field mapping here won't stop base purchases from tracking, but if base tracking is already broken, turning Enhanced Conversions on won't fix it. See enhanced conversions for Shopify for how the feature actually works.",
+    body: "Enhanced Conversions send hashed customer data alongside the standard conversion to improve matching; they don't create the underlying conversion record. Misconfigured field mapping here won't stop base purchases from tracking, but if base tracking is already broken, turning Enhanced Conversions on won't fix it. See enhanced conversions for Shopify for how the feature actually works.",
   },
   {
     title: "Is consent blocking the tag before it ever fires?",
@@ -51,22 +51,22 @@ const STEPS = [
   },
   {
     title: "Place a real test order and check tag status in Google Ads directly",
-    body: "After working through the above, the most reliable confirmation is placing an actual order (even a low-value one) and watching it through. Google Ads' own diagnostics area for a conversion action will show whether the tag was detected recently and whether it's receiving events — that's a more direct signal than inferring from delayed reporting. Give it 24–48 hours after the test order before concluding anything, since conversion processing isn't instant.",
+    body: "After working through the above, the most reliable confirmation is placing an actual order (even a low-value one) and watching it through. Google Ads' own diagnostics area for a conversion action will show whether the tag was detected recently and whether it's receiving events, which is a more direct signal than inferring from delayed reporting. Give it 24–48 hours after the test order before concluding anything, since conversion processing isn't instant.",
   },
 ];
 
 const FAQ_ITEMS = [
   {
-    q: "I checked the tag and it's firing — why is Google Ads still showing zero purchases?",
+    q: "I checked the tag and it's firing. Why is Google Ads still showing zero purchases?",
     a: "A firing base tag doesn't guarantee the purchase-specific conversion event is firing on the confirmation step, or that its conversion ID and label match the action you're looking at in Google Ads. Those are the two most common gaps once basic tag presence is confirmed.",
   },
   {
     q: "Does the Google & YouTube Shopify app handle all of this automatically?",
-    a: "It handles a lot of it — tag deployment, transaction ID, standard event structure — which is why it's the recommended path for most stores. It doesn't protect against a leftover manual tag still running alongside it, or against the conversion action itself being misconfigured as Secondary rather than Primary.",
+    a: "It handles a lot of it (tag deployment, transaction ID, standard event structure), which is why it's the recommended path for most stores. It doesn't protect against a leftover manual tag still running alongside it, or against the conversion action itself being misconfigured as Secondary rather than Primary.",
   },
   {
     q: "How long should I wait after fixing something before checking if it worked?",
-    a: "Place a test order after the fix, then give it at least 24–48 hours before judging results — conversion processing and reporting both run with some delay, and judging too early tends to produce false negatives.",
+    a: "Place a test order after the fix, then give it at least 24–48 hours before judging results, since conversion processing and reporting both run with some delay, and judging too early tends to produce false negatives.",
   },
 ];
 
@@ -121,7 +121,7 @@ export default function Page() {
             When Shopify shows orders from Google traffic and Google Ads
             doesn&apos;t, the cause is almost always one specific link in the
             chain between an order completing and a conversion getting
-            recorded — not a vague &quot;tracking is broken.&quot; Work through the
+            recorded, not a vague &quot;tracking is broken.&quot; Work through the
             checks below in order. Most stores find the answer within the
             first half of the list.
           </p>
@@ -158,8 +158,8 @@ export default function Page() {
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-              This exact chain — order completes, event should fire, value
-              and transaction ID should populate — is what Attribix sends
+              This exact chain (order completes, event should fire, value
+              and transaction ID should populate) is what Attribix sends
               from Shopify to Google Ads on every order, alongside a view of
               what Google Ads actually recorded, so a broken step shows up as
               a visible gap instead of a mystery. More on how that fits
@@ -208,7 +208,7 @@ export default function Page() {
             </li>
             <li>
               <Link href="/resources/google-ads-conversions-dropped-suddenly" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
-                Google Ads conversions dropped suddenly — what changed
+                Google Ads conversions dropped suddenly: what changed
               </Link>
             </li>
           </ul>

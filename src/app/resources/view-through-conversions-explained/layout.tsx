@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "View-Through Conversions: Should You Count Them?",
     description:
-      "Impressions are cheap and abundant, so view-through credit can look like proof an ad worked when it isn't. Neither counting nor ignoring it is automatically correct — here's how to decide.",
+      "Impressions are cheap and abundant, so view-through credit can look like proof an ad worked when it isn't. Neither counting nor ignoring it is automatically correct. Here's how to decide.",
     url: "https://www.attribix.app/resources/view-through-conversions-explained",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Attribix" }],
   },

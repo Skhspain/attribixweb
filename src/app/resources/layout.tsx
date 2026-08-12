@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Ecommerce Marketing, Advertising & Tracking Resources | Attribix",
   description:
-    "Practical guides on Meta Ads, Google Ads, Shopify conversion problems, attribution, tracking and hiring marketing help — written by people who run the accounts, not generic explainers.",
+    "Practical guides on Meta Ads, Google Ads, Shopify conversion problems, attribution, tracking and hiring marketing help. Written by people who run the accounts, not generic explainers.",
   alternates: { canonical: "https://www.attribix.app/resources" },
   openGraph: {
     title: "Ecommerce Marketing, Advertising & Tracking Resources | Attribix",

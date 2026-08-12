@@ -86,11 +86,11 @@ export default function Page() {
             The lower the conversion volume, the more dangerous it is to
             manage the account from daily screenshots. Knowing how much
             purchase volume you actually have before reacting is worth
-            checking — see{" "}
+            checking (see{" "}
             <Link href="/resources/how-much-data-does-meta-ads-need" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               how much data Meta ads need before you can judge performance
             </Link>
-            .
+            ).
           </p>
         </Reveal>
       </section>
@@ -109,11 +109,11 @@ export default function Page() {
             </p>
             <p className="mt-4 text-white/60 leading-relaxed text-sm max-w-2xl">
               Even if you change nothing, the environment does. Some of
-              that variation follows a weekly pattern of its own — see{" "}
+              that variation follows a weekly pattern of its own (see{" "}
               <Link href="/resources/meta-ads-sales-drop-weekends" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 why Meta ads sales drop on weekends
               </Link>
-              .
+              ).
             </p>
           </Reveal>
         </div>
@@ -138,16 +138,16 @@ export default function Page() {
             <li>Tracking discrepancies</li>
           </ul>
           <p className="mt-4 text-white/60 leading-relaxed text-sm">
-            A sustained CPM rise is worth investigating on its own — see{" "}
+            A sustained CPM rise is worth investigating on its own (see{" "}
             <Link href="/resources/why-is-meta-ads-cpm-high" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               why Meta ads CPM is so high
             </Link>
-            , and tracking discrepancies are usually easiest to rule out
-            against Shopify&apos;s own order data — see{" "}
+            ), and tracking discrepancies are usually easiest to rule out
+            against Shopify&apos;s own order data (see{" "}
             <Link href="/resources/why-shopify-meta-sales-dont-match" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               why Shopify and Meta ads show different sales numbers
             </Link>
-            .
+            ).
           </p>
         </Reveal>
       </section>

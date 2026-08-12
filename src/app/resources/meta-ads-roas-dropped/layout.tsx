@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Meta Ads ROAS Dropped Suddenly? Ads, Website or Tracking",
     description:
-      "Before you rebuild the campaign, check whether Shopify revenue actually dropped too — or just what Meta is reporting.",
+      "Before you rebuild the campaign, check whether Shopify revenue actually dropped too, or just what Meta is reporting.",
     url: "https://www.attribix.app/resources/meta-ads-roas-dropped",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Attribix" }],
   },

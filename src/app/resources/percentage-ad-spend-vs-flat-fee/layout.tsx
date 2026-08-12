@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Percentage of Ad Spend vs Fixed Fee: How Should a Marketing Agency Charge?",
     description:
-      "What each pricing model actually incentivizes, where each one breaks down, and why complexity — not spend alone — is the fairer thing to price against.",
+      "What each pricing model actually incentivizes, where each one breaks down, and why complexity, not spend alone, is the fairer thing to price against.",
     url: "https://www.attribix.app/resources/percentage-ad-spend-vs-flat-fee",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Attribix" }],
   },

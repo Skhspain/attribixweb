@@ -11,7 +11,7 @@ const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Meta Ad Creative Testing: What Should You Test First?",
-  description: "Test the selling idea before the execution — a hierarchy that produces real learning instead of a pile of assets.",
+  description: "Test the selling idea before the execution: a hierarchy that produces real learning instead of a pile of assets.",
   datePublished: "2026-08-11",
   dateModified: "2026-08-11",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },

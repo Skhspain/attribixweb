@@ -11,7 +11,7 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "What's a normal gap between Google Ads clicks and Shopify sessions?",
-    a: "There isn't a fixed normal figure worth chasing — the gap depends on your traffic mix, devices and markets. What matters more is whether the ratio between clicks and sessions stays roughly consistent over time, not whether it hits some specific benchmark.",
+    a: "There isn't a fixed normal figure worth chasing: the gap depends on your traffic mix, devices and markets. What matters more is whether the ratio between clicks and sessions stays roughly consistent over time, not whether it hits some specific benchmark.",
   },
   {
     q: "Could ad blockers be causing this?",
@@ -19,7 +19,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Should I be more worried if the gap suddenly gets bigger?",
-    a: "A sudden change is more worth investigating than a stable gap. Check whether anything changed around the same time — a new tracking-prevention setting in browsers, a site speed regression, or a consent-banner update.",
+    a: "A sudden change is more worth investigating than a stable gap. Check whether anything changed around the same time: a new tracking-prevention setting in browsers, a site speed regression, or a consent-banner update.",
   },
 ];
 
@@ -73,7 +73,7 @@ export default function Page() {
             A click is what Google Ads counts when someone taps your ad. A
             session is what Shopify counts when a visit gets recorded on
             the store. They&apos;re measured by two separate systems, and a
-            gap between them is expected — the question is whether that
+            gap between them is expected. The question is whether that
             gap is stable or whether it just changed.
           </p>
         </Reveal>
@@ -86,10 +86,10 @@ export default function Page() {
             Google counts a click the moment the ad is tapped, before the
             landing page even starts loading. If the page is slow, or the
             visitor closes the tab before it finishes loading, that click
-            never turns into a recorded Shopify session — the visit
+            never turns into a recorded Shopify session. The visit
             happened, but nothing was there to count it. The same person
-            clicking an ad twice in one session — once from search, once
-            from a retargeting placement — can also register as two
+            clicking an ad twice in one session (once from search, once
+            from a retargeting placement) can also register as two
             clicks against a single session.
           </p>
         </Reveal>
@@ -107,7 +107,7 @@ export default function Page() {
               visitor&apos;s browser. Ad blockers, browser tracking
               prevention and UTM parameters getting stripped by some apps
               can all reduce the session count without touching the click
-              count at all — which is the main reason the click side is
+              count at all, which is the main reason the click side is
               usually the larger number.
             </p>
           </Reveal>
@@ -119,11 +119,11 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Track the ratio, not the exact numbers</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             There&apos;s no universal figure for what a normal gap looks
-            like — it depends on your device mix, markets and page speed.
+            like: it depends on your device mix, markets and page speed.
             What&apos;s more useful is watching whether the ratio between
             clicks and sessions holds steady over time. A consistent gap
             just reflects the measurement mechanics above. A gap that
-            suddenly widens is worth investigating — check for a recent
+            suddenly widens is worth investigating: check for a recent
             site speed regression, a consent-banner change, or a new app
             that might be interfering with tracking.
           </p>

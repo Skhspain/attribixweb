@@ -11,16 +11,16 @@ import DiagramFrame from "@/components/marketing/DiagramFrame";
 
 const FAQ_ITEMS = [
   {
-    q: "My CTR looks completely normal — why isn't anyone buying?",
+    q: "My CTR looks completely normal. Why isn't anyone buying?",
     a: "CTR only tells you the ad copy and creative got someone to click. It says nothing about what happens after they land, which is where most no-sales problems actually live. Check landing page views, add-to-cart rate, and checkout completion separately before touching the ad itself.",
   },
   {
     q: "How do I know if this is a tracking problem instead of a real sales problem?",
-    a: "Compare Shopify's order count and revenue for the period directly against what Meta Ads Manager is reporting. If Shopify shows real orders that Meta simply isn't crediting to itself, that's a measurement gap, not a conversion problem — the sales are happening, Meta just isn't seeing or attributing them correctly.",
+    a: "Compare Shopify's order count and revenue for the period directly against what Meta Ads Manager is reporting. If Shopify shows real orders that Meta simply isn't crediting to itself, that's a measurement gap, not a conversion problem: the sales are happening, Meta just isn't seeing or attributing them correctly.",
   },
   {
     q: "How much click volume do I need before this analysis means anything?",
-    a: "A handful of clicks isn't enough to read funnel ratios reliably — a couple of add-to-carts or one abandoned checkout can swing the percentages wildly. Look at this over at least a few hundred clicks, or a week or two of spend, before drawing conclusions.",
+    a: "A handful of clicks isn't enough to read funnel ratios reliably: a couple of add-to-carts or one abandoned checkout can swing the percentages wildly. Look at this over at least a few hundred clicks, or a week or two of spend, before drawing conclusions.",
   },
   {
     q: "Should I pause the campaign while I figure this out?",
@@ -43,7 +43,7 @@ const ARTICLE_JSON_LD = {
   "@type": "Article",
   headline: "Meta Ads Getting Clicks but No Sales? Diagnose the Problem Before Changing Your Ads",
   description:
-    "A step-by-step way to find where clicks stop turning into Shopify orders — ad-page mismatch, weak offer, checkout friction, or a tracking problem — before you touch the campaign.",
+    "A step-by-step way to find where clicks stop turning into Shopify orders (ad-page mismatch, weak offer, checkout friction, or a tracking problem) before you touch the campaign.",
   datePublished: "2026-08-11",
   dateModified: "2026-08-11",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
@@ -96,7 +96,7 @@ export default function Page() {
             If Meta is generating clicks but Shopify isn&apos;t generating
             orders, don&apos;t start by rewriting ad copy or swapping
             creative. Work out where in the funnel the clicks actually stop
-            converting first — the fix looks completely different depending
+            converting first. The fix looks completely different depending
             on whether the problem is the ad, the landing page, the offer,
             checkout friction, or how the sale is being measured.
           </p>
@@ -132,7 +132,7 @@ export default function Page() {
               Meta counts a link click the moment someone taps the ad, before
               the page has necessarily loaded. If landing page views are
               running noticeably lower than link clicks, the traffic is
-              leaving before it ever sees the product — usually a slow page,
+              leaving before it ever sees the product, usually a slow page,
               a broken redirect, an app conflict on the storefront, or, on
               older campaigns, low-quality clicks from placements that
               generate taps without real intent. If clicks and landing page
@@ -154,7 +154,7 @@ export default function Page() {
             deliver on the ad&apos;s claim (different product, different
             price, different offer than what got the click), the price or
             positioning doesn&apos;t make sense to someone seeing the brand
-            for the first time, or there&apos;s a trust gap — no reviews
+            for the first time, or there&apos;s a trust gap: no reviews
             visible, thin product photography, no clear return policy. A
             strong add-to-cart rate here rules out ad-page mismatch and
             points the investigation further down the funnel.
@@ -170,7 +170,7 @@ export default function Page() {
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Step 3: add-to-cart vs. checkout initiated</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               People who add a product to the cart have already decided they
-              want it — this is the stage where cart-level friction shows up.
+              want it. This is the stage where cart-level friction shows up.
               Shipping costs only revealed at checkout, a forced account
               creation step, or a cart page that&apos;s slow or confusing on
               mobile all show up here as a drop between add-to-cart and
@@ -210,7 +210,7 @@ export default function Page() {
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               If Shopify orders are steady but Meta&apos;s reported purchases
               have dropped or gone missing, that&apos;s very often a
-              measurement issue rather than a real drop in sales — an ad
+              measurement issue rather than a real drop in sales: an ad
               blocker stopping the Pixel, Safari&apos;s tracking limits
               trimming cookie lifespan, or a checkout event that stopped
               firing after a theme or app update. This is exactly the kind
@@ -229,7 +229,7 @@ export default function Page() {
             </p>
 
             <div className="mt-8">
-              <DiagramFrame caption="Diagnostic funnel — the ratio that collapses tells you which cause to investigate.">
+              <DiagramFrame caption="Diagnostic funnel: the ratio that collapses tells you which cause to investigate.">
                 <svg viewBox="0 0 600 260" className="w-full h-auto" role="img" aria-label="Funnel diagram showing clicks narrowing through landing page views, add to cart, checkout initiated, and purchase completed, with the likely cause labeled at each drop-off point.">
                   <rect x="10" y="10" width="130" height="40" rx="8" className="fill-white/5" stroke="rgba(56,189,248,0.4)" strokeWidth="1" />
                   <text x="75" y="34" textAnchor="middle" className="fill-white text-[11px] font-semibold">Clicks</text>
@@ -311,7 +311,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold">Still not sure what&apos;s causing it?</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             If Meta, Google and Shopify are telling you different things,
-            send us an inquiry — we can review the setup and help determine
+            send us an inquiry. We can review the setup and help determine
             whether it&apos;s advertising performance, your website,
             tracking, or attribution.
           </p>

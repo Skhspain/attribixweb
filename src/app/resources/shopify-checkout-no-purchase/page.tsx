@@ -11,7 +11,7 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "How is this different from cart abandonment?",
-    a: "Cart abandonment covers everyone who added a product and left at any point after. This is narrower — people who actually started the checkout process (entered an email, an address, or a payment method) and still didn't finish. It's a smaller, more specific group, and the causes tend to sit right in the checkout flow rather than earlier in the funnel.",
+    a: "Cart abandonment covers everyone who added a product and left at any point after. This is narrower: people who actually started the checkout process (entered an email, an address, or a payment method) and still didn't finish. It's a smaller, more specific group, and the causes tend to sit right in the checkout flow rather than earlier in the funnel.",
   },
   {
     q: "Can I see where in checkout people stop?",
@@ -19,7 +19,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Is a payment failure the same as a payment decline?",
-    a: "No, and it's worth distinguishing them. A decline usually means the customer's card was rejected by their bank, which is largely out of your control. A failure means something on the store or gateway side broke the transaction — that's worth investigating directly, since it can silently cost you completed sales.",
+    a: "No, and it's worth distinguishing them. A decline usually means the customer's card was rejected by their bank, which is largely out of your control. A failure means something on the store or gateway side broke the transaction. That's worth investigating directly, since it can silently cost you completed sales.",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function Page() {
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             Someone who&apos;s already started checkout has more intent
             than almost anyone else on your site. If they still don&apos;t
-            finish, the cause is usually mechanical — something in the
+            finish, the cause is usually mechanical: something in the
             checkout flow itself, not the offer or the marketing that got
             them there.
           </p>
@@ -84,7 +84,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Payment method availability</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             Check which payment methods are actually enabled and whether
-            they match what your customers expect for their region — a
+            they match what your customers expect for their region. A
             store selling mainly to mobile shoppers in a market where a
             specific wallet or Buy Now Pay Later option is standard will
             lose people who don&apos;t see it as an option, even if card
@@ -132,7 +132,7 @@ export default function Page() {
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Genuine checkout errors</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-              Sometimes it&apos;s a bug, not a decision — a discount code
+              Sometimes it&apos;s a bug, not a decision: a discount code
               app conflicting with checkout, a shipping rate that fails to
               calculate for certain addresses, or a payment gateway timing
               out. These tend to show up as a spike concentrated on
@@ -167,7 +167,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold">Still losing orders at checkout?</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             If you&apos;ve ruled out the obvious causes and checkout
-            completion is still low, send us an inquiry — we can look at
+            completion is still low, send us an inquiry. We can look at
             the store and the account together.
           </p>
           <ManagedServicesCTA className="mt-8 justify-center" />

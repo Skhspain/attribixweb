@@ -148,7 +148,7 @@ export default function Page() {
               on $50,000. The right target depends on margin, cash flow,
               customer lifetime value and growth goals. Performance changing
               after a budget increase is not proof that Meta &ldquo;broke.&rdquo;
-              It is often the normal economics of reaching more demand — the
+              It is often the normal economics of reaching more demand, the
               same volatility we cover in{" "}
               <Link href="/resources/meta-ads-sales-drop-weekends" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 why Meta Ads sales can drop on certain days

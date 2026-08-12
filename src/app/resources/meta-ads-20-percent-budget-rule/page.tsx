@@ -157,8 +157,8 @@ export default function Page() {
               remains healthy, the increase may be fine. If spend rises
               20% and sales barely move, respecting the rule did not make
               the scale profitable. Judging that requires looking at true
-              profitability rather than a single platform-reported number
-              — see{" "}
+              profitability rather than a single platform-reported number.
+              See{" "}
               <Link href="/shopify-roas-tracking" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Shopify ROAS tracking
               </Link>

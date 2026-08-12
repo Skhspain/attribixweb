@@ -11,7 +11,7 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "Meta ROAS dropped but Shopify revenue looks the same. Is that normal?",
-    a: "It happens more often than you'd think, and it points at measurement rather than a real decline. Meta can only report ROAS on the purchases it can attribute to itself — if something changed in how the Pixel or Conversions API is firing, Shopify keeps recording real orders while Meta's version of the same period shows fewer of them.",
+    a: "It happens more often than you'd think, and it points at measurement rather than a real decline. Meta can only report ROAS on the purchases it can attribute to itself. If something changed in how the Pixel or Conversions API is firing, Shopify keeps recording real orders while Meta's version of the same period shows fewer of them.",
   },
   {
     q: "How long should I wait before reacting to a ROAS drop?",
@@ -19,11 +19,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "Could a Shopify app or theme update cause this?",
-    a: "Yes — this is one of the more common causes. Theme updates, checkout customizations, cookie consent tools, and app installs can all interfere with pixel or event firing without breaking anything visible to the customer. If the drop lines up with a change like that, check tracking before anything else.",
+    a: "Yes, this is one of the more common causes. Theme updates, checkout customizations, cookie consent tools, and app installs can all interfere with pixel or event firing without breaking anything visible to the customer. If the drop lines up with a change like that, check tracking before anything else.",
   },
   {
     q: "Is a rising CPM always a bad sign?",
-    a: "No. CPM rising because of seasonal competition or a larger targeted audience doesn't hurt ROAS by itself — what matters is whether your conversion rate held up against the higher cost. Check CPA and ROAS together rather than reacting to CPM alone.",
+    a: "No. CPM rising because of seasonal competition or a larger targeted audience doesn't hurt ROAS by itself: what matters is whether your conversion rate held up against the higher cost. Check CPA and ROAS together rather than reacting to CPM alone.",
   },
 ];
 
@@ -93,7 +93,7 @@ export default function Page() {
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             The first question isn&apos;t &ldquo;why did performance get
-            worse&rdquo; — it&apos;s whether performance actually got worse
+            worse&rdquo;. It&apos;s whether performance actually got worse
             at all. A ROAS drop inside Meta can mean the ads stopped working,
             or it can mean Meta simply stopped seeing purchases it used to
             see. Those need completely different responses.
@@ -109,7 +109,7 @@ export default function Page() {
             Open Shopify&apos;s own analytics for the same date range Meta is
             reporting on. If total store revenue held roughly steady while
             Meta&apos;s reported ROAS fell, the most likely explanation is
-            that Meta stopped attributing orders it used to attribute — a
+            that Meta stopped attributing orders it used to attribute: a
             tracking or measurement gap, not a performance problem. If
             Shopify revenue dropped too, over the same period, you&apos;re
             probably looking at a real decline in how the ads are
@@ -152,7 +152,7 @@ export default function Page() {
                   </tr>
                   <tr className="border-b border-white/10">
                     <td className="px-4 py-3">CPM up, CTR stable</td>
-                    <td className="px-4 py-3">Auction competition, seasonality, audience size — not necessarily bad</td>
+                    <td className="px-4 py-3">Auction competition, seasonality, audience size: not necessarily bad</td>
                   </tr>
                   <tr className="border-b border-white/10">
                     <td className="px-4 py-3">CTR down</td>
@@ -164,7 +164,7 @@ export default function Page() {
                   </tr>
                   <tr>
                     <td className="px-4 py-3">Purchases vanish right after a site or tracking change</td>
-                    <td className="px-4 py-3">Tracking — check the change first</td>
+                    <td className="px-4 py-3">Tracking: check the change first</td>
                   </tr>
                 </tbody>
               </table>
@@ -180,7 +180,7 @@ export default function Page() {
           <p className="text-white/60 leading-relaxed text-sm">
             It&apos;s tempting to treat a CPM increase as the explanation for
             a ROAS drop, but CPM only measures what you&apos;re paying for
-            reach — not whether that reach converts. CPM commonly rises
+            reach, not whether that reach converts. CPM commonly rises
             around competitive periods like Q4, when more advertisers are
             bidding into the same auction, or when an audience has simply
             gotten smaller relative to how much you&apos;re spending into it.
@@ -210,7 +210,7 @@ export default function Page() {
               Meta&apos;s delivery has drifted the ad toward a less relevant
               slice of the audience since the last time you touched targeting
               or budget. Either way, this is a real performance signal worth
-              acting on — new creative or a targeting reset, not a tracking
+              acting on: new creative or a targeting reset, not a tracking
               question.
             </p>
           </Reveal>
@@ -226,12 +226,12 @@ export default function Page() {
             new checkout app, a consent-management tool going live, or any
             other change to the storefront, treat tracking as the prime
             suspect before anything else. A Pixel or Conversions API event
-            that stops firing doesn&apos;t announce itself — orders keep
+            that stops firing doesn&apos;t announce itself. Orders keep
             happening in Shopify, Meta just stops hearing about a portion of
             them, and the ROAS chart drops as if performance collapsed. Running
             server-side purchase events from Shopify&apos;s own order data,
-            alongside the browser Pixel, is what closes this specific gap —
-            see{" "}
+            alongside the browser Pixel, is what closes this specific gap.
+            See{" "}
             <Link href="/server-side-tracking-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               Shopify server-side tracking
             </Link>{" "}
@@ -288,7 +288,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold">Still not sure what&apos;s causing it?</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             If Meta, Google and Shopify are telling you different things,
-            send us an inquiry — we can review the setup and help determine
+            send us an inquiry: we can review the setup and help determine
             whether it&apos;s advertising performance, your website,
             tracking, or attribution.
           </p>

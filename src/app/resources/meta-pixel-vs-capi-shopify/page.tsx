@@ -12,7 +12,7 @@ import DiagramFrame from "@/components/marketing/DiagramFrame";
 const FAQ_ITEMS = [
   {
     q: "Can I just use CAPI and drop the Pixel?",
-    a: "Technically yes, but Meta's own guidance is to run both — the Pixel still contributes browser-side signals like browsing behavior that CAPI alone doesn't replicate, and having both gives you two independent paths for the same event.",
+    a: "Technically yes, but Meta's own guidance is to run both: the Pixel still contributes browser-side signals like browsing behavior that CAPI alone doesn't replicate, and having both gives you two independent paths for the same event.",
   },
   {
     q: "Does CAPI need the customer's consent?",
@@ -72,8 +72,8 @@ export default function Page() {
             Meta Pixel vs Conversions API for Shopify
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            The Pixel and the Conversions API aren&apos;t competing options —
-            they&apos;re two different routes for the same event, each catching
+            The Pixel and the Conversions API aren&apos;t competing options.
+            They&apos;re two different routes for the same event, each catching
             what the other misses. The question isn&apos;t which one to use. It&apos;s
             how to run both without counting the same purchase twice.
           </p>
@@ -86,8 +86,8 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What the Pixel sees</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             The Meta Pixel is JavaScript running in the customer&apos;s browser.
-            It fires when a page loads or an action happens — a product
-            view, an add-to-cart, a purchase — and sends that event straight
+            It fires when a page loads or an action happens (a product
+            view, an add-to-cart, a purchase) and sends that event straight
             from the browser to Meta. It&apos;s fast to set up and gives Meta
             direct browser-side signal, but it only works if the browser
             actually lets the request through.
@@ -106,7 +106,7 @@ export default function Page() {
               Tracking Prevention trims how long identifiers survive. A slow
               connection can mean the customer completes checkout and closes
               the tab before the purchase event finishes firing. None of these
-              are edge cases — on iOS traffic in particular, browser-side
+              are edge cases: on iOS traffic in particular, browser-side
               purchase tracking commonly misses a meaningful share of real
               orders, and that share isn&apos;t visible anywhere in Ads Manager;
               it just looks like the ad performed worse than it did.
@@ -120,8 +120,8 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What CAPI adds</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            The Conversions API sends the same kind of event — a purchase, a
-            lead — server-to-server, directly from your backend to Meta,
+            The Conversions API sends the same kind of event (a purchase, a
+            lead) server-to-server, directly from your backend to Meta,
             rather than relying only on browser-side delivery. It isn&apos;t
             affected by ad blockers or cookie lifespan, because it never
             depends on the customer&apos;s browser successfully sending the
@@ -143,7 +143,7 @@ export default function Page() {
               If the Pixel fires for a purchase and the server also fires a
               CAPI event for the same purchase, Meta will count two sales
               unless it&apos;s told otherwise. The fix is a shared{" "}
-              <code className="text-cyan-300">event_id</code> — the same
+              <code className="text-cyan-300">event_id</code>: the same
               identifier attached to both the browser and server event for
               that order. Meta uses it to recognize the pair and count the
               purchase once. Skip this and duplicate purchases in Ads
@@ -151,7 +151,7 @@ export default function Page() {
             </p>
 
             <div className="mt-8">
-              <DiagramFrame caption="Simplified — illustrative, not literal API payload structure.">
+              <DiagramFrame caption="Simplified: illustrative, not literal API payload structure.">
                 <svg viewBox="0 0 600 190" className="w-full h-auto" role="img" aria-label="Diagram showing a browser Pixel event and a server CAPI event both carrying the same event ID, matched by Meta into a single counted purchase.">
                   <rect x="10" y="20" width="190" height="56" rx="12" className="fill-white/5" stroke="rgba(56,189,248,0.4)" strokeWidth="1" />
                   <text x="105" y="44" textAnchor="middle" className="fill-white text-[13px] font-semibold">Browser</text>
@@ -193,8 +193,8 @@ export default function Page() {
           <p className="text-white/60 leading-relaxed text-sm">
             It&apos;s tempting to think of server-side tracking as a way past
             browser-based tracking restrictions. It isn&apos;t. CAPI changes the
-            route data travels — server to server instead of browser to
-            server — not whether you&apos;re allowed to send it. A customer who
+            route data travels (server to server instead of browser to
+            server), not whether you&apos;re allowed to send it. A customer who
             declined tracking consent should be excluded from both the
             Pixel and the server-side event, the same way they would be
             excluded from any other tracking method.

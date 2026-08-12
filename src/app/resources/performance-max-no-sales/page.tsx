@@ -11,11 +11,11 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "How long should a new PMax campaign run before I judge it broken?",
-    a: "Google generally describes a one to two week learning period during which performance is expected to be erratic. That's a reason to hold off on structural changes for the first week or so, not a reason to ignore zero sales — if tracking, feed and landing pages all check out and two full weeks pass with adequate budget and still no purchases, something is actually wrong.",
+    a: "Google generally describes a one to two week learning period during which performance is expected to be erratic. That's a reason to hold off on structural changes for the first week or so, not a reason to ignore zero sales. If tracking, feed and landing pages all check out and two full weeks pass with adequate budget and still no purchases, something is actually wrong.",
   },
   {
     q: "Why does my Purchase conversion action show 'no recent conversions'?",
-    a: "That status means Google Ads hasn't recorded a conversion through that action recently, regardless of how much traffic or spend the campaign has. It usually means the tag isn't firing, is firing in a state Google can't attribute back to a click, or the conversion action itself is misconfigured — not that customers aren't buying.",
+    a: "That status means Google Ads hasn't recorded a conversion through that action recently, regardless of how much traffic or spend the campaign has. It usually means the tag isn't firing, is firing in a state Google can't attribute back to a click, or the conversion action itself is misconfigured, not that customers aren't buying.",
   },
   {
     q: "Can Performance Max convert if only some of my products are approved in Merchant Center?",
@@ -42,7 +42,7 @@ const ARTICLE_JSON_LD = {
   "@type": "Article",
   headline: "Performance Max Spending Money but Getting No Sales",
   description:
-    "The diagnostic order for a Performance Max campaign that's spending with no purchases — tracking first, then goal setup, feed health, landing pages, price, budget and audience signals.",
+    "The diagnostic order for a Performance Max campaign that's spending with no purchases: tracking first, then goal setup, feed health, landing pages, price, budget and audience signals.",
   datePublished: "2026-08-11",
   dateModified: "2026-08-11",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
@@ -86,7 +86,7 @@ export default function Page() {
             Shopify purchases, then check the conversion goal, Merchant
             Center feed health, landing pages, pricing, budget realism, and
             audience signals. Performance Max is a fully automated,
-            black-box bidding system — it optimizes only against the
+            black-box bidding system: it optimizes only against the
             conversion signal it&apos;s given, so a tracking gap looks
             identical to &ldquo;the campaign doesn&apos;t work,&rdquo; and
             most PMax accounts that look broken are actually just blind.
@@ -105,7 +105,7 @@ export default function Page() {
               where to spend based on one thing: the conversion signal
               reported back to it. If your Purchase conversion action isn&apos;t
               firing reliably, is firing with a $0 or incorrect value, or is
-              being double-counted, PMax isn&apos;t underperforming — it&apos;s
+              being double-counted, PMax isn&apos;t underperforming. It&apos;s
               optimizing against a number that doesn&apos;t reflect what&apos;s
               actually happening on your store.
             </p>
@@ -152,7 +152,7 @@ export default function Page() {
               across campaigns in a way that pulls optimization toward a
               different action than the one you think it&apos;s chasing. Check
               the campaign-level goal settings and confirm Purchase is the
-              conversion action actually driving bids — not just present
+              conversion action actually driving bids, not just present
               somewhere in the account.
             </p>
           </Reveal>
@@ -165,7 +165,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Merchant Center feed health</h2>
           <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
             PMax pulls its product listings straight from your Merchant
-            Center feed. A disapproved product simply doesn&apos;t run — it&apos;s
+            Center feed. A disapproved product simply doesn&apos;t run: it&apos;s
             excluded from the auction entirely, not shown with a warning
             label. If a meaningful share of your catalog is disapproved, the
             campaign is spending against a shrunken version of your store
@@ -194,7 +194,7 @@ export default function Page() {
               with unexpected friction converts at a fraction of what it
               should regardless of how well-targeted the click was. Spot
               check landing pages for the products actually driving
-              impressions — not just your homepage or bestsellers — since
+              impressions, not just your homepage or bestsellers, since
               PMax will show whichever products in the feed match demand,
               and those aren&apos;t always the ones your team checks most
               often.
@@ -213,7 +213,7 @@ export default function Page() {
             products. A campaign can generate plenty of impressions and
             clicks on a fairly matched, well-tracked, well-built product page
             and still convert poorly if the price is meaningfully above what
-            shoppers are seeing elsewhere in the same results — Shopping and
+            shoppers are seeing elsewhere in the same results. Shopping and
             PMax surface price directly, so this comparison happens before
             the customer ever reaches your site.
           </p>
@@ -232,7 +232,7 @@ export default function Page() {
                 sales.&rdquo; A Target ROAS set well above what your account
                 or category has historically supported restricts PMax to
                 only the small slice of auctions it&apos;s confident will hit
-                that target — which for a new campaign with little history
+                that target, which for a new campaign with little history
                 can mean almost no spend gets through at all. On the other
                 end, a budget too small to generate enough conversion volume
                 gives the algorithm too little signal to optimize with,
@@ -242,7 +242,7 @@ export default function Page() {
               <p>
                 If a Maximize Conversion Value strategy with a Target ROAS
                 isn&apos;t producing sales, try removing the target
-                temporarily to see whether spend and conversions pick up —
+                temporarily to see whether spend and conversions pick up:
                 that isolates whether the target itself is the constraint.
               </p>
             </div>
@@ -255,8 +255,8 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Audience signals quality</h2>
           <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-            Audience signals — customer lists, custom segments, interest
-            categories — don&apos;t restrict who PMax can show ads to, but
+            Audience signals (customer lists, custom segments, interest
+            categories) don&apos;t restrict who PMax can show ads to, but
             they give the algorithm a starting point during the early phase
             when it has little else to go on. A campaign launched with no
             audience signals at all typically takes longer to find its
@@ -272,7 +272,7 @@ export default function Page() {
         <div className="absolute inset-0 -z-10 bg-black/15" />
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>
-            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">The learning period is real — it&apos;s not a blank check</h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">The learning period is real, but it&apos;s not a blank check</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               Google generally describes a one to two week learning window
               where PMax is exploring inventory and performance can be
@@ -282,7 +282,7 @@ export default function Page() {
               out. If tracking is confirmed correct, the feed is clean,
               landing pages work, price is competitive, and budget is
               reasonable, and you&apos;re still at zero sales after a full two
-              weeks, that&apos;s a real problem worth escalating — not
+              weeks, that&apos;s a real problem worth escalating, not
               something to keep waiting out.
             </p>
           </Reveal>

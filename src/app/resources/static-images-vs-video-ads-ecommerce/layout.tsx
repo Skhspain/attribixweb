@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Static Images vs Video Ads for Ecommerce",
     description:
-      "A beautiful video will normally beat a generic product image — that doesn't prove video is the reason. How to compare formats fairly and beyond thumb-stop metrics.",
+      "A beautiful video will normally beat a generic product image, but that doesn't prove video is the reason. How to compare formats fairly and beyond thumb-stop metrics.",
     url: "https://www.attribix.app/resources/static-images-vs-video-ads-ecommerce",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Attribix" }],
   },

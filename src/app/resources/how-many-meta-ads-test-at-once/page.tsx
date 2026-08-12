@@ -109,7 +109,7 @@ export default function Page() {
               allocate delivery. But if your goal is a controlled creative
               learning process, too many simultaneous variables make
               interpretation difficult. Creative volume itself should
-              scale with spend too — see{" "}
+              scale with spend too: see{" "}
               <Link href="/resources/how-many-creatives-shopify-meta-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 how many creatives a Shopify store actually needs
               </Link>
@@ -139,7 +139,7 @@ export default function Page() {
           </ul>
           <p className="mt-4 text-white/60 leading-relaxed text-sm">
             Once you find a strong concept, develop variations within it.
-            Testing usually surfaces fatigue and burnout signals too — see{" "}
+            Testing usually surfaces fatigue and burnout signals too: see{" "}
             <Link href="/resources/how-to-tell-meta-ad-fatigue" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               how to tell when a Meta ad has hit fatigue
             </Link>

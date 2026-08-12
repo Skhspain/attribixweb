@@ -11,15 +11,15 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "How do I know if it's duplication versus just a reporting difference?",
-    a: "Check whether the gap holds a stable multiple — roughly 2x, consistently, tied to a specific setting like two primary actions both live — versus a gap that fluctuates with refunds, dates or attribution windows. A stable multiple points at duplication. A fluctuating one points at ordinary mismatch.",
+    a: "Check whether the gap holds a stable multiple (roughly 2x, consistently, tied to a specific setting like two primary actions both live) versus a gap that fluctuates with refunds, dates or attribution windows. A stable multiple points at duplication. A fluctuating one points at ordinary mismatch.",
   },
   {
     q: "Should I mark a duplicate conversion action as Secondary instead of deleting it?",
-    a: "Usually yes, at least initially — Secondary actions still collect data and don't affect bidding or the headline Conversions total, so you keep the history without it double-counting. Deleting an action outright can also break historical reporting for that action.",
+    a: "Usually yes, at least initially. Secondary actions still collect data and don't affect bidding or the headline Conversions total, so you keep the history without it double-counting. Deleting an action outright can also break historical reporting for that action.",
   },
   {
     q: "Does duplication affect conversion value as well as count?",
-    a: "Yes — if the count is inflated, the aggregate value is too, even when each individual order's value is correct. Worth checking both together rather than assuming a correct-looking value means the count is also fine.",
+    a: "Yes: if the count is inflated, the aggregate value is too, even when each individual order's value is correct. Worth checking both together rather than assuming a correct-looking value means the count is also fine.",
   },
   {
     q: "Can Performance Max make duplication worse?",
@@ -41,7 +41,7 @@ const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Duplicate Google Ads Conversions on Shopify",
-  description: "The specific mechanics — multiple primary actions, overlapping tags, per-click counting, missing transaction IDs — that cause Google Ads to count one Shopify order more than once.",
+  description: "The specific mechanics (multiple primary actions, overlapping tags, per-click counting, missing transaction IDs) that cause Google Ads to count one Shopify order more than once.",
   datePublished: "2026-08-11",
   dateModified: "2026-08-11",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
@@ -76,7 +76,7 @@ export default function Page() {
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             Duplication happens when more than one tracking path counts the
-            same Shopify order as a separate conversion — two conversion
+            same Shopify order as a separate conversion: two conversion
             actions both marked primary, two implementations both firing, or
             a counting setting that logs every page load instead of one per
             order. The orders themselves are real. Google Ads is just
@@ -93,12 +93,12 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What duplication actually looks like</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             The tell is a stable multiple, not a fuzzy gap. If Google Ads
-            reports conversions running at roughly twice — or three times —
+            reports conversions running at roughly twice (or three times)
             Shopify&apos;s order count for the same channel and date range,
             consistently, that&apos;s a strong signal something is structurally
             counting each order more than once. A gap that moves around
             depending on the week, or that shrinks and grows with refund
-            activity, is a different problem — ordinary attribution and
+            activity, is a different problem: ordinary attribution and
             reporting mismatch, not duplication. More on that distinction
             below.
           </p>
@@ -113,7 +113,7 @@ export default function Page() {
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Multiple &quot;Primary&quot; conversion actions counted together</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               Every conversion action set to Primary status contributes to
-              the headline Conversions column and to automated bidding —
+              the headline Conversions column and to automated bidding:
               Google Ads sums them. If a native Purchase conversion action
               and a separately imported GA4 purchase event are both marked
               Primary, and both are logging the same orders, Google Ads is
@@ -134,8 +134,8 @@ export default function Page() {
             Shopify&apos;s built-in Google &amp; YouTube channel integration
             deploys its own conversion tag automatically. If a store also has
             a manually configured Google Tag Manager container in the theme
-            — often left over from before the app was installed, or added
-            later without checking what was already there — both fire
+            (often left over from before the app was installed, or added
+            later without checking what was already there), both fire
             independently on the same order. Neither implementation knows
             the other exists, so neither suppresses the duplicate. This
             usually traces back to an incomplete migration: someone installed
@@ -155,8 +155,8 @@ export default function Page() {
               or one conversion per click/interaction. For a purchase action,
               you almost always want one per order. If it&apos;s set to count
               every occurrence instead, a single order that re-renders its
-              confirmation page — a browser back-and-forward, a manual
-              refresh, a webhook retry that re-fires the event — gets logged
+              confirmation page (a browser back-and-forward, a manual
+              refresh, a webhook retry that re-fires the event) gets logged
               as multiple separate conversions from what was actually one
               sale. Worth checking this setting directly on the Purchase
               action rather than assuming the default is right for your
@@ -175,7 +175,7 @@ export default function Page() {
             event to recognize a repeat firing as the same order rather than
             a new one. If that ID is missing, or a static placeholder value
             gets reused across every order instead of the actual Shopify
-            order ID, Google loses the ability to deduplicate — a page
+            order ID, Google loses the ability to deduplicate: a page
             reload or retry that would otherwise be recognized and ignored
             instead counts as a fresh conversion. This compounds with the
             &quot;every&quot; setting above: correct transaction IDs are what makes
@@ -210,7 +210,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What this isn&apos;t: ordinary attribution difference</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             A Google Ads conversion count that&apos;s close to but not identical
-            to Shopify&apos;s order count — and moves around week to week — is a
+            to Shopify&apos;s order count, and moves around week to week, is a
             different topic entirely. Conversion-date-vs-order-date timing,
             attribution windows, refunds, and cross-channel overlap with Meta
             all produce that kind of variance without any technical
@@ -250,7 +250,7 @@ export default function Page() {
             </li>
             <li>
               <Link href="/resources/google-ads-not-tracking-shopify-purchases" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
-                Google Ads not tracking Shopify purchases — step-by-step
+                Google Ads not tracking Shopify purchases: step-by-step
               </Link>
             </li>
             <li>
@@ -270,7 +270,7 @@ export default function Page() {
             This covers the settings worth checking yourself. When
             duplication persists after checking them, or the cause turns out
             to be layered across multiple tools, that&apos;s account-level
-            investigation — send us the details and we&apos;ll dig in.
+            investigation: send us the details and we&apos;ll dig in.
           </p>
           <ManagedServicesCTA className="mt-8 justify-center" />
         </Reveal>

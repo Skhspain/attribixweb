@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "How to Choose a Google Ads Agency for Ecommerce",
   description:
-    "What separates a Google Ads agency that actually understands ecommerce from a generalist PPC shop — Search vs Shopping/PMax skill, feed and tracking competence, and the questions worth asking before you sign.",
+    "What separates a Google Ads agency that actually understands ecommerce from a generalist PPC shop: Search vs Shopping/PMax skill, feed and tracking competence, and the questions worth asking before you sign.",
   alternates: { canonical: "https://www.attribix.app/resources/how-to-choose-a-google-ads-agency" },
   openGraph: {
     title: "How to Choose a Google Ads Agency for Ecommerce",

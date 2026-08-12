@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "How Much of Your Meta Ads Budget Should Go to Retargeting?",
     description:
-      "Audience volume, saturation signals and prospecting demand should set your retargeting budget — not a percentage borrowed from someone else's ad account.",
+      "Audience volume, saturation signals and prospecting demand should set your retargeting budget, not a percentage borrowed from someone else's ad account.",
     url: "https://www.attribix.app/resources/how-much-meta-ads-budget-retargeting",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Attribix" }],
   },

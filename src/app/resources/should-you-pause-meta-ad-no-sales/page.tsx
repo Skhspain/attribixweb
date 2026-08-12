@@ -12,7 +12,7 @@ const ARTICLE_JSON_LD = {
   "@type": "Article",
   headline: "Should You Pause a Meta Ad That Has No Sales?",
   description:
-    "Zero sales doesn't mean a bad ad — it depends on spend relative to target CPA and what happened earlier in the funnel. How to make a pause decision for a reason.",
+    "Zero sales doesn't mean a bad ad. It depends on spend relative to target CPA and what happened earlier in the funnel. How to make a pause decision for a reason.",
   datePublished: "2026-08-11",
   dateModified: "2026-08-11",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
@@ -97,11 +97,11 @@ export default function Page() {
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What happened before the missing purchase?</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">An ad can fail in different ways.</p>
             <ul className="mt-3 space-y-2 text-sm text-white/60 list-disc pl-5 max-w-2xl">
-              <li>Few clicks — the creative or offer may not be generating interest.</li>
-              <li>Plenty of clicks, little product engagement — the ad may be attracting the wrong people or making a promise the page does not fulfil.</li>
-              <li>Product engagement but no carts — look at price, offer and product-market fit.</li>
-              <li>Carts and checkouts but no purchases — investigate shipping, payment, checkout or tracking.</li>
-              <li>Shopify orders but no Meta purchases — pausing the ad because Meta says zero could be exactly the wrong decision.</li>
+              <li>Few clicks: the creative or offer may not be generating interest.</li>
+              <li>Plenty of clicks, little product engagement: the ad may be attracting the wrong people or making a promise the page does not fulfil.</li>
+              <li>Product engagement but no carts: look at price, offer and product-market fit.</li>
+              <li>Carts and checkouts but no purchases: investigate shipping, payment, checkout or tracking.</li>
+              <li>Shopify orders but no Meta purchases: pausing the ad because Meta says zero could be exactly the wrong decision.</li>
             </ul>
           </Reveal>
         </div>

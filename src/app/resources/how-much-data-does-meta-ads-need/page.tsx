@@ -126,7 +126,7 @@ export default function Page() {
           <p className="mt-4 text-white/60 leading-relaxed text-sm">
             That does not mean a rigid &ldquo;three-times CPA&rdquo; rule
             works everywhere. Higher-AOV products, long consideration
-            periods and small conversion volumes create more volatility —
+            periods and small conversion volumes create more volatility,
             which is also why{" "}
             <Link href="/resources/how-long-should-meta-ads-run-before-changes" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               how long you let a campaign run

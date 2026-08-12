@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "How Much Does an Ecommerce Marketing Agency Cost?",
   description:
-    "The pricing models ecommerce marketing agencies actually use — retainer, percentage of spend, hourly, hybrid and setup fees — and what pushes the cost up or down.",
+    "The pricing models ecommerce marketing agencies actually use (retainer, percentage of spend, hourly, hybrid and setup fees) and what pushes the cost up or down.",
   alternates: { canonical: "https://www.attribix.app/resources/ecommerce-marketing-agency-cost" },
   openGraph: {
     title: "How Much Does an Ecommerce Marketing Agency Cost?",

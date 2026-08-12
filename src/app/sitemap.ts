@@ -17,6 +17,12 @@ const LASTMOD: Record<string, string> = {
   "/resources/enhanced-conversions-shopify": "2026-08-11",
   "/resources/true-roas-shopify": "2026-08-11",
   "/resources/mer-vs-roas-shopify": "2026-08-09",
+  "/resources/meta-ads-sales-drop-weekends": "2026-08-11",
+  "/resources/meta-ads-performance-changes-after-budget-increase": "2026-08-11",
+  "/resources/meta-lead-ads-vs-website-conversions": "2026-08-11",
+  "/resources/meta-ads-optimize-add-to-cart-or-purchase": "2026-08-11",
+  "/resources/when-meta-ads-account-ready-optimize-purchases": "2026-08-11",
+  "/resources/meta-ads-new-customer-acquisition-measurement": "2026-08-11",
 };
 const NEW_ARTICLE_DATE = "2026-08-11";
 

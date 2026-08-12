@@ -15,15 +15,15 @@ const FAQ_ITEMS = [
   },
   {
     q: "Should I turn off view-through attribution entirely?",
-    a: "Not necessarily — that swings to the opposite extreme of assuming impressions never influence anyone, which isn't defensible either. The point of this article is that neither extreme is automatically right; look at your own view-through volume and consideration cycle before deciding.",
+    a: "Not necessarily. That swings to the opposite extreme of assuming impressions never influence anyone, which isn't defensible either. The point of this article is that neither extreme is automatically right; look at your own view-through volume and consideration cycle before deciding.",
   },
   {
     q: "Does a high view-through conversion count mean my ads are working?",
-    a: "It means a lot of purchases happened after an impression within the attribution window. It doesn't by itself mean the impression caused those purchases — some of that volume is very likely people who would have bought anyway and simply also saw an ad.",
+    a: "It means a lot of purchases happened after an impression within the attribution window. It doesn't by itself mean the impression caused those purchases: some of that volume is very likely people who would have bought anyway and simply also saw an ad.",
   },
   {
     q: "How is view-through different from click-through attribution?",
-    a: "Click-through requires an actual click before the purchase — a more direct, verifiable interaction. View-through only requires that an ad was served and the person later converted, with no interaction in between. Click-through is the more defensible half of most platforms' reported numbers.",
+    a: "Click-through requires an actual click before the purchase, a more direct, verifiable interaction. View-through only requires that an ad was served and the person later converted, with no interaction in between. Click-through is the more defensible half of most platforms' reported numbers.",
   },
 ];
 
@@ -81,7 +81,7 @@ export default function Page() {
             View-through conversions: should you count them?
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            There isn&apos;t a single correct answer — a view-through
+            There isn&apos;t a single correct answer. A view-through
             conversion is a purchase credited to an ad someone saw but never
             clicked, and whether that credit is meaningful depends on your
             product, your volume of impressions, and how much you trust the
@@ -97,21 +97,21 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What a view-through conversion actually is</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             An ad is served to someone&apos;s screen. They don&apos;t click
-            it, don&apos;t interact with it at all — maybe they scrolled past
+            it, don&apos;t interact with it at all, maybe they scrolled past
             it in a feed, maybe it played as a pre-roll video they skipped
             after a few seconds. Some time later, within a defined window,
             that same person makes a purchase. The platform that served the
             impression credits itself with the conversion, on the theory
             that seeing the ad played some role in the eventual purchase.
             This applies across Meta&apos;s feed and Reels placements, and
-            across Google&apos;s Display Network and video inventory — the
+            across Google&apos;s Display Network and video inventory: the
             mechanic is the same wherever an ad can be served without
             requiring a click.
           </p>
           <p className="mt-4 text-white/60 leading-relaxed text-sm">
             Click-through attribution, by contrast, requires an actual
             click before the purchase. That&apos;s a real, logged
-            interaction — the customer did something. View-through has no
+            interaction: the customer did something. View-through has no
             equivalent action to point to. The entire claim rests on
             proximity in time between an impression and a purchase.
           </p>
@@ -134,8 +134,8 @@ export default function Page() {
               browser. No click was ever logged against the original ad,
               but the ad plausibly did the work of introducing the product.
               A measurement system that only ever credits clicks will
-              systematically undercount awareness-stage advertising —
-              video, Reels, Display placements — that&apos;s doing exactly
+              systematically undercount awareness-stage advertising
+              (video, Reels, Display placements) that&apos;s doing exactly
               what it&apos;s supposed to do: get someone thinking about a
               product they&apos;d otherwise never have searched for.
             </p>
@@ -146,14 +146,14 @@ export default function Page() {
       {/* THE CASE AGAINST */}
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">The case against — or at least for skepticism</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">The case against, or at least for skepticism</h2>
           <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
             Impressions are cheap and abundant in a way clicks aren&apos;t.
             A single campaign can serve an ad to the same broad audience
             dozens of times over a week for a fraction of what a click
             costs, which means almost any active shopper in your
             addressable audience has a reasonable chance of having &ldquo;seen
-            an ad&rdquo; shortly before buying — whether or not that ad had
+            an ad&rdquo; shortly before buying, whether or not that ad had
             anything to do with the decision. If someone was already going
             to search for your brand and buy, an impression that happened
             to land in front of them beforehand isn&apos;t evidence it
@@ -161,8 +161,8 @@ export default function Page() {
             causation.
           </p>
           <p className="mt-4 text-white/60 leading-relaxed text-sm max-w-2xl">
-            No platform can prove counterfactual incrementality — what
-            would have happened without the ad — from view data alone.
+            No platform can prove counterfactual incrementality (what
+            would have happened without the ad) from view data alone.
             Meta and Google both know whether an impression was served and
             whether a purchase followed. Neither knows what that same
             person would have done if the impression had never been shown,
@@ -180,7 +180,7 @@ export default function Page() {
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Why this shows up as inflated ROAS, not just a philosophical debate</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-              This isn&apos;t only an abstract measurement question — it
+              This isn&apos;t only an abstract measurement question. It
               shows up directly in reported ROAS. Because view-through
               credit only ever adds purchases to a campaign&apos;s
               attributed total and never subtracts any, it&apos;s one of
@@ -188,11 +188,11 @@ export default function Page() {
               revenue than the campaign plausibly drove. It also
               contributes to the broader pattern where Meta and Google both
               claim the same Shopify order and their combined reported
-              revenue overstates what the store actually made — see{" "}
+              revenue overstates what the store actually made, see{" "}
               <Link href="/resources/ad-platforms-report-more-revenue-than-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 why Meta and Google both claim the same Shopify sale
-              </Link>{" "}
-              — and it&apos;s a big part of why widening an attribution
+              </Link>
+              . It&apos;s also a big part of why widening an attribution
               window setting can raise reported ROAS without the campaign
               itself changing at all, covered in{" "}
               <Link href="/resources/meta-attribution-window-roas" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
@@ -212,7 +212,7 @@ export default function Page() {
             <p>
               <strong className="text-white/85">Look at the split, not just the total.</strong>{" "}
               Break reported conversions into click-through and view-through
-              separately — most platforms let you view this. If view-through
+              separately, most platforms let you view this. If view-through
               is a small share of total attributed conversions, the debate
               barely matters to your numbers either way. If it&apos;s a
               large share, it&apos;s worth scrutinizing before you trust the
@@ -222,10 +222,10 @@ export default function Page() {
               <strong className="text-white/85">Consider your consideration cycle.</strong>{" "}
               A cheap, impulse product has less room for a delayed,
               unclicked purchase to plausibly trace back to a specific
-              impression — the case for view-through credit is weaker.
+              impression, so the case for view-through credit is weaker.
               A higher-consideration purchase, where people research before
               buying, has more genuine room for an impression to do real
-              work days before the purchase — the case is stronger, though
+              work days before the purchase, so the case is stronger, though
               still not proof.
             </p>
             <p>
@@ -241,7 +241,7 @@ export default function Page() {
             <p>
               <strong className="text-white/85">Use it for direction, not for individual campaign verdicts.</strong>{" "}
               Tracking whether view-through volume is trending up or down
-              over time can be a reasonable proxy for changing awareness —
+              over time can be a reasonable proxy for changing awareness,
               but making a scale-or-kill decision on a specific campaign
               based mostly on view-through credit is building a decision on
               the least verifiable part of the data you have.

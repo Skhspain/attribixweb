@@ -16,7 +16,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Is Performance Max more likely to cause this than Search?",
-    a: "Not inherently, but PMax pulls inventory from placements — YouTube, Display, Discover — that a keyword-only Search campaign never touches, and those placements tend to carry lower purchase intent per click. That's not a flaw in PMax, it's just a different mix of traffic that needs judging on its own terms.",
+    a: "Not inherently, but PMax pulls inventory from placements (YouTube, Display, Discover) that a keyword-only Search campaign never touches, and those placements tend to carry lower purchase intent per click. That's not a flaw in PMax, it's just a different mix of traffic that needs judging on its own terms.",
   },
   {
     q: "Could this just be normal attribution lag rather than a real problem?",
@@ -24,7 +24,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What if Shopify shows zero orders from any channel, not just Google?",
-    a: "That points away from Google Ads entirely and toward something site-wide — a broken checkout step, a payment gateway issue, or a theme change that affects every visitor regardless of where they came from. Worth ruling out before spending more time on campaign-level diagnosis.",
+    a: "That points away from Google Ads entirely and toward something site-wide: a broken checkout step, a payment gateway issue, or a theme change that affects every visitor regardless of where they came from. Worth ruling out before spending more time on campaign-level diagnosis.",
   },
 ];
 
@@ -79,7 +79,7 @@ export default function Page() {
             Clicks with no resulting Shopify orders come from one of two
             different places: the traffic genuinely isn&apos;t converting once it
             lands, or it is converting and Google Ads just isn&apos;t reporting
-            it. Confusing the two wastes time — you end up rewriting ad copy
+            it. Confusing the two wastes time: you end up rewriting ad copy
             when the real problem is a broken purchase tag, or chasing a
             tracking fix when nobody wants what&apos;s on the landing page at
             that price. A five-minute check in Shopify tells you which one
@@ -104,14 +104,14 @@ export default function Page() {
             <p>
               If Shopify shows real orders attributed to Google traffic but
               Google Ads&apos; own conversion count is near zero for the same
-              period, that&apos;s a tracking problem, not a demand problem — the
+              period, that&apos;s a tracking problem, not a demand problem. The
               sales are happening and Google simply isn&apos;t seeing them. Skip
               ahead to the tracking diagnosis below.
             </p>
             <p>
               If Shopify shows little or no revenue attributable to Google
-              traffic at all — not just a low Google Ads number, but no
-              orders showing up from that source anywhere in Shopify either —
+              traffic at all (not just a low Google Ads number, but no
+              orders showing up from that source anywhere in Shopify either),
               that&apos;s a real demand or landing problem, and the checklist
               further down is where to spend your time.
             </p>
@@ -119,7 +119,7 @@ export default function Page() {
               Compare over a stable multi-week window rather than a single
               day. Google Ads attributes a conversion to a click within its
               own window and model, which rarely lines up day-for-day with
-              Shopify&apos;s order timestamps — a topic covered in more depth in{" "}
+              Shopify&apos;s order timestamps, a topic covered in more depth in{" "}
               <Link href="/resources/google-ads-shopify-revenue-doesnt-match" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 why Google Ads and Shopify revenue don&apos;t match
               </Link>
@@ -177,7 +177,7 @@ export default function Page() {
           <Reveal>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               That Shopify-vs-Google-Ads comparison is exactly the gap Attribix
-              is built to close — it connects your Shopify orders to your
+              is built to close: it connects your Shopify orders to your
               Google Ads account so the two numbers sit next to each other
               instead of living in separate dashboards that never talk to
               each other. See how the tracking side of this works on the{" "}
@@ -197,7 +197,7 @@ export default function Page() {
           <p className="text-white/60 leading-relaxed text-sm mb-6">
             Assuming tracking checks out, the traffic itself is where to
             look. Each of these narrows down a different reason clicks aren&apos;t
-            turning into orders — check them roughly in order, since earlier
+            turning into orders. Check them roughly in order, since earlier
             ones tend to explain later symptoms.
           </p>
           <div className="space-y-5">
@@ -206,9 +206,9 @@ export default function Page() {
               <p className="mt-2 text-sm text-white/60 leading-relaxed">
                 Pull the Search Terms report and look for two different
                 failure modes, not one. The first is irrelevant queries
-                slipping through under broad match — those clicks were never
+                slipping through under broad match; those clicks were never
                 going to convert regardless of landing page. The second, more
-                easily missed, is relevant queries with the wrong intent —
+                easily missed, is relevant queries with the wrong intent:
                 &quot;how does [product] work&quot; and &quot;buy [product]&quot; can both
                 match the same keyword but represent completely different
                 stages of a purchase decision. Tightening match types and
@@ -222,7 +222,7 @@ export default function Page() {
                 Search, Shopping and Performance Max don&apos;t source clicks the
                 same way. Search traffic has already typed an intent-bearing
                 query. Shopping traffic has already seen your product image
-                and price before clicking — so if that traffic bounces
+                and price before clicking, so if that traffic bounces
                 without buying, it&apos;s more often a price or offer mismatch
                 than a landing page problem, since they saw the offer before
                 they ever landed. PMax pulls additionally from Display,
@@ -240,7 +240,7 @@ export default function Page() {
                 homepage instead of the specific product adds a step the
                 customer didn&apos;t ask for. Beyond that, check the price the
                 ad is actually promising against what a shopper would find
-                comparing elsewhere — Shopping ads in particular draw
+                comparing elsewhere. Shopping ads in particular draw
                 price-comparison behavior, since the price is visible before
                 the click happens. A product priced noticeably above visible
                 alternatives will keep collecting clicks and losing the sale
@@ -254,7 +254,7 @@ export default function Page() {
                 whether you&apos;re winning the clicks worth winning. It&apos;s
                 possible to lose the highest-intent auctions to better-funded
                 competitors while still winning enough lower-relevance
-                impressions on broader targeting to keep spend flowing — that
+                impressions on broader targeting to keep spend flowing. That
                 combination produces exactly this symptom, clicks without
                 sales, without anything being broken.
               </p>
@@ -267,7 +267,7 @@ export default function Page() {
                 that doesn&apos;t render cleanly on a phone can turn a genuinely
                 interested click into an abandoned session even with correct
                 tracking and a well-matched offer. Worth testing the full
-                path — click through to checkout — on an actual phone, not
+                path (click through to checkout) on an actual phone, not
                 just a browser window resized to look like one.
               </p>
             </div>
@@ -304,7 +304,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Running Meta alongside Google Ads?</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             The clicks-but-no-sales pattern shows up on Meta too, and the
-            diagnostic logic differs by platform — different campaign types,
+            diagnostic logic differs by platform: different campaign types,
             different placement mix, different tracking mechanics. See{" "}
             <Link href="/resources/meta-ads-clicks-no-sales" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               Meta Ads clicks but no sales
@@ -334,7 +334,7 @@ export default function Page() {
             </li>
             <li>
               <Link href="/resources/google-ads-not-tracking-shopify-purchases" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
-                Google Ads not tracking Shopify purchases — step-by-step
+                Google Ads not tracking Shopify purchases, step-by-step
               </Link>
             </li>
             <li>

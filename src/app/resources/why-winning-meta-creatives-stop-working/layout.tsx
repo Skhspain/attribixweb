@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Why Winning Meta Ad Creatives Stop Working",
   description:
-    "Fatigue is only one explanation. Why a winning Meta creative can decline — repetition, a shifting market, a weakening website, or a tracking change — and how to tell them apart.",
+    "Fatigue is only one explanation. Why a winning Meta creative can decline: repetition, a shifting market, a weakening website, or a tracking change. How to tell them apart.",
   alternates: { canonical: "https://www.attribix.app/resources/why-winning-meta-creatives-stop-working" },
   openGraph: {
     title: "Why Winning Meta Ad Creatives Stop Working",

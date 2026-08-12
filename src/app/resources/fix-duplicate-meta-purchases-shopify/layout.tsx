@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "How to Fix Duplicate Purchases in Meta Ads for Shopify",
   description:
-    "Duplicate purchase events are a common cause of Meta showing more purchases than Shopify — usually Pixel and CAPI firing without a shared event ID, or more than one tracking app sending the same order. How to diagnose and fix it.",
+    "Duplicate purchase events are a common cause of Meta showing more purchases than Shopify, usually Pixel and CAPI firing without a shared event ID, or more than one tracking app sending the same order. How to diagnose and fix it.",
   alternates: { canonical: "https://www.attribix.app/resources/fix-duplicate-meta-purchases-shopify" },
   openGraph: {
     title: "How to Fix Duplicate Purchases in Meta Ads for Shopify",

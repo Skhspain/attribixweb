@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "How Much Budget Should Go to Brand vs Non-Brand Google Ads?",
   description:
-    "There's no rule that says 10% belongs to brand and 90% to non-brand. Brand demand is constrained by how many people already search for you — let marginal opportunity set the split.",
+    "There's no rule that says 10% belongs to brand and 90% to non-brand. Brand demand is constrained by how many people already search for you: let marginal opportunity set the split.",
   alternates: { canonical: "https://www.attribix.app/resources/google-ads-brand-vs-non-brand-budget" },
   openGraph: {
     title: "How Much Budget Should Go to Brand vs Non-Brand Google Ads?",

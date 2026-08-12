@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Google Shopping Getting Clicks but No Sales",
   description:
-    "Shopping ads show price and image before the click happens, which changes what usually causes clicks without purchases. Query relevance, feed quality, price and shipping — in the order that matters.",
+    "Shopping ads show price and image before the click happens, which changes what usually causes clicks without purchases. Query relevance, feed quality, price and shipping, in the order that matters.",
   alternates: { canonical: "https://www.attribix.app/resources/google-shopping-clicks-no-sales" },
   openGraph: {
     title: "Google Shopping Getting Clicks but No Sales",

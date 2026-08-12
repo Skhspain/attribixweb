@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.attribix.app/resources/google-ads-low-quality-traffic" },
   openGraph: {
     title: "Why Google Search Ads Get Clicks but Low-Quality Traffic",
-    description: "Clearer intent mapping — search term, ad, landing page, offer — beats simply narrowing keywords.",
+    description: "Clearer intent mapping (search term, ad, landing page, offer) beats simply narrowing keywords.",
     url: "https://www.attribix.app/resources/google-ads-low-quality-traffic",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Attribix" }],
   },

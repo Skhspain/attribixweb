@@ -12,7 +12,7 @@ const ARTICLE_JSON_LD = {
   "@type": "Article",
   headline: "What Makes a Good Meta Ad for Ecommerce?",
   description:
-    "A good Meta ad isn't the one people applaud — it's the one that attracts attention your business can profitably convert. How to build the message before the format.",
+    "A good Meta ad isn't the one people applaud. It's the one that attracts attention your business can profitably convert. How to build the message before the format.",
   datePublished: "2026-08-11",
   dateModified: "2026-08-11",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },

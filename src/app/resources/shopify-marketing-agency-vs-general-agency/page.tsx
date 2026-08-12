@@ -11,7 +11,7 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "Is a Shopify-specific agency always better than a generalist?",
-    a: "No. If your main challenge is creative strategy, offer positioning, or top-of-funnel Meta prospecting, a good generalist agency with solid ecommerce experience on any platform can do that job well. Shopify-specific knowledge earns its keep on the technical layer — feed structure, checkout limitations, tracking setup — not on every part of the account.",
+    a: "No. If your main challenge is creative strategy, offer positioning, or top-of-funnel Meta prospecting, a good generalist agency with solid ecommerce experience on any platform can do that job well. Shopify-specific knowledge earns its keep on the technical layer (feed structure, checkout limitations, tracking setup), not on every part of the account.",
   },
   {
     q: "What's the single biggest technical difference Shopify creates?",
@@ -19,7 +19,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Can a general agency learn Shopify's quirks on the job?",
-    a: "Usually, yes — the learning curve is real but not enormous for a competent team. The risk isn't that it's unlearnable, it's that you're often the one paying (in slower setup, tracking mistakes, or feed errors) while they learn it on your account instead of a previous client's.",
+    a: "Usually, yes: the learning curve is real but not enormous for a competent team. The risk isn't that it's unlearnable, it's that you're often the one paying (in slower setup, tracking mistakes, or feed errors) while they learn it on your account instead of a previous client's.",
   },
   {
     q: "Does Shopify Plus change any of this?",
@@ -82,9 +82,9 @@ export default function Page() {
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             The honest answer is that Shopify-specific knowledge matters for
-            a fairly narrow but important slice of the work — the feed,
+            a fairly narrow but important slice of the work: the feed,
             the checkout, the tracking setup, the way Shopify reports
-            revenue — and matters much less for creative strategy, media
+            revenue. It matters much less for creative strategy, media
             buying fundamentals, or offer positioning, where a good
             generalist is just as capable. The distinction is where those
             two categories fall, not which agency type is universally
@@ -104,7 +104,7 @@ export default function Page() {
             WooCommerce, or a custom build. If an agency&apos;s pitch is
             entirely about &quot;we specialize in Shopify&quot; with nothing
             underneath it, that&apos;s marketing, not a real differentiator.
-            The useful question isn&apos;t whether they say Shopify — it&apos;s
+            The useful question isn&apos;t whether they say Shopify; it&apos;s
             whether they can speak to the specific technical points below
             without hand-waving.
           </p>
@@ -123,7 +123,7 @@ export default function Page() {
               cleanly usually means understanding Shopify&apos;s variant
               system, metafields, and how collections map to product
               groups. An agency that&apos;s built feeds for Shopify stores
-              before will recognize these issues on sight — a generalist
+              before will recognize these issues on sight; a generalist
               coming from a different platform may spend real time (yours)
               rediscovering them.
             </p>
@@ -137,7 +137,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Checkout constraints</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             Shopify locks down its default checkout more than most other
-            ecommerce platforms — you can&apos;t freely inject third-party
+            ecommerce platforms. You can&apos;t freely inject third-party
             scripts or restructure the flow the way you could on an
             open-cart system, unless you&apos;re on Shopify Plus with access
             to checkout extensibility and the script editor. This
@@ -183,7 +183,7 @@ export default function Page() {
             server-side code the way you might on a custom stack. Knowing
             which of Shopify&apos;s native integrations to trust and which
             gaps still need a custom or app-based fix is a specific,
-            learnable skill — and one that&apos;s easy to get subtly wrong in
+            learnable skill, and one that&apos;s easy to get subtly wrong in
             ways that don&apos;t surface until conversion counts start
             drifting from real orders.
           </p>
@@ -207,14 +207,14 @@ export default function Page() {
                 <strong className="text-white/80">AOV and margin-aware decisions.</strong>{" "}
                 Shopify makes order-level margin data available (if
                 cost-per-item is filled in) in a way that&apos;s useful for
-                setting real target CPAs rather than guessing — an agency
+                setting real target CPAs rather than guessing; an agency
                 that never asks about your margins isn&apos;t using it.
               </p>
               <p>
                 <strong className="text-white/80">Repeat purchase and retention thinking.</strong>{" "}
                 Shopify&apos;s customer and order history makes cohort and
                 repeat-purchase analysis straightforward if someone
-                actually pulls the data — this shapes whether it makes
+                actually pulls the data. This shapes whether it makes
                 sense to bid more aggressively than a first-purchase-only
                 CPA would suggest.
               </p>
@@ -291,7 +291,7 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold">Want the Shopify-specific parts handled for you?</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
-            We manage Meta and Google Ads specifically for Shopify stores —
+            We manage Meta and Google Ads specifically for Shopify stores:
             feed, checkout constraints and tracking setup included, not
             bolted on afterward.
           </p>

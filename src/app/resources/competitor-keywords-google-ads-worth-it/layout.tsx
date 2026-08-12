@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.attribix.app/resources/competitor-keywords-google-ads-worth-it" },
   openGraph: {
     title: "Are Competitor Keywords Worth Bidding on in Google Ads?",
-    description: "The intent behind a competitor-name search isn't neutral — what that costs you and when it's still worth it.",
+    description: "The intent behind a competitor-name search isn't neutral. Here's what that costs you and when it's still worth it.",
     url: "https://www.attribix.app/resources/competitor-keywords-google-ads-worth-it",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Attribix" }],
   },

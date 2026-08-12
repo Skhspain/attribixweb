@@ -114,7 +114,7 @@ export default function Page() {
               A high-AOV store might generate only a handful of weekly
               purchases. That means results will be noisy. Switching to Add
               to Cart may create more data but does not necessarily help
-              Meta find buyers — the same tradeoff we walk through in{" "}
+              Meta find buyers, the same tradeoff we walk through in{" "}
               <Link href="/resources/meta-ads-optimize-add-to-cart-or-purchase" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Add to Cart vs Purchase optimization
               </Link>

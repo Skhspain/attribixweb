@@ -16,7 +16,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How do I check if it's returning customers driving the growth?",
-    a: "Shopify's own customer reporting can split revenue by new versus returning customers. If returning-customer revenue is doing most of the growing, that's largely retention and brand strength, not new-customer acquisition — a different lever than your ad accounts.",
+    a: "Shopify's own customer reporting can split revenue by new versus returning customers. If returning-customer revenue is doing most of the growing, that's largely retention and brand strength, not new-customer acquisition: a different lever than your ad accounts.",
   },
   {
     q: "Should I keep spending on ads if ROAS looks worse but revenue is up?",
@@ -86,12 +86,12 @@ export default function Page() {
             Say a store grew total revenue 20% year over year while Meta
             and Google ROAS both fell. If most of that growth came from
             returning customers buying again through email, direct visits
-            or organic search, the ad platforms had little to do with it —
-            they&apos;re reporting on a shrinking share of a growing pie,
+            or organic search, the ad platforms had little to do with it.
+            They&apos;re reporting on a shrinking share of a growing pie,
             which looks like underperformance even if new-customer
             acquisition through ads held steady.
           </p>
-          <DiagramFrame caption="Illustrative — the actual split will differ by store.">
+          <DiagramFrame caption="Illustrative: the actual split will differ by store.">
             <svg viewBox="0 0 600 170" className="w-full h-auto" role="img" aria-label="Diagram showing total Shopify revenue growing while the portion attributable to paid ads stays flat, with the rest of the growth coming from returning customers, email and direct traffic.">
               <rect x="10" y="20" width="260" height="130" rx="12" className="fill-white/5" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
               <text x="140" y="42" textAnchor="middle" className="fill-white/70 text-[11px] font-semibold">Last year</text>
@@ -101,9 +101,9 @@ export default function Page() {
               <rect x="330" y="20" width="260" height="130" rx="12" className="fill-white/5" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
               <text x="460" y="42" textAnchor="middle" className="fill-white/70 text-[11px] font-semibold">This year</text>
               <rect x="350" y="60" width="220" height="30" rx="6" className="fill-cyan-400/20" stroke="rgba(56,189,248,0.4)" strokeWidth="1" />
-              <text x="460" y="80" textAnchor="middle" className="fill-white text-[11px]">Paid ads — flat</text>
+              <text x="460" y="80" textAnchor="middle" className="fill-white text-[11px]">Paid ads: flat</text>
               <rect x="350" y="95" width="220" height="35" rx="6" className="fill-emerald-400/15" stroke="rgba(52,211,153,0.4)" strokeWidth="1" />
-              <text x="460" y="116" textAnchor="middle" className="fill-white text-[11px]">Returning, email, direct — up</text>
+              <text x="460" y="116" textAnchor="middle" className="fill-white text-[11px]">Returning, email, direct: up</text>
             </svg>
           </DiagramFrame>
         </Reveal>
@@ -117,7 +117,7 @@ export default function Page() {
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               Shopify's customer reporting can split revenue by new and
               returning buyers. If returning-customer revenue explains most
-              of the growth, that's largely a retention and brand story —
+              of the growth, that's largely a retention and brand story:
               worth understanding, but not evidence that paid acquisition
               is failing. If new-customer revenue is also growing but ad
               platform ROAS is still falling, that's a stronger signal that
@@ -134,8 +134,8 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Don&apos;t rule out tracking either</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             A tracking or consent change can suppress platform-reported
-            purchases even while real Shopify revenue keeps climbing —
-            they&apos;re measured independently. If reported ROAS dropped
+            purchases even while real Shopify revenue keeps climbing.
+            They&apos;re measured independently. If reported ROAS dropped
             around the same time as a site, cookie-banner or app change,
             it&apos;s worth ruling that out before concluding the
             campaigns themselves got less efficient.

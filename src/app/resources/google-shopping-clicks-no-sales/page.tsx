@@ -11,15 +11,15 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "How is this different from Performance Max not converting?",
-    a: "This is about standalone Shopping campaign mechanics specifically — feed data, price shown in the ad, and query-to-product matching. Performance Max wraps Shopping inventory into a broader automated campaign with additional signals and asset groups, which fails in some different ways too. If you're running PMax rather than standalone Shopping, see the Performance Max diagnosis piece instead.",
+    a: "This is about standalone Shopping campaign mechanics specifically: feed data, price shown in the ad, and query-to-product matching. Performance Max wraps Shopping inventory into a broader automated campaign with additional signals and asset groups, which fails in some different ways too. If you're running PMax rather than standalone Shopping, see the Performance Max diagnosis piece instead.",
   },
   {
     q: "Does a low click-through rate on Shopping ads mean the same thing as on Search ads?",
-    a: "Not exactly. Shopping ads already show price and image before the click, so people who click have generally already accepted the price — the drop-off after a click is more often about the landing page not matching, or something changing between the ad and the site (like a lower stock message).",
+    a: "Not exactly. Shopping ads already show price and image before the click, so people who click have generally already accepted the price. The drop-off after a click is more often about the landing page not matching, or something changing between the ad and the site (like a lower stock message).",
   },
   {
     q: "Should I check tracking before feed and price?",
-    a: "Yes, briefly — confirm purchase conversions are actually being recorded before spending time on feed and pricing changes. If tracking is broken, no amount of feed or price optimization will show up as improved conversions.",
+    a: "Yes, briefly: confirm purchase conversions are actually being recorded before spending time on feed and pricing changes. If tracking is broken, no amount of feed or price optimization will show up as improved conversions.",
   },
 ];
 
@@ -73,7 +73,7 @@ export default function Page() {
             Shopping ads already show the price and a product image before
             anyone clicks, which changes the diagnosis compared to a
             Search or Meta ad. Someone who clicks has already accepted the
-            price they saw — so the drop-off usually happens somewhere
+            price they saw, so the drop-off usually happens somewhere
             between that click and the product page matching up.
           </p>
         </Reveal>
@@ -86,7 +86,7 @@ export default function Page() {
             Before touching the feed or pricing, place a test order and
             confirm the purchase conversion shows up correctly in Google
             Ads. If tracking is broken, Shopping can look like it&apos;s
-            not converting when it actually is — and no feed or price
+            not converting when it actually is, and no feed or price
             change will fix that.
           </p>
         </Reveal>
@@ -100,7 +100,7 @@ export default function Page() {
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               Shopping matches search queries to your product feed
               automatically, without you choosing keywords directly. Check
-              the search terms report for the campaign — if you&apos;re
+              the search terms report for the campaign. If you&apos;re
               showing up for queries that are only loosely related to what
               you sell, the traffic itself has weak intent no matter how
               good the landing page is. Negative keywords work in Shopping
@@ -135,7 +135,7 @@ export default function Page() {
               Unlike a text ad, Shopping shows your price directly next to
               competitors&apos; prices before the click. If your price is
               genuinely uncompetitive for a comparable product, clicks
-              will still happen — people compare visually — but conversion
+              will still happen (people compare visually), but conversion
               stays low. Shipping cost and delivery time shown in the
               listing (or missing from it) matter the same way; a shopper
               who sees a lower price elsewhere including shipping isn&apos;t

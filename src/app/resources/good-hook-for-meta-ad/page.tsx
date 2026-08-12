@@ -12,7 +12,7 @@ const ARTICLE_JSON_LD = {
   "@type": "Article",
   headline: "What Is a Good Hook for a Meta Ad?",
   description:
-    "The hook categories that actually qualify buyers on Meta — problem, outcome, demonstration, proof and objection — and how to test them properly.",
+    "The hook categories that actually qualify buyers on Meta (problem, outcome, demonstration, proof and objection) and how to test them properly.",
   datePublished: "2026-08-11",
   dateModified: "2026-08-11",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },

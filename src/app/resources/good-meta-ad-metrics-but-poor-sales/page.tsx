@@ -12,7 +12,7 @@ const ARTICLE_JSON_LD = {
   "@type": "Article",
   headline: "Why Your Meta Ads Have Good Creative Metrics but Poor Sales",
   description:
-    "An ad can have an excellent hook rate, watch time and CTR and still be a poor sales ad. Creative metrics describe attention — revenue requires the right attention.",
+    "An ad can have an excellent hook rate, watch time and CTR and still be a poor sales ad. Creative metrics describe attention; revenue requires the right attention.",
   datePublished: "2026-08-11",
   dateModified: "2026-08-11",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },

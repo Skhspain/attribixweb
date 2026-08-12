@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Performance Max Spending Money but Getting No Sales",
   description:
-    "A Shopify-focused diagnostic order for a PMax campaign with spend and no purchases — starting with whether Google can see your conversions at all, then feed, landing pages, price, budget and audience signals.",
+    "A Shopify-focused diagnostic order for a PMax campaign with spend and no purchases: starting with whether Google can see your conversions at all, then feed, landing pages, price, budget and audience signals.",
   alternates: { canonical: "https://www.attribix.app/resources/performance-max-no-sales" },
   openGraph: {
     title: "Performance Max Spending Money but Getting No Sales",

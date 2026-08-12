@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "How Often Should You Change Meta Ad Creatives?",
     description:
-      "Frequency, CTR and CPA trends tell you when a creative needs replacing — a fixed weekly or monthly refresh calendar doesn't.",
+      "Frequency, CTR and CPA trends tell you when a creative needs replacing; a fixed weekly or monthly refresh calendar doesn't.",
     url: "https://www.attribix.app/resources/how-often-change-meta-ad-creatives",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Attribix" }],
   },

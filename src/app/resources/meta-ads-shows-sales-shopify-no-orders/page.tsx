@@ -11,19 +11,19 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "Is Meta just making up conversions?",
-    a: "No. Meta reports what its tracking told it happened, based on whatever event configuration is live on your store. When that configuration is off — wrong event name, a leftover test Pixel, a reporting date range that doesn't line up — the number Meta shows is real from its side, it's just not counting what you think it's counting.",
+    a: "No. Meta reports what its tracking told it happened, based on whatever event configuration is live on your store. When that configuration is off (wrong event name, a leftover test Pixel, a reporting date range that doesn't line up), the number Meta shows is real from its side, it's just not counting what you think it's counting.",
   },
   {
     q: "Could someone be committing ad fraud against my account?",
-    a: "It's extremely rare for this specific pattern. Click fraud and fake engagement exist, but they don't typically produce a Purchase event with no corresponding order — that requires something on your own site or Pixel setup to fire the event, which points at configuration rather than an outside actor.",
+    a: "It's extremely rare for this specific pattern. Click fraud and fake engagement exist, but they don't typically produce a Purchase event with no corresponding order; that requires something on your own site or Pixel setup to fire the event, which points at configuration rather than an outside actor.",
   },
   {
     q: "How is this different from Meta and Shopify revenue just not matching?",
-    a: "Numbers that are simply different — Meta says $8,000, Shopify says $6,500 — usually come down to attribution windows and overlapping channels, which we cover in our guide to why Shopify and Meta sales don't match. This article is about a sharper case: Meta shows purchases for a period where Shopify shows zero orders at all, which points at a specific configuration problem rather than normal attribution variance.",
+    a: "Numbers that are simply different (Meta says $8,000, Shopify says $6,500) usually come down to attribution windows and overlapping channels, which we cover in our guide to why Shopify and Meta sales don't match. This article is about a sharper case: Meta shows purchases for a period where Shopify shows zero orders at all, which points at a specific configuration problem rather than normal attribution variance.",
   },
   {
     q: "What if I've checked everything on this list and still can't find it?",
-    a: "At that point it's worth getting a second set of eyes on the actual Events Manager configuration and Shopify order data side by side — some of these issues (a duplicated Pixel across two ad accounts, for instance) are easier to spot from inside the accounts than from a checklist.",
+    a: "At that point it's worth getting a second set of eyes on the actual Events Manager configuration and Shopify order data side by side. Some of these issues (a duplicated Pixel across two ad accounts, for instance) are easier to spot from inside the accounts than from a checklist.",
   },
 ];
 
@@ -99,7 +99,7 @@ export default function Page() {
             on revenue. If Ads Manager shows Purchase events for a period
             where Shopify shows zero orders, that&apos;s almost always a
             measurement configuration issue, not evidence of fake or stolen
-            sales. Work through the checks below in order — the cause is
+            sales. Work through the checks below in order; the cause is
             usually one of a short, specific list.
           </p>
         </Reveal>
@@ -133,7 +133,7 @@ export default function Page() {
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               Stores that have gone through a rebuild, a new agency, or a
               platform migration sometimes end up with more than one Pixel
-              installed — an old one still embedded in a legacy theme
+              installed: an old one still embedded in a legacy theme
               section, or a test Pixel from development that never got
               removed. If a test Pixel fires on a staging or duplicate
               version of the store, or a leftover Pixel fires on pages that
@@ -174,7 +174,7 @@ export default function Page() {
               purchase to the date the ad was clicked rather than the date
               the order happened, while Shopify records the order on the
               date it was placed. A purchase that&apos;s a day or two apart
-              between the two systems isn&apos;t missing — it&apos;s sitting
+              between the two systems isn&apos;t missing; it&apos;s sitting
               in a different bucket. Widen the Shopify date range by a few
               days on each side before concluding the order genuinely
               doesn&apos;t exist.
@@ -188,9 +188,9 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">5. Check for multiple domains or stores sharing one Pixel</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            If the same Meta Pixel ID is installed on more than one domain —
-            a staging site, a regional storefront, a wholesale site, or an
-            old domain that still resolves — purchases from any of those can
+            If the same Meta Pixel ID is installed on more than one domain
+            (a staging site, a regional storefront, a wholesale site, or an
+            old domain that still resolves), purchases from any of those can
             land in the same ad account&apos;s reporting. From inside Ads
             Manager this looks like one number. From inside a single
             Shopify store, it can look like sales that don&apos;t exist,
@@ -207,9 +207,9 @@ export default function Page() {
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">6. Check for an external or third-party checkout</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               If the Pixel or CAPI event fires from a page that isn&apos;t
-              actually Shopify&apos;s checkout — a landing page builder, a
+              actually Shopify&apos;s checkout (a landing page builder, a
               separate funnel tool, an upsell app with its own hosted
-              checkout, or a payment link sent manually — the purchase can
+              checkout, or a payment link sent manually), the purchase can
               be real, but it never creates a Shopify order at all, because
               the transaction didn&apos;t route through Shopify. This is
               worth ruling out on stores running third-party funnel or
@@ -262,7 +262,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold">Still not sure what&apos;s causing it?</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             If Meta, Google and Shopify are telling you different things,
-            send us an inquiry — we can review the setup and help determine
+            send us an inquiry. We can review the setup and help determine
             whether it&apos;s advertising performance, your website,
             tracking, or attribution.
           </p>

@@ -11,11 +11,11 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "We changed our cookie banner and Google Ads conversions dropped. Is Consent Mode the cause?",
-    a: "It's the first thing to check. A new cookie banner can change the default consent state, delay when consent signals fire relative to your tags, or default to denying storage until someone actively accepts — any of which reduces directly measured conversions and shifts more of your reporting to modeled estimates.",
+    a: "It's the first thing to check. A new cookie banner can change the default consent state, delay when consent signals fire relative to your tags, or default to denying storage until someone actively accepts, any of which reduces directly measured conversions and shifts more of your reporting to modeled estimates.",
   },
   {
     q: "Does Consent Mode block Google Ads tracking entirely when consent is denied?",
-    a: "No. It changes what the tag is allowed to store and send — without ad_storage consent, the tag can't set or read ad-related cookies. Google can still receive a limited, cookieless ping and use it, along with aggregate patterns, to model conversions statistically.",
+    a: "No. It changes what the tag is allowed to store and send: without ad_storage consent, the tag can't set or read ad-related cookies. Google can still receive a limited, cookieless ping and use it, along with aggregate patterns, to model conversions statistically.",
   },
   {
     q: "Can server-side tracking or Enhanced Conversions get around Consent Mode?",
@@ -84,7 +84,7 @@ export default function Page() {
             &ldquo;We changed the cookie banner and conversions dropped&rdquo; is
             one of the most common tracking complaints on Shopify stores
             running Google Ads, and Consent Mode is usually the mechanism
-            behind it. It doesn&apos;t block tracking outright — it changes
+            behind it. It doesn&apos;t block tracking outright. It changes
             how much of it Google measures directly versus estimates.
           </p>
         </Reveal>
@@ -96,14 +96,14 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What Consent Mode actually is</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             Consent Mode is a signal, not a tracking method of its own. Your
-            consent management platform — the cookie banner and whatever
-            logic sits behind it — tells Google&apos;s tags whether the
+            consent management platform (the cookie banner and whatever
+            logic sits behind it) tells Google&apos;s tags whether the
             visitor has granted categories of consent, most relevantly{" "}
             <code className="text-cyan-300">ad_storage</code> (whether ads
             cookies can be set) and{" "}
             <code className="text-cyan-300">analytics_storage</code>{" "}
             (whether analytics cookies can be set). Google&apos;s tags read
-            that signal and adjust their own behavior accordingly — they
+            that signal and adjust their own behavior accordingly: they
             don&apos;t decide consent themselves, and they don&apos;t
             override whatever the banner determined.
           </p>
@@ -128,7 +128,7 @@ export default function Page() {
               can&apos;t set or read the cookies it would normally use to
               track that visitor across a session or return visit. It can
               still send a limited, cookieless signal indicating that an ad
-              interaction and, separately, a conversion event occurred —
+              interaction and, separately, a conversion event occurred,
               without attaching the identifiers that would normally let
               Google connect the two directly.
             </p>
@@ -138,8 +138,8 @@ export default function Page() {
               how many of the unconsented visits likely converted. This is
               worth being honest about: modeling is an estimate, not a
               recovery mechanism. It can narrow the gap between reported and
-              actual conversions in aggregate, over enough volume and time —
-              it does not reconstruct any individual missing conversion, and
+              actual conversions in aggregate, over enough volume and time.
+              It does not reconstruct any individual missing conversion, and
               it will never claim to have measured a specific visitor&apos;s
               specific purchase. Accounts with low traffic or short
               reporting windows will see this modeling behave more
@@ -164,8 +164,8 @@ export default function Page() {
               <strong className="text-white/85">The consent signal fires late.</strong>{" "}
               If tags load and start attempting to fire before the CMP has
               finished initializing and communicating a consent state,
-              they can end up operating on a default — often the most
-              restrictive one — for a meaningful slice of visitors, even
+              they can end up operating on a default (often the most
+              restrictive one) for a meaningful slice of visitors, even
               those who go on to accept. Tag and consent script order
               matters here; a banner that loads after the Google tag has
               already attempted to fire creates a gap the new banner didn&apos;t
@@ -177,7 +177,7 @@ export default function Page() {
               that apply before the visitor makes any choice, and separate
               values once they do. A banner rebuild that changes the
               default from granted-until-declined to denied-until-accepted
-              is a deliberate, defensible privacy choice — but it will
+              is a deliberate, defensible privacy choice, but it will
               measurably reduce directly-tracked conversions, because more
               visitors are now in a denied state for however long it takes
               them to interact with the banner, if they interact at all.
@@ -188,7 +188,7 @@ export default function Page() {
               implementation, and Shopify stores commonly run one that only
               loads Google&apos;s tags after consent is granted versus one
               that always loads them and adjusts behavior based on the
-              signal. These behave differently for denied visitors — one
+              signal. These behave differently for denied visitors: one
               produces no signal at all until consent changes, the other
               produces the limited cookieless signal described above. Which
               one a given theme or app has actually implemented is worth
@@ -219,7 +219,7 @@ export default function Page() {
               relying on a browser cookie to reach Google. That&apos;s not
               how it works, and no honest implementation claims otherwise.
               Consent Mode still governs what a server-side event or an
-              Enhanced Conversions payload is allowed to include — a
+              Enhanced Conversions payload is allowed to include: a
               visitor who declined ad-storage consent should have their
               server-side event sent without the identifying data Enhanced
               Conversions would normally attach, the same way their
@@ -244,7 +244,7 @@ export default function Page() {
           <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
             Attribix ties Google Ads conversion data back to actual Shopify
             orders, which makes a sudden post-banner-change drop easier to
-            isolate — you can see whether the gap between reported
+            isolate: you can see whether the gap between reported
             conversions and real orders widened right when the banner
             shipped, rather than guessing from Google Ads reporting alone.
             More on how that connection works on{" "}

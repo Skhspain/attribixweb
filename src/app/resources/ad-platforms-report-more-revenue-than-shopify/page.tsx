@@ -11,7 +11,7 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "Why do Meta and Google both show revenue for the same order?",
-    a: "Because each platform runs its own attribution model on the same pool of customer journeys. If a shopper crossed paths with both a Meta ad and a Google ad before buying, both models can reasonably credit themselves — neither is aware of what the other platform saw.",
+    a: "Because each platform runs its own attribution model on the same pool of customer journeys. If a shopper crossed paths with both a Meta ad and a Google ad before buying, both models can reasonably credit themselves. Neither is aware of what the other platform saw.",
   },
   {
     q: "Should I just add Meta's and Google's reported revenue together to see total ad-driven sales?",
@@ -19,7 +19,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Is this a tracking bug I should try to fix?",
-    a: "No — it's how independent, platform-siloed attribution is built to work. There's no setting that makes Meta aware of Google's conversions or vice versa. The fix is in how you read the numbers, not in the tracking setup.",
+    a: "No, it's how independent, platform-siloed attribution is built to work. There's no setting that makes Meta aware of Google's conversions or vice versa. The fix is in how you read the numbers, not in the tracking setup.",
   },
   {
     q: "Does turning off view-through attribution solve the overlap?",
@@ -82,7 +82,7 @@ export default function Page() {
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             Meta and Google can both report a purchase as theirs, for the
-            same order, at the same time — because each platform&apos;s
+            same order, at the same time, because each platform&apos;s
             attribution model only ever looks at itself. Add their reported
             revenue together and you&apos;re not measuring total ad-driven
             sales, you&apos;re counting some orders twice.
@@ -98,7 +98,7 @@ export default function Page() {
             Say Shopify records 100 real orders in a week. Pull up Meta Ads
             Manager for the same week and it reports 70 attributed
             purchases. Pull up Google Ads and it reports 55 attributed
-            purchases. Add those together and you get 125 — twenty-five more
+            purchases. Add those together and you get 125: twenty-five more
             purchases than actually happened. This is a hypothetical example
             to illustrate the mechanic, not a claim about typical overlap on
             any real account; the actual split depends entirely on how much
@@ -107,8 +107,8 @@ export default function Page() {
           <p className="mt-4 text-white/60 leading-relaxed text-sm">
             Nobody double-charged a customer and nobody duplicated an order
             in Shopify. What happened is that some number of those 100 real
-            orders — the ones where a shopper saw or clicked a Meta ad{" "}
-            <em>and</em> a Google ad before buying — got counted by both
+            orders (the ones where a shopper saw or clicked a Meta ad{" "}
+            <em>and</em> a Google ad before buying) got counted by both
             platforms independently. Each platform&apos;s number is
             internally consistent. Adding them together is where the count
             breaks.
@@ -125,9 +125,9 @@ export default function Page() {
             <div className="mt-2 space-y-4 text-white/60 leading-relaxed text-sm max-w-2xl">
               <p>
                 <strong className="text-white/85">Overlapping attribution windows.</strong>{" "}
-                Meta and Google each apply their own lookback window — commonly
+                Meta and Google each apply their own lookback window (commonly
                 something like a week for clicks and a day for views on Meta,
-                a comparable range on Google — to decide whether a purchase
+                a comparable range on Google) to decide whether a purchase
                 counts. Those windows aren&apos;t coordinated with each
                 other. A purchase that falls inside both platforms&apos;
                 windows is fair game for both.
@@ -139,8 +139,8 @@ export default function Page() {
                 Google ad, and buys. Meta&apos;s model can credit the
                 impression it served. Google&apos;s model can credit the
                 click that immediately preceded the order. Both are
-                describing something real about that journey — neither is
-                lying — but only one order happened.
+                describing something real about that journey. Neither is
+                lying, but only one order happened.
               </p>
               <p>
                 <strong className="text-white/85">View-through credit inflating the count.</strong>{" "}
@@ -161,7 +161,7 @@ export default function Page() {
                 Multi-touch journeys are the norm, not the exception, for
                 anything beyond an impulse purchase. The more touchpoints a
                 purchase has, the more platforms have a plausible claim to
-                it — and every platform&apos;s attribution model is built to
+                it, and every platform&apos;s attribution model is built to
                 take credit for the touchpoints it can see, not to defer to
                 whichever channel actually mattered most.
               </p>
@@ -176,14 +176,14 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">This is normal platform behavior, not a bug</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             It&apos;s tempting to read a 125-order combined claim against 100
-            real orders as something broken — a tracking error, a
+            real orders as something broken: a tracking error, a
             duplicate-event problem, a misconfiguration worth chasing down.
             Usually it isn&apos;t. Meta&apos;s attribution model was never
             designed to know what Google saw, and Google&apos;s wasn&apos;t
             designed to know what Meta saw. Each platform is reporting an
-            honest answer to a narrow question — &ldquo;how much revenue can
+            honest answer to a narrow question: &ldquo;how much revenue can
             I defensibly attribute to my own ads, using only what I can
-            observe?&rdquo; — and neither platform is incentivized to net
+            observe?&rdquo; Neither platform is incentivized to net
             out the other&apos;s claim. The overlap is a structural feature
             of siloed, platform-level attribution, not evidence that
             either number is wrong on its own terms.
@@ -199,14 +199,14 @@ export default function Page() {
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">The fix isn&apos;t adding the platforms together</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               If summing Meta and Google&apos;s reported revenue overstates
-              reality, the obvious next move — subtracting some estimated
-              overlap percentage from the sum — just replaces one guess with
+              reality, the obvious next move (subtracting some estimated
+              overlap percentage from the sum) just replaces one guess with
               another. The more reliable approach is to stop treating
               platform-reported revenue as something that should sum to a
               meaningful total in the first place.
             </p>
             <p className="mt-4 text-white/60 leading-relaxed text-sm max-w-2xl">
-              Shopify&apos;s actual revenue for the period is ground truth —
+              Shopify&apos;s actual revenue for the period is ground truth:
               it&apos;s a record of what was purchased, not a model of what
               probably caused it. Compare that single number against total
               ad spend across every channel and you get a blended
@@ -225,7 +225,7 @@ export default function Page() {
               .
             </p>
             <p className="mt-4 text-white/60 leading-relaxed text-sm max-w-2xl">
-              Platform-reported ROAS still has a job to do — comparing this
+              Platform-reported ROAS still has a job to do: comparing this
               week&apos;s Meta number to last week&apos;s Meta number is a
               reasonable way to judge whether a campaign is trending better
               or worse, because the same model bias applies consistently
@@ -243,7 +243,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What&apos;s actually worth watching</h2>
           <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
             A combined platform claim of 125% of real orders isn&apos;t
-            itself a red flag — the useful question is whether that ratio
+            itself a red flag. The useful question is whether that ratio
             holds roughly steady from week to week. If Meta plus Google
             usually runs around 20&ndash;30% over Shopify&apos;s actual
             order count and one week it jumps to 60% over, something
@@ -251,7 +251,7 @@ export default function Page() {
             leaning heavily on view-through-eligible placements, or a
             duplicate-event issue is inflating one platform&apos;s count on
             its own. Chasing an exact match between the platforms and
-            Shopify isn&apos;t realistic by design — watching the gap for
+            Shopify isn&apos;t realistic by design; watching the gap for
             sudden movement is.
           </p>
         </Reveal>

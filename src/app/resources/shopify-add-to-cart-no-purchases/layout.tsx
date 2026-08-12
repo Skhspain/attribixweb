@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Lots of Add to Carts but No Purchases on Shopify",
   description:
-    "High add-to-cart activity with few completed orders usually points to a specific friction point revealed at checkout — shipping cost, tax, payment options or trust. How to narrow it down.",
+    "High add-to-cart activity with few completed orders usually points to a specific friction point revealed at checkout: shipping cost, tax, payment options or trust. How to narrow it down.",
   alternates: { canonical: "https://www.attribix.app/resources/shopify-add-to-cart-no-purchases" },
   openGraph: {
     title: "Lots of Add to Carts but No Purchases on Shopify",

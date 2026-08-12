@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Shopify Customers Reach Checkout but Don't Buy: What to Check",
   description:
-    "Checkout-stage drop-off is narrower than cart abandonment — payment methods, shipping and tax calculation, localization and checkout errors. What to check specifically at this last step.",
+    "Checkout-stage drop-off is narrower than cart abandonment: payment methods, shipping and tax calculation, localization and checkout errors. What to check specifically at this last step.",
   alternates: { canonical: "https://www.attribix.app/resources/shopify-checkout-no-purchase" },
   openGraph: {
     title: "Shopify Customers Reach Checkout but Don't Buy: What to Check",

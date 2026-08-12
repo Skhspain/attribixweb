@@ -138,7 +138,7 @@ export default function Page() {
             the campaign is optimizing for the wrong event. If Shopify
             orders and Meta&apos;s reported purchases have already drifted
             apart, that is worth ruling out before you touch anything
-            else — see{" "}
+            else. See{" "}
             <Link href="/meta-capi-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               Meta CAPI for Shopify
             </Link>

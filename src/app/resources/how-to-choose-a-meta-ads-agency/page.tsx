@@ -11,14 +11,14 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "Should I only consider agencies that specialize in my exact product category?",
-    a: "Category specialization helps but isn't essential. What matters more is genuine ecommerce and Shopify experience — the mechanics of feed data, tracking, and margin-aware decision-making transfer across categories more than people assume.",
+    a: "Category specialization helps but isn't essential. What matters more is genuine ecommerce and Shopify experience: the mechanics of feed data, tracking, and margin-aware decision-making transfer across categories more than people assume.",
   },
   {
     q: "Is it a red flag if an agency won't guarantee a specific ROAS?",
-    a: "It's the opposite. No one running a real account can honestly guarantee a specific return before seeing your numbers — market conditions, product economics and starting point all matter too much. Be more cautious of agencies that guarantee results upfront than ones that ask for account history first.",
+    a: "It's the opposite. No one running a real account can honestly guarantee a specific return before seeing your numbers: market conditions, product economics and starting point all matter too much. Be more cautious of agencies that guarantee results upfront than ones that ask for account history first.",
   },
   {
-    q: "Who should own the ad account — me or the agency?",
+    q: "Who should own the ad account, me or the agency?",
     a: "Generally you, on your own business assets, with the agency granted admin access. That way historical data, audiences and account history stay with you if the relationship ends, rather than starting over with a new agency's account.",
   },
 ];
@@ -72,7 +72,7 @@ export default function Page() {
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             Most searches on this end up at a ranked list of "best
             agencies." That's not this. This is a framework for evaluating
-            whoever you're actually talking to — the questions that
+            whoever you're actually talking to: the questions that
             separate someone who genuinely understands ecommerce accounts
             from someone who's good at sales calls.
           </p>
@@ -84,7 +84,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Real ecommerce and Shopify experience</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             Lead-gen Meta advertising and ecommerce Meta advertising are
-            different disciplines — different optimization events, offer
+            different disciplines: different optimization events, offer
             structures, and creative needs. Ask specifically about Shopify
             experience: product feed handling, checkout constraints, and
             how they've set up tracking on stores like yours before.
@@ -104,7 +104,7 @@ export default function Page() {
               account with the agency granted access, or on the agency's
               own account. The first keeps your history, audiences and
               learnings with you if you ever switch agencies. The second
-              means starting from zero elsewhere — worth knowing before you
+              means starting from zero elsewhere, worth knowing before you
               sign, not after you leave.
             </p>
           </Reveal>

@@ -110,7 +110,7 @@ export default function Page() {
               A returning customer who clicks a Meta ad before reordering may
               be attributed to the campaign. That revenue is real, but it is
               not the same business achievement as acquiring a completely
-              new buyer — one of several reasons{" "}
+              new buyer, one of several reasons{" "}
               <Link href="/resources/why-shopify-meta-sales-dont-match" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Shopify and Meta sales numbers don&apos;t match
               </Link>

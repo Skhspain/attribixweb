@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "What Makes a Good Meta Ad for Ecommerce?",
   description:
-    "A good Meta ad isn't the one people applaud — it's the one that attracts attention your business can profitably convert. How to build the message before the format.",
+    "A good Meta ad isn't the one people applaud. It's the one that attracts attention your business can profitably convert. How to build the message before the format.",
   alternates: { canonical: "https://www.attribix.app/resources/what-makes-good-meta-ad-ecommerce" },
   openGraph: {
     title: "What Makes a Good Meta Ad for Ecommerce?",

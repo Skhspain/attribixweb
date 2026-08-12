@@ -11,15 +11,15 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "What counts as a good Event Match Quality score?",
-    a: "Meta and most practitioners treat a score of roughly 6 to 8 as solid for a typical Shopify checkout. Scores above that are possible with more identifiers, but the realistic ceiling depends on what data your checkout actually collects — it isn't a target every store can reach.",
+    a: "Meta and most practitioners treat a score of roughly 6 to 8 as solid for a typical Shopify checkout. Scores above that are possible with more identifiers, but the realistic ceiling depends on what data your checkout actually collects, and it isn't a target every store can reach.",
   },
   {
     q: "Does a higher EMQ score mean higher ROAS?",
-    a: "Not directly. EMQ measures how confidently Meta can match an event to a real account, which helps Meta's optimization use the signal you're already sending — it doesn't make the underlying purchase any more or less likely to have been caused by the ad.",
+    a: "Not directly. EMQ measures how confidently Meta can match an event to a real account, which helps Meta's optimization use the signal you're already sending. It doesn't make the underlying purchase any more or less likely to have been caused by the ad.",
   },
   {
     q: "Is EMQ the same thing as Event Match Quality shown per-event vs. account-wide?",
-    a: "Events Manager shows EMQ per event type (Purchase, AddToCart, and so on), not one single account-wide number. A drop in one event's score doesn't necessarily mean the others are affected — check the specific event that matters to you.",
+    a: "Events Manager shows EMQ per event type (Purchase, AddToCart, and so on), not one single account-wide number. A drop in one event's score doesn't necessarily mean the others are affected, so check the specific event that matters to you.",
   },
 ];
 
@@ -34,7 +34,7 @@ const FAQ_JSON_LD = {
 };
 
 const PARAMETERS = [
-  { name: "Hashed email", note: "Usually the single biggest contributor — most Shopify checkouts collect it by default." },
+  { name: "Hashed email", note: "Usually the single biggest contributor; most Shopify checkouts collect it by default." },
   { name: "Hashed phone number", note: "Strengthens the match meaningfully when collected at checkout." },
   { name: "External ID", note: "A stable customer or order identifier tied to your own system." },
   { name: "Click ID (fbc)", note: "Present when the customer arrived via a click on a Meta ad; absent for organic or returning-direct traffic." },
@@ -92,8 +92,8 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What the score actually measures</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Every server event you send — a purchase through the Conversions
-            API, for example — includes some hashed customer parameters.
+            Every server event you send (a purchase through the Conversions
+            API, for example) includes some hashed customer parameters.
             Meta compares those against its own user data and estimates how
             confidently it can say &quot;this event belongs to this specific
             account.&quot; That confidence is what shows up as Event Match
@@ -121,7 +121,7 @@ export default function Page() {
               More matching parameters generally means a higher score. But a
               checkout that only ever collects an email will structurally
               never reach the same score as one that also has a phone number
-              and a click ID — that&apos;s not a problem to fix, it&apos;s a ceiling
+              and a click ID; that&apos;s not a problem to fix, it&apos;s a ceiling
               set by what data actually exists.
             </p>
           </Reveal>
@@ -137,7 +137,7 @@ export default function Page() {
             matched the event to the right person. It says nothing about
             whether that person bought <em>because</em> of your ad, or
             would have bought anyway. Matching and attribution are separate
-            problems — one is about identity, the other is about causation.
+            problems: one is about identity, the other is about causation.
             EMQ only ever addresses the first one.
           </p>
         </Reveal>
@@ -150,7 +150,7 @@ export default function Page() {
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Use it as a diagnostic, not a target</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-              The useful signal isn&apos;t the absolute number — it&apos;s a sudden
+              The useful signal isn&apos;t the absolute number; it&apos;s a sudden
               drop. If EMQ falls sharply from one week to the next, that
               usually means a field stopped being sent: a checkout change
               dropped the phone number field, a theme update broke the
@@ -168,8 +168,8 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Identifiable customer data is hashed, and still governed by consent</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Email, phone and external ID — the identifiers that directly
-            name a customer — are hashed before they leave your server;
+            Email, phone and external ID (the identifiers that directly
+            name a customer) are hashed before they leave your server;
             Meta never receives them in plain text. IP address and user
             agent, which Meta also uses for matching, are sent as-is, as
             Meta&apos;s own spec requires. None of this bypasses consent
@@ -218,7 +218,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold">Improve your Event Match Quality</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             Connect your store and Meta account to send server-side events
-            with stronger matching parameters — then track the effect on
+            with stronger matching parameters, then track the effect on
             Event Match Quality in Meta Events Manager.
           </p>
           <ProductCTA className="mt-8 justify-center" />

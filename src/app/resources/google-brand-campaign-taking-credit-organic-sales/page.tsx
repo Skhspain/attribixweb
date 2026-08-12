@@ -99,7 +99,7 @@ export default function Page() {
               non-brand delivers 250% can look excellent when blended. If
               your goal is new-customer growth, those categories should
               not be interpreted as the same thing. Brand advertising may
-              still be worthwhile — just do not confuse capturing existing
+              still be worthwhile, just do not confuse capturing existing
               demand with creating all of it.
             </p>
           </Reveal>

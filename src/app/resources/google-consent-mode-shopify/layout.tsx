@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Consent Mode on Shopify: Why Google Ads Conversions May Change",
     description:
-      "\"We changed the cookie banner and conversions dropped\" — what Consent Mode reads, what happens when consent is denied, and common implementation mistakes on Shopify.",
+      "\"We changed the cookie banner and conversions dropped\": what Consent Mode reads, what happens when consent is denied, and common implementation mistakes on Shopify.",
     url: "https://www.attribix.app/resources/google-consent-mode-shopify",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Attribix" }],
   },

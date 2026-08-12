@@ -11,7 +11,7 @@ const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Are Competitor Keywords Worth Bidding on in Google Ads?",
-  description: "The intent behind a competitor-name search isn't neutral — what that costs you and when it's still worth it.",
+  description: "The intent behind a competitor-name search isn't neutral: what that costs you and when it's still worth it.",
   datePublished: "2026-08-11",
   dateModified: "2026-08-11",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },

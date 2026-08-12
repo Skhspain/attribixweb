@@ -15,11 +15,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "What's the first sign scaling is going too far?",
-    a: "Marginal CPA — the cost of the next batch of conversions specifically, not your blended average — climbing faster than your margin can absorb. Blended CPA can still look fine for a while even as the newest spend is becoming distinctly less efficient.",
+    a: "Marginal CPA (the cost of the next batch of conversions specifically, not your blended average) climbing faster than your margin can absorb. Blended CPA can still look fine for a while even as the newest spend is becoming distinctly less efficient.",
   },
   {
     q: "Is frequency creep only a Meta concept?",
-    a: "The specific frequency metric is a Meta/paid social concept, but the underlying idea — showing the same audience your ads more and more often as you spend more against a limited pool — applies conceptually anywhere you're scaling within a finite audience.",
+    a: "The specific frequency metric is a Meta/paid social concept, but the underlying idea (showing the same audience your ads more and more often as you spend more against a limited pool) applies conceptually anywhere you're scaling within a finite audience.",
   },
 ];
 
@@ -86,7 +86,7 @@ export default function Page() {
             each additional conversion from new budget is rising, simply
             because it's averaged in with everything that was already
             performing well. After a budget increase, look specifically at
-            the incremental conversions from that extra spend — if the
+            the incremental conversions from that extra spend. If the
             cost of those specifically is climbing faster than your margin
             can absorb, you've likely found where the current ceiling is.
           </p>
@@ -103,7 +103,7 @@ export default function Page() {
               people actively interested at any given time. Pushing budget
               past what that pool can absorb means reaching further into
               lower-intent audiences or showing the same people your ads
-              more often — both of which tend to raise cost per result even
+              more often, both of which tend to raise cost per result even
               while total spend and total conversions both go up.
             </p>
           </Reveal>
@@ -115,7 +115,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Frequency and creative fatigue</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             On Meta specifically, rising frequency alongside a budget
-            increase is a useful early signal — it means the same people
+            increase is a useful early signal: it means the same people
             are seeing your ads more often rather than new people being
             reached. Creative supply needs to scale roughly in step with
             budget; the same handful of ad variations shown to a much
@@ -131,7 +131,7 @@ export default function Page() {
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Cash flow and fulfillment are real ceilings too</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               A campaign can be mathematically scalable and still outrun
-              what the business can actually handle — inventory depth,
+              what the business can actually handle: inventory depth,
               fulfillment capacity, and the cash flow gap between paying
               for ads now and collecting margin from orders later. Scaling
               spend faster than the business can fulfill or finance isn&apos;t
@@ -146,7 +146,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Treat scaling as a test, not a decision</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             Increase, measure the marginal impact specifically, and decide
-            again — rather than committing to one large jump and hoping
+            again, rather than committing to one large jump and hoping
             performance holds. And consider whether some of the increase
             should go to a second channel instead of pushing one channel
             further past its efficient range; diversifying is often a

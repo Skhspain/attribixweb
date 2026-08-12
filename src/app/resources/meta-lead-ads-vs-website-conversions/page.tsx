@@ -109,8 +109,8 @@ export default function Page() {
             Sending users to Shopify allows you to measure product views,
             carts, checkout and purchases. It also lets customers self-serve,
             compare products and buy immediately. For normal ecommerce,
-            those signals are often more useful than a form completion —
-            they&apos;re also what makes{" "}
+            those signals are often more useful than a form completion.
+            They&apos;re also what makes{" "}
             <Link href="/shopify-attribution" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               attribution
             </Link>{" "}
@@ -132,7 +132,7 @@ export default function Page() {
               of comparing CPL directly with purchase CPA. Ask which action
               moves the customer genuinely closer to revenue. Optimize for
               that, not whichever Meta objective produces the
-              cheapest-looking result — the same logic applies when{" "}
+              cheapest-looking result. The same logic applies when{" "}
               <Link href="/resources/meta-ads-optimize-add-to-cart-or-purchase" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 choosing between Add to Cart and Purchase optimization
               </Link>

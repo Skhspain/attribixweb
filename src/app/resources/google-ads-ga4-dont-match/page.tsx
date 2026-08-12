@@ -10,7 +10,7 @@ import FAQList from "@/components/marketing/FAQList";
 
 const FAQ_ITEMS = [
   {
-    q: "Which number should I report to my boss or client — Google Ads or GA4?",
+    q: "Which number should I report to my boss or client: Google Ads or GA4?",
     a: "Report Google Ads conversions when you're talking about what the ad platform is optimizing toward and bidding against. Report GA4 when you're talking about total site performance across every channel, not just Google Ads. Using one to “correct” the other treats them as the same measurement, which they aren't.",
   },
   {
@@ -19,11 +19,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "Should I import GA4 conversions into Google Ads to fix the mismatch?",
-    a: "That changes what Google Ads optimizes against, not whether the two dashboards agree — GA4's own reporting still runs its own attribution model regardless of what you import. It's a real decision with tradeoffs, covered separately.",
+    a: "That changes what Google Ads optimizes against, not whether the two dashboards agree; GA4's own reporting still runs its own attribution model regardless of what you import. It's a real decision with tradeoffs, covered separately.",
   },
   {
     q: "Is a big gap between Google Ads and GA4 a sign something's broken?",
-    a: "Not by itself. A stable gap that holds its shape week over week is usually just the two models disagreeing the way they're built to. A gap that suddenly widens or narrows is worth investigating — that's a tracking or consent change, not model disagreement.",
+    a: "Not by itself. A stable gap that holds its shape week over week is usually just the two models disagreeing the way they're built to. A gap that suddenly widens or narrows is worth investigating: that's a tracking or consent change, not model disagreement.",
   },
 ];
 
@@ -79,8 +79,8 @@ export default function Page() {
             attribution model on its own ad clicks. GA4 counts conversions
             using a different model across every channel that sent you
             traffic, not just Google Ads. They&apos;re answering different
-            questions, so a gap between them isn&apos;t a bug to chase down —
-            it&apos;s the expected result of two systems built to measure
+            questions, so a gap between them isn&apos;t a bug to chase down.
+            It&apos;s the expected result of two systems built to measure
             differently.
           </p>
         </Reveal>
@@ -94,13 +94,13 @@ export default function Page() {
             A Google Ads conversion is scoped to Google Ads: it counts a
             purchase (or lead, or signup) that Google&apos;s own model credits
             to an ad click or view within that campaign&apos;s attribution
-            window. GA4 doesn&apos;t work from clicks at all — it works from
+            window. GA4 doesn&apos;t work from clicks at all. It works from
             sessions, stitched together from whatever traffic source
             initiated them, and its purchase event fires the same way
             regardless of whether the customer arrived from a Google ad, an
             email link, organic search, or typed the URL directly. Compare
             Google Ads&apos; number to GA4&apos;s total conversions and you&apos;re
-            comparing a Google-Ads-only figure to an all-channels figure —
+            comparing a Google-Ads-only figure to an all-channels figure;
             they were never going to line up.
           </p>
         </Reveal>
@@ -115,7 +115,7 @@ export default function Page() {
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               Google Ads conversion tracking uses its own data-driven
               attribution model by default, applied only across a
-              customer&apos;s interactions with Google Ads — search clicks,
+              customer&apos;s interactions with Google Ads: search clicks,
               Shopping clicks, PMax touchpoints. GA4 runs its own
               data-driven model across the full channel mix it can see:
               paid, organic, social, email, direct. Even on an order that
@@ -136,7 +136,7 @@ export default function Page() {
           <p className="text-white/60 leading-relaxed text-sm">
             Google Ads generally logs a conversion against the date of the
             interaction (the click), then applies a lag for when the
-            conversion actually happened — so a purchase completed three
+            conversion actually happened, so a purchase completed three
             days after the click can still show up on the click&apos;s date
             once the report settles. GA4 logs a purchase event against the
             session in which it occurred. Pull both reports on the same
@@ -156,7 +156,7 @@ export default function Page() {
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               When a customer declines cookie consent, both Google Ads and
               GA4 can statistically model conversions to fill the gap
-              instead of just dropping the data — but they model against
+              instead of just dropping the data, but they model against
               different consent signals (ad_storage for Google Ads,
               analytics_storage for GA4) and run separate modeling logic
               tuned to each product. A store with a meaningful share of
@@ -181,7 +181,7 @@ export default function Page() {
           <p className="text-white/60 leading-relaxed text-sm">
             Google Ads can connect a click on one device to a purchase on
             another when the customer is signed into a Google account
-            across both — that&apos;s Google&apos;s own identity graph, invisible
+            across both; that&apos;s Google&apos;s own identity graph, invisible
             to anyone outside the platform. GA4 stitches cross-device
             behavior through Google Signals or a configured User-ID, which
             depends on your own site sending that signal and on the
@@ -209,7 +209,7 @@ export default function Page() {
               None of the three is lying. They&apos;re measuring different
               things, and the gap between any two of them is the size of
               that difference, not an error. The same logic applies to the
-              Google Ads vs. Shopify comparison specifically — see{" "}
+              Google Ads vs. Shopify comparison specifically; see{" "}
               <Link href="/resources/google-ads-shopify-revenue-doesnt-match" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 why Google Ads and Shopify revenue don&apos;t match
               </Link>{" "}
@@ -217,7 +217,7 @@ export default function Page() {
               <Link href="/shopify-roas-tracking" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 ROAS tracking for Shopify
               </Link>{" "}
-              for a fourth number — net ROAS — that&apos;s deliberately built
+              for a fourth number (net ROAS) that&apos;s deliberately built
               to sit closer to Shopify&apos;s ledger than either ad platform&apos;s
               native reporting.
             </p>
@@ -231,12 +231,12 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What&apos;s worth checking vs. what isn&apos;t</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             Don&apos;t spend time trying to force Google Ads and GA4 to the
-            same total — structurally, they won&apos;t get there. Instead,
+            same total: structurally, they won&apos;t get there. Instead,
             track whether the ratio between them holds steady week to week.
             A stable ratio means both are measuring consistently, even if
             they disagree on the absolute number. A ratio that suddenly
-            shifts — GA4 conversions holding flat while Google Ads drops,
-            or the reverse — points at something that changed in one
+            shifts (GA4 conversions holding flat while Google Ads drops,
+            or the reverse) points at something that changed in one
             system specifically: a tag, a consent setting, or an import
             configuration, not a change in customer behavior.
           </p>

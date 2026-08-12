@@ -98,7 +98,7 @@ export default function Page() {
               optimization event, ask why purchases are scarce. Is the
               budget tiny relative to the product price? Is tracking broken?
               Is the offer weak? Is the site failing to convert? Choosing
-              Add to Cart will not solve those problems — and if the account
+              Add to Cart will not solve those problems, and if the account
               simply hasn&apos;t generated enough purchase data yet, it&apos;s
               worth working through{" "}
               <Link href="/resources/when-meta-ads-account-ready-optimize-purchases" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
@@ -115,12 +115,12 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Avoid training toward an easy action</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            If your store has a high cart-abandonment rate — the pattern we
+            If your store has a high cart-abandonment rate (the pattern we
             cover in{" "}
             <Link href="/resources/shopify-add-to-cart-no-purchases" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               lots of add to carts but no purchases
-            </Link>{" "}
-            — optimizing for carts can reinforce the exact behaviour you do
+            </Link>
+            ), optimizing for carts can reinforce the exact behaviour you do
             not want. Purchase optimization aligns the platform with the
             final commercial outcome. There can be exceptions, particularly
             in unusual funnels or early-stage testing, but treat them as

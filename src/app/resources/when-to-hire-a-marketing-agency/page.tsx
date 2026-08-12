@@ -19,7 +19,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What if I'm not sure whether the problem is the ads or the tracking?",
-    a: "That uncertainty is itself a reasonable trigger to bring someone in — untangling whether numbers reflect a real performance issue or a measurement issue is exactly the kind of diagnostic work worth outside expertise.",
+    a: "That uncertainty is itself a reasonable trigger to bring someone in. Untangling whether numbers reflect a real performance issue or a measurement issue is exactly the kind of diagnostic work worth outside expertise.",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function Page() {
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             There's no single spend level or revenue milestone that makes
             the decision for you. A few signals tend to matter more than a
-            number on their own — and just as importantly, a few signals
+            number on their own, and just as importantly, a few signals
             mean an agency isn't the fix you're looking for yet.
           </p>
         </Reveal>
@@ -82,12 +82,12 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Signals worth acting on</h2>
           <ul className="space-y-3 text-sm text-white/60">
-            <li><span className="text-white font-medium">You're spending hours a week in the ad accounts</span> instead of on the parts of the business only you can do — product, operations, customer relationships.</li>
+            <li><span className="text-white font-medium">You're spending hours a week in the ad accounts</span> instead of on the parts of the business only you can do: product, operations, customer relationships.</li>
             <li><span className="text-white font-medium">Spend has reached a level where mistakes are expensive.</span> A wasted week of budget matters a lot more at $15,000/month than at $500/month.</li>
-            <li><span className="text-white font-medium">You genuinely can't tell whether Meta, Google and Shopify agreeing or disagreeing means anything</span> — that's a real diagnostic gap, not just inconvenience.</li>
+            <li><span className="text-white font-medium">You genuinely can't tell whether Meta, Google and Shopify agreeing or disagreeing means anything</span>, which is a real diagnostic gap, not just inconvenience.</li>
             <li><span className="text-white font-medium">You're running multiple channels without the capacity to manage any of them well</span>, which usually means all of them underperform a little rather than one performing a lot.</li>
-            <li><span className="text-white font-medium">Performance has plateaued despite real effort</span>, and you suspect there's a specialist technique or setup you're missing — PMax structure, CAPI implementation, creative testing cadence.</li>
-            <li><span className="text-white font-medium">You can't test at the pace needed to actually improve</span> — not enough creative variations, not enough audience experiments, because there isn't time to run them properly.</li>
+            <li><span className="text-white font-medium">Performance has plateaued despite real effort</span>, and you suspect there's a specialist technique or setup you're missing: PMax structure, CAPI implementation, creative testing cadence.</li>
+            <li><span className="text-white font-medium">You can't test at the pace needed to actually improve</span>: not enough creative variations, not enough audience experiments, because there isn't time to run them properly.</li>
           </ul>
         </Reveal>
       </section>
@@ -99,7 +99,7 @@ export default function Page() {
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Signals it's not the right move yet</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               If you're still finding product-market fit, spend is too low
-              for an agency relationship to justify itself economically —
+              for an agency relationship to justify itself economically;
               that money is often better spent on product, inventory or
               testing the offer directly. And if the real issue is the
               product, the price, or a website that doesn't convert
@@ -148,7 +148,7 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold">Not sure which category you're in?</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
-            Send us an inquiry and tell us where things stand — we can
+            Send us an inquiry and tell us where things stand. We can
             tell you honestly whether this is something we'd take on.
           </p>
           <ManagedServicesCTA className="mt-8 justify-center" />

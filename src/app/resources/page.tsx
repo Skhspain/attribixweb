@@ -40,7 +40,7 @@ export default function ResourcesPage() {
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             Practical guides for people running Meta and Google Ads on
-            Shopify stores — advertising performance, conversion problems,
+            Shopify stores: advertising performance, conversion problems,
             attribution, tracking, and when it's time to bring in outside
             help. Written by people who work in the accounts, not generic
             explainers.
@@ -57,7 +57,7 @@ export default function ResourcesPage() {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search — e.g. &ldquo;no sales&rdquo;, &ldquo;ROAS&rdquo;, &ldquo;agency&rdquo;, &ldquo;consent mode&rdquo;"
+            placeholder="Search, e.g. &ldquo;no sales&rdquo;, &ldquo;ROAS&rdquo;, &ldquo;agency&rdquo;, &ldquo;consent mode&rdquo;"
             className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-cyan-400/50"
           />
         </Reveal>

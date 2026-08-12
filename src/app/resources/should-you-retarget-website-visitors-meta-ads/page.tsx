@@ -132,7 +132,7 @@ export default function Page() {
           <p className="mt-4 text-white/60 leading-relaxed text-sm">
             For small stores, an overly fragmented retargeting campaign
             can be unnecessary. Modern automated campaigns may already
-            reach warm users as part of overall delivery — the same
+            reach warm users as part of overall delivery, the same
             question that comes up when deciding between{" "}
             <Link href="/resources/meta-ads-broad-vs-interest-targeting" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               broad and interest targeting

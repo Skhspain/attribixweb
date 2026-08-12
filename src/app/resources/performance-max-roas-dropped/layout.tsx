@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Performance Max ROAS Suddenly Dropped: How to Diagnose It",
   description:
-    "A Shopify-focused order of checks for a sudden Performance Max ROAS drop — tracking changes, reporting lag, feed changes, competition, recent bid or budget edits, stock-outs, and brand mix shifts.",
+    "A Shopify-focused order of checks for a sudden Performance Max ROAS drop: tracking changes, reporting lag, feed changes, competition, recent bid or budget edits, stock-outs, and brand mix shifts.",
   alternates: { canonical: "https://www.attribix.app/resources/performance-max-roas-dropped" },
   openGraph: {
     title: "Performance Max ROAS Suddenly Dropped: How to Diagnose It",

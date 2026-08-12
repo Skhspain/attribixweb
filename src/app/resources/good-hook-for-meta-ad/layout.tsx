@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "What Is a Good Hook for a Meta Ad?",
   description:
-    "The hook categories that actually qualify buyers on Meta — problem, outcome, demonstration, proof and objection — and how to test them properly.",
+    "The hook categories that actually qualify buyers on Meta (problem, outcome, demonstration, proof and objection) and how to test them properly.",
   alternates: { canonical: "https://www.attribix.app/resources/good-hook-for-meta-ad" },
   openGraph: {
     title: "What Is a Good Hook for a Meta Ad?",

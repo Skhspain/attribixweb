@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.attribix.app/resources/meta-ad-creative-testing-what-to-test-first" },
   openGraph: {
     title: "Meta Ad Creative Testing: What Should You Test First?",
-    description: "Test the selling idea before the execution — a hierarchy that produces real learning instead of a pile of assets.",
+    description: "Test the selling idea before the execution: a hierarchy that produces real learning instead of a pile of assets.",
     url: "https://www.attribix.app/resources/meta-ad-creative-testing-what-to-test-first",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Attribix" }],
   },

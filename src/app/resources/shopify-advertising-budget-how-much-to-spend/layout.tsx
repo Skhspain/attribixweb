@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "How Much Should a Shopify Store Spend on Meta and Google Ads?",
   description:
-    "No universal minimum — a framework built from AOV, margin, target CPA and revenue goals, with worked scenarios showing how the same goal implies different budgets.",
+    "No universal minimum. A framework built from AOV, margin, target CPA and revenue goals, with worked scenarios showing how the same goal implies different budgets.",
   alternates: { canonical: "https://www.attribix.app/resources/shopify-advertising-budget-how-much-to-spend" },
   openGraph: {
     title: "How Much Should a Shopify Store Spend on Meta and Google Ads?",

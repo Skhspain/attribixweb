@@ -15,11 +15,11 @@ const SIGNALS = [
   },
   {
     signal: "Google Ads conversions down, Shopify revenue also down",
-    read: "More likely a real performance problem. When both numbers move together, the tracking layer probably isn't the issue — something changed in traffic, demand, or the auction itself.",
+    read: "More likely a real performance problem. When both numbers move together, the tracking layer probably isn't the issue. Something changed in traffic, demand, or the auction itself.",
   },
   {
     signal: "Clicks down",
-    read: "Points at budget, bids, or competition — a capped daily budget, a bid strategy that pulled back, or a competitor bidding more aggressively for the same terms.",
+    read: "Points at budget, bids, or competition: a capped daily budget, a bid strategy that pulled back, or a competitor bidding more aggressively for the same terms.",
   },
   {
     signal: "Impressions down",
@@ -27,7 +27,7 @@ const SIGNALS = [
   },
   {
     signal: "Clicks and impressions steady, conversion rate down",
-    read: "Points away from tracking entirely — a landing page problem, a pricing or offer change, an inventory or stock issue, or new checkout friction.",
+    read: "Points away from tracking entirely: a landing page problem, a pricing or offer change, an inventory or stock issue, or new checkout friction.",
   },
   {
     signal: "A site deployment or theme change happened recently",
@@ -35,14 +35,14 @@ const SIGNALS = [
   },
   {
     signal: "A consent banner change happened recently",
-    read: "Check whether Consent Mode configuration shifted — a banner update that changed default consent state can suppress reported conversions without any actual drop in sales.",
+    read: "Check whether Consent Mode configuration shifted: a banner update that changed default consent state can suppress reported conversions without any actual drop in sales.",
   },
 ];
 
 const FAQ_ITEMS = [
   {
     q: "How fast should I react to a conversion drop?",
-    a: "Give it a full day or two before treating a single day's dip as meaningful — conversion reporting has a natural lag as late-arriving conversions settle in. A drop that's still there after 48–72 hours, and holds across a comparable period (same day of week, similar traffic), is worth investigating properly.",
+    a: "Give it a full day or two before treating a single day's dip as meaningful. Conversion reporting has a natural lag as late-arriving conversions settle in. A drop that's still there after 48–72 hours, and holds across a comparable period (same day of week, similar traffic), is worth investigating properly.",
   },
   {
     q: "Can a Google Ads policy issue cause a conversion drop without any warning?",
@@ -50,11 +50,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "Does a drop in one campaign always mean the same thing as an account-wide drop?",
-    a: "No. A single-campaign drop is more likely campaign-specific — budget, bids, a paused asset, a landing page for that campaign specifically. An account-wide drop across every campaign at once points more toward something structural: a tag, a shared conversion action, or a site-wide change.",
+    a: "No. A single-campaign drop is more likely campaign-specific: budget, bids, a paused asset, a landing page for that campaign specifically. An account-wide drop across every campaign at once points more toward something structural: a tag, a shared conversion action, or a site-wide change.",
   },
   {
     q: "Is it normal for Google Ads conversions to fluctuate day to day?",
-    a: "Yes, and normal day-to-day noise shouldn't be confused with a sudden drop. The distinction is scale and persistence — a single flat or low day is usually noise; a sustained multi-day drop that breaks from the recent trend is the pattern worth diagnosing.",
+    a: "Yes, and normal day-to-day noise shouldn't be confused with a sudden drop. The distinction is scale and persistence: a single flat or low day is usually noise; a sustained multi-day drop that breaks from the recent trend is the pattern worth diagnosing.",
   },
 ];
 
@@ -109,8 +109,8 @@ export default function Page() {
             A conversion count that falls off a cliff has two very different
             possible causes, and Ads Manager alone can&apos;t tell you which one
             you&apos;re looking at. The fastest way to find out is to check a
-            number Google Ads doesn&apos;t control — Shopify&apos;s own order
-            count — and then read the rest of the signals from there.
+            number Google Ads doesn&apos;t control: Shopify&apos;s own order
+            count. Then read the rest of the signals from there.
           </p>
         </Reveal>
       </section>
@@ -123,7 +123,7 @@ export default function Page() {
             Before touching a single setting in Ads Manager, pull Shopify&apos;s
             order count and revenue for the same window the drop appeared
             in. Google Ads reports what it observed through its own tag or
-            integration — if that layer breaks, the platform has no way to
+            integration. If that layer breaks, the platform has no way to
             know it, and it will confidently report a drop that never
             happened in the store. Shopify&apos;s order ledger doesn&apos;t depend
             on Google Ads&apos; tracking at all, which is exactly why it&apos;s the
@@ -161,7 +161,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">If clicks or impressions moved, tracking probably isn&apos;t the story</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             A tracking failure changes whether Google Ads hears about a
-            conversion — it doesn&apos;t change how many people saw or clicked
+            conversion; it doesn&apos;t change how many people saw or clicked
             the ad. If impressions or clicks dropped alongside conversions,
             the more likely explanation lives upstream of tracking
             entirely: a budget cap hit earlier in the day, a bid strategy
@@ -184,8 +184,8 @@ export default function Page() {
               Theme updates, app installs or removals, and checkout
               extensibility changes can all silently drop a conversion
               snippet without throwing an error anywhere visible. If the
-              timing of the drop lines up with a site change — even one
-              that looks unrelated, like a checkout app swap — verify the
+              timing of the drop lines up with a site change (even one
+              that looks unrelated, like a checkout app swap), verify the
               tag is still firing on a live test order before looking
               anywhere else.
             </p>
@@ -196,7 +196,7 @@ export default function Page() {
               If a consent management update changed default consent
               state, or changed how ad_storage consent gets requested and
               recorded, Consent Mode can suppress reported conversions
-              even though the underlying sales kept happening — Google
+              even though the underlying sales kept happening. Google
               Ads models some of the gap back in, but not all of it, and
               not instantly. See{" "}
               <Link href="/resources/google-consent-mode-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
@@ -215,7 +215,7 @@ export default function Page() {
           <p className="text-white/60 leading-relaxed text-sm">
             A tracking failure tends to produce a specific shape: a sharp,
             near-vertical drop rather than a gradual decline, conversions
-            near zero rather than just lower, and — critically — no
+            near zero rather than just lower, and, critically, no
             corresponding movement in clicks or impressions, because
             whatever broke sits after the click, not before it. A real
             performance problem usually looks messier: a decline that

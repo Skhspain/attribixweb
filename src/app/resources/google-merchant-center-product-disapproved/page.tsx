@@ -15,7 +15,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "How long does a review take after fixing an issue?",
-    a: "It varies and can take some time — Google doesn't guarantee a fixed turnaround for review requests, so don't assume a fix will be reflected instantly.",
+    a: "It varies and can take some time. Google doesn't guarantee a fixed turnaround for review requests, so don't assume a fix will be reflected instantly.",
   },
   {
     q: "Can a partial disapproval still hurt overall campaign performance?",
@@ -70,7 +70,7 @@ export default function Page() {
             Google Merchant Center products disapproved: what it means for sales
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            A disapproved product doesn&apos;t run at a lower priority — it
+            A disapproved product doesn&apos;t run at a lower priority. It
             simply doesn&apos;t show at all. If a chunk of your catalog is
             disapproved, your eligible product pool has quietly shrunk,
             which can look exactly like a campaign underperforming.
@@ -83,8 +83,8 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Start in Diagnostics, not the campaign</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             Merchant Center&apos;s Diagnostics section lists disapproved
-            items along with the specific reason attached to each one —
-            it&apos;s a much faster starting point than trying to infer the
+            items along with the specific reason attached to each one,
+            which is a much faster starting point than trying to infer the
             cause from campaign performance alone. Check what share of
             your total catalog is affected before assuming it&apos;s a
             small, isolated issue.
@@ -98,12 +98,12 @@ export default function Page() {
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">The common causes</h2>
             <ul className="space-y-3 text-sm text-white/60">
-              <li><span className="text-white font-medium">Price mismatch</span> — the price in your feed doesn&apos;t match what&apos;s shown on the actual product page.</li>
-              <li><span className="text-white font-medium">Missing or invalid GTIN</span> — required for most product categories; custom/handmade goods are a documented exception.</li>
-              <li><span className="text-white font-medium">Availability mismatch</span> — the feed says in stock while the page says otherwise, or vice versa.</li>
-              <li><span className="text-white font-medium">Shipping setting conflicts</span> — shipping data in the feed contradicting your account-level shipping settings.</li>
-              <li><span className="text-white font-medium">Image policy issues</span> — placeholder, watermarked, or generic stock images where a real product photo is required.</li>
-              <li><span className="text-white font-medium">Misrepresentation flags</span> — claims or content that Google&apos;s policy review considers misleading, which can trigger broader account-level scrutiny, not just a single listing.</li>
+              <li><span className="text-white font-medium">Price mismatch</span>: the price in your feed doesn&apos;t match what&apos;s shown on the actual product page.</li>
+              <li><span className="text-white font-medium">Missing or invalid GTIN</span>: required for most product categories; custom/handmade goods are a documented exception.</li>
+              <li><span className="text-white font-medium">Availability mismatch</span>: the feed says in stock while the page says otherwise, or vice versa.</li>
+              <li><span className="text-white font-medium">Shipping setting conflicts</span>: shipping data in the feed contradicting your account-level shipping settings.</li>
+              <li><span className="text-white font-medium">Image policy issues</span>: placeholder, watermarked, or generic stock images where a real product photo is required.</li>
+              <li><span className="text-white font-medium">Misrepresentation flags</span>: claims or content that Google&apos;s policy review considers misleading, which can trigger broader account-level scrutiny, not just a single listing.</li>
             </ul>
           </Reveal>
         </div>
@@ -113,7 +113,7 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Fixing it and requesting review</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Correct the specific field flagged in Diagnostics — in your
+            Correct the specific field flagged in Diagnostics, in your
             feed, on the product page, or both, since a mismatch between
             them is the root cause more often than either being wrong on
             its own. After the fix, you can request a review; turnaround
@@ -129,8 +129,8 @@ export default function Page() {
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Why this matters even if the campaign looks fine</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-              A campaign can appear to be running normally — budget
-              spending, some conversions still coming in — while a large
+              A campaign can appear to be running normally (budget
+              spending, some conversions still coming in) while a large
               share of the catalog is silently excluded. That shows up as
               weaker overall performance without an obvious cause, because
               nothing in the campaign settings looks wrong. Checking feed

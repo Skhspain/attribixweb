@@ -8,18 +8,18 @@ import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import { ProductCTA } from "@/components/marketing/CTAGroup";
 
 const CAUSES = [
-  { title: "Pixel and CAPI firing without a shared event ID", note: "Running both is expected and recommended by Meta — the browser and server paths are meant to catch what the other misses. It only becomes duplication when the two events for the same order don't carry a matching event_id, which is what tells Meta to treat them as one purchase instead of two." },
+  { title: "Pixel and CAPI firing without a shared event ID", note: "Running both is expected and recommended by Meta: the browser and server paths are meant to catch what the other misses. It only becomes duplication when the two events for the same order don't carry a matching event_id, which is what tells Meta to treat them as one purchase instead of two." },
   { title: "More than one tracking app installed", note: "A Shopify tracking or analytics app and a separately configured Pixel snippet can both fire a purchase event for the same order." },
   { title: "Theme code alongside an app", note: "A Pixel snippet added directly to the theme, left in place after installing a tracking app that also fires purchase events." },
   { title: "A tag manager plus a native integration", note: "Google Tag Manager or a similar tool firing a purchase tag while Shopify's native Meta channel integration also fires its own event." },
 ];
 
 const STEPS = [
-  "Open Events Manager and check the Purchase event's deduplication status — Meta flags events it couldn't match as browser and server pairs.",
+  "Open Events Manager and check the Purchase event's deduplication status: Meta flags events it couldn't match as browser and server pairs.",
   "List every place a Purchase event could be firing: theme code, tracking apps, Shopify's native Meta/Facebook channel, and any tag manager container.",
-  "Confirm each source sends the same event_id for a given order — usually the Shopify order ID or checkout token, consistently formatted across every source.",
+  "Confirm each source sends the same event_id for a given order, usually the Shopify order ID or checkout token, consistently formatted across every source.",
   "Disable or remove any source that's redundant. You need exactly one browser path and one server path per order, not two of either.",
-  "Watch Events Manager for a week, not a day — some duplication only shows up under real traffic patterns, not a single test order.",
+  "Watch Events Manager for a week, not a day: some duplication only shows up under real traffic patterns, not a single test order.",
 ];
 
 const ARTICLE_JSON_LD = {
@@ -60,7 +60,7 @@ export default function Page() {
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             If Ads Manager shows more purchases than Shopify&apos;s order count,
-            event duplication is one of the more common explanations — Pixel
+            event duplication is one of the more common explanations: Pixel
             and server-side events firing for the same order without a shared
             ID. It&apos;s not the only explanation, but when it is the cause,
             it&apos;s usually fixable in an afternoon.
@@ -77,15 +77,15 @@ export default function Page() {
             two numbers disagree: Meta&apos;s own attribution window crediting
             view-through or click conversions Shopify wouldn&apos;t count the
             same way, modeled conversions, cross-device journeys, or simply
-            comparing different date ranges — covered on the{" "}
+            comparing different date ranges, covered on the{" "}
             <Link href="/google-ads-conversion-tracking-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               revenue-gap page
             </Link>
             . If the gap survives that check, compare Ads Manager&apos;s
             reported purchase count against Shopify&apos;s order count for the
             same date range and, if possible, the same attributed customers. A
-            gap that roughly tracks with order volume — say, consistently
-            15-20% higher — points to systematic duplication rather than a
+            gap that roughly tracks with order volume (say, consistently
+            15-20% higher) points to systematic duplication rather than a
             one-off glitch. A gap that spikes on specific days is more likely
             tied to a deploy, app update, or theme change on that date.
           </p>
@@ -134,7 +134,7 @@ export default function Page() {
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Why this is worth fixing quickly</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-              Duplicate purchases don&apos;t just distort your reporting — they
+              Duplicate purchases don&apos;t just distort your reporting. They
               distort Meta&apos;s automated bidding, which optimizes toward
               whatever conversion signal it&apos;s receiving. If that signal is
               inflated, budget gets pushed toward audiences and placements
@@ -181,7 +181,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold">Get purchase events deduplicated properly</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             Connect your store and Meta account so Pixel and server-side
-            events share a matching event ID — then check your duplicate
+            events share a matching event ID, then check your duplicate
             rate in Meta Events Manager.
           </p>
           <ProductCTA className="mt-8 justify-center" />

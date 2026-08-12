@@ -146,7 +146,7 @@ export default function Page() {
               Do not choose broad because someone says interests are dead.
               Do not choose interests because they make the campaign feel
               more controlled. Test the hypothesis against real Shopify
-              results — see{" "}
+              results. See{" "}
               <Link href="/shopify-roas-tracking" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Shopify ROAS tracking
               </Link>{" "}

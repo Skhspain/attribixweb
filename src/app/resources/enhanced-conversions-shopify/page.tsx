@@ -11,7 +11,7 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "Do I need Consent Mode to use Enhanced Conversions?",
-    a: "They're separate features, but they work together — Consent Mode governs what Google can measure based on the customer's choice, while Enhanced Conversions improve matching within whatever's allowed to be measured.",
+    a: "They're separate features, but they work together: Consent Mode governs what Google can measure based on the customer's choice, while Enhanced Conversions improve matching within whatever's allowed to be measured.",
   },
   {
     q: "Is customer data sent to Google in plain text?",
@@ -19,7 +19,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Will Enhanced Conversions fix a conversion count that looks wrong?",
-    a: "Only if the problem was missed matches from cookie loss. If the real issue is duplicate conversion actions, stale refund data, or an attribution window mismatch, Enhanced Conversions won't touch it — the underlying tracking configuration needs fixing separately.",
+    a: "Only if the problem was missed matches from cookie loss. If the real issue is duplicate conversion actions, stale refund data, or an attribution window mismatch, Enhanced Conversions won't touch it. The underlying tracking configuration needs fixing separately.",
   },
 ];
 
@@ -86,8 +86,8 @@ export default function Page() {
           <p className="text-white/60 leading-relaxed text-sm">
             When a customer converts, Google Ads normally relies on a click
             ID or cookie to tie that conversion back to the ad click that
-            led to it. Enhanced Conversions add hashed customer details —
-            typically email, sometimes name, phone or address — as a second
+            led to it. Enhanced Conversions add hashed customer details
+            (typically email, sometimes name, phone or address) as a second
             matching path. If the click-ID match fails but the hashed
             customer data matches a known Google account, the conversion
             still gets counted.
@@ -106,7 +106,7 @@ export default function Page() {
               a browser blocked or shortened the lifespan of the click-ID
               cookie between the click and the purchase, or because the
               purchase happened on a different device than the click. It
-              doesn&apos;t create new attribution logic — it just gives Google a
+              doesn&apos;t create new attribution logic. It just gives Google a
               second way to recognize a conversion it would otherwise have
               missed entirely.
             </p>
@@ -124,7 +124,7 @@ export default function Page() {
             after the fact, and don&apos;t change which attribution model or
             window Google Ads is using. If your Google Ads revenue doesn&apos;t
             match Shopify&apos;s for one of those reasons, turning on Enhanced
-            Conversions won&apos;t move the needle — the underlying issue sits
+            Conversions won&apos;t move the needle. The underlying issue sits
             somewhere else.
           </p>
         </Reveal>
@@ -157,7 +157,7 @@ export default function Page() {
             Enhanced Conversions still operate within whatever consent the
             customer has given, governed the same way any other conversion
             tracking is. Turning the feature on doesn&apos;t expand what you&apos;re
-            allowed to measure — it only improves matching within that
+            allowed to measure. It only improves matching within that
             boundary.
           </p>
         </Reveal>

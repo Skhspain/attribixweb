@@ -125,7 +125,7 @@ export default function Page() {
             groups equal opportunity. That can be fine for an efficiency
             campaign and poor for a controlled comparison. Reading that
             comparison correctly also depends on Meta actually seeing the
-            purchases each ad set produced — see{" "}
+            purchases each ad set produced. See{" "}
             <Link href="/meta-capi-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               Meta CAPI for Shopify
             </Link>
@@ -148,7 +148,7 @@ export default function Page() {
               Are we trying to guarantee spend or learn something about
               separate groups? Ad set budgets may be more appropriate. And
               whichever structure you choose, changing the total budget is
-              its own decision — see{" "}
+              its own decision. See{" "}
               <Link href="/resources/meta-ads-20-percent-budget-rule" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 whether the 20% budget rule is real
               </Link>
@@ -159,7 +159,7 @@ export default function Page() {
               CBO or ABO &ldquo;works better&rdquo; without defining what
               better means. Judging either structure honestly also means
               looking at true profitability, not just what one ad set
-              reports — see{" "}
+              reports. See{" "}
               <Link href="/shopify-roas-tracking" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Shopify ROAS tracking
               </Link>

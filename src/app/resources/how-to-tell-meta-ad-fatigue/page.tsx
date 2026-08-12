@@ -98,10 +98,10 @@ export default function Page() {
               Compare trends rather than isolated snapshots:
             </p>
             <ul className="mt-3 space-y-2 text-sm text-white/60 list-disc pl-5 max-w-2xl">
-              <li>Frequency up + CTR down — the audience may be responding less to repeated exposure.</li>
-              <li>CTR stable + website conversion down — this looks less like creative fatigue and more like a post-click problem.</li>
-              <li>CPM up + CTR stable + CVR stable — auction cost may be the main reason CPA increased.</li>
-              <li>Meta CPA up + Shopify revenue stable — before blaming creative, verify attribution and channel mix.</li>
+              <li>Frequency up + CTR down: the audience may be responding less to repeated exposure.</li>
+              <li>CTR stable + website conversion down: this looks less like creative fatigue and more like a post-click problem.</li>
+              <li>CPM up + CTR stable + CVR stable: auction cost may be the main reason CPA increased.</li>
+              <li>Meta CPA up + Shopify revenue stable: before blaming creative, verify attribution and channel mix.</li>
             </ul>
           </Reveal>
         </div>

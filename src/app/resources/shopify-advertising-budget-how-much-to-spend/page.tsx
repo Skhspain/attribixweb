@@ -15,11 +15,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "Should I set budget as a percentage of revenue?",
-    a: "It's a reasonable planning shortcut once you're established, but it's backwards as a starting point — it tells you nothing about whether that spend can actually generate profitable orders at your margin and target CPA. Build the number from unit economics first, then sanity-check it against a percentage of revenue.",
+    a: "It's a reasonable planning shortcut once you're established, but it's backwards as a starting point: it tells you nothing about whether that spend can actually generate profitable orders at your margin and target CPA. Build the number from unit economics first, then sanity-check it against a percentage of revenue.",
   },
   {
     q: "What if my allowable CPA is lower than what the market is actually charging?",
-    a: "That's a real signal worth listening to — it can mean your margin or AOV can't currently support acquiring customers profitably through paid ads at competitive costs, which is a pricing or product economics question before it's a media-buying question.",
+    a: "That's a real signal worth listening to: it can mean your margin or AOV can't currently support acquiring customers profitably through paid ads at competitive costs, which is a pricing or product economics question before it's a media-buying question.",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function Page() {
             How much should a Shopify store spend on Meta and Google Ads?
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            There's no honest universal number here — anyone giving you one
+            There's no honest universal number here. Anyone giving you one
             is guessing. What you can actually build is a number specific
             to your store, starting from margin and average order value
             rather than a industry rule of thumb.
@@ -85,8 +85,8 @@ export default function Page() {
             Your average order value and gross margin set a ceiling on
             what you can spend to acquire a customer and still be
             profitable on that order. If your margin per order is $30, an
-            allowable CPA above that — before accounting for repeat
-            purchases — isn't sustainable on a single-order basis, even if
+            allowable CPA above that (before accounting for repeat
+            purchases) isn't sustainable on a single-order basis, even if
             it looks fine on a ROAS report.
           </p>
         </Reveal>
@@ -103,11 +103,11 @@ export default function Page() {
               current conversion rate from ad traffic runs around 2%,
               that's about 16,650 sessions needed. If a reasonable CPC for
               that traffic sits around $1.20, that points to a budget in
-              the region of $20,000 to reach the required traffic volume —
+              the region of $20,000 to reach the required traffic volume,
               a very different number than what a generic percentage-of-revenue
               rule would suggest, and one that&apos;s actually
               derived from this store&apos;s own funnel. This is
-              illustrative — your own conversion rate and CPC will move
+              illustrative: your own conversion rate and CPC will move
               the real number meaningfully.
             </p>
           </Reveal>
@@ -123,7 +123,7 @@ export default function Page() {
             reliably. A budget spread too thin across too many campaigns
             can leave each one individually under that threshold, which
             shows up as inconsistent, noisy performance that never quite
-            settles — not because the offer is wrong, but because the
+            settles, not because the offer is wrong, but because the
             system never got enough signal to learn from.
           </p>
         </Reveal>
@@ -137,7 +137,7 @@ export default function Page() {
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               Take the same $20,000 revenue goal on a store with a $150 AOV
               instead of $60. That's about 133 orders needed rather than
-              333 — fewer sessions required at the same conversion rate,
+              333, fewer sessions required at the same conversion rate,
               which can mean a meaningfully smaller budget reaches the same
               revenue goal. AOV and margin change the required spend more
               than most people expect, which is exactly why a flat
@@ -151,8 +151,8 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">A calculator would help here</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            The inputs above — AOV, margin, target CPA, current conversion
-            rate, and a revenue goal — are exactly the kind of thing a
+            The inputs above (AOV, margin, target CPA, current conversion
+            rate, and a revenue goal) are exactly the kind of thing a
             simple calculator can turn into a specific number instead of a
             manual spreadsheet exercise. That's a natural next step we
             haven't built yet, but the reasoning here is the same logic

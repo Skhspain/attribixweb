@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Meta Ads Clicks but No Sales? Diagnose It First",
   description:
-    "A step-by-step way to find where clicks stop turning into Shopify orders — ad-page mismatch, weak offer, checkout friction, or a tracking problem — before you touch the campaign.",
+    "A step-by-step way to find where clicks stop turning into Shopify orders (ad-page mismatch, weak offer, checkout friction, or a tracking problem) before you touch the campaign.",
   alternates: { canonical: "https://www.attribix.app/resources/meta-ads-clicks-no-sales" },
   openGraph: {
     title: "Meta Ads Clicks but No Sales? Diagnose It First",

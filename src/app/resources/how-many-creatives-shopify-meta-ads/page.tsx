@@ -84,7 +84,7 @@ export default function Page() {
           <p className="mt-4 text-white/60 leading-relaxed text-sm">
             The better goal is a steady pipeline of meaningful new ideas
             while proven ads stay active. Deciding how many of those ideas
-            deserve simultaneous testing is a separate question — see{" "}
+            deserve simultaneous testing is a separate question. See{" "}
             <Link href="/resources/how-many-meta-ads-test-at-once" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               how many Meta ads to test at once
             </Link>
@@ -158,7 +158,7 @@ export default function Page() {
               been running for three months, you do not necessarily need
               to turn it off. You do need alternatives ready. Watching for
               the signs that a long-running winner is starting to wear
-              out is part of that — see{" "}
+              out is part of that. See{" "}
               <Link href="/resources/how-often-change-meta-ad-creatives" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 how often to change Meta ad creatives
               </Link>

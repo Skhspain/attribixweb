@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Meta Ads vs Google Ads for Shopify: Where to Spend First",
   description:
-    "Google generally captures existing intent, Meta generally creates it — but the real answer depends on product type, search demand, AOV, consideration cycle and creative capacity. A framework for deciding where to start.",
+    "Google generally captures existing intent, Meta generally creates it, but the real answer depends on product type, search demand, AOV, consideration cycle and creative capacity. A framework for deciding where to start.",
   alternates: { canonical: "https://www.attribix.app/resources/meta-ads-vs-google-ads-shopify-budget" },
   openGraph: {
     title: "Meta Ads vs Google Ads for Shopify: Where to Spend First",

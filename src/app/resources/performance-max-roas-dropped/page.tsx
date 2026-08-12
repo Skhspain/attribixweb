@@ -11,15 +11,15 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "Can Performance Max ROAS drop because of Google's own bidding experiments?",
-    a: "It can move if Google Ads is running an experiment against the campaign, or after a Smart Bidding strategy re-calibrates following a goal or target change — check the Experiments section and your change history before assuming the cause is external.",
+    a: "It can move if Google Ads is running an experiment against the campaign, or after a Smart Bidding strategy re-calibrates following a goal or target change. Check the Experiments section and your change history before assuming the cause is external.",
   },
   {
     q: "How much of a ROAS swing is normal week to week?",
-    a: "Some variance is expected, especially on lower-volume accounts where a handful of orders can move the average meaningfully. There's no universal threshold — the useful comparison is against your own account's typical range over several months, not a single prior week.",
+    a: "Some variance is expected, especially on lower-volume accounts where a handful of orders can move the average meaningfully. There's no universal threshold: the useful comparison is against your own account's typical range over several months, not a single prior week.",
   },
   {
     q: "Should I lower my target ROAS as soon as performance drops?",
-    a: "Not immediately. Lowering the target changes how the algorithm bids and can take time to settle, which makes it harder to tell whether the original problem is still there. Diagnose the cause first — a tracking gap or feed issue won't be fixed by a lower target.",
+    a: "Not immediately. Lowering the target changes how the algorithm bids and can take time to settle, which makes it harder to tell whether the original problem is still there. Diagnose the cause first: a tracking gap or feed issue won't be fixed by a lower target.",
   },
   {
     q: "Does pausing and restarting a PMax campaign reset the learning period?",
@@ -42,7 +42,7 @@ const ARTICLE_JSON_LD = {
   "@type": "Article",
   headline: "Performance Max ROAS Suddenly Dropped: How to Diagnose It",
   description:
-    "The order to check causes in when Performance Max ROAS drops suddenly — tracking, reporting lag, feed changes, competition, recent account changes, stock-outs, and brand mix shifts.",
+    "The order to check causes in when Performance Max ROAS drops suddenly: tracking, reporting lag, feed changes, competition, recent account changes, stock-outs, and brand mix shifts.",
   datePublished: "2026-08-11",
   dateModified: "2026-08-11",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
@@ -82,7 +82,7 @@ export default function Page() {
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             A sudden ROAS drop in Performance Max usually has one dominant
-            cause, not seven at once — the job is ruling causes out in the
+            cause, not seven at once. The job is ruling causes out in the
             right order instead of guessing. Check whether tracking changed,
             then whether the drop is even real or just reporting lag, then
             feed changes, competition, recent bidding or budget edits,
@@ -108,7 +108,7 @@ export default function Page() {
             quietly break or degrade purchase tracking on the exact day
             performance appears to fall off a cliff. Check your Purchase
             conversion count against actual Shopify orders for the same
-            window before looking anywhere else — see{" "}
+            window before looking anywhere else. See{" "}
             <Link href="/google-ads-conversion-tracking-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               Google Ads conversion tracking for Shopify
             </Link>{" "}
@@ -148,7 +148,7 @@ export default function Page() {
             recent attribute or category change that could have shifted how
             products are matched to queries. A feed that quietly loses a
             batch of previously-approved products doesn&apos;t announce
-            itself in Google Ads reporting — it just shows up as fewer
+            itself in Google Ads reporting. It just shows up as fewer
             conversions from a smaller eligible catalog. Full detail on
             disapproval causes is in{" "}
             <Link href="/resources/google-merchant-center-product-disapproved" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
@@ -169,7 +169,7 @@ export default function Page() {
               More advertisers bidding into the same auctions raises CPCs
               without any change on your end, which compresses ROAS even at
               a stable conversion rate. Seasonal demand shifts do the same in
-              the other direction — a category with a sharp seasonal peak
+              the other direction: a category with a sharp seasonal peak
               will often show a ROAS decline right as that peak passes,
               which can look like a tracking or account problem when it&apos;s
               actually a demand curve doing what demand curves do.
@@ -185,7 +185,7 @@ export default function Page() {
           <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
             Check the account&apos;s change history before assuming the cause
             is external. Raising a Target ROAS pushes the algorithm toward
-            fewer, higher-confidence auctions — that can look like a
+            fewer, higher-confidence auctions, which can look like a
             performance drop in aggregate even though the campaign is
             behaving exactly as instructed. Cutting budget mid-flight
             disrupts pacing and can force the algorithm to re-learn spend
@@ -204,7 +204,7 @@ export default function Page() {
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               If a handful of bestsellers drove a disproportionate share of
               conversions and they went out of stock, PMax doesn&apos;t sit
-              idle — it shifts spend toward whatever else in the feed is
+              idle. It shifts spend toward whatever else in the feed is
               still available, including products with historically weaker
               conversion rates. Nothing about tracking, bidding, or the
               account changed; the campaign&apos;s best-converting inventory
@@ -223,8 +223,8 @@ export default function Page() {
             Brand search typically converts at a higher rate and lower cost
             than non-brand traffic, because the customer already knows what
             they&apos;re looking for. If brand&apos;s share of PMax traffic
-            drops — from seasonality, a competitor bidding on your brand
-            terms, or simply less brand demand in a given week — the
+            drops (from seasonality, a competitor bidding on your brand
+            terms, or simply less brand demand in a given week), the
             blended ROAS falls even if non-brand performance itself hasn&apos;t
             changed at all. The Insights section in Performance Max
             surfaces some of this split; it&apos;s worth checking before
@@ -243,7 +243,7 @@ export default function Page() {
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               Whichever cause looks most likely, it helps to confirm exactly
               when the drop started against your actual Shopify revenue, not
-              just Google Ads&apos; own reporting — the two don&apos;t always
+              just Google Ads&apos; own reporting. The two don&apos;t always
               move in lockstep, and a drop that&apos;s sharper in Google Ads
               than in Shopify usually points back at tracking or reporting
               lag rather than a genuine sales slowdown. Attribix shows
@@ -306,8 +306,8 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold">Get your Performance Max account diagnosed</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
-            We&apos;ll trace the drop back to its actual cause — tracking,
-            feed, bidding, or the market — against your real Shopify orders.
+            We&apos;ll trace the drop back to its actual cause (tracking,
+            feed, bidding, or the market) against your real Shopify orders.
           </p>
           <ManagedServicesCTA className="mt-8 justify-center" />
         </Reveal>

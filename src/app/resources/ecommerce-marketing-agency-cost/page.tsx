@@ -15,7 +15,7 @@ const MODELS = [
   },
   {
     title: "Percentage of ad spend",
-    desc: "The fee scales with how much you spend — commonly somewhere in the high single digits to mid-teens as a percentage, though this varies a lot by agency and account size. It aligns the agency's revenue with your spend growing, which isn't quite the same as aligning it with your results improving. Worth reading closely if you're comparing this against flat fees.",
+    desc: "The fee scales with how much you spend, commonly somewhere in the high single digits to mid-teens as a percentage, though this varies a lot by agency and account size. It aligns the agency's revenue with your spend growing, which isn't quite the same as aligning it with your results improving. Worth reading closely if you're comparing this against flat fees.",
   },
   {
     title: "Hourly",
@@ -23,23 +23,23 @@ const MODELS = [
   },
   {
     title: "Hybrid retainer + performance",
-    desc: "A lower base retainer plus a bonus or performance component tied to results — often revenue, ROAS, or a specific KPI hit. Can align incentives well, but only if the performance metric is one you'd actually stand behind (platform-reported ROAS is a common but flawed choice — see the note on measurement below).",
+    desc: "A lower base retainer plus a bonus or performance component tied to results: often revenue, ROAS, or a specific KPI hit. Can align incentives well, but only if the performance metric is one you'd actually stand behind (platform-reported ROAS is a common but flawed choice; see the note on measurement below).",
   },
   {
     title: "One-time setup or onboarding fee",
-    desc: "A separate charge for the initial work — account audit, tracking review, campaign structure rebuild — before ongoing management fees start. Reasonable if it reflects real upfront work; worth asking exactly what's included.",
+    desc: "A separate charge for the initial work (account audit, tracking review, campaign structure rebuild) before ongoing management fees start. Reasonable if it reflects real upfront work; worth asking exactly what's included.",
   },
   {
     title: "Creative or landing-page fees as add-ons",
-    desc: "Many agencies scope creative direction into management fees but charge separately for actual production — photography, video editing, landing page builds. If creative or dedicated landing pages matter to your strategy, confirm what's included versus billed extra before signing anything.",
+    desc: "Many agencies scope creative direction into management fees but charge separately for actual production: photography, video editing, landing page builds. If creative or dedicated landing pages matter to your strategy, confirm what's included versus billed extra before signing anything.",
   },
 ];
 
 const FACTORS = [
   { label: "Account complexity", desc: "A single-channel account with a handful of evergreen campaigns costs less to manage well than a catalogue with hundreds of SKUs, multiple markets, or frequent promotional changes." },
-  { label: "Number of channels", desc: "Meta only, Google only, or both together — and increasingly TikTok or other platforms — each channel adds management time, even where some efficiency comes from shared learnings across them." },
+  { label: "Number of channels", desc: "Meta only, Google only, or both together (and increasingly TikTok or other platforms); each channel adds management time, even where some efficiency comes from shared learnings across them." },
   { label: "Creative production needs", desc: "Agencies that write briefs and analyze results cost less than agencies also producing video, photography or UGC-style content in volume." },
-  { label: "Spend level", desc: "Higher spend generally means more testing, more budget decisions, and more reporting depth expected — which is the logic behind percentage-of-spend pricing, even though spend alone isn't a perfect proxy for effort." },
+  { label: "Spend level", desc: "Higher spend generally means more testing, more budget decisions, and more reporting depth expected. That's the logic behind percentage-of-spend pricing, even though spend alone isn't a perfect proxy for effort." },
   { label: "Reporting and analytics depth", desc: "Monthly PDF reporting is cheaper to deliver than a live dashboard tied to real order data, deeper attribution modeling, or bespoke reporting cadence." },
   { label: "Market", desc: "Agency rates vary by region and by how competitive the local agency market is, the same way any professional service does." },
 ];
@@ -47,15 +47,15 @@ const FACTORS = [
 const FAQ_ITEMS = [
   {
     q: "Is a cheaper agency ever the better choice?",
-    a: "Sometimes. If your account is genuinely simple — one channel, one market, a small catalogue — a lower-cost agency or freelancer scoped to that simplicity can be entirely appropriate. The risk is a cheap agency spreading one person across too many accounts to give any of them real attention, which shows up as generic, template-driven work rather than strategy specific to your store.",
+    a: "Sometimes. If your account is genuinely simple (one channel, one market, a small catalogue), a lower-cost agency or freelancer scoped to that simplicity can be entirely appropriate. The risk is a cheap agency spreading one person across too many accounts to give any of them real attention, which shows up as generic, template-driven work rather than strategy specific to your store.",
   },
   {
     q: "Do agencies charge for onboarding or setup separately from monthly management?",
-    a: "Often, yes — a one-time fee for the initial account audit, tracking review and campaign rebuild, separate from the ongoing monthly fee. Ask what's included in each so you're not surprised by a second invoice.",
+    a: "Often, yes: a one-time fee for the initial account audit, tracking review and campaign rebuild, separate from the ongoing monthly fee. Ask what's included in each so you're not surprised by a second invoice.",
   },
   {
     q: "Should I pay for creative production separately from management?",
-    a: "It's common, and not automatically a bad sign. What matters is knowing upfront whether your monthly fee covers creative strategy only, or strategy plus actual production — those are very different scopes of work priced very differently.",
+    a: "It's common, and not automatically a bad sign. What matters is knowing upfront whether your monthly fee covers creative strategy only, or strategy plus actual production. Those are very different scopes of work priced very differently.",
   },
   {
     q: "How much does Attribix's ad management cost?",
@@ -117,7 +117,7 @@ export default function Page() {
             How Much Does an Ecommerce Marketing Agency Cost?
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            There&apos;s no single honest number here — cost depends on which
+            There&apos;s no single honest number here. Cost depends on which
             pricing model an agency uses and how complex your account is,
             and any site that hands you one flat industry-average figure is
             simplifying past the point of being useful. What follows is the
@@ -133,7 +133,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-2">The pricing models you&apos;ll actually run into</h2>
           <p className="text-white/55 text-sm mb-8 max-w-xl">
             Most agencies use one of these, or a combination. None is
-            inherently the &quot;correct&quot; model — each has a genuine trade-off.
+            inherently the &quot;correct&quot; model; each has a genuine trade-off.
           </p>
         </Reveal>
         <div className="divide-y divide-white/10 border-t border-white/10">
@@ -148,7 +148,7 @@ export default function Page() {
         </div>
         <Reveal>
           <p className="mt-8 text-sm text-white/55 leading-relaxed max-w-2xl">
-            The two dominant models — flat fee and percentage of ad spend —
+            The two dominant models, flat fee and percentage of ad spend,
             get compared in more depth, including the specific incentive
             problems each one creates, in{" "}
             <Link href="/resources/percentage-ad-spend-vs-flat-fee" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
@@ -186,7 +186,7 @@ export default function Page() {
           <div className="space-y-4 text-white/65 leading-relaxed text-sm">
             <p>
               We&apos;re not going to hand you a specific &quot;average agency
-              cost&quot; number — nobody publishing one has actually surveyed a
+              cost&quot; number. Nobody publishing one has actually surveyed a
               representative sample of agencies, and most of those figures
               circulating online trace back to nothing more than another
               blog post doing the same thing.
@@ -206,7 +206,7 @@ export default function Page() {
             <p>
               The only reliable way to get an actual number for your
               situation is to have a specific agency review your account and
-              quote against what they&apos;d actually be doing — which is why
+              quote against what they&apos;d actually be doing. That&apos;s why
               we don&apos;t publish a flat management rate either.{" "}
               <Link href="/ad-management/inquiry" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Send an inquiry

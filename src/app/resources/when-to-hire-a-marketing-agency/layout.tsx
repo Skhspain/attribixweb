@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "When Should You Hire an Ecommerce Marketing Agency?",
   description:
-    "Realistic signals it's time — and signals it isn't yet. Time spent in ad accounts, spend level, tracking uncertainty, multi-channel capacity, and when the real problem is the product, not the marketing.",
+    "Realistic signals it's time, and signals it isn't yet. Time spent in ad accounts, spend level, tracking uncertainty, multi-channel capacity, and when the real problem is the product, not the marketing.",
   alternates: { canonical: "https://www.attribix.app/resources/when-to-hire-a-marketing-agency" },
   openGraph: {
     title: "When Should You Hire an Ecommerce Marketing Agency?",

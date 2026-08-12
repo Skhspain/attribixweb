@@ -11,15 +11,15 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "Should Google Ads revenue ever exactly equal Shopify revenue?",
-    a: "No. Google Ads only reports the subset of orders its own attribution model credits to Google Ads clicks, using its own window and conversion-date logic — it was never going to equal your total Shopify revenue, which includes every channel.",
+    a: "No. Google Ads only reports the subset of orders its own attribution model credits to Google Ads clicks, using its own window and conversion-date logic. It was never going to equal your total Shopify revenue, which includes every channel.",
   },
   {
     q: "How do I know if it's duplication rather than one of these five mechanics?",
-    a: "Duplication tends to show up as a consistent, proportional overcount — Google reporting a fixed percentage more conversions than Shopify orders, week after week. See the dedicated duplicate-conversions guide for the specific settings to check.",
+    a: "Duplication tends to show up as a consistent, proportional overcount: Google reporting a fixed percentage more conversions than Shopify orders, week after week. See the dedicated duplicate-conversions guide for the specific settings to check.",
   },
   {
     q: "Does Performance Max make this worse?",
-    a: "Not on its own — but because PMax leans harder on conversion value for bidding than manually managed campaigns, any existing tracking error has a bigger downstream effect on where it spends.",
+    a: "Not on its own, but because PMax leans harder on conversion value for bidding than manually managed campaigns, any existing tracking error has a bigger downstream effect on where it spends.",
   },
 ];
 
@@ -35,10 +35,10 @@ const FAQ_JSON_LD = {
 
 const CAUSES = [
   { title: "Conversion date vs. order date", note: "Google logs a conversion when the tag fires, near checkout. Shopify logs the order at the moment it's placed. A late-firing tag or a delayed webhook shifts which day's report each shows up in." },
-  { title: "Attribution windows and models", note: "Google Ads attributes a conversion to a click within its own window, using its own model — the same structural gap covered on the Google Ads tracking page." },
+  { title: "Attribution windows and models", note: "Google Ads attributes a conversion to a click within its own window, using its own model: the same structural gap covered on the Google Ads tracking page." },
   { title: "Duplicate or secondary conversion actions", note: "A Shopify app's conversion action layered on top of a manually configured Google Ads tag, both counting the same purchase." },
   { title: "Refunds, discounts, tax and shipping", note: "Google Ads conversion value doesn't automatically adjust for a refund processed after the fact. Shopify's order total, meanwhile, reflects gross, net, or tax-inclusive figures depending on which report you're reading." },
-  { title: "Cross-channel overlap", note: "The same order can be credited by both Google Ads and Meta if the customer interacted with both before buying — adding the two together overstates combined attributed revenue." },
+  { title: "Cross-channel overlap", note: "The same order can be credited by both Google Ads and Meta if the customer interacted with both before buying, so adding the two together overstates combined attributed revenue." },
 ];
 
 const ARTICLE_JSON_LD = {
@@ -112,8 +112,8 @@ export default function Page() {
               conversion value it&apos;s given. It doesn&apos;t add a new source of
               mismatch on its own, but because it leans on conversion value
               more heavily than manually managed Search or Shopping
-              campaigns, any existing tracking error — duplicate
-              conversions, stale refund data — has a larger downstream
+              campaigns, any existing tracking error (duplicate
+              conversions, stale refund data) has a larger downstream
               effect on what PMax decides to spend on.
             </p>
           </Reveal>
@@ -125,7 +125,7 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What&apos;s actually worth checking</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Start with Google Ads&apos; own conversion action settings — confirm
+            Start with Google Ads&apos; own conversion action settings. Confirm
             there&apos;s exactly one primary conversion action for Purchase, not
             a primary and a secondary both counting. Then check whether
             refunds are being reported back to Google Ads at all (they

@@ -11,7 +11,7 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "What counts as a \"high\" CPM for Shopify ecommerce?",
-    a: "There's no universal number — CPM varies enormously by country, audience size, niche, and time of year, so comparing your CPM to a generic benchmark isn't that useful. The more useful comparison is your own CPM against your own account's history, and against your CPA and ROAS in the same period.",
+    a: "There's no universal number. CPM varies enormously by country, audience size, niche, and time of year, so comparing your CPM to a generic benchmark isn't that useful. The more useful comparison is your own CPM against your own account's history, and against your CPA and ROAS in the same period.",
   },
   {
     q: "Will narrowing my audience lower CPM?",
@@ -19,11 +19,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "Does CPM affect ROAS directly?",
-    a: "Only through cost. ROAS is revenue divided by spend, and CPM is one input into how much you spend to reach people — it doesn't touch the revenue side at all. A higher CPM lowers ROAS only if conversion rate and average order value don't move to offset it.",
+    a: "Only through cost. ROAS is revenue divided by spend, and CPM is one input into how much you spend to reach people; it doesn't touch the revenue side at all. A higher CPM lowers ROAS only if conversion rate and average order value don't move to offset it.",
   },
   {
     q: "Should I switch campaign objective if CPM is high?",
-    a: "Not just because of CPM alone. Objective and optimization event affect who Meta shows the ad to, which affects CPM, but the objective should be chosen based on what action you actually want optimized for — switching it purely to chase a lower CPM number usually costs more in relevance than it saves in cost.",
+    a: "Not just because of CPM alone. Objective and optimization event affect who Meta shows the ad to, which affects CPM, but the objective should be chosen based on what action you actually want optimized for. Switching it purely to chase a lower CPM number usually costs more in relevance than it saves in cost.",
   },
 ];
 
@@ -92,7 +92,7 @@ export default function Page() {
             Why Is My Meta Ads CPM So High?
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            CPM — cost per thousand impressions — is set by an auction, not
+            CPM (cost per thousand impressions) is set by an auction, not
             by anything you did wrong. It moves with audience size,
             competition, season, and how relevant your ad is judged to be.
             Before reacting to it, check whether the higher cost is actually
@@ -108,7 +108,7 @@ export default function Page() {
           <p className="text-white/60 leading-relaxed text-sm">
             CPM is the price of thousand impressions, decided by an auction
             Meta runs every time an ad has a chance to show. It isn&apos;t a
-            fixed rate card — it&apos;s the outcome of how many advertisers
+            fixed rate card; it&apos;s the outcome of how many advertisers
             are bidding for the same audience at the same moment, weighted
             by how relevant and engaging Meta judges each ad to be. A rising
             CPM means the auction got more competitive, more expensive
@@ -128,11 +128,11 @@ export default function Page() {
               CPM in the US, UK, Canada and Australia runs meaningfully
               higher than in most other markets, simply because more
               advertisers are competing for that attention. Within a single
-              country, a narrow audience — a small interest stack, a tight
-              lookalike, a small custom audience — has fewer available
+              country, a narrow audience (a small interest stack, a tight
+              lookalike, a small custom audience) has fewer available
               impressions to sell, which pushes the price of each one up.
               Broadening the audience or expanding geography is one of the
-              more direct ways CPM comes down, though it isn&apos;t free —
+              more direct ways CPM comes down, though it isn&apos;t free:
               you trade some targeting precision for it.
             </p>
           </Reveal>
@@ -145,13 +145,13 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Auction competition and seasonality</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             CPM climbs whenever more advertisers show up wanting the same
-            eyeballs — the run-up to Black Friday and the weeks around
+            eyeballs. The run-up to Black Friday and the weeks around
             Christmas are the clearest example, when almost every ecommerce
             advertiser increases budget at once and bids the auction up
             across the board. Industry events, competitor launches, and even
             broader shifts in ad spend across the platform can do the same
             thing on a smaller scale. This kind of increase says nothing
-            about your account specifically — it&apos;s the market getting
+            about your account specifically; it&apos;s the market getting
             more expensive for everyone in it.
           </p>
         </Reveal>
@@ -167,7 +167,7 @@ export default function Page() {
               Optimizing for Purchase asks Meta to find people likely to buy,
               which is a smaller, more competitive pool than optimizing for
               a cheaper action like landing page views or add-to-cart.
-              That&apos;s a deliberate tradeoff, not a mistake — a higher CPM
+              That&apos;s a deliberate tradeoff, not a mistake: a higher CPM
               on a Purchase-optimized campaign can still produce a lower CPA
               than a cheap-CPM campaign optimized for a lightweight event
               that doesn&apos;t reliably lead to a sale.
@@ -181,8 +181,8 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Creative relevance and frequency</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Meta&apos;s auction rewards ads it expects people to engage with
-            — relevant, well-performing creative tends to get cheaper
+            Meta&apos;s auction rewards ads it expects people to engage with:
+            relevant, well-performing creative tends to get cheaper
             impressions than an ad the system predicts people will scroll
             past or hide. If CPM has crept up gradually on the same creative
             over several weeks, rising frequency is usually part of the
@@ -205,9 +205,9 @@ export default function Page() {
               per thousand impressions than Audience Network or some
               Stories and Reels inventory, because they&apos;re higher-demand
               real estate. If Meta&apos;s automatic placements have shifted
-              more of your delivery toward premium feed placements — often
+              more of your delivery toward premium feed placements, often
               because that&apos;s where the algorithm is finding your best
-              converters — CPM rises as a side effect of the system doing
+              converters, CPM rises as a side effect of the system doing
               its job, not a sign anything is wrong.
             </p>
           </Reveal>
@@ -220,12 +220,12 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Check CPA and ROAS before reacting to CPM</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             CPM only tells you the cost of getting in front of someone. What
-            determines whether that&apos;s a problem is what happens after —
+            determines whether that&apos;s a problem is what happens after:
             your cost per purchase and your return on ad spend. A CPM
             increase that&apos;s matched by a proportional conversion-rate
             or average-order-value increase leaves CPA and ROAS untouched,
             or even improves them. Pull up CPA and ROAS for the same period
-            before deciding a rising CPM needs a response at all — if
+            before deciding a rising CPM needs a response at all. If
             they&apos;re holding steady, the CPM number on its own isn&apos;t
             the thing to fix. If ROAS has dropped alongside it, work through{" "}
             <Link href="/resources/meta-ads-roas-dropped" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
@@ -279,7 +279,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold">Still not sure what&apos;s causing it?</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             If Meta, Google and Shopify are telling you different things,
-            send us an inquiry — we can review the setup and help determine
+            send us an inquiry, and we can review the setup and help determine
             whether it&apos;s advertising performance, your website,
             tracking, or attribution.
           </p>

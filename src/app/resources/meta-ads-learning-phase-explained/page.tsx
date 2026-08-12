@@ -87,7 +87,7 @@ export default function Page() {
             Large accounts can accumulate that feedback quickly. Smaller
             stores may take much longer. Some low-volume campaigns may
             never gather enough events to look beautifully &ldquo;stable&rdquo;
-            in the interface and can still be commercially useful — which
+            in the interface and can still be commercially useful, which
             is the same conclusion covered in{" "}
             <Link href="/resources/how-much-data-does-meta-ads-need" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               how much data Meta ads actually needs before you can judge performance

@@ -84,7 +84,7 @@ export default function Page() {
           <p className="text-white/60 leading-relaxed text-sm">
             Pull daily conversion rate for the last few weeks rather than
             comparing this week to last week as a single number. A gradual
-            decline points to something ongoing — seasonality, rising ad
+            decline points to something ongoing: seasonality, rising ad
             costs bringing in colder traffic, competitor pricing. A sharp
             step down on one specific day points to a change that happened
             on that day, which is a much shorter list of suspects to check.
@@ -128,7 +128,7 @@ export default function Page() {
           </ul>
           <p className="mt-4 text-white/60 leading-relaxed text-sm">
             Shopify app changes are worth checking specifically because
-            they're easy to forget you made — a review widget, an upsell
+            they're easy to forget you made: a review widget, an upsell
             app or a page-speed tool can quietly slow down or interfere
             with a page without an obvious visual break.
           </p>
@@ -146,8 +146,8 @@ export default function Page() {
               do with buyer behavior. A tracking or consent-banner change
               can undercount sessions or orders in Shopify&apos;s own
               reporting; a bot-traffic spike can inflate the session
-              denominator. Check Shopify&apos;s actual order count first —
-              if orders are flat but the rate looks lower, the problem is
+              denominator. Check Shopify&apos;s actual order count first.
+              If orders are flat but the rate looks lower, the problem is
               probably in how sessions are being counted, not in whether
               people are buying.
             </p>
@@ -179,7 +179,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold">Still can&apos;t find the cause?</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             If you&apos;ve worked through this and still can&apos;t isolate
-            what changed, send us an inquiry — we can look at the account
+            what changed, send us an inquiry. We can look at the account
             and the store together rather than guessing at either one in
             isolation.
           </p>

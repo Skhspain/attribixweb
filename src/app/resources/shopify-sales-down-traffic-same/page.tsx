@@ -11,7 +11,7 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "Does this rule out an ads problem entirely?",
-    a: "It rules out reach — you're still getting roughly the same number of visits. It doesn't rule out the quality of that traffic changing, which session counts alone won't show you.",
+    a: "It rules out reach: you're still getting roughly the same number of visits. It doesn't rule out the quality of that traffic changing, which session counts alone won't show you.",
   },
   {
     q: "What's the first thing to check?",
@@ -19,7 +19,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "If the mix hasn't changed either, what then?",
-    a: "Then the more likely explanation is something in the store itself — price, stock, offer, checkout, or a site change — since the same visitors who used to convert now aren't.",
+    a: "Then the more likely explanation is something in the store itself (price, stock, offer, checkout, or a site change) since the same visitors who used to convert now aren't.",
   },
 ];
 
@@ -72,8 +72,8 @@ export default function Page() {
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             If session counts haven&apos;t moved but revenue has, the
             problem almost certainly isn&apos;t how many people are
-            reaching the site. It&apos;s what happens once they get there
-            — or who, specifically, is showing up.
+            reaching the site. It&apos;s what happens once they get there,
+            or who, specifically, is showing up.
           </p>
         </Reveal>
       </section>
@@ -85,8 +85,8 @@ export default function Page() {
             A stable session count is a raw volume number. It says
             nothing about who those sessions are made of. If a
             higher-converting channel lost share to a lower-converting one
-            — organic search traffic replaced by a broad social campaign,
-            for instance — total sessions can hold perfectly steady while
+            (organic search traffic replaced by a broad social campaign,
+            for instance) total sessions can hold perfectly steady while
             revenue falls, because the traffic quality changed underneath
             a number that looks unchanged.
           </p>
@@ -104,8 +104,8 @@ export default function Page() {
               channel&apos;s individual rate held steady and only the mix
               between them shifted, that&apos;s a media allocation
               question. If conversion rate fell within a channel that used
-              to perform reliably — the same email list, the same retargeting
-              audience — that points at the store or the offer, not the
+              to perform reliably (the same email list, the same retargeting
+              audience) that points at the store or the offer, not the
               traffic source.
             </p>
           </Reveal>

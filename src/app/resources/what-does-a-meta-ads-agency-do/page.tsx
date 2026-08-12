@@ -9,28 +9,28 @@ import { ManagedServicesCTA } from "@/components/marketing/CTAGroup";
 import FAQList from "@/components/marketing/FAQList";
 
 const NOT_INCLUDED = [
-  "Guaranteed results — no honest agency promises a specific ROAS, growth rate or sales number, because too much sits outside the agency's control (your product, pricing, site conversion rate, market conditions).",
-  "Full creative production by default — most agencies direct creative strategy and give feedback on what's converting, but actual filming, editing or design is commonly a separate scope or the client's responsibility.",
-  "Fixing your website or product pages — an agency can flag that a landing page is hurting conversion, but rebuilding it is usually outside a Meta Ads management scope unless specifically agreed.",
-  "Managing channels outside Meta — a Meta-focused agency may not touch Google Ads, email or SEO unless that's explicitly part of the engagement.",
+  "Guaranteed results: no honest agency promises a specific ROAS, growth rate or sales number, because too much sits outside the agency's control (your product, pricing, site conversion rate, market conditions).",
+  "Full creative production by default: most agencies direct creative strategy and give feedback on what's converting, but actual filming, editing or design is commonly a separate scope or the client's responsibility.",
+  "Fixing your website or product pages: an agency can flag that a landing page is hurting conversion, but rebuilding it is usually outside a Meta Ads management scope unless specifically agreed.",
+  "Managing channels outside Meta: a Meta-focused agency may not touch Google Ads, email or SEO unless that's explicitly part of the engagement.",
 ];
 
 const FAQ_ITEMS = [
   {
     q: "Does a Meta Ads agency write the ad copy and design the creative?",
-    a: "Usually they direct it — briefs, angles to test, feedback on performance — but actual production (filming, editing, graphic design) is commonly separate, either handled by the client or billed as an add-on. Confirm this specifically; it varies a lot between agencies.",
+    a: "Usually they direct it: briefs, angles to test, feedback on performance. But actual production (filming, editing, graphic design) is commonly separate, either handled by the client or billed as an add-on. Confirm this specifically; it varies a lot between agencies.",
   },
   {
     q: "How often should a Meta Ads agency be testing new creative?",
-    a: "There's no universal cadence, but a stalled creative queue — the same handful of ads running unchanged for months — is a sign testing has slowed down, regardless of what an agency claims its process is. Ask what's currently in testing when you're evaluating one.",
+    a: "There's no universal cadence, but a stalled creative queue (the same handful of ads running unchanged for months) is a sign testing has slowed down, regardless of what an agency claims its process is. Ask what's currently in testing when you're evaluating one.",
   },
   {
     q: "Does a Meta Ads agency need access to my Shopify store?",
-    a: "For tracking setup, yes — at minimum read access to order data, and often admin access to install or verify server-side tracking. A competent agency will explain exactly what access it needs and why, rather than asking for broad admin rights without justification.",
+    a: "For tracking setup, yes: at minimum read access to order data, and often admin access to install or verify server-side tracking. A competent agency will explain exactly what access it needs and why, rather than asking for broad admin rights without justification.",
   },
   {
     q: "Is a Meta Ads agency the same as a Meta Ads consultant?",
-    a: "Not necessarily. A consultant typically advises and hands recommendations back to your team to implement; an agency typically implements and manages the account directly. Some individuals and small teams blur this line — worth clarifying which one you're actually hiring.",
+    a: "Not necessarily. A consultant typically advises and hands recommendations back to your team to implement; an agency typically implements and manages the account directly. Some individuals and small teams blur this line, so it's worth clarifying which one you're actually hiring.",
   },
 ];
 
@@ -49,7 +49,7 @@ const ARTICLE_JSON_LD = {
   "@type": "Article",
   headline: "What Does a Meta Ads Agency Actually Do?",
   description:
-    "A real breakdown of Meta Ads agency work — account audits, strategy, creative testing, audience targeting, budget pacing, conversion tracking and reporting.",
+    "A real breakdown of Meta Ads agency work: account audits, strategy, creative testing, audience targeting, budget pacing, conversion tracking and reporting.",
   datePublished: "2026-08-11",
   dateModified: "2026-08-11",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
@@ -93,7 +93,7 @@ export default function Page() {
             audit, an account structure built around your catalogue, a
             running creative testing process, audience strategy, budget
             pacing, conversion tracking that's actually correct, and
-            reporting that ties back to real revenue — not just platform
+            reporting that ties back to real revenue, not just platform
             ROAS. Here&apos;s what each of those actually involves.
           </p>
         </Reveal>
@@ -105,7 +105,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Account audit, before anything changes</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             Before touching a live account, a competent agency reviews what&apos;s
-            already there — campaign structure, historical spend and
+            already there: campaign structure, historical spend and
             performance, existing creative, audience overlap, and whether
             tracking is actually reporting correctly. This matters most
             when taking over an account someone else built, where the
@@ -124,7 +124,7 @@ export default function Page() {
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Strategy and account structure</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               Campaign and ad set structure should reflect your catalogue,
-              margins and customer journey — not a generic template copied
+              margins and customer journey, not a generic template copied
               across every client. This includes decisions like how
               prospecting and retargeting are split, whether campaigns are
               organized by product category or by objective, and how much
@@ -141,12 +141,12 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Creative strategy and testing cadence</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Meta ad performance degrades as creative gets stale — the same
+            Meta ad performance degrades as creative gets stale. The same
             ad shown to the same audience for weeks eventually stops
             converting as well, regardless of how good it once was. A
-            running testing queue — new angles, formats and hooks entering
+            running testing queue (new angles, formats and hooks entering
             rotation on a regular cadence, with clear criteria for what
-            gets scaled and what gets cut — is core to the job, not an
+            gets scaled and what gets cut) is core to the job, not an
             optional extra. Whether the agency produces that creative
             itself or directs a client&apos;s creator relationship, this
             strategic direction is the agency&apos;s responsibility either way.
@@ -167,7 +167,7 @@ export default function Page() {
               account management. Part of the job now is knowing when
               broader, signal-driven targeting genuinely outperforms manual
               audience building, and when specific exclusions or retargeting
-              windows still need manual control — and testing that,
+              windows still need manual control, and testing that,
               rather than assuming either approach automatically works
               better.
             </p>
@@ -203,8 +203,8 @@ export default function Page() {
               sends traffic to a product or collection page that doesn&apos;t
               match the ad&apos;s promise, loads slowly, or has a confusing
               checkout path. Agencies typically flag these issues and
-              suggest specific changes — sometimes even build a
-              dedicated landing page for a campaign — but actually
+              suggest specific changes, sometimes even build a
+              dedicated landing page for a campaign, but actually
               implementing site changes is usually a client or developer
               responsibility unless it&apos;s explicitly part of the scope.
             </p>
@@ -224,11 +224,11 @@ export default function Page() {
               <Link href="/meta-capi-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Meta Conversions API
               </Link>{" "}
-              running alongside the browser Pixel — see{" "}
+              running alongside the browser Pixel (see{" "}
               <Link href="/resources/meta-pixel-vs-capi-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Pixel vs CAPI
               </Link>{" "}
-              for how the two work together — with correct event
+              for how the two work together), with correct event
               deduplication so purchases aren&apos;t double-counted, and{" "}
               <Link href="/resources/meta-event-match-quality-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Event Match Quality
@@ -241,7 +241,7 @@ export default function Page() {
               An agency that can&apos;t explain what CAPI does, why
               deduplication matters, or what EMQ measures is optimizing a
               campaign structure on top of numbers it doesn&apos;t actually
-              understand — which is a real risk regardless of how good the
+              understand, which is a real risk regardless of how good the
               creative testing process looks on paper.
             </p>
           </div>
@@ -255,7 +255,7 @@ export default function Page() {
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Attribution and reporting</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-              Regular reporting that explains what changed and why — not
+              Regular reporting that explains what changed and why, not
               just a screenshot of Ads Manager&apos;s dashboard. Good reporting
               checks Meta&apos;s reported numbers against{" "}
               <Link href="/shopify-attribution" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
@@ -282,7 +282,7 @@ export default function Page() {
             optimizing toward a metric that doesn&apos;t reflect actual
             profitability. The more useful conversation is about what
             spend level and channel mix actually grows the business
-            profitably — which requires looking past the platform&apos;s own
+            profitably, which requires looking past the platform&apos;s own
             reported number, not just requesting a higher one.
           </p>
         </Reveal>

@@ -15,15 +15,15 @@ const FAQ_ITEMS = [
   },
   {
     q: "Is a high CTR ever a bad sign on its own?",
-    a: "It can be, if it's paired with a low click-to-landing-page-view ratio or very low time-on-page after landing. That combination often means the creative is generating attention for reasons unrelated to the product — curiosity, novelty, or a hook that doesn't connect to what's actually being sold.",
+    a: "It can be, if it's paired with a low click-to-landing-page-view ratio or very low time-on-page after landing. That combination often means the creative is generating attention for reasons unrelated to the product: curiosity, novelty, or a hook that doesn't connect to what's actually being sold.",
   },
   {
     q: "What's the difference between an outbound click and a landing page view?",
-    a: "An outbound click is counted the moment someone taps the ad, before the destination page has necessarily loaded. A landing page view requires the page to actually load in the browser. A gap between the two — more outbound clicks than landing page views — usually points at slow load times, but can also reflect people tapping and immediately backing out.",
+    a: "An outbound click is counted the moment someone taps the ad, before the destination page has necessarily loaded. A landing page view requires the page to actually load in the browser. A gap between the two (more outbound clicks than landing page views) usually points at slow load times, but can also reflect people tapping and immediately backing out.",
   },
   {
     q: "Does lowering CPC always mean better performance?",
-    a: "No. A low CPC paired with no sales can mean you're winning cheap clicks from a broad or curiosity-driven audience rather than efficient clicks from people likely to buy. Cost per purchase is the number that matters — CPC on its own only tells you what a click cost, not what it was worth.",
+    a: "No. A low CPC paired with no sales can mean you're winning cheap clicks from a broad or curiosity-driven audience rather than efficient clicks from people likely to buy. Cost per purchase is the number that matters: CPC on its own only tells you what a click cost, not what it was worth.",
   },
 ];
 
@@ -98,7 +98,7 @@ export default function Page() {
             CTR measures whether the ad got someone to click. It says nothing
             about whether that person wanted to buy anything. A campaign can
             post a great CTR and a cheap CPC while pulling in traffic that
-            was never going to convert — and those two things can be true at
+            was never going to convert, and those two things can be true at
             the same time without contradicting each other.
           </p>
         </Reveal>
@@ -110,8 +110,8 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">CTR measures the ad, not the buyer</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             Click-through rate is a ratio of impressions to clicks. It
-            answers one narrow question — did this creative catch enough
-            attention to make someone tap it — and nothing else. It doesn&apos;t
+            answers one narrow question: did this creative catch enough
+            attention to make someone tap it, and nothing else. It doesn&apos;t
             know whether the person clicking is in the market for what
             you&apos;re selling, whether they mistook the ad for something
             else, or whether they clicked reflexively and forgot about it
@@ -136,7 +136,7 @@ export default function Page() {
               advertising. Those clicks are cheap and plentiful, and they
               inflate CTR while doing almost nothing for sales. A more
               literal, product-forward ad often earns a lower CTR from a
-              smaller pool of people — but a higher share of that smaller
+              smaller pool of people, but a higher share of that smaller
               pool actually wants the product.
             </p>
           </Reveal>
@@ -148,14 +148,14 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">When the creative is doing too much of the selling</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Creative that leans hard on a hook — a bold claim, a satisfying
-            visual, a pattern interrupt — can outperform the product it&apos;s
+            Creative that leans hard on a hook (a bold claim, a satisfying
+            visual, a pattern interrupt) can outperform the product it&apos;s
             attached to. If the landing page can&apos;t deliver on whatever
             made the ad compelling, the click was essentially borrowed
             against a promise the page doesn&apos;t keep. This shows up as a
             healthy CTR and a landing page bounce rate that doesn&apos;t
-            match it. The fix usually isn&apos;t a better landing page —
-            it&apos;s creative that sets an expectation the product can
+            match it. The fix usually isn&apos;t a better landing page.
+            It&apos;s creative that sets an expectation the product can
             actually meet.
           </p>
         </Reveal>
@@ -168,7 +168,7 @@ export default function Page() {
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Outbound clicks aren&apos;t the same as landing page views</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-              Meta counts an outbound click the instant someone taps the ad —
+              Meta counts an outbound click the instant someone taps the ad,
               before the destination page has loaded, and sometimes before
               they&apos;ve committed to actually visiting it. Landing page
               views only count once the page has loaded in the browser. If
@@ -187,9 +187,9 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Engagement bait pulls the wrong audience</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Ads built to spark comments, shares, or reactions — a
+            Ads built to spark comments, shares, or reactions (a
             controversial hook, a poll-style caption, an intentionally
-            confusing image — can perform well on engagement metrics and
+            confusing image) can perform well on engagement metrics and
             CTR while training Meta&apos;s delivery toward people who engage
             with attention-grabbing content in general, not people who buy
             products in your category specifically. Over time, that can
@@ -210,8 +210,8 @@ export default function Page() {
               This article covers why attractive top-funnel numbers can
               mislead you about buying intent specifically. If you need to
               walk the whole path from click to purchase and find exactly
-              where the drop happens — landing page, offer, cart, checkout,
-              or tracking — see{" "}
+              where the drop happens (landing page, offer, cart, checkout,
+              or tracking), see{" "}
               <Link href="/resources/meta-ads-clicks-no-sales" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 our full funnel diagnosis for clicks without sales
               </Link>
@@ -264,7 +264,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold">Still not sure what&apos;s causing it?</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             If Meta, Google and Shopify are telling you different things,
-            send us an inquiry — we can review the setup and help determine
+            send us an inquiry. We can review the setup and help determine
             whether it&apos;s advertising performance, your website,
             tracking, or attribution.
           </p>

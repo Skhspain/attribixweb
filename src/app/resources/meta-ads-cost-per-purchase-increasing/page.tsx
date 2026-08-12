@@ -96,7 +96,7 @@ export default function Page() {
           </p>
           <p className="mt-4 text-white/60 leading-relaxed text-sm">
             If both stayed roughly stable but Meta suddenly reports fewer
-            purchases, investigate tracking and attribution — see{" "}
+            purchases, investigate tracking and attribution. See{" "}
             <Link href="/meta-capi-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               Meta CAPI for Shopify
             </Link>
@@ -120,7 +120,7 @@ export default function Page() {
             </p>
             <p className="mt-4 text-white/60 leading-relaxed text-sm max-w-2xl">
               Higher CPM may reflect competition, geography, seasonality
-              or audience constraints — see{" "}
+              or audience constraints. See{" "}
               <Link href="/resources/why-is-meta-ads-cpm-high" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 why Meta ads CPM is so high
               </Link>
@@ -140,7 +140,7 @@ export default function Page() {
             revenue remain healthy, do not assume marketing performance
             collapsed. Cross-channel attribution can move, especially if
             customers are interacting with Google, email or direct visits
-            before purchasing — see{" "}
+            before purchasing. See{" "}
             <Link href="/resources/why-shopify-meta-sales-dont-match" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               why Shopify and Meta ads show different sales numbers
             </Link>
