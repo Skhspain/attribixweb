@@ -10,7 +10,7 @@ import FAQList from "@/components/marketing/FAQList";
 
 const INCLUDED = [
   { title: "Account structure and budget allocation", desc: "Campaigns split across Search, Shopping and Performance Max in proportion to what each is actually returning." },
-  { title: "Merchant Center and product feed", desc: "Feed diagnosed and, within the agreed scope, corrected — item-level issues, category mapping, pricing mismatches." },
+  { title: "Merchant Center and product feed", desc: "Feed diagnosed and, within the agreed scope, corrected: item-level issues, category mapping, pricing mismatches." },
   { title: "Search campaigns", desc: "Keyword and match-type strategy built around commercial intent, with regular negative keyword review and brand vs. non-brand reporting split out." },
   { title: "Performance Max management", desc: "Asset groups, audience signals and feed inputs managed directly, since PMax bidding depends heavily on getting these right." },
   { title: "Conversion tracking", desc: "Purchase tracking and enhanced conversions checked against actual Shopify orders, not assumed correct." },
@@ -23,7 +23,7 @@ const SCOPE = [
   { label: "Access required", desc: "Admin access to Google Ads and Merchant Center, plus read access to Shopify order and product data." },
   { label: "Onboarding", desc: "Account, feed and tracking review first, then a written plan before budget or structural changes go live." },
   { label: "Communication", desc: "A standing check-in call, plus messaging for anything time-sensitive in between." },
-  { label: "Feed optimisation", desc: "Included within the agreed scope — title and attribute improvements, category fixes. Bulk product-data rewrites for large catalogues may be scoped separately." },
+  { label: "Feed optimisation", desc: "Included within the agreed scope: title and attribute improvements, category fixes. Bulk product-data rewrites for large catalogues may be scoped separately." },
   { label: "Landing pages", desc: "We flag landing-page issues that hurt Quality Score or conversion, but page changes themselves are typically your team's or developer's responsibility unless agreed otherwise." },
   { label: "Performance Max creative", desc: "We direct asset strategy; image and video production is not included by default, similar to Meta Ads management." },
   { label: "Merchant Center suspensions", desc: "We help diagnose the cause and prepare an appeal. Some suspensions require account or business verification steps only Google can resolve directly with you." },
@@ -36,7 +36,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Will you fix our Merchant Center feed issues?",
-    a: "We identify and help resolve feed and Merchant Center issues within the agreed service scope. Some problems may require website, product-data or policy changes outside the advertising account — those we flag clearly rather than promise to fix ourselves.",
+    a: "We identify and help resolve feed and Merchant Center issues within the agreed service scope. Some problems may require website, product-data or policy changes outside the advertising account, and those we flag clearly rather than promise to fix ourselves.",
   },
   {
     q: "Can you take over an account someone else set up badly?",
@@ -80,7 +80,7 @@ export default function GoogleAdsManagementPage() {
             Google Ads management for Shopify stores
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            Search, Shopping and Performance Max managed together — with
+            Search, Shopping and Performance Max managed together, with
             Merchant Center, conversion tracking, and budget allocation
             handled as one account, not three separate problems.
           </p>
@@ -131,7 +131,7 @@ export default function GoogleAdsManagementPage() {
           <h2 className="text-xl md:text-2xl font-extrabold">Performance Max is only as good as its inputs</h2>
           <p className="mt-4 text-white/60 leading-relaxed text-sm max-w-2xl">
             Automated bidding optimises against whatever conversion value
-            it&apos;s given — if that value is wrong, PMax spends toward
+            it&apos;s given. If that value is wrong, PMax spends toward
             whatever it&apos;s been told is a good outcome, even if it isn&apos;t.
             We check this against your actual{" "}
             <Link href="/shopify-roas-tracking" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">

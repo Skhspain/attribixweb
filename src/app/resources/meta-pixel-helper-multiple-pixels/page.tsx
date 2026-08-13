@@ -123,6 +123,11 @@ export default function Page() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
             <li>
+              <Link href="/meta-capi-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Meta CAPI for Shopify: full setup overview
+              </Link>
+            </li>
+            <li>
               <Link href="/resources/meta-capi-event-id-deduplication" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Why purchase event IDs matter for Meta CAPI
               </Link>
@@ -138,7 +143,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/google-tag-assistant-multiple-tags-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/google-tag-assistant-shows-multiple-google-tags-what" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Google Tag Assistant shows multiple Google tags: what does it mean?
               </Link>
             </li>

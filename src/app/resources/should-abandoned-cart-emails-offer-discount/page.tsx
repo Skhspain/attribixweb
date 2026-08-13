@@ -134,12 +134,12 @@ export default function Page() {
                 </Link>
               </li>
               <li>
-                <Link href="/resources/welcome-flow-discount-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                <Link href="/resources/should-your-welcome-flow-offer-a-discount" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                   Should your welcome flow offer a discount?
                 </Link>
               </li>
               <li>
-                <Link href="/resources/increase-repeat-purchase-rate-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                <Link href="/resources/how-to-increase-repeat-purchase-rate-without-constant" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                   How to increase repeat purchase rate without constant discounts
                 </Link>
               </li>

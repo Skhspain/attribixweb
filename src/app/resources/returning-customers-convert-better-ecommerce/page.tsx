@@ -122,7 +122,7 @@ export default function Page() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/resources/new-customer-roas-vs-total-roas" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/new-customer-roas-vs-total-roas-which-matters-more" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 New customer ROAS vs total ROAS: which matters more?
               </Link>
             </li>

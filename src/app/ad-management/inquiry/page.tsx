@@ -29,8 +29,8 @@ export default function AdManagementInquiryPage() {
             </h1>
             <p className="mt-5 text-base leading-relaxed text-white/60 max-w-md">
               A few details about your business, your current advertising, and
-              what you&apos;re trying to fix. We read every inquiry personally —
-              no auto-replies, no sales queue.
+              what you&apos;re trying to fix. We read every inquiry personally,
+              with no auto-replies and no sales queue.
             </p>
 
             <div className="mt-10 space-y-4 text-sm text-white/50 max-w-md">

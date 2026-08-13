@@ -79,7 +79,7 @@ export default function Page() {
               If a promotion reduces contribution per order from $40 to $25,
               order volume needs to rise 60% just to create the same total
               contribution. That's a useful sense-check covered in more depth in{" "}
-              <Link href="/resources/discount-effect-break-even-roas" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/how-discounts-change-your-break-even-roas" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 how discounts change your break-even ROAS
               </Link>
               .
@@ -132,7 +132,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/discount-effect-break-even-roas" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/how-discounts-change-your-break-even-roas" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How discounts change your break-even ROAS
               </Link>
             </li>
@@ -142,7 +142,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/true-roas-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/true-roas-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How to calculate true ROAS on Shopify
               </Link>
             </li>

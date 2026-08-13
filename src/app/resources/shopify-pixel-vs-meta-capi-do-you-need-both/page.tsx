@@ -148,6 +148,7 @@ export default function Page() {
         <Reveal>
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
+            <li><Link href="/meta-capi-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Meta CAPI for Shopify: full setup overview</Link></li>
             <li><Link href="/resources/google-tag-assistant-shows-multiple-google-tags-what" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Google Tag Assistant Shows Multiple Google Tags: What Does It Mean?</Link></li>
             <li><Link href="/resources/shopify-theme-change-broke-tracking-what-to-check" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Shopify Theme Change Broke Tracking: What to Check</Link></li>
             <li><Link href="/resources/shopify-app-installation-changed-conversion-tracking" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Shopify App Installation Changed Conversion Tracking: What Happened?</Link></li>

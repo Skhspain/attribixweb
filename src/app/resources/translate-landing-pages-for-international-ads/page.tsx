@@ -141,7 +141,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/different-meta-creatives-by-country" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/should-you-run-different-meta-creatives-for-different" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Should you run different Meta creatives for different countries?
               </Link>
             </li>

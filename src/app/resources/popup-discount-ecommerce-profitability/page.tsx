@@ -138,12 +138,12 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/percentage-discount-vs-fixed-discount-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/percentage-discount-vs-fixed-discount-which-works" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Percentage discount vs fixed discount: which works better?
               </Link>
             </li>
             <li>
-              <Link href="/resources/free-gift-vs-discount-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/do-free-gifts-convert-better-than-percentage-discounts" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Do free gifts convert better than percentage discounts?
               </Link>
             </li>

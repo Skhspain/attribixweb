@@ -135,7 +135,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/measure-email-marketing-profitability-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/how-to-measure-email-profitability-instead-of-just" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How to measure email profitability instead of just revenue
               </Link>
             </li>

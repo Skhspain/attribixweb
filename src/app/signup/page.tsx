@@ -35,7 +35,7 @@ export default function SignupPage() {
             </span>
           </h2>
           <p className="text-white/45 text-[15px] leading-relaxed mb-8">
-            Server-side tracking and attribution for Meta and Google Ads — built for Shopify.
+            Server-side tracking and attribution for Meta and Google Ads, built for Shopify.
           </p>
 
           <ul className="space-y-2.5">

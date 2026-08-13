@@ -295,6 +295,11 @@ export default function ShopifyRoasPage() {
           <Link href="/meta-capi-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
             Meta Conversions API
           </Link>
+          . If you'd rather have someone else reconcile these numbers and act on them,
+          see{" "}
+          <Link href="/ad-management" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+            Ad Management
+          </Link>
           .
         </p>
       </section>

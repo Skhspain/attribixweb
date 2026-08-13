@@ -15,18 +15,18 @@ const INCLUDED = [
   { title: "Catalogue and dynamic ads", desc: "Product catalogue kept in sync so dynamic ads show current pricing and availability." },
   { title: "Budget allocation", desc: "Spend moved between campaigns and audiences based on what's converting, reviewed on a set schedule rather than ad hoc." },
   { title: "Tracking and attribution review", desc: "Meta Pixel and Conversions API checked as part of the engagement, not left to drift once it's set up." },
-  { title: "Reporting", desc: "Reporting against Shopify revenue, with the reasoning behind budget moves — not just a screenshot of Ads Manager." },
+  { title: "Reporting", desc: "Reporting against Shopify revenue, with the reasoning behind budget moves, not just a screenshot of Ads Manager." },
 ];
 
 const OPERATIONS = [
   { label: "Account ownership", desc: "You own the Meta ad account and Business Manager. We work inside it as a partner, not as the account owner." },
   { label: "Access required", desc: "Admin access to your Meta Business Manager and read access to Shopify order data. No login-sharing outside Meta's own partner access tools." },
-  { label: "Onboarding", desc: "Account and tracking review first, then a written plan before any budget changes go live — typically the first one to two weeks." },
+  { label: "Onboarding", desc: "Account and tracking review first, then a written plan before any budget changes go live. Typically the first one to two weeks." },
   { label: "Communication", desc: "A standing check-in call, plus messaging for anything time-sensitive in between." },
   { label: "Reporting frequency", desc: "Monthly written reporting as standard; more frequent updates during active testing periods or launches." },
   { label: "What you provide", desc: "Product feed access, brand and creative assets or an existing creator relationship, and someone who can approve budget and creative decisions." },
   { label: "Contract terms", desc: "Month-to-month engagement. No fixed-term lock-in unless a longer period is specifically agreed for a particular project." },
-  { label: "What determines price", desc: "Account complexity and monthly ad spend, not a flat rate — confirmed after the initial review, before anything is agreed." },
+  { label: "What determines price", desc: "Account complexity and monthly ad spend, not a flat rate. Confirmed after the initial review, before anything is agreed." },
 ];
 
 const FAQ_ITEMS = [
@@ -36,7 +36,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Do you produce ad creative, or do we need our own?",
-    a: "We direct creative — briefs, angles, and feedback on what's converting — but production (filming, editing, design) is typically a client responsibility or handled by a creator you already work with. We can advise on this during onboarding, but it's not included by default.",
+    a: "We direct creative (briefs, angles, and feedback on what's converting), but production (filming, editing, design) is typically a client responsibility or handled by a creator you already work with. We can advise on this during onboarding, but it's not included by default.",
   },
   {
     q: "How long before we see results?",
@@ -80,8 +80,8 @@ export default function MetaAdsManagementPage() {
             Meta Ads management for Shopify stores
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            Full management of your Meta account — strategy, creative
-            direction, audience testing and day-to-day optimisation —
+            Full management of your Meta account: strategy, creative
+            direction, audience testing and day-to-day optimisation,
             reported against real Shopify revenue instead of Ads Manager&apos;s
             own numbers.
           </p>
@@ -143,7 +143,7 @@ export default function MetaAdsManagementPage() {
             <Link href="/meta-capi-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               Meta Conversions API
             </Link>{" "}
-            being in place from the start — which we check as part of onboarding, not as an afterthought.
+            being in place from the start, which we check as part of onboarding, not as an afterthought.
           </p>
         </Reveal>
       </section>

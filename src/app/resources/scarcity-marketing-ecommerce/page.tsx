@@ -140,7 +140,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/how-much-discount-is-too-much-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/how-much-discount-is-too-much-for-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How much discount is too much for ecommerce?
               </Link>
             </li>

@@ -25,7 +25,7 @@ export default function AdManagementConsultationPage() {
           </h1>
           <p className="mt-5 text-base sm:text-lg text-white/65 max-w-xl mx-auto text-center leading-relaxed">
             A 30-minute call with the team that would actually manage your
-            campaigns — not a salesperson. Pick a time below.
+            campaigns, not a salesperson. Pick a time below.
           </p>
         </Reveal>
       </section>
@@ -45,7 +45,7 @@ export default function AdManagementConsultationPage() {
             <p className="text-sm text-white/50 leading-relaxed">
               We discuss your current advertising setup, tracking, challenges
               and goals. You can share your screen during the call if
-              reviewing part of the account would be useful — we don&apos;t
+              reviewing part of the account would be useful. We don&apos;t
               require account access ahead of time.
             </p>
             <Link href="/ad-management" className="inline-flex items-center gap-1.5 text-sm text-white/40 hover:text-white/70 transition-colors">

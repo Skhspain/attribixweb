@@ -19,7 +19,7 @@ export default function ComparePage() {
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             We&apos;re not publishing comparison pages until we can verify the
-            other side of them — current pricing, current feature sets, and
+            other side of them: current pricing, current feature sets, and
             an honest read of who each tool actually suits.
           </p>
         </Reveal>
@@ -49,7 +49,7 @@ export default function ComparePage() {
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               Shopify attribution, server-side tracking for Meta and Google,
               and ROAS reporting that reconciles platform claims against
-              actual Shopify orders — in one connected setup rather than
+              actual Shopify orders, in one connected setup rather than
               several separate tools.
             </p>
           </Reveal>
@@ -61,8 +61,8 @@ export default function ComparePage() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold">See it on your own store</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
-            The most useful comparison is against your own current setup —
-            connect your store to see it directly.
+            The most useful comparison is against your own current setup.
+            Connect your store to see it directly.
           </p>
           <ProductCTA className="mt-8 justify-center" />
         </Reveal>

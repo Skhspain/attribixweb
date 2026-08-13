@@ -139,17 +139,17 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/different-meta-creatives-by-country" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/should-you-run-different-meta-creatives-for-different" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Should you run different Meta creatives for different countries?
               </Link>
             </li>
             <li>
-              <Link href="/resources/how-to-find-facebook-ad-angles" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/how-to-find-new-meta-ad-angles-without-guessing" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How to find new Meta ad angles without guessing
               </Link>
             </li>
             <li>
-              <Link href="/resources/which-country-expand-ecommerce-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/how-to-choose-which-country-to-expand-ecommerce-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How to choose which country to expand ecommerce ads into next
               </Link>
             </li>

@@ -123,12 +123,12 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/mer-vs-roas-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/mer-vs-roas-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 MER vs ROAS for Shopify
               </Link>
             </li>
             <li>
-              <Link href="/true-roas-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/true-roas-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How to calculate true ROAS on Shopify
               </Link>
             </li>

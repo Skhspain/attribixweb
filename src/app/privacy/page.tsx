@@ -175,7 +175,7 @@ export default function PrivacyPage() {
                 marketing individually. We use Google&apos;s Consent Mode to
                 tell Google&apos;s own tags whether you&apos;ve consented, and
                 we don&apos;t load the Meta Pixel at all until marketing
-                consent is granted — it isn&apos;t just told to stay quiet.
+                consent is granted. It isn&apos;t just told to stay quiet.
                 Your choice is stored in your browser (it doesn&apos;t sync
                 across devices) and you can change it at any time using the
                 &quot;Cookie preferences&quot; link in the footer.

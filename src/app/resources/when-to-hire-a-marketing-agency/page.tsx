@@ -137,6 +137,7 @@ export default function Page() {
         <Reveal>
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
+            <li><Link href="/ad-management" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">See what Attribix Ad Management includes</Link></li>
             <li><Link href="/resources/marketing-agency-vs-in-house" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Marketing agency vs in-house</Link></li>
             <li><Link href="/resources/ecommerce-marketing-agency-cost" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How much does an ecommerce marketing agency cost?</Link></li>
             <li><Link href="/resources/shopify-traffic-no-sales" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Shopify traffic but no sales</Link></li>

@@ -142,12 +142,12 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/which-country-expand-ecommerce-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/how-to-choose-which-country-to-expand-ecommerce-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How to choose which country to expand ecommerce ads into next
               </Link>
             </li>
             <li>
-              <Link href="/resources/when-to-expand-shopify-internationally" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/shopify-ready-for-international-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 When is a Shopify store ready to advertise internationally?
               </Link>
             </li>

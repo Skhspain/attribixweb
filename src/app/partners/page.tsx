@@ -57,7 +57,7 @@ export default function PartnersPage() {
         <p className="text-white/60 text-base leading-relaxed">
           A number of agencies and consultants already send us clients
           informally. We&apos;re putting together a proper referral
-          arrangement — commission terms, attribution, payout schedule —
+          arrangement (commission terms, attribution, payout schedule)
           rather than publishing numbers before they&apos;re settled.
         </p>
         <p className="mt-4 text-white/60 text-base leading-relaxed">
@@ -70,7 +70,7 @@ export default function PartnersPage() {
       <section className="mx-auto max-w-2xl px-4 pb-24">
         {status === "sent" ? (
           <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-8">
-            <h2 className="text-lg font-semibold mb-2">Thanks — that&apos;s in</h2>
+            <h2 className="text-lg font-semibold mb-2">Thanks, that&apos;s in</h2>
             <p className="text-sm text-white/60">
               We&apos;ll reach out at the email you provided once the
               program is ready.

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Google Ads Management for Shopify | Attribix",
   description:
-    "Google Ads management for Shopify stores across Search, Shopping and Performance Max — Merchant Center, conversion tracking, and reporting against real revenue.",
+    "Google Ads management for Shopify stores across Search, Shopping and Performance Max: Merchant Center, conversion tracking, and reporting against real revenue.",
   alternates: { canonical: "https://www.attribix.app/ad-management/google-ads" },
   openGraph: {
     title: "Google Ads Management for Shopify | Attribix",

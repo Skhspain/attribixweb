@@ -127,7 +127,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/exclude-existing-customers-meta-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/when-should-you-exclude-existing-customers-from-meta" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 When Should You Exclude Existing Customers From Meta Ads?
               </Link>
             </li>

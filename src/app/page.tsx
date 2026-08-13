@@ -1281,6 +1281,21 @@ export default function Home() {
           }),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Attribix",
+            url: "https://www.attribix.app",
+            logo: "https://www.attribix.app/assets/logo.svg",
+            description:
+              "Shopify attribution and server-side tracking software, with optional Meta and Google Ads management from the same team.",
+            parentOrganization: { "@type": "Organization", name: "bevit" },
+          }),
+        }}
+      />
 
       <ProgressHeader />
       <CursorSpotlight />
@@ -1314,13 +1329,19 @@ export default function Home() {
               <Link href="/server-side-tracking-shopify" className="underline decoration-white/30 underline-offset-2 hover:decoration-white/70">
                 server-side and browser signals
               </Link>{" "}
-              to reduce tracking loss, and gives you a clearer view of ROAS — which campaigns actually drive revenue.
+              to reduce tracking loss, and shows you which campaigns actually drive revenue.
             </p>
 
-            <div className="mt-7 flex flex-wrap items-center gap-3">
+            <div className="mt-7 flex flex-wrap items-center gap-4">
               <MagneticButton href="/signup" className="text-base px-9 py-4" onClick={trackTrialClick}>
                 Start free trial →
               </MagneticButton>
+              <Link
+                href="/ad-management"
+                className="text-sm text-white/60 underline decoration-white/25 underline-offset-4 hover:text-white/90 hover:decoration-white/60"
+              >
+                Prefer we run the ads ourselves? See Ad Management
+              </Link>
             </div>
           </div>
 
@@ -1347,6 +1368,35 @@ export default function Home() {
         <DemoModal open={showDemo} onClose={() => setShowDemo(false)} />
       </section>
 
+      {/* TWO PATHS: SOFTWARE OR AD MANAGEMENT */}
+      <section className="relative mx-auto max-w-7xl px-4 pb-20">
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="text-xs font-semibold uppercase tracking-widest text-cyan-300/80">Run it yourself</div>
+            <h3 className="mt-2 text-lg font-bold">Attribix software</h3>
+            <p className="mt-2 text-sm text-white/65 leading-relaxed">
+              Install it on your store, connect Meta and Google, and use it with your existing
+              team or agency. You keep control of the account.
+            </p>
+            <Link href="/signup" className="mt-4 inline-block text-sm text-white/70 underline decoration-white/25 underline-offset-4 hover:text-white hover:decoration-white/60">
+              Start free trial →
+            </Link>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="text-xs font-semibold uppercase tracking-widest text-fuchsia-300/80">Have us run it</div>
+            <h3 className="mt-2 text-lg font-bold">Attribix Ad Management</h3>
+            <p className="mt-2 text-sm text-white/65 leading-relaxed">
+              Our own team manages your Meta and Google Ads, using the same tracking and
+              attribution the software runs on. Real people review the account, not an
+              automated system.
+            </p>
+            <Link href="/ad-management" className="mt-4 inline-block text-sm text-white/70 underline decoration-white/25 underline-offset-4 hover:text-white hover:decoration-white/60">
+              See Ad Management →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* FEATURES */}
       <section id="features" className="relative mx-auto max-w-7xl px-4 pb-24 md:pb-28">
         <div className="mb-16 h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent" />
@@ -1362,7 +1412,7 @@ export default function Home() {
             </span>
           </h2>
           <p className="text-white/55 max-w-xl mb-12 text-base md:text-lg">
-            Attribix recovers conversions your pixels miss and helps you connect campaign activity to actual Shopify orders — not platform-reported guesses.
+            Attribix recovers conversions your pixels miss and connects campaign activity to actual Shopify orders, not platform-reported guesses.
           </p>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -1371,38 +1421,30 @@ export default function Home() {
                 t: "Rebuilt signal quality",
                 d: "Server-side and browser events in one clean stream your ad platforms can actually use.",
                 href: "/server-side-tracking-shopify",
-                icon: "✨",
                 accent: "from-cyan-500/20 to-cyan-500/5",
                 border: "border-cyan-500/20",
-                iconBg: "bg-cyan-500/15",
                 dot: "bg-cyan-400",
               },
               {
                 t: "Reconciled attribution",
-                d: "Compare where revenue is credited against actual Shopify orders — not last-click guesses or inflated platform numbers.",
+                d: "Compare where revenue is credited against actual Shopify orders, not last-click guesses or inflated platform numbers.",
                 href: "/shopify-attribution",
-                icon: "🧭",
                 accent: "from-indigo-500/20 to-indigo-500/5",
                 border: "border-indigo-500/20",
-                iconBg: "bg-indigo-500/15",
                 dot: "bg-indigo-400",
               },
               {
                 t: "Clear ads review",
                 d: "CPP, ROAS and revenue in one view. Obvious what to scale, obvious what to kill.",
-                icon: "📊",
                 accent: "from-fuchsia-500/20 to-fuchsia-500/5",
                 border: "border-fuchsia-500/20",
-                iconBg: "bg-fuchsia-500/15",
                 dot: "bg-fuchsia-400",
               },
               {
                 t: "Decisions, not dashboards",
-                d: "Built so you know what to do today — not so you spend all day staring at charts.",
-                icon: "⚡",
+                d: "Built so you know what to do today, not so you spend all day staring at charts.",
                 accent: "from-emerald-500/20 to-emerald-500/5",
                 border: "border-emerald-500/20",
-                iconBg: "bg-emerald-500/15",
                 dot: "bg-emerald-400",
               },
             ].map((f) => (
@@ -1413,9 +1455,7 @@ export default function Home() {
                   f.border, f.accent
                 )}
               >
-                <div className={cx("flex h-10 w-10 items-center justify-center rounded-xl mb-4 text-xl", f.iconBg)}>
-                  {f.icon}
-                </div>
+                <span className={cx("mb-4 block h-1.5 w-6 rounded-full", f.dot)} />
                 <div className="font-semibold text-sm mb-2">{f.t}</div>
                 <p className="text-xs text-white/60 leading-relaxed">{f.d}</p>
                 {f.href && (
@@ -1423,7 +1463,6 @@ export default function Home() {
                     Learn more →
                   </Link>
                 )}
-                <span className={cx("absolute bottom-4 right-4 h-1.5 w-1.5 rounded-full opacity-60", f.dot)} />
               </div>
             ))}
           </div>
@@ -1520,7 +1559,7 @@ export default function Home() {
 
             <p className="text-base md:text-lg text-white/80">
               One click to connect your ad platforms and storefront. Attribix sits
-              in the middle and keeps the data clean — no custom dev needed.
+              in the middle and keeps the data clean, with no custom dev needed.
             </p>
 
             <div className="space-y-2 text-sm md:text-base text-white/75">
@@ -1600,6 +1639,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TRUST / BACKGROUND */}
+      <section className="relative mx-auto max-w-3xl px-4 py-16 text-center">
+        <p className="text-sm md:text-base text-white/70 leading-relaxed">
+          Attribix grew out of an ad management business, not the other way around. Stian
+          Henriksen has run digital advertising since 2008, the agency side started in 2020,
+          and about 80% of clients have stayed since then. We built the tracking because we
+          needed it to run those accounts properly, so you get software that was tested on
+          real budgets, not a roadmap item.
+        </p>
+        <Link
+          href="/about"
+          className="mt-4 inline-block text-sm text-white/50 underline decoration-white/25 underline-offset-4 hover:text-white/80 hover:decoration-white/60"
+        >
+          More about the team →
+        </Link>
+      </section>
+
       {/* PRICING */}
       <section id="pricing" className="relative mx-auto max-w-7xl px-4 py-24">
         <SectionTitle>Pricing</SectionTitle>
@@ -1617,7 +1673,7 @@ export default function Home() {
               name: "Growth",
               price: 79,
               note: "14-day free trial",
-              features: ["2,500 orders tracked/mo", "90 days history", "Social calendar & analytics", "Product feed — Google & Meta"],
+              features: ["2,500 orders tracked/mo", "90 days history", "Social calendar & analytics", "Product feed for Google & Meta"],
               highlight: true,
             },
             {

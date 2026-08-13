@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Meta Ads Management for Shopify | Attribix",
   description:
-    "Meta Ads management for Shopify stores — account strategy, creative and audience testing, catalogue ads, and reporting checked against real Shopify revenue.",
+    "Meta Ads management for Shopify stores: account strategy, creative and audience testing, catalogue ads, and reporting checked against real Shopify revenue.",
   alternates: { canonical: "https://www.attribix.app/ad-management/meta-ads" },
   openGraph: {
     title: "Meta Ads Management for Shopify | Attribix",

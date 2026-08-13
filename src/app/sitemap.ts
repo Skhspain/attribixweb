@@ -41,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: BASE,
-      lastModified: new Date("2026-08-08"),
+      lastModified: new Date("2026-08-13"),
       changeFrequency: "weekly",
       priority: 1.0,
     },
@@ -72,7 +72,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE}/about`,
-      lastModified: new Date("2026-08-09"),
+      lastModified: new Date("2026-08-13"),
       changeFrequency: "monthly",
       priority: 0.5,
     },
@@ -120,19 +120,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE}/ad-management`,
-      lastModified: new Date("2026-08-09"),
+      lastModified: new Date("2026-08-13"),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${BASE}/ad-management/meta-ads`,
-      lastModified: new Date("2026-08-09"),
+      lastModified: new Date("2026-08-13"),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
       url: `${BASE}/ad-management/google-ads`,
-      lastModified: new Date("2026-08-09"),
+      lastModified: new Date("2026-08-13"),
       changeFrequency: "monthly",
       priority: 0.7,
     },

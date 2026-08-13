@@ -37,7 +37,7 @@ export default function LoginPage() {
 
         {/* Recommended hint */}
         <p className="text-center text-xs text-white/35 mb-3">
-          ↓ Recommended — sign in with Google
+          ↓ Recommended: sign in with Google
         </p>
 
         {/* Clerk card wrapper */}

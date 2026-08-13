@@ -138,6 +138,11 @@ export default function Page() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
             <li>
+              <Link href="/meta-capi-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Meta CAPI for Shopify: full setup overview
+              </Link>
+            </li>
+            <li>
               <Link href="/resources/how-to-check-meta-pixel-working-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How to check whether your Meta Pixel is working
               </Link>

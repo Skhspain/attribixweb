@@ -19,7 +19,7 @@ export default function CaseStudiesPage() {
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             We&apos;re putting together real case studies from actual Attribix
-            implementations — the tracking setup before, what changed, and
+            implementations: the tracking setup before, what changed, and
             what the data showed afterward.
           </p>
         </Reveal>
@@ -33,7 +33,7 @@ export default function CaseStudiesPage() {
             We&apos;d rather publish this page empty than fill it with
             illustrative numbers dressed up as results. When a case study
             goes up, it&apos;ll show a real store, a real tracking setup, and
-            real before-and-after data — with client approval, and with the
+            real before-and-after data, with client approval, and with the
             same honesty about limitations you&apos;ll find throughout this site.
           </p>
         </Reveal>

@@ -133,7 +133,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/revenue-roas-hides-profit-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/why-revenue-based-roas-can-hide-an-unprofitable" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Why revenue-based ROAS can hide an unprofitable business
               </Link>
             </li>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Free Shopify Attribution Tools | Attribix",
-  description: "Free calculators for ROAS, break-even ROAS and MER — for Shopify stores running Meta and Google Ads.",
+  description: "Free calculators for ROAS, break-even ROAS and MER, for Shopify stores running Meta and Google Ads.",
   alternates: { canonical: "https://www.attribix.app/tools" },
   openGraph: {
     title: "Free Shopify Attribution Tools | Attribix",

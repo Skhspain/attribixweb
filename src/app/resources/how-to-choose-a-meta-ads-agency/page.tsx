@@ -186,6 +186,7 @@ export default function Page() {
         <Reveal>
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
+            <li><Link href="/ad-management/meta-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">See how Attribix runs Meta Ads management</Link></li>
             <li><Link href="/resources/how-to-choose-a-google-ads-agency" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How to choose a Google Ads agency for ecommerce</Link></li>
             <li><Link href="/resources/what-does-a-meta-ads-agency-do" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">What does a Meta Ads agency actually do?</Link></li>
             <li><Link href="/resources/marketing-agency-vs-in-house" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Marketing agency vs in-house</Link></li>

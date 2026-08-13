@@ -338,7 +338,7 @@ function Playground() {
         </div>
       </div>
       <div className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-amber-300/20 bg-amber-400/10 px-2.5 py-1 text-[11px] text-amber-200/90">
-        Illustrative simulator — these numbers respond to the sliders below, not your store&apos;s actual data.
+        Illustrative simulator: these numbers respond to the sliders below, not your store&apos;s actual data.
       </div>
 
       {/* KPIs */}
@@ -395,7 +395,7 @@ function Playground() {
 
           <div className="mt-4">
             <div className="text-xs text-white/70 mb-1">
-              Budget mix — how you split spend
+              Budget mix: how you split spend
             </div>
             <input
               type="range"
@@ -506,7 +506,7 @@ function Playground() {
           ))}
         </div>
         <div className="mt-2 text-[11px] text-white/60">
-          Tip: drag any slider — we’ll keep the others balanced so everything
+          Tip: drag any slider and we’ll keep the others balanced so everything
           still adds up to 100%.
         </div>
       </div>
@@ -535,7 +535,7 @@ function Playground() {
             )}
           </div>
           <p className="mt-2 text-[11px] text-white/60 leading-relaxed">
-            Models don&apos;t change the cash in your bank — they change{" "}
+            Models don&apos;t change the cash in your bank. They change{" "}
             <b>how you tell the story</b> of which touchpoints get credit. Use
             them to pressure-test plans and defend budget decisions.
           </p>
@@ -588,7 +588,7 @@ export default function FeaturesPage() {
               Switch between <b>Last / First / Linear / Time-decay</b> and see
               how <b>ROAS, cost per purchase and total sales</b> would move
               under each model. The simulator below uses illustrative numbers
-              to show the concept — connect your store to see it with your
+              to show the concept. Connect your store to see it with your
               own data.
             </p>
 
@@ -596,19 +596,19 @@ export default function FeaturesPage() {
               {[
                 {
                   t: "Last Click",
-                  d: "Protects brand and retargeting — gives most credit to the final click before someone buys.",
+                  d: "Protects brand and retargeting. Gives most credit to the final click before someone buys.",
                 },
                 {
                   t: "First Click",
-                  d: "Finds true top-of-funnel winners — rewards the first ad that brought the customer in.",
+                  d: "Finds true top-of-funnel winners. Rewards the first ad that brought the customer in.",
                 },
                 {
                   t: "Linear",
-                  d: "Keeps everyone honest — shares credit across all steps when journeys are long and messy.",
+                  d: "Keeps everyone honest. Shares credit across all steps when journeys are long and messy.",
                 },
                 {
                   t: "Time-decay",
-                  d: "Leans into recency — closer touches to purchase get slightly more credit, without ignoring earlier steps.",
+                  d: "Leans into recency. Closer touches to purchase get slightly more credit, without ignoring earlier steps.",
                 },
               ].map((c) => (
                 <div
@@ -627,13 +627,13 @@ export default function FeaturesPage() {
           </section>
         </div>
 
-        {/* What this unlocks */}
+        {/* Why this is useful */}
         <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-5">
-          <h3 className="text-xl font-bold mb-2">What this unlocks for you</h3>
+          <h3 className="text-xl font-bold mb-2">Why this is useful</h3>
           <ul className="list-disc pl-5 space-y-1 text-white/80 text-sm">
             <li>
               See how different models change{" "}
-              <b>which channels look “good”</b> — before you make big budget
+              <b>which channels look “good”</b>, before you make big budget
               decisions.
             </li>
             <li>
@@ -642,7 +642,7 @@ export default function FeaturesPage() {
             </li>
             <li>
               Walk into budget meetings with <b>screenshots and stories</b>, not
-              gut feeling — “Here is what happens if we shift 15% more into
+              gut feeling: “Here is what happens if we shift 15% more into
               prospecting.”
             </li>
           </ul>
@@ -662,7 +662,7 @@ export default function FeaturesPage() {
                 Attribix sits between your store and the ad platforms. We
                 combine{" "}
                 <b>first-party cookies, server-side events and clean IDs</b>{" "}
-                so you see sales that pixels miss — and your attribution models
+                so you see sales that pixels miss, and your attribution models
                 are built on real data, not guesswork.
               </p>
             </div>

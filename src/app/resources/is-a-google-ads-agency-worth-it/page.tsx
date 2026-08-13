@@ -145,6 +145,7 @@ export default function Page() {
         <Reveal>
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
+            <li><Link href="/ad-management/google-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">See how Attribix runs Google Ads management</Link></li>
             <li><Link href="/resources/is-a-meta-ads-agency-worth-it" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Is a Meta Ads Agency Worth It?</Link></li>
             <li><Link href="/resources/is-an-ecommerce-marketing-agency-worth-the-cost" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Is an Ecommerce Marketing Agency Worth the Cost?</Link></li>
             <li><Link href="/resources/freelancer-vs-marketing-agency-which-should-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Freelancer vs Marketing Agency: Which Should Ecommerce Brands Hire?</Link></li>

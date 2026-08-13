@@ -129,7 +129,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/good-contribution-margin-after-advertising-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/what-is-a-good-contribution-margin-after-advertising" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 What is a good contribution margin after advertising?
               </Link>
             </li>

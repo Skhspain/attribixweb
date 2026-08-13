@@ -14,21 +14,21 @@ import FAQList from "@/components/marketing/FAQList";
 const SERVICES = [
   {
     title: "Ongoing Meta & Google Ads management",
-    desc: "Full management of your Meta and Google Ads accounts — strategy, creative direction, budget allocation and day-to-day optimisation, reviewed against real Shopify revenue instead of platform-reported ROAS.",
+    desc: "Full management of your Meta and Google Ads accounts: strategy, creative direction, budget allocation and day-to-day optimisation, reviewed against real Shopify revenue instead of platform-reported ROAS.",
     fit: "For brands who want campaigns run for them, month over month.",
     href: "/ad-management/meta-ads",
     cta: "See Meta & Google Ads management",
   },
   {
     title: "Advertising audit (paid)",
-    desc: "A structured, paid review of your existing Meta and/or Google Ads accounts: account structure, budget allocation, tracking setup and creative performance, delivered as a written report with prioritised fixes. Separate from the free consultation call — a fixed-scope engagement with a defined deliverable, not a conversation.",
+    desc: "A structured, paid review of your existing Meta and/or Google Ads accounts: account structure, budget allocation, tracking setup and creative performance, delivered as a written report with prioritised fixes. This is separate from the free consultation call: a fixed-scope engagement with a defined deliverable, not a conversation.",
     fit: "For brands who want a second opinion or a clear starting point before committing to ongoing management.",
     href: "/ad-management/inquiry",
     cta: "Ask about an audit",
   },
   {
     title: "Tracking and attribution setup",
-    desc: "We review and set up your Shopify tracking, Meta Pixel and Conversions API, and Google Ads purchase and enhanced conversions — including event deduplication, Consent Mode and attribution setup — so conversions and revenue are recorded correctly, whether or not we manage your ad spend.",
+    desc: "We review and set up your Shopify tracking, Meta Pixel and Conversions API, and Google Ads purchase and enhanced conversions (including event deduplication, Consent Mode and attribution setup), so conversions and revenue are recorded correctly, whether or not we manage your ad spend.",
     fit: "For brands who manage ads in-house but want tracking they can trust.",
     href: "/ad-management/inquiry",
     cta: "Ask about tracking setup",
@@ -87,14 +87,14 @@ const PROCESS = [
   {
     n: "4",
     title: "Manage, report, adjust",
-    desc: "We run the campaigns, connect everything to Attribix, and report monthly against real Shopify revenue — not platform-reported numbers.",
+    desc: "We run the campaigns, connect everything to Attribix, and report monthly against real Shopify revenue, not platform-reported numbers.",
   },
 ];
 
 const FAQ_ITEMS = [
   {
     q: "How is this different from just using Attribix on its own?",
-    a: "Attribix is software — you can run it yourself with your existing agency or in-house team. Managed services are optional: the same team behind Attribix manages your campaigns directly, using the same tracking.",
+    a: "Attribix is software, so you can run it yourself with your existing agency or in-house team. Ad Management is optional: the same team behind Attribix manages your campaigns directly, using the same tracking, and real people make the campaign decisions, not an automated system.",
   },
   {
     q: "What's the relationship between Attribix and bevit?",
@@ -110,7 +110,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Do you guarantee results?",
-    a: "No — nobody honestly can. We'll tell you what we see, what we'd change, and why, but we don't promise a specific ROAS or growth number.",
+    a: "No, nobody honestly can. We'll tell you what we see, what we'd change, and why, but we don't promise a specific ROAS or growth number.",
   },
   {
     q: "Which platforms do you manage?",
@@ -156,7 +156,7 @@ export default function AdManagementPage() {
           <p className="mt-6 text-lg text-white/65 max-w-2xl mx-auto leading-relaxed">
             We combine hands-on campaign management with server-side tracking
             and honest attribution, so decisions are based on real Shopify
-            revenue — not only the results reported by advertising platforms.
+            revenue, not only the results reported by advertising platforms.
           </p>
           <ManagedServicesCTA className="mt-9 justify-center" />
         </Reveal>
@@ -197,7 +197,7 @@ export default function AdManagementPage() {
             <p>
               Many attribution platforms are developed separately from the
               teams making daily campaign decisions. Attribix grew directly
-              out of our work managing real Meta and Google Ads accounts —
+              out of our work managing real Meta and Google Ads accounts.
               Ad Management is the optional service for businesses that want
               the same team to manage their campaigns directly, using that
               same data.
@@ -244,9 +244,9 @@ export default function AdManagementPage() {
             <p className="mt-5 text-white/65 leading-relaxed max-w-3xl">
               Ad-manager numbers are shaped by cookie loss, attribution
               windows, and each platform&apos;s incentive to take credit for
-              the sale — which is why we built Attribix in the first place.
+              the sale. That is why we built Attribix in the first place.
               When we manage your ads, we&apos;re not just watching ROAS in
-              Ads Manager — we&apos;re watching what actually shipped in
+              Ads Manager. We&apos;re watching what actually shipped in
               Shopify, tied back to the ad, the campaign and the customer
               journey that led to it.
             </p>
@@ -266,9 +266,9 @@ export default function AdManagementPage() {
 
           <Reveal delay={150}>
             <ul className="mt-8 grid gap-3 sm:grid-cols-3 text-sm text-white/60">
-              <li className="rounded-xl border border-white/10 bg-white/5 p-4">Server-side events, not just pixel data — fewer gaps from iOS, ad blockers and cookie loss.</li>
+              <li className="rounded-xl border border-white/10 bg-white/5 p-4">Server-side events, not just pixel data, mean fewer gaps from iOS, ad blockers and cookie loss.</li>
               <li className="rounded-xl border border-white/10 bg-white/5 p-4">Every campaign decision checked against Shopify orders, not platform-reported conversions.</li>
-              <li className="rounded-xl border border-white/10 bg-white/5 p-4">One team accountable for both the ads and the tracking — no finger-pointing between agency and tool.</li>
+              <li className="rounded-xl border border-white/10 bg-white/5 p-4">One team accountable for both the ads and the tracking, so there's no finger-pointing between agency and tool.</li>
             </ul>
           </Reveal>
 
@@ -284,9 +284,10 @@ export default function AdManagementPage() {
           <h2 className="text-2xl md:text-3xl font-extrabold">Experience across ecommerce and performance advertising</h2>
           <p className="mt-5 text-white/65 leading-relaxed">
             We have managed Meta and Google Ads for businesses across
-            ecommerce, services and digital products. Verified case studies
-            are currently being prepared. Send us an inquiry to discuss
-            experience relevant to your business and advertising channels.
+            ecommerce, services and digital products, including MyHeritage,
+            London Diamonds and Roberes. Written case studies are still being
+            prepared. Send us an inquiry to discuss experience relevant to
+            your business and advertising channels.
           </p>
         </Reveal>
       </section>
@@ -398,7 +399,7 @@ export default function AdManagementPage() {
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             Send us a few details in writing, or book a free 30-minute call.
             Either way, you&apos;ll hear directly from the team that manages
-            the campaigns — not a salesperson.
+            the campaigns, not a salesperson.
           </p>
           <ManagedServicesCTA className="mt-8 justify-center" />
         </Reveal>
