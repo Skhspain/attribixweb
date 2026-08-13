@@ -44,7 +44,7 @@ const ARTICLE_JSON_LD = {
   description:
     "The diagnostic order for a Performance Max campaign that's spending with no purchases: tracking first, then goal setup, feed health, landing pages, price, budget and audience signals.",
   datePublished: "2026-08-11",
-  dateModified: "2026-08-11",
+  dateModified: "2026-08-12",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
   publisher: {
     "@type": "Organization",
@@ -85,11 +85,17 @@ export default function Page() {
             creative changes: first confirm Google Ads can actually see your
             Shopify purchases, then check the conversion goal, Merchant
             Center feed health, landing pages, pricing, budget realism, and
-            audience signals. Performance Max is a fully automated,
-            black-box bidding system: it optimizes only against the
-            conversion signal it&apos;s given, so a tracking gap looks
-            identical to &ldquo;the campaign doesn&apos;t work,&rdquo; and
-            most PMax accounts that look broken are actually just blind.
+            audience signals. Performance Max is heavily automated, and it
+            optimizes only against the conversion signal it&apos;s given, so
+            a tracking gap looks identical to &ldquo;the campaign
+            doesn&apos;t work.&rdquo; Most PMax accounts that look broken are
+            actually just blind, and the diagnostics and channel-level
+            reporting Google now exposes (covered in{" "}
+            <Link href="/resources/how-to-see-what-performance-max-is-doing" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              how to tell what Performance Max is actually doing
+            </Link>
+            ) usually get you further than the &ldquo;black box&rdquo;
+            reputation suggests.
           </p>
         </Reveal>
       </section>
@@ -169,8 +175,8 @@ export default function Page() {
             excluded from the auction entirely, not shown with a warning
             label. If a meaningful share of your catalog is disapproved, the
             campaign is spending against a shrunken version of your store
-            without telling you that&apos;s what happened. Open the
-            Diagnostics tab in Merchant Center and check your item-level
+            without telling you that&apos;s what happened. Open Products →
+            Needs attention in Merchant Center and check your item-level
             issues and disapproval rate before assuming the campaign itself
             is the problem. The common causes and how to read them are
             covered in{" "}

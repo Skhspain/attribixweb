@@ -1,0 +1,3 @@
+      { title: "Should You Run Different Meta Creatives for Different Countries?", desc: "If customer motivations, language or offers differ, country-specific creatives can improve performance.", href: "/resources/should-you-run-different-meta-creatives-for-different" },
+      { title: "How to Choose Which Country to Expand Ecommerce Ads Into Next", desc: "Do not choose the next country because Meta CPM is cheap.", href: "/resources/how-to-choose-which-country-to-expand-ecommerce-ads" },
+      { title: "When Is a Shopify Store Ready to Advertise Internationally?", desc: "A store is ready for international ads when the business can deliver an experience that is competitive enough for the target market.", href: "/resources/when-is-a-shopify-store-ready-to-advertise" },

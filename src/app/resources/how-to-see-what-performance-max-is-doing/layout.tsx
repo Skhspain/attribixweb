@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "How to Tell What Performance Max Is Actually Doing",
-  description: "Performance Max is deliberately more automated than traditional Search, which means advertisers often feel they are funding a black box.",
+  description: "The Channel Performance, product, asset and search-category reports Performance Max actually exposes, and how to read them against real Shopify orders.",
   alternates: { canonical: "https://www.attribix.app/resources/how-to-see-what-performance-max-is-doing" },
   openGraph: {
     title: "How to Tell What Performance Max Is Actually Doing",

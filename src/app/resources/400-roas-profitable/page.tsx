@@ -39,7 +39,7 @@ export default function Page() {
       <section className="mx-auto max-w-3xl px-4 pt-24 pb-10 md:pt-32">
         <Reveal>
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Why 400% ROAS can lose money" }]} />
-          <Eyebrow>Attribution & Measurement</Eyebrow>
+          <Eyebrow>Attribution & Analytics</Eyebrow>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
             Why a 400% ROAS can still lose money
           </h1>

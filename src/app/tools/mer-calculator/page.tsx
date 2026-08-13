@@ -49,7 +49,7 @@ export default function MerCalculatorPage() {
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
             Marketing efficiency ratio: total store revenue divided by
-            total marketing spend, across every channel — no attribution
+            total marketing spend, across every channel. No attribution
             model involved.
           </p>
         </Reveal>
@@ -69,7 +69,7 @@ export default function MerCalculatorPage() {
                   onChange={(e) => setRevenue(e.target.value)}
                   className={inputClass}
                 />
-                <p className="mt-1.5 text-xs text-white/35">For the period you&apos;re measuring — not just ad-attributed revenue.</p>
+                <p className="mt-1.5 text-xs text-white/35">For the period you&apos;re measuring, not just ad-attributed revenue.</p>
               </div>
               <div>
                 <label className={labelClass}>Total marketing spend ($)</label>
@@ -99,7 +99,7 @@ export default function MerCalculatorPage() {
           <p className="text-sm text-white/60 leading-relaxed max-w-2xl">
             MER is total revenue ÷ total marketing spend. Unlike ROAS, it
             doesn&apos;t rely on any platform crediting specific orders to
-            specific ads — which makes it steadier, but less useful for
+            specific ads, which makes it steadier but less useful for
             comparing individual campaigns. See{" "}
             <Link href="/resources/mer-vs-roas-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               MER vs ROAS

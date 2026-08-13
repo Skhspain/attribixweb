@@ -7,6 +7,7 @@ import Eyebrow from "@/components/marketing/Eyebrow";
 import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import { ProductCTA } from "@/components/marketing/CTAGroup";
 import FAQList from "@/components/marketing/FAQList";
+import { LastReviewed, OfficialSources } from "@/components/marketing/ArticleTrust";
 
 const FAQ_ITEMS = [
   {
@@ -39,7 +40,7 @@ const ARTICLE_JSON_LD = {
   headline: "Enhanced Conversions for Shopify Explained",
   description: "What Enhanced Conversions do, what they don't fix, and how they relate to server-side tracking.",
   datePublished: "2026-08-08",
-  dateModified: "2026-08-08",
+  dateModified: "2026-08-12",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
   publisher: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app", logo: { "@type": "ImageObject", url: "https://www.attribix.app/assets/logo.svg" } },
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.attribix.app/resources/enhanced-conversions-shopify" },
@@ -66,7 +67,7 @@ export default function Page() {
       <section className="mx-auto max-w-3xl px-4 pt-24 pb-10 md:pt-32">
         <Reveal>
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Enhanced Conversions" }]} />
-          <Eyebrow>Google Ads Tracking</Eyebrow>
+          <Eyebrow>Google Ads</Eyebrow>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
             Enhanced Conversions for Shopify explained
           </h1>
@@ -160,6 +161,20 @@ export default function Page() {
             allowed to measure. It only improves matching within that
             boundary.
           </p>
+        </Reveal>
+      </section>
+
+      {/* TRUST */}
+      <section className="mx-auto max-w-3xl px-4">
+        <Reveal>
+          <div className="space-y-2 border-t border-white/10 pt-6">
+            <OfficialSources
+              sources={[
+                { label: "About enhanced conversions", href: "https://support.google.com/google-ads/answer/9888656" },
+              ]}
+            />
+            <LastReviewed date="August 12, 2026" />
+          </div>
         </Reveal>
       </section>
 

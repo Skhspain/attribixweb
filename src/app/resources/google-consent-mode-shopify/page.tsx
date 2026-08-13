@@ -7,6 +7,7 @@ import Eyebrow from "@/components/marketing/Eyebrow";
 import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import { ManagedServicesCTA } from "@/components/marketing/CTAGroup";
 import FAQList from "@/components/marketing/FAQList";
+import { LastReviewed, OfficialSources } from "@/components/marketing/ArticleTrust";
 
 const FAQ_ITEMS = [
   {
@@ -44,7 +45,7 @@ const ARTICLE_JSON_LD = {
   description:
     "What Google Consent Mode reads from a cookie banner, what happens when consent is denied, and the common implementation mistakes that cause a conversion drop after a banner change.",
   datePublished: "2026-08-11",
-  dateModified: "2026-08-11",
+  dateModified: "2026-08-12",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
   publisher: {
     "@type": "Organization",
@@ -253,6 +254,20 @@ export default function Page() {
             </Link>
             .
           </p>
+        </Reveal>
+      </section>
+
+      {/* TRUST */}
+      <section className="mx-auto max-w-3xl px-4">
+        <Reveal>
+          <div className="space-y-2 border-t border-white/10 pt-6">
+            <OfficialSources
+              sources={[
+                { label: "About consent mode", href: "https://support.google.com/google-ads/answer/10000067" },
+              ]}
+            />
+            <LastReviewed date="August 12, 2026" />
+          </div>
         </Reveal>
       </section>
 

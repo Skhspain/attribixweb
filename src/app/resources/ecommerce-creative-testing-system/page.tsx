@@ -30,7 +30,7 @@ const ARTICLE_JSON_LD = {
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.attribix.app/resources/how-to-build-an-ecommerce-creative-testing-system-that"
+    "@id": "https://www.attribix.app/resources/ecommerce-creative-testing-system"
   }
 };
 
@@ -53,8 +53,8 @@ const BREADCRUMB_JSON_LD = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "How to Build an Ecommerce Creative Testing...",
-      "item": "https://www.attribix.app/resources/how-to-build-an-ecommerce-creative-testing-system-that"
+      "name": "Ecommerce Creative Testing System",
+      "item": "https://www.attribix.app/resources/ecommerce-creative-testing-system"
     }
   ]
 };
@@ -67,7 +67,7 @@ export default function Page() {
 
       <section className="mx-auto max-w-3xl px-4 pt-24 pb-10 md:pt-32">
         <Reveal>
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "How to Build an Ecommerce Creative Testing..." }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Ecommerce Creative Testing System" }]} />
           <Eyebrow>Creative & Offers</Eyebrow>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
             How to Build an Ecommerce Creative Testing System That Produces Useful Learnings

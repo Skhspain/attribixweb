@@ -161,7 +161,7 @@ export default function Page() {
 
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold">Want to know what the number actually means?</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold">Think by objective</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             If your Meta prospecting campaigns show great ROAS but existing customers are mixed into the results, contact us. We can help build a cleaner acquisition view.
           </p>

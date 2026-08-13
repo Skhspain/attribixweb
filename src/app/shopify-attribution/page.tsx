@@ -11,9 +11,9 @@ import FAQList from "@/components/marketing/FAQList";
 const JOURNEY = ["Meta ad", "Store visit", "Google search", "Email", "Shopify purchase"];
 
 const MODELS = [
-  { name: "First-click", credit: "100% to Meta ad", note: "Rewards discovery — good for measuring top-of-funnel reach, but ignores everything after." },
-  { name: "Last-click", credit: "100% to email", note: "What most ad platforms default to internally — rewards the final nudge, ignores what built the intent." },
-  { name: "Multi-touch", credit: "Split across Meta, Google, email", note: "Spreads credit across the path — closer to reality, but the split itself is a modelling choice, not a fact." },
+  { name: "First-click", credit: "100% to Meta ad", note: "Rewards discovery: good for measuring top-of-funnel reach, but ignores everything after." },
+  { name: "Last-click", credit: "100% to email", note: "What most ad platforms default to internally. Rewards the final nudge, ignores what built the intent." },
+  { name: "Multi-touch", credit: "Split across Meta, Google, email", note: "Spreads credit across the path, closer to reality, but the split itself is a modelling choice, not a fact." },
 ];
 
 const FAQ_ITEMS = [
@@ -23,7 +23,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Will attribution numbers ever match Meta and Google exactly?",
-    a: "No, and that's expected. Ad platforms measure inside their own walled gardens, on their own attribution windows. Attribix measures against what actually happened in Shopify — the two are answering different questions.",
+    a: "No, and that's expected. Ad platforms measure inside their own walled gardens, on their own attribution windows. Attribix measures against what actually happened in Shopify. The two are answering different questions.",
   },
   {
     q: "Do I need to change my ad platform settings to use this?",
@@ -31,7 +31,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "What happens to orders that show up as direct traffic?",
-    a: "Direct traffic — visits with no referrer or campaign parameters — gets attributed where the evidence supports it (a matching prior session, for example) and left as direct where it doesn't. We don't force a source onto a visit just to close the gap.",
+    a: "Direct traffic (visits with no referrer or campaign parameters) gets attributed where the evidence supports it (a matching prior session, for example) and left as direct where it doesn't. We don't force a source onto a visit just to close the gap.",
   },
   {
     q: "How often does the data refresh?",
@@ -81,7 +81,7 @@ export default function ShopifyAttributionPage() {
           <div className="mt-5 space-y-4 text-white/65 leading-relaxed">
             <p>
               Shopify marketing attribution is the practice of tracing a
-              completed order back to the marketing that produced it — which
+              completed order back to the marketing that produced it: which
               ad, which campaign, and which touchpoints a customer passed
               through before they checked out. It sits on top of your store,
               not inside any single ad platform, because no single ad
@@ -115,7 +115,7 @@ export default function ShopifyAttributionPage() {
                 same, on its own window and its own click definition. If a
                 customer clicked a Meta ad on Monday and a Google search ad
                 on Wednesday before buying on Friday, both platforms may log
-                that order as theirs — and Shopify just sees one purchase,
+                that order as theirs, and Shopify just sees one purchase,
                 often labelled &ldquo;direct&rdquo; if the last visit had no
                 tracking parameters at all.
               </p>
@@ -138,12 +138,12 @@ export default function ShopifyAttributionPage() {
           <p className="mt-5 text-white/65 leading-relaxed max-w-2xl">
             Attribix pairs client-side and server-side events with your
             Shopify order data, then stitches a customer&apos;s touchpoints
-            into a single journey ending in a purchase — or not.
+            into a single journey ending in a purchase, or not.
           </p>
         </Reveal>
 
         <Reveal delay={100} className="mt-8">
-          <DiagramFrame caption="A simplified customer journey — the same order, seen in full.">
+          <DiagramFrame caption="A simplified customer journey: the same order, seen in full.">
             <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
               {JOURNEY.map((step, i) => (
                 <div key={step} className="flex items-center gap-2 md:gap-3">
@@ -171,7 +171,7 @@ export default function ShopifyAttributionPage() {
             Meta claims the sale, because it saw the ad click. Google claims
             it too, because it saw the search click that came after. Attribix
             shows the full path and lets you decide how credit gets split
-            between the two — which is the question that actually matters
+            between the two, which is the question that actually matters
             for next month&apos;s budget.
           </p>
         </Reveal>
@@ -186,7 +186,7 @@ export default function ShopifyAttributionPage() {
               One order, three different credit splits
             </h2>
             <p className="mt-4 text-white/65 leading-relaxed">
-              Take the journey above — Meta ad, store visit, Google search,
+              Take the journey above: Meta ad, store visit, Google search,
               email, purchase. Here&apos;s how three common models would each
               credit that single order.
             </p>
@@ -229,7 +229,7 @@ export default function ShopifyAttributionPage() {
             <p>
               Attribution reconstructs a likely path from the data available
               to it. It doesn&apos;t capture touchpoints that leave no
-              trace — a customer who saw an ad but didn&apos;t click, word of
+              trace: a customer who saw an ad but didn&apos;t click, word of
               mouth, or a browser blocking tracking entirely. Attribution
               windows are also a judgment call: a 7-day or 30-day window will
               produce different numbers for the same business.
@@ -238,7 +238,7 @@ export default function ShopifyAttributionPage() {
               Treat attribution data as the best available reconstruction of
               what happened, not as ground truth. It&apos;s built to guide
               budget decisions with more evidence than platform-reported ROAS
-              alone — not to replace judgment entirely.
+              alone, not to replace judgment entirely.
             </p>
           </div>
         </Reveal>
@@ -255,13 +255,13 @@ export default function ShopifyAttributionPage() {
             <Reveal delay={40}>
               <div>
                 <p className="text-sm font-semibold text-white">Data sources</p>
-                <p className="mt-1.5 text-sm text-white/55 leading-relaxed">Shopify order data, Meta Ads spend and campaign data, and Google Ads spend and campaign data — read from each platform&apos;s own reporting API.</p>
+                <p className="mt-1.5 text-sm text-white/55 leading-relaxed">Shopify order data, Meta Ads spend and campaign data, and Google Ads spend and campaign data, read from each platform&apos;s own reporting API.</p>
               </div>
             </Reveal>
             <Reveal delay={80}>
               <div>
                 <p className="text-sm font-semibold text-white">Attribution window</p>
-                <p className="mt-1.5 text-sm text-white/55 leading-relaxed">Configurable rather than fixed, since a 7-day and a 30-day window will genuinely disagree on the same orders — there&apos;s no single window that&apos;s correct for every business.</p>
+                <p className="mt-1.5 text-sm text-white/55 leading-relaxed">Configurable rather than fixed, since a 7-day and a 30-day window will genuinely disagree on the same orders. There&apos;s no single window that&apos;s correct for every business.</p>
               </div>
             </Reveal>
             <Reveal delay={120}>
@@ -273,7 +273,7 @@ export default function ShopifyAttributionPage() {
             <Reveal delay={160}>
               <div>
                 <p className="text-sm font-semibold text-white">Direct traffic and refunds</p>
-                <p className="mt-1.5 text-sm text-white/55 leading-relaxed">Visits with no campaign source stay labelled as direct rather than being forced onto a channel. Revenue is captured at time of purchase and doesn&apos;t automatically re-adjust for later refunds — cross-check against Shopify for periods with heavy refund activity.</p>
+                <p className="mt-1.5 text-sm text-white/55 leading-relaxed">Visits with no campaign source stay labelled as direct rather than being forced onto a channel. Revenue is captured at time of purchase and doesn&apos;t automatically re-adjust for later refunds. Cross-check against Shopify for periods with heavy refund activity.</p>
               </div>
             </Reveal>
           </div>
@@ -289,13 +289,13 @@ export default function ShopifyAttributionPage() {
             <p className="mt-4 text-white/65 leading-relaxed">
               Attribix is built for Shopify and Shopify Plus stores running
               paid ads on Meta and Google that need a single, reconciled view
-              of what&apos;s driving revenue — whether ads are managed
+              of what&apos;s driving revenue, whether ads are managed
               in-house, by an agency, or by our own{" "}
               <Link href="/ad-management" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 ad management team
               </Link>
               . If you&apos;re only spending on one channel with no
-              cross-channel overlap, platform reporting alone may be enough —
+              cross-channel overlap, platform reporting alone may be enough:
               attribution earns its keep once more than one channel is in
               play.
             </p>

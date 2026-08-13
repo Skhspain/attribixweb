@@ -5,7 +5,7 @@ import ProductPageShell from "@/components/marketing/ProductPageShell";
 import { Reveal } from "@/components/marketing/Reveal";
 import Eyebrow from "@/components/marketing/Eyebrow";
 import Breadcrumbs from "@/components/marketing/Breadcrumbs";
-import { ManagedServicesCTA } from "@/components/marketing/CTAGroup";
+import { SoftInquiryCTA } from "@/components/marketing/CTAGroup";
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
@@ -162,7 +162,7 @@ export default function Page() {
             customer information, send us an inquiry. We can help turn
             social proof into actual objection handling.
           </p>
-          <ManagedServicesCTA className="mt-8 justify-center" />
+          <SoftInquiryCTA className="mt-8 justify-center" />
         </Reveal>
       </section>
     </ProductPageShell>

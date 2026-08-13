@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "MER Calculator | Attribix",
-  description: "Free calculator for marketing efficiency ratio (MER) — total revenue divided by total marketing spend, no attribution model involved.",
+  description: "Free calculator for marketing efficiency ratio (MER): total revenue divided by total marketing spend, no attribution model involved.",
   alternates: { canonical: "https://www.attribix.app/tools/mer-calculator" },
   openGraph: {
     title: "MER Calculator | Attribix",

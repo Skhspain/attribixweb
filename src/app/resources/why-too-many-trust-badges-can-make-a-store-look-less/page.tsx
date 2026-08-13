@@ -165,7 +165,7 @@ export default function Page() {
 
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold">Not sure the offer is the problem?</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold">Keep only signals that answer real concerns</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             If your product pages feel overloaded with conversion widgets and trust badges, send us an inquiry. We can help simplify them without removing the reassurance customers need.
           </p>

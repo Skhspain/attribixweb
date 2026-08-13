@@ -7,6 +7,7 @@ import Eyebrow from "@/components/marketing/Eyebrow";
 import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import { ManagedServicesCTA } from "@/components/marketing/CTAGroup";
 import FAQList from "@/components/marketing/FAQList";
+import { LastReviewed, OfficialSources } from "@/components/marketing/ArticleTrust";
 
 const FAQ_ITEMS = [
   {
@@ -43,7 +44,7 @@ const ARTICLE_JSON_LD = {
   headline: "Duplicate Google Ads Conversions on Shopify",
   description: "The specific mechanics (multiple primary actions, overlapping tags, per-click counting, missing transaction IDs) that cause Google Ads to count one Shopify order more than once.",
   datePublished: "2026-08-11",
-  dateModified: "2026-08-11",
+  dateModified: "2026-08-12",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
   publisher: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app", logo: { "@type": "ImageObject", url: "https://www.attribix.app/assets/logo.svg" } },
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.attribix.app/resources/google-ads-duplicate-conversions-shopify" },
@@ -149,18 +150,25 @@ export default function Page() {
         <div className="absolute inset-0 -z-10 bg-black/15" />
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>
-            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">The &quot;every&quot; vs &quot;one&quot; counting setting</h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Don&apos;t &quot;fix&quot; duplication by switching Purchase to &quot;One&quot;</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               A conversion action can be configured to count every conversion
-              or one conversion per click/interaction. For a purchase action,
-              you almost always want one per order. If it&apos;s set to count
-              every occurrence instead, a single order that re-renders its
-              confirmation page (a browser back-and-forward, a manual
-              refresh, a webhook retry that re-fires the event) gets logged
-              as multiple separate conversions from what was actually one
-              sale. Worth checking this setting directly on the Purchase
-              action rather than assuming the default is right for your
-              setup.
+              or one conversion per click/interaction. For a Purchase action,
+              Google&apos;s own guidance is to use{" "}
+              <strong className="text-white/80">Every</strong>: each real
+              sale adds business value, so each one should count. Switching a
+              Purchase action to &quot;One&quot; is a common but incorrect
+              reaction to seeing duplicate conversions. It doesn&apos;t fix
+              the underlying duplication; it just suppresses genuinely
+              separate purchases from the same customer, which quietly
+              undercounts real revenue instead.
+            </p>
+            <p className="mt-4 text-white/60 leading-relaxed text-sm max-w-2xl">
+              &quot;One&quot; exists for a different job: lead-generation
+              actions, where several form fills from the same ad click often
+              represent one prospect rather than additional business value.
+              That&apos;s not the Shopify purchase problem this article is
+              about.
             </p>
           </Reveal>
         </div>
@@ -171,15 +179,17 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Missing or non-unique transaction IDs</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Google Ads relies on the transaction ID passed with a purchase
-            event to recognize a repeat firing as the same order rather than
-            a new one. If that ID is missing, or a static placeholder value
-            gets reused across every order instead of the actual Shopify
-            order ID, Google loses the ability to deduplicate: a page
-            reload or retry that would otherwise be recognized and ignored
-            instead counts as a fresh conversion. This compounds with the
-            &quot;every&quot; setting above: correct transaction IDs are what makes
-            &quot;one per order&quot; enforceable in the first place.
+            This is the actual fix for the re-render/refresh/retry problem,
+            not the Count setting above. Google Ads relies on the transaction
+            ID passed with a purchase event to recognize a repeat firing as
+            the same order rather than a new one. If that ID is missing, or a
+            static placeholder value gets reused across every order instead
+            of the actual Shopify order ID, Google loses the ability to
+            deduplicate: a page reload or retry that would otherwise be
+            recognized and ignored instead counts as a fresh conversion. A
+            correct, unique transaction ID per order is what keeps Count set
+            to Every safe: real sales still all count, while the same order
+            firing twice doesn&apos;t.
           </p>
         </Reveal>
       </section>
@@ -222,6 +232,21 @@ export default function Page() {
             consistent multiple tied to a specific setting; ordinary mismatch
             produces a variable gap tied to timing and refund activity.
           </p>
+        </Reveal>
+      </section>
+
+      {/* TRUST */}
+      <section className="mx-auto max-w-3xl px-4">
+        <Reveal>
+          <div className="space-y-2 border-t border-white/10 pt-6">
+            <OfficialSources
+              sources={[
+                { label: "About conversion counting options", href: "https://support.google.com/google-ads/answer/3438531" },
+                { label: "Use a transaction ID to minimize duplicate conversions", href: "https://support.google.com/google-ads/answer/6386790" },
+              ]}
+            />
+            <LastReviewed date="August 12, 2026" />
+          </div>
         </Reveal>
       </section>
 

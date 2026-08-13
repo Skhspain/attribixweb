@@ -85,6 +85,24 @@ export default function Page() {
 
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Why Meta traffic specifically needs this decision made deliberately</h2>
+          <div className="space-y-4">
+          <p className="text-white/60 leading-relaxed text-sm">
+            Most Meta traffic is colder than Google Search traffic: the
+            scroll interrupted someone who wasn&apos;t actively looking for
+            your product, so the page has to do more work carrying the
+            feed or Stories creative&apos;s specific hook and visual
+            straight through, not just confirm a search query. A product
+            page that opens with generic brand navigation can lose that
+            momentum in a way a Search click, which already carries
+            explicit intent, tolerates better.
+          </p>
+          </div>
+        </Reveal>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4 py-10">
+        <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Product pages work when the product is easy to understand</h2>
           <div className="space-y-4">
           <p className="text-white/60 leading-relaxed text-sm">

@@ -18,15 +18,15 @@ const FAQ_ITEMS = [
   },
   {
     q: "What is Event Match Quality?",
-    a: "Meta's score for how confidently it can match your events to a real Facebook or Instagram user, based on how much hashed customer data — email, phone, external ID — you send with each event.",
+    a: "Meta's score for how confidently it can match your events to a real Facebook or Instagram user, based on how much hashed customer data (email, phone, external ID) you send with each event.",
   },
   {
     q: "Does a higher Event Match Quality score mean perfect attribution?",
-    a: "No. It means Meta can match more events to known users, which usually improves optimization and reporting — but matching an event to a person isn't the same as knowing which ad caused the purchase.",
+    a: "No. It means Meta can match more events to known users, which usually improves optimization and reporting, but matching an event to a person isn't the same as knowing which ad caused the purchase.",
   },
   {
     q: "Can CAPI track customers who declined consent?",
-    a: "No. CAPI still requires the same consent and privacy compliance as the Pixel — it changes how an event reaches Meta, not whether you're allowed to send it.",
+    a: "No. CAPI still requires the same consent and privacy compliance as the Pixel. It changes how an event reaches Meta, not whether you're allowed to send it.",
   },
 ];
 
@@ -43,7 +43,7 @@ const FAQ_JSON_LD = {
 const PROBLEMS = [
   { problem: "Purchases undercounted on iOS", cause: "Safari trims cookie lifespan and blocks some pixel requests outright." },
   { problem: "Duplicate purchases in Ads Manager", cause: "Pixel and CAPI both fired without a shared event ID, so Meta counted each once." },
-  { problem: "Event Match Quality stuck low", cause: "Only a hashed email is sent — no phone, external ID, or click ID to strengthen the match." },
+  { problem: "Event Match Quality stuck low", cause: "Only a hashed email is sent: no phone, external ID, or click ID to strengthen the match." },
   { problem: "Leads not appearing", cause: "Lead events are wired for the Pixel only; the server-side event was never added for that form." },
 ];
 
@@ -76,7 +76,7 @@ export default function MetaCapiPage() {
             <p>
               It&apos;s tempting to treat CAPI as the &ldquo;better&rdquo;
               replacement for the Pixel. Meta&apos;s own guidance favors
-              running both together rather than swapping one for the other —
+              running both together rather than swapping one for the other,
               sending the same event through both routes so that if the
               browser event is blocked, the server event still lands.
             </p>
@@ -102,7 +102,7 @@ export default function MetaCapiPage() {
               <span aria-hidden className="text-white/25 rotate-90 sm:rotate-0">→</span>
               <div className="rounded-lg border border-cyan-400/25 bg-cyan-400/[0.08] px-4 py-3 text-cyan-100 font-medium">One purchase in Ads Manager</div>
             </div>
-            <p className="mt-4 text-center text-xs text-white/35">Simplified — illustrative, not literal API payload structure.</p>
+            <p className="mt-4 text-center text-xs text-white/35">Simplified: illustrative, not literal API payload structure.</p>
           </div>
         </Reveal>
       </section>
@@ -117,13 +117,13 @@ export default function MetaCapiPage() {
               <p>
                 Meta scores every server event on how confidently it could
                 match it to a real Facebook or Instagram account, based on
-                the customer parameters included — hashed email, phone,
+                the customer parameters included: hashed email, phone,
                 external ID, click ID, IP address and user agent. More
                 matching parameters, more confidence, higher score.
               </p>
               <p>
-                It&apos;s useful as a diagnostic — a score that drops
-                suddenly usually means a field stopped being sent — but
+                It&apos;s useful as a diagnostic: a score that drops
+                suddenly usually means a field stopped being sent, but
                 chasing a higher number for its own sake isn&apos;t the
                 point. A checkout that legitimately collects only an email
                 will never hit the same score as one that also has a phone
@@ -187,12 +187,12 @@ export default function MetaCapiPage() {
           <p className="mt-4 text-white/60 leading-relaxed text-sm max-w-2xl">
             CAPI doesn&apos;t bypass a customer&apos;s tracking choice. If
             consent hasn&apos;t been given, the corresponding server event
-            shouldn&apos;t be sent either — the API changes how data travels,
+            shouldn&apos;t be sent either. The API changes how data travels,
             not whether the customer&apos;s decision applies.
           </p>
           <p className="mt-4 text-white/60 leading-relaxed text-sm max-w-2xl">
             Running Google Ads as well? Google uses its own conversion setup
-            rather than Meta&apos;s event ID — see{" "}
+            rather than Meta&apos;s event ID. See{" "}
             <Link href="/google-ads-conversion-tracking-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               Google Ads conversion tracking for Shopify
             </Link>
@@ -249,7 +249,7 @@ export default function MetaCapiPage() {
           <h2 className="text-2xl md:text-3xl font-extrabold">Get server-side events set up properly</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             Connect your store and Meta account to send deduplicated,
-            well-matched purchase events — then check Event Match Quality
+            well-matched purchase events, then check Event Match Quality
             and duplicate rates in Meta Events Manager, where Meta reports
             them.
           </p>

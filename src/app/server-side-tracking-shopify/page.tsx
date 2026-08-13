@@ -10,7 +10,7 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "What is server-side tracking for Shopify?",
-    a: "Sending purchase and other conversion events to Meta and Google directly from a server, alongside what the browser reports — so events blocked or dropped client-side still arrive.",
+    a: "Sending purchase and other conversion events to Meta and Google directly from a server, alongside what the browser reports, so events blocked or dropped client-side still arrive.",
   },
   {
     q: "Does server-side tracking replace the Meta Pixel?",
@@ -18,7 +18,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Does server-side tracking get around consent requirements?",
-    a: "No. Server-side events still depend on the customer having consented to tracking and on having enough identifying data — an email or phone number, for example — to match the event. It closes a technical gap, not a legal one.",
+    a: "No. Server-side events still depend on the customer having consented to tracking and on having enough identifying data (an email or phone number, for example) to match the event. It closes a technical gap, not a legal one.",
   },
   {
     q: "Will this fix ad blockers entirely?",
@@ -69,7 +69,7 @@ export default function ServerSideTrackingPage() {
             <p>
               A standard Meta Pixel or Google tag fires from the customer&apos;s
               browser at checkout. That works fine until something between
-              the browser and the ad platform breaks the connection —
+              the browser and the ad platform breaks the connection:
               Safari&apos;s Intelligent Tracking Prevention trimming cookie
               lifespans, an ad blocker stripping the script outright, a
               customer closing the tab a second early, or a network request
@@ -79,8 +79,8 @@ export default function ServerSideTrackingPage() {
               None of these are rare edge cases anymore. On iOS Safari in
               particular, a meaningful share of purchase events never reach
               the ad platform at all, which means the platform under-reports
-              conversions and — because it thinks the campaign performed
-              worse than it did — can end up optimising away from audiences
+              conversions. Because it thinks the campaign performed worse
+              than it did, it can end up optimising away from audiences
               that were actually converting.
             </p>
           </div>
@@ -112,7 +112,7 @@ export default function ServerSideTrackingPage() {
               </div>
             </div>
           </div>
-          <p className="mt-3 text-xs text-white/35">Simplified — illustrative, not a literal network diagram.</p>
+          <p className="mt-3 text-xs text-white/35">Simplified: illustrative, not a literal network diagram.</p>
         </Reveal>
 
         <Reveal delay={80} className="mt-6">
@@ -126,7 +126,7 @@ export default function ServerSideTrackingPage() {
                 </div>
               ))}
             </div>
-            <p className="mt-4 text-xs text-white/35">Conceptual — the actual sequence per order depends on which events your store and ad accounts send.</p>
+            <p className="mt-4 text-xs text-white/35">Conceptual: the actual sequence per order depends on which events your store and ad accounts send.</p>
           </div>
         </Reveal>
       </section>
@@ -145,8 +145,8 @@ export default function ServerSideTrackingPage() {
                 <div>
                   <p className="font-semibold text-white text-sm">Event matching</p>
                   <p className="mt-1.5 text-sm text-white/55 leading-relaxed">
-                    Each server event carries identifiers — email, phone, or an
-                    internal click ID — that Meta or Google can match to a
+                    Each server event carries identifiers (email, phone, or an
+                    internal click ID) that Meta or Google can match to a
                     known user, even without a cookie. Match quality depends
                     entirely on what identifiers are available and hashed
                     correctly; a server event with no usable identifiers
@@ -182,7 +182,7 @@ export default function ServerSideTrackingPage() {
                     Because server events are built from Shopify order data
                     rather than the raw value the browser captured at
                     checkout, purchase values can be reconciled against
-                    discount codes and currency conversion from the start —
+                    discount codes and currency conversion from the start,
                     and against later refunds or order updates when the
                     integration sends the corresponding adjustments.
                   </p>
@@ -201,7 +201,7 @@ export default function ServerSideTrackingPage() {
             Server-side tracking is a different transport, not a way around
             consent requirements. If a customer declines tracking consent,
             that choice still has to be respected in what gets sent
-            server-side — the data just travels a more reliable route once
+            server-side. The data just travels a more reliable route once
             consent is given.
           </p>
         </Reveal>
@@ -235,7 +235,7 @@ export default function ServerSideTrackingPage() {
             <h2 className="text-xl md:text-2xl font-extrabold">What this doesn&apos;t solve</h2>
             <p className="mt-4 text-white/60 leading-relaxed text-sm">
               Server-side tracking recovers events that browser tracking
-              would have missed — it doesn&apos;t make tracking complete.
+              would have missed. It doesn&apos;t make tracking complete.
               Customers who decline consent are still excluded, as they
               should be. Identity matching still depends on the customer
               providing an email or phone number at checkout. And no method,
@@ -290,7 +290,7 @@ export default function ServerSideTrackingPage() {
           <h2 className="text-2xl md:text-3xl font-extrabold">Check what your current setup is missing</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             Connect your Shopify store and see which purchase events are
-            currently making it to Meta and Google — and which aren&apos;t.
+            currently making it to Meta and Google, and which aren&apos;t.
           </p>
           <ProductCTA className="mt-8 justify-center" />
         </Reveal>

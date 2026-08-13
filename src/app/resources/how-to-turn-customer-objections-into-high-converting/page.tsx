@@ -188,7 +188,7 @@ export default function Page() {
 
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold">Not sure the offer is the problem?</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold">Different stages need different objections</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             If customers keep asking the same questions before buying, send us an inquiry. Those questions may be some of your strongest next Meta creative ideas.
           </p>

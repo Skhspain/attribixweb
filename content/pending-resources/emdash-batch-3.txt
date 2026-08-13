@@ -1,0 +1,14 @@
+src/app/resources/google-ads-not-tracking-shopify-purchases/page.tsx
+src/app/resources/meta-attribution-window-roas/page.tsx
+src/app/resources/why-shopify-meta-sales-dont-match/page.tsx
+src/app/resources/google-merchant-center-product-disapproved/page.tsx
+src/app/resources/when-to-scale-ad-budget/page.tsx
+src/app/resources/when-to-hire-a-marketing-agency/page.tsx
+src/app/resources/why-meta-ads-work-one-week-fail-next/page.tsx
+src/app/resources/meta-ads-optimize-add-to-cart-or-purchase/page.tsx
+src/app/resources/meta-ads-shows-sales-shopify-no-orders/layout.tsx
+src/app/resources/why-winning-meta-creatives-stop-working/page.tsx
+src/app/resources/how-many-meta-ads-test-at-once/layout.tsx
+src/app/resources/how-much-data-does-meta-ads-need/page.tsx
+src/app/resources/performance-max-roas-dropped/layout.tsx
+src/app/resources/shopify-add-to-cart-no-purchases/layout.tsx

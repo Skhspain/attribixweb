@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.attribix.app/server-side-tracking-shopify" },
   openGraph: {
     title: "Server-Side Tracking for Shopify | Attribix",
-    description: "How server-side conversion tracking works for Shopify, Meta and Google Ads — and its real limits.",
+    description: "How server-side conversion tracking works for Shopify, Meta and Google Ads, and its real limits.",
     url: "https://www.attribix.app/server-side-tracking-shopify",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Attribix" }],
   },

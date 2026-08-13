@@ -7,6 +7,7 @@ import Eyebrow from "@/components/marketing/Eyebrow";
 import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import { ManagedServicesCTA } from "@/components/marketing/CTAGroup";
 import FAQList from "@/components/marketing/FAQList";
+import { LastReviewed, OfficialSources } from "@/components/marketing/ArticleTrust";
 
 const FAQ_ITEMS = [
   {
@@ -39,7 +40,7 @@ const ARTICLE_JSON_LD = {
   headline: "Should You Import GA4 Purchases Into Google Ads on Shopify?",
   description: "Native conversion tracking vs GA4 imports, and why running both as primary causes double-counting.",
   datePublished: "2026-08-11",
-  dateModified: "2026-08-11",
+  dateModified: "2026-08-12",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
   publisher: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app", logo: { "@type": "ImageObject", url: "https://www.attribix.app/assets/logo.svg" } },
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.attribix.app/resources/import-ga4-conversions-google-ads-shopify" },
@@ -147,6 +148,19 @@ export default function Page() {
             </p>
           </Reveal>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4">
+        <Reveal>
+          <div className="space-y-2 border-t border-white/10 pt-6">
+            <OfficialSources
+              sources={[
+                { label: "Import conversions from Google Analytics", href: "https://support.google.com/google-ads/answer/2375435" },
+              ]}
+            />
+            <LastReviewed date="August 12, 2026" />
+          </div>
+        </Reveal>
       </section>
 
       <section className="mx-auto max-w-3xl px-4 py-14">

@@ -1,0 +1,303 @@
+[
+  {
+    "slug": "good-google-ads-conversion-rate-ecommerce",
+    "title": "What Is a Good Google Ads Conversion Rate for Ecommerce?",
+    "desc": "A \"good\" Google Ads conversion rate is the rate that produces profitable customers at the traffic cost you are paying.",
+    "category": "google-ads",
+    "num": 48
+  },
+  {
+    "slug": "good-google-ads-ctr-ecommerce",
+    "title": "What Is a Good Google Ads CTR for Ecommerce?",
+    "desc": "CTR tells you how often an impression becomes a click.",
+    "category": "google-ads",
+    "num": 49
+  },
+  {
+    "slug": "google-ads-cpc-suddenly-increased",
+    "title": "Why Your Google Ads CPC Suddenly Increased",
+    "desc": "A sudden CPC increase is an auction symptom.",
+    "category": "google-ads",
+    "num": 50
+  },
+  {
+    "slug": "google-ads-search-impression-share-explained",
+    "title": "Google Ads Search Impression Share Explained for Ecommerce",
+    "desc": "Search impression share estimates how often your ads appeared compared with the number of times Google believed they were eligible to appear.",
+    "category": "google-ads",
+    "num": 51
+  },
+  {
+    "slug": "lost-impression-share-budget-increase",
+    "title": "Lost Impression Share Due to Budget: Should You Increase Spend?",
+    "desc": "\"Limited by budget\" can feel like Google is telling you to spend more.",
+    "category": "google-ads",
+    "num": 52
+  },
+  {
+    "slug": "lost-impression-share-rank-google-ads",
+    "title": "Lost Impression Share Due to Rank: What Should You Fix?",
+    "desc": "When Google reports lost impression share due to rank, your campaign was eligible for searches but did not have enough Ad Rank to win all of the impressions.",
+    "category": "google-ads",
+    "num": 53
+  },
+  {
+    "slug": "broad-match-smart-bidding-ecommerce",
+    "title": "Should Ecommerce Stores Use Broad Match With Smart Bidding?",
+    "desc": "Broad match with automated bidding can discover valuable searches you would never build manually.",
+    "category": "google-ads",
+    "num": 54
+  },
+  {
+    "slug": "how-many-keywords-google-ads-campaign",
+    "title": "How Many Keywords Should a Google Ads Campaign Have?",
+    "desc": "The correct number of keywords is the number needed to cover meaningful search intent without creating a structure you cannot manage.",
+    "category": "google-ads",
+    "num": 55
+  },
+  {
+    "slug": "negative-keywords-ecommerce-google-ads",
+    "title": "Google Ads Negative Keywords for Ecommerce: What to Look For",
+    "desc": "Negative keywords stop Google from showing ads for searches you deliberately do not want.",
+    "category": "google-ads",
+    "num": 56
+  },
+  {
+    "slug": "google-ads-spend-increases-no-more-sales",
+    "title": "Why Google Ads Spend Increases Without More Sales",
+    "desc": "More Google spend does not automatically create proportionally more demand.",
+    "category": "google-ads",
+    "num": 57
+  },
+  {
+    "slug": "search-campaign-vs-performance-max-ecommerce",
+    "title": "Google Ads Search Campaign vs Performance Max for Ecommerce",
+    "desc": "Search campaigns and Performance Max solve different parts of Google advertising.",
+    "category": "google-ads",
+    "num": 58
+  },
+  {
+    "slug": "run-search-ads-with-performance-max",
+    "title": "Should You Run Search Ads if Performance Max Is Already Running?",
+    "desc": "Yes, Search can still have a clear role even when Performance Max is active.",
+    "category": "google-ads",
+    "num": 59
+  },
+  {
+    "slug": "google-ads-exact-match-not-exact",
+    "title": "Google Ads Exact Match Isn't Really Exact: What Ecommerce Advertisers Should Know",
+    "desc": "An exact-match keyword no longer means your ad can appear only when someone types precisely the same characters.",
+    "category": "google-ads",
+    "num": 60
+  },
+  {
+    "slug": "separate-brand-traffic-performance-max",
+    "title": "Should You Separate Brand Traffic From Performance Max?",
+    "desc": "Brand traffic can make Performance Max look more efficient than its true acquisition impact.",
+    "category": "google-ads",
+    "num": 61
+  },
+  {
+    "slug": "performance-max-brand-revenue",
+    "title": "How Much of Performance Max Revenue Comes From Brand Searches?",
+    "desc": "There is no universal percentage.",
+    "category": "google-ads",
+    "num": 62
+  },
+  {
+    "slug": "how-to-see-what-performance-max-is-doing",
+    "title": "How to Tell What Performance Max Is Actually Doing",
+    "desc": "Performance Max is deliberately more automated than traditional Search, which means advertisers often feel they are funding a black box.",
+    "category": "google-ads",
+    "num": 63
+  },
+  {
+    "slug": "performance-max-vs-standard-shopping",
+    "title": "Performance Max vs Standard Shopping: Which Is Better?",
+    "desc": "Performance Max offers more automation and access to broader Google inventory.",
+    "category": "google-ads",
+    "num": 64
+  },
+  {
+    "slug": "all-products-one-performance-max-campaign",
+    "title": "Should You Put All Products in One Performance Max Campaign?",
+    "desc": "Putting every product into one PMax campaign is simple.",
+    "category": "google-ads",
+    "num": 65
+  },
+  {
+    "slug": "when-to-split-performance-max-campaigns",
+    "title": "When Should You Split Products Into Multiple PMax Campaigns?",
+    "desc": "Split PMax campaigns when separate control creates a business advantage.",
+    "category": "google-ads",
+    "num": 66
+  },
+  {
+    "slug": "best-sellers-vs-low-sellers-google-shopping-structure",
+    "title": "Best Sellers vs Low Sellers: How Should You Structure Google Shopping?",
+    "desc": "Best sellers deserve attention because they have proven demand.",
+    "category": "google-ads",
+    "num": 67
+  },
+  {
+    "slug": "exclude-poor-performing-products-performance-max",
+    "title": "Should You Exclude Poor-Performing Products From Performance Max?",
+    "desc": "Sometimes.",
+    "category": "google-ads",
+    "num": 68
+  },
+  {
+    "slug": "google-shopping-product-feed-titles",
+    "title": "Product Feed Titles: How Much Do They Matter for Google Shopping?",
+    "desc": "Product titles are one of the clearest signals Google has for understanding what you sell.",
+    "category": "google-ads",
+    "num": 69
+  },
+  {
+    "slug": "google-shopping-feed-optimization",
+    "title": "Google Shopping Feed Optimization: What Actually Matters?",
+    "desc": "Feed optimization is often sold as a bag of hacks.",
+    "category": "google-ads",
+    "num": 70
+  },
+  {
+    "slug": "google-shopping-products-no-impressions",
+    "title": "Why Some Shopify Products Never Get Google Shopping Impressions",
+    "desc": "A product can be approved in Merchant Center and still receive almost no Shopping impressions.",
+    "category": "google-ads",
+    "num": 71
+  },
+  {
+    "slug": "google-shopping-high-roas-low-volume",
+    "title": "Google Shopping Has High ROAS but Low Volume: Should You Scale?",
+    "desc": "A high ROAS at low spend is encouraging, but it does not prove the same efficiency exists at higher volume.",
+    "category": "google-ads",
+    "num": 72
+  },
+  {
+    "slug": "performance-max-spending-mostly-one-product",
+    "title": "Performance Max Spending Mostly on One Product: Is That a Problem?",
+    "desc": "Not necessarily.",
+    "category": "google-ads",
+    "num": 73
+  },
+  {
+    "slug": "why-performance-max-stops-spending",
+    "title": "Why Performance Max Stops Spending",
+    "desc": "When Performance Max suddenly spends less, do not start by increasing the budget.",
+    "category": "google-ads",
+    "num": 74
+  },
+  {
+    "slug": "performance-max-brand-search-overspending",
+    "title": "Performance Max Is Overspending on Branded Searches: What to Do",
+    "desc": "If PMax reports spectacular results because it captures people already searching your brand, the campaign can look more incremental than it really is.",
+    "category": "google-ads",
+    "num": 75
+  },
+  {
+    "slug": "how-long-run-performance-max-before-judging",
+    "title": "How Long Should a New Performance Max Campaign Run Before You Judge It?",
+    "desc": "A new PMax campaign needs enough time and conversions to show a pattern, but there is no responsible answer such as \"always wait six weeks.\"",
+    "category": "google-ads",
+    "num": 76
+  },
+  {
+    "slug": "performance-max-learning-period-avoid-changing",
+    "title": "Performance Max Learning Period: What Should You Avoid Changing?",
+    "desc": "The fastest way to make a new automated campaign impossible to understand is to change several important inputs every few days.",
+    "category": "google-ads",
+    "num": 77
+  },
+  {
+    "slug": "performance-max-vs-meta-ads-new-product-launch",
+    "title": "Performance Max vs Meta Ads for New Product Launches",
+    "desc": "A new product with no search demand behaves very differently from a new product in an established category.",
+    "category": "google-ads",
+    "num": 78
+  },
+  {
+    "slug": "google-shopping-wrong-price",
+    "title": "Why Google Shopping Shows the Wrong Price",
+    "desc": "When a Shopping ad shows a different price from Shopify, treat it as both a conversion problem and a feed-quality problem.",
+    "category": "google-ads",
+    "num": 79
+  },
+  {
+    "slug": "merchant-center-feed-issues-hurt-performance",
+    "title": "Merchant Center Feed Issues That Quietly Hurt Performance",
+    "desc": "Not every Merchant Center problem produces a dramatic red \"account suspended\" warning.",
+    "category": "google-ads",
+    "num": 80
+  },
+  {
+    "slug": "good-shopify-conversion-rate",
+    "title": "What Is a Good Shopify Conversion Rate?",
+    "desc": "A good Shopify conversion rate is one that supports profitable customer acquisition for your product, traffic mix and margins.",
+    "category": "cro-landing-pages",
+    "num": 81
+  },
+  {
+    "slug": "improve-shopify-conversion-rate",
+    "title": "How to Improve Shopify Conversion Rate Without Increasing Ad Spend",
+    "desc": "If traffic stays the same and conversion rate improves, revenue can grow without buying another click.",
+    "category": "cro-landing-pages",
+    "num": 82
+  },
+  {
+    "slug": "shopify-product-page-not-converting",
+    "title": "Shopify Product Page Not Converting: What to Check",
+    "desc": "A product page can fail even when the ad is doing its job.",
+    "category": "cro-landing-pages",
+    "num": 83
+  },
+  {
+    "slug": "shopify-product-page-above-the-fold",
+    "title": "What Should Be Above the Fold on a Shopify Product Page?",
+    "desc": "The first screen of a product page should help a customer answer one question: \"Is this worth looking at?\" It does not need to contain every sales argument on the page.",
+    "category": "cro-landing-pages",
+    "num": 84
+  },
+  {
+    "slug": "reviews-near-top-product-page",
+    "title": "Should Shopify Product Pages Show Reviews Near the Top?",
+    "desc": "For many products, showing a review summary near the top is useful because it answers an immediate trust question: \"Have other people bought this, and were they happy?\" That does not mean the full review feed belongs above the Add to Cart button.",
+    "category": "cro-landing-pages",
+    "num": 85
+  },
+  {
+    "slug": "does-free-shipping-increase-conversion-rate",
+    "title": "Does Free Shipping Increase Shopify Conversion Rate?",
+    "desc": "Free shipping can increase conversion because it removes one of ecommerce's most disliked surprises.",
+    "category": "cro-landing-pages",
+    "num": 86
+  },
+  {
+    "slug": "free-shipping-vs-discount-conversion",
+    "title": "Free Shipping vs Discount: Which Converts Better?",
+    "desc": "A discount reduces the price of the product.",
+    "category": "cro-landing-pages",
+    "num": 87
+  },
+  {
+    "slug": "shopify-page-speed-conversion-rate",
+    "title": "How Much Does Page Speed Affect Shopify Sales?",
+    "desc": "Page speed matters because every extra wait gives a visitor another chance to leave, especially on mobile and paid traffic.",
+    "category": "cro-landing-pages",
+    "num": 88
+  },
+  {
+    "slug": "shopify-mobile-conversion-rate-lower-than-desktop",
+    "title": "Shopify Mobile Conversion Rate Lower Than Desktop: Is That Normal?",
+    "desc": "It is common for mobile and desktop conversion rates to differ, but \"mobile is always lower\" is not a useful excuse for a poor mobile store.",
+    "category": "cro-landing-pages",
+    "num": 89
+  },
+  {
+    "slug": "shopify-mobile-traffic-not-converting",
+    "title": "Why Shopify Mobile Traffic Doesn't Convert",
+    "desc": "When mobile traffic does not convert, start by separating traffic quality from mobile experience.",
+    "category": "cro-landing-pages",
+    "num": 90
+  }
+]

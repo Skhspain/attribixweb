@@ -10,8 +10,8 @@ import { ManagedServicesCTA } from "@/components/marketing/CTAGroup";
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "When Is a Shopify Store Ready to Advertise Internationally?",
-  "description": "A store is ready for international ads when the business can deliver an experience that is competitive enough for the target market.",
+  "headline": "Email Open Rate Is High but Sales Are Low: What Does That Mean?",
+  "description": "A high open rate tells you that the message was opened or at least recorded as opened.",
   "datePublished": "2026-08-12",
   "dateModified": "2026-08-12",
   "author": {
@@ -30,7 +30,7 @@ const ARTICLE_JSON_LD = {
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.attribix.app/resources/when-is-a-shopify-store-ready-to-advertise"
+    "@id": "https://www.attribix.app/resources/high-email-open-rate-low-sales"
   }
 };
 
@@ -53,8 +53,8 @@ const BREADCRUMB_JSON_LD = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "When Is a Shopify Store Ready to Advertise...",
-      "item": "https://www.attribix.app/resources/when-is-a-shopify-store-ready-to-advertise"
+      "name": "Email Open Rate Is High but Sales Are Low",
+      "item": "https://www.attribix.app/resources/high-email-open-rate-low-sales"
     }
   ]
 };
@@ -67,17 +67,17 @@ export default function Page() {
 
       <section className="mx-auto max-w-3xl px-4 pt-24 pb-10 md:pt-32">
         <Reveal>
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "When Is a Shopify Store Ready to Advertise..." }]} />
-          <Eyebrow>Shopify Growth</Eyebrow>
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Email Open Rate Is High but Sales Are Low" }]} />
+          <Eyebrow>Email & Retention</Eyebrow>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
-            When Is a Shopify Store Ready to Advertise Internationally?
+            Email Open Rate Is High but Sales Are Low: What Does That Mean?
           </h1>
           <div className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed space-y-3">
             <p className="text-white/60 leading-relaxed text-sm">
-              A store is ready for international ads when the business can deliver an experience that is competitive enough for the target market.
+              A high open rate tells you that the message was opened or at least recorded as opened. It does not tell you that the content created purchase intent.
             </p>
             <p className="text-white/60 leading-relaxed text-sm">
-              Advertising access is the easy part.
+              Privacy-related changes also make open data less reliable than it once was, so treat the metric carefully.
             </p>
           </div>
         </Reveal>
@@ -85,20 +85,33 @@ export default function Page() {
 
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Domestic fundamentals should work</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Look at the next step</h2>
+          <div className="space-y-4">
+
+          </div>
+        </Reveal>
+      </section>
+
+      <section className="relative py-10">
+        <div className="absolute inset-0 -z-10 bg-black/15" />
+        <div className="mx-auto max-w-3xl px-4">
+          <Reveal>
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">High opens + low clicks</h2>
+            <div className="space-y-4 max-w-2xl">
+            <p className="text-white/60 leading-relaxed text-sm">
+              The subject line earned attention, but the email content or offer did not create enough reason to act.
+            </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4 py-10">
+        <Reveal>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">High clicks + low sales</h2>
           <div className="space-y-4">
           <p className="text-white/60 leading-relaxed text-sm">
-            You do not need to dominate your home country, but there should be evidence that:
-          </p>
-          <ul className="list-disc list-inside space-y-1.5 marker:text-cyan-400">
-            <li>customers want the product</li>
-            <li>the site converts</li>
-            <li>fulfilment works</li>
-            <li>margins support acquisition</li>
-            <li>tracking is reliable</li>
-          </ul>
-          <p className="text-white/60 leading-relaxed text-sm">
-            International expansion does not repair weak fundamentals.
+            Follow customers into the website. Product, price, landing page or checkout may be the problem.
           </p>
           </div>
         </Reveal>
@@ -108,19 +121,11 @@ export default function Page() {
         <div className="absolute inset-0 -z-10 bg-black/15" />
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>
-            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Logistics must be viable</h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Low tracked clicks + Shopify sales</h2>
             <div className="space-y-4 max-w-2xl">
             <p className="text-white/60 leading-relaxed text-sm">
-              Know:
+              Attribution or direct-return behaviour may mean the platform is not seeing the full path.
             </p>
-            <ul className="list-disc list-inside space-y-1.5 marker:text-cyan-400">
-              <li>shipping cost</li>
-              <li>delivery time</li>
-              <li>returns</li>
-              <li>duties/taxes</li>
-              <li>prohibited/restricted products</li>
-              <li>customer service process</li>
-            </ul>
             </div>
           </Reveal>
         </div>
@@ -128,10 +133,10 @@ export default function Page() {
 
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Checkout should support the market</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Avoid subject-line clickbait</h2>
           <div className="space-y-4">
           <p className="text-white/60 leading-relaxed text-sm">
-            Local currency and appropriate payment methods can matter.
+            A sensational subject can inflate opens and create disappointment after the email loads.
           </p>
           </div>
         </Reveal>
@@ -141,42 +146,35 @@ export default function Page() {
         <div className="absolute inset-0 -z-10 bg-black/15" />
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>
-            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">The store needs measurement by market</h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Measure revenue per recipient and downstream conversion</h2>
             <div className="space-y-4 max-w-2xl">
             <p className="text-white/60 leading-relaxed text-sm">
-              Separate revenue, CPA, AOV and contribution by country. A blended international ROAS can hide weak markets.
+              Those metrics connect communication more closely to commercial performance than open rate alone.
+            </p>
+            <p className="text-white/60 leading-relaxed text-sm">
+              Opens are an early diagnostic signal. Sales happen much later in the funnel.
             </p>
             </div>
           </Reveal>
         </div>
-      </section>
-
-      <section className="mx-auto max-w-3xl px-4 py-10">
-        <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Start with evidence</h2>
-          <div className="space-y-4">
-          <p className="text-white/60 leading-relaxed text-sm">
-            Organic orders, customer inquiries, website traffic and search demand can point toward the strongest first expansion markets.
-          </p>
-          </div>
-        </Reveal>
       </section>
 
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/resources/how-to-choose-which-country-to-expand-ecommerce-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How to Choose Which Country to Expand Ecommerce Ads Into Next</Link></li>
-            <li><Link href="/resources/should-you-run-different-meta-creatives-for-different" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Should You Run Different Meta Creatives for Different Countries?</Link></li>
+            <li><Link href="/resources/good-email-click-rate-but-no-sales-what-to-check" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Good Email Click Rate but No Sales: What to Check</Link></li>
+            <li><Link href="/resources/are-you-sending-too-many-marketing-emails" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Are You Sending Too Many Marketing Emails?</Link></li>
+            <li><Link href="/resources/how-to-measure-email-profitability-instead-of-just" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How to Measure Email Profitability Instead of Just Revenue</Link></li>
           </ul>
         </Reveal>
       </section>
 
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold">Need a clearer read on the funnel?</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold">Not sure the flow is pulling its weight?</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
-            If your Shopify store is performing domestically and you are considering international expansion, send us an inquiry. We can help assess whether the marketing economics are ready.
+            If your email engagement looks healthy but Shopify revenue does not follow, send us an inquiry. We can help diagnose the gap across channels.
           </p>
           <ManagedServicesCTA className="mt-8 justify-center" />
         </Reveal>

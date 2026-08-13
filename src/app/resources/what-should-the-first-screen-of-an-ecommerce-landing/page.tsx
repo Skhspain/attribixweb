@@ -160,7 +160,7 @@ export default function Page() {
         <Reveal>
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/resources/does-removing-navigation-improve-landing-page" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Does Removing Navigation Improve Landing Page Conversion Rate?</Link></li>
+            <li><Link href="/resources/should-ecommerce-landing-pages-have-navigation" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Should Ecommerce Landing Pages Have Navigation?</Link></li>
             <li><Link href="/resources/how-many-ctas-should-an-ecommerce-landing-page-have" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How Many CTAs Should an Ecommerce Landing Page Have?</Link></li>
             <li><Link href="/resources/product-page-vs-advertorial-which-works-better-for" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Product Page vs Advertorial: Which Works Better for Meta Ads?</Link></li>
           </ul>

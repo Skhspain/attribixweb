@@ -6,6 +6,7 @@ import { Reveal } from "@/components/marketing/Reveal";
 import Eyebrow from "@/components/marketing/Eyebrow";
 import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import { ManagedServicesCTA } from "@/components/marketing/CTAGroup";
+import { LastReviewed, OfficialSources } from "@/components/marketing/ArticleTrust";
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
@@ -14,7 +15,7 @@ const ARTICLE_JSON_LD = {
   description:
     "Where automated sales campaigns tend to work well, what they don't solve, and when more manual control still matters.",
   datePublished: "2026-08-11",
-  dateModified: "2026-08-11",
+  dateModified: "2026-08-12",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
   publisher: {
     "@type": "Organization",
@@ -67,6 +68,14 @@ export default function Page() {
             The right question is not whether Advantage+ is good. It is
             whether the campaign gives Meta strong enough inputs to make
             good decisions for your particular store.
+          </p>
+          <p className="mt-4 text-sm text-white/45">
+            A naming note: Meta renamed &quot;Advantage+ Shopping
+            Campaigns&quot; to &quot;Advantage+ Sales Campaigns&quot; in
+            2025, and it now covers more than pure ecommerce sales. Most
+            people still search and refer to it by the older name, so
+            we&apos;ve kept it here, but expect to see &quot;Advantage+
+            Sales Campaign&quot; inside Meta&apos;s own interface.
           </p>
         </Reveal>
       </section>
@@ -157,6 +166,20 @@ export default function Page() {
             </p>
           </Reveal>
         </div>
+      </section>
+
+      {/* TRUST */}
+      <section className="mx-auto max-w-3xl px-4">
+        <Reveal>
+          <div className="space-y-2 border-t border-white/10 pt-6">
+            <OfficialSources
+              sources={[
+                { label: "About Advantage+ sales campaigns", href: "https://www.facebook.com/business/help/1362234537597370" },
+              ]}
+            />
+            <LastReviewed date="August 12, 2026" />
+          </div>
+        </Reveal>
       </section>
 
       {/* RELATED */}

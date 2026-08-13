@@ -1,0 +1,16 @@
+src/app/resources/what-does-a-meta-ads-agency-do/page.tsx
+src/app/resources/google-ads-conversions-dropped-suddenly/page.tsx
+src/app/resources/meta-ads-shows-sales-shopify-no-orders/page.tsx
+src/app/resources/shopify-marketing-agency-vs-general-agency/page.tsx
+src/app/resources/google-shopping-clicks-no-sales/page.tsx
+src/app/resources/true-roas-shopify/page.tsx
+src/app/resources/campaign-budget-vs-ad-set-budget-meta/page.tsx
+src/app/resources/google-ads-search-terms-ecommerce/page.tsx
+src/app/resources/google-ads-low-quality-traffic/layout.tsx
+src/app/resources/meta-lead-ads-vs-website-conversions/page.tsx
+src/app/resources/google-ads-conversion-value-wrong-shopify/layout.tsx
+src/app/resources/google-ads-duplicate-conversions-shopify/layout.tsx
+src/app/resources/meta-ads-20-percent-budget-rule/page.tsx
+src/app/resources/meta-ads-broad-vs-interest-targeting/page.tsx
+src/app/resources/what-does-a-google-ads-agency-do/layout.tsx
+src/app/resources/what-makes-good-meta-ad-ecommerce/page.tsx

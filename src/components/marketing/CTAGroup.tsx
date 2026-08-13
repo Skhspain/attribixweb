@@ -31,6 +31,30 @@ export function ManagedServicesCTA({
   );
 }
 
+/**
+ * Single, low-pressure CTA for early/informational-intent articles
+ * (definitional, "what is X", format-comparison pieces). Do not pair
+ * with a second button — that's the aggressive two-button pattern this
+ * exists to avoid on pages where the reader isn't ready for it yet.
+ */
+export function SoftInquiryCTA({
+  className,
+  href = "/ad-management/inquiry",
+  label = "Send inquiry",
+}: {
+  className?: string;
+  href?: string;
+  label?: string;
+}) {
+  return (
+    <div className={cx("flex flex-wrap items-center gap-3", className)}>
+      <Link href={href} className={primaryClass}>
+        {label}
+      </Link>
+    </div>
+  );
+}
+
 export function ProductCTA({
   className,
   trialHref = "/signup",

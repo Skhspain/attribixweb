@@ -83,6 +83,32 @@ export default function Page() {
         </Reveal>
       </section>
 
+      <section className="relative py-10">
+        <div className="absolute inset-0 -z-10 bg-black/15" />
+        <div className="mx-auto max-w-3xl px-4">
+          <Reveal>
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">The right destination depends on the channel and intent, not a fixed rule</h2>
+            <div className="space-y-4 max-w-2xl">
+            <p className="text-white/60 leading-relaxed text-sm">
+              Google Search traffic already carries explicit intent (the
+              customer typed the query), so a normal product page often
+              performs fine. Cold Meta or influencer traffic tends to need
+              more of the campaign&apos;s specific angle carried through,
+              which is where a dedicated landing page earns its keep more
+              often; see{" "}
+              <Link href="/resources/should-meta-ads-send-traffic-to-a-product-page-or" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                the Meta-specific version of this question
+              </Link>
+              . Email and direct traffic usually already know the brand, so
+              the normal product or collection page is rarely the
+              bottleneck for them. Treat this as a channel-by-channel
+              decision, not a single site-wide answer.
+            </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Product page advantages</h2>

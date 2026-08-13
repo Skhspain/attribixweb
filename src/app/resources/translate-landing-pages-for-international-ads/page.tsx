@@ -151,7 +151,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/ad-landing-page-message-match-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/ad-to-landing-page-message-match" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How to match your ad message to your landing page
               </Link>
             </li>

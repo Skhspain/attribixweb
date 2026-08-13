@@ -157,14 +157,14 @@ export default function Page() {
           <ul className="space-y-2 text-sm">
             <li><Link href="/resources/video-watch-time-is-high-but-sales-are-low-what-does" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Video Watch Time Is High but Sales Are Low: What Does That Tell You?</Link></li>
             <li><Link href="/resources/why-your-best-performing-ad-may-not-be-your-best" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Why Your Best-Performing Ad May Not Be Your Best Creative</Link></li>
-            <li><Link href="/resources/how-to-build-an-ecommerce-creative-testing-system-that" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How to Build an Ecommerce Creative Testing System That Produces Useful Learnings</Link></li>
+            <li><Link href="/resources/ecommerce-creative-testing-system" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How to Build an Ecommerce Creative Testing System That Produces Useful Learnings</Link></li>
           </ul>
         </Reveal>
       </section>
 
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold">Not sure the offer is the problem?</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold">Don&apos;t optimize the first second in isolation</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             If your creative reports focus heavily on hook rates but nobody can connect them to Shopify sales, send us an inquiry. We can build a more useful creative measurement framework.
           </p>

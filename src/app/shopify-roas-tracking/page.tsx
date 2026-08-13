@@ -10,11 +10,11 @@ import FAQList from "@/components/marketing/FAQList";
 const FAQ_ITEMS = [
   {
     q: "What is ROAS?",
-    a: "Return on ad spend — revenue attributed to advertising divided by what you spent on it. On its own it's a ratio, not a profit figure.",
+    a: "Return on ad spend: revenue attributed to advertising divided by what you spent on it. On its own it's a ratio, not a profit figure.",
   },
   {
     q: "What is MER?",
-    a: "Marketing efficiency ratio — total store revenue divided by total ad spend across every channel, with no attribution model involved. It moves less than platform ROAS because it doesn't depend on who gets the credit.",
+    a: "Marketing efficiency ratio: total store revenue divided by total ad spend across every channel, with no attribution model involved. It moves less than platform ROAS because it doesn't depend on who gets the credit.",
   },
   {
     q: "What's the difference between MER and ROAS?",
@@ -22,15 +22,15 @@ const FAQ_ITEMS = [
   },
   {
     q: "Why doesn't my blended ROAS match Meta's or Google's reported ROAS?",
-    a: "Meta and Google each calculate ROAS only from the orders their own attribution model credits to them — and both platforms often claim credit for the same order, so their combined ROAS routinely overstates blended reality.",
+    a: "Meta and Google each calculate ROAS only from the orders their own attribution model credits to them, and both platforms often claim credit for the same order, so their combined ROAS routinely overstates blended reality.",
   },
   {
     q: "Is a higher ROAS always better?",
     a: "Not necessarily. A campaign can show a high ROAS on orders that would likely have happened anyway, while a lower-ROAS campaign might be reaching genuinely new customers. ROAS measures efficiency, not incrementality.",
   },
   {
-    q: "Which ROAS number should I actually trust — Meta's, Google's, or Shopify's?",
-    a: "None of them is \"wrong,\" and none is the full picture on its own. Platform ROAS tells you how a platform scores its own attributed orders. Blended ROAS across platforms is closer to reality but still inflated by cross-platform overlap. MER, built from total Shopify revenue against total spend, is the steadiest number when you need one figure to anchor a decision — use platform ROAS for campaign-level tactics, and MER or blended ROAS for the bigger picture.",
+    q: "Which ROAS number should I actually trust: Meta's, Google's, or Shopify's?",
+    a: "None of them is \"wrong,\" and none is the full picture on its own. Platform ROAS tells you how a platform scores its own attributed orders. Blended ROAS across platforms is closer to reality but still inflated by cross-platform overlap. MER, built from total Shopify revenue against total spend, is the steadiest number when you need one figure to anchor a decision. Use platform ROAS for campaign-level tactics, and MER or blended ROAS for the bigger picture.",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function ShopifyRoasPage() {
           <p className="mt-5 text-white/65 leading-relaxed">
             Return on ad spend, as reported inside Meta or Google, is revenue
             that platform attributed to itself divided by what you spent
-            there. It&apos;s a real number, calculated correctly — it just
+            there. It&apos;s a real number, calculated correctly. It just
             answers &ldquo;how did this platform&apos;s own attribution model
             score itself,&rdquo; not &ldquo;how much of my actual revenue
             came from this platform.&rdquo;
@@ -88,7 +88,7 @@ export default function ShopifyRoasPage() {
             <h2 className="text-2xl md:text-3xl font-extrabold">Adding platform ROAS together double-counts orders</h2>
             <p className="mt-5 text-white/65 leading-relaxed">
               A customer who saw a Meta ad, then searched and clicked a Google
-              ad, then bought — is a single order that both platforms may
+              ad, then bought. That&apos;s a single order that both platforms may
               independently claim inside their own attribution windows. Sum
               their reported revenue and you&apos;ve counted that order
               twice, sometimes more if email or affiliate tracking also
@@ -116,7 +116,7 @@ export default function ShopifyRoasPage() {
               businesses use total store revenue, some use only the revenue
               they attribute to advertising, and some exclude organic or
               repeat-customer revenue from the calculation entirely. None of
-              these is more &ldquo;correct&rdquo; than the others — the
+              these is more &ldquo;correct&rdquo; than the others. The
               actual requirement is picking one definition and keeping it
               consistent, so the number means the same thing from one month
               to the next.
@@ -125,8 +125,8 @@ export default function ShopifyRoasPage() {
               <strong className="text-white/85">MER</strong> (marketing
               efficiency ratio) is commonly calculated as total store revenue
               divided by total marketing spend, which sidesteps attribution
-              entirely. It&apos;s cruder — it can&apos;t tell you which
-              channel is working — but it can&apos;t be inflated by
+              entirely. It&apos;s cruder (it can&apos;t tell you which
+              channel is working) but it can&apos;t be inflated by
               double-counted attribution either, which makes it a useful
               sanity check against blended ROAS.
             </p>
@@ -169,13 +169,13 @@ export default function ShopifyRoasPage() {
             </div>
             <div className="flex justify-between py-2 text-white/60">
               <span>MER (total store revenue ÷ total marketing spend)</span>
-              <span className="text-white/85">varies — depends on total store revenue, not shown here</span>
+              <span className="text-white/85">varies: depends on total store revenue, not shown here</span>
             </div>
           </Reveal>
           <Reveal delay={160}>
             <p className="mt-5 text-sm text-white/45 max-w-2xl">
               The gap between the platforms&apos; combined claim and unique
-              Shopify revenue isn&apos;t fraud on either side — it&apos;s
+              Shopify revenue isn&apos;t fraud on either side. It&apos;s
               overlap, plus whatever refunds happened after the platforms had
               already logged their numbers. The overlap figure here is an
               estimate for illustration; the real number depends on how much
@@ -190,7 +190,7 @@ export default function ShopifyRoasPage() {
         <Reveal>
           <h2 className="text-xl md:text-2xl font-extrabold">Refunds, discounts, tax and shipping move the real number</h2>
           <p className="mt-4 text-white/60 leading-relaxed text-sm max-w-2xl">
-            Shopify revenue itself isn&apos;t a single obvious figure either —
+            Shopify revenue itself isn&apos;t a single obvious figure either:
             gross sales, net sales after discounts and refunds, and revenue
             including tax and shipping can each tell a different ROAS story
             from the same order data. We cover how that plays out on the{" "}
@@ -210,7 +210,7 @@ export default function ShopifyRoasPage() {
             <h2 className="text-xl md:text-2xl font-extrabold">Neither number proves the sale wouldn&apos;t have happened anyway</h2>
             <p className="mt-4 text-white/60 leading-relaxed text-sm max-w-2xl">
               Blended ROAS and MER are both efficiency ratios, not proof of
-              incrementality — a high ratio doesn&apos;t confirm that
+              incrementality. A high ratio doesn&apos;t confirm that
               advertising caused the sale rather than a customer who was
               going to buy regardless. Attribution data, at every level of
               this page, is a reconstruction based on the evidence
@@ -231,7 +231,7 @@ export default function ShopifyRoasPage() {
               figure alongside each platform&apos;s own reported number, so
               the gap between them is visible rather than something
               you&apos;d only notice by reconciling spreadsheets manually.
-              MER — total store revenue over total spend — is a separate
+              MER (total store revenue over total spend) is a separate
               calculation you can make from your Shopify and ad platform
               numbers directly.
             </p>

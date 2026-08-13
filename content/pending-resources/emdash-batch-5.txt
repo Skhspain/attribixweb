@@ -1,0 +1,16 @@
+src/app/resources/ad-platforms-report-more-revenue-than-shopify/page.tsx
+src/app/resources/why-is-meta-ads-cpm-high/page.tsx
+src/app/resources/percentage-ad-spend-vs-flat-fee/page.tsx
+src/app/resources/meta-event-match-quality-shopify/page.tsx
+src/app/resources/shopify-attribution-models/page.tsx
+src/app/resources/how-to-choose-a-meta-ads-agency/page.tsx
+src/app/resources/shopify-add-to-cart-no-purchases/page.tsx
+src/app/resources/what-does-a-meta-ads-agency-do/layout.tsx
+src/app/resources/how-to-tell-meta-ad-fatigue/layout.tsx
+src/app/resources/broad-vs-phrase-vs-exact-match-ecommerce/layout.tsx
+src/app/resources/good-meta-ad-metrics-but-poor-sales/page.tsx
+src/app/resources/google-brand-campaign-taking-credit-organic-sales/page.tsx
+src/app/resources/how-to-choose-a-meta-ads-agency/layout.tsx
+src/app/resources/meta-ads-performance-changes-after-budget-increase/page.tsx
+src/app/resources/should-you-retarget-website-visitors-meta-ads/page.tsx
+src/app/resources/when-to-hire-a-marketing-agency/layout.tsx

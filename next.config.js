@@ -5,6 +5,40 @@ const path = require("path");
 const nextConfig = {
   async redirects() {
     return [
+      // Resources slug cleanup (2026-08-12): replaced truncated,
+      // programmatically-cut URLs with short, intentional ones.
+      {
+        source: "/resources/when-is-a-shopify-store-ready-to-advertise",
+        destination: "/resources/shopify-ready-for-international-ads",
+        permanent: true,
+      },
+      {
+        source: "/resources/email-open-rate-is-high-but-sales-are-low-what-does",
+        destination: "/resources/high-email-open-rate-low-sales",
+        permanent: true,
+      },
+      {
+        source: "/resources/how-to-build-an-ecommerce-creative-testing-system-that",
+        destination: "/resources/ecommerce-creative-testing-system",
+        permanent: true,
+      },
+      // Cannibalization merges (2026-08-12): two pages answering the
+      // same search intent, merged into the stronger URL.
+      {
+        source: "/resources/ad-landing-page-message-match-ecommerce",
+        destination: "/resources/ad-to-landing-page-message-match",
+        permanent: true,
+      },
+      {
+        source: "/resources/does-removing-navigation-improve-landing-page",
+        destination: "/resources/should-ecommerce-landing-pages-have-navigation",
+        permanent: true,
+      },
+      {
+        source: "/resources/good-email-revenue-percentage-ecommerce",
+        destination: "/resources/how-much-revenue-should-email-marketing-generate-ecommerce",
+        permanent: true,
+      },
       {
         source: "/agency",
         destination: "/ad-management",

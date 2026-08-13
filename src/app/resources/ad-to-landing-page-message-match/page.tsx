@@ -11,7 +11,7 @@ const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Ad-to-Landing-Page Message Match: Why It Matters for Conversion Rate",
-  description: "Paid advertising creates an expectation before the visitor reaches your store. Why the landing page must confirm it, and how message mismatch wastes strong ads.",
+  description: "Paid advertising creates an expectation before the visitor reaches your store. Why the landing page must confirm it, and how to match claim, offer and visual across the two.",
   datePublished: "2026-08-12",
   dateModified: "2026-08-12",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
@@ -81,52 +81,85 @@ export default function Page() {
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               A creative can generate highly qualified traffic and still
               appear to &ldquo;not convert&rdquo; because the landing
-              experience becomes generic.
+              experience becomes generic. If CTR is strong and visitors
+              bounce immediately, compare the ad promise with the first page
+              screen before blaming targeting.
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* KEEP CHAIN INTACT */}
+      {/* MATCH CLAIM, OFFER, VISUAL */}
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Keep the chain intact</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What &quot;matching&quot; actually means</h2>
           <div className="space-y-4 text-white/60 leading-relaxed text-sm">
-            <p className="font-semibold text-white/80">
-              Search/ad message → Landing-page headline → Product/offer →
-              Proof → CTA
+            <p>
+              <span className="text-white/80 font-medium">Match the main claim.</span>{" "}
+              If the ad says &ldquo;Carry seven days of clothing in one
+              cabin bag,&rdquo; the landing page&apos;s first section should
+              reinforce packing capacity, not open with a generic company
+              slogan.
             </p>
             <p>
-              Each step should feel like the logical continuation of the
-              previous one.
+              <span className="text-white/80 font-medium">Match the offer.</span>{" "}
+              If the ad shows 20% off, free shipping or a $49 bundle, the
+              page should confirm the same offer immediately. Nothing
+              destroys paid conversion faster than making customers wonder
+              whether the promotion disappeared.
+            </p>
+            <p>
+              <span className="text-white/80 font-medium">Match the visual.</span>{" "}
+              Using the same or closely related product imagery reassures
+              the visitor they reached the correct destination.
+            </p>
+            <p>
+              <span className="text-white/80 font-medium">Match intent, not every sentence.</span>{" "}
+              The page does not need to repeat the ad word for word; it
+              should expand the argument. The ad earns attention, the
+              landing page provides proof, the product experience closes
+              the sale.
             </p>
           </div>
         </Reveal>
       </section>
 
-      {/* DON'T EXAGGERATE */}
+      {/* KEEP CHAIN INTACT */}
       <section className="relative py-10">
         <div className="absolute inset-0 -z-10 bg-black/15" />
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>
-            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Don&apos;t exaggerate in the ad</h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Keep the chain intact</h2>
             <div className="space-y-4 text-white/60 leading-relaxed text-sm max-w-2xl">
-              <p>
-                Sometimes the landing page cannot match because the
-                advertisement made a claim the actual product cannot
-                support.
+              <p className="font-semibold text-white/80">
+                Search/ad message → Landing-page headline → Product/offer →
+                Proof → CTA
               </p>
               <p>
-                The fix is not more landing-page copy. It is a more
-                accurate advertisement.
-              </p>
-              <p>
-                Message match works because clarity reduces unnecessary
-                doubt.
+                Each step should feel like the logical continuation of the
+                previous one.
               </p>
             </div>
           </Reveal>
         </div>
+      </section>
+
+      {/* DON'T EXAGGERATE */}
+      <section className="mx-auto max-w-3xl px-4 py-10">
+        <Reveal>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Don&apos;t exaggerate in the ad</h2>
+          <div className="space-y-4 text-white/60 leading-relaxed text-sm max-w-2xl">
+            <p>
+              Sometimes the landing page cannot match because the
+              advertisement made a claim the actual product cannot support.
+            </p>
+            <p>
+              The fix is not more landing-page copy. It is a more accurate
+              advertisement. Message match works because clarity reduces
+              unnecessary doubt.
+            </p>
+          </div>
+        </Reveal>
       </section>
 
       {/* RELATED */}
@@ -135,8 +168,8 @@ export default function Page() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/resources/ad-landing-page-message-match-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
-                How to match your ad message to your landing page
+              <Link href="/resources/paid-ads-traffic-to-homepage-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Why sending all paid traffic to your homepage is usually a mistake
               </Link>
             </li>
             <li>
@@ -154,6 +187,11 @@ export default function Page() {
                 Meta Ads clicks but no sales? Diagnose it first
               </Link>
             </li>
+            <li>
+              <Link href="/resources/good-ctr-low-cpc-no-sales-meta-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Good CTR and low CPC but no sales on Meta Ads: what&apos;s wrong
+              </Link>
+            </li>
           </ul>
         </Reveal>
       </section>
@@ -163,9 +201,9 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold">Keep the promise from click to purchase</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
-            If paid traffic looks qualified but conversion falls
-            immediately after the click, contact us. We can review the
-            full ad-to-page journey.
+            If paid traffic looks qualified but conversion falls immediately
+            after the click, contact us. We can review the full ad-to-page
+            journey.
           </p>
           <ManagedServicesCTA className="mt-8 justify-center" />
         </Reveal>

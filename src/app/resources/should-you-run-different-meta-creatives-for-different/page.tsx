@@ -154,7 +154,7 @@ export default function Page() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
             <li><Link href="/resources/how-to-choose-which-country-to-expand-ecommerce-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How to Choose Which Country to Expand Ecommerce Ads Into Next</Link></li>
-            <li><Link href="/resources/when-is-a-shopify-store-ready-to-advertise" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">When Is a Shopify Store Ready to Advertise Internationally?</Link></li>
+            <li><Link href="/resources/shopify-ready-for-international-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">When Is a Shopify Store Ready to Advertise Internationally?</Link></li>
           </ul>
         </Reveal>
       </section>

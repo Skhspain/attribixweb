@@ -141,7 +141,7 @@ export default function Page() {
 
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold">Not sure if the number is actually good?</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold">Keep a change log</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             If your PMax campaign is constantly being edited and no one can tell which changes helped, send us an inquiry. We can simplify the management process.
           </p>

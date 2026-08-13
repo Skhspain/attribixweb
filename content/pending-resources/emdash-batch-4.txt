@@ -1,0 +1,16 @@
+src/app/resources/marketing-agency-vs-in-house/page.tsx
+src/app/resources/google-ads-ga4-dont-match/page.tsx
+src/app/resources/how-to-choose-a-google-ads-agency/page.tsx
+src/app/resources/meta-pixel-vs-capi-shopify/page.tsx
+src/app/resources/fix-duplicate-meta-purchases-shopify/page.tsx
+src/app/resources/import-ga4-conversions-google-ads-shopify/page.tsx
+src/app/resources/should-you-pause-meta-ad-no-sales/page.tsx
+src/app/resources/ecommerce-marketing-agency-cost/layout.tsx
+src/app/resources/how-many-meta-ads-test-at-once/page.tsx
+src/app/resources/competitor-keywords-google-ads-worth-it/page.tsx
+src/app/resources/fix-duplicate-meta-purchases-shopify/layout.tsx
+src/app/resources/google-consent-mode-shopify/layout.tsx
+src/app/resources/how-to-choose-a-google-ads-agency/layout.tsx
+src/app/resources/meta-ads-roas-dropped/layout.tsx
+src/app/resources/should-you-pause-meta-ad-no-sales/layout.tsx
+src/app/resources/when-to-scale-ad-budget/layout.tsx

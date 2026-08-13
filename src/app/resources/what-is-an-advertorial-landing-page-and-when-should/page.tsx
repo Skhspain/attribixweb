@@ -165,7 +165,7 @@ export default function Page() {
 
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold">Need the funnel reviewed properly?</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold">Measure incremental value</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             If you are considering advertorials for Meta traffic but do not want to create gimmicky sales pages, contact us. We can help structure the education around real customer objections.
           </p>

@@ -1,0 +1,650 @@
+[
+  {
+    "line": 2508,
+    "title": "Why Platform ROAS Can Look Great While Your Business Loses Money",
+    "slug": "why-platform-roas-can-look-great-while-your-business",
+    "category": "attribution"
+  },
+  {
+    "line": 2539,
+    "title": "How to Calculate Break-Even ROAS for Ecommerce",
+    "slug": "how-to-calculate-break-even-roas-for-ecommerce",
+    "category": "attribution"
+  },
+  {
+    "line": 2567,
+    "title": "Break-Even CPA Explained for Shopify Stores",
+    "slug": "break-even-cpa-explained-for-shopify-stores",
+    "category": "attribution"
+  },
+  {
+    "line": 2594,
+    "title": "What Is a Good CPA for Ecommerce?",
+    "slug": "what-is-a-good-cpa-for-ecommerce",
+    "category": "attribution"
+  },
+  {
+    "line": 2612,
+    "title": "ROAS vs Profit: Why High ROAS Doesn't Always Mean More Profit",
+    "slug": "roas-vs-profit-why-high-roas-doesn-t-always-mean-more",
+    "category": "attribution"
+  },
+  {
+    "line": 2627,
+    "title": "Why Revenue Is a Bad Metric Without Gross Margin",
+    "slug": "why-revenue-is-a-bad-metric-without-gross-margin",
+    "category": "attribution"
+  },
+  {
+    "line": 2644,
+    "title": "Should Advertising Agencies Optimize for ROAS or Profit?",
+    "slug": "should-advertising-agencies-optimize-for-roas-or-profit",
+    "category": "marketing-agency"
+  },
+  {
+    "line": 2666,
+    "title": "New Customer ROAS vs Total ROAS: Which Matters More?",
+    "slug": "new-customer-roas-vs-total-roas-which-matters-more",
+    "category": "attribution"
+  },
+  {
+    "line": 2690,
+    "title": "Customer Acquisition Cost vs CPA: What's the Difference?",
+    "slug": "customer-acquisition-cost-vs-cpa-what-s-the-difference",
+    "category": "attribution"
+  },
+  {
+    "line": 2714,
+    "title": "How to Calculate CAC for a Shopify Store",
+    "slug": "how-to-calculate-cac-for-a-shopify-store",
+    "category": "attribution"
+  },
+  {
+    "line": 2738,
+    "title": "LTV vs CAC for Ecommerce: What Should You Aim For?",
+    "slug": "ltv-vs-cac-for-ecommerce-what-should-you-aim-for",
+    "category": "attribution"
+  },
+  {
+    "line": 2753,
+    "title": "Why Last-Click Attribution Undervalues Meta Ads",
+    "slug": "why-last-click-attribution-undervalues-meta-ads",
+    "category": "attribution"
+  },
+  {
+    "line": 2777,
+    "title": "Why Meta View-Through Attribution Can Overvalue Meta Ads",
+    "slug": "why-meta-view-through-attribution-can-overvalue-meta",
+    "category": "attribution"
+  },
+  {
+    "line": 2892,
+    "title": "Shopify Pixel vs Meta CAPI: Do You Need Both?",
+    "slug": "shopify-pixel-vs-meta-capi-do-you-need-both",
+    "category": "tracking"
+  },
+  {
+    "line": 3138,
+    "title": "Google Tag Assistant Shows Multiple Google Tags: What Does It Mean?",
+    "slug": "google-tag-assistant-shows-multiple-google-tags-what",
+    "category": "tracking"
+  },
+  {
+    "line": 3165,
+    "title": "Shopify Theme Change Broke Tracking: What to Check",
+    "slug": "shopify-theme-change-broke-tracking-what-to-check",
+    "category": "tracking"
+  },
+  {
+    "line": 3188,
+    "title": "Shopify App Installation Changed Conversion Tracking: What Happened?",
+    "slug": "shopify-app-installation-changed-conversion-tracking",
+    "category": "tracking"
+  },
+  {
+    "line": 3211,
+    "title": "Can Cookie Consent Reduce Your Reported ROAS?",
+    "slug": "can-cookie-consent-reduce-your-reported-roas",
+    "category": "attribution"
+  },
+  {
+    "line": 3232,
+    "title": "Is a Meta Ads Agency Worth It?",
+    "slug": "is-a-meta-ads-agency-worth-it",
+    "category": "marketing-agency"
+  },
+  {
+    "line": 3254,
+    "title": "Is a Google Ads Agency Worth It?",
+    "slug": "is-a-google-ads-agency-worth-it",
+    "category": "marketing-agency"
+  },
+  {
+    "line": 3278,
+    "title": "Is an Ecommerce Marketing Agency Worth the Cost?",
+    "slug": "is-an-ecommerce-marketing-agency-worth-the-cost",
+    "category": "marketing-agency"
+  },
+  {
+    "line": 3300,
+    "title": "Freelancer vs Marketing Agency: Which Should Ecommerce Brands Hire?",
+    "slug": "freelancer-vs-marketing-agency-which-should-ecommerce",
+    "category": "marketing-agency"
+  },
+  {
+    "line": 3315,
+    "title": "Small Marketing Agency vs Large Agency: Which Is Better?",
+    "slug": "small-marketing-agency-vs-large-agency-which-is-better",
+    "category": "marketing-agency"
+  },
+  {
+    "line": 3329,
+    "title": "What Should You Expect From a Marketing Agency Every Month?",
+    "slug": "what-should-you-expect-from-a-marketing-agency-every",
+    "category": "marketing-agency"
+  },
+  {
+    "line": 3362,
+    "title": "How Often Should Your Marketing Agency Report to You?",
+    "slug": "how-often-should-your-marketing-agency-report-to-you",
+    "category": "marketing-agency"
+  },
+  {
+    "line": 3384,
+    "title": "How Often Should You Meet With Your Marketing Agency?",
+    "slug": "how-often-should-you-meet-with-your-marketing-agency",
+    "category": "marketing-agency"
+  },
+  {
+    "line": 3398,
+    "title": "What Should Be Included in a Meta Ads Management Service?",
+    "slug": "what-should-be-included-in-a-meta-ads-management",
+    "category": "attribution"
+  },
+  {
+    "line": 3423,
+    "title": "What Should Be Included in a Google Ads Management Service?",
+    "slug": "what-should-be-included-in-a-google-ads-management",
+    "category": "attribution"
+  },
+  {
+    "line": 3765,
+    "title": "Welcome Flow vs Campaigns: Where Should Ecommerce Brands Focus First?",
+    "slug": "welcome-flow-vs-campaigns-where-should-ecommerce",
+    "category": "email-retention"
+  },
+  {
+    "line": 3787,
+    "title": "How Many Emails Should Be in a Shopify Welcome Flow?",
+    "slug": "how-many-emails-should-be-in-a-shopify-welcome-flow",
+    "category": "email-retention"
+  },
+  {
+    "line": 3810,
+    "title": "Should Your Welcome Flow Offer a Discount?",
+    "slug": "should-your-welcome-flow-offer-a-discount",
+    "category": "email-retention"
+  },
+  {
+    "line": 3825,
+    "title": "Why Your Klaviyo Welcome Flow Isn't Converting",
+    "slug": "why-your-klaviyo-welcome-flow-isn-t-converting",
+    "category": "email-retention"
+  },
+  {
+    "line": 3841,
+    "title": "How Often Should Ecommerce Brands Send Marketing Emails?",
+    "slug": "how-often-should-ecommerce-brands-send-marketing-emails",
+    "category": "email-retention"
+  },
+  {
+    "line": 3865,
+    "title": "Are You Sending Too Many Marketing Emails?",
+    "slug": "are-you-sending-too-many-marketing-emails",
+    "category": "email-retention"
+  },
+  {
+    "line": 3887,
+    "title": "Email Open Rate Is High but Sales Are Low: What Does That Mean?",
+    "slug": "email-open-rate-is-high-but-sales-are-low-what-does",
+    "category": "email-retention"
+  },
+  {
+    "line": 3905,
+    "title": "Good Email Click Rate but No Sales: What to Check",
+    "slug": "good-email-click-rate-but-no-sales-what-to-check",
+    "category": "email-retention"
+  },
+  {
+    "line": 3927,
+    "title": "How to Measure Email Profitability Instead of Just Revenue",
+    "slug": "how-to-measure-email-profitability-instead-of-just",
+    "category": "email-retention"
+  },
+  {
+    "line": 3951,
+    "title": "What Is a Good Repeat Purchase Rate for Shopify?",
+    "slug": "what-is-a-good-repeat-purchase-rate-for-shopify",
+    "category": "email-retention"
+  },
+  {
+    "line": 3966,
+    "title": "Why Your Shopify Store Gets Customers but Few Repeat Purchases",
+    "slug": "why-your-shopify-store-gets-customers-but-few-repeat",
+    "category": "email-retention"
+  },
+  {
+    "line": 3990,
+    "title": "How to Increase Repeat Purchase Rate Without Constant Discounts",
+    "slug": "how-to-increase-repeat-purchase-rate-without-constant",
+    "category": "email-retention"
+  },
+  {
+    "line": 4005,
+    "title": "New Customers vs Returning Customers: Which Should You Optimize For?",
+    "slug": "new-customers-vs-returning-customers-which-should-you",
+    "category": "email-retention"
+  },
+  {
+    "line": 4032,
+    "title": "Why Returning Customer Revenue Can Make Your ROAS Look Better Than It Is",
+    "slug": "why-returning-customer-revenue-can-make-your-roas-look",
+    "category": "email-retention"
+  },
+  {
+    "line": 4352,
+    "title": "When Should You Exclude Existing Customers From Meta Ads?",
+    "slug": "when-should-you-exclude-existing-customers-from-meta",
+    "category": "attribution"
+  },
+  {
+    "line": 4375,
+    "title": "Should Meta Ads Send Traffic to a Product Page or Landing Page?",
+    "slug": "should-meta-ads-send-traffic-to-a-product-page-or",
+    "category": "cro-landing-pages"
+  },
+  {
+    "line": 4399,
+    "title": "Should Google Ads Send Traffic to a Product Page or Collection Page?",
+    "slug": "should-google-ads-send-traffic-to-a-product-page-or",
+    "category": "attribution"
+  },
+  {
+    "line": 4416,
+    "title": "Landing Page vs Product Page for Ecommerce Ads",
+    "slug": "landing-page-vs-product-page-for-ecommerce-ads",
+    "category": "cro-landing-pages"
+  },
+  {
+    "line": 4444,
+    "title": "When Does an Ecommerce Brand Need a Dedicated Landing Page?",
+    "slug": "when-does-an-ecommerce-brand-need-a-dedicated-landing",
+    "category": "cro-landing-pages"
+  },
+  {
+    "line": 4466,
+    "title": "Why Your Landing Page Gets Clicks but No Sales",
+    "slug": "why-your-landing-page-gets-clicks-but-no-sales",
+    "category": "cro-landing-pages"
+  },
+  {
+    "line": 4486,
+    "title": "What Is a Good Landing Page Conversion Rate for Ecommerce?",
+    "slug": "what-is-a-good-landing-page-conversion-rate-for",
+    "category": "cro-landing-pages"
+  },
+  {
+    "line": 4506,
+    "title": "How Long Should an Ecommerce Landing Page Be?",
+    "slug": "how-long-should-an-ecommerce-landing-page-be",
+    "category": "cro-landing-pages"
+  },
+  {
+    "line": 4531,
+    "title": "Should Your Landing Page Show the Price Above the Fold?",
+    "slug": "should-your-landing-page-show-the-price-above-the-fold",
+    "category": "cro-landing-pages"
+  },
+  {
+    "line": 4546,
+    "title": "Should Ecommerce Landing Pages Have Navigation?",
+    "slug": "should-ecommerce-landing-pages-have-navigation",
+    "category": "cro-landing-pages"
+  },
+  {
+    "line": 4569,
+    "title": "Does Removing Navigation Improve Landing Page Conversion Rate?",
+    "slug": "does-removing-navigation-improve-landing-page",
+    "category": "cro-landing-pages"
+  },
+  {
+    "line": 4592,
+    "title": "What Should the First Screen of an Ecommerce Landing Page Say?",
+    "slug": "what-should-the-first-screen-of-an-ecommerce-landing",
+    "category": "cro-landing-pages"
+  },
+  {
+    "line": 4616,
+    "title": "How Many CTAs Should an Ecommerce Landing Page Have?",
+    "slug": "how-many-ctas-should-an-ecommerce-landing-page-have",
+    "category": "cro-landing-pages"
+  },
+  {
+    "line": 4631,
+    "title": "Product Page vs Advertorial: Which Works Better for Meta Ads?",
+    "slug": "product-page-vs-advertorial-which-works-better-for",
+    "category": "cro-landing-pages"
+  },
+  {
+    "line": 4655,
+    "title": "What Is an Advertorial Landing Page and When Should Ecommerce Brands Use One?",
+    "slug": "what-is-an-advertorial-landing-page-and-when-should",
+    "category": "cro-landing-pages"
+  },
+  {
+    "line": 4679,
+    "title": "Quiz Funnel vs Product Page: Which Converts Better?",
+    "slug": "quiz-funnel-vs-product-page-which-converts-better",
+    "category": "cro-landing-pages"
+  },
+  {
+    "line": 4933,
+    "title": "Does “Only X Left” Increase Conversion or Hurt Trust?",
+    "slug": "does-only-x-left-increase-conversion-or-hurt-trust",
+    "category": "creative-offers"
+  },
+  {
+    "line": 5063,
+    "title": "Should You Collect Email or SMS First on a Shopify Popup?",
+    "slug": "should-you-collect-email-or-sms-first-on-a-shopify",
+    "category": "email-retention"
+  },
+  {
+    "line": 5087,
+    "title": "Do Free Gifts Convert Better Than Percentage Discounts?",
+    "slug": "do-free-gifts-convert-better-than-percentage-discounts",
+    "category": "creative-offers"
+  },
+  {
+    "line": 5114,
+    "title": "Percentage Discount vs Fixed Discount: Which Works Better?",
+    "slug": "percentage-discount-vs-fixed-discount-which-works",
+    "category": "creative-offers"
+  },
+  {
+    "line": 5134,
+    "title": "Buy One Get One vs Percentage Discount for Ecommerce",
+    "slug": "buy-one-get-one-vs-percentage-discount-for-ecommerce",
+    "category": "creative-offers"
+  },
+  {
+    "line": 5156,
+    "title": "Does Showing Savings in Dollars Convert Better Than Percentages?",
+    "slug": "does-showing-savings-in-dollars-convert-better-than",
+    "category": "cro-landing-pages"
+  },
+  {
+    "line": 5178,
+    "title": "Should You Show Competitor Price Comparisons on Product Pages?",
+    "slug": "should-you-show-competitor-price-comparisons-on",
+    "category": "creative-offers"
+  },
+  {
+    "line": 5204,
+    "title": "Does a Money-Back Guarantee Improve Shopify Conversion Rate?",
+    "slug": "does-a-money-back-guarantee-improve-shopify-conversion",
+    "category": "creative-offers"
+  },
+  {
+    "line": 5231,
+    "title": "How Long Should an Ecommerce Guarantee Be?",
+    "slug": "how-long-should-an-ecommerce-guarantee-be",
+    "category": "creative-offers"
+  },
+  {
+    "line": 5249,
+    "title": "Should Shopify Stores Offer Free Returns?",
+    "slug": "should-shopify-stores-offer-free-returns",
+    "category": "creative-offers"
+  },
+  {
+    "line": 5280,
+    "title": "Do Trust Badges Still Improve Ecommerce Conversion Rates?",
+    "slug": "do-trust-badges-still-improve-ecommerce-conversion",
+    "category": "creative-offers"
+  },
+  {
+    "line": 5302,
+    "title": "Why Too Many Trust Badges Can Make a Store Look Less Trustworthy",
+    "slug": "why-too-many-trust-badges-can-make-a-store-look-less",
+    "category": "creative-offers"
+  },
+  {
+    "line": 5333,
+    "title": "Your Ads Get Clicks but Your Offer Doesn't Convert: How to Tell",
+    "slug": "your-ads-get-clicks-but-your-offer-doesn-t-convert-how",
+    "category": "cro-landing-pages"
+  },
+  {
+    "line": 5367,
+    "title": "How to Know Whether Your Ecommerce Offer Is the Problem",
+    "slug": "how-to-know-whether-your-ecommerce-offer-is-the-problem",
+    "category": "cro-landing-pages"
+  },
+  {
+    "line": 5405,
+    "title": "Does Lowering Your Product Price Improve ROAS?",
+    "slug": "does-lowering-your-product-price-improve-roas",
+    "category": "attribution"
+  },
+  {
+    "line": 5439,
+    "title": "When Increasing Your Price Can Actually Improve Advertising Performance",
+    "slug": "when-increasing-your-price-can-actually-improve",
+    "category": "creative-offers"
+  },
+  {
+    "line": 5460,
+    "title": "How Much Discount Is Too Much for Ecommerce?",
+    "slug": "how-much-discount-is-too-much-for-ecommerce",
+    "category": "creative-offers"
+  },
+  {
+    "line": 5781,
+    "title": "What ROAS Do You Need With a 30% Gross Margin?",
+    "slug": "what-roas-do-you-need-with-a-30-percent-gross-margin",
+    "category": "attribution"
+  },
+  {
+    "line": 5796,
+    "title": "What ROAS Do You Need With a 50% Gross Margin?",
+    "slug": "what-roas-do-you-need-with-a-50-percent-gross-margin",
+    "category": "attribution"
+  },
+  {
+    "line": 5810,
+    "title": "How Discounts Change Your Break-Even ROAS",
+    "slug": "how-discounts-change-your-break-even-roas",
+    "category": "attribution"
+  },
+  {
+    "line": 5830,
+    "title": "How Refunds Affect Your True Advertising ROAS",
+    "slug": "how-refunds-affect-your-true-advertising-roas",
+    "category": "attribution"
+  },
+  {
+    "line": 5847,
+    "title": "Should Shipping Revenue Count Toward ROAS?",
+    "slug": "should-shipping-revenue-count-toward-roas",
+    "category": "attribution"
+  },
+  {
+    "line": 5870,
+    "title": "Should Tax Be Included in Ecommerce ROAS?",
+    "slug": "should-tax-be-included-in-ecommerce-roas",
+    "category": "attribution"
+  },
+  {
+    "line": 5884,
+    "title": "Should Agency Fees Be Included in Your Marketing ROAS?",
+    "slug": "should-agency-fees-be-included-in-your-marketing-roas",
+    "category": "marketing-agency"
+  },
+  {
+    "line": 5899,
+    "title": "Should Creative Production Costs Be Included in CAC?",
+    "slug": "should-creative-production-costs-be-included-in-cac",
+    "category": "attribution"
+  },
+  {
+    "line": 5921,
+    "title": "Should Shopify App Costs Count as Marketing Costs?",
+    "slug": "should-shopify-app-costs-count-as-marketing-costs",
+    "category": "cro-landing-pages"
+  },
+  {
+    "line": 5942,
+    "title": "Why Revenue-Based ROAS Can Hide an Unprofitable Business",
+    "slug": "why-revenue-based-roas-can-hide-an-unprofitable",
+    "category": "attribution"
+  },
+  {
+    "line": 5965,
+    "title": "Profit ROAS vs Revenue ROAS: Which Should You Use?",
+    "slug": "profit-roas-vs-revenue-roas-which-should-you-use",
+    "category": "attribution"
+  },
+  {
+    "line": 5985,
+    "title": "How to Calculate Profit per Order From Paid Ads",
+    "slug": "how-to-calculate-profit-per-order-from-paid-ads",
+    "category": "attribution"
+  },
+  {
+    "line": 6014,
+    "title": "What Is a Good Contribution Margin After Advertising?",
+    "slug": "what-is-a-good-contribution-margin-after-advertising",
+    "category": "attribution"
+  },
+  {
+    "line": 6035,
+    "title": "How to Decide Whether an Unprofitable Campaign Is Worth Keeping",
+    "slug": "how-to-decide-whether-an-unprofitable-campaign-is",
+    "category": "attribution"
+  },
+  {
+    "line": 6056,
+    "title": "Why Scaling Revenue Can Reduce Profit",
+    "slug": "why-scaling-revenue-can-reduce-profit",
+    "category": "attribution"
+  },
+  {
+    "line": 6338,
+    "title": "Should You Run Different Meta Creatives for Different Countries?",
+    "slug": "should-you-run-different-meta-creatives-for-different",
+    "category": "shopify-growth"
+  },
+  {
+    "line": 6361,
+    "title": "How to Choose Which Country to Expand Ecommerce Ads Into Next",
+    "slug": "how-to-choose-which-country-to-expand-ecommerce-ads",
+    "category": "shopify-growth"
+  },
+  {
+    "line": 6389,
+    "title": "When Is a Shopify Store Ready to Advertise Internationally?",
+    "slug": "when-is-a-shopify-store-ready-to-advertise",
+    "category": "shopify-growth"
+  },
+  {
+    "line": 6421,
+    "title": "How to Find New Meta Ad Angles Without Guessing",
+    "slug": "how-to-find-new-meta-ad-angles-without-guessing",
+    "category": "creative-offers"
+  },
+  {
+    "line": 6448,
+    "title": "Where Should Ecommerce Brands Get Ideas for New Ad Creatives?",
+    "slug": "where-should-ecommerce-brands-get-ideas-for-new-ad",
+    "category": "creative-offers"
+  },
+  {
+    "line": 6470,
+    "title": "How to Use Customer Reviews to Create Better Meta Ads",
+    "slug": "how-to-use-customer-reviews-to-create-better-meta-ads",
+    "category": "attribution"
+  },
+  {
+    "line": 6497,
+    "title": "How to Turn Customer Objections Into High-Converting Ads",
+    "slug": "how-to-turn-customer-objections-into-high-converting",
+    "category": "creative-offers"
+  },
+  {
+    "line": 6537,
+    "title": "Product Features vs Customer Benefits: What Should Ads Focus On?",
+    "slug": "product-features-vs-customer-benefits-what-should-ads",
+    "category": "creative-offers"
+  },
+  {
+    "line": 6557,
+    "title": "How to Find the Real Reason Customers Buy Your Product",
+    "slug": "how-to-find-the-real-reason-customers-buy-your-product",
+    "category": "cro-landing-pages"
+  },
+  {
+    "line": 6581,
+    "title": "Should Ecommerce Ads Focus on Pain Points or Desired Outcomes?",
+    "slug": "should-ecommerce-ads-focus-on-pain-points-or-desired",
+    "category": "creative-offers"
+  },
+  {
+    "line": 6607,
+    "title": "How to Create Different Ad Angles for the Same Product",
+    "slug": "how-to-create-different-ad-angles-for-the-same-product",
+    "category": "creative-offers"
+  },
+  {
+    "line": 6643,
+    "title": "How Many Ad Angles Should You Test Before Changing the Offer?",
+    "slug": "how-many-ad-angles-should-you-test-before-changing-the",
+    "category": "creative-offers"
+  },
+  {
+    "line": 6667,
+    "title": "Why Testing New Creatives Won't Fix a Weak Offer",
+    "slug": "why-testing-new-creatives-won-t-fix-a-weak-offer",
+    "category": "creative-offers"
+  },
+  {
+    "line": 6704,
+    "title": "How to Know Whether You Have a Creative Problem or an Offer Problem",
+    "slug": "how-to-know-whether-you-have-a-creative-problem-or-an",
+    "category": "creative-offers"
+  },
+  {
+    "line": 6734,
+    "title": "Why Your Best-Performing Ad May Not Be Your Best Creative",
+    "slug": "why-your-best-performing-ad-may-not-be-your-best",
+    "category": "creative-offers"
+  },
+  {
+    "line": 6759,
+    "title": "Meta Ads Hook Rate vs Sales: Which Matters More?",
+    "slug": "meta-ads-hook-rate-vs-sales-which-matters-more",
+    "category": "creative-offers"
+  },
+  {
+    "line": 6779,
+    "title": "Video Watch Time Is High but Sales Are Low: What Does That Tell You?",
+    "slug": "video-watch-time-is-high-but-sales-are-low-what-does",
+    "category": "creative-offers"
+  },
+  {
+    "line": 6796,
+    "title": "How to Build an Ecommerce Creative Testing System That Produces Useful Learnings",
+    "slug": "how-to-build-an-ecommerce-creative-testing-system-that",
+    "category": "creative-offers"
+  }
+]

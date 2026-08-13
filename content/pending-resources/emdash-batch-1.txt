@@ -1,0 +1,16 @@
+src/app/resources/ecommerce-marketing-agency-cost/page.tsx
+src/app/resources/google-ads-clicks-no-sales/page.tsx
+src/app/resources/meta-ads-vs-google-ads-shopify-budget/page.tsx
+src/app/resources/google-ads-conversions-no-shopify-orders/page.tsx
+src/app/resources/shopify-advertising-budget-how-much-to-spend/page.tsx
+src/app/resources/mer-vs-roas-shopify/page.tsx
+src/app/resources/shopify-checkout-no-purchase/page.tsx
+src/app/resources/good-hook-for-meta-ad/page.tsx
+src/app/resources/how-many-creatives-shopify-meta-ads/page.tsx
+src/app/resources/competitor-keywords-google-ads-worth-it/layout.tsx
+src/app/resources/enhanced-conversions-shopify/layout.tsx
+src/app/resources/google-shopping-clicks-no-sales/layout.tsx
+src/app/resources/how-often-change-meta-ad-creatives/layout.tsx
+src/app/resources/meta-ads-vs-google-ads-shopify-budget/layout.tsx
+src/app/resources/shopify-checkout-no-purchase/layout.tsx
+src/app/resources/why-meta-ads-work-one-week-fail-next/layout.tsx

@@ -98,8 +98,8 @@ export default function RoasCalculatorPage() {
                   className={inputClass}
                 />
                 <p className="mt-1.5 text-xs text-white/35">
-                  Revenue minus cost of goods, as a percentage of revenue —
-                  used only to calculate break-even ROAS below.
+                  Revenue minus cost of goods, as a percentage of revenue.
+                  Used only to calculate break-even ROAS below.
                 </p>
               </div>
             </div>
@@ -129,10 +129,10 @@ export default function RoasCalculatorPage() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">How this is calculated</h2>
           <p className="text-sm text-white/60 leading-relaxed max-w-2xl">
             ROAS is revenue divided by ad spend. Break-even ROAS is 1 ÷
-            gross margin — the ROAS at which ad spend exactly consumes your
+            gross margin: the ROAS at which ad spend exactly consumes your
             gross profit on the resulting sales, before accounting for any
             other costs (shipping, returns, fixed overhead). This is
-            platform-style ROAS math, not blended or true ROAS — see{" "}
+            platform-style ROAS math, not blended or true ROAS. See{" "}
             <Link href="/resources/true-roas-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               how to calculate true ROAS
             </Link>{" "}

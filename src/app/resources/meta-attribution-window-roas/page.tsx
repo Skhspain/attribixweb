@@ -8,6 +8,7 @@ import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import { ManagedServicesCTA } from "@/components/marketing/CTAGroup";
 import FAQList from "@/components/marketing/FAQList";
 import DiagramFrame from "@/components/marketing/DiagramFrame";
+import { LastReviewed, OfficialSources } from "@/components/marketing/ArticleTrust";
 
 const FAQ_ITEMS = [
   {
@@ -45,7 +46,7 @@ const ARTICLE_JSON_LD = {
   description:
     "How Meta's click and view attribution window settings change reported ROAS without any real change in campaign performance, with a worked hypothetical example.",
   datePublished: "2026-08-11",
-  dateModified: "2026-08-11",
+  dateModified: "2026-08-12",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
   publisher: {
     "@type": "Organization",
@@ -77,7 +78,7 @@ export default function Page() {
       <section className="mx-auto max-w-3xl px-4 pt-24 pb-10 md:pt-32">
         <Reveal>
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Attribution window & ROAS" }]} />
-          <Eyebrow>Attribution &amp; Measurement</Eyebrow>
+          <Eyebrow>Attribution &amp; Analytics</Eyebrow>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
             Why changing your Meta attribution window changes your ROAS
           </h1>
@@ -116,6 +117,18 @@ export default function Page() {
             credits purchases much further removed from it. Both are
             legitimate configurations. They just answer different
             questions.
+          </p>
+          <p className="mt-4 text-white/60 leading-relaxed text-sm">
+            Meta has also been actively changing this settings screen: as
+            of early 2026, click-through and view-through are joined by a
+            third type, engage-through (covering interactions like saves
+            and comments, on a 1-day window), and the longer 7-day and
+            28-day view windows have been removed. Meta has also added an
+            optional incremental attribution mode based on holdout testing
+            rather than a fixed window. If a comparison against past
+            performance suddenly looks different with no campaign changes,
+            check whether the attribution setting itself changed underneath
+            you before assuming anything about the ads changed.
           </p>
         </Reveal>
       </section>
@@ -288,6 +301,21 @@ export default function Page() {
             </p>
           </Reveal>
         </div>
+      </section>
+
+      {/* TRUST */}
+      <section className="mx-auto max-w-3xl px-4">
+        <Reveal>
+          <div className="space-y-2 border-t border-white/10 pt-6">
+            <OfficialSources
+              sources={[
+                { label: "About Attribution Models and Attribution Settings", href: "https://www.facebook.com/business/help/460276478298895" },
+                { label: "About Incremental Attribution", href: "https://www.facebook.com/business/help/2366718460372682" },
+              ]}
+            />
+            <LastReviewed date="August 12, 2026" />
+          </div>
+        </Reveal>
       </section>
 
       {/* FAQ */}

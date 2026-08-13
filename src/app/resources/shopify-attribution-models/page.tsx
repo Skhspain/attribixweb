@@ -7,11 +7,12 @@ import Eyebrow from "@/components/marketing/Eyebrow";
 import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import { ProductCTA } from "@/components/marketing/CTAGroup";
 import FAQList from "@/components/marketing/FAQList";
+import { LastReviewed, OfficialSources } from "@/components/marketing/ArticleTrust";
 
 const FAQ_ITEMS = [
   {
-    q: "Which attribution model should I use: first-click, last-click or data-driven?",
-    a: "There's no universally correct choice. Last-click is the simplest to reason about and the default most platforms ship with. Data-driven is the most balanced in theory but needs real order volume to be statistically stable. Pick one, apply it consistently, and don't compare numbers produced under different models as if they were the same metric.",
+    q: "Which attribution model should I use: last-click or data-driven?",
+    a: "There's no universally correct choice between the two models Google Ads actually offers today. Last-click is the simplest to reason about. Data-driven is the more balanced default but needs real order volume to be statistically stable. Pick one, apply it consistently, and don't compare numbers produced under different models as if they were the same metric.",
   },
   {
     q: "Why do Meta and Google always seem to use different models by default?",
@@ -47,7 +48,7 @@ const ARTICLE_JSON_LD = {
   headline: "Shopify Attribution Models Explained",
   description: "What first-click, last-click, linear and data-driven attribution reward and hide, and why Meta and Google rarely land on the same model.",
   datePublished: "2026-08-08",
-  dateModified: "2026-08-08",
+  dateModified: "2026-08-12",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
   publisher: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app", logo: { "@type": "ImageObject", url: "https://www.attribix.app/assets/logo.svg" } },
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.attribix.app/resources/shopify-attribution-models" },
@@ -74,7 +75,7 @@ export default function Page() {
       <section className="mx-auto max-w-3xl px-4 pt-24 pb-10 md:pt-32">
         <Reveal>
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Attribution models" }]} />
-          <Eyebrow>Attribution</Eyebrow>
+          <Eyebrow>Attribution &amp; Analytics</Eyebrow>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
             Shopify attribution models explained
           </h1>
@@ -118,6 +119,19 @@ export default function Page() {
                 </div>
               ))}
             </div>
+            <p className="mt-6 text-white/60 leading-relaxed text-sm max-w-2xl">
+              These five are the general concepts you&apos;ll see across
+              marketing attribution, not a menu Google Ads still offers.
+              Google has removed first-click, linear and position-based
+              (time-decay) as selectable models for conversion actions;
+              as of 2026, Google Ads itself supports only{" "}
+              <strong className="text-white/80">data-driven attribution</strong>{" "}
+              and <strong className="text-white/80">last-click</strong>.
+              The wider concepts below still matter for understanding how
+              Meta, GA4 and other tools each frame credit differently, but
+              don&apos;t expect to find first-click as a setting inside
+              Google Ads today.
+            </p>
           </Reveal>
         </div>
       </section>
@@ -179,6 +193,20 @@ export default function Page() {
             produced under different models as if they were the same
             metric.
           </p>
+        </Reveal>
+      </section>
+
+      {/* TRUST */}
+      <section className="mx-auto max-w-3xl px-4">
+        <Reveal>
+          <div className="space-y-2 border-t border-white/10 pt-6">
+            <OfficialSources
+              sources={[
+                { label: "About attribution models", href: "https://support.google.com/google-ads/answer/6259715" },
+              ]}
+            />
+            <LastReviewed date="August 12, 2026" />
+          </div>
         </Reveal>
       </section>
 

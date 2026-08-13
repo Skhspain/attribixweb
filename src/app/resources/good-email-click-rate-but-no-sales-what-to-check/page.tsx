@@ -154,7 +154,7 @@ export default function Page() {
         <Reveal>
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/resources/email-open-rate-is-high-but-sales-are-low-what-does" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Email Open Rate Is High but Sales Are Low: What Does That Mean?</Link></li>
+            <li><Link href="/resources/high-email-open-rate-low-sales" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Email Open Rate Is High but Sales Are Low: What Does That Mean?</Link></li>
             <li><Link href="/resources/how-to-measure-email-profitability-instead-of-just" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How to Measure Email Profitability Instead of Just Revenue</Link></li>
             <li><Link href="/resources/are-you-sending-too-many-marketing-emails" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Are You Sending Too Many Marketing Emails?</Link></li>
           </ul>

@@ -35,7 +35,7 @@ const ARTICLE_JSON_LD = {
   headline: "How to Calculate True ROAS on Shopify",
   description: "Platform ROAS vs. blended ROAS vs. true ROAS, and what actually separates them: cross-channel overlap, refunds, discounts and revenue windows.",
   datePublished: "2026-08-08",
-  dateModified: "2026-08-08",
+  dateModified: "2026-08-12",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
   publisher: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app", logo: { "@type": "ImageObject", url: "https://www.attribix.app/assets/logo.svg" } },
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.attribix.app/resources/true-roas-shopify" },
@@ -62,7 +62,7 @@ export default function Page() {
       <section className="mx-auto max-w-3xl px-4 pt-24 pb-10 md:pt-32">
         <Reveal>
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "True ROAS" }]} />
-          <Eyebrow>Measurement</Eyebrow>
+          <Eyebrow>Attribution &amp; Analytics</Eyebrow>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
             How to calculate true ROAS on Shopify
           </h1>
@@ -71,6 +71,24 @@ export default function Page() {
             interchangeably, but they&apos;re three different calculations that
             can produce three noticeably different numbers from the same
             spend and the same orders.
+          </p>
+        </Reveal>
+      </section>
+
+      {/* FORMULA */}
+      <section className="mx-auto max-w-3xl px-4 py-10">
+        <Reveal>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">The formula, regardless of which ROAS you mean</h2>
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <p className="text-white/80 text-sm font-mono">ROAS = Revenue ÷ Ad Spend</p>
+            <p className="mt-2 text-white/60 text-sm">
+              £20,000 revenue ÷ £5,000 ad spend = 4.0x ROAS = 400% ROAS.
+            </p>
+          </div>
+          <p className="mt-4 text-white/60 leading-relaxed text-sm">
+            Every version below uses this same direction. What changes
+            between platform, blended and true ROAS is never the formula.
+            It&apos;s which revenue figure and which spend figure go into it.
           </p>
         </Reveal>
       </section>
@@ -96,11 +114,13 @@ export default function Page() {
         <div className="absolute inset-0 -z-10 bg-black/15" />
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>
-            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Blended ROAS: combining spend against attributed revenue</h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Blended ROAS: combined attributed revenue against combined spend</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-              Blended ROAS adds Meta and Google spend together and divides by
-              their combined attributed revenue. It&apos;s a step closer to
-              reality, but it inherits a problem from both platforms:
+              Blended ROAS adds Meta and Google&apos;s attributed revenue
+              together, then divides that by their combined spend (revenue ÷
+              spend, the same direction as any ROAS calculation). It&apos;s a
+              step closer to reality, but it inherits a problem from both
+              platforms:
               because Meta and Google each independently attribute some of
               the same orders to themselves, simply adding their reported
               revenue together double-counts the overlap. Blended ROAS
@@ -114,16 +134,19 @@ export default function Page() {
       {/* TRUE ROAS */}
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">True ROAS: total ad spend against actual Shopify revenue</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">True ROAS: actual Shopify revenue against total ad spend</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            True ROAS steps outside platform attribution entirely: total ad
-            spend across every channel, divided by actual Shopify revenue
-            for a comparable period, net of refunds, with discounts and tax
-            treated consistently. It doesn&apos;t try to credit specific orders
-            to specific ads. It answers a plainer question: for what you
-            spent on advertising, how much did the store actually take in.
-            That&apos;s closer to what MER measures, covered in more detail on
-            the MER vs ROAS page.
+            &quot;True ROAS&quot; isn&apos;t a term Meta or Google defines. It&apos;s how we
+            refer to stepping outside platform attribution entirely: actual
+            Shopify revenue for a comparable period, net of refunds, with
+            discounts and tax treated consistently, divided by total ad
+            spend across every channel (revenue ÷ spend, same as any ROAS
+            figure, just with a different revenue number underneath it). It
+            doesn&apos;t try to credit specific orders to specific ads. It
+            answers a plainer question: for what you spent on advertising,
+            how much did the store actually take in. Calculated this way,
+            it&apos;s functionally the same figure as MER, covered in more
+            detail on the MER vs ROAS page.
           </p>
         </Reveal>
       </section>
@@ -158,10 +181,10 @@ export default function Page() {
             Attribix combines Meta and Google spend into a blended ROAS
             figure alongside each platform&apos;s own reported number, so the
             gap between them is visible instead of something you&apos;d only
-            notice by reconciling spreadsheets manually. True ROAS (spend
-            against your full Shopify revenue, ad-attributed or not) is
-            something you calculate from those numbers rather than a single
-            metric Attribix labels for you.
+            notice by reconciling spreadsheets manually. True ROAS (your
+            full Shopify revenue, ad-attributed or not, against total
+            spend) is something you calculate from those numbers rather
+            than a single metric Attribix labels for you.
           </p>
         </Reveal>
       </section>

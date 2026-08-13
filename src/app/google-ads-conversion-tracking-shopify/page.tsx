@@ -14,7 +14,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Why are Google Ads purchases sometimes duplicated?",
-    a: "Usually because more than one tag or app is separately firing a conversion for the same order — a manual gtag snippet, a Shopify app integration, and Google's own sync layered on top of each other.",
+    a: "Usually because more than one tag or app is separately firing a conversion for the same order: a manual gtag snippet, a Shopify app integration, and Google's own sync layered on top of each other.",
   },
   {
     q: "Why does Google Ads revenue differ from Shopify's revenue?",
@@ -26,7 +26,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Does Performance Max need separate tracking setup?",
-    a: "PMax uses the same conversion actions as Search and Shopping campaigns, so accurate purchase tracking benefits all three — there's no separate tracking layer specific to PMax.",
+    a: "PMax uses the same conversion actions as Search and Shopping campaigns, so accurate purchase tracking benefits all three. There's no separate tracking layer specific to PMax.",
   },
 ];
 
@@ -68,8 +68,8 @@ export default function GoogleAdsTrackingPage() {
             <p>
               A standard Google Ads conversion fires from a tag on your
               order confirmation page. That works for a normal checkout, but
-              accelerated checkout methods — Shop Pay, PayPal, an in-app
-              browser — sometimes redirect a customer in ways that skip the
+              accelerated checkout methods (Shop Pay, PayPal, an in-app
+              browser) sometimes redirect a customer in ways that skip the
               confirmation page load the tag depends on, or that fire it in a
               context Google Ads can&apos;t attribute back to the original
               click.
@@ -80,7 +80,7 @@ export default function GoogleAdsTrackingPage() {
               overcount them when multiple tags or conversion actions record
               the same order. The two problems point in opposite directions,
               which is exactly why they&apos;re easy to miss in the same
-              account — one masks the other in the total.
+              account: one masks the other in the total.
             </p>
           </div>
         </Reveal>
@@ -93,7 +93,7 @@ export default function GoogleAdsTrackingPage() {
           <Reveal>
             <h2 className="text-2xl md:text-3xl font-extrabold">One order, several possible conversion values</h2>
             <p className="mt-4 text-white/65 leading-relaxed">
-              Illustrative example — a $120 order with a discount code, sales
+              Illustrative example: a $120 order with a discount code, sales
               tax, and a later partial refund:
             </p>
           </Reveal>
@@ -149,7 +149,7 @@ export default function GoogleAdsTrackingPage() {
                   </div>
                 ))}
               </div>
-              <p className="mt-4 text-xs text-white/35">Conceptual — depends on conversion adjustments being configured for the account.</p>
+              <p className="mt-4 text-xs text-white/35">Conceptual: depends on conversion adjustments being configured for the account.</p>
             </div>
           </Reveal>
         </div>
@@ -160,12 +160,12 @@ export default function GoogleAdsTrackingPage() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold">Enhanced conversions fill in identity, not revenue</h2>
           <p className="mt-5 text-white/65 leading-relaxed">
-            Enhanced conversions send hashed customer data — email, phone,
-            address — alongside a standard conversion, so Google can match it
+            Enhanced conversions send hashed customer data (email, phone,
+            address) alongside a standard conversion, so Google can match it
             to a signed-in user even when a click ID gets lost along the way.
             It improves how reliably a conversion gets attributed to the
             right ad. It doesn&apos;t, on its own, fix a revenue value that
-            was wrong to begin with — that still depends on what value the
+            was wrong to begin with. That still depends on what value the
             store sends.
           </p>
         </Reveal>
@@ -183,7 +183,7 @@ export default function GoogleAdsTrackingPage() {
               custom Google tag, each logging its own conversion action for
               the same order. If both are set as a primary conversion action
               used for bidding, Google Ads counts and optimises against the
-              order twice — a secondary action, used for reporting only,
+              order twice. A secondary action, used for reporting only,
               doesn&apos;t carry the same risk.
             </p>
           </Reveal>
@@ -238,9 +238,9 @@ export default function GoogleAdsTrackingPage() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold">Search, Shopping and Performance Max don&apos;t fail the same way</h2>
           <div className="mt-5 space-y-3 text-sm text-white/60 leading-relaxed">
-            <p><strong className="text-white/80">Search</strong> is the most straightforward — a click, a tag, a conversion. Most tracking issues here trace back to the tag itself, not the campaign type.</p>
+            <p><strong className="text-white/80">Search</strong> is the most straightforward: a click, a tag, a conversion. Most tracking issues here trace back to the tag itself, not the campaign type.</p>
             <p><strong className="text-white/80">Shopping</strong> depends on your Merchant Center feed staying in sync with live Shopify pricing and availability; a stale feed shows up as disapproved or mispriced listings, not as a tracking error, but it looks similar in the reporting.</p>
-            <p><strong className="text-white/80">Performance Max</strong> leans on conversion value more heavily than either, since its automated bidding optimises directly against whatever value it&apos;s given — which makes accurate revenue values matter more here than anywhere else in the account.</p>
+            <p><strong className="text-white/80">Performance Max</strong> leans on conversion value more heavily than either, since its automated bidding optimises directly against whatever value it&apos;s given, which makes accurate revenue values matter more here than anywhere else in the account.</p>
           </div>
         </Reveal>
       </section>
@@ -258,7 +258,7 @@ export default function GoogleAdsTrackingPage() {
               instead of buried across two separate dashboards. It doesn&apos;t
               control your Merchant Center feed, your account&apos;s
               conversion-action configuration, or how Google Ads itself
-              models consent-restricted traffic — those stay in Google Ads
+              models consent-restricted traffic. Those stay in Google Ads
               and Merchant Center directly.
             </p>
           </Reveal>

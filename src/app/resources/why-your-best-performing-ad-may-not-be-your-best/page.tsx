@@ -168,7 +168,7 @@ export default function Page() {
 
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold">Need a second opinion on the offer?</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold">Commercial outcome still wins</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             If your Meta account has winners but you do not know what actually made them win, contact us. We can turn performance history into useful creative learning.
           </p>

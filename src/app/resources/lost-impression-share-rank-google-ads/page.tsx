@@ -141,7 +141,7 @@ export default function Page() {
 
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold">Not sure if the number is actually good?</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold">Use the metric to find bottlenecks</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             If profitable Google campaigns are losing visibility due to rank, send us an inquiry. We can review the ads, landing pages, bidding and economics before simply paying more.
           </p>

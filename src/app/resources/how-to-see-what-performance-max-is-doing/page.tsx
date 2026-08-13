@@ -6,12 +6,13 @@ import { Reveal } from "@/components/marketing/Reveal";
 import Eyebrow from "@/components/marketing/Eyebrow";
 import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import { ManagedServicesCTA } from "@/components/marketing/CTAGroup";
+import { LastReviewed, OfficialSources } from "@/components/marketing/ArticleTrust";
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "How to Tell What Performance Max Is Actually Doing",
-  "description": "Performance Max is deliberately more automated than traditional Search, which means advertisers often feel they are funding a black box.",
+  "description": "The Channel Performance, product, asset and search-category reports Performance Max actually exposes, and how to read them against real Shopify orders.",
   "datePublished": "2026-08-12",
   "dateModified": "2026-08-12",
   "author": {
@@ -53,7 +54,7 @@ const BREADCRUMB_JSON_LD = {
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "How to Tell What Performance Max Is Actually...",
+      "name": "How to Tell What Performance Max Is Doing",
       "item": "https://www.attribix.app/resources/how-to-see-what-performance-max-is-doing"
     }
   ]
@@ -67,23 +68,23 @@ export default function Page() {
 
       <section className="mx-auto max-w-3xl px-4 pt-24 pb-10 md:pt-32">
         <Reveal>
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "How to Tell What Performance Max Is Actually..." }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "How to Tell What Performance Max Is Doing" }]} />
           <Eyebrow>Google Ads</Eyebrow>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
             How to Tell What Performance Max Is Actually Doing
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            Performance Max is deliberately more automated than traditional Search, which means advertisers often feel they are funding a black box. You cannot turn it into a fully transparent Search campaign, but you can understand much more than a single ROAS number.
+            Performance Max is more automated than traditional Search, and it doesn&apos;t give you keyword-level control. That&apos;s a real limitation. It isn&apos;t the same as having no visibility: Google now exposes several reports that show where a PMax campaign is actually spending and converting, and most of the &ldquo;PMax is a black box&rdquo; complaints are really about advertisers not knowing these exist yet.
           </p>
         </Reveal>
       </section>
 
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Start with products</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Channel performance reporting</h2>
           <div className="space-y-4">
             <p className="text-white/60 leading-relaxed text-sm">
-              For ecommerce, look at product-level performance. Which products receive spend, clicks and conversions? Are best sellers carrying the campaign? Are low-margin products absorbing budget?
+              The Channel Performance report inside a PMax campaign breaks results down by Search, Shopping, Display, YouTube, Discover, Gmail and Maps, with clicks, cost, conversions and conversion value for each. This is the single most useful diagnostic PMax offers: if a campaign&apos;s ROAS drops, this report shows whether the change is concentrated in one channel (a Display CPM spike, a Shopping feed issue) or spread evenly, which points toward a genuine demand shift instead.
             </p>
           </div>
         </Reveal>
@@ -93,10 +94,39 @@ export default function Page() {
         <div className="absolute inset-0 -z-10 bg-black/15" />
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>
-            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Review search and audience insights</h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Product-level and asset performance</h2>
             <div className="space-y-4 max-w-2xl">
             <p className="text-white/60 leading-relaxed text-sm">
-              Use whatever search category, search term and audience insights Google currently exposes. Look for branded demand, unexpected query themes and whether the campaign is reaching the market you intended.
+              For ecommerce, look at product-level performance inside the campaign: which products receive spend, clicks and conversions, whether best sellers are carrying the result, and whether low-margin products are quietly absorbing budget. Asset reporting works the same way for creative: individual images, headlines and video are rated by their measured contribution to conversions, which is enough to identify a weak asset without needing full attribution down to the individual ad.
+            </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4 py-10">
+        <Reveal>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Search category and audience insights</h2>
+          <div className="space-y-4">
+            <p className="text-white/60 leading-relaxed text-sm">
+              Search category insights group the queries triggering your ads into themes, and audience insights show which segments are engaging. Neither gives you the exact search-term list Search campaigns provide, but both are enough to catch branded demand, an unexpected query theme, or a campaign reaching the wrong market before it shows up as a ROAS problem three weeks later.
+            </p>
+          </div>
+        </Reveal>
+      </section>
+
+      <section className="relative py-10">
+        <div className="absolute inset-0 -z-10 bg-black/15" />
+        <div className="mx-auto max-w-3xl px-4">
+          <Reveal>
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Merchant Center diagnostics</h2>
+            <div className="space-y-4 max-w-2xl">
+            <p className="text-white/60 leading-relaxed text-sm">
+              For Shopping-fed PMax campaigns, a meaningful share of &ldquo;PMax stopped working&rdquo; problems are actually Merchant Center problems: disapproved products, feed sync failures, price or availability mismatches. Under Products in Merchant Center, check for items flagged as needing attention before assuming the campaign itself changed. Full detail is in{" "}
+              <Link href="/resources/google-merchant-center-product-disapproved" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Google Merchant Center product disapprovals
+              </Link>
+              .
             </p>
             </div>
           </Reveal>
@@ -108,7 +138,7 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Break down time, device and geography</h2>
           <div className="space-y-4">
             <p className="text-white/60 leading-relaxed text-sm">
-              Performance can differ sharply by country, device and period. A blended account number can hide a weak market or a mobile conversion problem.
+              Performance can differ sharply by country, device and period. A blended account number can hide a weak market or a mobile conversion problem that a segmented view would show immediately.
             </p>
           </div>
         </Reveal>
@@ -118,10 +148,10 @@ export default function Page() {
         <div className="absolute inset-0 -z-10 bg-black/15" />
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>
-            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Compare with Shopify</h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Compare against actual Shopify orders</h2>
             <div className="space-y-4 max-w-2xl">
             <p className="text-white/60 leading-relaxed text-sm">
-              If PMax reports a large conversion increase but Shopify orders are flat, the campaign may be receiving more attribution rather than generating the same increase in actual sales.
+              Every report above describes what Google Ads thinks happened. If PMax reports a large conversion increase but Shopify orders are flat, the campaign may be receiving more attribution rather than generating the same increase in actual sales. Attribix shows Google Ads&apos; reported conversions next to real Shopify orders day by day, which is the fastest way to catch that gap without a manual export.
             </p>
             </div>
           </Reveal>
@@ -133,8 +163,21 @@ export default function Page() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Follow changes</h2>
           <div className="space-y-4">
             <p className="text-white/60 leading-relaxed text-sm">
-              When performance moves, ask what changed in the feed, inventory, budget, bidding, assets, website, conversion tracking or market demand. PMax will never provide the same control as Search. The job is to combine the available Google insights with independent store data so you understand enough to make business decisions.
+              When performance moves, ask what changed in the feed, inventory, budget, bidding, assets, website, conversion tracking or market demand. PMax will never provide the same query-level control as Search. The job is to combine the reports above with independent store data so you understand enough to make business decisions, not to wait for PMax to become something it isn&apos;t designed to be.
             </p>
+          </div>
+        </Reveal>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4">
+        <Reveal>
+          <div className="space-y-2 border-t border-white/10 pt-6">
+            <OfficialSources
+              sources={[
+                { label: "Channel performance reporting for Performance Max", href: "https://blog.google/products/ads-commerce/channel-performance-reporting-coming-to-performance-max/" },
+              ]}
+            />
+            <LastReviewed date="August 12, 2026" />
           </div>
         </Reveal>
       </section>

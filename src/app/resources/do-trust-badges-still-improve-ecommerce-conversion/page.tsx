@@ -154,7 +154,7 @@ export default function Page() {
 
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold">Need a second opinion on the offer?</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold">Use badges where the question appears</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             If your Shopify store relies on dozens of trust icons but still feels less credible than your competitors, contact us. We can review the full customer experience.
           </p>

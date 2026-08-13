@@ -44,7 +44,7 @@ const ARTICLE_JSON_LD = {
   description:
     "The order to check causes in when Performance Max ROAS drops suddenly: tracking, reporting lag, feed changes, competition, recent account changes, stock-outs, and brand mix shifts.",
   datePublished: "2026-08-11",
-  dateModified: "2026-08-11",
+  dateModified: "2026-08-12",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
   publisher: {
     "@type": "Organization",
@@ -126,13 +126,16 @@ export default function Page() {
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               Google Ads records a conversion against the date of the click,
               not the date the purchase actually completed, and conversions
-              can take time to fully attribute and appear in reporting. The
-              last three to seven days in any Google Ads view are almost
-              always under-reported relative to where they&apos;ll settle
-              once conversion lag catches up. If the &ldquo;drop&rdquo;
-              you&apos;re seeing is concentrated in the most recent few days,
-              wait for that window to finish reporting before treating it as
-              a real trend rather than an artifact of how the data fills in.
+              can take time to fully attribute and appear in reporting. How
+              much of the most recent few days is still under-reported
+              depends on your account&apos;s own conversion lag: a store
+              where most purchases happen within minutes of the click will
+              see the last day or two settle quickly, while longer
+              consideration cycles can leave a wider recent window
+              incomplete. If the &ldquo;drop&rdquo; you&apos;re seeing is
+              concentrated in the most recent days, check your typical lag
+              before treating it as a real trend rather than an artifact of
+              how the data fills in.
             </p>
           </Reveal>
         </div>
@@ -143,7 +146,7 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Feed changes</h2>
           <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-            Check Merchant Center Diagnostics for a recent jump in
+            Check Products → Needs attention in Merchant Center for a recent jump in
             disapproved or unavailable products, a broken feed sync, or a
             recent attribute or category change that could have shifted how
             products are matched to queries. A feed that quietly loses a

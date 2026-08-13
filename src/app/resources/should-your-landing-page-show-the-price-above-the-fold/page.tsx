@@ -142,7 +142,6 @@ export default function Page() {
           <ul className="space-y-2 text-sm">
             <li><Link href="/resources/should-ecommerce-landing-pages-have-navigation" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Should Ecommerce Landing Pages Have Navigation?</Link></li>
             <li><Link href="/resources/how-long-should-an-ecommerce-landing-page-be" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How Long Should an Ecommerce Landing Page Be?</Link></li>
-            <li><Link href="/resources/does-removing-navigation-improve-landing-page" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Does Removing Navigation Improve Landing Page Conversion Rate?</Link></li>
           </ul>
         </Reveal>
       </section>

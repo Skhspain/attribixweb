@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.attribix.app/shopify-attribution" },
   openGraph: {
     title: "Shopify Attribution Software | Attribix",
-    description: "Connect Meta and Google Ads clicks to real Shopify orders — not platform-reported conversions.",
+    description: "Connect Meta and Google Ads clicks to real Shopify orders, not platform-reported conversions.",
     url: "https://www.attribix.app/shopify-attribution",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Attribix" }],
   },

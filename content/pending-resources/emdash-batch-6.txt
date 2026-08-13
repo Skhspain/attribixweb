@@ -1,0 +1,16 @@
+src/app/resources/shopify-traffic-no-sales/page.tsx
+src/app/resources/good-ctr-low-cpc-no-sales-meta-ads/page.tsx
+src/app/resources/performance-max-roas-dropped/page.tsx
+src/app/resources/meta-ads-clicks-no-sales/page.tsx
+src/app/resources/google-ads-clicks-vs-shopify-sessions/page.tsx
+src/app/resources/enhanced-conversions-shopify/page.tsx
+src/app/resources/how-to-tell-meta-ad-fatigue/page.tsx
+src/app/resources/meta-ads-cost-per-purchase-increasing/page.tsx
+src/app/resources/good-hook-for-meta-ad/layout.tsx
+src/app/resources/shopify-attribution-models/layout.tsx
+src/app/resources/good-meta-ad-metrics-but-poor-sales/layout.tsx
+src/app/resources/google-ads-search-terms-ecommerce/layout.tsx
+src/app/resources/meta-ad-creative-testing-what-to-test-first/page.tsx
+src/app/resources/meta-ads-new-customer-acquisition-measurement/page.tsx
+src/app/resources/static-images-vs-video-ads-ecommerce/layout.tsx
+src/app/resources/when-meta-ads-account-ready-optimize-purchases/page.tsx

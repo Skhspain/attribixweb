@@ -153,7 +153,7 @@ export default function Page() {
 
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold">Need the funnel reviewed properly?</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold">Software should earn its place</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             If your Shopify marketing stack is expensive and nobody knows which tools contribute value, contact us. We can help separate acquisition infrastructure from operational overhead.
           </p>

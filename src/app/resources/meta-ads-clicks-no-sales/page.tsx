@@ -24,7 +24,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Should I pause the campaign while I figure this out?",
-    a: "Not automatically. Pausing resets the ad set's learning and any pixel-based optimization it's built up. Unless spend is clearly being wasted at a rate you can't tolerate, it's usually better to keep it running at the same budget while you diagnose, then make one deliberate change once you know where the problem is.",
+    a: "Not automatically. A brief pause doesn't necessarily reset an ad set's learning, but pausing for an extended period (Meta's current guidance points to roughly a week or more) can cause it to re-enter the learning phase once reactivated. Unless spend is clearly being wasted at a rate you can't tolerate, it's usually better to keep it running at the same budget while you diagnose, then make one deliberate change once you know where the problem is.",
   },
 ];
 
@@ -45,7 +45,7 @@ const ARTICLE_JSON_LD = {
   description:
     "A step-by-step way to find where clicks stop turning into Shopify orders (ad-page mismatch, weak offer, checkout friction, or a tracking problem) before you touch the campaign.",
   datePublished: "2026-08-11",
-  dateModified: "2026-08-11",
+  dateModified: "2026-08-12",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
   publisher: {
     "@type": "Organization",

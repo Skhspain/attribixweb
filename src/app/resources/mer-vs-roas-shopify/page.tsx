@@ -40,7 +40,7 @@ const ARTICLE_JSON_LD = {
   headline: "MER vs ROAS for Shopify",
   description: "When to use ROAS, when to use MER, and why they answer different questions for Shopify stores.",
   datePublished: "2026-08-08",
-  dateModified: "2026-08-08",
+  dateModified: "2026-08-12",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
   publisher: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app", logo: { "@type": "ImageObject", url: "https://www.attribix.app/assets/logo.svg" } },
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.attribix.app/resources/mer-vs-roas-shopify" },
@@ -67,7 +67,7 @@ export default function Page() {
       <section className="mx-auto max-w-3xl px-4 pt-24 pb-10 md:pt-32">
         <Reveal>
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "MER vs ROAS" }]} />
-          <Eyebrow>Measurement</Eyebrow>
+          <Eyebrow>Attribution &amp; Analytics</Eyebrow>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
             MER vs ROAS for Shopify
           </h1>
@@ -115,7 +115,7 @@ export default function Page() {
             </p>
 
             <div className="mt-8">
-              <DiagramFrame caption="ROAS divides by what a model attributes. MER divides by everything.">
+              <DiagramFrame caption="Platform ROAS = attributed revenue ÷ ad spend. MER = total store revenue ÷ total marketing spend.">
                 <svg viewBox="0 0 600 170" className="w-full h-auto" role="img" aria-label="Diagram contrasting ROAS, which divides ad-attributed revenue by ad spend, against MER, which divides total store revenue by total marketing spend.">
                   <rect x="10" y="10" width="280" height="150" rx="12" className="fill-cyan-400/5" stroke="rgba(56,189,248,0.35)" strokeWidth="1" />
                   <text x="150" y="34" textAnchor="middle" className="fill-white text-[13px] font-semibold">ROAS</text>
@@ -133,6 +133,15 @@ export default function Page() {
                 </svg>
               </DiagramFrame>
             </div>
+
+            <p className="mt-6 text-white/60 leading-relaxed text-sm max-w-2xl">
+              On Attribix, &quot;total marketing spend&quot; in the MER formula
+              means paid advertising spend across every channel (Meta,
+              Google and any other paid platform). It does not include
+              agency fees, tools, or headcount. If you want a version that
+              includes those costs too, that&apos;s a different, broader
+              efficiency figure, not MER, and should be labelled as such.
+            </p>
           </Reveal>
         </div>
       </section>

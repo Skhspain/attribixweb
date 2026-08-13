@@ -1,0 +1,14 @@
+src/app/resources/google-ads-duplicate-conversions-shopify/page.tsx
+src/app/resources/shopify-server-side-tracking-guide/page.tsx
+src/app/resources/performance-max-no-sales/page.tsx
+src/app/resources/meta-ads-roas-dropped/page.tsx
+src/app/resources/what-does-a-google-ads-agency-do/page.tsx
+src/app/resources/shopify-revenue-up-roas-down/page.tsx
+src/app/resources/shopify-traffic-no-sales/layout.tsx
+src/app/resources/shopify-marketing-agency-vs-general-agency/layout.tsx
+src/app/resources/meta-ads-clicks-no-sales/layout.tsx
+src/app/resources/why-winning-meta-creatives-stop-working/layout.tsx
+src/app/resources/how-long-should-meta-ads-run-before-changes/page.tsx
+src/app/resources/how-much-meta-ads-budget-retargeting/layout.tsx
+src/app/resources/performance-max-no-sales/layout.tsx
+src/app/resources/shopify-advertising-budget-how-much-to-spend/layout.tsx

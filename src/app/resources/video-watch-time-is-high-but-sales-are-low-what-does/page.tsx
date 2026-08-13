@@ -151,7 +151,7 @@ export default function Page() {
         <Reveal>
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/resources/how-to-build-an-ecommerce-creative-testing-system-that" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How to Build an Ecommerce Creative Testing System That Produces Useful Learnings</Link></li>
+            <li><Link href="/resources/ecommerce-creative-testing-system" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How to Build an Ecommerce Creative Testing System That Produces Useful Learnings</Link></li>
             <li><Link href="/resources/meta-ads-hook-rate-vs-sales-which-matters-more" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Meta Ads Hook Rate vs Sales: Which Matters More?</Link></li>
             <li><Link href="/resources/why-your-best-performing-ad-may-not-be-your-best" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Why Your Best-Performing Ad May Not Be Your Best Creative</Link></li>
           </ul>

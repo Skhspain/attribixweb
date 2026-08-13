@@ -140,11 +140,6 @@ export default function Page() {
                   How much revenue should email marketing generate for a Shopify store?
                 </Link>
               </li>
-              <li>
-                <Link href="/resources/good-email-revenue-percentage-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
-                  What is a good email marketing revenue percentage for ecommerce?
-                </Link>
-              </li>
             </ul>
           </Reveal>
         </div>

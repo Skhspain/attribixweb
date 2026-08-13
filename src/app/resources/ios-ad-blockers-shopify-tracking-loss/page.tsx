@@ -8,6 +8,7 @@ import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import { ManagedServicesCTA } from "@/components/marketing/CTAGroup";
 import FAQList from "@/components/marketing/FAQList";
 import DiagramFrame from "@/components/marketing/DiagramFrame";
+import { LastReviewed, OfficialSources } from "@/components/marketing/ArticleTrust";
 
 const FAQ_ITEMS = [
   {
@@ -45,7 +46,7 @@ const ARTICLE_JSON_LD = {
   description:
     "Safari's ITP, ad blockers and iOS privacy defaults each remove real orders from browser-based ad tracking. How to tell, what it does to reported ROAS, and what server-side tracking can and can't fix.",
   datePublished: "2026-08-11",
-  dateModified: "2026-08-11",
+  dateModified: "2026-08-12",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
   publisher: {
     "@type": "Organization",
@@ -143,10 +144,13 @@ export default function Page() {
               script simply never loads, or its request to log an event
               never leaves the browser. There&apos;s no cookie lifespan to
               reason about because there&apos;s no successful request in
-              the first place. Anyone running an ad blocker who completes a
-              purchase on your Shopify store is, from the ad platform&apos;s
-              perspective, invisible for that order, full stop, not
-              partially tracked.
+              the first place. For that specific browser-side event, an ad
+              blocker is closer to all-or-nothing than ITP&apos;s partial
+              restriction. Whether the order is recoverable at all still
+              depends on what else is in place: a consented, correctly
+              implemented server-side event triggered by the order itself
+              (not the browser) can still reach the ad platform even when
+              the browser-side pixel never fired.
             </p>
           </Reveal>
         </div>
@@ -380,6 +384,20 @@ export default function Page() {
             </Link>
             .
           </p>
+        </Reveal>
+      </section>
+
+      {/* TRUST */}
+      <section className="mx-auto max-w-3xl px-4">
+        <Reveal>
+          <div className="space-y-2 border-t border-white/10 pt-6">
+            <OfficialSources
+              sources={[
+                { label: "Apple: Full Third-Party Cookie Blocking and More", href: "https://webkit.org/blog/10218/full-third-party-cookie-blocking-and-more/" },
+              ]}
+            />
+            <LastReviewed date="August 12, 2026" />
+          </div>
         </Reveal>
       </section>
 

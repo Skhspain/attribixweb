@@ -6,6 +6,7 @@ import { Reveal } from "@/components/marketing/Reveal";
 import Eyebrow from "@/components/marketing/Eyebrow";
 import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import { ManagedServicesCTA } from "@/components/marketing/CTAGroup";
+import { LastReviewed, OfficialSources } from "@/components/marketing/ArticleTrust";
 
 const ARTICLE_JSON_LD = {
   "@context": "https://schema.org",
@@ -14,7 +15,7 @@ const ARTICLE_JSON_LD = {
   description:
     "Campaign-level and ad-set-level budgeting answer a simple question: who gets to decide where the money goes. Neither is automatically superior.",
   datePublished: "2026-08-11",
-  dateModified: "2026-08-11",
+  dateModified: "2026-08-12",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
   publisher: {
     "@type": "Organization",
@@ -71,6 +72,14 @@ export default function Page() {
           </p>
           <p className="mt-4 text-lg text-white/65 max-w-xl leading-relaxed">
             Neither is automatically superior.
+          </p>
+          <p className="mt-4 text-sm text-white/45">
+            Naming note: what was called Campaign Budget Optimization (CBO)
+            now shows up in Ads Manager as Advantage+ campaign budget, and
+            Meta has been merging manual and Advantage+ setup flows. Most
+            advertisers still say CBO out loud. The mechanics this article
+            covers (campaign-level allocation vs a reserved amount per ad
+            set) haven&apos;t changed even where the label has.
           </p>
         </Reveal>
       </section>
@@ -167,6 +176,20 @@ export default function Page() {
             </p>
           </Reveal>
         </div>
+      </section>
+
+      {/* TRUST */}
+      <section className="mx-auto max-w-3xl px-4">
+        <Reveal>
+          <div className="space-y-2 border-t border-white/10 pt-6">
+            <OfficialSources
+              sources={[
+                { label: "Meta Advantage+ campaign budget", href: "https://www.facebook.com/business/ads/meta-advantage-plus/budget" },
+              ]}
+            />
+            <LastReviewed date="August 12, 2026" />
+          </div>
+        </Reveal>
       </section>
 
       {/* RELATED */}

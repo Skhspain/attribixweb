@@ -7,11 +7,12 @@ import Eyebrow from "@/components/marketing/Eyebrow";
 import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import { ManagedServicesCTA } from "@/components/marketing/CTAGroup";
 import FAQList from "@/components/marketing/FAQList";
+import { LastReviewed, OfficialSources } from "@/components/marketing/ArticleTrust";
 
 const FAQ_ITEMS = [
   {
     q: "Where do I see why a product was disapproved?",
-    a: "The Diagnostics section in Google Merchant Center lists disapproved items with the specific policy or data issue attached to each one, rather than a single generic error. Start there instead of guessing.",
+    a: "The Needs attention page under Products in Google Merchant Center lists disapproved items with the specific policy or data issue attached to each one, rather than a single generic error. Start there instead of guessing.",
   },
   {
     q: "How long does a review take after fixing an issue?",
@@ -39,7 +40,7 @@ const ARTICLE_JSON_LD = {
   headline: "Google Merchant Center Products Disapproved: What It Means for Sales",
   description: "Why disapprovals happen, and how to tell how much of your catalog is actually eligible to run.",
   datePublished: "2026-08-11",
-  dateModified: "2026-08-11",
+  dateModified: "2026-08-12",
   author: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app" },
   publisher: { "@type": "Organization", name: "Attribix", url: "https://www.attribix.app", logo: { "@type": "ImageObject", url: "https://www.attribix.app/assets/logo.svg" } },
   mainEntityOfPage: { "@type": "WebPage", "@id": "https://www.attribix.app/resources/google-merchant-center-product-disapproved" },
@@ -80,14 +81,15 @@ export default function Page() {
 
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Start in Diagnostics, not the campaign</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Start in Products → Needs attention, not the campaign</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Merchant Center&apos;s Diagnostics section lists disapproved
-            items along with the specific reason attached to each one,
-            which is a much faster starting point than trying to infer the
-            cause from campaign performance alone. Check what share of
-            your total catalog is affected before assuming it&apos;s a
-            small, isolated issue.
+            Under Products in Merchant Center, the Needs attention page
+            lists disapproved and flagged items along with the specific
+            reason attached to each one, ranked by how much click potential
+            they affect, which is a much faster starting point than trying
+            to infer the cause from campaign performance alone. Check what
+            share of your total catalog is affected before assuming
+            it&apos;s a small, isolated issue.
           </p>
         </Reveal>
       </section>
@@ -99,7 +101,7 @@ export default function Page() {
             <h2 className="text-2xl md:text-3xl font-extrabold mb-4">The common causes</h2>
             <ul className="space-y-3 text-sm text-white/60">
               <li><span className="text-white font-medium">Price mismatch</span>: the price in your feed doesn&apos;t match what&apos;s shown on the actual product page.</li>
-              <li><span className="text-white font-medium">Missing or invalid GTIN</span>: required for most product categories; custom/handmade goods are a documented exception.</li>
+              <li><span className="text-white font-medium">Missing or invalid GTIN</span>: Google requires the correct manufacturer-assigned identifier for products that have one. Never invent, recycle or guess a value; if the product genuinely has no GTIN, follow Google&apos;s current product-data specification for how to submit it instead.</li>
               <li><span className="text-white font-medium">Availability mismatch</span>: the feed says in stock while the page says otherwise, or vice versa.</li>
               <li><span className="text-white font-medium">Shipping setting conflicts</span>: shipping data in the feed contradicting your account-level shipping settings.</li>
               <li><span className="text-white font-medium">Image policy issues</span>: placeholder, watermarked, or generic stock images where a real product photo is required.</li>
@@ -113,12 +115,12 @@ export default function Page() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Fixing it and requesting review</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Correct the specific field flagged in Diagnostics, in your
-            feed, on the product page, or both, since a mismatch between
-            them is the root cause more often than either being wrong on
-            its own. After the fix, you can request a review; turnaround
-            isn&apos;t instant, so don&apos;t assume the fix has failed if
-            the status doesn&apos;t update immediately.
+            Correct the specific field flagged on the Needs attention page,
+            in your feed, on the product page, or both, since a mismatch
+            between them is the root cause more often than either being
+            wrong on its own. After the fix, you can request a review;
+            turnaround isn&apos;t instant, so don&apos;t assume the fix has
+            failed if the status doesn&apos;t update immediately.
           </p>
         </Reveal>
       </section>
@@ -139,6 +141,20 @@ export default function Page() {
             </p>
           </Reveal>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4">
+        <Reveal>
+          <div className="space-y-2 border-t border-white/10 pt-6">
+            <OfficialSources
+              sources={[
+                { label: "The Needs attention tab", href: "https://support.google.com/merchants/answer/12476548" },
+                { label: "About unique product identifiers (GTIN)", href: "https://support.google.com/merchants/answer/160161" },
+              ]}
+            />
+            <LastReviewed date="August 12, 2026" />
+          </div>
+        </Reveal>
       </section>
 
       <section className="mx-auto max-w-3xl px-4 py-14">

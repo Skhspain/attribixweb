@@ -1,0 +1,16 @@
+src/app/resources/view-through-conversions-explained/page.tsx
+src/app/resources/ios-ad-blockers-shopify-tracking-loss/page.tsx
+src/app/resources/google-consent-mode-shopify/page.tsx
+src/app/resources/google-ads-conversion-value-wrong-shopify/page.tsx
+src/app/resources/google-ads-shopify-revenue-doesnt-match/page.tsx
+src/app/resources/shopify-sales-down-traffic-same/page.tsx
+src/app/resources/shopify-conversion-rate-dropped/page.tsx
+src/app/resources/marketing-agency-vs-in-house/layout.tsx
+src/app/resources/google-ads-low-quality-traffic/page.tsx
+src/app/resources/percentage-ad-spend-vs-flat-fee/layout.tsx
+src/app/resources/google-ads-brand-vs-non-brand-budget/layout.tsx
+src/app/resources/google-ads-not-tracking-shopify-purchases/layout.tsx
+src/app/resources/meta-ad-creative-testing-what-to-test-first/layout.tsx
+src/app/resources/meta-ads-learning-phase-explained/page.tsx
+src/app/resources/view-through-conversions-explained/layout.tsx
+src/app/resources/what-makes-good-meta-ad-ecommerce/layout.tsx
