@@ -1,15 +1,15 @@
 [
   {
     "q": "Does Attribix work with Shopify and WooCommerce?",
-    "a": "Yes — Shopify and WooCommerce are both supported. Connect your store and start streaming events."
+    "a": "Yes: Shopify and WooCommerce are both supported. Connect your store and start streaming events."
   },
   {
     "q": "How do you track conversions accurately?",
-    "a": "Attribix combines browser-side and server-side conversion signals. Meta CAPI uses matching parameters and event deduplication; Google Ads uses its own conversion and transaction-ID mechanisms — each platform's own method is used to avoid double-counting."
+    "a": "Attribix combines browser-side and server-side conversion signals. Meta CAPI uses matching parameters and event deduplication; Google Ads uses its own conversion and transaction-ID mechanisms. Each platform's own method is used to avoid double-counting."
   },
   {
     "q": "Which attribution models are available?",
-    "a": "Last-click, first-click, linear and time-decay — compare them directly in your attribution dashboard, with last-click, first-click or linear available as your account's default model in Settings."
+    "a": "Last-click, first-click, linear and time-decay: compare them directly in your attribution dashboard, with last-click, first-click or linear available as your account's default model in Settings."
   },
   {
     "q": "How is privacy handled?",
@@ -17,14 +17,14 @@
   },
   {
     "q": "Can I export my data?",
-    "a": "Yes — CSV exports are available throughout the dashboard, and lead data can be pushed to your own systems via webhook."
+    "a": "Yes: CSV exports are available throughout the dashboard, and lead data can be pushed to your own systems via webhook."
   },
   {
     "q": "How do refunds, tax and shipping affect revenue?",
-    "a": "Revenue is captured from your Shopify order total at the time of purchase. It doesn't automatically re-adjust if an order is later refunded or edited — for periods with significant refund activity, cross-check against Shopify's own reporting."
+    "a": "Revenue is captured from your Shopify order total at the time of purchase. It doesn't automatically re-adjust if an order is later refunded or edited, so for periods with significant refund activity, cross-check against Shopify's own reporting."
   },
   {
     "q": "Is there a free trial?",
-    "a": "Yes — verify tracking and reports during the trial before upgrading."
+    "a": "Yes: verify tracking and reports during the trial before upgrading."
   }
 ]

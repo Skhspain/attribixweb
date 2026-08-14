@@ -8,7 +8,7 @@ const PIXEL_ID = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID ?? "1278366556967335"
 
 /**
  * Only loads the Meta Pixel once the visitor has granted marketing
- * consent. Renders nothing until then — no init, no PageView, no
+ * consent. Renders nothing until then: no init, no PageView, no
  * noscript tracking pixel.
  */
 export default function FacebookPixel() {

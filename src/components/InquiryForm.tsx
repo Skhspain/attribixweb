@@ -37,7 +37,7 @@ export default function InquiryForm() {
     const form = e.currentTarget;
     const fd = new FormData(form);
 
-    // Honeypot spam trap — real visitors never fill this hidden field.
+    // Honeypot spam trap: real visitors never fill this hidden field.
     if (String(fd.get("company_website") || "").trim() !== "") {
       return;
     }
@@ -87,7 +87,7 @@ export default function InquiryForm() {
 
   return (
     <form onSubmit={onSubmit} className="space-y-5" noValidate>
-      {/* Honeypot — hidden from real users, visible to bots that fill every field */}
+      {/* Honeypot: hidden from real users, visible to bots that fill every field */}
       <div aria-hidden="true" className="absolute left-[-9999px] top-auto h-0 w-0 overflow-hidden">
         <label htmlFor="company_website">Leave this field empty</label>
         <input type="text" id="company_website" name="company_website" tabIndex={-1} autoComplete="off" />
@@ -169,7 +169,7 @@ export default function InquiryForm() {
       </button>
 
       <p className="text-center text-xs text-white/20">
-        We only use these details to reply to your inquiry — see our{" "}
+        We only use these details to reply to your inquiry: see our{" "}
         <a href="/privacy" className="underline underline-offset-2 hover:text-white/40">privacy policy</a>.
         No spam, ever.
       </p>

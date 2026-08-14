@@ -12,7 +12,7 @@ const JOURNEY = ["Meta ad", "Store visit", "Google search", "Email", "Shopify pu
 
 const MODELS = [
   { name: "First-click", credit: "100% to Meta ad", note: "Rewards discovery: good for measuring top-of-funnel reach, but ignores everything after." },
-  { name: "Last-click", credit: "100% to email", note: "What most ad platforms default to internally. Rewards the final nudge, ignores what built the intent." },
+  { name: "Last-click", credit: "100% to email", note: "The simplest rule, and still common in basic analytics setups. Rewards the final nudge and ignores what built the intent; Google Ads and Meta now weight conversions with their own data-driven models internally rather than pure last-click." },
   { name: "Multi-touch", credit: "Split across Meta, Google, email", note: "Spreads credit across the path, closer to reality, but the split itself is a modelling choice, not a fact." },
 ];
 

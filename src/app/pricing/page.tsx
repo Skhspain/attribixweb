@@ -16,15 +16,18 @@ const PLANS = [
     yearly: 354,
     highlight: false,
     badge: null,
-    features: [
+    core: [
       "300 orders tracked / month",
+      "Meta & Google Ads data",
+      "Server-side tracking & attribution",
+      "30 days analytics history",
+      "UTM builder",
+    ],
+    extra: [
       "500 newsletter sends / month",
       "50 reviews / month",
       "25 leads / month",
       "SEO audit (unlimited)",
-      "Meta & Google Ads data",
-      "30 days analytics history",
-      "UTM builder",
     ],
   },
   {
@@ -33,13 +36,17 @@ const PLANS = [
     yearly: 720,
     highlight: true,
     badge: "Most popular",
-    features: [
+    core: [
       "2,500 orders tracked / month",
+      "Meta & Google Ads data",
+      "Server-side tracking & attribution",
+      "90 days analytics history",
+    ],
+    extra: [
       "5,000 subscribers, 20k sends",
       "Unlimited reviews",
       "Unlimited leads",
       "SEO audit (unlimited)",
-      "90 days analytics history",
       "Social calendar & analytics",
       "Product feed for Google & Meta",
     ],
@@ -50,12 +57,16 @@ const PLANS = [
     yearly: 1356,
     highlight: false,
     badge: null,
-    features: [
+    core: [
       "Unlimited orders tracked",
-      "Unlimited subscribers & sends",
-      "Unlimited reviews & leads",
+      "Meta & Google Ads data",
+      "Server-side tracking & attribution",
       "365 days analytics history",
       "Visitor flow analysis",
+    ],
+    extra: [
+      "Unlimited subscribers & sends",
+      "Unlimited reviews & leads",
       "Product feed for Google & Meta",
       "Social calendar & analytics",
       "Priority support",
@@ -63,11 +74,57 @@ const PLANS = [
   },
 ];
 
+const PRICING_FAQ: { q: string; a: string }[] = [
+  {
+    q: "What counts as an order tracked?",
+    a: "Each new Shopify order that reaches Attribix through your store's order webhook counts once toward your plan's monthly order limit, matched by order ID.",
+  },
+  {
+    q: "What happens if I exceed my plan's order limit?",
+    a: "Attribix stops recording additional orders for that month once you hit your plan's limit, until it resets or you upgrade. Your Shopify store keeps taking orders as normal either way; only further tracking pauses.",
+  },
+  {
+    q: "Can I upgrade or downgrade?",
+    a: "Yes. Plan changes are handled through your Shopify billing settings once your store is connected.",
+  },
+  {
+    q: "Can I cancel during the trial?",
+    a: "Yes. You can cancel any time during the trial or afterward by uninstalling the app or canceling the plan, with no penalty for canceling during the trial.",
+  },
+  {
+    q: "Do all plans include server-side tracking?",
+    a: "Yes. Every plan includes server-side tracking, Meta and Google Ads data and full attribution. What changes between plans is order volume, history length and access to the additional tools.",
+  },
+  {
+    q: "Is a credit card required for the trial?",
+    a: "No. The 14-day free trial does not require a credit card to start.",
+  },
+  {
+    q: "Which plan is suitable for higher-volume stores?",
+    a: "Pro, which tracks unlimited orders and keeps 365 days of analytics history rather than a fixed monthly cap.",
+  },
+  {
+    q: "Is Shopify Plus supported?",
+    a: "Yes. Attribix connects through Shopify's standard app and webhook APIs, so it works the same way on Shopify Plus as on other Shopify plans.",
+  },
+];
+
+const PRICING_FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: PRICING_FAQ.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
 export default function PricingPage() {
   const [yearly, setYearly] = React.useState(false);
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-[#0F0620] via-[#0E1530] to-[#053B56] text-white overflow-hidden">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(PRICING_FAQ_JSON_LD) }} />
       {/* Background glow */}
       <div
         aria-hidden
@@ -159,16 +216,37 @@ export default function PricingPage() {
                 )}
               </div>
 
-              <ul className="space-y-2.5 mb-8 flex-1">
-                {plan.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2.5 text-sm text-white/75">
-                    <svg className={cx("mt-0.5 h-4 w-4 shrink-0", plan.highlight ? "text-cyan-400" : "text-white/40")} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    {f}
-                  </li>
-                ))}
-              </ul>
+              <div className="mb-5 flex-1">
+                <p className={cx("mb-2 text-[11px] font-semibold uppercase tracking-wide", plan.highlight ? "text-cyan-300/80" : "text-white/40")}>
+                  Core Attribix
+                </p>
+                <ul className="space-y-2.5">
+                  {plan.core.map((f) => (
+                    <li key={f} className="flex items-start gap-2.5 text-sm text-white/75">
+                      <svg className={cx("mt-0.5 h-4 w-4 shrink-0", plan.highlight ? "text-cyan-400" : "text-white/40")} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mb-8">
+                <p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-white/30">
+                  Additional tools included
+                </p>
+                <ul className="space-y-2.5">
+                  {plan.extra.map((f) => (
+                    <li key={f} className="flex items-start gap-2.5 text-sm text-white/55">
+                      <svg className="mt-0.5 h-4 w-4 shrink-0 text-white/25" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
               <Link
                 href="/signup"
@@ -185,13 +263,31 @@ export default function PricingPage() {
           ))}
         </div>
 
-        {/* FAQ / bottom note */}
+        {/* Bottom note */}
         <div className="mt-12 text-center text-sm text-white/40">
           All plans include a 14-day free trial. No credit card required.{" "}
           <Link href="/book-demo" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4">
             Book a demo
           </Link>{" "}
           if you need help choosing.
+        </div>
+
+        {/* FAQ */}
+        <div className="mt-16 mx-auto max-w-2xl">
+          <h2 className="text-xl md:text-2xl font-extrabold text-center mb-6">Pricing questions</h2>
+          <div className="divide-y divide-white/10 rounded-2xl border border-white/10 bg-white/5">
+            {PRICING_FAQ.map((item, idx) => (
+              <details key={item.q} className="group px-5 py-4 open:bg-white/[0.02]" open={idx === 0}>
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-white marker:content-none">
+                  {item.q}
+                  <span aria-hidden className="shrink-0 text-white/40 transition-transform group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <div className="mt-2 text-sm leading-relaxed text-white/60">{item.a}</div>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 

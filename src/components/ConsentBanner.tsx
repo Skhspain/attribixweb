@@ -81,7 +81,7 @@ export default function ConsentBanner() {
                 className="mt-0.5 h-4 w-4 rounded border-white/20 bg-transparent accent-cyan-500"
               />
               <span>
-                <span className="font-medium text-white/90">Analytics</span> — helps us understand
+                <span className="font-medium text-white/90">Analytics</span>: helps us understand
                 which pages get used (Google Analytics).
               </span>
             </label>
@@ -93,7 +93,7 @@ export default function ConsentBanner() {
                 className="mt-0.5 h-4 w-4 rounded border-white/20 bg-transparent accent-cyan-500"
               />
               <span>
-                <span className="font-medium text-white/90">Marketing</span> — lets Meta measure
+                <span className="font-medium text-white/90">Marketing</span>: lets Meta measure
                 ad performance (Meta Pixel).
               </span>
             </label>

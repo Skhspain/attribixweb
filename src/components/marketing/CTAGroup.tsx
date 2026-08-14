@@ -8,7 +8,7 @@ const secondaryClass =
 
 /**
  * "Send inquiry" must always read as more prominent than "Book a free
- * consultation call" — solid fill vs. outline, primary listed first.
+ * consultation call" should be solid fill vs. outline, primary listed first.
  */
 export function ManagedServicesCTA({
   className,
@@ -34,7 +34,7 @@ export function ManagedServicesCTA({
 /**
  * Single, low-pressure CTA for early/informational-intent articles
  * (definitional, "what is X", format-comparison pieces). Do not pair
- * with a second button — that's the aggressive two-button pattern this
+ * with a second button; that's the aggressive two-button pattern this
  * exists to avoid on pages where the reader isn't ready for it yet.
  */
 export function SoftInquiryCTA({

@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, error: "Invalid request" }, { status: 400 });
   }
 
-  // Honeypot — real visitors never populate this hidden field.
+  // Honeypot: real visitors never populate this hidden field.
   if (String(body.company_website || "").trim() !== "") {
     return NextResponse.json({ ok: true });
   }
@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
   }
 
   const result = await sendLeadEmail({
-    subject: `Partner interest — ${agency || name}`,
+    subject: `Partner interest: ${agency || name}`,
     replyTo: email,
     fields: {
       Name: name,

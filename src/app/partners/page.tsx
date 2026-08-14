@@ -65,6 +65,15 @@ export default function PartnersPage() {
           want to be part of that when it&apos;s ready, tell us about your
           business below.
         </p>
+        <p className="mt-4 text-white/60 text-base leading-relaxed">
+          The fit is agencies and consultants managing Shopify clients on
+          Meta or Google Ads who want their clients on{" "}
+          <a href="/shopify-attribution" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+            better attribution and server-side tracking
+          </a>{" "}
+          without building it themselves. Register interest below and
+          we&apos;ll reach out once the referral terms are finalized.
+        </p>
       </section>
 
       <section className="mx-auto max-w-2xl px-4 pb-24">

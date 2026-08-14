@@ -1,8 +1,8 @@
 /* File: src/app/globals.css */
 
-/* ———————————————————————————————— */
+/* ==================================== */
 /*   Tailwind base, components, utilities   */
-/* ———————————————————————————————— */
+/* ==================================== */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -255,9 +255,9 @@ body,
   100% { background-position: 0% 50%; }
 }
 
-/* ———————————————————————————————— */
-/*  Custom utilities injected via Tailwind’s @layer      */
-/* ———————————————————————————————— */
+/* ==================================== */
+/*  Custom utilities injected via Tailwind's @layer      */
+/* ==================================== */
 @layer utilities {
   /* fixes Sidebar width in analytics layout (legacy) */
   .w-56 { width: 14rem !important; }

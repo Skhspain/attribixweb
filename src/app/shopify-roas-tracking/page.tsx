@@ -14,11 +14,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "What is MER?",
-    a: "Marketing efficiency ratio: total store revenue divided by total ad spend across every channel, with no attribution model involved. It moves less than platform ROAS because it doesn't depend on who gets the credit.",
+    a: "Marketing efficiency ratio: total store revenue divided by total marketing spend across every channel, with no attribution model involved. It moves less than platform ROAS because it doesn't depend on who gets the credit.",
   },
   {
     q: "What's the difference between MER and ROAS?",
-    a: "ROAS relies on attributing individual orders to individual ads or platforms. MER skips attribution entirely and compares total revenue to total spend, which makes it steadier but less useful for deciding which specific campaign to scale.",
+    a: "ROAS relies on attributing individual orders to individual ads or platforms. MER skips attribution entirely and compares total revenue to total marketing spend, which makes it steadier but less useful for deciding which specific campaign to scale.",
   },
   {
     q: "Why doesn't my blended ROAS match Meta's or Google's reported ROAS?",
@@ -30,7 +30,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Which ROAS number should I actually trust: Meta's, Google's, or Shopify's?",
-    a: "None of them is \"wrong,\" and none is the full picture on its own. Platform ROAS tells you how a platform scores its own attributed orders. Blended ROAS across platforms is closer to reality but still inflated by cross-platform overlap. MER, built from total Shopify revenue against total spend, is the steadiest number when you need one figure to anchor a decision. Use platform ROAS for campaign-level tactics, and MER or blended ROAS for the bigger picture.",
+    a: "None of them is \"wrong,\" and none is the full picture on its own. Platform ROAS tells you how a platform scores its own attributed orders. Blended ROAS across platforms is closer to reality but still inflated by cross-platform overlap. MER, built from total Shopify revenue against total marketing spend, is the steadiest number when you need one figure to anchor a decision. Use platform ROAS for campaign-level tactics, and MER or blended ROAS for the bigger picture.",
   },
 ];
 
@@ -231,7 +231,7 @@ export default function ShopifyRoasPage() {
               figure alongside each platform&apos;s own reported number, so
               the gap between them is visible rather than something
               you&apos;d only notice by reconciling spreadsheets manually.
-              MER (total store revenue over total spend) is a separate
+              MER (total store revenue over total marketing spend) is a separate
               calculation you can make from your Shopify and ad platform
               numbers directly.
             </p>

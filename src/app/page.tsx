@@ -1027,7 +1027,7 @@ type IntegrationNode = {
 };
 
 const INTEGRATION_NODES: IntegrationNode[] = [
-  // Evenly spread at 120° intervals — clean triangle
+  // Evenly spread at 120° intervals, clean triangle
   {
     id: "meta",
     label: "Meta",
@@ -1085,7 +1085,7 @@ function IntegrationsDiagram() {
           }}
         />
 
-        {/* SVG layer — rings, gradient lines, traveling dots */}
+        {/* SVG layer: rings, gradient lines, traveling dots */}
         <svg
           viewBox={`0 0 ${SIZE} ${SIZE}`}
           className="absolute inset-0 h-full w-full overflow-visible"
@@ -1130,7 +1130,7 @@ function IntegrationsDiagram() {
             />
           ))}
 
-          {/* Traveling dots — flow inward from node → hub */}
+          {/* Traveling dots: flow inward from node to hub */}
           {coords.map((n, i) => (
             <circle key={`dot-${n.id}`} r={3} fill={n.color}>
               <animateMotion
@@ -1641,12 +1641,29 @@ export default function Home() {
 
       {/* TRUST / BACKGROUND */}
       <section className="relative mx-auto max-w-3xl px-4 py-16 text-center">
+        <div className="mx-auto mb-8 inline-flex flex-wrap items-center justify-center gap-x-6 gap-y-2 rounded-2xl border border-white/10 bg-white/5 px-6 py-4 text-xs sm:text-sm text-white/60">
+          <span className="inline-flex items-center gap-1.5 text-white/85 font-semibold">
+            <span className="text-amber-400">★★★★★</span> 5.0
+          </span>
+          <span className="h-3 w-px bg-white/15 hidden sm:block" />
+          <span>150+ verified reviews</span>
+          <span className="h-3 w-px bg-white/15 hidden sm:block" />
+          <span>Top Rated on Fiverr</span>
+          <span className="h-3 w-px bg-white/15 hidden sm:block" />
+          <span>Marketing experience since 2008</span>
+        </div>
         <p className="text-sm md:text-base text-white/70 leading-relaxed">
-          Attribix grew out of an ad management business, not the other way around. Stian
-          Henriksen has run digital advertising since 2008, the agency side started in 2020,
-          and about 80% of clients have stayed since then. We built the tracking because we
-          needed it to run those accounts properly, so you get software that was tested on
-          real budgets, not a roadmap item.
+          Attribix is built by the team behind{" "}
+          <a
+            href="/ad-management"
+            className="text-white/85 underline decoration-white/25 underline-offset-4 hover:decoration-white/60"
+          >
+            bevit
+          </a>
+          , a Meta and Google Ads agency. Stian Henriksen has run digital advertising since 2008,
+          the agency side started in 2020, and about 80% of clients have stayed since then. We
+          built the tracking because we needed it to run those accounts properly, so you get
+          software that was tested on real budgets, not a roadmap item.
         </p>
         <Link
           href="/about"

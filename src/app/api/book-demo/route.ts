@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
   const storeUrl = String(body.storeUrl || "").trim();
   const goals = String(body.goals || "").trim();
 
-  // Honeypot — real visitors never populate this hidden field.
+  // Honeypot: real visitors never populate this hidden field.
   if (String(body.company_website || "").trim() !== "") {
     return NextResponse.json({ ok: true });
   }
@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
   }
 
   const result = await sendLeadEmail({
-    subject: `Demo request — ${name}`,
+    subject: `Demo request: ${name}`,
     replyTo: email,
     fields: {
       Name: name,

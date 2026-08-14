@@ -64,7 +64,7 @@ export default function BookDemoForm() {
       onSubmit={onSubmit}
       className="md:col-span-3 p-6 rounded-2xl border border-white/10 bg-white/5 space-y-4"
     >
-      {/* Honeypot — hidden from real users, visible to bots that fill every field */}
+      {/* Honeypot: hidden from real users, visible to bots that fill every field */}
       <div aria-hidden="true" className="absolute left-[-9999px] top-auto h-0 w-0 overflow-hidden">
         <label htmlFor="company_website">Leave this field empty</label>
         <input type="text" id="company_website" name="company_website" tabIndex={-1} autoComplete="off" />

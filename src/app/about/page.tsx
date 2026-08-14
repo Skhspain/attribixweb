@@ -75,6 +75,25 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* WHAT WE BELIEVE */}
+      <section className="relative py-10">
+        <div className="absolute inset-0 -z-10 bg-black/15" />
+        <div className="mx-auto max-w-3xl px-4">
+          <Reveal>
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What we believe about measurement</h2>
+            <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
+              No attribution model is the objectively correct one. Meta and Google both have an
+              incentive to credit themselves for a sale, which is why their reported numbers rarely
+              add up to what a store actually took in. Attribix doesn&apos;t claim to solve that with
+              a single truer number. It shows the Shopify order next to how different models would
+              credit it, and closes as much of the tracking gap as possible along the way, so the
+              decision about which model to trust is one you can make deliberately instead of by
+              default.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       {/* TRACK RECORD */}
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
