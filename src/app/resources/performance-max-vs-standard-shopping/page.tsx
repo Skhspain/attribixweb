@@ -133,7 +133,7 @@ export default function Page() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
             <li><Link href="/resources/how-to-see-what-performance-max-is-doing" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How to Tell What Performance Max Is Actually Doing</Link></li>
-            <li><Link href="/resources/all-products-one-performance-max-campaign" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Should You Put All Products in One Performance Max Campaign?</Link></li>
+            <li><Link href="/resources/when-to-split-performance-max-campaigns" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Should You Put All Products in One Performance Max Campaign?</Link></li>
             <li><Link href="/resources/performance-max-brand-revenue" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How Much of Performance Max Revenue Comes From Brand Searches?</Link></li>
           </ul>
         </Reveal>

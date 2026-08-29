@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Local Currency vs Store Currency: What Should You Use in Ads?",
   description:
     "Customers prefer prices in a familiar local currency. Your ad account can still operate in another currency: what matters is keeping price and tracking consistent.",

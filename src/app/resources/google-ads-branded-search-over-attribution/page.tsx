@@ -92,7 +92,7 @@ export default function Page() {
             blended account ROAS can look exceptional when brand captures a
             large amount of existing demand. That split is covered in more depth
             in{" "}
-            <Link href="/resources/google-ads-brand-vs-non-brand-budget" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+            <Link href="/resources/should-you-bid-on-your-brand-name-google-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               how much budget should go to brand vs non-brand
             </Link>
             .
@@ -137,7 +137,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/google-ads-brand-vs-non-brand-budget" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/should-you-bid-on-your-brand-name-google-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How much budget should go to brand vs non-brand Google Ads?
               </Link>
             </li>

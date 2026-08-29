@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why Testing New Creatives Won't Fix a Weak Offer",
   description: "Creative determines how the product is presented.",
   alternates: { canonical: "https://www.attribix.app/resources/why-testing-new-creatives-won-t-fix-a-weak-offer" },

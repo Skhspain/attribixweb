@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Retargeting Campaigns Include Existing Customers?",
   description:
     "Sometimes. The answer depends on what the campaign is selling: excluding purchasers when the ad is irrelevant, including them when repeat purchase makes sense.",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How Many Product Images Should a Shopify Product Page Have?",
   description:
     "There is no ideal image count for a Shopify product page. Here's why every image should have a job, when complex products need more visual proof, and how to design a mobile gallery that reduces uncertainty.",

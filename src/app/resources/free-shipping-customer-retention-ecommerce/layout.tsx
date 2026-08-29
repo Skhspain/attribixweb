@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Does Free Shipping Increase Customer Retention?",
   description:
     "Free shipping can contribute to retention because it makes repeat purchases easier to justify. But it is rarely the main reason a customer becomes loyal.",

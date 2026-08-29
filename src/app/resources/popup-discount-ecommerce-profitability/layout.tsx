@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Does a 10% Popup Discount Actually Increase Profit?",
   description:
     "A 10% popup can increase email signups and first purchases, or give away 10% to customers who would have bought at full price. Why incremental profit is the right metric.",

@@ -89,7 +89,7 @@ export default function Page() {
             It can expose structured ecommerce events in the environment
             Shopify supports. A custom pixel can then send data to
             external platforms, subject to current platform rules. See{" "}
-            <Link href="/resources/shopify-customer-events-explained" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+            <Link href="/resources/google-tag-manager-vs-shopify-customer-events" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               Shopify Customer Events explained for marketers
             </Link>{" "}
             for what to check.
@@ -128,12 +128,12 @@ export default function Page() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/resources/shopify-customer-events-explained" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/google-tag-manager-vs-shopify-customer-events" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Shopify Customer Events explained for marketers
               </Link>
             </li>
             <li>
-              <Link href="/resources/should-shopify-use-google-tag-manager" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/google-tag-manager-vs-shopify-customer-events" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Should Shopify stores still use Google Tag Manager?
               </Link>
             </li>

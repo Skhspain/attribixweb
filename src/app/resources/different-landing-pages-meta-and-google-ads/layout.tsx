@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should You Create Different Landing Pages for Meta and Google Ads?",
   description:
     "Why Meta and Google traffic often need different landing pages, not because of design but because of how much the customer already knows when they click.",

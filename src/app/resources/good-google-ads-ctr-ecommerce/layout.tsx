@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "What Is a Good Google Ads CTR for Ecommerce?",
   description: "CTR tells you how often an impression becomes a click.",
   alternates: { canonical: "https://www.attribix.app/resources/good-google-ads-ctr-ecommerce" },

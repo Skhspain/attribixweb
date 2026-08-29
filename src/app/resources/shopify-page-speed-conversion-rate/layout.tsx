@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How Much Does Page Speed Affect Shopify Sales?",
   description: "Page speed matters because every extra wait gives a visitor another chance to leave, especially on mobile and paid traffic.",
   alternates: { canonical: "https://www.attribix.app/resources/shopify-page-speed-conversion-rate" },

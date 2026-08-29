@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Does Free Shipping Increase Shopify Conversion Rate?",
   description: "Free shipping can increase conversion because it removes one of ecommerce's most disliked surprises.",
   alternates: { canonical: "https://www.attribix.app/resources/does-free-shipping-increase-conversion-rate" },

@@ -128,11 +128,7 @@ export default function Page() {
                 Does a 10% popup discount actually increase profit?
               </Link>
             </li>
-            <li>
-              <Link href="/resources/should-you-collect-email-or-sms-first-on-a-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
-                Should you collect email or SMS first on a Shopify popup?
-              </Link>
-            </li>
+
             <li>
               <Link href="/resources/should-shopify-stores-use-popups" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Should Shopify stores use popups?

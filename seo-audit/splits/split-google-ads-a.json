@@ -1,0 +1,455 @@
+[
+  {
+    "href": "/resources/google-ads-not-tracking-shopify-purchases",
+    "title": "Google Ads Not Tracking Shopify Purchases? Step-by-Step Diagnosis",
+    "desc": "A technical checklist covering conversion actions, tags, GA4 import and Enhanced Conversions.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 10,
+    "inboundFrom": [
+      "src/app/google-ads-conversion-tracking-shopify/page.tsx",
+      "src/app/resources/check-google-ads-conversion-tracking-working-shopify/page.tsx",
+      "src/app/resources/enhanced-conversions-shopify/page.tsx",
+      "src/app/resources/google-ads-clicks-no-sales/page.tsx",
+      "src/app/resources/google-ads-clicks-no-sales/page.tsx",
+      "src/app/resources/google-ads-clicks-vs-shopify-sessions/page.tsx",
+      "src/app/resources/google-ads-conversions-dropped-suddenly/page.tsx",
+      "src/app/resources/google-ads-duplicate-conversions-shopify/page.tsx",
+      "src/app/resources/performance-max-no-sales/page.tsx",
+      "src/app/resources/performance-max-no-sales/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-ads-duplicate-conversions-shopify",
+    "title": "Duplicate Google Ads Conversions on Shopify",
+    "desc": "Why Google can look like it's reporting more sales than you actually have.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 7,
+    "inboundFrom": [
+      "src/app/resources/check-google-ads-conversion-tracking-working-shopify/page.tsx",
+      "src/app/resources/google-ads-conversion-value-wrong-shopify/page.tsx",
+      "src/app/resources/google-ads-conversion-value-wrong-shopify/page.tsx",
+      "src/app/resources/google-ads-conversions-no-shopify-orders/page.tsx",
+      "src/app/resources/google-ads-shopify-revenue-doesnt-match/page.tsx",
+      "src/app/resources/google-ads-transaction-id-ecommerce/page.tsx",
+      "src/app/resources/import-ga4-conversions-google-ads-shopify/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-ads-conversion-value-wrong-shopify",
+    "title": "Google Ads Conversion Value Is Wrong on Shopify",
+    "desc": "How subtotal, tax, shipping and discounts can all change what value gets reported.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/google-ads-duplicate-conversions-shopify/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-ads-ga4-dont-match",
+    "title": "Google Ads and GA4 Don't Match: Which Numbers Should You Trust?",
+    "desc": "Why the two systems are built to answer different questions.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/google-ads-conversions-dropped-suddenly/page.tsx",
+      "src/app/resources/import-ga4-conversions-google-ads-shopify/page.tsx",
+      "src/app/resources/shopify-ga4-meta-google-revenue-different/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-ads-conversions-dropped-suddenly",
+    "title": "Google Ads Conversions Suddenly Dropped: Performance or Tracking?",
+    "desc": "A set of scenarios for reading conversions against Shopify's own numbers.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/google-ads-not-tracking-shopify-purchases/page.tsx",
+      "src/app/resources/google-consent-mode-shopify/page.tsx",
+      "src/app/resources/performance-max-roas-dropped/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-ads-conversions-no-shopify-orders",
+    "title": "Google Ads Says I Have Conversions but Shopify Has No Orders",
+    "desc": "Almost always a labeling or configuration issue, not a phantom sale.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 0,
+    "inboundFrom": []
+  },
+  {
+    "href": "/resources/google-ads-clicks-vs-shopify-sessions",
+    "title": "Google Ads Clicks Don't Match Shopify Sessions: Why?",
+    "desc": "Why a click and a session are never going to be the same number.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 0,
+    "inboundFrom": []
+  },
+  {
+    "href": "/resources/import-ga4-conversions-google-ads-shopify",
+    "title": "Should You Import GA4 Purchases Into Google Ads on Shopify?",
+    "desc": "Native conversion tracking vs GA4 import, and why running both as primary causes trouble.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/google-ads-ga4-dont-match/page.tsx",
+      "src/app/resources/google-ads-not-tracking-shopify-purchases/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/performance-max-no-sales",
+    "title": "Performance Max Spending Money but Getting No Sales",
+    "desc": "Why checking tracking comes before touching the feed, bidding or budget.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 6,
+    "inboundFrom": [
+      "src/app/ad-management/google-ads/page.tsx",
+      "src/app/google-ads-conversion-tracking-shopify/page.tsx",
+      "src/app/resources/google-merchant-center-product-disapproved/page.tsx",
+      "src/app/resources/google-shopping-clicks-no-sales/page.tsx",
+      "src/app/resources/performance-max-roas-dropped/page.tsx",
+      "src/app/resources/performance-max-roas-dropped/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/performance-max-roas-dropped",
+    "title": "Performance Max ROAS Suddenly Dropped: How to Diagnose It",
+    "desc": "Tracking, feed changes, seasonality and brand-vs-non-brand mix, in order.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/performance-max-no-sales/page.tsx",
+      "src/app/resources/separate-google-ads-campaigns-by-country/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-shopping-clicks-no-sales",
+    "title": "Google Shopping Getting Clicks but No Sales",
+    "desc": "Why query relevance, feed quality and price shown in the ad matter more here than in Search.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/collection-page-vs-product-page-google-shopping/page.tsx",
+      "src/app/resources/google-merchant-center-product-disapproved/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-merchant-center-product-disapproved",
+    "title": "Google Merchant Center Products Disapproved: What It Means for Sales",
+    "desc": "Disapproved products don't show at all, and a shrinking catalog can look like a campaign problem.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 8,
+    "inboundFrom": [
+      "src/app/resources/collection-page-vs-product-page-google-shopping/page.tsx",
+      "src/app/resources/google-shopping-clicks-no-sales/page.tsx",
+      "src/app/resources/how-to-see-what-performance-max-is-doing/page.tsx",
+      "src/app/resources/performance-max-no-sales/page.tsx",
+      "src/app/resources/performance-max-no-sales/page.tsx",
+      "src/app/resources/performance-max-roas-dropped/page.tsx",
+      "src/app/resources/performance-max-roas-dropped/page.tsx",
+      "src/app/resources/separate-google-ads-campaigns-by-country/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-ads-search-terms-ecommerce",
+    "title": "Google Ads Search Terms: What Should Ecommerce Advertisers Look For?",
+    "desc": "Keywords are what you targeted. Search terms are what you actually paid for.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/broad-vs-phrase-vs-exact-match-ecommerce/page.tsx",
+      "src/app/resources/broad-vs-phrase-vs-exact-match-ecommerce/page.tsx",
+      "src/app/resources/competitor-keywords-google-ads-worth-it/page.tsx",
+      "src/app/resources/google-ads-low-quality-traffic/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/broad-vs-phrase-vs-exact-match-ecommerce",
+    "title": "Broad Match vs Phrase Match vs Exact Match for Ecommerce",
+    "desc": "Modern match types use context and intent, not just literal string matching.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/google-ads-search-terms-ecommerce/page.tsx",
+      "src/app/resources/google-ads-search-terms-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-you-bid-on-your-brand-name-google-ads",
+    "title": "Should Shopify Stores Bid on Their Own Brand Name?",
+    "desc": "Branded search can protect your result and control messaging, but is it incremental?",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/competitor-keywords-google-ads-worth-it/page.tsx",
+      "src/app/resources/google-ads-brand-vs-non-brand-budget/page.tsx",
+      "src/app/resources/google-ads-branded-search-over-attribution/page.tsx",
+      "src/app/resources/google-ads-vs-klaviyo-revenue-attribution/page.tsx",
+      "src/app/resources/google-brand-campaign-taking-credit-organic-sales/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/competitor-keywords-google-ads-worth-it",
+    "title": "Are Competitor Keywords Worth Bidding on in Google Ads?",
+    "desc": "The intent behind a competitor-name search isn't neutral, and that has a cost.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/should-you-bid-on-your-brand-name-google-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-brand-campaign-taking-credit-organic-sales",
+    "title": "Is Your Google Ads Brand Campaign Taking Credit for Organic Sales?",
+    "desc": "A branded campaign can report enormous ROAS while creating little incremental revenue.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/google-ads-brand-vs-non-brand-budget/page.tsx",
+      "src/app/resources/google-ads-branded-search-over-attribution/page.tsx",
+      "src/app/resources/google-ads-vs-klaviyo-revenue-attribution/page.tsx",
+      "src/app/resources/should-you-bid-on-your-brand-name-google-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-ads-brand-vs-non-brand-budget",
+    "title": "How Much Budget Should Go to Brand vs Non-Brand Google Ads?",
+    "desc": "Brand demand is constrained by how many people already search for you. Let marginal opportunity set the split.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/google-ads-branded-search-over-attribution/page.tsx",
+      "src/app/resources/google-ads-branded-search-over-attribution/page.tsx",
+      "src/app/resources/google-brand-campaign-taking-credit-organic-sales/page.tsx",
+      "src/app/resources/should-you-bid-on-your-brand-name-google-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-ads-low-quality-traffic",
+    "title": "Why Google Search Ads Get Clicks but Low-Quality Traffic",
+    "desc": "Poor traffic usually comes from a mismatch between keyword, search term and landing page.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 0,
+    "inboundFrom": []
+  },
+  {
+    "href": "/resources/good-google-ads-conversion-rate-ecommerce",
+    "title": "What Is a Good Google Ads Conversion Rate for Ecommerce?",
+    "desc": "CPA = CPC ÷ conversion rate. The right benchmark is your own margins, not an industry average.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/good-google-ads-ctr-ecommerce/page.tsx",
+      "src/app/resources/google-ads-cpc-suddenly-increased/page.tsx",
+      "src/app/resources/maximum-profitable-cpc-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/good-google-ads-ctr-ecommerce",
+    "title": "What Is a Good Google Ads CTR for Ecommerce?",
+    "desc": "CTR measures relevance, not revenue. Profit beats the click-through screenshot.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/good-google-ads-conversion-rate-ecommerce/page.tsx",
+      "src/app/resources/google-ads-cpc-suddenly-increased/page.tsx",
+      "src/app/resources/google-ads-search-impression-share-explained/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-ads-cpc-suddenly-increased",
+    "title": "Why Your Google Ads CPC Suddenly Increased",
+    "desc": "An auction symptom with several possible causes, and higher CPC isn't automatically bad.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/good-google-ads-conversion-rate-ecommerce/page.tsx",
+      "src/app/resources/good-google-ads-ctr-ecommerce/page.tsx",
+      "src/app/resources/google-ads-search-impression-share-explained/page.tsx",
+      "src/app/resources/lost-impression-share-budget-increase/page.tsx",
+      "src/app/resources/maximum-profitable-cpc-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/separate-google-ads-campaigns-by-country",
+    "title": "Google Ads by Country: Should You Separate Campaigns?",
+    "desc": "Separate when markets need different budgets, targets, feeds or language. Combine when they genuinely behave alike.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/one-meta-campaign-multiple-countries-vs-separate/page.tsx",
+      "src/app/resources/one-meta-campaign-multiple-countries-vs-separate/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/check-google-ads-conversion-tracking-working-shopify",
+    "title": "How to Check Whether Google Ads Conversion Tracking Is Working",
+    "desc": "An 'active' conversion action can still record the wrong thing. Here's how to test the entire purchase event.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/google-ads-transaction-id-ecommerce/page.tsx",
+      "src/app/resources/test-shopify-purchase-event/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-ads-transaction-id-ecommerce",
+    "title": "What Is a Transaction ID and Why Does Google Ads Need It?",
+    "desc": "A small implementation detail with a large impact on whether Google counts a purchase once or twice.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/check-google-ads-conversion-tracking-working-shopify/page.tsx",
+      "src/app/resources/test-shopify-purchase-event/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-ads-search-impression-share-explained",
+    "title": "Google Ads Search Impression Share Explained for Ecommerce",
+    "desc": "Search impression share estimates how often your ads appeared compared with the number of times Google believed they were eligible to appear.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/good-google-ads-conversion-rate-ecommerce/page.tsx",
+      "src/app/resources/good-google-ads-ctr-ecommerce/page.tsx",
+      "src/app/resources/google-ads-cpc-suddenly-increased/page.tsx",
+      "src/app/resources/lost-impression-share-budget-increase/page.tsx",
+      "src/app/resources/lost-impression-share-rank-google-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/lost-impression-share-budget-increase",
+    "title": "Lost Impression Share Due to Budget: Should You Increase Spend?",
+    "desc": "\"Limited by budget\" can feel like Google is telling you to spend more.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/broad-match-smart-bidding-ecommerce/page.tsx",
+      "src/app/resources/google-ads-search-impression-share-explained/page.tsx",
+      "src/app/resources/lost-impression-share-rank-google-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/lost-impression-share-rank-google-ads",
+    "title": "Lost Impression Share Due to Rank: What Should You Fix?",
+    "desc": "When Google reports lost impression share due to rank, your campaign was eligible for searches but did not have enough Ad Rank to win all of the impressions.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/broad-match-smart-bidding-ecommerce/page.tsx",
+      "src/app/resources/how-many-keywords-google-ads-campaign/page.tsx",
+      "src/app/resources/lost-impression-share-budget-increase/page.tsx"
+    ]
+  }
+]

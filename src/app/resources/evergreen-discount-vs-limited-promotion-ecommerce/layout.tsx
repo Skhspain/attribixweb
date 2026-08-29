@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should You Run Evergreen Discounts or Short Promotions?",
   description:
     "Evergreen discounts provide consistency. Short promotions create a genuine reason to act now. How to choose based on urgency, margin and the job the offer needs to do.",

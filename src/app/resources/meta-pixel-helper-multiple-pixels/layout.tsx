@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Meta Pixel Helper Shows Multiple Pixels: Is That a Problem?",
   description:
     "Multiple Pixels on a site aren't automatically wrong. The problem is when nobody knows why they're there. How to map ownership and decide what to consolidate.",

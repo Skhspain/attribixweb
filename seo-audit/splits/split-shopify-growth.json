@@ -1,0 +1,226 @@
+[
+  {
+    "href": "/resources/shopify-traffic-no-sales",
+    "title": "Shopify Traffic but No Sales? Find Where the Funnel Is Breaking",
+    "desc": "A full-funnel diagnostic instead of a generic CRO checklist.",
+    "isCore": false,
+    "categoryId": "shopify-growth",
+    "categoryLabel": "Shopify Growth",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 10,
+    "inboundFrom": [
+      "src/app/resources/how-many-product-images-shopify/page.tsx",
+      "src/app/resources/paid-ads-traffic-to-homepage-ecommerce/page.tsx",
+      "src/app/resources/product-reviews-vs-testimonials-ecommerce/page.tsx",
+      "src/app/resources/shopify-add-to-cart-no-purchases/page.tsx",
+      "src/app/resources/shopify-checkout-no-purchase/page.tsx",
+      "src/app/resources/shopify-conversion-rate-dropped/page.tsx",
+      "src/app/resources/shopify-sales-down-traffic-same/page.tsx",
+      "src/app/resources/should-shopify-stores-use-popups/page.tsx",
+      "src/app/resources/sticky-add-to-cart-shopify-conversion/page.tsx",
+      "src/app/resources/when-to-hire-a-marketing-agency/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/shopify-conversion-rate-dropped",
+    "title": "Shopify Conversion Rate Suddenly Dropped: What to Check First",
+    "desc": "How to find the exact day something changed, and cross-reference against it.",
+    "isCore": false,
+    "categoryId": "shopify-growth",
+    "categoryLabel": "Shopify Growth",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/shopify-sales-down-traffic-same/page.tsx",
+      "src/app/resources/shopify-traffic-no-sales/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/shopify-add-to-cart-no-purchases",
+    "title": "Lots of Add to Carts but No Purchases on Shopify",
+    "desc": "Shipping shock, payment options and general trust: what usually sits between the two.",
+    "isCore": false,
+    "categoryId": "shopify-growth",
+    "categoryLabel": "Shopify Growth",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 12,
+    "inboundFrom": [
+      "src/app/resources/cart-drawer-vs-cart-page-shopify/page.tsx",
+      "src/app/resources/free-shipping-customer-retention-ecommerce/page.tsx",
+      "src/app/resources/how-many-product-images-shopify/page.tsx",
+      "src/app/resources/international-shipping-low-conversion-ecommerce/page.tsx",
+      "src/app/resources/meta-ads-optimize-add-to-cart-or-purchase/page.tsx",
+      "src/app/resources/meta-ads-optimize-add-to-cart-or-purchase/page.tsx",
+      "src/app/resources/product-reviews-vs-testimonials-ecommerce/page.tsx",
+      "src/app/resources/shopify-checkout-no-purchase/page.tsx",
+      "src/app/resources/shopify-traffic-no-sales/page.tsx",
+      "src/app/resources/shopify-traffic-no-sales/page.tsx",
+      "src/app/resources/sticky-add-to-cart-shopify-conversion/page.tsx",
+      "src/app/resources/unexpected-shipping-costs-cart-abandonment/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/shopify-checkout-no-purchase",
+    "title": "Shopify Customers Reach Checkout but Don't Buy: What to Check",
+    "desc": "The narrower, later-stage causes specific to the checkout step itself.",
+    "isCore": false,
+    "categoryId": "shopify-growth",
+    "categoryLabel": "Shopify Growth",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 13,
+    "inboundFrom": [
+      "src/app/resources/buy-now-pay-later-shopify-conversion/page.tsx",
+      "src/app/resources/cart-drawer-vs-cart-page-shopify/page.tsx",
+      "src/app/resources/discount-code-box-checkout-conversion/page.tsx",
+      "src/app/resources/does-klarna-increase-conversion-rate/page.tsx",
+      "src/app/resources/import-duties-ecommerce-conversion-rate/page.tsx",
+      "src/app/resources/shopify-add-to-cart-no-purchases/page.tsx",
+      "src/app/resources/shopify-checkout-abandonment-shipping-costs/page.tsx",
+      "src/app/resources/shopify-traffic-no-sales/page.tsx",
+      "src/app/resources/shopify-traffic-no-sales/page.tsx",
+      "src/app/resources/show-delivery-date-product-page-shopify/page.tsx",
+      "src/app/resources/show-duties-taxes-before-checkout-ecommerce/page.tsx",
+      "src/app/resources/sticky-add-to-cart-shopify-conversion/page.tsx",
+      "src/app/resources/unexpected-shipping-costs-cart-abandonment/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/shopify-sales-down-traffic-same",
+    "title": "Shopify Sales Dropped but Traffic Is the Same: What Does That Tell You?",
+    "desc": "Why stable sessions point the problem at the store, not media reach.",
+    "isCore": false,
+    "categoryId": "shopify-growth",
+    "categoryLabel": "Shopify Growth",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/shopify-conversion-rate-dropped/page.tsx",
+      "src/app/resources/shopify-revenue-up-roas-down/page.tsx",
+      "src/app/resources/shopify-traffic-no-sales/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/shopify-revenue-up-roas-down",
+    "title": "Shopify Revenue Is Up but Meta and Google ROAS Are Down",
+    "desc": "Why total growth and platform ROAS can move in opposite directions.",
+    "isCore": false,
+    "categoryId": "shopify-growth",
+    "categoryLabel": "Shopify Growth",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/shopify-sales-down-traffic-same/page.tsx",
+      "src/app/shopify-roas-tracking/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/ads-perform-differently-by-country-ecommerce",
+    "title": "Why Your Ads Perform Well in One Country and Poorly in Another",
+    "desc": "Auction cost, shipping, payment and creative context usually explain more than an inconsistent algorithm.",
+    "isCore": false,
+    "categoryId": "shopify-growth",
+    "categoryLabel": "Shopify Growth",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/currency-affects-ecommerce-roas/page.tsx",
+      "src/app/resources/international-traffic-lower-conversion-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/international-shipping-low-conversion-ecommerce",
+    "title": "International Shipping Is Killing Your Conversion Rate: How to Diagnose It",
+    "desc": "If the funnel collapses at checkout, shipping cost, delivery time and duties are the first areas to inspect.",
+    "isCore": false,
+    "categoryId": "shopify-growth",
+    "categoryLabel": "Shopify Growth",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 6,
+    "inboundFrom": [
+      "src/app/resources/ads-perform-differently-by-country-ecommerce/page.tsx",
+      "src/app/resources/ads-perform-differently-by-country-ecommerce/page.tsx",
+      "src/app/resources/import-duties-ecommerce-conversion-rate/page.tsx",
+      "src/app/resources/international-traffic-lower-conversion-ecommerce/page.tsx",
+      "src/app/resources/international-traffic-lower-conversion-ecommerce/page.tsx",
+      "src/app/resources/show-duties-taxes-before-checkout-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/international-traffic-lower-conversion-ecommerce",
+    "title": "Why International Traffic Has a Lower Shopify Conversion Rate",
+    "desc": "Shipping, currency, duties, payment, trust, language and product fit all add uncertainty to the cross-border journey.",
+    "isCore": false,
+    "categoryId": "shopify-growth",
+    "categoryLabel": "Shopify Growth",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/ads-perform-differently-by-country-ecommerce/page.tsx",
+      "src/app/resources/import-duties-ecommerce-conversion-rate/page.tsx",
+      "src/app/resources/international-shipping-low-conversion-ecommerce/page.tsx",
+      "src/app/resources/translate-landing-pages-for-international-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-you-run-different-meta-creatives-for-different",
+    "title": "Should You Run Different Meta Creatives for Different Countries?",
+    "desc": "If customer motivations, language or offers differ, country-specific creatives can improve performance.",
+    "isCore": false,
+    "categoryId": "shopify-growth",
+    "categoryLabel": "Shopify Growth",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/english-ads-vs-local-language-ads/page.tsx",
+      "src/app/resources/how-to-choose-which-country-to-expand-ecommerce-ads/page.tsx",
+      "src/app/resources/shopify-ready-for-international-ads/page.tsx",
+      "src/app/resources/translate-landing-pages-for-international-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-choose-which-country-to-expand-ecommerce-ads",
+    "title": "How to Choose Which Country to Expand Ecommerce Ads Into Next",
+    "desc": "Do not choose the next country because Meta CPM is cheap.",
+    "isCore": false,
+    "categoryId": "shopify-growth",
+    "categoryLabel": "Shopify Growth",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 7,
+    "inboundFrom": [
+      "src/app/resources/ads-perform-differently-by-country-ecommerce/page.tsx",
+      "src/app/resources/english-ads-vs-local-language-ads/page.tsx",
+      "src/app/resources/meta-ads-multiple-countries-shopify/page.tsx",
+      "src/app/resources/one-meta-campaign-multiple-countries-vs-separate/page.tsx",
+      "src/app/resources/separate-google-ads-campaigns-by-country/page.tsx",
+      "src/app/resources/shopify-ready-for-international-ads/page.tsx",
+      "src/app/resources/should-you-run-different-meta-creatives-for-different/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/shopify-ready-for-international-ads",
+    "title": "When Is a Shopify Store Ready to Advertise Internationally?",
+    "desc": "A store is ready for international ads when the business can deliver an experience that is competitive enough for the target market.",
+    "isCore": false,
+    "categoryId": "shopify-growth",
+    "categoryLabel": "Shopify Growth",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-to-choose-which-country-to-expand-ecommerce-ads/page.tsx",
+      "src/app/resources/meta-ads-multiple-countries-shopify/page.tsx",
+      "src/app/resources/should-you-run-different-meta-creatives-for-different/page.tsx"
+    ]
+  }
+]

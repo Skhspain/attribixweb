@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How to Know Whether You Have a Creative Problem or an Offer Problem",
   description: "Creative problems usually appear before or around the click.",
   alternates: { canonical: "https://www.attribix.app/resources/how-to-know-whether-you-have-a-creative-problem-or-an" },

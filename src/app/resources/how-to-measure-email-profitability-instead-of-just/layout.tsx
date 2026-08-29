@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How to Measure Email Profitability Instead of Just Revenue",
   description: "Attributed email revenue is easy to celebrate.",
   alternates: { canonical: "https://www.attribix.app/resources/how-to-measure-email-profitability-instead-of-just" },

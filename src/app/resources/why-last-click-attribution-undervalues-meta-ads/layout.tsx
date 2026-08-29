@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why Last-Click Attribution Undervalues Meta Ads",
   description: "Meta often introduces customers before they are ready to buy.",
   alternates: { canonical: "https://www.attribix.app/resources/why-last-click-attribution-undervalues-meta-ads" },

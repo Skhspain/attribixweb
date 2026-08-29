@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should You Offer a Discount in Your Abandoned Cart Emails?",
   description:
     "A discount can recover carts, but it can also teach customers to abandon on purpose. When an incentive is commercially sensible, and how to calculate its real cost.",

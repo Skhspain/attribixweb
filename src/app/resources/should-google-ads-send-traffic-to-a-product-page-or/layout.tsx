@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Google Ads Send Traffic to a Product Page or Collection Page?",
   description: "The search query should usually decide.",
   alternates: { canonical: "https://www.attribix.app/resources/should-google-ads-send-traffic-to-a-product-page-or" },

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "What Is a Good Repeat Purchase Rate for Shopify?",
   description: "A good repeat purchase rate depends heavily on what you sell.",
   alternates: { canonical: "https://www.attribix.app/resources/what-is-a-good-repeat-purchase-rate-for-shopify" },

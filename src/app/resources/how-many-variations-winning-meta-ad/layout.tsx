@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How Many Variations of a Winning Meta Ad Should You Make?",
   description:
     "There's no magic number. How to find the element that made a Meta ad win, iterate one layer at a time, and avoid burning a winning concept on cosmetic edits.",

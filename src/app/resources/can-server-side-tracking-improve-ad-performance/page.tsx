@@ -87,7 +87,7 @@ export default function Page() {
                 That is not fake improvement. It is better measurement. But
                 it should not be presented as new sales created by the
                 tracking system. That distinction is covered further in{" "}
-                <Link href="/resources/does-better-tracking-improve-sales" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                <Link href="/resources/can-server-side-tracking-improve-ad-performance" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                   why better tracking doesn&apos;t automatically create more sales
                 </Link>
                 .
@@ -139,7 +139,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/does-better-tracking-improve-sales" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/can-server-side-tracking-improve-ad-performance" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Why more accurate tracking doesn&apos;t automatically create more sales
               </Link>
             </li>

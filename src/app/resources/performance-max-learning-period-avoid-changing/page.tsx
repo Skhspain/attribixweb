@@ -134,7 +134,7 @@ export default function Page() {
           <ul className="space-y-2 text-sm">
             <li><Link href="/resources/how-long-run-performance-max-before-judging" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How Long Should a New Performance Max Campaign Run Before You Judge It?</Link></li>
             <li><Link href="/resources/performance-max-vs-meta-ads-new-product-launch" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Performance Max vs Meta Ads for New Product Launches</Link></li>
-            <li><Link href="/resources/performance-max-brand-search-overspending" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Performance Max Is Overspending on Branded Searches: What to Do</Link></li>
+            <li><Link href="/resources/performance-max-brand-revenue" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Performance Max Is Overspending on Branded Searches: What to Do</Link></li>
           </ul>
         </Reveal>
       </section>

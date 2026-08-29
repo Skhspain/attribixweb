@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Shopify App Installation Changed Conversion Tracking: What Happened?",
   description: "Marketing and analytics apps often install their own pixels, server events or customer-event integrations.",
   alternates: { canonical: "https://www.attribix.app/resources/shopify-app-installation-changed-conversion-tracking" },

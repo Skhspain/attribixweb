@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Landing Page vs Product Page for Ecommerce Ads",
   description: "A product page is built to sell the product in the context of the store.",
   alternates: { canonical: "https://www.attribix.app/resources/landing-page-vs-product-page-for-ecommerce-ads" },

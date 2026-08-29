@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Are Constant Discounts Destroying Your Ecommerce Profitability?",
   description:
     "Discounting can make ROAS look healthier while margin quietly erodes. How to spot promotion dependency, calculate the break-even lift, and use discounts intentionally.",

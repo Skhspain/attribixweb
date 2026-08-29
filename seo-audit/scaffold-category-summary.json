@@ -1,0 +1,47 @@
+[
+  {
+    "id": "meta-ads",
+    "label": "Meta Ads",
+    "count": 16
+  },
+  {
+    "id": "google-ads",
+    "label": "Google Ads",
+    "count": 16
+  },
+  {
+    "id": "shopify-growth",
+    "label": "Shopify Growth",
+    "count": 6
+  },
+  {
+    "id": "cro-landing-pages",
+    "label": "CRO & Landing Pages",
+    "count": 10
+  },
+  {
+    "id": "attribution",
+    "label": "Attribution & Analytics",
+    "count": 16
+  },
+  {
+    "id": "tracking",
+    "label": "Tracking & Privacy",
+    "count": 3
+  },
+  {
+    "id": "email-retention",
+    "label": "Email & Retention",
+    "count": 5
+  },
+  {
+    "id": "creative-offers",
+    "label": "Creative & Offers",
+    "count": 5
+  },
+  {
+    "id": "marketing-agency",
+    "label": "Marketing & Agency",
+    "count": 6
+  }
+]

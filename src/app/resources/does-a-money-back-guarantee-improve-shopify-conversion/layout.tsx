@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Does a Money-Back Guarantee Improve Shopify Conversion Rate?",
   description: "A money-back guarantee can reduce the perceived risk of trying an unfamiliar product.",
   alternates: { canonical: "https://www.attribix.app/resources/does-a-money-back-guarantee-improve-shopify-conversion" },

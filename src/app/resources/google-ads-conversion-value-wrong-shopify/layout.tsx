@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Google Ads Conversion Value Is Wrong on Shopify",
   description:
     "Why Google Ads revenue on Shopify orders often doesn't match the actual order total: subtotal vs total, currency mismatches, duplicate conversions, and GA4-imported value diverging from the native tag's value.",

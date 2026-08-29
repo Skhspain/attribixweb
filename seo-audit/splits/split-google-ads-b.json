@@ -1,0 +1,437 @@
+[
+  {
+    "href": "/resources/broad-match-smart-bidding-ecommerce",
+    "title": "Should Ecommerce Stores Use Broad Match With Smart Bidding?",
+    "desc": "Broad match with automated bidding can discover valuable searches you would never build manually.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/broad-vs-phrase-vs-exact-match-ecommerce/page.tsx",
+      "src/app/resources/how-many-keywords-google-ads-campaign/page.tsx",
+      "src/app/resources/lost-impression-share-rank-google-ads/page.tsx",
+      "src/app/resources/negative-keywords-ecommerce-google-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-many-keywords-google-ads-campaign",
+    "title": "How Many Keywords Should a Google Ads Campaign Have?",
+    "desc": "The correct number of keywords is the number needed to cover meaningful search intent without creating a structure you cannot manage.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/broad-match-smart-bidding-ecommerce/page.tsx",
+      "src/app/resources/google-ads-spend-increases-no-more-sales/page.tsx",
+      "src/app/resources/negative-keywords-ecommerce-google-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/negative-keywords-ecommerce-google-ads",
+    "title": "Google Ads Negative Keywords for Ecommerce: What to Look For",
+    "desc": "Negative keywords stop Google from showing ads for searches you deliberately do not want.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 6,
+    "inboundFrom": [
+      "src/app/resources/broad-vs-phrase-vs-exact-match-ecommerce/page.tsx",
+      "src/app/resources/google-ads-low-quality-traffic/page.tsx",
+      "src/app/resources/google-ads-search-terms-ecommerce/page.tsx",
+      "src/app/resources/google-ads-spend-increases-no-more-sales/page.tsx",
+      "src/app/resources/how-many-keywords-google-ads-campaign/page.tsx",
+      "src/app/resources/search-campaign-vs-performance-max-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-ads-spend-increases-no-more-sales",
+    "title": "Why Google Ads Spend Increases Without More Sales",
+    "desc": "More Google spend does not automatically create proportionally more demand.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/negative-keywords-ecommerce-google-ads/page.tsx",
+      "src/app/resources/run-search-ads-with-performance-max/page.tsx",
+      "src/app/resources/search-campaign-vs-performance-max-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/search-campaign-vs-performance-max-ecommerce",
+    "title": "Google Ads Search Campaign vs Performance Max for Ecommerce",
+    "desc": "Search campaigns and Performance Max solve different parts of Google advertising.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/google-ads-exact-match-not-exact/page.tsx",
+      "src/app/resources/google-ads-spend-increases-no-more-sales/page.tsx",
+      "src/app/resources/run-search-ads-with-performance-max/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/run-search-ads-with-performance-max",
+    "title": "Should You Run Search Ads if Performance Max Is Already Running?",
+    "desc": "Yes, Search can still have a clear role even when Performance Max is active.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/google-ads-exact-match-not-exact/page.tsx",
+      "src/app/resources/search-campaign-vs-performance-max-ecommerce/page.tsx",
+      "src/app/resources/separate-brand-traffic-performance-max/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-ads-exact-match-not-exact",
+    "title": "Google Ads Exact Match Isn't Really Exact: What Ecommerce Advertisers Should Know",
+    "desc": "An exact-match keyword no longer means your ad can appear only when someone types precisely the same characters.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/performance-max-brand-revenue/page.tsx",
+      "src/app/resources/run-search-ads-with-performance-max/page.tsx",
+      "src/app/resources/separate-brand-traffic-performance-max/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/separate-brand-traffic-performance-max",
+    "title": "Should You Separate Brand Traffic From Performance Max?",
+    "desc": "Brand traffic can make Performance Max look more efficient than its true acquisition impact.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/google-ads-exact-match-not-exact/page.tsx",
+      "src/app/resources/how-to-see-what-performance-max-is-doing/page.tsx",
+      "src/app/resources/performance-max-brand-revenue/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/performance-max-brand-revenue",
+    "title": "How Much of Performance Max Revenue Comes From Brand Searches?",
+    "desc": "There is no universal percentage.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-to-see-what-performance-max-is-doing/page.tsx",
+      "src/app/resources/performance-max-vs-standard-shopping/page.tsx",
+      "src/app/resources/separate-brand-traffic-performance-max/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-see-what-performance-max-is-doing",
+    "title": "How to Tell What Performance Max Is Actually Doing",
+    "desc": "Performance Max is deliberately more automated than traditional Search, which means advertisers often feel they are funding a black box.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/all-products-one-performance-max-campaign/page.tsx",
+      "src/app/resources/performance-max-brand-revenue/page.tsx",
+      "src/app/resources/performance-max-no-sales/page.tsx",
+      "src/app/resources/performance-max-vs-standard-shopping/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/performance-max-vs-standard-shopping",
+    "title": "Performance Max vs Standard Shopping: Which Is Better?",
+    "desc": "Performance Max offers more automation and access to broader Google inventory.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/all-products-one-performance-max-campaign/page.tsx",
+      "src/app/resources/how-to-see-what-performance-max-is-doing/page.tsx",
+      "src/app/resources/when-to-split-performance-max-campaigns/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/all-products-one-performance-max-campaign",
+    "title": "Should You Put All Products in One Performance Max Campaign?",
+    "desc": "Putting every product into one PMax campaign is simple.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/best-sellers-vs-low-sellers-google-shopping-structure/page.tsx",
+      "src/app/resources/performance-max-vs-standard-shopping/page.tsx",
+      "src/app/resources/when-to-split-performance-max-campaigns/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/when-to-split-performance-max-campaigns",
+    "title": "When Should You Split Products Into Multiple PMax Campaigns?",
+    "desc": "Split PMax campaigns when separate control creates a business advantage.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/all-products-one-performance-max-campaign/page.tsx",
+      "src/app/resources/best-sellers-vs-low-sellers-google-shopping-structure/page.tsx",
+      "src/app/resources/exclude-poor-performing-products-performance-max/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/best-sellers-vs-low-sellers-google-shopping-structure",
+    "title": "Best Sellers vs Low Sellers: How Should You Structure Google Shopping?",
+    "desc": "Best sellers deserve attention because they have proven demand.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/exclude-poor-performing-products-performance-max/page.tsx",
+      "src/app/resources/google-shopping-product-feed-titles/page.tsx",
+      "src/app/resources/when-to-split-performance-max-campaigns/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/exclude-poor-performing-products-performance-max",
+    "title": "Should You Exclude Poor-Performing Products From Performance Max?",
+    "desc": "Sometimes, but \"no sales\" alone isn't enough evidence to decide.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/best-sellers-vs-low-sellers-google-shopping-structure/page.tsx",
+      "src/app/resources/google-shopping-feed-optimization/page.tsx",
+      "src/app/resources/google-shopping-product-feed-titles/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-shopping-product-feed-titles",
+    "title": "Product Feed Titles: How Much Do They Matter for Google Shopping?",
+    "desc": "Product titles are one of the clearest signals Google has for understanding what you sell.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/exclude-poor-performing-products-performance-max/page.tsx",
+      "src/app/resources/google-shopping-feed-optimization/page.tsx",
+      "src/app/resources/google-shopping-products-no-impressions/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-shopping-feed-optimization",
+    "title": "Google Shopping Feed Optimization: What Actually Matters?",
+    "desc": "Feed optimization is often sold as a bag of hacks.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/google-shopping-high-roas-low-volume/page.tsx",
+      "src/app/resources/google-shopping-product-feed-titles/page.tsx",
+      "src/app/resources/google-shopping-products-no-impressions/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-shopping-products-no-impressions",
+    "title": "Why Some Shopify Products Never Get Google Shopping Impressions",
+    "desc": "A product can be approved in Merchant Center and still receive almost no Shopping impressions.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/google-shopping-feed-optimization/page.tsx",
+      "src/app/resources/google-shopping-high-roas-low-volume/page.tsx",
+      "src/app/resources/performance-max-spending-mostly-one-product/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-shopping-high-roas-low-volume",
+    "title": "Google Shopping Has High ROAS but Low Volume: Should You Scale?",
+    "desc": "A high ROAS at low spend is encouraging, but it does not prove the same efficiency exists at higher volume.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/google-shopping-products-no-impressions/page.tsx",
+      "src/app/resources/performance-max-spending-mostly-one-product/page.tsx",
+      "src/app/resources/why-performance-max-stops-spending/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/performance-max-spending-mostly-one-product",
+    "title": "Performance Max Spending Mostly on One Product: Is That a Problem?",
+    "desc": "Not necessarily. Google may simply have found one product is the easiest way to generate conversion value.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/google-shopping-high-roas-low-volume/page.tsx",
+      "src/app/resources/performance-max-brand-search-overspending/page.tsx",
+      "src/app/resources/why-performance-max-stops-spending/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/why-performance-max-stops-spending",
+    "title": "Why Performance Max Stops Spending",
+    "desc": "When Performance Max suddenly spends less, do not start by increasing the budget.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-long-run-performance-max-before-judging/page.tsx",
+      "src/app/resources/performance-max-brand-search-overspending/page.tsx",
+      "src/app/resources/performance-max-spending-mostly-one-product/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/performance-max-brand-search-overspending",
+    "title": "Performance Max Is Overspending on Branded Searches: What to Do",
+    "desc": "If PMax reports spectacular results because it captures people already searching your brand, the campaign can look more incremental than it really is.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-long-run-performance-max-before-judging/page.tsx",
+      "src/app/resources/performance-max-learning-period-avoid-changing/page.tsx",
+      "src/app/resources/why-performance-max-stops-spending/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-long-run-performance-max-before-judging",
+    "title": "How Long Should a New Performance Max Campaign Run Before You Judge It?",
+    "desc": "A new PMax campaign needs enough time and conversions to show a pattern, but there is no responsible answer such as \"always wait six weeks.\"",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/performance-max-brand-search-overspending/page.tsx",
+      "src/app/resources/performance-max-learning-period-avoid-changing/page.tsx",
+      "src/app/resources/performance-max-vs-meta-ads-new-product-launch/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/performance-max-learning-period-avoid-changing",
+    "title": "Performance Max Learning Period: What Should You Avoid Changing?",
+    "desc": "The fastest way to make a new automated campaign impossible to understand is to change several important inputs every few days.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/google-shopping-wrong-price/page.tsx",
+      "src/app/resources/how-long-run-performance-max-before-judging/page.tsx",
+      "src/app/resources/merchant-center-feed-issues-hurt-performance/page.tsx",
+      "src/app/resources/performance-max-vs-meta-ads-new-product-launch/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/performance-max-vs-meta-ads-new-product-launch",
+    "title": "Performance Max vs Meta Ads for New Product Launches",
+    "desc": "A new product with no search demand behaves very differently from a new product in an established category.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/google-shopping-wrong-price/page.tsx",
+      "src/app/resources/merchant-center-feed-issues-hurt-performance/page.tsx",
+      "src/app/resources/performance-max-learning-period-avoid-changing/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-shopping-wrong-price",
+    "title": "Why Google Shopping Shows the Wrong Price",
+    "desc": "When a Shopping ad shows a different price from Shopify, treat it as both a conversion problem and a feed-quality problem.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/merchant-center-feed-issues-hurt-performance/page.tsx",
+      "src/app/resources/performance-max-vs-meta-ads-new-product-launch/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/merchant-center-feed-issues-hurt-performance",
+    "title": "Merchant Center Feed Issues That Quietly Hurt Performance",
+    "desc": "Not every Merchant Center problem produces a dramatic red \"account suspended\" warning.",
+    "isCore": false,
+    "categoryId": "google-ads",
+    "categoryLabel": "Google Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/google-shopping-wrong-price/page.tsx"
+    ]
+  }
+]

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Do Trust Badges Still Improve Ecommerce Conversion Rates?",
   description: "Trust badges can reassure customers when they communicate something useful.",
   alternates: { canonical: "https://www.attribix.app/resources/do-trust-badges-still-improve-ecommerce-conversion" },

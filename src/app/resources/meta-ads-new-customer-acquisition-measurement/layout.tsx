@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Meta Ads New Customer Acquisition: How Should You Measure It?",
   description:
     "Platform ROAS can look strong while a campaign mostly reaches existing customers. How to separate new-customer acquisition from total attributed revenue using Shopify's own customer data.",

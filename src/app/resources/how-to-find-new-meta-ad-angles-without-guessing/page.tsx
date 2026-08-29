@@ -175,7 +175,7 @@ export default function Page() {
         <Reveal>
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/resources/where-should-ecommerce-brands-get-ideas-for-new-ad" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Where Should Ecommerce Brands Get Ideas for New Ad Creatives?</Link></li>
+            <li><Link href="/resources/how-to-find-new-meta-ad-angles-without-guessing" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Where Should Ecommerce Brands Get Ideas for New Ad Creatives?</Link></li>
             <li><Link href="/resources/how-to-turn-customer-objections-into-high-converting" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How to Turn Customer Objections Into High-Converting Ads</Link></li>
             <li><Link href="/resources/product-features-vs-customer-benefits-what-should-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Product Features vs Customer Benefits: What Should Ads Focus On?</Link></li>
           </ul>

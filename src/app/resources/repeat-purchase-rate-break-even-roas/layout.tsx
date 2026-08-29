@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why High Repeat Purchase Rate Changes Your Break-Even ROAS",
   description:
     "A store with strong retention can afford a lower first-order ROAS than a business where every customer buys once, but the first order's math never changes.",

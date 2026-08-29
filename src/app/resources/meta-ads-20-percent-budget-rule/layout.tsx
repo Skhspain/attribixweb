@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Increasing Meta Ads Budget: Is the 20% Rule Real?",
   description:
     "Why the 20% budget rule is a useful default rather than a fixed law, and what actually determines whether a Meta budget increase is safe for a Shopify store.",

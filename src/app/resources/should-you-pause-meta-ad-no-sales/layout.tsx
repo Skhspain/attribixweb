@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should You Pause a Meta Ad That Has No Sales?",
   description:
     "Zero sales doesn't mean a bad ad. It depends on spend relative to target CPA and what happened earlier in the funnel. How to make a pause decision for a reason.",

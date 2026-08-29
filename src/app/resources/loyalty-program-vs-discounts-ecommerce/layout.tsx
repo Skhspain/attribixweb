@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Loyalty Program vs Discounts: Which Drives More Repeat Purchases?",
   description:
     "Discounts create immediate price motivation. Loyalty programs create a reason to keep choosing the same brand over time. Neither works if customers didn't like the first purchase.",

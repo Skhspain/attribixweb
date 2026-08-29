@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "New Customer ROAS vs Total ROAS: Which Matters More?",
   description: "Total ROAS tells you how efficiently ad spend is associated with all reported revenue.",
   alternates: { canonical: "https://www.attribix.app/resources/new-customer-roas-vs-total-roas-which-matters-more" },

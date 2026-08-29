@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "What Is a Good Landing Page Conversion Rate for Ecommerce?",
   description: "A good landing-page conversion rate is one that supports profitable acquisition at the cost and quality of the traffic being sent to it.",
   alternates: { canonical: "https://www.attribix.app/resources/what-is-a-good-landing-page-conversion-rate-for" },

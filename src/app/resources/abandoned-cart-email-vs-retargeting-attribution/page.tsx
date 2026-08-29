@@ -125,7 +125,7 @@ export default function Page() {
             <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/resources/meta-ads-vs-klaviyo-attribution" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                <Link href="/resources/ad-platforms-report-more-revenue-than-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                   Meta Ads vs Klaviyo attribution: who gets credit for the sale?
                 </Link>
               </li>

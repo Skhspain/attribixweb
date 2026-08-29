@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why Retention Can Matter More Than Improving Facebook Ads",
   description:
     "A business spending months trying to reduce Meta CPA from $45 to $42 may be ignoring a much larger opportunity: turning more first-time buyers into repeat customers.",

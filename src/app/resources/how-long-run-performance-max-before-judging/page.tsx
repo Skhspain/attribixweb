@@ -132,7 +132,7 @@ export default function Page() {
         <Reveal>
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/resources/performance-max-brand-search-overspending" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Performance Max Is Overspending on Branded Searches: What to Do</Link></li>
+            <li><Link href="/resources/performance-max-brand-revenue" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Performance Max Is Overspending on Branded Searches: What to Do</Link></li>
             <li><Link href="/resources/performance-max-learning-period-avoid-changing" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Performance Max Learning Period: What Should You Avoid Changing?</Link></li>
             <li><Link href="/resources/why-performance-max-stops-spending" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Why Performance Max Stops Spending</Link></li>
           </ul>

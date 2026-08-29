@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Can Cookie Consent Reduce Your Reported ROAS?",
   description: "Yes.",
   alternates: { canonical: "https://www.attribix.app/resources/can-cookie-consent-reduce-your-reported-roas" },

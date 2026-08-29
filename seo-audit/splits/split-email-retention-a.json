@@ -1,0 +1,337 @@
+[
+  {
+    "href": "/resources/how-much-revenue-should-email-marketing-generate-ecommerce",
+    "title": "How Much Revenue Should Email Marketing Generate for a Shopify Store?",
+    "desc": "Why there's no universal healthy percentage, and how to judge program health with Shopify as the revenue anchor.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/klaviyo-revenue-too-high/page.tsx",
+      "src/app/resources/measure-email-marketing-true-impact-ecommerce/page.tsx",
+      "src/app/resources/shopify-vs-klaviyo-revenue-doesnt-match/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/klaviyo-revenue-too-high",
+    "title": "Klaviyo Revenue Looks Too High: Is Email Taking Too Much Credit?",
+    "desc": "Why attribution and causation are different, and how to check whether Klaviyo's number reconciles with Shopify and paid media.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/does-klaviyo-over-attribute-revenue/page.tsx",
+      "src/app/resources/how-much-revenue-should-email-marketing-generate-ecommerce/page.tsx",
+      "src/app/resources/klaviyo-attribution-explained/page.tsx",
+      "src/app/resources/shopify-vs-klaviyo-revenue-doesnt-match/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/shopify-vs-klaviyo-revenue-doesnt-match",
+    "title": "Shopify vs Klaviyo Revenue Doesn't Match: Why?",
+    "desc": "Shopify records orders, Klaviyo reports attributed revenue. The two aren't designed to match, and here's when a gap is worth investigating.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/how-much-revenue-should-email-marketing-generate-ecommerce/page.tsx",
+      "src/app/resources/klaviyo-attribution-explained/page.tsx",
+      "src/app/resources/klaviyo-revenue-too-high/page.tsx",
+      "src/app/resources/shopify-abandoned-checkout-vs-klaviyo-abandoned-cart/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/klaviyo-attribution-explained",
+    "title": "Klaviyo Attribution Explained for Shopify Stores",
+    "desc": "How Klaviyo connects orders to email and SMS interactions, and why click attribution, view attribution and window length all change the number.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/does-klaviyo-over-attribute-revenue/page.tsx",
+      "src/app/resources/google-ads-vs-klaviyo-revenue-attribution/page.tsx",
+      "src/app/resources/meta-ads-vs-klaviyo-attribution/page.tsx",
+      "src/app/resources/shopify-abandoned-checkout-vs-klaviyo-abandoned-cart/page.tsx",
+      "src/app/resources/shopify-vs-klaviyo-revenue-doesnt-match/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/does-klaviyo-over-attribute-revenue",
+    "title": "Does Klaviyo Over-Attribute Revenue?",
+    "desc": "Why loyal customers and cross-channel overlap can make Klaviyo's revenue number look larger than the true incremental impact of email.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/klaviyo-attribution-explained/page.tsx",
+      "src/app/resources/klaviyo-revenue-too-high/page.tsx",
+      "src/app/resources/measure-email-marketing-true-impact-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/measure-email-marketing-true-impact-ecommerce",
+    "title": "How to Measure the True Impact of Email Marketing",
+    "desc": "Platform metrics, Shopify outcomes, holdout tests, profit and list health: a fuller way to judge what email actually contributes.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/does-klaviyo-over-attribute-revenue/page.tsx",
+      "src/app/resources/good-abandoned-cart-recovery-rate-ecommerce/page.tsx",
+      "src/app/resources/how-much-revenue-should-email-marketing-generate-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/abandoned-cart-email-vs-retargeting-attribution",
+    "title": "Abandoned Cart Email vs Meta Retargeting: Which Should Get the Credit?",
+    "desc": "Both systems can legitimately claim a recovered cart. The right question is incremental recovery, not which dashboard gets credit.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/browse-abandonment-vs-cart-abandonment/page.tsx",
+      "src/app/resources/how-many-abandoned-cart-emails-shopify/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-many-abandoned-cart-emails-shopify",
+    "title": "How Many Abandoned Cart Emails Should a Shopify Store Send?",
+    "desc": "There's no universal reason every store needs exactly three messages. Here's how to build a sequence around objections and buying cycle instead.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/abandoned-cart-email-vs-retargeting-attribution/page.tsx",
+      "src/app/resources/abandoned-cart-emails-clicks-no-sales/page.tsx",
+      "src/app/resources/browse-abandonment-vs-cart-abandonment/page.tsx",
+      "src/app/resources/good-abandoned-cart-recovery-rate-ecommerce/page.tsx",
+      "src/app/resources/should-abandoned-cart-emails-offer-discount/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/browse-abandonment-vs-cart-abandonment",
+    "title": "Browse Abandonment vs Cart Abandonment: What's the Difference?",
+    "desc": "The two happen at different levels of intent and need different messages, plus how to avoid overwhelming the same customer.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/how-many-abandoned-cart-emails-shopify/page.tsx",
+      "src/app/resources/shopify-abandoned-checkout-vs-klaviyo-abandoned-cart/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-abandoned-cart-emails-offer-discount",
+    "title": "Should You Offer a Discount in Your Abandoned Cart Emails?",
+    "desc": "A discount can recover carts or teach customers to abandon on purpose. Here's when an incentive is commercially sensible and how to cost it.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/abandoned-cart-emails-clicks-no-sales/page.tsx",
+      "src/app/resources/browse-abandonment-vs-cart-abandonment/page.tsx",
+      "src/app/resources/good-abandoned-cart-recovery-rate-ecommerce/page.tsx",
+      "src/app/resources/how-many-abandoned-cart-emails-shopify/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/abandoned-cart-emails-clicks-no-sales",
+    "title": "Why Your Abandoned Cart Emails Get Clicks but No Sales",
+    "desc": "If people click and still don't buy, the email likely did its job. Here's what to check on the store side instead.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/abandoned-cart-email-vs-retargeting-attribution/page.tsx",
+      "src/app/resources/should-abandoned-cart-emails-offer-discount/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/shopify-abandoned-checkout-vs-klaviyo-abandoned-cart",
+    "title": "Shopify Abandoned Checkout vs Klaviyo Abandoned Cart: Why the Numbers Differ",
+    "desc": "The two systems count different abandonment stages and audiences. Here's how to compare event definitions before assuming something's broken.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/abandoned-cart-emails-clicks-no-sales/page.tsx",
+      "src/app/resources/browse-abandonment-vs-cart-abandonment/page.tsx",
+      "src/app/resources/good-abandoned-cart-recovery-rate-ecommerce/page.tsx",
+      "src/app/resources/shopify-vs-klaviyo-revenue-doesnt-match/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-much-should-ecommerce-spend-to-acquire-customer",
+    "title": "How Much Should Ecommerce Brands Spend to Acquire a New Customer?",
+    "desc": "The allowable acquisition cost should come from contribution, repeat value and cash flow, not a benchmark.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/cac-payback-period-ecommerce/page.tsx",
+      "src/app/resources/calculate-repeat-customer-value-shopify/page.tsx",
+      "src/app/resources/ecommerce-cac-payback-period/page.tsx",
+      "src/app/resources/first-order-profit-vs-lifetime-value-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/first-order-profit-vs-lifetime-value-ecommerce",
+    "title": "First-Order Profit vs Lifetime Value: Which Should Drive Ad Spend?",
+    "desc": "First-order profit protects cash. LTV can justify growth, but only when cohort evidence actually supports it.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/calculate-repeat-customer-value-shopify/page.tsx",
+      "src/app/resources/ecommerce-cac-payback-period/page.tsx",
+      "src/app/resources/how-much-should-ecommerce-spend-to-acquire-customer/page.tsx",
+      "src/app/resources/lose-money-first-order-ecommerce/page.tsx",
+      "src/app/resources/repeat-purchase-rate-break-even-roas/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/ecommerce-cac-payback-period",
+    "title": "How Long Can Ecommerce Brands Afford to Wait for Customer Payback?",
+    "desc": "A profitable customer can still create a cash-flow problem if it takes too long to recover the acquisition cost.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/cac-payback-period-ecommerce/page.tsx",
+      "src/app/resources/lose-money-first-order-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/cac-payback-period-ecommerce",
+    "title": "What Is CAC Payback Period in Ecommerce?",
+    "desc": "The time it takes for a new customer's contribution to recover the cost of acquiring them, with a worked example.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 9,
+    "inboundFrom": [
+      "src/app/resources/calculate-repeat-customer-value-shopify/page.tsx",
+      "src/app/resources/ecommerce-cac-payback-period/page.tsx",
+      "src/app/resources/first-order-profit-vs-lifetime-value-ecommerce/page.tsx",
+      "src/app/resources/how-much-should-ecommerce-spend-to-acquire-customer/page.tsx",
+      "src/app/resources/how-much-should-ecommerce-spend-to-acquire-customer/page.tsx",
+      "src/app/resources/lose-money-first-order-ecommerce/page.tsx",
+      "src/app/resources/repeat-purchase-rate-break-even-roas/page.tsx",
+      "src/app/resources/repeat-purchase-rate-break-even-roas/page.tsx",
+      "src/app/resources/retention-rate-vs-repeat-purchase-rate-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/lose-money-first-order-ecommerce",
+    "title": "When Is It Okay to Lose Money on the First Shopify Order?",
+    "desc": "A sensible first-order loss requires evidence of repeat purchase rate and payback, not just an LTV assumption.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/cac-payback-period-ecommerce/page.tsx",
+      "src/app/resources/ecommerce-cac-payback-period/page.tsx",
+      "src/app/resources/first-order-profit-vs-lifetime-value-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/calculate-repeat-customer-value-shopify",
+    "title": "How to Calculate Repeat Customer Value for a Shopify Store",
+    "desc": "A cohort method for turning repeat revenue into an expected repeat contribution you can use for acquisition targets.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 7,
+    "inboundFrom": [
+      "src/app/resources/cac-payback-period-ecommerce/page.tsx",
+      "src/app/resources/first-order-profit-vs-lifetime-value-ecommerce/page.tsx",
+      "src/app/resources/how-much-should-ecommerce-spend-to-acquire-customer/page.tsx",
+      "src/app/resources/lose-money-first-order-ecommerce/page.tsx",
+      "src/app/resources/loyalty-program-vs-discounts-ecommerce/page.tsx",
+      "src/app/resources/repeat-purchase-rate-break-even-roas/page.tsx",
+      "src/app/resources/retention-rate-vs-repeat-purchase-rate-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/repeat-purchase-rate-break-even-roas",
+    "title": "Why High Repeat Purchase Rate Changes Your Break-Even ROAS",
+    "desc": "The first order's math never changes. Retention changes how much the business is willing to invest to acquire it.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/calculate-repeat-customer-value-shopify/page.tsx",
+      "src/app/resources/ecommerce-retention-vs-acquisition/page.tsx",
+      "src/app/resources/retention-rate-vs-repeat-purchase-rate-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/retention-rate-vs-repeat-purchase-rate-ecommerce",
+    "title": "Customer Retention Rate vs Repeat Purchase Rate: What's the Difference?",
+    "desc": "Related metrics, different formulas: the definitions and cohort windows matter before comparing numbers.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/ecommerce-retention-vs-acquisition/page.tsx"
+    ]
+  }
+]

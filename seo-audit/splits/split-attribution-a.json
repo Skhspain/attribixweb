@@ -1,0 +1,368 @@
+[
+  {
+    "href": "/resources/ad-platforms-report-more-revenue-than-shopify",
+    "title": "Why Meta and Google Both Claim the Same Shopify Sale",
+    "desc": "A worked example of why adding platform-reported revenue together overstates real sales.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 13,
+    "inboundFrom": [
+      "src/app/resources/can-you-add-meta-and-google-roas-together/page.tsx",
+      "src/app/resources/google-ads-shopify-revenue-doesnt-match/page.tsx",
+      "src/app/resources/how-much-revenue-should-email-marketing-generate-ecommerce/page.tsx",
+      "src/app/resources/klaviyo-revenue-too-high/page.tsx",
+      "src/app/resources/meta-ads-vs-klaviyo-attribution/page.tsx",
+      "src/app/resources/meta-attribution-window-roas/page.tsx",
+      "src/app/resources/shopify-ga4-meta-google-revenue-different/page.tsx",
+      "src/app/resources/shopify-revenue-up-roas-down/page.tsx",
+      "src/app/resources/view-through-conversions-explained/page.tsx",
+      "src/app/resources/view-through-conversions-explained/page.tsx",
+      "src/app/resources/why-shopify-meta-sales-dont-match/page.tsx",
+      "src/app/shopify-attribution/page.tsx",
+      "src/app/shopify-roas-tracking/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/meta-attribution-window-roas",
+    "title": "Why Changing Your Meta Attribution Window Changes Your ROAS",
+    "desc": "The same campaign, two different reported ROAS figures, and why.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/ad-platforms-report-more-revenue-than-shopify/page.tsx",
+      "src/app/resources/shopify-attribution-models/page.tsx",
+      "src/app/resources/view-through-conversions-explained/page.tsx",
+      "src/app/resources/view-through-conversions-explained/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/view-through-conversions-explained",
+    "title": "View-Through Conversions: Should You Count Them?",
+    "desc": "The case for and against, and a framework instead of a flat answer.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/ad-platforms-report-more-revenue-than-shopify/page.tsx",
+      "src/app/resources/ad-platforms-report-more-revenue-than-shopify/page.tsx",
+      "src/app/resources/meta-attribution-window-roas/page.tsx",
+      "src/app/resources/shopify-attribution-models/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-ads-branded-search-over-attribution",
+    "title": "Does Google Ads Over-Attribute Branded Searches?",
+    "desc": "A branded click can be validly attributed and still not be incremental. The two questions need separate answers.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/attribution-vs-incrementality/page.tsx",
+      "src/app/resources/incrementality-ecommerce-advertising/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/incrementality-ecommerce-advertising",
+    "title": "What Is Incrementality in Ecommerce Advertising?",
+    "desc": "Attribution asks which interaction gets credit. Incrementality tries to estimate causation.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/attribution-vs-incrementality/page.tsx",
+      "src/app/resources/attribution-vs-incrementality/page.tsx",
+      "src/app/resources/google-ads-branded-search-over-attribution/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/attribution-vs-incrementality",
+    "title": "Attribution vs Incrementality: What's the Difference?",
+    "desc": "Why the same campaign can show high attributed ROAS and low incremental lift at the same time.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/incrementality-ecommerce-advertising/page.tsx",
+      "src/app/resources/incrementality-ecommerce-advertising/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/maximum-profitable-cpa-ecommerce",
+    "title": "How to Calculate Your Maximum Profitable CPA",
+    "desc": "The acquisition cost at which the order still meets your profit requirement, built from contribution rather than a target that just looks good.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/advertise-bestseller-or-high-margin-product/page.tsx",
+      "src/app/resources/contribution-margin-vs-gross-margin-ecommerce/page.tsx",
+      "src/app/resources/maximum-profitable-cpc-ecommerce/page.tsx",
+      "src/app/resources/maximum-profitable-cpc-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/maximum-profitable-cpc-ecommerce",
+    "title": "How to Calculate Your Maximum Profitable CPC for Google Ads",
+    "desc": "Maximum CPC = allowable CPA × conversion rate. One account-wide ceiling rarely fits brand, non-brand and Shopping.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/maximum-profitable-cpa-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/gross-margin-break-even-roas",
+    "title": "How Gross Margin Changes Your Break-Even ROAS",
+    "desc": "Break-even ROAS = 1 ÷ gross margin, and the real number is usually higher once fees, fulfilment and returns are included.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/400-roas-profitable/page.tsx",
+      "src/app/resources/400-roas-profitable/page.tsx",
+      "src/app/resources/constant-discounts-ecommerce-profitability/page.tsx",
+      "src/app/resources/contribution-margin-vs-gross-margin-ecommerce/page.tsx",
+      "src/app/resources/maximum-profitable-cpa-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/contribution-margin-vs-gross-margin-ecommerce",
+    "title": "Contribution Margin vs Gross Margin for Ecommerce Advertising",
+    "desc": "Contribution margin subtracts the variable costs gross margin ignores, which is why it's the more useful number for allowable CPA.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/gross-margin-break-even-roas/page.tsx",
+      "src/app/resources/gross-margin-break-even-roas/page.tsx",
+      "src/app/resources/how-to-price-ecommerce-bundles/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/currency-affects-ecommerce-roas",
+    "title": "How Currency Differences Affect Ecommerce ROAS",
+    "desc": "Why ad spend, Shopify revenue and product costs need one consistent reporting currency before ROAS means anything.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/ads-perform-differently-by-country-ecommerce/page.tsx",
+      "src/app/resources/local-currency-vs-store-currency-ecommerce-ads/page.tsx",
+      "src/app/resources/local-currency-vs-store-currency-ecommerce-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/local-currency-vs-store-currency-ecommerce-ads",
+    "title": "Local Currency vs Store Currency: What Should You Use in Ads?",
+    "desc": "Customers prefer familiar local pricing. The important part is keeping the customer-facing price and tracking values consistent.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/currency-affects-ecommerce-roas/page.tsx",
+      "src/app/resources/currency-affects-ecommerce-roas/page.tsx",
+      "src/app/resources/show-duties-taxes-before-checkout-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/meta-ads-vs-klaviyo-attribution",
+    "title": "Meta Ads vs Klaviyo Attribution: Who Gets Credit for the Sale?",
+    "desc": "Meta and Klaviyo can both legitimately claim the same Shopify sale. Summing their attributed revenue overstates marketing's real impact.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/abandoned-cart-email-vs-retargeting-attribution/page.tsx",
+      "src/app/resources/google-ads-vs-klaviyo-revenue-attribution/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-ads-vs-klaviyo-revenue-attribution",
+    "title": "Google Ads vs Klaviyo Revenue: Why Both Can Claim the Same Customer",
+    "desc": "A customer can click a Klaviyo email, then search the brand on Google and buy. That's why both platforms can attribute the same order.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/meta-ads-vs-klaviyo-attribution/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/returning-customers-convert-better-ecommerce",
+    "title": "Why Returning Customers Convert Better Than New Visitors",
+    "desc": "Returning customers already solved several problems that slow a first purchase, which can distort channel ROAS.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 0,
+    "inboundFrom": []
+  },
+  {
+    "href": "/resources/shopify-ga4-meta-google-revenue-different",
+    "title": "Why Shopify, GA4, Meta and Google All Show Different Revenue",
+    "desc": "Four systems can show four different revenue numbers without all four being broken. They measure different things.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/can-you-add-meta-and-google-roas-together/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/400-roas-profitable",
+    "title": "Why a 400% ROAS Can Still Lose Money",
+    "desc": "A 400% ROAS says nothing about what the product costs to make and deliver: a worked example of thin margin eating the contribution.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/gross-margin-break-even-roas/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/can-you-add-meta-and-google-roas-together",
+    "title": "Can You Add Meta and Google ROAS Together?",
+    "desc": "No: adding ROAS percentages together doesn't produce a meaningful total, and it can double-count the same orders.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/shopify-ga4-meta-google-revenue-different/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/why-platform-roas-can-look-great-while-your-business",
+    "title": "Why Platform ROAS Can Look Great While Your Business Loses Money",
+    "desc": "ROAS compares attributed revenue with ad spend.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/how-to-calculate-break-even-roas-for-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-calculate-break-even-roas-for-ecommerce",
+    "title": "How to Calculate Break-Even ROAS for Ecommerce",
+    "desc": "Break-even ROAS tells you the revenue-to-ad-spend ratio at which the order has no contribution left after the costs you choose to include.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/break-even-cpa-explained-for-shopify-stores/page.tsx",
+      "src/app/resources/why-platform-roas-can-look-great-while-your-business/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/break-even-cpa-explained-for-shopify-stores",
+    "title": "Break-Even CPA Explained for Shopify Stores",
+    "desc": "Break-even CPA is the maximum acquisition cost an order can absorb before the contribution profit you are measuring reaches zero.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/how-to-calculate-break-even-roas-for-ecommerce/page.tsx",
+      "src/app/resources/roas-vs-profit-why-high-roas-doesn-t-always-mean-more/page.tsx",
+      "src/app/resources/what-is-a-good-cpa-for-ecommerce/page.tsx",
+      "src/app/resources/why-platform-roas-can-look-great-while-your-business/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/what-is-a-good-cpa-for-ecommerce",
+    "title": "What Is a Good CPA for Ecommerce?",
+    "desc": "A good CPA is not an industry number.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/break-even-cpa-explained-for-shopify-stores/page.tsx",
+      "src/app/resources/how-to-calculate-break-even-roas-for-ecommerce/page.tsx",
+      "src/app/resources/roas-vs-profit-why-high-roas-doesn-t-always-mean-more/page.tsx",
+      "src/app/resources/why-platform-roas-can-look-great-while-your-business/page.tsx",
+      "src/app/resources/why-revenue-is-a-bad-metric-without-gross-margin/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/roas-vs-profit-why-high-roas-doesn-t-always-mean-more",
+    "title": "ROAS vs Profit: Why High ROAS Doesn't Always Mean More Profit",
+    "desc": "ROAS measures revenue returned for each unit of ad spend.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/break-even-cpa-explained-for-shopify-stores/page.tsx",
+      "src/app/resources/what-is-a-good-cpa-for-ecommerce/page.tsx",
+      "src/app/resources/why-revenue-is-a-bad-metric-without-gross-margin/page.tsx"
+    ]
+  }
+]

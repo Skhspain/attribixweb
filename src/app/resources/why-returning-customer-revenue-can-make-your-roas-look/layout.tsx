@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why Returning Customer Revenue Can Make Your ROAS Look Better Than It Is",
   description: "Returning customers often convert at a lower marketing cost because they already know and trust the brand.",
   alternates: { canonical: "https://www.attribix.app/resources/why-returning-customer-revenue-can-make-your-roas-look" },

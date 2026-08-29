@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Shopify vs Klaviyo Revenue Doesn't Match: Why?",
   description:
     "Shopify records orders. Klaviyo reports attributed revenue. Why the two numbers aren't designed to match, and when a difference is actually worth investigating.",

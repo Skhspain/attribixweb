@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How to Check Whether Your Meta Pixel Is Working",
   description:
     "Don't decide a Pixel 'works' simply because Meta receives a PageView. How to test the full journey through to Purchase: value, currency, deduplication and order behaviour.",

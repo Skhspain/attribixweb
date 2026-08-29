@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Ecommerce Ads Lead With the Product or the Problem?",
   description:
     "When a Meta ad should open on the product itself and when it needs a problem first, based on how visually desirable the product is.",

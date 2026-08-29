@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Your Landing Page Show the Price Above the Fold?",
   description: "For normal ecommerce products, hiding the price usually adds unnecessary friction.",
   alternates: { canonical: "https://www.attribix.app/resources/should-your-landing-page-show-the-price-above-the-fold" },

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Google Shopping Getting Clicks but No Sales",
   description:
     "Shopping ads show price and image before the click happens, which changes what usually causes clicks without purchases. Query relevance, feed quality, price and shipping, in the order that matters.",

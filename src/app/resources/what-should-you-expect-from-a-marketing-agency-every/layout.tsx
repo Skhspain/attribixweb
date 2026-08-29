@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "What Should You Expect From a Marketing Agency Every Month?",
   description: "A good agency month should contain more than a report showing what happened.",
   alternates: { canonical: "https://www.attribix.app/resources/what-should-you-expect-from-a-marketing-agency-every" },

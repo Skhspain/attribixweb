@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Meta Ads Campaign Budget vs Ad Set Budget: Which Should You Use?",
   description:
     "Campaign budget optimization and ad set budgets answer different questions. How to choose between them based on whether you need efficiency or control.",

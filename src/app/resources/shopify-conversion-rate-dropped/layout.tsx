@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Shopify Conversion Rate Suddenly Dropped: What to Check First",
   description:
     "A sudden drop in Shopify conversion rate usually has a specific trigger. How to work out whether it's traffic mix, a site change, stock, price, checkout, or tracking.",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Can You Add Meta and Google ROAS Together?",
   description:
     "No. Adding ROAS percentages together doesn't produce a meaningful total, and adding Meta-attributed revenue to Google-attributed revenue can double-count the same orders. Use total spend and one consistent revenue number instead.",

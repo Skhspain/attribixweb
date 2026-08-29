@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How to Decide Whether an Unprofitable Campaign Is Worth Keeping",
   description: "An unprofitable campaign can be worth keeping if it creates future customer value, assists other profitable sales or is still inside a deliberate test.",
   alternates: { canonical: "https://www.attribix.app/resources/how-to-decide-whether-an-unprofitable-campaign-is" },

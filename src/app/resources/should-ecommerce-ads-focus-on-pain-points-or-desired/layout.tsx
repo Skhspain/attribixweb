@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Ecommerce Ads Focus on Pain Points or Desired Outcomes?",
   description: "Some products are bought to escape a problem.",
   alternates: { canonical: "https://www.attribix.app/resources/should-ecommerce-ads-focus-on-pain-points-or-desired" },

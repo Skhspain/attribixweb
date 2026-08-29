@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Klaviyo Attribution Explained for Shopify Stores",
   description:
     "How Klaviyo connects orders to email and SMS interactions, why click and view attribution differ, and how attribution windows change the reported number.",

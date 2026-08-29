@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How to Calculate Your Maximum Profitable CPC for Google Ads",
   description:
     "Your maximum CPC depends on two numbers: how much you can afford to pay for a customer and how often clicks become customers. The formula, and why conversion rate isn't fixed.",

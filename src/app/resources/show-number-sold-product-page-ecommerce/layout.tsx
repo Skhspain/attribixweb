@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Shopify Stores Show the Number of Products Sold?",
   description:
     "Showing purchase counts can create useful social proof when the number is genuine and meaningful, and look manipulative when it exists only to fake popularity.",

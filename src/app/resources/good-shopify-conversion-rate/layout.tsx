@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "What Is a Good Shopify Conversion Rate?",
   description: "A good Shopify conversion rate is one that supports profitable customer acquisition for your product, traffic mix and margins.",
   alternates: { canonical: "https://www.attribix.app/resources/good-shopify-conversion-rate" },

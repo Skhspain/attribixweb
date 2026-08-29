@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Lost Impression Share Due to Budget: Should You Increase Spend?",
   description: "\"Limited by budget\" can feel like Google is telling you to spend more.",
   alternates: { canonical: "https://www.attribix.app/resources/lost-impression-share-budget-increase" },

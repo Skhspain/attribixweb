@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Google Ads Says I Have Conversions but Shopify Has No Orders",
   description:
     "Google Ads reporting conversions that don't show up as Shopify orders is almost always a configuration or labeling issue, not a fake conversion. What's usually behind it and how to identify which conversion action is actually firing.",

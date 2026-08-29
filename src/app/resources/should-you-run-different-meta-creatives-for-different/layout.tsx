@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should You Run Different Meta Creatives for Different Countries?",
   description: "If customer motivations, language or offers differ, country-specific creatives can improve performance.",
   alternates: { canonical: "https://www.attribix.app/resources/should-you-run-different-meta-creatives-for-different" },

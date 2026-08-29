@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Do Countdown Timers Actually Improve Ecommerce Conversion Rates?",
   description:
     "Countdown timers can increase urgency when there's a real deadline, and damage trust when they reset on every refresh. How to test the offer, not just the clock.",

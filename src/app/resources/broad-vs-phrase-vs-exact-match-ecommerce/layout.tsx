@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Broad Match vs Phrase Match vs Exact Match for Ecommerce",
   description:
     "What each Google Ads keyword match type actually does now that broad, phrase and exact all use intent and context, and how to judge which one your Shopify account's data and conversion tracking can support.",

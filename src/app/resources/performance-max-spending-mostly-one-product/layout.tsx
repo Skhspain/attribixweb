@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Performance Max Spending Mostly on One Product: Is That a Problem?",
   description: "Not necessarily.",
   alternates: { canonical: "https://www.attribix.app/resources/performance-max-spending-mostly-one-product" },

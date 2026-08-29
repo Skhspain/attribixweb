@@ -134,7 +134,7 @@ export default function Page() {
           <ul className="space-y-2 text-sm">
             <li><Link href="/resources/when-to-split-performance-max-campaigns" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">When Should You Split Products Into Multiple PMax Campaigns?</Link></li>
             <li><Link href="/resources/exclude-poor-performing-products-performance-max" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Should You Exclude Poor-Performing Products From Performance Max?</Link></li>
-            <li><Link href="/resources/all-products-one-performance-max-campaign" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Should You Put All Products in One Performance Max Campaign?</Link></li>
+            <li><Link href="/resources/when-to-split-performance-max-campaigns" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Should You Put All Products in One Performance Max Campaign?</Link></li>
           </ul>
         </Reveal>
       </section>

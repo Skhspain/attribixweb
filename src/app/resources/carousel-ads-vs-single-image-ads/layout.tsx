@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Carousel Ads vs Single Image Ads: Which Should You Use?",
   description:
     "Carousel ads help when the customer benefits from seeing several things. A single image helps when one clear message deserves all the attention. How to decide.",

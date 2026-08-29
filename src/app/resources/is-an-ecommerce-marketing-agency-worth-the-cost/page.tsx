@@ -145,7 +145,7 @@ export default function Page() {
           <ul className="space-y-2 text-sm">
             <li><Link href="/ad-management" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">See what Attribix Ad Management includes</Link></li>
             <li><Link href="/resources/freelancer-vs-marketing-agency-which-should-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Freelancer vs Marketing Agency: Which Should Ecommerce Brands Hire?</Link></li>
-            <li><Link href="/resources/is-a-google-ads-agency-worth-it" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Is a Google Ads Agency Worth It?</Link></li>
+            <li><Link href="/resources/is-an-ecommerce-marketing-agency-worth-the-cost" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Is a Google Ads Agency Worth It?</Link></li>
             <li><Link href="/resources/small-marketing-agency-vs-large-agency-which-is-better" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Small Marketing Agency vs Large Agency: Which Is Better?</Link></li>
           </ul>
         </Reveal>

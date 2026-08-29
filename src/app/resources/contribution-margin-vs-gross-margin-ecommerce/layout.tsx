@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Contribution Margin vs Gross Margin for Ecommerce Advertising",
   description:
     "Gross margin usually subtracts cost of goods from revenue. Contribution margin goes further by subtracting the variable costs that rise when you make the sale. For advertising decisions, contribution is the more useful number.",

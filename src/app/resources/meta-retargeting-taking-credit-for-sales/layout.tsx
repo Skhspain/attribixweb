@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Is Meta Retargeting Taking Credit for Too Many Sales?",
   description:
     "High retargeting ROAS often reflects warm shoppers who were already likely to buy, not incremental revenue. How to spot over-attribution and set a sensible budget split.",

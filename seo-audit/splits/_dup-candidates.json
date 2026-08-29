@@ -1,0 +1,130 @@
+[
+  {
+    "categoryId": "attribution",
+    "similarity": 0.5,
+    "a": "/resources/what-roas-do-you-need-with-a-30-percent-gross-margin",
+    "aTitle": "What ROAS Do You Need With a 30% Gross Margin?",
+    "b": "/resources/what-roas-do-you-need-with-a-50-percent-gross-margin",
+    "bTitle": "What ROAS Do You Need With a 50% Gross Margin?"
+  },
+  {
+    "categoryId": "cro-landing-pages",
+    "similarity": 0.38,
+    "a": "/resources/good-shopify-conversion-rate",
+    "aTitle": "What Is a Good Shopify Conversion Rate?",
+    "b": "/resources/what-is-a-good-landing-page-conversion-rate-for",
+    "bTitle": "What Is a Good Landing Page Conversion Rate for Ecommerce?"
+  },
+  {
+    "categoryId": "meta-ads",
+    "similarity": 0.33,
+    "a": "/resources/meta-ads-sales-drop-weekends",
+    "aTitle": "Meta Ads Sales Drop on Weekends: Is That Normal?",
+    "b": "/resources/why-meta-ads-work-one-week-fail-next",
+    "bTitle": "Why Meta Ads Work One Week and Fail the Next"
+  },
+  {
+    "categoryId": "google-ads",
+    "similarity": 0.31,
+    "a": "/resources/google-ads-not-tracking-shopify-purchases",
+    "aTitle": "Google Ads Not Tracking Shopify Purchases? Step-by-Step Diagnosis",
+    "b": "/resources/import-ga4-conversions-google-ads-shopify",
+    "bTitle": "Should You Import GA4 Purchases Into Google Ads on Shopify?"
+  },
+  {
+    "categoryId": "attribution",
+    "similarity": 0.3,
+    "a": "/resources/ad-platforms-report-more-revenue-than-shopify",
+    "aTitle": "Why Meta and Google Both Claim the Same Shopify Sale",
+    "b": "/resources/meta-ads-vs-klaviyo-attribution",
+    "bTitle": "Meta Ads vs Klaviyo Attribution: Who Gets Credit for the Sale?"
+  },
+  {
+    "categoryId": "meta-ads",
+    "similarity": 0.28,
+    "a": "/resources/meta-ads-roas-dropped",
+    "aTitle": "Meta Ads ROAS Dropped Suddenly? Ads, Website or Tracking",
+    "b": "/resources/why-meta-ads-work-one-week-fail-next",
+    "bTitle": "Why Meta Ads Work One Week and Fail the Next"
+  },
+  {
+    "categoryId": "google-ads",
+    "similarity": 0.28,
+    "a": "/resources/google-ads-search-terms-ecommerce",
+    "aTitle": "Google Ads Search Terms: What Should Ecommerce Advertisers Look For?",
+    "b": "/resources/negative-keywords-ecommerce-google-ads",
+    "bTitle": "Google Ads Negative Keywords for Ecommerce: What to Look For"
+  },
+  {
+    "categoryId": "cro-landing-pages",
+    "similarity": 0.28,
+    "a": "/resources/should-meta-ads-send-traffic-to-a-product-page-or",
+    "aTitle": "Should Meta Ads Send Traffic to a Product Page or Landing Page?",
+    "b": "/resources/should-google-ads-send-traffic-to-a-product-page-or",
+    "bTitle": "Should Google Ads Send Traffic to a Product Page or Collection Page?"
+  },
+  {
+    "categoryId": "meta-ads",
+    "similarity": 0.26,
+    "a": "/resources/how-much-meta-ads-budget-retargeting",
+    "aTitle": "How Much of Your Meta Ads Budget Should Go to Retargeting?",
+    "b": "/resources/how-many-meta-ads-test-at-once",
+    "bTitle": "How Many Meta Ads Should You Test at Once?"
+  },
+  {
+    "categoryId": "attribution",
+    "similarity": 0.26,
+    "a": "/resources/gross-margin-break-even-roas",
+    "aTitle": "How Gross Margin Changes Your Break-Even ROAS",
+    "b": "/resources/what-roas-do-you-need-with-a-30-percent-gross-margin",
+    "bTitle": "What ROAS Do You Need With a 30% Gross Margin?"
+  },
+  {
+    "categoryId": "marketing-agency",
+    "similarity": 0.26,
+    "a": "/resources/what-should-be-included-in-a-meta-ads-management",
+    "aTitle": "What Should Be Included in a Meta Ads Management Service?",
+    "b": "/resources/what-should-be-included-in-a-google-ads-management",
+    "bTitle": "What Should Be Included in a Google Ads Management Service?"
+  },
+  {
+    "categoryId": "meta-ads",
+    "similarity": 0.25,
+    "a": "/resources/how-often-change-meta-ad-creatives",
+    "aTitle": "How Often Should You Change Meta Ad Creatives?",
+    "b": "/resources/how-to-tell-meta-ad-fatigue",
+    "bTitle": "How Do You Know When a Meta Ad Is Fatigued?"
+  },
+  {
+    "categoryId": "google-ads",
+    "similarity": 0.25,
+    "a": "/resources/google-ads-clicks-vs-shopify-sessions",
+    "aTitle": "Google Ads Clicks Don't Match Shopify Sessions: Why?",
+    "b": "/resources/google-ads-shopify-revenue-doesnt-match",
+    "bTitle": "Why Google Ads and Shopify Revenue Don't Match"
+  },
+  {
+    "categoryId": "marketing-agency",
+    "similarity": 0.25,
+    "a": "/resources/ecommerce-marketing-agency-cost",
+    "aTitle": "How Much Does an Ecommerce Marketing Agency Cost?",
+    "b": "/resources/shopify-marketing-agency-vs-general-agency",
+    "bTitle": "Shopify-Specific Expertise vs a General Marketing Agency"
+  },
+  {
+    "categoryId": "marketing-agency",
+    "similarity": 0.25,
+    "a": "/resources/ecommerce-marketing-agency-cost",
+    "aTitle": "How Much Does an Ecommerce Marketing Agency Cost?",
+    "b": "/resources/is-an-ecommerce-marketing-agency-worth-the-cost",
+    "bTitle": "Is an Ecommerce Marketing Agency Worth the Cost?"
+  },
+  {
+    "categoryId": "marketing-agency",
+    "similarity": 0.25,
+    "a": "/resources/meta-ads-vs-google-ads-shopify-budget",
+    "aTitle": "Meta Ads vs Google Ads for Shopify: Where to Spend First",
+    "b": "/resources/shopify-advertising-budget-how-much-to-spend",
+    "bTitle": "How Much Should a Shopify Store Spend on Meta and Google Ads?"
+  }
+]

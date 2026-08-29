@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How to Improve Shopify Conversion Rate Without Increasing Ad Spend",
   description: "If traffic stays the same and conversion rate improves, revenue can grow without buying another click.",
   alternates: { canonical: "https://www.attribix.app/resources/improve-shopify-conversion-rate" },

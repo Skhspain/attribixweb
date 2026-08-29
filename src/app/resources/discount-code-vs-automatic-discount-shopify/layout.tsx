@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Discount Code vs Automatic Discount: Which Converts Better?",
   description:
     "Automatic discounts remove a step at checkout. Discount codes give you more control over distribution and attribution. Which is right depends on how the promotion is meant to work.",

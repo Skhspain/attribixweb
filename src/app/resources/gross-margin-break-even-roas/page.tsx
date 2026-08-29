@@ -131,12 +131,12 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/what-roas-do-you-need-with-a-30-percent-gross-margin" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/gross-margin-break-even-roas" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 What ROAS do you need with a 30% gross margin?
               </Link>
             </li>
             <li>
-              <Link href="/resources/what-roas-do-you-need-with-a-50-percent-gross-margin" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/gross-margin-break-even-roas" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 What ROAS do you need with a 50% gross margin?
               </Link>
             </li>

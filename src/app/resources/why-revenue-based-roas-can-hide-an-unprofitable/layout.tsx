@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why Revenue-Based ROAS Can Hide an Unprofitable Business",
   description: "Revenue-based ROAS treats every dollar of sales as equally valuable.",
   alternates: { canonical: "https://www.attribix.app/resources/why-revenue-based-roas-can-hide-an-unprofitable" },

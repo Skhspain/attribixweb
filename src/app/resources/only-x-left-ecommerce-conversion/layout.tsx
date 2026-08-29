@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Does \"Only X Left\" Increase Conversion or Hurt Trust?",
   description:
     "\"Only 3 left\" can help a genuinely limited-stock customer decide to buy now, or make your entire store feel dishonest when the same message appears every day.",

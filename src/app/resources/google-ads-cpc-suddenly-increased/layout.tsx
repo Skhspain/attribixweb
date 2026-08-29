@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why Your Google Ads CPC Suddenly Increased",
   description: "A sudden CPC increase is an auction symptom.",
   alternates: { canonical: "https://www.attribix.app/resources/google-ads-cpc-suddenly-increased" },

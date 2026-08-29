@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Shopify Sales Dropped but Traffic Is the Same: What Does That Tell You?",
   description:
     "Stable sessions with falling revenue points the problem at the store or offer, not media reach. How to read this specific metric combination correctly.",

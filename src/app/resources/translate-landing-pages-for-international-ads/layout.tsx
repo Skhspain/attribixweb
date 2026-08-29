@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should You Translate Shopify Landing Pages for Paid Ads?",
   description:
     "If you run ads in a customer's local language, the landing page should normally continue in that language. What to translate first, and what localization requires beyond words.",

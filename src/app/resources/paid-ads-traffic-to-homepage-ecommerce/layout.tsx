@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why Sending All Paid Traffic to Your Homepage Is Usually a Mistake",
   description:
     "Your homepage serves many jobs. A paid campaign usually has one. Why sending every Meta and Google click to the homepage often creates unnecessary friction.",

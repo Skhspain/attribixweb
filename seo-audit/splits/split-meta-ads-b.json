@@ -1,0 +1,393 @@
+[
+  {
+    "href": "/resources/carousel-ads-vs-single-image-ads",
+    "title": "Carousel Ads vs Single Image Ads: Which Should You Use?",
+    "desc": "Carousels help when sequence or variety helps the sale. Single images help when one message deserves all the attention.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/product-led-vs-problem-led-ads/page.tsx",
+      "src/app/resources/static-images-vs-video-ads-ecommerce/page.tsx",
+      "src/app/resources/ugc-ads-vs-product-ads/page.tsx",
+      "src/app/resources/what-makes-good-meta-ad-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/good-meta-ad-metrics-but-poor-sales",
+    "title": "Why Your Meta Ads Have Good Creative Metrics but Poor Sales",
+    "desc": "Hook rate, watch time and CTR describe attention. Revenue requires attention from the right people.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/does-meta-ad-engagement-matter-for-sales/page.tsx",
+      "src/app/resources/how-to-tell-meta-ad-creative-problem/page.tsx",
+      "src/app/resources/should-meta-ads-show-price/page.tsx",
+      "src/app/resources/static-images-vs-video-ads-ecommerce/page.tsx",
+      "src/app/resources/what-makes-good-meta-ad-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/meta-ads-20-percent-budget-rule",
+    "title": "Increasing Meta Ads Budget: Is the 20% Rule Real?",
+    "desc": "Why the 20% rule is a useful default, not a law, and what actually determines a safe increase.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/campaign-budget-vs-ad-set-budget-meta/page.tsx",
+      "src/app/resources/campaign-budget-vs-ad-set-budget-meta/page.tsx",
+      "src/app/resources/countdown-timer-ecommerce-conversion-rate/page.tsx",
+      "src/app/resources/how-much-meta-ads-budget-retargeting/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-many-meta-ads-test-at-once",
+    "title": "How Many Meta Ads Should You Test at Once?",
+    "desc": "Why the right testing volume is set by budget and conversion volume, not a round number.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/how-many-creatives-shopify-meta-ads/page.tsx",
+      "src/app/resources/how-many-creatives-shopify-meta-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-many-creatives-shopify-meta-ads",
+    "title": "How Many Creatives Does a Shopify Store Need for Meta Ads?",
+    "desc": "Why creative volume should scale with ad spend, not catalog size.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-many-meta-ads-test-at-once/page.tsx",
+      "src/app/resources/how-many-meta-ads-test-at-once/page.tsx",
+      "src/app/resources/how-often-change-meta-ad-creatives/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/campaign-budget-vs-ad-set-budget-meta",
+    "title": "Meta Ads Campaign Budget vs Ad Set Budget: Which Should You Use?",
+    "desc": "CBO and ad set budgets answer different questions. Choose based on the job at hand.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/one-meta-campaign-multiple-countries-vs-separate/page.tsx",
+      "src/app/resources/scale-winning-meta-ad-or-duplicate/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/meta-ads-cost-per-purchase-increasing",
+    "title": "Meta Ads Cost Per Purchase Increasing: What to Check",
+    "desc": "How to split a rising CPA into CPC, conversion rate and tracking to find the real cause.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/ecommerce-retention-vs-acquisition/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/why-meta-ads-work-one-week-fail-next",
+    "title": "Why Meta Ads Work One Week and Fail the Next",
+    "desc": "Why weekly swings are often normal variance, and how to tell that apart from a real decline.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 0,
+    "inboundFrom": []
+  },
+  {
+    "href": "/resources/how-to-tell-meta-ad-creative-problem",
+    "title": "How to Tell Whether Your Meta Ad Creative Is the Problem",
+    "desc": "Diagnosing creative failure before replacing an ad without knowing why it isn't working.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/meta-ad-creative-testing-what-to-test-first/page.tsx",
+      "src/app/resources/should-meta-ads-show-price/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/good-hook-for-meta-ad",
+    "title": "What Is a Good Hook for a Meta Ad?",
+    "desc": "A good hook is the first piece of information that makes the right person think this might be for me.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/meta-ad-creative-testing-what-to-test-first/page.tsx",
+      "src/app/resources/product-led-vs-problem-led-ads/page.tsx",
+      "src/app/resources/should-you-reuse-old-winning-meta-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-meta-ads-show-price",
+    "title": "Should Your Meta Ad Show the Price?",
+    "desc": "Showing price can reduce clicks and improve the campaign at the same time.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 0,
+    "inboundFrom": []
+  },
+  {
+    "href": "/resources/product-led-vs-problem-led-ads",
+    "title": "Should Ecommerce Ads Lead With the Product or the Problem?",
+    "desc": "Some products sell themselves visually. Others need the problem explained first.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/product-reviews-vs-testimonials-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-many-variations-winning-meta-ad",
+    "title": "How Many Variations of a Winning Meta Ad Should You Make?",
+    "desc": "Discovering why an ad won and preserving that reason while exploring new executions.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/how-long-does-meta-ad-creative-last/page.tsx",
+      "src/app/resources/meta-ad-creative-testing-what-to-test-first/page.tsx",
+      "src/app/resources/should-you-reuse-old-winning-meta-ads/page.tsx",
+      "src/app/resources/why-winning-meta-creatives-stop-working/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/why-winning-meta-creatives-stop-working",
+    "title": "Why Winning Meta Ad Creatives Stop Working",
+    "desc": "The audience, the auction, the offer or the website can all be the real reason a winner declines.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-long-does-meta-ad-creative-last/page.tsx",
+      "src/app/resources/how-many-variations-winning-meta-ad/page.tsx",
+      "src/app/resources/should-you-reuse-old-winning-meta-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-you-reuse-old-winning-meta-ads",
+    "title": "Should You Reuse Old Winning Meta Ads?",
+    "desc": "Old creative is worth retesting, but it isn't guaranteed to become a winner again.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/how-many-variations-winning-meta-ad/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-long-does-meta-ad-creative-last",
+    "title": "How Long Does a Meta Ad Creative Usually Last?",
+    "desc": "Exposure determines lifespan more than calendar days.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/why-winning-meta-creatives-stop-working/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/meta-ad-creative-testing-what-to-test-first",
+    "title": "Meta Ad Creative Testing: What Should You Test First?",
+    "desc": "Test the selling idea before the execution: a hierarchy that produces real learning.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/good-hook-for-meta-ad/page.tsx",
+      "src/app/resources/how-many-variations-winning-meta-ad/page.tsx",
+      "src/app/resources/how-to-tell-meta-ad-creative-problem/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/does-meta-ad-engagement-matter-for-sales",
+    "title": "Does Meta Ad Engagement Actually Matter for Sales?",
+    "desc": "An ad with 10,000 likes and no profitable sales is not a successful sales ad.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 0,
+    "inboundFrom": []
+  },
+  {
+    "href": "/resources/should-meta-ads-get-credit-returning-customers",
+    "title": "Should Meta Ads Get Credit for Returning Customer Purchases?",
+    "desc": "Meta can legitimately claim a repeat-purchase conversion. That doesn't mean the ad caused it.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 0,
+    "inboundFrom": []
+  },
+  {
+    "href": "/resources/meta-ads-multiple-countries-shopify",
+    "title": "Should Shopify Stores Run Meta Ads in Multiple Countries?",
+    "desc": "Yes, but only when the business can serve those countries competitively. Here's what to check before expanding.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/one-meta-campaign-multiple-countries-vs-separate/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/one-meta-campaign-multiple-countries-vs-separate",
+    "title": "One Meta Campaign for Multiple Countries or Separate Campaigns?",
+    "desc": "Combining markets gives Meta more data; separating them gives you more control over budget and economics.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/meta-ads-multiple-countries-shopify/page.tsx",
+      "src/app/resources/meta-ads-multiple-countries-shopify/page.tsx",
+      "src/app/resources/separate-google-ads-campaigns-by-country/page.tsx",
+      "src/app/resources/separate-google-ads-campaigns-by-country/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-check-meta-pixel-working-shopify",
+    "title": "How to Check Whether Your Meta Pixel Is Working",
+    "desc": "Receiving a PageView doesn't mean the Pixel works. Here's how to test the full journey through to a correct Purchase event.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/how-to-check-meta-capi-working/page.tsx",
+      "src/app/resources/test-shopify-purchase-event/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-check-meta-capi-working",
+    "title": "How to Check Whether Meta CAPI Is Working",
+    "desc": "'Server events are appearing' isn't the same as accurate, deduplicated business events.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/how-to-check-meta-pixel-working-shopify/page.tsx",
+      "src/app/resources/how-to-check-meta-pixel-working-shopify/page.tsx",
+      "src/app/resources/meta-capi-event-id-deduplication/page.tsx",
+      "src/app/resources/meta-capi-event-id-deduplication/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/meta-capi-event-id-deduplication",
+    "title": "Why Purchase Event IDs Matter for Meta CAPI",
+    "desc": "The event ID is how Meta recognizes a browser and server Purchase as one business event instead of two.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/google-ads-transaction-id-ecommerce/page.tsx",
+      "src/app/resources/how-to-check-meta-capi-working/page.tsx",
+      "src/app/resources/how-to-check-meta-capi-working/page.tsx",
+      "src/app/resources/meta-pixel-helper-multiple-pixels/page.tsx",
+      "src/app/resources/test-shopify-purchase-event/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/meta-pixel-helper-multiple-pixels",
+    "title": "Meta Pixel Helper Shows Multiple Pixels: Is That a Problem?",
+    "desc": "Multiple Pixels on a site aren't automatically wrong. The problem is when nobody knows why they're there.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/meta-capi-event-id-deduplication/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-retargeting-include-existing-customers",
+    "title": "Should Retargeting Campaigns Include Existing Customers?",
+    "desc": "Sometimes: the answer depends on what the campaign is selling, not a blanket always-exclude-purchasers rule.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/how-much-spend-on-existing-customers-ecommerce/page.tsx"
+    ]
+  }
+]

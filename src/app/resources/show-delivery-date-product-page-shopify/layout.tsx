@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Shopify Stores Show Delivery Dates Before Checkout?",
   description:
     "Delivery timing is part of the product decision, not a detail customers should discover at checkout. Here's how to show an accurate estimate without overpromising, and why localizing it matters.",

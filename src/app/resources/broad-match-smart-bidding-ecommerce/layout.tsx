@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Ecommerce Stores Use Broad Match With Smart Bidding?",
   description: "Broad match with automated bidding can discover valuable searches you would never build manually.",
   alternates: { canonical: "https://www.attribix.app/resources/broad-match-smart-bidding-ecommerce" },

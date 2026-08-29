@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Is an Ecommerce Marketing Agency Worth the Cost?",
   description: "An ecommerce agency is worth the cost when it solves a problem more valuable than the fee.",
   alternates: { canonical: "https://www.attribix.app/resources/is-an-ecommerce-marketing-agency-worth-the-cost" },

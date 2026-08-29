@@ -111,7 +111,7 @@ export default function Page() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
             <li><Link href="/resources/should-you-bid-on-your-brand-name-google-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Should Shopify stores bid on their own brand name?</Link></li>
-            <li><Link href="/resources/google-ads-brand-vs-non-brand-budget" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How much budget should go to brand vs non-brand Google Ads?</Link></li>
+            <li><Link href="/resources/should-you-bid-on-your-brand-name-google-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How much budget should go to brand vs non-brand Google Ads?</Link></li>
             <li><Link href="/shopify-roas-tracking" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Shopify ROAS tracking</Link></li>
           </ul>
         </Reveal>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Ecommerce Stores Use Exit-Intent Popups?",
   description:
     "Exit-intent popups try to recover value from visitors who appear ready to leave. When they help, when they train customers to game a discount, and how to measure them properly.",

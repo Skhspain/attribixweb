@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Small Marketing Agency vs Large Agency: Which Is Better?",
   description: "Large agencies offer scale, established processes and deeper staffing.",
   alternates: { canonical: "https://www.attribix.app/resources/small-marketing-agency-vs-large-agency-which-is-better" },

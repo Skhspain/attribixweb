@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How Many Emails Should Be in a Shopify Welcome Flow?",
   description: "A welcome flow should stop when it has said the important things, not when it reaches a template's recommended email count.",
   alternates: { canonical: "https://www.attribix.app/resources/how-many-emails-should-be-in-a-shopify-welcome-flow" },

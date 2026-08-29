@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "What Is Incrementality in Ecommerce Advertising?",
   description:
     "Incrementality asks a harder question than attribution: how many sales happened because of the advertising that would not have happened otherwise. How it's measured and why it doesn't replace attribution.",

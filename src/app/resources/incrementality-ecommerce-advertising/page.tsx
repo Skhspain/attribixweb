@@ -110,7 +110,7 @@ export default function Page() {
             <p>
               Incrementality does not replace attribution. It answers a
               different question, one explored further in{" "}
-              <Link href="/resources/attribution-vs-incrementality" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/incrementality-ecommerce-advertising" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 attribution vs incrementality
               </Link>
               .
@@ -125,7 +125,7 @@ export default function Page() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/resources/attribution-vs-incrementality" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/incrementality-ecommerce-advertising" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Attribution vs incrementality: what&apos;s the difference?
               </Link>
             </li>

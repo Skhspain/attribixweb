@@ -137,12 +137,12 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/check-google-ads-conversion-tracking-working-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/google-ads-not-tracking-shopify-purchases" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How to check whether Google Ads conversion tracking is working
               </Link>
             </li>
             <li>
-              <Link href="/resources/google-ads-transaction-id-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/google-ads-duplicate-conversions-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 What is a transaction ID and why does Google Ads need it?
               </Link>
             </li>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "What Should Be Included in a Google Ads Management Service?",
   description: "Google Ads management should cover the parts of the ecosystem that determine whether clicks become profitable customers.",
   alternates: { canonical: "https://www.attribix.app/resources/what-should-be-included-in-a-google-ads-management" },

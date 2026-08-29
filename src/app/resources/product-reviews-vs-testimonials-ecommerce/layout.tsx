@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Product Reviews vs Testimonials: Which Build More Trust?",
   description:
     "Reviews and testimonials answer different customer questions on a Shopify store: when product-specific reviews win, when a broader testimonial matters more, and why authenticity beats format.",

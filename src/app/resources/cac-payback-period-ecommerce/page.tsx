@@ -116,7 +116,7 @@ export default function Page() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/resources/ecommerce-cac-payback-period" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/cac-payback-period-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How Long Can Ecommerce Brands Afford to Wait for Customer Payback?
               </Link>
             </li>
@@ -126,12 +126,12 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/lose-money-first-order-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/first-order-profit-vs-lifetime-value-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 When Is It Okay to Lose Money on the First Shopify Order?
               </Link>
             </li>
             <li>
-              <Link href="/resources/how-much-should-ecommerce-spend-to-acquire-customer" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/calculate-repeat-customer-value-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How Much Should Ecommerce Brands Spend to Acquire a New Customer?
               </Link>
             </li>

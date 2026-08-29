@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why Some Shopify Products Never Get Google Shopping Impressions",
   description: "A product can be approved in Merchant Center and still receive almost no Shopping impressions.",
   alternates: { canonical: "https://www.attribix.app/resources/google-shopping-products-no-impressions" },

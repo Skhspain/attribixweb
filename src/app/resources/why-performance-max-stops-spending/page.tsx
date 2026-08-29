@@ -144,7 +144,7 @@ export default function Page() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
             <li><Link href="/resources/performance-max-spending-mostly-one-product" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Performance Max Spending Mostly on One Product: Is That a Problem?</Link></li>
-            <li><Link href="/resources/performance-max-brand-search-overspending" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Performance Max Is Overspending on Branded Searches: What to Do</Link></li>
+            <li><Link href="/resources/performance-max-brand-revenue" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Performance Max Is Overspending on Branded Searches: What to Do</Link></li>
             <li><Link href="/resources/google-shopping-high-roas-low-volume" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Google Shopping Has High ROAS but Low Volume: Should You Scale?</Link></li>
           </ul>
         </Reveal>

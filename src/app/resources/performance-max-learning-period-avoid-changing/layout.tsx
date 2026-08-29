@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Performance Max Learning Period: What Should You Avoid Changing?",
   description: "The fastest way to make a new automated campaign impossible to understand is to change several important inputs every few days.",
   alternates: { canonical: "https://www.attribix.app/resources/performance-max-learning-period-avoid-changing" },

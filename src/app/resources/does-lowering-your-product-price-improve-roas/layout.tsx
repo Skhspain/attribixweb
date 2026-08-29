@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Does Lowering Your Product Price Improve ROAS?",
   description: "Lowering price can improve conversion and ROAS while reducing profit.",
   alternates: { canonical: "https://www.attribix.app/resources/does-lowering-your-product-price-improve-roas" },

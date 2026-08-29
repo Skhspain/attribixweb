@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should You Exclude Poor-Performing Products From Performance Max?",
   description: "Sometimes.",
   alternates: { canonical: "https://www.attribix.app/resources/exclude-poor-performing-products-performance-max" },

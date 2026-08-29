@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "What Is a Good Abandoned Cart Recovery Rate?",
   description:
     "Recovery rate depends on audience definition, price, buying cycle and attribution window. Why your own baseline matters more than an external benchmark.",

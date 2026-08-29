@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should You Reuse Old Winning Meta Ads?",
   description:
     "Old winners are worth retesting, but not guaranteed to win again. Why they can work a second time, why they might fail, and how to treat your creative history as a research library.",

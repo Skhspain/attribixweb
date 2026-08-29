@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How Often Should Ecommerce Brands Send Marketing Emails?",
   description: "The correct email frequency is the highest cadence that continues to create incremental value without damaging list health and customer trust.",
   alternates: { canonical: "https://www.attribix.app/resources/how-often-should-ecommerce-brands-send-marketing-emails" },

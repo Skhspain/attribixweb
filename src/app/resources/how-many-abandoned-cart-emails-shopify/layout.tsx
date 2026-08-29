@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How Many Abandoned Cart Emails Should a Shopify Store Send?",
   description:
     "One abandoned-cart email is better than none, but there's no universal reason every store needs exactly three: how to build the sequence around objections and buying cycle.",

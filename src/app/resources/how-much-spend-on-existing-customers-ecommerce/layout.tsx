@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How Much Should Ecommerce Brands Spend on Existing Customers?",
   description:
     "There is no fixed percentage of marketing budget that belongs to existing customers. Budget should follow incremental contribution, not a predetermined split.",

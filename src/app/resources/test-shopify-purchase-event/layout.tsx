@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How to Test a Shopify Purchase Event",
   description:
     "A purchase event should represent one completed order with the correct commercial data. Testing it once across every marketing platform after changing tracking.",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Product Bundling vs Upselling: Which Is Better for Ecommerce?",
   description:
     "Bundling packages products before the decision. Upselling asks the customer to increase the order after choosing something. Both can raise AOV, but they create different buying experiences.",

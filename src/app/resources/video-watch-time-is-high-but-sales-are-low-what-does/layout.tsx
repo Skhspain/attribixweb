@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Video Watch Time Is High but Sales Are Low: What Does That Tell You?",
   description: "High watch time proves people were willing to watch.",
   alternates: { canonical: "https://www.attribix.app/resources/video-watch-time-is-high-but-sales-are-low-what-does" },

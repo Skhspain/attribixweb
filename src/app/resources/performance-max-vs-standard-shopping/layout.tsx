@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Performance Max vs Standard Shopping: Which Is Better?",
   description: "Performance Max offers more automation and access to broader Google inventory.",
   alternates: { canonical: "https://www.attribix.app/resources/performance-max-vs-standard-shopping" },

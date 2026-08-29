@@ -1,0 +1,328 @@
+[
+  {
+    "href": "/resources/constant-discounts-ecommerce-profitability",
+    "title": "Are Constant Discounts Destroying Your Ecommerce Profitability?",
+    "desc": "A lower price can improve ROAS while every order contributes less money: the warning signs of promotion dependency.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/discount-code-vs-automatic-discount-shopify/page.tsx",
+      "src/app/resources/evergreen-discount-vs-limited-promotion-ecommerce/page.tsx",
+      "src/app/resources/evergreen-discount-vs-limited-promotion-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/evergreen-discount-vs-limited-promotion-ecommerce",
+    "title": "Should You Run Evergreen Discounts or Short Promotions?",
+    "desc": "Evergreen offers reduce friction, short promotions create urgency. Here's how to choose based on the job the offer needs to do.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/constant-discounts-ecommerce-profitability/page.tsx",
+      "src/app/resources/discount-code-vs-automatic-discount-shopify/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/discount-code-vs-automatic-discount-shopify",
+    "title": "Discount Code vs Automatic Discount: Which Converts Better?",
+    "desc": "Automatic discounts remove friction, codes give control over distribution. The better choice depends on how the promotion is meant to work.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/evergreen-discount-vs-limited-promotion-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/set-free-shipping-threshold-shopify",
+    "title": "Free Shipping Threshold: How Should Shopify Stores Set It?",
+    "desc": "Building the threshold from current AOV, margin and shipping cost instead of copying a competitor's number.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/calculate-profitable-free-shipping-threshold/page.tsx",
+      "src/app/resources/discount-code-vs-automatic-discount-shopify/page.tsx",
+      "src/app/resources/free-shipping-threshold-above-aov/page.tsx",
+      "src/app/resources/product-bundling-vs-upselling-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/calculate-profitable-free-shipping-threshold",
+    "title": "How to Calculate a Profitable Free Shipping Threshold",
+    "desc": "A four-step model for testing whether a threshold's basket lift actually covers the shipping subsidy.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/free-shipping-threshold-above-aov/page.tsx",
+      "src/app/resources/free-shipping-threshold-above-aov/page.tsx",
+      "src/app/resources/how-to-price-ecommerce-bundles/page.tsx",
+      "src/app/resources/set-free-shipping-threshold-shopify/page.tsx",
+      "src/app/resources/set-free-shipping-threshold-shopify/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/free-shipping-threshold-above-aov",
+    "title": "Should Your Free Shipping Threshold Be Above Your Current AOV?",
+    "desc": "Why order distribution and an achievable next item matter more than adding a flat percentage to AOV.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/calculate-profitable-free-shipping-threshold/page.tsx",
+      "src/app/resources/set-free-shipping-threshold-shopify/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/product-bundling-vs-upselling-ecommerce",
+    "title": "Product Bundling vs Upselling: Which Is Better for Ecommerce?",
+    "desc": "Bundles package the decision before purchase, upsells preserve flexibility after it. Here's how to judge each by contribution per visitor.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/advertise-bestseller-or-high-margin-product/page.tsx",
+      "src/app/resources/how-to-price-ecommerce-bundles/page.tsx",
+      "src/app/resources/set-free-shipping-threshold-shopify/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-price-ecommerce-bundles",
+    "title": "How to Price Ecommerce Bundles Without Destroying Margin",
+    "desc": "A bundle needs enough perceived value to justify buying more, not automatically a huge discount. Here's how to calculate the real saving.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/calculate-profitable-free-shipping-threshold/page.tsx",
+      "src/app/resources/product-bundling-vs-upselling-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/advertise-bestseller-or-high-margin-product",
+    "title": "Should You Advertise Your Best Seller or Highest-Margin Product?",
+    "desc": "Proven demand and acquisition room are different assets. Here's how to classify products by role instead of picking one metric.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/product-bundling-vs-upselling-ecommerce/page.tsx",
+      "src/app/resources/scale-high-revenue-or-high-margin-products-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/scale-high-revenue-or-high-margin-products-ecommerce",
+    "title": "Revenue vs Margin: Which Products Should You Scale With Ads?",
+    "desc": "A high-revenue SKU can be a weak scale candidate. Build allowable CPA and priorities from contribution, not the top line.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/advertise-bestseller-or-high-margin-product/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/product-bundles-vs-discounts-ecommerce",
+    "title": "Product Bundles vs Discounts: Which Increase AOV?",
+    "desc": "Bundles often have better AOV potential than discounts, but only when the products genuinely belong together.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/countdown-timer-ecommerce-conversion-rate/page.tsx",
+      "src/app/resources/discount-code-box-checkout-conversion/page.tsx",
+      "src/app/resources/increase-shopify-average-order-value/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/increase-shopify-average-order-value",
+    "title": "How to Increase Shopify Average Order Value Without Hurting Conversion Rate",
+    "desc": "Raising AOV is only useful if customers still buy. An upsell strategy can leave revenue or profit unchanged.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/product-bundles-vs-discounts-ecommerce/page.tsx",
+      "src/app/resources/shopify-checkout-abandonment-shipping-costs/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/exit-intent-popup-ecommerce",
+    "title": "Should Ecommerce Stores Use Exit-Intent Popups?",
+    "desc": "A relevant last offer can recover value from a leaving visitor. A discount on every exit just teaches customers to fake one.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/ecommerce-popup-conversion-rate/page.tsx",
+      "src/app/resources/popup-discount-ecommerce-profitability/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/popup-discount-ecommerce-profitability",
+    "title": "Does a 10% Popup Discount Actually Increase Profit?",
+    "desc": "The right question isn't the signup rate. It's whether the incremental profit beats what the discount gives away.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/ecommerce-popup-conversion-rate/page.tsx",
+      "src/app/resources/exit-intent-popup-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/ecommerce-popup-conversion-rate",
+    "title": "Email Popup Conversion Rate: What Should Shopify Stores Expect?",
+    "desc": "A popup conversion rate is only useful once you understand what the visitor receives in exchange.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/exit-intent-popup-ecommerce/page.tsx",
+      "src/app/resources/popup-discount-ecommerce-profitability/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/english-ads-vs-local-language-ads",
+    "title": "English Ads vs Local-Language Ads: Which Perform Better?",
+    "desc": "Local-language ads often improve relevance, but English can still work well in some categories and markets.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/translate-landing-pages-for-international-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/do-free-gifts-convert-better-than-percentage-discounts",
+    "title": "Do Free Gifts Convert Better Than Percentage Discounts?",
+    "desc": "A free gift can create higher perceived value than an equivalent discount, especially when the gift feels relevant and desirable.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/buy-one-get-one-vs-percentage-discount-for-ecommerce/page.tsx",
+      "src/app/resources/percentage-discount-vs-fixed-discount-which-works/page.tsx",
+      "src/app/resources/popup-discount-ecommerce-profitability/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/percentage-discount-vs-fixed-discount-which-works",
+    "title": "Percentage Discount vs Fixed Discount: Which Works Better?",
+    "desc": "\"20% off\" and \"$20 off\" can represent the same economic value on a $100 order and feel different to the customer.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/buy-one-get-one-vs-percentage-discount-for-ecommerce/page.tsx",
+      "src/app/resources/do-free-gifts-convert-better-than-percentage-discounts/page.tsx",
+      "src/app/resources/popup-discount-ecommerce-profitability/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/buy-one-get-one-vs-percentage-discount-for-ecommerce",
+    "title": "Buy One Get One vs Percentage Discount for Ecommerce",
+    "desc": "Buy One Get One promotions encourage unit volume.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/do-free-gifts-convert-better-than-percentage-discounts/page.tsx",
+      "src/app/resources/percentage-discount-vs-fixed-discount-which-works/page.tsx",
+      "src/app/resources/should-you-show-competitor-price-comparisons-on/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-you-show-competitor-price-comparisons-on",
+    "title": "Should You Show Competitor Price Comparisons on Product Pages?",
+    "desc": "Competitor comparisons can help when customers are actively evaluating alternatives.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/buy-one-get-one-vs-percentage-discount-for-ecommerce/page.tsx",
+      "src/app/resources/do-free-gifts-convert-better-than-percentage-discounts/page.tsx",
+      "src/app/resources/does-a-money-back-guarantee-improve-shopify-conversion/page.tsx",
+      "src/app/resources/percentage-discount-vs-fixed-discount-which-works/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/does-a-money-back-guarantee-improve-shopify-conversion",
+    "title": "Does a Money-Back Guarantee Improve Shopify Conversion Rate?",
+    "desc": "A money-back guarantee can reduce the perceived risk of trying an unfamiliar product.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-long-should-an-ecommerce-guarantee-be/page.tsx",
+      "src/app/resources/should-shopify-stores-offer-free-returns/page.tsx",
+      "src/app/resources/should-you-show-competitor-price-comparisons-on/page.tsx"
+    ]
+  }
+]

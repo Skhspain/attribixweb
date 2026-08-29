@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "When Is Your Meta Ads Account Ready to Optimize for Purchases?",
   description:
     "You don't need weeks of traffic or add-to-cart campaigns before optimizing for purchases. What actually determines whether the purchase event is a usable signal from day one.",

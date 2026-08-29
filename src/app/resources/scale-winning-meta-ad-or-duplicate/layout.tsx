@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should You Scale a Winning Meta Ad or Duplicate It?",
   description:
     "Increasing budget and duplicating a campaign aren't interchangeable. When to raise spend on a winner, when duplication makes sense, and what scaling actually requires.",

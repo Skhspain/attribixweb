@@ -104,7 +104,7 @@ export default function Page() {
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
               Unexpected import charges create both abandonment and unhappy
               customers. That's a topic covered in more depth in{" "}
-              <Link href="/resources/import-duties-ecommerce-conversion-rate" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/show-duties-taxes-before-checkout-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 how import duties affect international Shopify conversion rates
               </Link>
               .
@@ -145,7 +145,7 @@ export default function Page() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/resources/import-duties-ecommerce-conversion-rate" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/show-duties-taxes-before-checkout-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How import duties affect international Shopify conversion rates
               </Link>
             </li>
@@ -155,7 +155,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/international-traffic-lower-conversion-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/international-shipping-low-conversion-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Why international traffic has a lower Shopify conversion rate
               </Link>
             </li>

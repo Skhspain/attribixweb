@@ -1,0 +1,397 @@
+[
+  {
+    "href": "/resources/marketing-agency-vs-in-house",
+    "title": "Marketing Agency vs In-House: Which Is Better for Meta and Google Ads?",
+    "desc": "An honest comparison, including when in-house genuinely wins.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 6,
+    "inboundFrom": [
+      "src/app/ad-management/page.tsx",
+      "src/app/resources/ecommerce-marketing-agency-cost/page.tsx",
+      "src/app/resources/how-to-choose-a-meta-ads-agency/page.tsx",
+      "src/app/resources/percentage-ad-spend-vs-flat-fee/page.tsx",
+      "src/app/resources/shopify-marketing-agency-vs-general-agency/page.tsx",
+      "src/app/resources/when-to-hire-a-marketing-agency/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/ecommerce-marketing-agency-cost",
+    "title": "How Much Does an Ecommerce Marketing Agency Cost?",
+    "desc": "The common pricing structures and what actually moves the price.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/ad-management/page.tsx",
+      "src/app/resources/marketing-agency-vs-in-house/page.tsx",
+      "src/app/resources/percentage-ad-spend-vs-flat-fee/page.tsx",
+      "src/app/resources/shopify-marketing-agency-vs-general-agency/page.tsx",
+      "src/app/resources/when-to-hire-a-marketing-agency/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/percentage-ad-spend-vs-flat-fee",
+    "title": "Percentage of Ad Spend vs Fixed Fee: How Should a Marketing Agency Charge?",
+    "desc": "The incentive tradeoffs behind the two dominant pricing models.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/ecommerce-marketing-agency-cost/page.tsx",
+      "src/app/resources/ecommerce-marketing-agency-cost/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/what-does-a-meta-ads-agency-do",
+    "title": "What Does a Meta Ads Agency Actually Do?",
+    "desc": "The real scope of the work, beyond campaign setup.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/ad-management/meta-ads/page.tsx",
+      "src/app/resources/how-to-choose-a-meta-ads-agency/page.tsx",
+      "src/app/resources/marketing-agency-vs-in-house/page.tsx",
+      "src/app/resources/what-does-a-google-ads-agency-do/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/what-does-a-google-ads-agency-do",
+    "title": "What Does a Google Ads Agency Actually Do?",
+    "desc": "Account structure, feed oversight, tracking and reporting, explained.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/ad-management/google-ads/page.tsx",
+      "src/app/resources/how-to-choose-a-google-ads-agency/page.tsx",
+      "src/app/resources/marketing-agency-vs-in-house/page.tsx",
+      "src/app/resources/what-does-a-meta-ads-agency-do/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-choose-a-meta-ads-agency",
+    "title": "How to Choose a Meta Ads Agency for Ecommerce",
+    "desc": "A genuine buyer's guide, not a ranked listicle.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 7,
+    "inboundFrom": [
+      "src/app/ad-management/meta-ads/page.tsx",
+      "src/app/ad-management/page.tsx",
+      "src/app/resources/ecommerce-marketing-agency-cost/page.tsx",
+      "src/app/resources/how-to-choose-a-google-ads-agency/page.tsx",
+      "src/app/resources/how-to-choose-a-google-ads-agency/page.tsx",
+      "src/app/resources/percentage-ad-spend-vs-flat-fee/page.tsx",
+      "src/app/resources/what-does-a-meta-ads-agency-do/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-choose-a-google-ads-agency",
+    "title": "How to Choose a Google Ads Agency for Ecommerce",
+    "desc": "What to ask about Shopping, PMax and feed experience specifically.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/ad-management/google-ads/page.tsx",
+      "src/app/ad-management/page.tsx",
+      "src/app/resources/how-to-choose-a-meta-ads-agency/page.tsx",
+      "src/app/resources/what-does-a-google-ads-agency-do/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/shopify-marketing-agency-vs-general-agency",
+    "title": "Shopify-Specific Expertise vs a General Marketing Agency",
+    "desc": "What ecommerce-specific knowledge actually matters, and why.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 0,
+    "inboundFrom": []
+  },
+  {
+    "href": "/resources/meta-ads-vs-google-ads-shopify-budget",
+    "title": "Meta Ads vs Google Ads for Shopify: Where to Spend First",
+    "desc": "How product type, AOV and buying cycle should shape the decision.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/different-landing-pages-meta-and-google-ads/page.tsx",
+      "src/app/resources/how-to-choose-a-google-ads-agency/page.tsx",
+      "src/app/resources/shopify-advertising-budget-how-much-to-spend/page.tsx",
+      "src/app/resources/when-to-scale-ad-budget/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/shopify-advertising-budget-how-much-to-spend",
+    "title": "How Much Should a Shopify Store Spend on Meta and Google Ads?",
+    "desc": "Building a budget from AOV, margin and target CPA instead of a rule of thumb.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/how-much-should-ecommerce-spend-to-acquire-customer/page.tsx",
+      "src/app/resources/mer-vs-roas-shopify/page.tsx",
+      "src/app/resources/meta-ads-vs-google-ads-shopify-budget/page.tsx",
+      "src/app/resources/when-to-scale-ad-budget/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/when-to-hire-a-marketing-agency",
+    "title": "When Should You Hire an Ecommerce Marketing Agency?",
+    "desc": "The signals worth acting on, and the ones that mean it's not the right move yet.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/ad-management/page.tsx",
+      "src/app/resources/marketing-agency-vs-in-house/page.tsx",
+      "src/app/resources/shopify-marketing-agency-vs-general-agency/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/when-to-scale-ad-budget",
+    "title": "Your Ads Are Profitable: When Should You Increase the Budget?",
+    "desc": "Why a profitable campaign isn't automatically infinitely scalable.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/mer-vs-roas-shopify/page.tsx",
+      "src/app/resources/meta-ads-performance-changes-after-budget-increase/page.tsx",
+      "src/app/resources/meta-ads-vs-google-ads-shopify-budget/page.tsx",
+      "src/app/resources/scale-high-revenue-or-high-margin-products-ecommerce/page.tsx",
+      "src/app/resources/shopify-advertising-budget-how-much-to-spend/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-advertising-agencies-optimize-for-roas-or-profit",
+    "title": "Should Advertising Agencies Optimize for ROAS or Profit?",
+    "desc": "An agency can influence ROAS directly through advertising.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 0,
+    "inboundFrom": []
+  },
+  {
+    "href": "/resources/is-a-meta-ads-agency-worth-it",
+    "title": "Is a Meta Ads Agency Worth It?",
+    "desc": "A Meta Ads agency is worth it when the value of better decisions, execution and freed-up internal time exceeds the fee.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/is-a-google-ads-agency-worth-it/page.tsx",
+      "src/app/resources/should-advertising-agencies-optimize-for-roas-or-profit/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/is-a-google-ads-agency-worth-it",
+    "title": "Is a Google Ads Agency Worth It?",
+    "desc": "A Google Ads agency becomes valuable when the account is important enough that search terms, Shopping feeds, bidding, tracking and budget decisions deserve specialist attention.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/is-a-meta-ads-agency-worth-it/page.tsx",
+      "src/app/resources/is-an-ecommerce-marketing-agency-worth-the-cost/page.tsx",
+      "src/app/resources/should-advertising-agencies-optimize-for-roas-or-profit/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/is-an-ecommerce-marketing-agency-worth-the-cost",
+    "title": "Is an Ecommerce Marketing Agency Worth the Cost?",
+    "desc": "An ecommerce agency is worth the cost when it solves a problem more valuable than the fee.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/freelancer-vs-marketing-agency-which-should-ecommerce/page.tsx",
+      "src/app/resources/is-a-google-ads-agency-worth-it/page.tsx",
+      "src/app/resources/is-a-meta-ads-agency-worth-it/page.tsx",
+      "src/app/resources/should-advertising-agencies-optimize-for-roas-or-profit/page.tsx",
+      "src/app/resources/small-marketing-agency-vs-large-agency-which-is-better/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/freelancer-vs-marketing-agency-which-should-ecommerce",
+    "title": "Freelancer vs Marketing Agency: Which Should Ecommerce Brands Hire?",
+    "desc": "A strong freelancer can outperform a weak agency, and a strong agency can provide capabilities one person cannot realistically cover.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/is-a-google-ads-agency-worth-it/page.tsx",
+      "src/app/resources/is-a-meta-ads-agency-worth-it/page.tsx",
+      "src/app/resources/is-an-ecommerce-marketing-agency-worth-the-cost/page.tsx",
+      "src/app/resources/small-marketing-agency-vs-large-agency-which-is-better/page.tsx",
+      "src/app/resources/what-should-you-expect-from-a-marketing-agency-every/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/small-marketing-agency-vs-large-agency-which-is-better",
+    "title": "Small Marketing Agency vs Large Agency: Which Is Better?",
+    "desc": "Large agencies offer scale, established processes and deeper staffing.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/freelancer-vs-marketing-agency-which-should-ecommerce/page.tsx",
+      "src/app/resources/how-often-should-you-meet-with-your-marketing-agency/page.tsx",
+      "src/app/resources/how-often-should-your-marketing-agency-report-to-you/page.tsx",
+      "src/app/resources/is-an-ecommerce-marketing-agency-worth-the-cost/page.tsx",
+      "src/app/resources/what-should-you-expect-from-a-marketing-agency-every/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/what-should-you-expect-from-a-marketing-agency-every",
+    "title": "What Should You Expect From a Marketing Agency Every Month?",
+    "desc": "A good agency month should contain more than a report showing what happened.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/freelancer-vs-marketing-agency-which-should-ecommerce/page.tsx",
+      "src/app/resources/how-often-should-you-meet-with-your-marketing-agency/page.tsx",
+      "src/app/resources/how-often-should-your-marketing-agency-report-to-you/page.tsx",
+      "src/app/resources/should-agency-fees-be-included-in-your-marketing-roas/page.tsx",
+      "src/app/resources/small-marketing-agency-vs-large-agency-which-is-better/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-often-should-your-marketing-agency-report-to-you",
+    "title": "How Often Should Your Marketing Agency Report to You?",
+    "desc": "Most ecommerce businesses benefit from a combination of short, frequent visibility and deeper monthly analysis.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-often-should-you-meet-with-your-marketing-agency/page.tsx",
+      "src/app/resources/should-agency-fees-be-included-in-your-marketing-roas/page.tsx",
+      "src/app/resources/what-should-you-expect-from-a-marketing-agency-every/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-often-should-you-meet-with-your-marketing-agency",
+    "title": "How Often Should You Meet With Your Marketing Agency?",
+    "desc": "Meeting more often does not automatically improve marketing.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/how-often-should-your-marketing-agency-report-to-you/page.tsx",
+      "src/app/resources/should-agency-fees-be-included-in-your-marketing-roas/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-agency-fees-be-included-in-your-marketing-roas",
+    "title": "Should Agency Fees Be Included in Your Marketing ROAS?",
+    "desc": "Platform ROAS should normally remain a simple campaign metric: attributed revenue divided by media spend.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 0,
+    "inboundFrom": []
+  },
+  {
+    "href": "/resources/what-should-be-included-in-a-meta-ads-management",
+    "title": "What Should Be Included in a Meta Ads Management Service?",
+    "desc": "Meta Ads management should cover more than turning campaigns on and off.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/can-cookie-consent-reduce-your-reported-roas/page.tsx",
+      "src/app/resources/should-google-ads-send-traffic-to-a-product-page-or/page.tsx",
+      "src/app/resources/what-should-be-included-in-a-google-ads-management/page.tsx",
+      "src/app/resources/when-should-you-exclude-existing-customers-from-meta/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/what-should-be-included-in-a-google-ads-management",
+    "title": "What Should Be Included in a Google Ads Management Service?",
+    "desc": "Google Ads management should cover the parts of the ecosystem that determine whether clicks become profitable customers.",
+    "isCore": false,
+    "categoryId": "marketing-agency",
+    "categoryLabel": "Marketing & Agency",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/can-cookie-consent-reduce-your-reported-roas/page.tsx",
+      "src/app/resources/should-google-ads-send-traffic-to-a-product-page-or/page.tsx",
+      "src/app/resources/what-should-be-included-in-a-meta-ads-management/page.tsx",
+      "src/app/resources/when-should-you-exclude-existing-customers-from-meta/page.tsx"
+    ]
+  }
+]

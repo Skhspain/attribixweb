@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why Performance Max Stops Spending",
   description: "When Performance Max suddenly spends less, do not start by increasing the budget.",
   alternates: { canonical: "https://www.attribix.app/resources/why-performance-max-stops-spending" },

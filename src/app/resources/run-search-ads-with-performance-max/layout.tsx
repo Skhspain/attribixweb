@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should You Run Search Ads if Performance Max Is Already Running?",
   description: "Yes, Search can still have a clear role even when Performance Max is active.",
   alternates: { canonical: "https://www.attribix.app/resources/run-search-ads-with-performance-max" },

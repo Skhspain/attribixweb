@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why Google Shopping Shows the Wrong Price",
   description: "When a Shopping ad shows a different price from Shopify, treat it as both a conversion problem and a feed-quality problem.",
   alternates: { canonical: "https://www.attribix.app/resources/google-shopping-wrong-price" },

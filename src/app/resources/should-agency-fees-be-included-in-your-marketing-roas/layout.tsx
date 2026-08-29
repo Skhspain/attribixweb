@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Agency Fees Be Included in Your Marketing ROAS?",
   description: "Platform ROAS should normally remain a simple campaign metric: attributed revenue divided by media spend.",
   alternates: { canonical: "https://www.attribix.app/resources/should-agency-fees-be-included-in-your-marketing-roas" },

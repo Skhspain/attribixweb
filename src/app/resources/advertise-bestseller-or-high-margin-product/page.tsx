@@ -124,7 +124,7 @@ export default function Page() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/resources/scale-high-revenue-or-high-margin-products-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/advertise-bestseller-or-high-margin-product" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Revenue vs margin: which products should you scale with ads?
               </Link>
             </li>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Quiz Funnel vs Product Page: Which Converts Better?",
   description: "A quiz can improve conversion when the customer genuinely needs help choosing.",
   alternates: { canonical: "https://www.attribix.app/resources/quiz-funnel-vs-product-page-which-converts-better" },

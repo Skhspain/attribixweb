@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How Many Ad Angles Should You Test Before Changing the Offer?",
   description: "There is no magic number of ad angles that proves an offer is bad.",
   alternates: { canonical: "https://www.attribix.app/resources/how-many-ad-angles-should-you-test-before-changing-the" },

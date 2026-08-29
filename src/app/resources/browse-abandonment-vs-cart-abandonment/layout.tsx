@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Browse Abandonment vs Cart Abandonment: What's the Difference?",
   description:
     "Browse abandonment and cart abandonment sit at different levels of intent and need different messages. How to build each flow without overwhelming the same customer.",

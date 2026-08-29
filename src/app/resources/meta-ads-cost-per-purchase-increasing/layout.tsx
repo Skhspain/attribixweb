@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Meta Ads Cost Per Purchase Increasing: What to Check",
   description:
     "A rising Meta cost per purchase can come from CPC, conversion rate or tracking. How to split the number apart and find which one actually moved.",

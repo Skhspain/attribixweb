@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why Your Abandoned Cart Emails Get Clicks but No Sales",
   description:
     "If recovery emails get clicks but not purchases, the email likely did its job. What to check on the store side: landing page, shipping, payment, and purchase tracking.",

@@ -1,0 +1,97 @@
+[
+  {
+    "name": "priority",
+    "count": 16,
+    "file": "split-priority.json"
+  },
+  {
+    "name": "meta-ads-a",
+    "count": 27,
+    "file": "split-meta-ads-a.json",
+    "categoryId": "meta-ads"
+  },
+  {
+    "name": "meta-ads-b",
+    "count": 26,
+    "file": "split-meta-ads-b.json",
+    "categoryId": "meta-ads"
+  },
+  {
+    "name": "google-ads-a",
+    "count": 28,
+    "file": "split-google-ads-a.json",
+    "categoryId": "google-ads"
+  },
+  {
+    "name": "google-ads-b",
+    "count": 27,
+    "file": "split-google-ads-b.json",
+    "categoryId": "google-ads"
+  },
+  {
+    "name": "shopify-growth",
+    "count": 12,
+    "file": "split-shopify-growth.json",
+    "categoryId": "shopify-growth"
+  },
+  {
+    "name": "cro-landing-pages-a",
+    "count": 27,
+    "file": "split-cro-landing-pages-a.json",
+    "categoryId": "cro-landing-pages"
+  },
+  {
+    "name": "cro-landing-pages-b",
+    "count": 27,
+    "file": "split-cro-landing-pages-b.json",
+    "categoryId": "cro-landing-pages"
+  },
+  {
+    "name": "attribution-a",
+    "count": 23,
+    "file": "split-attribution-a.json",
+    "categoryId": "attribution"
+  },
+  {
+    "name": "attribution-b",
+    "count": 23,
+    "file": "split-attribution-b.json",
+    "categoryId": "attribution"
+  },
+  {
+    "name": "tracking",
+    "count": 12,
+    "file": "split-tracking.json",
+    "categoryId": "tracking"
+  },
+  {
+    "name": "email-retention-a",
+    "count": 20,
+    "file": "split-email-retention-a.json",
+    "categoryId": "email-retention"
+  },
+  {
+    "name": "email-retention-b",
+    "count": 20,
+    "file": "split-email-retention-b.json",
+    "categoryId": "email-retention"
+  },
+  {
+    "name": "creative-offers-a",
+    "count": 21,
+    "file": "split-creative-offers-a.json",
+    "categoryId": "creative-offers"
+  },
+  {
+    "name": "creative-offers-b",
+    "count": 20,
+    "file": "split-creative-offers-b.json",
+    "categoryId": "creative-offers"
+  },
+  {
+    "name": "marketing-agency",
+    "count": 24,
+    "file": "split-marketing-agency.json",
+    "categoryId": "marketing-agency"
+  }
+]

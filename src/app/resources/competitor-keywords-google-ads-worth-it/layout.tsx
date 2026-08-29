@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Are Competitor Keywords Worth Bidding on in Google Ads?",
   description:
     "Competitor keywords put your brand in front of people already shopping your category, at a real cost in CTR and conversion rate. When they make commercial sense.",

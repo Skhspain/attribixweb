@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Percentage Discount vs Fixed Discount: Which Works Better?",
   description: "“20% off” and “$20 off” can represent the same economic value on a $100 order and feel different to the customer.",
   alternates: { canonical: "https://www.attribix.app/resources/percentage-discount-vs-fixed-discount-which-works" },

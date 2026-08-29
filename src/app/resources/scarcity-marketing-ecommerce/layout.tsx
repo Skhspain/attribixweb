@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Is Scarcity Marketing Hurting Your Ecommerce Brand?",
   description:
     "Scarcity works because people value opportunities they may lose, which makes it powerful enough to be abused. Genuine scarcity vs permanent scarcity that trains distrust.",

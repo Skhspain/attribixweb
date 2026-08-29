@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Google Tag Assistant Shows Multiple Google Tags: What Does It Mean?",
   description: "Seeing multiple Google tags is not automatically an error.",
   alternates: { canonical: "https://www.attribix.app/resources/google-tag-assistant-shows-multiple-google-tags-what" },

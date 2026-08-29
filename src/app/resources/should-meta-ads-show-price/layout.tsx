@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Your Meta Ad Show the Price?",
   description:
     "Why showing the price on a Meta ad can lower CTR and still improve results, and how to tell whether your ads should qualify customers earlier.",

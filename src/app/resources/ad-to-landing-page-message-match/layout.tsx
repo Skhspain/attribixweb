@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Ad-to-Landing-Page Message Match: Why It Matters for Conversion Rate",
   description:
     "Paid advertising creates an expectation before the visitor reaches your store. Why the landing page must confirm it, and how to match claim, offer and visual across the two.",

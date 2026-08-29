@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Shopify Product Pages Show Reviews Near the Top?",
   description: "For many products, showing a review summary near the top is useful because it answers an immediate trust question: \"Have other people bought this, and were they happy?\" That does not mean the full review feed belongs above the Add to Cart button.",
   alternates: { canonical: "https://www.attribix.app/resources/reviews-near-top-product-page" },

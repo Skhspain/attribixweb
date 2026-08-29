@@ -155,7 +155,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/how-long-does-meta-ad-creative-last" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/why-winning-meta-creatives-stop-working" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How long does a Meta ad creative usually last?
               </Link>
             </li>

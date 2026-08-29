@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Ecommerce Brands Use Meta Lead Ads or Send Traffic to Shopify?",
   description:
     "Purchase-optimized traffic is the default for most Shopify stores, but higher-friction or higher-price offers can do better with a lead form first. How to decide which funnel fits your product.",

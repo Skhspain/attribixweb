@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Ecommerce Landing Pages Have Navigation?",
   description: "Removing navigation can keep users focused on the offer, but ecommerce shoppers often need to browse before buying. How to decide, and what to measure beyond conversion rate.",
   alternates: { canonical: "https://www.attribix.app/resources/should-ecommerce-landing-pages-have-navigation" },

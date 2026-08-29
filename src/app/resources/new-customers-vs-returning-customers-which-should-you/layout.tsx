@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "New Customers vs Returning Customers: Which Should You Optimize For?",
   description: "A healthy ecommerce business usually needs both.",
   alternates: { canonical: "https://www.attribix.app/resources/new-customers-vs-returning-customers-which-should-you" },

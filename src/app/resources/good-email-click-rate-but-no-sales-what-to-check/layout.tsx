@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Good Email Click Rate but No Sales: What to Check",
   description: "If email recipients click and do not buy, stop optimizing the subject line.",
   alternates: { canonical: "https://www.attribix.app/resources/good-email-click-rate-but-no-sales-what-to-check" },

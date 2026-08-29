@@ -1,0 +1,433 @@
+[
+  {
+    "href": "/resources/shopify-product-page-not-converting",
+    "title": "Shopify Product Page Not Converting: What to Check",
+    "desc": "A product page can fail even when the ad is doing its job.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/good-shopify-conversion-rate/page.tsx",
+      "src/app/resources/improve-shopify-conversion-rate/page.tsx",
+      "src/app/resources/reviews-near-top-product-page/page.tsx",
+      "src/app/resources/shopify-product-page-above-the-fold/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/shopify-product-page-above-the-fold",
+    "title": "What Should Be Above the Fold on a Shopify Product Page?",
+    "desc": "The first screen of a product page should help a customer answer one question: \"Is this worth looking at?\" It does not need to contain every sales argument on the page.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/does-free-shipping-increase-conversion-rate/page.tsx",
+      "src/app/resources/good-shopify-conversion-rate/page.tsx",
+      "src/app/resources/improve-shopify-conversion-rate/page.tsx",
+      "src/app/resources/reviews-near-top-product-page/page.tsx",
+      "src/app/resources/shopify-product-page-not-converting/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/reviews-near-top-product-page",
+    "title": "Should Shopify Product Pages Show Reviews Near the Top?",
+    "desc": "For many products, showing a review summary near the top is useful because it answers an immediate trust question: \"Have other people bought this, and were they happy?\" That does not mean the full review feed belongs above the Add to Cart button.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/does-free-shipping-increase-conversion-rate/page.tsx",
+      "src/app/resources/free-shipping-vs-discount-conversion/page.tsx",
+      "src/app/resources/shopify-product-page-above-the-fold/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/does-free-shipping-increase-conversion-rate",
+    "title": "Does Free Shipping Increase Shopify Conversion Rate?",
+    "desc": "Free shipping can increase conversion because it removes one of ecommerce's most disliked surprises.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/free-shipping-vs-discount-conversion/page.tsx",
+      "src/app/resources/reviews-near-top-product-page/page.tsx",
+      "src/app/resources/shopify-page-speed-conversion-rate/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/free-shipping-vs-discount-conversion",
+    "title": "Free Shipping vs Discount: Which Converts Better?",
+    "desc": "A discount reduces the price of the product.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/does-free-shipping-increase-conversion-rate/page.tsx",
+      "src/app/resources/shopify-mobile-conversion-rate-lower-than-desktop/page.tsx",
+      "src/app/resources/shopify-mobile-traffic-not-converting/page.tsx",
+      "src/app/resources/shopify-page-speed-conversion-rate/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/shopify-page-speed-conversion-rate",
+    "title": "How Much Does Page Speed Affect Shopify Sales?",
+    "desc": "Page speed matters because every extra wait gives a visitor another chance to leave, especially on mobile and paid traffic.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/free-shipping-vs-discount-conversion/page.tsx",
+      "src/app/resources/shopify-mobile-conversion-rate-lower-than-desktop/page.tsx",
+      "src/app/resources/shopify-mobile-traffic-not-converting/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/shopify-mobile-conversion-rate-lower-than-desktop",
+    "title": "Shopify Mobile Conversion Rate Lower Than Desktop: Is That Normal?",
+    "desc": "It is common for mobile and desktop conversion rates to differ, but \"mobile is always lower\" is not a useful excuse for a poor mobile store.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/shopify-mobile-traffic-not-converting/page.tsx",
+      "src/app/resources/shopify-page-speed-conversion-rate/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/shopify-mobile-traffic-not-converting",
+    "title": "Why Shopify Mobile Traffic Doesn't Convert",
+    "desc": "When mobile traffic does not convert, start by separating traffic quality from mobile experience.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/shopify-mobile-conversion-rate-lower-than-desktop/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-meta-ads-send-traffic-to-a-product-page-or",
+    "title": "Should Meta Ads Send Traffic to a Product Page or Landing Page?",
+    "desc": "Send Meta traffic to the page that continues the selling argument with the least friction.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/landing-page-vs-product-page-for-ecommerce-ads/page.tsx",
+      "src/app/resources/landing-page-vs-product-page-for-ecommerce-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/landing-page-vs-product-page-for-ecommerce-ads",
+    "title": "Landing Page vs Product Page for Ecommerce Ads",
+    "desc": "A product page is built to sell the product in the context of the store.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/should-meta-ads-send-traffic-to-a-product-page-or/page.tsx",
+      "src/app/resources/when-does-an-ecommerce-brand-need-a-dedicated-landing/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/when-does-an-ecommerce-brand-need-a-dedicated-landing",
+    "title": "When Does an Ecommerce Brand Need a Dedicated Landing Page?",
+    "desc": "Build a dedicated landing page when the existing website cannot continue the campaign's message clearly enough.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/landing-page-vs-product-page-for-ecommerce-ads/page.tsx",
+      "src/app/resources/should-meta-ads-send-traffic-to-a-product-page-or/page.tsx",
+      "src/app/resources/what-is-a-good-landing-page-conversion-rate-for/page.tsx",
+      "src/app/resources/why-your-landing-page-gets-clicks-but-no-sales/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/why-your-landing-page-gets-clicks-but-no-sales",
+    "title": "Why Your Landing Page Gets Clicks but No Sales",
+    "desc": "If customers clicked the ad, the ad created enough interest to earn a visit.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/how-long-should-an-ecommerce-landing-page-be/page.tsx",
+      "src/app/resources/landing-page-vs-product-page-for-ecommerce-ads/page.tsx",
+      "src/app/resources/should-meta-ads-send-traffic-to-a-product-page-or/page.tsx",
+      "src/app/resources/what-is-a-good-landing-page-conversion-rate-for/page.tsx",
+      "src/app/resources/when-does-an-ecommerce-brand-need-a-dedicated-landing/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/what-is-a-good-landing-page-conversion-rate-for",
+    "title": "What Is a Good Landing Page Conversion Rate for Ecommerce?",
+    "desc": "A good landing-page conversion rate is one that supports profitable acquisition at the cost and quality of the traffic being sent to it.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-long-should-an-ecommerce-landing-page-be/page.tsx",
+      "src/app/resources/when-does-an-ecommerce-brand-need-a-dedicated-landing/page.tsx",
+      "src/app/resources/why-your-landing-page-gets-clicks-but-no-sales/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-long-should-an-ecommerce-landing-page-be",
+    "title": "How Long Should an Ecommerce Landing Page Be?",
+    "desc": "A landing page should be long enough to answer the questions preventing the purchase and no longer.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/should-ecommerce-landing-pages-have-navigation/page.tsx",
+      "src/app/resources/should-your-landing-page-show-the-price-above-the-fold/page.tsx",
+      "src/app/resources/what-is-a-good-landing-page-conversion-rate-for/page.tsx",
+      "src/app/resources/why-your-landing-page-gets-clicks-but-no-sales/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-your-landing-page-show-the-price-above-the-fold",
+    "title": "Should Your Landing Page Show the Price Above the Fold?",
+    "desc": "For normal ecommerce products, hiding the price usually adds unnecessary friction.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/how-long-should-an-ecommerce-landing-page-be/page.tsx",
+      "src/app/resources/should-ecommerce-landing-pages-have-navigation/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-ecommerce-landing-pages-have-navigation",
+    "title": "Should Ecommerce Landing Pages Have Navigation?",
+    "desc": "Removing navigation can keep users focused on the offer.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/should-your-landing-page-show-the-price-above-the-fold/page.tsx",
+      "src/app/resources/what-should-the-first-screen-of-an-ecommerce-landing/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/what-should-the-first-screen-of-an-ecommerce-landing",
+    "title": "What Should the First Screen of an Ecommerce Landing Page Say?",
+    "desc": "The first screen should confirm the visitor came to the right place and give them a reason to keep going.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-many-ctas-should-an-ecommerce-landing-page-have/page.tsx",
+      "src/app/resources/product-page-vs-advertorial-which-works-better-for/page.tsx",
+      "src/app/resources/should-ecommerce-landing-pages-have-navigation/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-many-ctas-should-an-ecommerce-landing-page-have",
+    "title": "How Many CTAs Should an Ecommerce Landing Page Have?",
+    "desc": "A landing page can have several CTA buttons without having several competing goals.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/product-page-vs-advertorial-which-works-better-for/page.tsx",
+      "src/app/resources/quiz-funnel-vs-product-page-which-converts-better/page.tsx",
+      "src/app/resources/what-is-an-advertorial-landing-page-and-when-should/page.tsx",
+      "src/app/resources/what-should-the-first-screen-of-an-ecommerce-landing/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/product-page-vs-advertorial-which-works-better-for",
+    "title": "Product Page vs Advertorial: Which Works Better for Meta Ads?",
+    "desc": "A product page assumes the customer is ready to evaluate the product.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/how-many-ctas-should-an-ecommerce-landing-page-have/page.tsx",
+      "src/app/resources/quiz-funnel-vs-product-page-which-converts-better/page.tsx",
+      "src/app/resources/what-is-an-advertorial-landing-page-and-when-should/page.tsx",
+      "src/app/resources/what-should-the-first-screen-of-an-ecommerce-landing/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/what-is-an-advertorial-landing-page-and-when-should",
+    "title": "What Is an Advertorial Landing Page and When Should Ecommerce Brands Use One?",
+    "desc": "An advertorial is a sales-oriented educational page written in an article-like format.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-many-ctas-should-an-ecommerce-landing-page-have/page.tsx",
+      "src/app/resources/product-page-vs-advertorial-which-works-better-for/page.tsx",
+      "src/app/resources/quiz-funnel-vs-product-page-which-converts-better/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/quiz-funnel-vs-product-page-which-converts-better",
+    "title": "Quiz Funnel vs Product Page: Which Converts Better?",
+    "desc": "A quiz can improve conversion when the customer genuinely needs help choosing.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/does-showing-savings-in-dollars-convert-better-than/page.tsx",
+      "src/app/resources/what-is-an-advertorial-landing-page-and-when-should/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/does-showing-savings-in-dollars-convert-better-than",
+    "title": "Does Showing Savings in Dollars Convert Better Than Percentages?",
+    "desc": "Sometimes the dollar saving feels larger.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/how-to-know-whether-your-ecommerce-offer-is-the-problem/page.tsx",
+      "src/app/resources/your-ads-get-clicks-but-your-offer-doesn-t-convert-how/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/your-ads-get-clicks-but-your-offer-doesn-t-convert-how",
+    "title": "Your Ads Get Clicks but Your Offer Doesn't Convert: How to Tell",
+    "desc": "When ads get qualified clicks and the website works technically, the problem may be the offer itself.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/does-showing-savings-in-dollars-convert-better-than/page.tsx",
+      "src/app/resources/how-to-find-the-real-reason-customers-buy-your-product/page.tsx",
+      "src/app/resources/how-to-know-whether-your-ecommerce-offer-is-the-problem/page.tsx",
+      "src/app/resources/should-shopify-app-costs-count-as-marketing-costs/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-know-whether-your-ecommerce-offer-is-the-problem",
+    "title": "How to Know Whether Your Ecommerce Offer Is the Problem",
+    "desc": "An offer problem often appears when customers understand the product, show interest and stop before committing money.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/does-showing-savings-in-dollars-convert-better-than/page.tsx",
+      "src/app/resources/how-to-find-the-real-reason-customers-buy-your-product/page.tsx",
+      "src/app/resources/should-shopify-app-costs-count-as-marketing-costs/page.tsx",
+      "src/app/resources/your-ads-get-clicks-but-your-offer-doesn-t-convert-how/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-shopify-app-costs-count-as-marketing-costs",
+    "title": "Should Shopify App Costs Count as Marketing Costs?",
+    "desc": "Some Shopify apps directly support customer acquisition; others support operations, support or merchandising.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-to-find-the-real-reason-customers-buy-your-product/page.tsx",
+      "src/app/resources/how-to-know-whether-your-ecommerce-offer-is-the-problem/page.tsx",
+      "src/app/resources/your-ads-get-clicks-but-your-offer-doesn-t-convert-how/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-find-the-real-reason-customers-buy-your-product",
+    "title": "How to Find the Real Reason Customers Buy Your Product",
+    "desc": "The reason a company thinks customers buy is not always the reason customers give.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/should-shopify-app-costs-count-as-marketing-costs/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-google-ads-send-traffic-to-a-product-page-or",
+    "title": "Should Google Ads Send Traffic to a Product Page or Collection Page?",
+    "desc": "The search query should usually decide.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/when-should-you-exclude-existing-customers-from-meta/page.tsx"
+    ]
+  }
+]

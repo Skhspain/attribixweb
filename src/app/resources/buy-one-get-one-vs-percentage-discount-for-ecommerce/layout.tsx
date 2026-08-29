@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Buy One Get One vs Percentage Discount for Ecommerce",
   description: "Buy One Get One promotions encourage unit volume.",
   alternates: { canonical: "https://www.attribix.app/resources/buy-one-get-one-vs-percentage-discount-for-ecommerce" },

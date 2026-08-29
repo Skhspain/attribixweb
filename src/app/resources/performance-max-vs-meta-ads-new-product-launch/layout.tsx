@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Performance Max vs Meta Ads for New Product Launches",
   description: "A new product with no search demand behaves very differently from a new product in an established category.",
   alternates: { canonical: "https://www.attribix.app/resources/performance-max-vs-meta-ads-new-product-launch" },

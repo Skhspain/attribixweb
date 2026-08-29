@@ -149,7 +149,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/international-traffic-lower-conversion-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/international-shipping-low-conversion-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Why international traffic has a lower Shopify conversion rate
               </Link>
             </li>

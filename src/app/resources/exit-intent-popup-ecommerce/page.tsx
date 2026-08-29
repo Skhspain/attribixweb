@@ -141,11 +141,7 @@ export default function Page() {
                 Email popup conversion rate: what should Shopify stores expect?
               </Link>
             </li>
-            <li>
-              <Link href="/resources/should-you-collect-email-or-sms-first-on-a-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
-                Should you collect email or SMS first on a Shopify popup?
-              </Link>
-            </li>
+
           </ul>
         </Reveal>
       </section>

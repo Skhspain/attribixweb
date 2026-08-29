@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "What Is a Good Hook for a Meta Ad?",
   description:
     "The hook categories that actually qualify buyers on Meta (problem, outcome, demonstration, proof and objection) and how to test them properly.",

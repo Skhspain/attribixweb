@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How Many CTAs Should an Ecommerce Landing Page Have?",
   description: "A landing page can have several CTA buttons without having several competing goals.",
   alternates: { canonical: "https://www.attribix.app/resources/how-many-ctas-should-an-ecommerce-landing-page-have" },

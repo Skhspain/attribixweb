@@ -133,7 +133,7 @@ export default function Page() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
             <li><Link href="/resources/run-search-ads-with-performance-max" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Should You Run Search Ads if Performance Max Is Already Running?</Link></li>
-            <li><Link href="/resources/separate-brand-traffic-performance-max" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Should You Separate Brand Traffic From Performance Max?</Link></li>
+            <li><Link href="/resources/performance-max-brand-revenue" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Should You Separate Brand Traffic From Performance Max?</Link></li>
             <li><Link href="/resources/search-campaign-vs-performance-max-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Google Ads Search Campaign vs Performance Max for Ecommerce</Link></li>
           </ul>
         </Reveal>

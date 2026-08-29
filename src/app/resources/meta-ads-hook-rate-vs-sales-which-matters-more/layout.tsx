@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Meta Ads Hook Rate vs Sales: Which Matters More?",
   description: "Sales matter more if the business objective is sales.",
   alternates: { canonical: "https://www.attribix.app/resources/meta-ads-hook-rate-vs-sales-which-matters-more" },

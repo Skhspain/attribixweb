@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How to Tell Whether Your Meta Ad Creative Is the Problem",
   description:
     "A way to diagnose whether weak Meta Ads performance is a creative problem or a funnel problem further downstream, before you replace anything.",

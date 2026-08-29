@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Best Sellers vs Low Sellers: How Should You Structure Google Shopping?",
   description: "Best sellers deserve attention because they have proven demand.",
   alternates: { canonical: "https://www.attribix.app/resources/best-sellers-vs-low-sellers-google-shopping-structure" },

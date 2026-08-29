@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Google Tag Manager vs Shopify Customer Events",
   description:
     "GTM is a tag-management system. Customer Events is Shopify's framework for customer-event/pixel integrations. Why the two aren't direct substitutes, and how to choose between them.",

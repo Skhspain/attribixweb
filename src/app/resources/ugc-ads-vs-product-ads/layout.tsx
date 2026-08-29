@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "UGC Ads vs Product Ads: Which Converts Better?",
   description:
     "UGC and polished product ads communicate different kinds of proof, not opposing philosophies. When each format wins, and how to test the message separately from the execution.",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Customer Retention Rate vs Repeat Purchase Rate: What's the Difference?",
   description:
     "Repeat purchase rate and customer retention are related but not always calculated the same way. Why the definitions matter and how to pick a consistent cohort view.",

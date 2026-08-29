@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Google Ads Clicks Don't Match Shopify Sessions: Why?",
   description:
     "A gap between reported Google Ads clicks and Shopify sessions is normal to a degree. What causes it, and why the ratio matters more than chasing an exact match.",

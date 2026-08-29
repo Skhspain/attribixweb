@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why Scaling Revenue Can Reduce Profit",
   description: "Revenue can grow while profit falls when the next sales are more expensive to acquire or less profitable to fulfil.",
   alternates: { canonical: "https://www.attribix.app/resources/why-scaling-revenue-can-reduce-profit" },

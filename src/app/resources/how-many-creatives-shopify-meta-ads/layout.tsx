@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How Many Creatives Does a Shopify Store Need for Meta Ads?",
   description:
     "Creative volume for Meta ads should scale with ad spend, not catalog size. How to size a creative pipeline and avoid depending on one worn-out winner.",

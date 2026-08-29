@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why Your Shopify Store Gets Customers but Few Repeat Purchases",
   description: "Strong first-order acquisition and weak retention can indicate that marketing is selling the first purchase more effectively than the product experience earns the second.",
   alternates: { canonical: "https://www.attribix.app/resources/why-your-shopify-store-gets-customers-but-few-repeat" },

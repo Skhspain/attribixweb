@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Google Shopping Feed Optimization: What Actually Matters?",
   description: "Feed optimization is often sold as a bag of hacks.",
   alternates: { canonical: "https://www.attribix.app/resources/google-shopping-feed-optimization" },

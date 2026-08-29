@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Advertising Agencies Optimize for ROAS or Profit?",
   description: "An agency can influence ROAS directly through advertising.",
   alternates: { canonical: "https://www.attribix.app/resources/should-advertising-agencies-optimize-for-roas-or-profit" },

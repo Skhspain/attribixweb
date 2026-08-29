@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Star Ratings vs Written Reviews: Which Matter More?",
   description:
     "Star ratings help customers scan. Written reviews help them understand. Why the two answer different trust questions and how to use both well.",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why Returning Customers Convert Better Than New Visitors",
   description:
     "Returning customers already solved several problems that slow a first purchase. Here's why that distorts channel ROAS, and how to segment new-customer and repeat-customer performance separately.",

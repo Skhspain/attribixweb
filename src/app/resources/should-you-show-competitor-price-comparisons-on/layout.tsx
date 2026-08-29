@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should You Show Competitor Price Comparisons on Product Pages?",
   description: "Competitor comparisons can help when customers are actively evaluating alternatives.",
   alternates: { canonical: "https://www.attribix.app/resources/should-you-show-competitor-price-comparisons-on" },

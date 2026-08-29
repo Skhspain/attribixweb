@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "What Does a Meta Ads Agency Actually Do?",
   description:
     "A real service-scope breakdown of Meta Ads agency work: account audits, creative testing, audience strategy, budget pacing, conversion tracking and reporting, not a sales pitch.",

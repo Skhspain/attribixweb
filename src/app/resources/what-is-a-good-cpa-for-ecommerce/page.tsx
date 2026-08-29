@@ -165,7 +165,7 @@ export default function Page() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
             <li><Link href="/resources/roas-vs-profit-why-high-roas-doesn-t-always-mean-more" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">ROAS vs Profit: Why High ROAS Doesn&apos;t Always Mean More Profit</Link></li>
-            <li><Link href="/resources/break-even-cpa-explained-for-shopify-stores" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Break-Even CPA Explained for Shopify Stores</Link></li>
+            <li><Link href="/resources/maximum-profitable-cpa-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Break-Even CPA Explained for Shopify Stores</Link></li>
             <li><Link href="/resources/why-revenue-is-a-bad-metric-without-gross-margin" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Why Revenue Is a Bad Metric Without Gross Margin</Link></li>
           </ul>
         </Reveal>

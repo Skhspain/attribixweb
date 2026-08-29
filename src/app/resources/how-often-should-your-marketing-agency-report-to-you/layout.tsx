@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How Often Should Your Marketing Agency Report to You?",
   description: "Most ecommerce businesses benefit from a combination of short, frequent visibility and deeper monthly analysis.",
   alternates: { canonical: "https://www.attribix.app/resources/how-often-should-your-marketing-agency-report-to-you" },

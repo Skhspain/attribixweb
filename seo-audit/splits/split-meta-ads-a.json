@@ -1,0 +1,497 @@
+[
+  {
+    "href": "/resources/meta-ads-clicks-no-sales",
+    "title": "Meta Ads Clicks but No Sales? Diagnose It First",
+    "desc": "A funnel walkthrough for finding exactly where the drop happens before touching the campaign.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 15,
+    "inboundFrom": [
+      "src/app/ad-management/meta-ads/page.tsx",
+      "src/app/meta-capi-shopify/page.tsx",
+      "src/app/resources/ad-to-landing-page-message-match/page.tsx",
+      "src/app/resources/does-meta-ad-engagement-matter-for-sales/page.tsx",
+      "src/app/resources/good-ctr-low-cpc-no-sales-meta-ads/page.tsx",
+      "src/app/resources/good-ctr-low-cpc-no-sales-meta-ads/page.tsx",
+      "src/app/resources/good-meta-ad-metrics-but-poor-sales/page.tsx",
+      "src/app/resources/google-ads-clicks-no-sales/page.tsx",
+      "src/app/resources/google-ads-clicks-no-sales/page.tsx",
+      "src/app/resources/how-much-data-does-meta-ads-need/page.tsx",
+      "src/app/resources/how-to-tell-meta-ad-creative-problem/page.tsx",
+      "src/app/resources/meta-ads-roas-dropped/page.tsx",
+      "src/app/resources/meta-ads-roas-dropped/page.tsx",
+      "src/app/resources/why-is-meta-ads-cpm-high/page.tsx",
+      "src/app/resources/why-winning-meta-creatives-stop-working/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/meta-ads-roas-dropped",
+    "title": "Meta Ads ROAS Dropped Suddenly? Ads, Website or Tracking",
+    "desc": "How to tell an actual performance decline apart from a reported one.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 11,
+    "inboundFrom": [
+      "src/app/ad-management/meta-ads/page.tsx",
+      "src/app/resources/ios-ad-blockers-shopify-tracking-loss/page.tsx",
+      "src/app/resources/meta-ads-clicks-no-sales/page.tsx",
+      "src/app/resources/meta-ads-cost-per-purchase-increasing/page.tsx",
+      "src/app/resources/meta-ads-performance-changes-after-budget-increase/page.tsx",
+      "src/app/resources/meta-ads-sales-drop-weekends/page.tsx",
+      "src/app/resources/meta-ads-shows-sales-shopify-no-orders/page.tsx",
+      "src/app/resources/shopify-conversion-rate-dropped/page.tsx",
+      "src/app/resources/why-is-meta-ads-cpm-high/page.tsx",
+      "src/app/resources/why-is-meta-ads-cpm-high/page.tsx",
+      "src/app/resources/why-meta-ads-work-one-week-fail-next/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/meta-ads-shows-sales-shopify-no-orders",
+    "title": "Meta Ads Shows Sales but Shopify Has No Matching Orders",
+    "desc": "The usual configuration causes behind this specific, urgent-looking mismatch.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 6,
+    "inboundFrom": [
+      "src/app/meta-capi-shopify/page.tsx",
+      "src/app/resources/fix-duplicate-meta-purchases-shopify/page.tsx",
+      "src/app/resources/google-ads-conversions-no-shopify-orders/page.tsx",
+      "src/app/resources/google-ads-conversions-no-shopify-orders/page.tsx",
+      "src/app/resources/meta-ads-clicks-no-sales/page.tsx",
+      "src/app/resources/why-shopify-meta-sales-dont-match/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/good-ctr-low-cpc-no-sales-meta-ads",
+    "title": "Good CTR and Low CPC but No Sales on Meta Ads: What's Wrong",
+    "desc": "Why attractive top-funnel metrics can hide low-intent traffic.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 6,
+    "inboundFrom": [
+      "src/app/resources/ad-to-landing-page-message-match/page.tsx",
+      "src/app/resources/good-meta-ad-metrics-but-poor-sales/page.tsx",
+      "src/app/resources/how-to-tell-meta-ad-creative-problem/page.tsx",
+      "src/app/resources/meta-ads-clicks-no-sales/page.tsx",
+      "src/app/resources/should-meta-ads-show-price/page.tsx",
+      "src/app/resources/why-is-meta-ads-cpm-high/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/why-is-meta-ads-cpm-high",
+    "title": "Why Is Your Meta Ads CPM So High?",
+    "desc": "What actually moves CPM, and why it isn't the number to react to on its own.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 6,
+    "inboundFrom": [
+      "src/app/resources/good-ctr-low-cpc-no-sales-meta-ads/page.tsx",
+      "src/app/resources/meta-ads-cost-per-purchase-increasing/page.tsx",
+      "src/app/resources/meta-ads-cost-per-purchase-increasing/page.tsx",
+      "src/app/resources/meta-ads-roas-dropped/page.tsx",
+      "src/app/resources/meta-ads-roas-dropped/page.tsx",
+      "src/app/resources/why-meta-ads-work-one-week-fail-next/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/meta-ads-sales-drop-weekends",
+    "title": "Meta Ads Sales Drop on Weekends: Is That Normal?",
+    "desc": "How to tell a real day-of-week pattern apart from ordinary week-to-week noise.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": true,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/meta-ads-performance-changes-after-budget-increase/page.tsx",
+      "src/app/resources/meta-ads-performance-changes-after-budget-increase/page.tsx",
+      "src/app/resources/why-meta-ads-work-one-week-fail-next/page.tsx",
+      "src/app/resources/why-meta-ads-work-one-week-fail-next/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/meta-ads-performance-changes-after-budget-increase",
+    "title": "Why Meta Ads Performance Changes After Increasing the Budget",
+    "desc": "Why scaling spend changes the auction, and how to judge marginal ROAS instead of the old blended number.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": true,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/meta-ads-20-percent-budget-rule/page.tsx",
+      "src/app/resources/meta-ads-20-percent-budget-rule/page.tsx",
+      "src/app/resources/meta-ads-sales-drop-weekends/page.tsx",
+      "src/app/resources/scale-winning-meta-ad-or-duplicate/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/meta-lead-ads-vs-website-conversions",
+    "title": "Should Ecommerce Brands Use Meta Lead Ads or Send Traffic to Shopify?",
+    "desc": "The decision comes down to buying friction and customer intent, not the cheapest-looking Meta objective.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": true,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/meta-ads-new-customer-acquisition-measurement/page.tsx",
+      "src/app/resources/meta-ads-optimize-add-to-cart-or-purchase/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/meta-ads-optimize-add-to-cart-or-purchase",
+    "title": "Should You Optimize Meta Ads for Add to Cart or Purchase?",
+    "desc": "More add-to-cart volume isn't the same signal as a purchase. Here's when each optimization event actually helps.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": true,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/meta-lead-ads-vs-website-conversions/page.tsx",
+      "src/app/resources/meta-lead-ads-vs-website-conversions/page.tsx",
+      "src/app/resources/when-meta-ads-account-ready-optimize-purchases/page.tsx",
+      "src/app/resources/when-meta-ads-account-ready-optimize-purchases/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/when-meta-ads-account-ready-optimize-purchases",
+    "title": "When Is Your Meta Ads Account Ready to Optimize for Purchases?",
+    "desc": "What determines whether the purchase event is a usable signal, instead of a waiting period to earn.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": true,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/meta-ads-optimize-add-to-cart-or-purchase/page.tsx",
+      "src/app/resources/meta-ads-optimize-add-to-cart-or-purchase/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/meta-ads-new-customer-acquisition-measurement",
+    "title": "Meta Ads New Customer Acquisition: How Should You Measure It?",
+    "desc": "Separating new-customer acquisition from total attributed revenue using Shopify's own customer data.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": true,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/meta-lead-ads-vs-website-conversions/page.tsx",
+      "src/app/resources/returning-customers-convert-better-ecommerce/page.tsx",
+      "src/app/resources/should-meta-ads-get-credit-returning-customers/page.tsx",
+      "src/app/resources/should-meta-ads-get-credit-returning-customers/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-long-should-meta-ads-run-before-changes",
+    "title": "How Long Should You Let Meta Ads Run Before Making Changes?",
+    "desc": "Why the right waiting period depends on data volume, not a fixed number of days.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-much-data-does-meta-ads-need/page.tsx",
+      "src/app/resources/how-much-data-does-meta-ads-need/page.tsx",
+      "src/app/resources/meta-ads-learning-phase-explained/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-much-data-does-meta-ads-need",
+    "title": "How Much Data Does Meta Ads Need Before You Can Judge Performance?",
+    "desc": "Matching your confidence to the amount of evidence you actually have, level by level.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 7,
+    "inboundFrom": [
+      "src/app/resources/how-long-should-meta-ads-run-before-changes/page.tsx",
+      "src/app/resources/how-long-should-meta-ads-run-before-changes/page.tsx",
+      "src/app/resources/meta-ads-20-percent-budget-rule/page.tsx",
+      "src/app/resources/meta-ads-learning-phase-explained/page.tsx",
+      "src/app/resources/meta-ads-learning-phase-explained/page.tsx",
+      "src/app/resources/why-meta-ads-work-one-week-fail-next/page.tsx",
+      "src/app/resources/why-meta-ads-work-one-week-fail-next/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/meta-ads-learning-phase-explained",
+    "title": "Meta Ads Learning Phase Explained: Should You Worry About It?",
+    "desc": "What learning measures, what disrupts it, and why the delivery label isn't the business outcome.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/advantage-plus-shopping-campaigns-shopify/page.tsx",
+      "src/app/resources/how-long-should-meta-ads-run-before-changes/page.tsx",
+      "src/app/resources/how-much-data-does-meta-ads-need/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/advantage-plus-shopping-campaigns-shopify",
+    "title": "Should You Use Advantage+ Shopping Campaigns for Shopify?",
+    "desc": "Automation can't fix a weak offer or broken tracking. The business questions that actually decide it.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/meta-ads-broad-vs-interest-targeting/page.tsx",
+      "src/app/resources/meta-ads-learning-phase-explained/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/meta-ads-broad-vs-interest-targeting",
+    "title": "Meta Ads Broad Targeting vs Interests: What Works Better for Ecommerce?",
+    "desc": "Why the two solve different problems, and how creative does part of the targeting work.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/advantage-plus-shopping-campaigns-shopify/page.tsx",
+      "src/app/resources/should-you-retarget-website-visitors-meta-ads/page.tsx",
+      "src/app/resources/should-you-retarget-website-visitors-meta-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-you-retarget-website-visitors-meta-ads",
+    "title": "Should You Retarget Website Visitors on Meta Ads?",
+    "desc": "Why retargeting ROAS often looks better than the incremental value it actually creates.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 6,
+    "inboundFrom": [
+      "src/app/resources/how-much-meta-ads-budget-retargeting/page.tsx",
+      "src/app/resources/meta-ads-broad-vs-interest-targeting/page.tsx",
+      "src/app/resources/meta-ads-frequency-too-high/page.tsx",
+      "src/app/resources/meta-retargeting-taking-credit-for-sales/page.tsx",
+      "src/app/resources/should-meta-ads-get-credit-returning-customers/page.tsx",
+      "src/app/resources/should-retargeting-include-existing-customers/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-much-meta-ads-budget-retargeting",
+    "title": "How Much of Your Meta Ads Budget Should Go to Retargeting?",
+    "desc": "Why the right split is set by audience size and saturation signals, not a fixed percentage.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/how-much-spend-on-existing-customers-ecommerce/page.tsx",
+      "src/app/resources/meta-ads-frequency-too-high/page.tsx",
+      "src/app/resources/meta-retargeting-taking-credit-for-sales/page.tsx",
+      "src/app/resources/should-retargeting-include-existing-customers/page.tsx",
+      "src/app/resources/should-you-retarget-website-visitors-meta-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-often-change-meta-ad-creatives",
+    "title": "How Often Should You Change Meta Ad Creatives?",
+    "desc": "Watching for real fatigue signals instead of refreshing on a fixed calendar.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 8,
+    "inboundFrom": [
+      "src/app/resources/how-long-does-meta-ad-creative-last/page.tsx",
+      "src/app/resources/how-many-creatives-shopify-meta-ads/page.tsx",
+      "src/app/resources/how-many-creatives-shopify-meta-ads/page.tsx",
+      "src/app/resources/how-many-meta-ads-test-at-once/page.tsx",
+      "src/app/resources/how-many-variations-winning-meta-ad/page.tsx",
+      "src/app/resources/how-to-tell-meta-ad-fatigue/page.tsx",
+      "src/app/resources/should-you-reuse-old-winning-meta-ads/page.tsx",
+      "src/app/resources/ugc-ads-vs-product-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-tell-meta-ad-fatigue",
+    "title": "How Do You Know When a Meta Ad Is Fatigued?",
+    "desc": "The signals that actually indicate fatigue, read together instead of in isolation.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 9,
+    "inboundFrom": [
+      "src/app/resources/good-meta-ad-metrics-but-poor-sales/page.tsx",
+      "src/app/resources/how-long-does-meta-ad-creative-last/page.tsx",
+      "src/app/resources/how-many-creatives-shopify-meta-ads/page.tsx",
+      "src/app/resources/how-many-meta-ads-test-at-once/page.tsx",
+      "src/app/resources/how-many-meta-ads-test-at-once/page.tsx",
+      "src/app/resources/how-often-change-meta-ad-creatives/page.tsx",
+      "src/app/resources/meta-ads-frequency-too-high/page.tsx",
+      "src/app/resources/what-makes-good-meta-ad-ecommerce/page.tsx",
+      "src/app/resources/why-winning-meta-creatives-stop-working/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/meta-ads-frequency-too-high",
+    "title": "Meta Ads Frequency Too High: When Does It Become a Problem?",
+    "desc": "There's no universal ceiling. Pair frequency with CTR, CPA and reach before reacting.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/how-much-meta-ads-budget-retargeting/page.tsx",
+      "src/app/resources/how-often-change-meta-ad-creatives/page.tsx",
+      "src/app/resources/how-to-tell-meta-ad-fatigue/page.tsx",
+      "src/app/resources/should-you-retarget-website-visitors-meta-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-you-pause-meta-ad-no-sales",
+    "title": "Should You Pause a Meta Ad That Has No Sales?",
+    "desc": "Zero sales isn't automatically a bad ad. Here's how to judge it against target CPA and funnel activity.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/scale-winning-meta-ad-or-duplicate/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/scale-winning-meta-ad-or-duplicate",
+    "title": "Should You Scale a Winning Meta Ad or Duplicate It?",
+    "desc": "Why a duplicate doesn't clone performance, and what a genuine scaling test requires.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/campaign-budget-vs-ad-set-budget-meta/page.tsx",
+      "src/app/resources/meta-ads-20-percent-budget-rule/page.tsx",
+      "src/app/resources/should-you-pause-meta-ad-no-sales/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/meta-retargeting-taking-credit-for-sales",
+    "title": "Meta Retargeting Is Taking Credit for Too Many Sales: What to Do",
+    "desc": "High retargeting ROAS often isn't incremental revenue. How to spot over-attribution and set a sensible budget split.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 7,
+    "inboundFrom": [
+      "src/app/resources/abandoned-cart-email-vs-retargeting-attribution/page.tsx",
+      "src/app/resources/attribution-vs-incrementality/page.tsx",
+      "src/app/resources/carousel-ads-vs-single-image-ads/page.tsx",
+      "src/app/resources/incrementality-ecommerce-advertising/page.tsx",
+      "src/app/resources/meta-ads-vs-klaviyo-attribution/page.tsx",
+      "src/app/resources/returning-customers-convert-better-ecommerce/page.tsx",
+      "src/app/resources/should-meta-ads-get-credit-returning-customers/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/what-makes-good-meta-ad-ecommerce",
+    "title": "What Makes a Good Meta Ad for Ecommerce?",
+    "desc": "Why many ecommerce ads are built backwards, and how to judge creative beyond CTR.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 10,
+    "inboundFrom": [
+      "src/app/resources/carousel-ads-vs-single-image-ads/page.tsx",
+      "src/app/resources/does-meta-ad-engagement-matter-for-sales/page.tsx",
+      "src/app/resources/good-hook-for-meta-ad/page.tsx",
+      "src/app/resources/good-meta-ad-metrics-but-poor-sales/page.tsx",
+      "src/app/resources/how-many-variations-winning-meta-ad/page.tsx",
+      "src/app/resources/meta-ads-broad-vs-interest-targeting/page.tsx",
+      "src/app/resources/product-led-vs-problem-led-ads/page.tsx",
+      "src/app/resources/should-meta-ads-show-price/page.tsx",
+      "src/app/resources/static-images-vs-video-ads-ecommerce/page.tsx",
+      "src/app/resources/ugc-ads-vs-product-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/ugc-ads-vs-product-ads",
+    "title": "UGC Ads vs Product Ads: Which Converts Better?",
+    "desc": "UGC and polished product ads communicate different kinds of proof. Here's when each format wins.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/carousel-ads-vs-single-image-ads/page.tsx",
+      "src/app/resources/good-hook-for-meta-ad/page.tsx",
+      "src/app/resources/product-led-vs-problem-led-ads/page.tsx",
+      "src/app/resources/static-images-vs-video-ads-ecommerce/page.tsx",
+      "src/app/resources/what-makes-good-meta-ad-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/static-images-vs-video-ads-ecommerce",
+    "title": "Static Images vs Video Ads for Ecommerce",
+    "desc": "The better format depends on what needs to be communicated, not which one is trending.",
+    "isCore": false,
+    "categoryId": "meta-ads",
+    "categoryLabel": "Meta Ads",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/carousel-ads-vs-single-image-ads/page.tsx",
+      "src/app/resources/good-hook-for-meta-ad/page.tsx",
+      "src/app/resources/ugc-ads-vs-product-ads/page.tsx",
+      "src/app/resources/what-makes-good-meta-ad-ecommerce/page.tsx"
+    ]
+  }
+]

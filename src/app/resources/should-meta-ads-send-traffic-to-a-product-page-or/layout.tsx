@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Meta Ads Send Traffic to a Product Page or Landing Page?",
   description: "Send Meta traffic to the page that continues the selling argument with the least friction.",
   alternates: { canonical: "https://www.attribix.app/resources/should-meta-ads-send-traffic-to-a-product-page-or" },

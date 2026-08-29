@@ -1,0 +1,388 @@
+[
+  {
+    "href": "/resources/why-revenue-is-a-bad-metric-without-gross-margin",
+    "title": "Why Revenue Is a Bad Metric Without Gross Margin",
+    "desc": "Revenue tells you how much customers paid.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/increase-shopify-average-order-value/page.tsx",
+      "src/app/resources/new-customer-roas-vs-total-roas-which-matters-more/page.tsx",
+      "src/app/resources/product-bundles-vs-discounts-ecommerce/page.tsx",
+      "src/app/resources/roas-vs-profit-why-high-roas-doesn-t-always-mean-more/page.tsx",
+      "src/app/resources/what-is-a-good-cpa-for-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/new-customer-roas-vs-total-roas-which-matters-more",
+    "title": "New Customer ROAS vs Total ROAS: Which Matters More?",
+    "desc": "Total ROAS tells you how efficiently ad spend is associated with all reported revenue.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/customer-acquisition-cost-vs-cpa-what-s-the-difference/page.tsx",
+      "src/app/resources/returning-customers-convert-better-ecommerce/page.tsx",
+      "src/app/resources/why-revenue-is-a-bad-metric-without-gross-margin/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/customer-acquisition-cost-vs-cpa-what-s-the-difference",
+    "title": "Customer Acquisition Cost vs CPA: What's the Difference?",
+    "desc": "CPA and CAC are often used interchangeably, but they can describe different scopes.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/how-to-calculate-cac-for-a-shopify-store/page.tsx",
+      "src/app/resources/new-customer-roas-vs-total-roas-which-matters-more/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-calculate-cac-for-a-shopify-store",
+    "title": "How to Calculate CAC for a Shopify Store",
+    "desc": "A practical CAC calculation answers: how much did we spend to acquire each new customer?",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/customer-acquisition-cost-vs-cpa-what-s-the-difference/page.tsx",
+      "src/app/resources/ltv-vs-cac-for-ecommerce-what-should-you-aim-for/page.tsx",
+      "src/app/resources/new-customer-roas-vs-total-roas-which-matters-more/page.tsx",
+      "src/app/resources/why-last-click-attribution-undervalues-meta-ads/page.tsx",
+      "src/app/resources/why-meta-view-through-attribution-can-overvalue-meta/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/ltv-vs-cac-for-ecommerce-what-should-you-aim-for",
+    "title": "LTV vs CAC for Ecommerce: What Should You Aim For?",
+    "desc": "LTV:CAC compares the value a customer generates over time with the cost to acquire that customer.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/customer-acquisition-cost-vs-cpa-what-s-the-difference/page.tsx",
+      "src/app/resources/how-to-calculate-cac-for-a-shopify-store/page.tsx",
+      "src/app/resources/why-last-click-attribution-undervalues-meta-ads/page.tsx",
+      "src/app/resources/why-meta-view-through-attribution-can-overvalue-meta/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/why-last-click-attribution-undervalues-meta-ads",
+    "title": "Why Last-Click Attribution Undervalues Meta Ads",
+    "desc": "Meta often introduces customers before they are ready to buy.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-to-calculate-cac-for-a-shopify-store/page.tsx",
+      "src/app/resources/ltv-vs-cac-for-ecommerce-what-should-you-aim-for/page.tsx",
+      "src/app/resources/why-meta-view-through-attribution-can-overvalue-meta/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/why-meta-view-through-attribution-can-overvalue-meta",
+    "title": "Why Meta View-Through Attribution Can Overvalue Meta Ads",
+    "desc": "View-through attribution gives Meta credit when a person sees an ad, does not click it and later purchases within the relevant window.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/can-cookie-consent-reduce-your-reported-roas/page.tsx",
+      "src/app/resources/ltv-vs-cac-for-ecommerce-what-should-you-aim-for/page.tsx",
+      "src/app/resources/what-should-be-included-in-a-google-ads-management/page.tsx",
+      "src/app/resources/what-should-be-included-in-a-meta-ads-management/page.tsx",
+      "src/app/resources/why-last-click-attribution-undervalues-meta-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/can-cookie-consent-reduce-your-reported-roas",
+    "title": "Can Cookie Consent Reduce Your Reported ROAS?",
+    "desc": "Yes: declined consent can make ad platforms undercount conversions, making campaigns look less efficient than they really are.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/what-should-be-included-in-a-google-ads-management/page.tsx",
+      "src/app/resources/what-should-be-included-in-a-meta-ads-management/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/when-should-you-exclude-existing-customers-from-meta",
+    "title": "When Should You Exclude Existing Customers From Meta Ads?",
+    "desc": "Exclude existing customers when you need a campaign to answer a new-customer acquisition question or when the advertised product is irrelevant after purchase.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-much-spend-on-existing-customers-ecommerce/page.tsx",
+      "src/app/resources/should-google-ads-send-traffic-to-a-product-page-or/page.tsx",
+      "src/app/resources/should-retargeting-include-existing-customers/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/does-lowering-your-product-price-improve-roas",
+    "title": "Does Lowering Your Product Price Improve ROAS?",
+    "desc": "Lowering price can improve conversion and ROAS while reducing profit.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 0,
+    "inboundFrom": []
+  },
+  {
+    "href": "/resources/what-roas-do-you-need-with-a-30-percent-gross-margin",
+    "title": "What ROAS Do You Need With a 30% Gross Margin?",
+    "desc": "At a true 30% margin, simple break-even ROAS is roughly 3.3x, before fees, returns and other costs are even counted.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/does-lowering-your-product-price-improve-roas/page.tsx",
+      "src/app/resources/gross-margin-break-even-roas/page.tsx",
+      "src/app/resources/how-discounts-change-your-break-even-roas/page.tsx",
+      "src/app/resources/what-roas-do-you-need-with-a-50-percent-gross-margin/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/what-roas-do-you-need-with-a-50-percent-gross-margin",
+    "title": "What ROAS Do You Need With a 50% Gross Margin?",
+    "desc": "At a true 50% margin, simple break-even ROAS is roughly 2.0x: a lower bar, but still before other real costs are counted.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/does-lowering-your-product-price-improve-roas/page.tsx",
+      "src/app/resources/gross-margin-break-even-roas/page.tsx",
+      "src/app/resources/how-discounts-change-your-break-even-roas/page.tsx",
+      "src/app/resources/how-refunds-affect-your-true-advertising-roas/page.tsx",
+      "src/app/resources/what-roas-do-you-need-with-a-30-percent-gross-margin/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-discounts-change-your-break-even-roas",
+    "title": "How Discounts Change Your Break-Even ROAS",
+    "desc": "Discounting reduces revenue while product and fulfilment costs often stay largely the same.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 8,
+    "inboundFrom": [
+      "src/app/resources/constant-discounts-ecommerce-profitability/page.tsx",
+      "src/app/resources/constant-discounts-ecommerce-profitability/page.tsx",
+      "src/app/resources/does-lowering-your-product-price-improve-roas/page.tsx",
+      "src/app/resources/evergreen-discount-vs-limited-promotion-ecommerce/page.tsx",
+      "src/app/resources/how-refunds-affect-your-true-advertising-roas/page.tsx",
+      "src/app/resources/should-shipping-revenue-count-toward-roas/page.tsx",
+      "src/app/resources/what-roas-do-you-need-with-a-30-percent-gross-margin/page.tsx",
+      "src/app/resources/what-roas-do-you-need-with-a-50-percent-gross-margin/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-refunds-affect-your-true-advertising-roas",
+    "title": "How Refunds Affect Your True Advertising ROAS",
+    "desc": "Ad platforms usually report conversion value when the purchase happens.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/how-discounts-change-your-break-even-roas/page.tsx",
+      "src/app/resources/should-shipping-revenue-count-toward-roas/page.tsx",
+      "src/app/resources/should-tax-be-included-in-ecommerce-roas/page.tsx",
+      "src/app/resources/what-roas-do-you-need-with-a-30-percent-gross-margin/page.tsx",
+      "src/app/resources/what-roas-do-you-need-with-a-50-percent-gross-margin/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-shipping-revenue-count-toward-roas",
+    "title": "Should Shipping Revenue Count Toward ROAS?",
+    "desc": "Whether shipping charged to the customer belongs in ROAS depends on what you want the revenue figure to represent.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-refunds-affect-your-true-advertising-roas/page.tsx",
+      "src/app/resources/should-creative-production-costs-be-included-in-cac/page.tsx",
+      "src/app/resources/should-tax-be-included-in-ecommerce-roas/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-tax-be-included-in-ecommerce-roas",
+    "title": "Should Tax Be Included in Ecommerce ROAS?",
+    "desc": "Tax collected from the customer is usually money the business collects on behalf of a tax authority rather than economic revenue it gets to keep.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/should-creative-production-costs-be-included-in-cac/page.tsx",
+      "src/app/resources/should-shipping-revenue-count-toward-roas/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-creative-production-costs-be-included-in-cac",
+    "title": "Should Creative Production Costs Be Included in CAC?",
+    "desc": "If creative production exists primarily to acquire customers, it belongs somewhere in the cost of acquisition.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/should-tax-be-included-in-ecommerce-roas/page.tsx",
+      "src/app/resources/why-revenue-based-roas-can-hide-an-unprofitable/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/why-revenue-based-roas-can-hide-an-unprofitable",
+    "title": "Why Revenue-Based ROAS Can Hide an Unprofitable Business",
+    "desc": "Revenue-based ROAS treats every dollar of sales as equally valuable.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/400-roas-profitable/page.tsx",
+      "src/app/resources/how-to-calculate-profit-per-order-from-paid-ads/page.tsx",
+      "src/app/resources/profit-roas-vs-revenue-roas-which-should-you-use/page.tsx",
+      "src/app/resources/should-creative-production-costs-be-included-in-cac/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/profit-roas-vs-revenue-roas-which-should-you-use",
+    "title": "Profit ROAS vs Revenue ROAS: Which Should You Use?",
+    "desc": "Revenue ROAS is easy to calculate and useful for campaign optimization.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/how-to-calculate-profit-per-order-from-paid-ads/page.tsx",
+      "src/app/resources/why-revenue-based-roas-can-hide-an-unprofitable/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-calculate-profit-per-order-from-paid-ads",
+    "title": "How to Calculate Profit per Order From Paid Ads",
+    "desc": "Profit per paid order starts with the order value and subtracts the costs that order creates.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 7,
+    "inboundFrom": [
+      "src/app/resources/contribution-margin-vs-gross-margin-ecommerce/page.tsx",
+      "src/app/resources/how-to-decide-whether-an-unprofitable-campaign-is/page.tsx",
+      "src/app/resources/maximum-profitable-cpa-ecommerce/page.tsx",
+      "src/app/resources/profit-roas-vs-revenue-roas-which-should-you-use/page.tsx",
+      "src/app/resources/what-is-a-good-contribution-margin-after-advertising/page.tsx",
+      "src/app/resources/why-revenue-based-roas-can-hide-an-unprofitable/page.tsx",
+      "src/app/resources/why-scaling-revenue-can-reduce-profit/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/what-is-a-good-contribution-margin-after-advertising",
+    "title": "What Is a Good Contribution Margin After Advertising?",
+    "desc": "There is no universal “good” contribution margin after ads because businesses have very different fixed costs, growth goals and repeat-customer economics.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 8,
+    "inboundFrom": [
+      "src/app/resources/advertise-bestseller-or-high-margin-product/page.tsx",
+      "src/app/resources/contribution-margin-vs-gross-margin-ecommerce/page.tsx",
+      "src/app/resources/how-to-calculate-profit-per-order-from-paid-ads/page.tsx",
+      "src/app/resources/how-to-decide-whether-an-unprofitable-campaign-is/page.tsx",
+      "src/app/resources/how-to-use-customer-reviews-to-create-better-meta-ads/page.tsx",
+      "src/app/resources/profit-roas-vs-revenue-roas-which-should-you-use/page.tsx",
+      "src/app/resources/scale-high-revenue-or-high-margin-products-ecommerce/page.tsx",
+      "src/app/resources/why-scaling-revenue-can-reduce-profit/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-decide-whether-an-unprofitable-campaign-is",
+    "title": "How to Decide Whether an Unprofitable Campaign Is Worth Keeping",
+    "desc": "An unprofitable campaign can be worth keeping if it creates future customer value, assists other profitable sales or is still inside a deliberate test.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-to-use-customer-reviews-to-create-better-meta-ads/page.tsx",
+      "src/app/resources/what-is-a-good-contribution-margin-after-advertising/page.tsx",
+      "src/app/resources/why-scaling-revenue-can-reduce-profit/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/why-scaling-revenue-can-reduce-profit",
+    "title": "Why Scaling Revenue Can Reduce Profit",
+    "desc": "Revenue can grow while profit falls when the next sales are more expensive to acquire or less profitable to fulfil.",
+    "isCore": false,
+    "categoryId": "attribution",
+    "categoryLabel": "Attribution & Analytics",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-to-decide-whether-an-unprofitable-campaign-is/page.tsx",
+      "src/app/resources/how-to-use-customer-reviews-to-create-better-meta-ads/page.tsx",
+      "src/app/resources/what-is-a-good-contribution-margin-after-advertising/page.tsx"
+    ]
+  }
+]

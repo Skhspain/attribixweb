@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How Long Should an Ecommerce Guarantee Be?",
   description: "There is no conversion rule saying 30 days is always worse than 60 or 90.",
   alternates: { canonical: "https://www.attribix.app/resources/how-long-should-an-ecommerce-guarantee-be" },

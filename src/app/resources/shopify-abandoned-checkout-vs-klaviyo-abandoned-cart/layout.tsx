@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Shopify Abandoned Checkout vs Klaviyo Abandoned Cart: Why the Numbers Differ",
   description:
     "Shopify and Klaviyo count different abandonment stages, audiences and eligibility rules. How to compare event definitions before diagnosing a broken integration.",

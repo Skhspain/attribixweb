@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How Long Should a New Performance Max Campaign Run Before You Judge It?",
   description: "A new PMax campaign needs enough time and conversions to show a pattern, but there is no responsible answer such as \"always wait six weeks.\"",
   alternates: { canonical: "https://www.attribix.app/resources/how-long-run-performance-max-before-judging" },

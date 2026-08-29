@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "What Should Be Included in a Meta Ads Management Service?",
   description: "Meta Ads management should cover more than turning campaigns on and off.",
   alternates: { canonical: "https://www.attribix.app/resources/what-should-be-included-in-a-meta-ads-management" },

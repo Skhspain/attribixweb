@@ -1,0 +1,326 @@
+[
+  {
+    "href": "/resources/ecommerce-retention-vs-acquisition",
+    "title": "Why Retention Can Matter More Than Improving Facebook Ads",
+    "desc": "Acquisition improvements have limits. Better retention makes every acquired customer worth more without touching Meta at all.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/free-shipping-customer-retention-ecommerce/page.tsx",
+      "src/app/resources/how-much-spend-on-existing-customers-ecommerce/page.tsx",
+      "src/app/resources/loyalty-program-vs-discounts-ecommerce/page.tsx",
+      "src/app/resources/retention-rate-vs-repeat-purchase-rate-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/loyalty-program-vs-discounts-ecommerce",
+    "title": "Loyalty Program vs Discounts: Which Drives More Repeat Purchases?",
+    "desc": "Discounts move price. Loyalty builds accumulated value. Neither works if customers didn't like the first purchase.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/ecommerce-retention-vs-acquisition/page.tsx",
+      "src/app/resources/free-shipping-customer-retention-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/free-shipping-customer-retention-ecommerce",
+    "title": "Does Free Shipping Increase Customer Retention?",
+    "desc": "It can reduce remembered friction on reorders, but the product still has to earn the second purchase first.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/loyalty-program-vs-discounts-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-much-spend-on-existing-customers-ecommerce",
+    "title": "How Much Should Ecommerce Brands Spend on Existing Customers?",
+    "desc": "There's no fixed percentage. Budget should follow incremental contribution, not a predetermined split.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/free-shipping-customer-retention-ecommerce/page.tsx",
+      "src/app/resources/loyalty-program-vs-discounts-ecommerce/page.tsx",
+      "src/app/resources/should-retargeting-include-existing-customers/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/good-abandoned-cart-recovery-rate-ecommerce",
+    "title": "What Is a Good Abandoned Cart Recovery Rate?",
+    "desc": "Recovery rate depends on audience definition, price, buying cycle and attribution window. Your own baseline matters more than an external benchmark.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/how-many-abandoned-cart-emails-shopify/page.tsx",
+      "src/app/resources/shopify-abandoned-checkout-vs-klaviyo-abandoned-cart/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/welcome-flow-vs-campaigns-where-should-ecommerce",
+    "title": "Welcome Flow vs Campaigns: Where Should Ecommerce Brands Focus First?",
+    "desc": "If the store has steady new list growth, a strong welcome flow is one of the first email assets worth building because every future subscriber can experience it automatically.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/how-many-emails-should-be-in-a-shopify-welcome-flow/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-many-emails-should-be-in-a-shopify-welcome-flow",
+    "title": "How Many Emails Should Be in a Shopify Welcome Flow?",
+    "desc": "A welcome flow should stop when it has said the important things, not when it reaches a template's recommended email count.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/should-your-welcome-flow-offer-a-discount/page.tsx",
+      "src/app/resources/welcome-flow-vs-campaigns-where-should-ecommerce/page.tsx",
+      "src/app/resources/why-your-klaviyo-welcome-flow-isn-t-converting/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-your-welcome-flow-offer-a-discount",
+    "title": "Should Your Welcome Flow Offer a Discount?",
+    "desc": "A welcome discount can accelerate a first purchase.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/how-many-emails-should-be-in-a-shopify-welcome-flow/page.tsx",
+      "src/app/resources/how-often-should-ecommerce-brands-send-marketing-emails/page.tsx",
+      "src/app/resources/should-abandoned-cart-emails-offer-discount/page.tsx",
+      "src/app/resources/welcome-flow-vs-campaigns-where-should-ecommerce/page.tsx",
+      "src/app/resources/why-your-klaviyo-welcome-flow-isn-t-converting/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/why-your-klaviyo-welcome-flow-isn-t-converting",
+    "title": "Why Your Klaviyo Welcome Flow Isn't Converting",
+    "desc": "A welcome flow can fail because the emails are weak, but it can also fail because the subscribers themselves have little buying intent.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/are-you-sending-too-many-marketing-emails/page.tsx",
+      "src/app/resources/how-many-emails-should-be-in-a-shopify-welcome-flow/page.tsx",
+      "src/app/resources/how-often-should-ecommerce-brands-send-marketing-emails/page.tsx",
+      "src/app/resources/should-your-welcome-flow-offer-a-discount/page.tsx",
+      "src/app/resources/welcome-flow-vs-campaigns-where-should-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-often-should-ecommerce-brands-send-marketing-emails",
+    "title": "How Often Should Ecommerce Brands Send Marketing Emails?",
+    "desc": "The correct email frequency is the highest cadence that continues to create incremental value without damaging list health and customer trust.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/are-you-sending-too-many-marketing-emails/page.tsx",
+      "src/app/resources/should-your-welcome-flow-offer-a-discount/page.tsx",
+      "src/app/resources/why-your-klaviyo-welcome-flow-isn-t-converting/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/are-you-sending-too-many-marketing-emails",
+    "title": "Are You Sending Too Many Marketing Emails?",
+    "desc": "You are sending too many emails when the marginal message creates less value than the fatigue it causes.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/good-email-click-rate-but-no-sales-what-to-check/page.tsx",
+      "src/app/resources/high-email-open-rate-low-sales/page.tsx",
+      "src/app/resources/how-often-should-ecommerce-brands-send-marketing-emails/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/high-email-open-rate-low-sales",
+    "title": "Email Open Rate Is High but Sales Are Low: What Does That Mean?",
+    "desc": "A high open rate tells you that the message was opened or at least recorded as opened.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/are-you-sending-too-many-marketing-emails/page.tsx",
+      "src/app/resources/good-email-click-rate-but-no-sales-what-to-check/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/good-email-click-rate-but-no-sales-what-to-check",
+    "title": "Good Email Click Rate but No Sales: What to Check",
+    "desc": "If email recipients click and do not buy, stop optimizing the subject line.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/abandoned-cart-emails-clicks-no-sales/page.tsx",
+      "src/app/resources/high-email-open-rate-low-sales/page.tsx",
+      "src/app/resources/how-to-measure-email-profitability-instead-of-just/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-measure-email-profitability-instead-of-just",
+    "title": "How to Measure Email Profitability Instead of Just Revenue",
+    "desc": "Attributed email revenue is easy to celebrate.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 6,
+    "inboundFrom": [
+      "src/app/resources/does-klaviyo-over-attribute-revenue/page.tsx",
+      "src/app/resources/good-email-click-rate-but-no-sales-what-to-check/page.tsx",
+      "src/app/resources/high-email-open-rate-low-sales/page.tsx",
+      "src/app/resources/measure-email-marketing-true-impact-ecommerce/page.tsx",
+      "src/app/resources/what-is-a-good-repeat-purchase-rate-for-shopify/page.tsx",
+      "src/app/resources/why-your-shopify-store-gets-customers-but-few-repeat/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/what-is-a-good-repeat-purchase-rate-for-shopify",
+    "title": "What Is a Good Repeat Purchase Rate for Shopify?",
+    "desc": "A good repeat purchase rate depends heavily on what you sell.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-to-increase-repeat-purchase-rate-without-constant/page.tsx",
+      "src/app/resources/how-to-measure-email-profitability-instead-of-just/page.tsx",
+      "src/app/resources/why-your-shopify-store-gets-customers-but-few-repeat/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/why-your-shopify-store-gets-customers-but-few-repeat",
+    "title": "Why Your Shopify Store Gets Customers but Few Repeat Purchases",
+    "desc": "Strong first-order acquisition and weak retention can indicate that marketing is selling the first purchase more effectively than the product experience earns the second.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/how-to-increase-repeat-purchase-rate-without-constant/page.tsx",
+      "src/app/resources/how-to-measure-email-profitability-instead-of-just/page.tsx",
+      "src/app/resources/new-customers-vs-returning-customers-which-should-you/page.tsx",
+      "src/app/resources/what-is-a-good-repeat-purchase-rate-for-shopify/page.tsx",
+      "src/app/resources/why-returning-customer-revenue-can-make-your-roas-look/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-increase-repeat-purchase-rate-without-constant",
+    "title": "How to Increase Repeat Purchase Rate Without Constant Discounts",
+    "desc": "Discounts can create a second order quickly, but a retention strategy built entirely on cheaper prices becomes difficult to sustain.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 6,
+    "inboundFrom": [
+      "src/app/resources/new-customers-vs-returning-customers-which-should-you/page.tsx",
+      "src/app/resources/should-abandoned-cart-emails-offer-discount/page.tsx",
+      "src/app/resources/should-you-collect-email-or-sms-first-on-a-shopify/page.tsx",
+      "src/app/resources/what-is-a-good-repeat-purchase-rate-for-shopify/page.tsx",
+      "src/app/resources/why-returning-customer-revenue-can-make-your-roas-look/page.tsx",
+      "src/app/resources/why-your-shopify-store-gets-customers-but-few-repeat/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/new-customers-vs-returning-customers-which-should-you",
+    "title": "New Customers vs Returning Customers: Which Should You Optimize For?",
+    "desc": "A healthy ecommerce business usually needs both.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-to-increase-repeat-purchase-rate-without-constant/page.tsx",
+      "src/app/resources/should-you-collect-email-or-sms-first-on-a-shopify/page.tsx",
+      "src/app/resources/why-returning-customer-revenue-can-make-your-roas-look/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/why-returning-customer-revenue-can-make-your-roas-look",
+    "title": "Why Returning Customer Revenue Can Make Your ROAS Look Better Than It Is",
+    "desc": "Returning customers often convert at a lower marketing cost because they already know and trust the brand.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/new-customers-vs-returning-customers-which-should-you/page.tsx",
+      "src/app/resources/should-you-collect-email-or-sms-first-on-a-shopify/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-you-collect-email-or-sms-first-on-a-shopify",
+    "title": "Should You Collect Email or SMS First on a Shopify Popup?",
+    "desc": "Email generally creates less signup friction.",
+    "isCore": false,
+    "categoryId": "email-retention",
+    "categoryLabel": "Email & Retention",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/ecommerce-popup-conversion-rate/page.tsx",
+      "src/app/resources/exit-intent-popup-ecommerce/page.tsx"
+    ]
+  }
+]

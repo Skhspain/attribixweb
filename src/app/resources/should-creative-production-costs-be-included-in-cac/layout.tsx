@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Creative Production Costs Be Included in CAC?",
   description: "If creative production exists primarily to acquire customers, it belongs somewhere in the cost of acquisition.",
   alternates: { canonical: "https://www.attribix.app/resources/should-creative-production-costs-be-included-in-cac" },

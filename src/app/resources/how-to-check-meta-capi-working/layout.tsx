@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How to Check Whether Meta CAPI Is Working",
   description:
     "A healthy CAPI setup isn't simply 'server events are appearing.' How to confirm the right events arrive with useful matching data and that browser/server duplicates are handled correctly.",

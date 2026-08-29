@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Your Welcome Flow Offer a Discount?",
   description: "A welcome discount can accelerate a first purchase.",
   alternates: { canonical: "https://www.attribix.app/resources/should-your-welcome-flow-offer-a-discount" },

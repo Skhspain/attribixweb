@@ -128,7 +128,7 @@ export default function Page() {
             works everywhere. Higher-AOV products, long consideration
             periods and small conversion volumes create more volatility,
             which is also why{" "}
-            <Link href="/resources/how-long-should-meta-ads-run-before-changes" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+            <Link href="/resources/how-much-data-does-meta-ads-need" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               how long you let a campaign run
             </Link>{" "}
             and how much data it needs are really the same question asked
@@ -166,7 +166,7 @@ export default function Page() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/resources/how-long-should-meta-ads-run-before-changes" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/how-much-data-does-meta-ads-need" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How long should you let Meta Ads run before making changes?
               </Link>
             </li>

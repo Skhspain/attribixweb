@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Product Bundles vs Discounts: Which Increase AOV?",
   description:
     "A discount makes one purchase cheaper. A bundle can make a larger purchase feel more valuable. Here's why bundles often have better AOV potential, and how to compare contribution margin between the two.",

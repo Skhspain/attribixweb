@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Lost Impression Share Due to Rank: What Should You Fix?",
   description: "When Google reports lost impression share due to rank, your campaign was eligible for searches but did not have enough Ad Rank to win all of the impressions.",
   alternates: { canonical: "https://www.attribix.app/resources/lost-impression-share-rank-google-ads" },

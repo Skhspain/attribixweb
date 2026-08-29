@@ -1,0 +1,26 @@
+[
+  {
+    "categoryId": "google-ads",
+    "similarity": 0.31,
+    "a": "/resources/google-ads-not-tracking-shopify-purchases",
+    "aTitle": "Google Ads Not Tracking Shopify Purchases? Step-by-Step Diagnosis",
+    "b": "/resources/import-ga4-conversions-google-ads-shopify",
+    "bTitle": "Should You Import GA4 Purchases Into Google Ads on Shopify?"
+  },
+  {
+    "categoryId": "google-ads",
+    "similarity": 0.28,
+    "a": "/resources/google-ads-search-terms-ecommerce",
+    "aTitle": "Google Ads Search Terms: What Should Ecommerce Advertisers Look For?",
+    "b": "/resources/negative-keywords-ecommerce-google-ads",
+    "bTitle": "Google Ads Negative Keywords for Ecommerce: What to Look For"
+  },
+  {
+    "categoryId": "meta-ads",
+    "similarity": 0.25,
+    "a": "/resources/how-often-change-meta-ad-creatives",
+    "aTitle": "How Often Should You Change Meta Ad Creatives?",
+    "b": "/resources/how-to-tell-meta-ad-fatigue",
+    "bTitle": "How Do You Know When a Meta Ad Is Fatigued?"
+  }
+]

@@ -155,7 +155,7 @@ export default function Page() {
           <ul className="space-y-2 text-sm">
             <li><Link href="/resources/shopify-theme-change-broke-tracking-what-to-check" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Shopify Theme Change Broke Tracking: What to Check</Link></li>
             <li><Link href="/resources/google-tag-assistant-shows-multiple-google-tags-what" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Google Tag Assistant Shows Multiple Google Tags: What Does It Mean?</Link></li>
-            <li><Link href="/resources/shopify-pixel-vs-meta-capi-do-you-need-both" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Shopify Pixel vs Meta CAPI: Do You Need Both?</Link></li>
+            <li><Link href="/resources/meta-pixel-vs-capi-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Shopify Pixel vs Meta CAPI: Do You Need Both?</Link></li>
           </ul>
         </Reveal>
       </section>

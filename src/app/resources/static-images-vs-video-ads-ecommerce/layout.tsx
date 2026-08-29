@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Static Images vs Video Ads for Ecommerce",
   description:
     "Video gets more attention in marketing conversations, but static images still sell a lot of products. Which format to use depends on what needs to be communicated.",

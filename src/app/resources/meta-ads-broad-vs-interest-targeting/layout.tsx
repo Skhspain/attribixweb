@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Meta Ads Broad Targeting vs Interests: What Works Better for Ecommerce?",
   description:
     "Broad and interest targeting solve different problems, not competing philosophies. When each one fits, why creative does some of the audience-selection work, and how to compare them on real outcomes.",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Shopify Cart Drawer vs Cart Page: Which Converts Better?",
   description:
     "A cart drawer keeps the shopper browsing. A full cart page gives more room for shipping messaging, bundles and upsells. How to decide which converts better for your Shopify store.",

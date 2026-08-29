@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Are You Sending Too Many Marketing Emails?",
   description: "You are sending too many emails when the marginal message creates less value than the fatigue it causes.",
   alternates: { canonical: "https://www.attribix.app/resources/are-you-sending-too-many-marketing-emails" },

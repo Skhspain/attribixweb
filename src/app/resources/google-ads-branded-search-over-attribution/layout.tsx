@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Does Google Ads Over-Attribute Branded Searches?",
   description:
     "Google Ads can validly credit a branded search click while still overstating its incremental value. Why attribution and incrementality diverge on brand campaigns, and how to test the difference.",

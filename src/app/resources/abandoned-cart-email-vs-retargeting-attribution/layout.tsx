@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Abandoned Cart Email vs Meta Retargeting: Which Should Get the Credit?",
   description:
     "A cart abandoner can be recovered by email or by a Meta retargeting ad, and both systems may claim the sale. Why the right question is incremental recovery, not credit.",

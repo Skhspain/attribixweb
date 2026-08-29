@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How to Price Ecommerce Bundles Without Destroying Margin",
   description:
     "A bundle needs enough perceived value to justify buying more, but it does not automatically need a huge discount. Calculating standalone contribution, cannibalization and order contribution.",

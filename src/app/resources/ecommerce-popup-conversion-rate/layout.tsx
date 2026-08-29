@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Email Popup Conversion Rate: What Should Shopify Stores Expect?",
   description:
     "A popup conversion rate is only useful when you understand what the visitor receives in exchange. Why traffic quality, timing and subscriber value matter more than the raw rate.",

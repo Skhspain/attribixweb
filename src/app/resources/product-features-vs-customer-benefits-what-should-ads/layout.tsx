@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Product Features vs Customer Benefits: What Should Ads Focus On?",
   description: "Features explain what the product has.",
   alternates: { canonical: "https://www.attribix.app/resources/product-features-vs-customer-benefits-what-should-ads" },

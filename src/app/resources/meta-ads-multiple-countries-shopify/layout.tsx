@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Shopify Stores Run Meta Ads in Multiple Countries?",
   description:
     "Adding countries to Meta can grow your audience or quietly hurt margin. What to check before expanding, and when to separate markets instead of combining them.",

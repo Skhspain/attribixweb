@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why Your Klaviyo Welcome Flow Isn't Converting",
   description: "A welcome flow can fail because the emails are weak, but it can also fail because the subscribers themselves have little buying intent.",
   alternates: { canonical: "https://www.attribix.app/resources/why-your-klaviyo-welcome-flow-isn-t-converting" },

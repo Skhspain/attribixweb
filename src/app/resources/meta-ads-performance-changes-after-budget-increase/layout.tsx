@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why Meta Ads Performance Changes After Increasing the Budget",
   description:
     "A campaign that hits a $30 CPA at $200 a day isn't guaranteed to hold it at $2,000. Why scaling spend changes the auction, and how to judge marginal ROAS instead of the old blended number.",

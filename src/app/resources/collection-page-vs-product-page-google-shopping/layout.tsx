@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Collection Page vs Product Page for Google Shopping Traffic",
   description:
     "Why Google Shopping clicks should almost always land on the matching product page, when a collection page makes sense instead, and why Merchant Center consistency matters.",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "What Is a Good CPA for Ecommerce?",
   description: "A good CPA is not an industry number.",
   alternates: { canonical: "https://www.attribix.app/resources/what-is-a-good-cpa-for-ecommerce" },

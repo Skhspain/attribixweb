@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Can Server-Side Tracking Improve Ad Performance?",
   description:
     "Server-side tracking can improve the quality and resilience of conversion signals sent to advertising platforms. It does not guarantee lower CPA or higher revenue.",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should You Use Sticky Add-to-Cart Buttons on Shopify?",
   description:
     "When a sticky Add-to-Cart bar helps a long Shopify product page, when it becomes intrusive, and why you should watch the whole funnel rather than just button clicks.",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Meta Ads Sales Drop on Weekends: Is That Normal?",
   description:
     "Weekend Meta Ads performance can look worse than weekdays without anything being broken. How to tell a real day-of-week pattern apart from ordinary week-to-week noise.",

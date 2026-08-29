@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Google Ads Search Campaign vs Performance Max for Ecommerce",
   description: "Search campaigns and Performance Max solve different parts of Google advertising.",
   alternates: { canonical: "https://www.attribix.app/resources/search-campaign-vs-performance-max-ecommerce" },

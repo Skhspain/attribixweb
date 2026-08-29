@@ -1,0 +1,321 @@
+[
+  {
+    "href": "/resources/how-long-should-an-ecommerce-guarantee-be",
+    "title": "How Long Should an Ecommerce Guarantee Be?",
+    "desc": "There is no conversion rule saying 30 days is always worse than 60 or 90.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/do-trust-badges-still-improve-ecommerce-conversion/page.tsx",
+      "src/app/resources/does-a-money-back-guarantee-improve-shopify-conversion/page.tsx",
+      "src/app/resources/should-shopify-stores-offer-free-returns/page.tsx",
+      "src/app/resources/should-you-show-competitor-price-comparisons-on/page.tsx",
+      "src/app/resources/why-too-many-trust-badges-can-make-a-store-look-less/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-shopify-stores-offer-free-returns",
+    "title": "Should Shopify Stores Offer Free Returns?",
+    "desc": "Free returns can reduce purchase risk, particularly for products where size, fit or appearance is difficult to judge online.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/do-trust-badges-still-improve-ecommerce-conversion/page.tsx",
+      "src/app/resources/does-a-money-back-guarantee-improve-shopify-conversion/page.tsx",
+      "src/app/resources/how-long-should-an-ecommerce-guarantee-be/page.tsx",
+      "src/app/resources/why-too-many-trust-badges-can-make-a-store-look-less/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/do-trust-badges-still-improve-ecommerce-conversion",
+    "title": "Do Trust Badges Still Improve Ecommerce Conversion Rates?",
+    "desc": "Trust badges can reassure customers when they communicate something useful.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/how-long-should-an-ecommerce-guarantee-be/page.tsx",
+      "src/app/resources/how-much-discount-is-too-much-for-ecommerce/page.tsx",
+      "src/app/resources/should-shopify-stores-offer-free-returns/page.tsx",
+      "src/app/resources/when-increasing-your-price-can-actually-improve/page.tsx",
+      "src/app/resources/why-too-many-trust-badges-can-make-a-store-look-less/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/why-too-many-trust-badges-can-make-a-store-look-less",
+    "title": "Why Too Many Trust Badges Can Make a Store Look Less Trustworthy",
+    "desc": "Trust signals work best when they feel natural.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/do-trust-badges-still-improve-ecommerce-conversion/page.tsx",
+      "src/app/resources/how-much-discount-is-too-much-for-ecommerce/page.tsx",
+      "src/app/resources/when-increasing-your-price-can-actually-improve/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/when-increasing-your-price-can-actually-improve",
+    "title": "When Increasing Your Price Can Actually Improve Advertising Performance",
+    "desc": "Increasing price normally creates more purchase friction.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/how-much-discount-is-too-much-for-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-much-discount-is-too-much-for-ecommerce",
+    "title": "How Much Discount Is Too Much for Ecommerce?",
+    "desc": "A discount becomes too large when the incremental sales and customer value it creates no longer compensate for the margin you give away.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/scarcity-marketing-ecommerce/page.tsx",
+      "src/app/resources/when-increasing-your-price-can-actually-improve/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-find-new-meta-ad-angles-without-guessing",
+    "title": "How to Find New Meta Ad Angles Without Guessing",
+    "desc": "The best ad angles usually already exist in customer language.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/english-ads-vs-local-language-ads/page.tsx",
+      "src/app/resources/how-to-turn-customer-objections-into-high-converting/page.tsx",
+      "src/app/resources/where-should-ecommerce-brands-get-ideas-for-new-ad/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/where-should-ecommerce-brands-get-ideas-for-new-ad",
+    "title": "Where Should Ecommerce Brands Get Ideas for New Ad Creatives?",
+    "desc": "Good ad ideas come from the market more often than from other ads.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/how-to-find-new-meta-ad-angles-without-guessing/page.tsx",
+      "src/app/resources/how-to-turn-customer-objections-into-high-converting/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-turn-customer-objections-into-high-converting",
+    "title": "How to Turn Customer Objections Into High-Converting Ads",
+    "desc": "An objection is a reason a customer is interested but not yet comfortable buying.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-to-find-new-meta-ad-angles-without-guessing/page.tsx",
+      "src/app/resources/product-features-vs-customer-benefits-what-should-ads/page.tsx",
+      "src/app/resources/where-should-ecommerce-brands-get-ideas-for-new-ad/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/product-features-vs-customer-benefits-what-should-ads",
+    "title": "Product Features vs Customer Benefits: What Should Ads Focus On?",
+    "desc": "Features explain what the product has.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/how-to-find-new-meta-ad-angles-without-guessing/page.tsx",
+      "src/app/resources/how-to-turn-customer-objections-into-high-converting/page.tsx",
+      "src/app/resources/should-ecommerce-ads-focus-on-pain-points-or-desired/page.tsx",
+      "src/app/resources/where-should-ecommerce-brands-get-ideas-for-new-ad/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-ecommerce-ads-focus-on-pain-points-or-desired",
+    "title": "Should Ecommerce Ads Focus on Pain Points or Desired Outcomes?",
+    "desc": "Some products are bought to escape a problem.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/how-to-create-different-ad-angles-for-the-same-product/page.tsx",
+      "src/app/resources/product-features-vs-customer-benefits-what-should-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-create-different-ad-angles-for-the-same-product",
+    "title": "How to Create Different Ad Angles for the Same Product",
+    "desc": "One product can solve several customer problems.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/how-many-ad-angles-should-you-test-before-changing-the/page.tsx",
+      "src/app/resources/product-features-vs-customer-benefits-what-should-ads/page.tsx",
+      "src/app/resources/should-ecommerce-ads-focus-on-pain-points-or-desired/page.tsx",
+      "src/app/resources/why-testing-new-creatives-won-t-fix-a-weak-offer/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-many-ad-angles-should-you-test-before-changing-the",
+    "title": "How Many Ad Angles Should You Test Before Changing the Offer?",
+    "desc": "There is no magic number of ad angles that proves an offer is bad.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-to-create-different-ad-angles-for-the-same-product/page.tsx",
+      "src/app/resources/should-ecommerce-ads-focus-on-pain-points-or-desired/page.tsx",
+      "src/app/resources/why-testing-new-creatives-won-t-fix-a-weak-offer/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/why-testing-new-creatives-won-t-fix-a-weak-offer",
+    "title": "Why Testing New Creatives Won't Fix a Weak Offer",
+    "desc": "Creative determines how the product is presented.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-many-ad-angles-should-you-test-before-changing-the/page.tsx",
+      "src/app/resources/how-to-create-different-ad-angles-for-the-same-product/page.tsx",
+      "src/app/resources/how-to-know-whether-you-have-a-creative-problem-or-an/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-know-whether-you-have-a-creative-problem-or-an",
+    "title": "How to Know Whether You Have a Creative Problem or an Offer Problem",
+    "desc": "Creative problems usually appear before or around the click.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/how-many-ad-angles-should-you-test-before-changing-the/page.tsx",
+      "src/app/resources/why-testing-new-creatives-won-t-fix-a-weak-offer/page.tsx",
+      "src/app/resources/why-your-best-performing-ad-may-not-be-your-best/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/why-your-best-performing-ad-may-not-be-your-best",
+    "title": "Why Your Best-Performing Ad May Not Be Your Best Creative",
+    "desc": "The ad with the most purchases may be your best commercial asset.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/ecommerce-creative-testing-system/page.tsx",
+      "src/app/resources/how-to-know-whether-you-have-a-creative-problem-or-an/page.tsx",
+      "src/app/resources/meta-ads-hook-rate-vs-sales-which-matters-more/page.tsx",
+      "src/app/resources/video-watch-time-is-high-but-sales-are-low-what-does/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/meta-ads-hook-rate-vs-sales-which-matters-more",
+    "title": "Meta Ads Hook Rate vs Sales: Which Matters More?",
+    "desc": "Sales matter more if the business objective is sales.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/ecommerce-creative-testing-system/page.tsx",
+      "src/app/resources/how-to-know-whether-you-have-a-creative-problem-or-an/page.tsx",
+      "src/app/resources/video-watch-time-is-high-but-sales-are-low-what-does/page.tsx",
+      "src/app/resources/why-your-best-performing-ad-may-not-be-your-best/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/video-watch-time-is-high-but-sales-are-low-what-does",
+    "title": "Video Watch Time Is High but Sales Are Low: What Does That Tell You?",
+    "desc": "High watch time proves people were willing to watch.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/ecommerce-creative-testing-system/page.tsx",
+      "src/app/resources/meta-ads-hook-rate-vs-sales-which-matters-more/page.tsx",
+      "src/app/resources/why-your-best-performing-ad-may-not-be-your-best/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/ecommerce-creative-testing-system",
+    "title": "How to Build an Ecommerce Creative Testing System That Produces Useful Learnings",
+    "desc": "Creative testing becomes expensive when every new ad is simply another piece of content.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/meta-ads-hook-rate-vs-sales-which-matters-more/page.tsx",
+      "src/app/resources/video-watch-time-is-high-but-sales-are-low-what-does/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-to-use-customer-reviews-to-create-better-meta-ads",
+    "title": "How to Use Customer Reviews to Create Better Meta Ads",
+    "desc": "Reviews are useful creative research because customers describe the product after experiencing it, often in language the brand would never write.",
+    "isCore": false,
+    "categoryId": "creative-offers",
+    "categoryLabel": "Creative & Offers",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 0,
+    "inboundFrom": []
+  }
+]

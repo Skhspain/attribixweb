@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "What Does a Google Ads Agency Actually Do?",
   description:
     "Beyond keyword lists and bid changes: account audits, Search/Shopping/PMax strategy, feed and Merchant Center oversight, conversion tracking, and reporting. What the work actually involves.",

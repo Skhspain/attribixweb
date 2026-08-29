@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How Many Meta Ads Should You Test at Once?",
   description:
     "There's no fixed number of Meta ads to test. How budget, conversion volume and what you're trying to learn should set your testing volume, not a round number.",

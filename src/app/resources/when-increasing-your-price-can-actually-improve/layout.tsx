@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "When Increasing Your Price Can Actually Improve Advertising Performance",
   description: "Increasing price normally creates more purchase friction.",
   alternates: { canonical: "https://www.attribix.app/resources/when-increasing-your-price-can-actually-improve" },

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Is Your Google Ads Brand Campaign Taking Credit for Organic Sales?",
   description:
     "A branded search campaign can report enormous ROAS while creating little incremental revenue. How to check whether paid clicks are just replacing organic ones.",

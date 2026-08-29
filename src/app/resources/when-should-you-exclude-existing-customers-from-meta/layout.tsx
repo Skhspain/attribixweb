@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "When Should You Exclude Existing Customers From Meta Ads?",
   description: "Exclude existing customers when you need a campaign to answer a new-customer acquisition question or when the advertised product is irrelevant after purchase.",
   alternates: { canonical: "https://www.attribix.app/resources/when-should-you-exclude-existing-customers-from-meta" },

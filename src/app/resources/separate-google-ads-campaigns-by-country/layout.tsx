@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Google Ads by Country: Should You Separate Campaigns?",
   description:
     "Separate Google campaigns by country when markets require different budgets, targets, feeds, language or economics, and when combining them is fine.",

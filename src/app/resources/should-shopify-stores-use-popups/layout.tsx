@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Shopify Stores Use Popups?",
   description:
     "Popups can turn anonymous traffic into an audience you can contact again, or interrupt the exact customer you paid to bring to the store. Covers timing, mobile design and what to measure beyond signup rate.",

@@ -142,7 +142,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/how-much-revenue-should-email-marketing-generate-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/measure-email-marketing-true-impact-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How much revenue should email marketing generate for a Shopify store?
               </Link>
             </li>

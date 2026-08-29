@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Does Social Proof Actually Increase Ecommerce Conversion Rate?",
   description:
     "Social proof can reduce uncertainty when customers have reason to trust it, and backfire when it looks manufactured. Why specificity and placement matter more than volume.",

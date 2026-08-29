@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should You Optimize Meta Ads for Add to Cart or Purchase?",
   description:
     "More add-to-cart volume looks like more data, but it isn't the same signal as a purchase. When Add to Cart optimization actually helps, and when it just trains Meta toward the wrong outcome.",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Percentage of Ad Spend vs Fixed Fee: How Should a Marketing Agency Charge?",
   description:
     "The incentive-alignment case for percentage-of-spend pricing, its risk of pushing budget up regardless of returns, and why fixed fees have the opposite trade-off.",

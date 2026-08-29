@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Freelancer vs Marketing Agency: Which Should Ecommerce Brands Hire?",
   description: "A strong freelancer can outperform a weak agency, and a strong agency can provide capabilities one person cannot realistically cover.",
   alternates: { canonical: "https://www.attribix.app/resources/freelancer-vs-marketing-agency-which-should-ecommerce" },

@@ -153,9 +153,9 @@ export default function Page() {
         <Reveal>
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/resources/should-shopify-app-costs-count-as-marketing-costs" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Should Shopify App Costs Count as Marketing Costs?</Link></li>
+
             <li><Link href="/resources/how-to-know-whether-your-ecommerce-offer-is-the-problem" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How to Know Whether Your Ecommerce Offer Is the Problem</Link></li>
-            <li><Link href="/resources/your-ads-get-clicks-but-your-offer-doesn-t-convert-how" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Your Ads Get Clicks but Your Offer Doesn&apos;t Convert: How to Tell</Link></li>
+            <li><Link href="/resources/how-to-know-whether-your-ecommerce-offer-is-the-problem" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Your Ads Get Clicks but Your Offer Doesn&apos;t Convert: How to Tell</Link></li>
           </ul>
         </Reveal>
       </section>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why Too Many Trust Badges Can Make a Store Look Less Trustworthy",
   description: "Trust signals work best when they feel natural.",
   alternates: { canonical: "https://www.attribix.app/resources/why-too-many-trust-badges-can-make-a-store-look-less" },

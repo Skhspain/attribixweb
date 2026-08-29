@@ -147,7 +147,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/how-much-should-ecommerce-spend-to-acquire-customer" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/calculate-repeat-customer-value-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How Much Should Ecommerce Brands Spend to Acquire a New Customer?
               </Link>
             </li>

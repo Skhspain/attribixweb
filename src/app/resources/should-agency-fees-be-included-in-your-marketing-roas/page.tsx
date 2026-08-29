@@ -132,7 +132,7 @@ export default function Page() {
         <Reveal>
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/resources/how-often-should-you-meet-with-your-marketing-agency" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How Often Should You Meet With Your Marketing Agency?</Link></li>
+            <li><Link href="/resources/how-often-should-your-marketing-agency-report-to-you" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How Often Should You Meet With Your Marketing Agency?</Link></li>
             <li><Link href="/resources/how-often-should-your-marketing-agency-report-to-you" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How Often Should Your Marketing Agency Report to You?</Link></li>
             <li><Link href="/resources/what-should-you-expect-from-a-marketing-agency-every" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">What Should You Expect From a Marketing Agency Every Month?</Link></li>
           </ul>

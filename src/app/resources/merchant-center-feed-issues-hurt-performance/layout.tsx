@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Merchant Center Feed Issues That Quietly Hurt Performance",
   description: "Not every Merchant Center problem produces a dramatic red \"account suspended\" warning.",
   alternates: { canonical: "https://www.attribix.app/resources/merchant-center-feed-issues-hurt-performance" },

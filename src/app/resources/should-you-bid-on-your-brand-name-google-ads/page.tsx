@@ -114,7 +114,7 @@ export default function Page() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
             <li><Link href="/resources/google-brand-campaign-taking-credit-organic-sales" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Is your Google Ads brand campaign taking credit for organic sales?</Link></li>
-            <li><Link href="/resources/google-ads-brand-vs-non-brand-budget" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How much budget should go to brand vs non-brand Google Ads?</Link></li>
+            <li><Link href="/resources/should-you-bid-on-your-brand-name-google-ads" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How much budget should go to brand vs non-brand Google Ads?</Link></li>
             <li><Link href="/resources/competitor-keywords-google-ads-worth-it" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Are competitor keywords worth bidding on in Google Ads?</Link></li>
           </ul>
         </Reveal>

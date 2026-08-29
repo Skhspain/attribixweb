@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Meta Ad Creative Testing: What Should You Test First?",
   description:
     "The first creative tests should answer big commercial questions, not microscopic design preferences. A testing hierarchy that starts with the selling idea, then execution.",

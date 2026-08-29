@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Google Ads Exact Match Isn't Really Exact: What Ecommerce Advertisers Should Know",
   description: "An exact-match keyword no longer means your ad can appear only when someone types precisely the same characters.",
   alternates: { canonical: "https://www.attribix.app/resources/google-ads-exact-match-not-exact" },

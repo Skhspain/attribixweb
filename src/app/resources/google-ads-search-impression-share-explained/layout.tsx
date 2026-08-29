@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Google Ads Search Impression Share Explained for Ecommerce",
   description: "Search impression share estimates how often your ads appeared compared with the number of times Google believed they were eligible to appear.",
   alternates: { canonical: "https://www.attribix.app/resources/google-ads-search-impression-share-explained" },

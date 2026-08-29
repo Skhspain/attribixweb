@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "What Is a Good Google Ads Conversion Rate for Ecommerce?",
   description: "A \"good\" Google Ads conversion rate is the rate that produces profitable customers at the traffic cost you are paying.",
   alternates: { canonical: "https://www.attribix.app/resources/good-google-ads-conversion-rate-ecommerce" },

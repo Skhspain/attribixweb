@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Where Should Customer Reviews Appear on a Shopify Product Page?",
   description:
     "Reviews should appear where they help customers answer questions, not only in one giant block at the bottom of the page. A guide to placement across the buying journey.",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Meta Ads Learning Phase Explained: Should You Worry About It?",
   description:
     "What the learning phase actually measures, what disrupts it, and why a campaign labeled \"Learning Limited\" isn't automatically a bad one. A practical read on delivery status vs. business outcome.",

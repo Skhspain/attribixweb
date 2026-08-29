@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "One Meta Campaign for Multiple Countries or Separate Campaigns?",
   description:
     "Combining countries gives Meta more data and freedom. Separating them gives you more control over budget and economics. How to choose the right structure.",

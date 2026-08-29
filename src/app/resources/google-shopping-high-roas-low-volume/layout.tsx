@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Google Shopping Has High ROAS but Low Volume: Should You Scale?",
   description: "A high ROAS at low spend is encouraging, but it does not prove the same efficiency exists at higher volume.",
   alternates: { canonical: "https://www.attribix.app/resources/google-shopping-high-roas-low-volume" },

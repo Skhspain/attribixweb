@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Does Showing Savings in Dollars Convert Better Than Percentages?",
   description: "Sometimes the dollar saving feels larger.",
   alternates: { canonical: "https://www.attribix.app/resources/does-showing-savings-in-dollars-convert-better-than" },

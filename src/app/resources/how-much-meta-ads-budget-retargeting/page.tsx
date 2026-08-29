@@ -169,7 +169,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/meta-ads-frequency-too-high" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/how-to-tell-meta-ad-fatigue" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Meta Ads frequency too high: when does it become a problem?
               </Link>
             </li>

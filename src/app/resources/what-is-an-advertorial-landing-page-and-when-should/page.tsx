@@ -156,7 +156,7 @@ export default function Page() {
         <Reveal>
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/resources/product-page-vs-advertorial-which-works-better-for" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Product Page vs Advertorial: Which Works Better for Meta Ads?</Link></li>
+            <li><Link href="/resources/what-is-an-advertorial-landing-page-and-when-should" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Product Page vs Advertorial: Which Works Better for Meta Ads?</Link></li>
             <li><Link href="/resources/quiz-funnel-vs-product-page-which-converts-better" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Quiz Funnel vs Product Page: Which Converts Better?</Link></li>
             <li><Link href="/resources/how-many-ctas-should-an-ecommerce-landing-page-have" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How Many CTAs Should an Ecommerce Landing Page Have?</Link></li>
           </ul>

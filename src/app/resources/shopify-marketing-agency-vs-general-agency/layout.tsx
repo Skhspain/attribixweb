@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Shopify-Specific Expertise vs a General Marketing Agency",
   description:
     "What a Shopify-specific marketing agency actually knows that a generalist doesn't: feed structure, checkout constraints, Shopify's reporting quirks, and margin-aware decisions. And when a generalist is genuinely fine.",

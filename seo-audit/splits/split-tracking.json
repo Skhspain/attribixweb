@@ -1,0 +1,191 @@
+[
+  {
+    "href": "/resources/google-consent-mode-shopify",
+    "title": "Consent Mode on Shopify: Why Google Ads Conversions May Change",
+    "desc": "What consent modeling actually does, and what it doesn't recover.",
+    "isCore": false,
+    "categoryId": "tracking",
+    "categoryLabel": "Tracking & Privacy",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/google-ads-conversion-tracking-shopify/page.tsx",
+      "src/app/resources/does-better-tracking-improve-sales/page.tsx",
+      "src/app/resources/google-ads-conversions-dropped-suddenly/page.tsx",
+      "src/app/resources/google-tag-manager-vs-shopify-customer-events/page.tsx",
+      "src/app/resources/ios-ad-blockers-shopify-tracking-loss/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/ios-ad-blockers-shopify-tracking-loss",
+    "title": "iOS, Ad Blockers and Privacy: How Much Shopify Tracking Are You Losing?",
+    "desc": "What ITP and ad blockers actually block, and what server-side tracking can and can't fix.",
+    "isCore": false,
+    "categoryId": "tracking",
+    "categoryLabel": "Tracking & Privacy",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/google-ads-clicks-vs-shopify-sessions/page.tsx",
+      "src/app/resources/google-consent-mode-shopify/page.tsx",
+      "src/app/server-side-tracking-shopify/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/does-better-tracking-improve-sales",
+    "title": "Why More Accurate Tracking Doesn't Automatically Create More Sales",
+    "desc": "Better tracking can improve decisions, but it can't fix a weak product, bad offer or poor website by itself.",
+    "isCore": false,
+    "categoryId": "tracking",
+    "categoryLabel": "Tracking & Privacy",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/can-server-side-tracking-improve-ad-performance/page.tsx",
+      "src/app/resources/can-server-side-tracking-improve-ad-performance/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/can-server-side-tracking-improve-ad-performance",
+    "title": "Can Server-Side Tracking Improve Ad Performance?",
+    "desc": "It can improve signal quality and resilience, but it doesn't guarantee lower CPA or higher revenue.",
+    "isCore": false,
+    "categoryId": "tracking",
+    "categoryLabel": "Tracking & Privacy",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/does-better-tracking-improve-sales/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/shopify-customer-events-explained",
+    "title": "Shopify Customer Events Explained for Marketers",
+    "desc": "Not the developer terminology: which customer actions are available and how your tracking tool consumes them.",
+    "isCore": false,
+    "categoryId": "tracking",
+    "categoryLabel": "Tracking & Privacy",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/google-tag-manager-vs-shopify-customer-events/page.tsx",
+      "src/app/resources/google-tag-manager-vs-shopify-customer-events/page.tsx",
+      "src/app/resources/should-shopify-use-google-tag-manager/page.tsx",
+      "src/app/resources/should-shopify-use-google-tag-manager/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-tag-manager-vs-shopify-customer-events",
+    "title": "Google Tag Manager vs Shopify Customer Events",
+    "desc": "GTM is a tag-management system; Customer Events is Shopify's own framework. That's why they aren't direct substitutes.",
+    "isCore": false,
+    "categoryId": "tracking",
+    "categoryLabel": "Tracking & Privacy",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/shopify-customer-events-explained/page.tsx",
+      "src/app/resources/should-shopify-use-google-tag-manager/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-shopify-use-google-tag-manager",
+    "title": "Should Shopify Stores Still Use Google Tag Manager?",
+    "desc": "It's no longer safe to assume every Shopify store needs GTM just because it's standard practice elsewhere.",
+    "isCore": false,
+    "categoryId": "tracking",
+    "categoryLabel": "Tracking & Privacy",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/google-tag-manager-vs-shopify-customer-events/page.tsx",
+      "src/app/resources/shopify-customer-events-explained/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/test-shopify-purchase-event",
+    "title": "How to Test a Shopify Purchase Event",
+    "desc": "One test order, checked across Meta, Google Ads, GA4 and attribution tools: the highest-value check after any tracking change.",
+    "isCore": false,
+    "categoryId": "tracking",
+    "categoryLabel": "Tracking & Privacy",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/google-ads-transaction-id-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/shopify-pixel-vs-meta-capi-do-you-need-both",
+    "title": "Shopify Pixel vs Meta CAPI: Do You Need Both?",
+    "desc": "For most robust Meta tracking setups, browser Pixel and server-side CAPI are complementary rather than mutually exclusive.",
+    "isCore": false,
+    "categoryId": "tracking",
+    "categoryLabel": "Tracking & Privacy",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/google-tag-assistant-shows-multiple-google-tags-what/page.tsx",
+      "src/app/resources/shopify-app-installation-changed-conversion-tracking/page.tsx",
+      "src/app/resources/shopify-theme-change-broke-tracking-what-to-check/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/google-tag-assistant-shows-multiple-google-tags-what",
+    "title": "Google Tag Assistant Shows Multiple Google Tags: What Does It Mean?",
+    "desc": "Seeing multiple Google tags is not automatically an error.",
+    "isCore": false,
+    "categoryId": "tracking",
+    "categoryLabel": "Tracking & Privacy",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/meta-pixel-helper-multiple-pixels/page.tsx",
+      "src/app/resources/shopify-app-installation-changed-conversion-tracking/page.tsx",
+      "src/app/resources/shopify-pixel-vs-meta-capi-do-you-need-both/page.tsx",
+      "src/app/resources/shopify-theme-change-broke-tracking-what-to-check/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/shopify-theme-change-broke-tracking-what-to-check",
+    "title": "Shopify Theme Change Broke Tracking: What to Check",
+    "desc": "A theme change can remove scripts that were installed manually, alter page structure and expose tracking setups nobody realized depended on the old theme.",
+    "isCore": false,
+    "categoryId": "tracking",
+    "categoryLabel": "Tracking & Privacy",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/google-tag-assistant-shows-multiple-google-tags-what/page.tsx",
+      "src/app/resources/shopify-app-installation-changed-conversion-tracking/page.tsx",
+      "src/app/resources/shopify-pixel-vs-meta-capi-do-you-need-both/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/shopify-app-installation-changed-conversion-tracking",
+    "title": "Shopify App Installation Changed Conversion Tracking: What Happened?",
+    "desc": "Marketing and analytics apps often install their own pixels, server events or customer-event integrations.",
+    "isCore": false,
+    "categoryId": "tracking",
+    "categoryLabel": "Tracking & Privacy",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/google-tag-assistant-shows-multiple-google-tags-what/page.tsx",
+      "src/app/resources/shopify-pixel-vs-meta-capi-do-you-need-both/page.tsx",
+      "src/app/resources/shopify-theme-change-broke-tracking-what-to-check/page.tsx"
+    ]
+  }
+]

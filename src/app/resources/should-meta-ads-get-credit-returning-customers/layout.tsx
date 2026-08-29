@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Meta Ads Get Credit for Returning Customer Purchases?",
   description:
     "Meta can legitimately claim a returning-customer conversion under its attribution model, but that doesn't mean the ad caused the purchase. How to separate acquisition from retention in your reporting.",

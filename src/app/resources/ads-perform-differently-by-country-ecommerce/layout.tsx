@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why Your Ads Perform Well in One Country and Poorly in Another",
   description:
     "The same product, creative and campaign can produce very different economics in two countries. Auction cost, shipping, payment and creative context explain most of the gap.",

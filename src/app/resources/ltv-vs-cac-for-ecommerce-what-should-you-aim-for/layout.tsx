@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "LTV vs CAC for Ecommerce: What Should You Aim For?",
   description: "LTV:CAC compares the value a customer generates over time with the cost to acquire that customer.",
   alternates: { canonical: "https://www.attribix.app/resources/ltv-vs-cac-for-ecommerce-what-should-you-aim-for" },

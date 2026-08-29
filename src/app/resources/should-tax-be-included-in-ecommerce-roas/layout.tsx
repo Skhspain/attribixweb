@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Tax Be Included in Ecommerce ROAS?",
   description: "Tax collected from the customer is usually money the business collects on behalf of a tax authority rather than economic revenue it gets to keep.",
   alternates: { canonical: "https://www.attribix.app/resources/should-tax-be-included-in-ecommerce-roas" },

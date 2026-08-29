@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Is Your Shopify Discount Code Box Hurting Conversion Rate?",
   description:
     "A visible discount-code field can tell a full-price customer they're paying more than someone else. Here's when to reduce its emphasis, and how automatic promotions can be cleaner.",

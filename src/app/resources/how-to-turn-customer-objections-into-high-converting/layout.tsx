@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How to Turn Customer Objections Into High-Converting Ads",
   description: "An objection is a reason a customer is interested but not yet comfortable buying.",
   alternates: { canonical: "https://www.attribix.app/resources/how-to-turn-customer-objections-into-high-converting" },

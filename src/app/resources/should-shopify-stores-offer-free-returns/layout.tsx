@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Shopify Stores Offer Free Returns?",
   description: "Free returns can reduce purchase risk, particularly for products where size, fit or appearance is difficult to judge online.",
   alternates: { canonical: "https://www.attribix.app/resources/should-shopify-stores-offer-free-returns" },

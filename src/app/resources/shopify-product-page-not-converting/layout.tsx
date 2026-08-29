@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Shopify Product Page Not Converting: What to Check",
   description: "A product page can fail even when the ad is doing its job.",
   alternates: { canonical: "https://www.attribix.app/resources/shopify-product-page-not-converting" },

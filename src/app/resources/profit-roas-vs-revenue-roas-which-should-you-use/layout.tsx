@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Profit ROAS vs Revenue ROAS: Which Should You Use?",
   description: "Revenue ROAS is easy to calculate and useful for campaign optimization.",
   alternates: { canonical: "https://www.attribix.app/resources/profit-roas-vs-revenue-roas-which-should-you-use" },

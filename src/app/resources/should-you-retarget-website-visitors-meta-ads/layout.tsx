@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should You Retarget Website Visitors on Meta Ads?",
   description:
     "Retargeting usually converts well because it advertises to people already unusually likely to buy. Why that inflates reported ROAS, and how to judge dedicated retargeting on incremental value instead.",

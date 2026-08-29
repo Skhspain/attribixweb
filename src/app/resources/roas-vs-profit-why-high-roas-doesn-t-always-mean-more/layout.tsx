@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "ROAS vs Profit: Why High ROAS Doesn't Always Mean More Profit",
   description: "ROAS measures revenue returned for each unit of ad spend.",
   alternates: { canonical: "https://www.attribix.app/resources/roas-vs-profit-why-high-roas-doesn-t-always-mean-more" },

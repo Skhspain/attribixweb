@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Shopify Theme Change Broke Tracking: What to Check",
   description: "A theme change can remove scripts that were installed manually, alter page structure and expose tracking setups nobody realized depended on the old theme.",
   alternates: { canonical: "https://www.attribix.app/resources/shopify-theme-change-broke-tracking-what-to-check" },

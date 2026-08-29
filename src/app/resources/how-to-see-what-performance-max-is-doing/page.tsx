@@ -188,7 +188,7 @@ export default function Page() {
           <ul className="space-y-2 text-sm">
             <li><Link href="/resources/performance-max-brand-revenue" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How Much of Performance Max Revenue Comes From Brand Searches?</Link></li>
             <li><Link href="/resources/performance-max-vs-standard-shopping" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Performance Max vs Standard Shopping: Which Is Better?</Link></li>
-            <li><Link href="/resources/separate-brand-traffic-performance-max" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Should You Separate Brand Traffic From Performance Max?</Link></li>
+            <li><Link href="/resources/performance-max-brand-revenue" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Should You Separate Brand Traffic From Performance Max?</Link></li>
           </ul>
         </Reveal>
       </section>

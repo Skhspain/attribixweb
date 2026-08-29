@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Customer Acquisition Cost vs CPA: What's the Difference?",
   description: "CPA and CAC are often used interchangeably, but they can describe different scopes.",
   alternates: { canonical: "https://www.attribix.app/resources/customer-acquisition-cost-vs-cpa-what-s-the-difference" },

@@ -118,7 +118,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/shopify-ga4-meta-google-revenue-different" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/ad-platforms-report-more-revenue-than-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Why Shopify, GA4, Meta and Google all show different revenue
               </Link>
             </li>

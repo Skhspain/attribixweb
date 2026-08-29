@@ -128,7 +128,7 @@ export default function Page() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/resources/how-much-revenue-should-email-marketing-generate-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/measure-email-marketing-true-impact-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 How much revenue should email marketing generate for a Shopify store?
               </Link>
             </li>
@@ -138,7 +138,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/does-klaviyo-over-attribute-revenue" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/klaviyo-revenue-too-high" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Does Klaviyo over-attribute revenue?
               </Link>
             </li>

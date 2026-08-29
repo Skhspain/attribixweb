@@ -120,7 +120,7 @@ export default function Page() {
               </Link>
             </li>
             <li>
-              <Link href="/resources/set-free-shipping-threshold-shopify" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+              <Link href="/resources/calculate-profitable-free-shipping-threshold" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Free shipping threshold: how should Shopify stores set it?
               </Link>
             </li>

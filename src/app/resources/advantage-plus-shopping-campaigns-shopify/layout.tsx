@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should You Use Advantage+ Shopping Campaigns for Shopify?",
   description:
     "Automation can't repair a weak offer, slow product page or incorrect purchase event. The business questions that determine whether Advantage+ deserves testing on your Shopify store.",

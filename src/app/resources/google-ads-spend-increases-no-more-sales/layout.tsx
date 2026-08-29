@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why Google Ads Spend Increases Without More Sales",
   description: "More Google spend does not automatically create proportionally more demand.",
   alternates: { canonical: "https://www.attribix.app/resources/google-ads-spend-increases-no-more-sales" },

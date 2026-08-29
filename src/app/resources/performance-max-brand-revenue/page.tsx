@@ -118,7 +118,7 @@ export default function Page() {
         <Reveal>
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/resources/separate-brand-traffic-performance-max" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Should You Separate Brand Traffic From Performance Max?</Link></li>
+            <li><Link href="/resources/performance-max-brand-revenue" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Should You Separate Brand Traffic From Performance Max?</Link></li>
             <li><Link href="/resources/how-to-see-what-performance-max-is-doing" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How to Tell What Performance Max Is Actually Doing</Link></li>
             <li><Link href="/resources/google-ads-exact-match-not-exact" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Google Ads Exact Match Isn&apos;t Really Exact: What Ecommerce Advertisers Should Know</Link></li>
           </ul>

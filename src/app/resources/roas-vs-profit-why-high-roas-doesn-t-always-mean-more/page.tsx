@@ -142,7 +142,7 @@ export default function Page() {
           <ul className="space-y-2 text-sm">
             <li><Link href="/resources/why-revenue-is-a-bad-metric-without-gross-margin" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Why Revenue Is a Bad Metric Without Gross Margin</Link></li>
             <li><Link href="/resources/what-is-a-good-cpa-for-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">What Is a Good CPA for Ecommerce?</Link></li>
-            <li><Link href="/resources/break-even-cpa-explained-for-shopify-stores" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Break-Even CPA Explained for Shopify Stores</Link></li>
+            <li><Link href="/resources/maximum-profitable-cpa-ecommerce" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Break-Even CPA Explained for Shopify Stores</Link></li>
           </ul>
         </Reveal>
       </section>

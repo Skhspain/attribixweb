@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Should Shipping Revenue Count Toward ROAS?",
   description: "Whether shipping charged to the customer belongs in ROAS depends on what you want the revenue figure to represent.",
   alternates: { canonical: "https://www.attribix.app/resources/should-shipping-revenue-count-toward-roas" },

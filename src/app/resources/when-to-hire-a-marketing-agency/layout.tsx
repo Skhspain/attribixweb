@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "When Should You Hire an Ecommerce Marketing Agency?",
   description:
     "Realistic signals it's time, and signals it isn't yet. Time spent in ad accounts, spend level, tracking uncertainty, multi-channel capacity, and when the real problem is the product, not the marketing.",

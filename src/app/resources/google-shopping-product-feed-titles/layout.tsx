@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Product Feed Titles: How Much Do They Matter for Google Shopping?",
   description: "Product titles are one of the clearest signals Google has for understanding what you sell.",
   alternates: { canonical: "https://www.attribix.app/resources/google-shopping-product-feed-titles" },

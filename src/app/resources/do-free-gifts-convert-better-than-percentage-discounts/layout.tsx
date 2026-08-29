@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Do Free Gifts Convert Better Than Percentage Discounts?",
   description: "A free gift can create higher perceived value than an equivalent discount, especially when the gift feels relevant and desirable.",
   alternates: { canonical: "https://www.attribix.app/resources/do-free-gifts-convert-better-than-percentage-discounts" },

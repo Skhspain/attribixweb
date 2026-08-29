@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Welcome Flow vs Campaigns: Where Should Ecommerce Brands Focus First?",
   description: "If the store has steady new list growth, a strong welcome flow is one of the first email assets worth building because every future subscriber can experience it automatically.",
   alternates: { canonical: "https://www.attribix.app/resources/welcome-flow-vs-campaigns-where-should-ecommerce" },

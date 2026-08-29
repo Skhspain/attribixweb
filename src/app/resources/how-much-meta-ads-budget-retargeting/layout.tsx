@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How Much of Your Meta Ads Budget Should Go to Retargeting?",
   description:
     "There's no fixed percentage that works for every store. Why retargeting budget should be set by audience size and saturation signals, not a copied rule.",

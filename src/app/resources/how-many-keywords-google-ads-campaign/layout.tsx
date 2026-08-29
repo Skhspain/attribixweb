@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How Many Keywords Should a Google Ads Campaign Have?",
   description: "The correct number of keywords is the number needed to cover meaningful search intent without creating a structure you cannot manage.",
   alternates: { canonical: "https://www.attribix.app/resources/how-many-keywords-google-ads-campaign" },

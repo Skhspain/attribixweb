@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "How Currency Differences Affect Ecommerce ROAS",
   description:
     "ROAS can become confusing when ad spend, Shopify revenue and product costs are recorded in different currencies. How to normalize reporting so the numbers reconcile.",

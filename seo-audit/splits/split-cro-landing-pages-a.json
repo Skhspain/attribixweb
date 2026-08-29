@@ -1,0 +1,437 @@
+[
+  {
+    "href": "/resources/sticky-add-to-cart-shopify-conversion",
+    "title": "Should You Use Sticky Add-to-Cart Buttons on Shopify?",
+    "desc": "Sticky purchase controls can help long mobile product pages, or become another intrusive bar fighting for screen space.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/cart-drawer-vs-cart-page-shopify/page.tsx",
+      "src/app/resources/how-many-product-images-shopify/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/product-reviews-vs-testimonials-ecommerce",
+    "title": "Product Reviews vs Testimonials: Which Build More Trust?",
+    "desc": "Reviews reduce risk on a specific product. Testimonials explain a broader outcome. The question is what uncertainty needs removing.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/how-many-product-images-shopify/page.tsx",
+      "src/app/resources/social-proof-ecommerce-conversion-rate/page.tsx",
+      "src/app/resources/star-ratings-vs-written-reviews-ecommerce/page.tsx",
+      "src/app/resources/where-to-put-reviews-shopify-product-page/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/how-many-product-images-shopify",
+    "title": "How Many Product Images Should a Shopify Product Page Have?",
+    "desc": "The right gallery is the smallest set of images that answers the customer's visual questions. The goal is confidence, not count.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/product-reviews-vs-testimonials-ecommerce/page.tsx",
+      "src/app/resources/show-delivery-date-product-page-shopify/page.tsx",
+      "src/app/resources/sticky-add-to-cart-shopify-conversion/page.tsx",
+      "src/app/resources/where-to-put-reviews-shopify-product-page/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/show-delivery-date-product-page-shopify",
+    "title": "Should Shopify Stores Show Delivery Dates Before Checkout?",
+    "desc": "Delivery timing is part of the product decision, not a detail customers should discover at the final checkout step.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/shopify-checkout-abandonment-shipping-costs/page.tsx",
+      "src/app/resources/unexpected-shipping-costs-cart-abandonment/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/collection-page-vs-product-page-google-shopping",
+    "title": "Collection Page vs Product Page for Google Shopping Traffic",
+    "desc": "A Shopping click sets a specific expectation. The destination should almost always confirm it before offering ways to browse.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/ad-to-landing-page-message-match/page.tsx",
+      "src/app/resources/different-landing-pages-meta-and-google-ads/page.tsx",
+      "src/app/resources/paid-ads-traffic-to-homepage-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/unexpected-shipping-costs-cart-abandonment",
+    "title": "Why Unexpected Shipping Costs Kill Ecommerce Sales",
+    "desc": "A shopper can accept a $79 product and still abandon when checkout suddenly becomes $94.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/buy-now-pay-later-shopify-conversion/page.tsx",
+      "src/app/resources/shopify-checkout-abandonment-shipping-costs/page.tsx",
+      "src/app/resources/show-delivery-date-product-page-shopify/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/different-landing-pages-meta-and-google-ads",
+    "title": "Should You Create Different Landing Pages for Meta and Google Ads?",
+    "desc": "Google often captures an existing need while Meta creates the interest. That difference should shape the landing page.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/ad-to-landing-page-message-match/page.tsx",
+      "src/app/resources/collection-page-vs-product-page-google-shopping/page.tsx",
+      "src/app/resources/paid-ads-traffic-to-homepage-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/buy-now-pay-later-shopify-conversion",
+    "title": "Should Shopify Stores Offer Buy Now, Pay Later?",
+    "desc": "BNPL can help conversion on higher-AOV products, but it introduces fees and a different way of presenting price.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/does-klarna-increase-conversion-rate/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/paid-ads-traffic-to-homepage-ecommerce",
+    "title": "Why Sending All Paid Traffic to Your Homepage Is Usually a Mistake",
+    "desc": "A homepage serves many jobs. A paid campaign usually has one, and every extra decision costs attention.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/ad-to-landing-page-message-match/page.tsx",
+      "src/app/resources/collection-page-vs-product-page-google-shopping/page.tsx",
+      "src/app/resources/different-landing-pages-meta-and-google-ads/page.tsx",
+      "src/app/resources/should-shopify-stores-use-popups/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/does-klarna-increase-conversion-rate",
+    "title": "Does Klarna Increase Ecommerce Conversion Rate?",
+    "desc": "Klarna can remove a real payment barrier for some stores, but it is not a universal conversion law.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 1,
+    "inboundFrom": [
+      "src/app/resources/buy-now-pay-later-shopify-conversion/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/cart-drawer-vs-cart-page-shopify",
+    "title": "Shopify Cart Drawer vs Cart Page: Which Converts Better?",
+    "desc": "Either can convert well when it helps the customer understand the order and move toward checkout.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/buy-now-pay-later-shopify-conversion/page.tsx",
+      "src/app/resources/discount-code-box-checkout-conversion/page.tsx",
+      "src/app/resources/does-klarna-increase-conversion-rate/page.tsx",
+      "src/app/resources/increase-shopify-average-order-value/page.tsx",
+      "src/app/resources/product-bundles-vs-discounts-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/import-duties-ecommerce-conversion-rate",
+    "title": "How Import Duties Affect International Shopify Conversion Rates",
+    "desc": "Duties hurt conversion most when customers discover them after they thought they knew the final price.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/international-shipping-low-conversion-ecommerce/page.tsx",
+      "src/app/resources/international-shipping-low-conversion-ecommerce/page.tsx",
+      "src/app/resources/international-traffic-lower-conversion-ecommerce/page.tsx",
+      "src/app/resources/show-duties-taxes-before-checkout-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/show-duties-taxes-before-checkout-ecommerce",
+    "title": "Should You Show Duties and Taxes Before Checkout?",
+    "desc": "Yes, as early and accurately as practical. Customers do not enjoy discovering mandatory costs after deciding to buy.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/import-duties-ecommerce-conversion-rate/page.tsx",
+      "src/app/resources/import-duties-ecommerce-conversion-rate/page.tsx",
+      "src/app/resources/international-shipping-low-conversion-ecommerce/page.tsx",
+      "src/app/resources/local-currency-vs-store-currency-ecommerce-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/translate-landing-pages-for-international-ads",
+    "title": "Should You Translate Shopify Landing Pages for Paid Ads?",
+    "desc": "If you run ads in a customer's local language, the landing page should normally continue in that language.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/english-ads-vs-local-language-ads/page.tsx",
+      "src/app/resources/english-ads-vs-local-language-ads/page.tsx",
+      "src/app/resources/international-traffic-lower-conversion-ecommerce/page.tsx",
+      "src/app/resources/local-currency-vs-store-currency-ecommerce-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/ad-to-landing-page-message-match",
+    "title": "Ad-to-Landing-Page Message Match: Why It Matters for Conversion Rate",
+    "desc": "Paid traffic creates an expectation the landing page must confirm. Here's how a broken chain of claim, headline, offer and proof quietly kills strong ads.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/different-landing-pages-meta-and-google-ads/page.tsx",
+      "src/app/resources/paid-ads-traffic-to-homepage-ecommerce/page.tsx",
+      "src/app/resources/translate-landing-pages-for-international-ads/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/discount-code-box-checkout-conversion",
+    "title": "Is Your Shopify Discount Code Box Hurting Conversion Rate?",
+    "desc": "A visible discount field can tell a full-price customer they're paying more than someone else.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 5,
+    "inboundFrom": [
+      "src/app/resources/cart-drawer-vs-cart-page-shopify/page.tsx",
+      "src/app/resources/countdown-timer-ecommerce-conversion-rate/page.tsx",
+      "src/app/resources/does-klarna-increase-conversion-rate/page.tsx",
+      "src/app/resources/product-bundles-vs-discounts-ecommerce/page.tsx",
+      "src/app/resources/should-shopify-stores-use-popups/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/social-proof-ecommerce-conversion-rate",
+    "title": "Does Social Proof Actually Increase Ecommerce Conversion Rate?",
+    "desc": "Social proof reduces uncertainty when it's specific and well placed, and can backfire when it feels manufactured.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/only-x-left-ecommerce-conversion/page.tsx",
+      "src/app/resources/show-number-sold-product-page-ecommerce/page.tsx",
+      "src/app/resources/star-ratings-vs-written-reviews-ecommerce/page.tsx",
+      "src/app/resources/where-to-put-reviews-shopify-product-page/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/shopify-checkout-abandonment-shipping-costs",
+    "title": "Why Shopify Customers Abandon Checkout After Seeing Shipping Costs",
+    "desc": "When abandonment jumps after shipping appears, the customer has learned something about the deal they didn't know earlier.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/increase-shopify-average-order-value/page.tsx",
+      "src/app/resources/show-delivery-date-product-page-shopify/page.tsx",
+      "src/app/resources/unexpected-shipping-costs-cart-abandonment/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/where-to-put-reviews-shopify-product-page",
+    "title": "Where Should Customer Reviews Appear on a Shopify Product Page?",
+    "desc": "Reviews are a trust resource that supports several stages of the decision, not one block at the bottom of the page.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/social-proof-ecommerce-conversion-rate/page.tsx",
+      "src/app/resources/star-ratings-vs-written-reviews-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/should-shopify-stores-use-popups",
+    "title": "Should Shopify Stores Use Popups?",
+    "desc": "Popups can turn anonymous traffic into an audience you can contact again, or interrupt the exact customer you paid to bring to the store.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/countdown-timer-ecommerce-conversion-rate/page.tsx",
+      "src/app/resources/ecommerce-popup-conversion-rate/page.tsx",
+      "src/app/resources/exit-intent-popup-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/star-ratings-vs-written-reviews-ecommerce",
+    "title": "Star Ratings vs Written Reviews: Which Matter More?",
+    "desc": "Ratings help customers scan and written reviews help them understand. The two answer different trust questions.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/show-number-sold-product-page-ecommerce/page.tsx",
+      "src/app/resources/social-proof-ecommerce-conversion-rate/page.tsx",
+      "src/app/resources/where-to-put-reviews-shopify-product-page/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/countdown-timer-ecommerce-conversion-rate",
+    "title": "Do Countdown Timers Actually Improve Ecommerce Conversion Rates?",
+    "desc": "Real deadlines create urgency. Timers that reset on every refresh teach visitors the deadline is meaningless.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/discount-code-box-checkout-conversion/page.tsx",
+      "src/app/resources/only-x-left-ecommerce-conversion/page.tsx",
+      "src/app/resources/scarcity-marketing-ecommerce/page.tsx",
+      "src/app/resources/should-shopify-stores-use-popups/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/show-number-sold-product-page-ecommerce",
+    "title": "Should Shopify Stores Show the Number of Products Sold?",
+    "desc": "A genuine purchase count can reassure shoppers, but a fabricated or inflated one makes the store look less credible.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 4,
+    "inboundFrom": [
+      "src/app/resources/only-x-left-ecommerce-conversion/page.tsx",
+      "src/app/resources/scarcity-marketing-ecommerce/page.tsx",
+      "src/app/resources/social-proof-ecommerce-conversion-rate/page.tsx",
+      "src/app/resources/star-ratings-vs-written-reviews-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/only-x-left-ecommerce-conversion",
+    "title": "Does \"Only X Left\" Increase Conversion or Hurt Trust?",
+    "desc": "Real scarcity helps a customer decide. A stock message that never changes teaches the whole store looks dishonest.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/scarcity-marketing-ecommerce/page.tsx",
+      "src/app/resources/show-number-sold-product-page-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/scarcity-marketing-ecommerce",
+    "title": "Is Scarcity Marketing Hurting Your Ecommerce Brand?",
+    "desc": "Genuine scarcity helps customers decide. Permanent scarcity teaches them there was never really a deadline.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/only-x-left-ecommerce-conversion/page.tsx",
+      "src/app/resources/show-number-sold-product-page-ecommerce/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/good-shopify-conversion-rate",
+    "title": "What Is a Good Shopify Conversion Rate?",
+    "desc": "A good Shopify conversion rate is one that supports profitable customer acquisition for your product, traffic mix and margins.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 2,
+    "inboundFrom": [
+      "src/app/resources/improve-shopify-conversion-rate/page.tsx",
+      "src/app/resources/shopify-product-page-not-converting/page.tsx"
+    ]
+  },
+  {
+    "href": "/resources/improve-shopify-conversion-rate",
+    "title": "How to Improve Shopify Conversion Rate Without Increasing Ad Spend",
+    "desc": "If traffic stays the same and conversion rate improves, revenue can grow without buying another click.",
+    "isCore": false,
+    "categoryId": "cro-landing-pages",
+    "categoryLabel": "CRO & Landing Pages",
+    "lastmodExplicit": false,
+    "lastmodDate": "2026-08-11",
+    "inboundCount": 3,
+    "inboundFrom": [
+      "src/app/resources/good-shopify-conversion-rate/page.tsx",
+      "src/app/resources/shopify-product-page-above-the-fold/page.tsx",
+      "src/app/resources/shopify-product-page-not-converting/page.tsx"
+    ]
+  }
+]

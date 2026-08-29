@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "English Ads vs Local-Language Ads: Which Perform Better?",
   description:
     "Local-language ads often improve relevance because customers process familiar language more naturally, but English can still work well in some categories and markets.",

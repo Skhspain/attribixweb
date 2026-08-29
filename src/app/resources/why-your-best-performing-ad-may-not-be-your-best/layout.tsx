@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: true },
   title: "Why Your Best-Performing Ad May Not Be Your Best Creative",
   description: "The ad with the most purchases may be your best commercial asset.",
   alternates: { canonical: "https://www.attribix.app/resources/why-your-best-performing-ad-may-not-be-your-best" },

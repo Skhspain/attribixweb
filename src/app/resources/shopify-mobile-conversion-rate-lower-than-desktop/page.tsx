@@ -133,7 +133,7 @@ export default function Page() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
             <li><Link href="/resources/shopify-page-speed-conversion-rate" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">How Much Does Page Speed Affect Shopify Sales?</Link></li>
-            <li><Link href="/resources/shopify-mobile-traffic-not-converting" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Why Shopify Mobile Traffic Doesn&apos;t Convert</Link></li>
+            <li><Link href="/resources/shopify-mobile-conversion-rate-lower-than-desktop" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Why Shopify Mobile Traffic Doesn&apos;t Convert</Link></li>
             <li><Link href="/resources/free-shipping-vs-discount-conversion" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Free Shipping vs Discount: Which Converts Better?</Link></li>
           </ul>
         </Reveal>
