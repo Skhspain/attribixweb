@@ -57,7 +57,7 @@ export function SoftInquiryCTA({
 
 export function ProductCTA({
   className,
-  trialHref = "/signup",
+  trialHref = "https://apps.shopify.com/attribix-app",
   howHref = "/features",
   trialLabel = "Start free trial",
   howLabel = "See how it works",

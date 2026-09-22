@@ -1333,7 +1333,7 @@ export default function Home() {
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-4">
-              <MagneticButton href="/signup" className="text-base px-9 py-4" onClick={trackTrialClick}>
+              <MagneticButton href="https://apps.shopify.com/attribix-app" className="text-base px-9 py-4" onClick={trackTrialClick}>
                 Start free trial →
               </MagneticButton>
               <Link
@@ -1378,7 +1378,7 @@ export default function Home() {
               Install it on your store, connect Meta and Google, and use it with your existing
               team or agency. You keep control of the account.
             </p>
-            <Link href="/signup" className="mt-4 inline-block text-sm text-white/70 underline decoration-white/25 underline-offset-4 hover:text-white hover:decoration-white/60">
+            <Link href="https://apps.shopify.com/attribix-app" className="mt-4 inline-block text-sm text-white/70 underline decoration-white/25 underline-offset-4 hover:text-white hover:decoration-white/60">
               Start free trial →
             </Link>
           </div>
@@ -1727,7 +1727,7 @@ export default function Home() {
                     ))}
                   </ul>
                   <Link
-                    href="/signup"
+                    href="https://apps.shopify.com/attribix-app"
                     onClick={trackTrialClick}
                     className={cx(
                       "mt-6 inline-block rounded-lg border px-4 py-2 transition",

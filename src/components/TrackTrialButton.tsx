@@ -30,7 +30,7 @@ export default function TrackTrialButton({
   }
 
   return (
-    <MagneticButton href="/signup" className={className} onClick={handleClick}>
+    <MagneticButton href="https://apps.shopify.com/attribix-app" className={className} onClick={handleClick}>
       {children}
     </MagneticButton>
   );

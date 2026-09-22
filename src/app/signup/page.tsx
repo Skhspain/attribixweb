@@ -1,8 +1,7 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { SignUp } from "@clerk/nextjs";
+
+const SHOPIFY_APP_URL = "https://apps.shopify.com/attribix-app";
 
 export default function SignupPage() {
   return (
@@ -70,43 +69,21 @@ export default function SignupPage() {
             </Link>
           </div>
 
-          <h1 className="text-2xl font-bold text-white mb-1">Create your account</h1>
+          <h1 className="text-2xl font-bold text-white mb-1">Get started</h1>
           <p className="text-white/35 text-sm mb-6">14-day free trial · No credit card required</p>
 
-          <SignUp
-            forceRedirectUrl="/analytics"
-            appearance={{
-              variables: {
-                colorBackground: "#0f172a",
-                colorText: "#f1f5f9",
-                colorTextSecondary: "#64748b",
-                colorInputBackground: "#1e293b",
-                colorInputText: "#f1f5f9",
-                colorPrimary: "#6366f1",
-                borderRadius: "10px",
-                fontSize: "14px",
-              },
-              elements: {
-                rootBox: "w-full",
-                card: "!bg-[#0f172a] !border !border-white/[0.09] !rounded-2xl !shadow-[0_32px_80px_rgba(0,0,0,0.7)] !p-6",
-                headerTitle: "hidden",
-                headerSubtitle: "hidden",
-                socialButtonsBlockButton:
-                  "!rounded-xl !border !border-white/10 !bg-white/[0.05] hover:!bg-white/[0.09] !text-white/80 !text-sm !font-medium !transition-colors",
-                dividerLine: "!bg-white/[0.07]",
-                dividerText: "!text-white/20 !text-xs",
-                formFieldLabel:
-                  "!text-white/40 !text-[11px] !font-semibold !uppercase !tracking-widest",
-                formFieldInput:
-                  "!rounded-xl !border !border-white/[0.09] !bg-[#1e293b] !text-white !text-sm focus:!border-indigo-500/70",
-                formButtonPrimary:
-                  "!rounded-xl !bg-white !text-gray-900 !font-semibold !text-sm hover:!bg-slate-100",
-                footerActionText: "!text-white/30 !text-sm",
-                footerActionLink: "!text-indigo-400 hover:!text-indigo-300 !font-medium",
-                formFieldErrorText: "!text-red-400 !text-xs",
-              },
-            }}
-          />
+          <div className="rounded-2xl border border-white/[0.09] bg-[#0f172a] shadow-[0_32px_80px_rgba(0,0,0,0.7)] p-6">
+            <p className="text-white/55 text-sm leading-relaxed mb-5">
+              Attribix installs and connects through the Shopify App Store, so your store and ad
+              accounts link up in one step.
+            </p>
+            <a
+              href={SHOPIFY_APP_URL}
+              className="block w-full rounded-xl bg-white text-gray-900 font-semibold text-sm text-center py-3 hover:bg-slate-100 transition-colors"
+            >
+              Take me to Shopify →
+            </a>
+          </div>
 
           <p className="mt-4 text-center text-xs text-white/20">
             Need help?{" "}

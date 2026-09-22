@@ -249,7 +249,7 @@ export default function PricingPage() {
               </div>
 
               <Link
-                href="/signup"
+                href="https://apps.shopify.com/attribix-app"
                 className={cx(
                   "rounded-xl py-3 text-sm font-semibold text-center transition",
                   plan.highlight
