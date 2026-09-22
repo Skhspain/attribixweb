@@ -4,20 +4,20 @@ import React from "react";
 
 const PLANS = [
   {
-    name: "Starter", price: 39, features: [
+    name: "Starter", price: 49, trialDays: 7, features: [
       "300 orders tracked/mo", "Meta & Google Ads data", "30 days history",
       "UTM builder", "Basic attribution", "Email support",
     ],
   },
   {
-    name: "Growth", price: 79, popular: true, features: [
+    name: "Growth", price: 79, trialDays: 7, popular: true, features: [
       "2,500 orders tracked/mo", "90 days history", "Social calendar & analytics",
       "Product feed — Google & Meta", "Newsletter (2,500 emails/mo)",
       "Lead center", "Review collection", "Priority support",
     ],
   },
   {
-    name: "Pro", price: 149, features: [
+    name: "Pro", price: 149, trialDays: 3, features: [
       "Unlimited orders tracked", "365 days history", "Visitor flow analysis",
       "Multi-touch attribution", "Automation flows", "Newsletter (10,000 emails/mo)",
       "SEO audit", "Custom reports", "Dedicated support",
@@ -46,7 +46,7 @@ export default function BillingPage() {
               <span className="text-3xl font-bold">${plan.price}</span>
               <span className="text-slate-500 text-sm"> /mo</span>
             </div>
-            <p className="text-xs text-slate-400 mt-1">14-day free trial</p>
+            <p className="text-xs text-slate-400 mt-1">{plan.trialDays}-day free trial</p>
 
             <ul className="mt-6 space-y-2">
               {plan.features.map((f) => (

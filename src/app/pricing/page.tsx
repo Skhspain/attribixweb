@@ -12,8 +12,9 @@ function cx(...xs: Array<string | false | null | undefined>) {
 const PLANS = [
   {
     name: "Starter",
-    monthly: 39,
-    yearly: 354,
+    monthly: 49,
+    yearly: 490,
+    trialDays: 7,
     highlight: false,
     badge: null,
     core: [
@@ -34,6 +35,7 @@ const PLANS = [
     name: "Growth",
     monthly: 79,
     yearly: 720,
+    trialDays: 7,
     highlight: true,
     badge: "Most popular",
     core: [
@@ -55,6 +57,7 @@ const PLANS = [
     name: "Pro",
     monthly: 149,
     yearly: 1356,
+    trialDays: 3,
     highlight: false,
     badge: null,
     core: [
@@ -97,7 +100,7 @@ const PRICING_FAQ: { q: string; a: string }[] = [
   },
   {
     q: "Is a credit card required for the trial?",
-    a: "No. The 14-day free trial does not require a credit card to start.",
+    a: "No. The free trial (7 days on Starter and Growth, 3 days on Pro) does not require a credit card to start.",
   },
   {
     q: "Which plan is suitable for higher-volume stores?",
@@ -214,6 +217,7 @@ export default function PricingPage() {
                     Save ${plan.monthly * 12 - plan.yearly}/yr with annual
                   </p>
                 )}
+                <p className="text-xs text-white/40 mt-2">{plan.trialDays}-day free trial</p>
               </div>
 
               <div className="mb-5 flex-1">
@@ -265,7 +269,7 @@ export default function PricingPage() {
 
         {/* Bottom note */}
         <div className="mt-12 text-center text-sm text-white/40">
-          All plans include a 14-day free trial. No credit card required.{" "}
+          Free trial on every plan (7 days on Starter and Growth, 3 days on Pro). No credit card required.{" "}
           <Link href="/book-demo" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4">
             Book a demo
           </Link>{" "}

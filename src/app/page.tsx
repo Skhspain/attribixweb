@@ -1681,22 +1681,22 @@ export default function Home() {
           {[
             {
               name: "Starter",
-              price: 39,
-              note: "14-day free trial",
+              price: 49,
+              note: "7-day free trial",
               features: ["300 orders tracked/mo", "Meta & Google Ads data", "30 days history", "UTM builder"],
               highlight: false,
             },
             {
               name: "Growth",
               price: 79,
-              note: "14-day free trial",
+              note: "7-day free trial",
               features: ["2,500 orders tracked/mo", "90 days history", "Social calendar & analytics", "Product feed for Google & Meta"],
               highlight: true,
             },
             {
               name: "Pro",
               price: 149,
-              note: "14-day free trial",
+              note: "3-day free trial",
               features: ["Unlimited orders tracked", "365 days history", "Visitor flow analysis", "Priority support"],
               highlight: false,
             },

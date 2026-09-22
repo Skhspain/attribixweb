@@ -26,7 +26,7 @@ export default function SignupPage() {
             <span className="font-semibold text-white text-lg">Attribix</span>
           </Link>
 
-          <p className="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-3">Free 14-day trial</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-3">Free trial on every plan</p>
           <h2 className="text-4xl xl:text-[44px] font-bold text-white leading-[1.1] mb-4">
             Stop guessing.<br />
             <span className="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
@@ -70,7 +70,7 @@ export default function SignupPage() {
           </div>
 
           <h1 className="text-2xl font-bold text-white mb-1">Get started</h1>
-          <p className="text-white/35 text-sm mb-6">14-day free trial · No credit card required</p>
+          <p className="text-white/35 text-sm mb-6">Free trial on every plan · No credit card required</p>
 
           <div className="rounded-2xl border border-white/[0.09] bg-[#0f172a] shadow-[0_32px_80px_rgba(0,0,0,0.7)] p-6">
             <p className="text-white/55 text-sm leading-relaxed mb-5">
