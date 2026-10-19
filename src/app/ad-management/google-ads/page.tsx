@@ -9,13 +9,13 @@ import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import FAQList from "@/components/marketing/FAQList";
 
 const INCLUDED = [
-  { title: "Account structure and budget allocation", desc: "Campaigns split across Search, Shopping and Performance Max in proportion to what each is actually returning." },
-  { title: "Merchant Center and product feed", desc: "Feed diagnosed and, within the agreed scope, corrected: item-level issues, category mapping, pricing mismatches." },
-  { title: "Search campaigns", desc: "Keyword and match-type strategy built around commercial intent, with regular negative keyword review and brand vs. non-brand reporting split out." },
-  { title: "Performance Max management", desc: "Asset groups, audience signals and feed inputs managed directly, since PMax bidding depends heavily on getting these right." },
-  { title: "Conversion tracking", desc: "Purchase tracking and enhanced conversions checked against actual Shopify orders, not assumed correct." },
-  { title: "New-customer acquisition", desc: "New vs. returning customer performance reported separately where Google's data supports it, not blended into one number." },
-  { title: "Reporting", desc: "Monthly reporting against Shopify revenue, with the reasoning behind budget moves across campaign types." },
+  { title: "Spending your budget wisely", desc: "We split your budget between search ads, shopping ads and Google's automatic campaigns (Performance Max), based on what each one really earns." },
+  { title: "Your product list in Google", desc: "We find and fix problems in the product list Google uses for shopping ads, like wrong prices or categories (Merchant Center and product feed)." },
+  { title: "Showing up for the right searches", desc: "We choose which searches your ads appear for, block searches that waste money, and report searches for your brand name separately (Search campaigns)." },
+  { title: "Google's automatic campaigns", desc: "Performance Max decides where to show your ads by itself. We give it the right pictures, text, products and hints, because it only works as well as what it is given." },
+  { title: "Making sure sales are counted", desc: "We check that Google sees your sales correctly by comparing with your real Shopify orders (conversion tracking and enhanced conversions)." },
+  { title: "New versus returning customers", desc: "Where Google's data allows, we show sales from new customers separately from people who already bought before." },
+  { title: "Clear monthly reports", desc: "We show results next to your real Shopify sales, and explain why we moved budget." },
 ];
 
 const SCOPE = [
@@ -77,12 +77,12 @@ export default function GoogleAdsManagementPage() {
         <Reveal>
           <Eyebrow>Google Ads management</Eyebrow>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
-            Google Ads management for Shopify stores
+            We run your Google ads
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            Search, Shopping and Performance Max managed together, with
-            Merchant Center, conversion tracking, and budget allocation
-            handled as one account, not three separate problems.
+            Google Ads management for Shopify stores. We run your search ads,
+            shopping ads and Google&apos;s automatic campaigns together, keep
+            your product list in shape, and make sure your sales are counted.
           </p>
           <ManagedServicesCTA className="mt-9" />
         </Reveal>
@@ -128,11 +128,11 @@ export default function GoogleAdsManagementPage() {
       {/* TRACKING TIE-IN */}
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
-          <h2 className="text-xl md:text-2xl font-extrabold">Performance Max is only as good as its inputs</h2>
+          <h2 className="text-xl md:text-2xl font-extrabold">Google&apos;s automatic ads need correct sales numbers</h2>
           <p className="mt-4 text-white/60 leading-relaxed text-sm max-w-2xl">
-            Automated bidding optimises against whatever conversion value
-            it&apos;s given. If that value is wrong, PMax spends toward
-            whatever it&apos;s been told is a good outcome, even if it isn&apos;t.
+            Performance Max decides on its own where to spend your money,
+            based on the sales it is told about. If those numbers are wrong,
+            it chases the wrong results.
             We check this against your actual{" "}
             <Link href="/shopify-roas-tracking" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               Shopify revenue

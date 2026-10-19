@@ -10,11 +10,11 @@ const labelClass = "block text-xs font-semibold uppercase tracking-wide text-whi
 const requiredMark = <span aria-hidden className="text-cyan-400"> *</span>;
 
 const SERVICES = [
-  "Meta Ads management",
-  "Google Ads management",
-  "Meta and Google Ads management",
-  "Advertising audit",
-  "Tracking and attribution setup",
+  "Run my Facebook and Instagram ads",
+  "Run my Google ads",
+  "Run both Facebook and Google ads",
+  "Check my ad accounts (paid audit)",
+  "Fix how my sales are counted (tracking setup)",
   "Not sure yet",
 ];
 
@@ -116,7 +116,7 @@ export default function InquiryForm() {
       </div>
 
       <fieldset>
-        <legend className={labelClass}>Services you&apos;re interested in{requiredMark}</legend>
+        <legend className={labelClass}>What would you like help with?{requiredMark}</legend>
         <div className="mt-2 flex flex-wrap gap-2">
           {SERVICES.map((s) => (
             <label
@@ -131,7 +131,7 @@ export default function InquiryForm() {
       </fieldset>
 
       <div>
-        <label className={labelClass} htmlFor="adSpend">Current monthly advertising spend (USD){requiredMark}</label>
+        <label className={labelClass} htmlFor="adSpend">How much do you spend on ads each month? (USD){requiredMark}</label>
         <select required id="adSpend" name="adSpend" className={inputClass + " cursor-pointer appearance-none"} defaultValue="">
           <option value="" disabled>Select a range</option>
           <option value="not-advertising">Not advertising yet</option>
@@ -143,14 +143,14 @@ export default function InquiryForm() {
       </div>
 
       <div>
-        <label className={labelClass} htmlFor="notes">What do you need help with?{requiredMark}</label>
+        <label className={labelClass} htmlFor="notes">Tell us a bit more{requiredMark}</label>
         <textarea
           required
           id="notes"
           name="notes"
           rows={4}
           className={inputClass}
-          placeholder="A short description of your situation, what's not working, or what you're trying to figure out…"
+          placeholder="What do you sell? What is working, what isn't, and what would you like to change?"
         />
       </div>
 

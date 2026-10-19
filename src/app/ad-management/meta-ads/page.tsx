@@ -9,13 +9,13 @@ import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 import FAQList from "@/components/marketing/FAQList";
 
 const INCLUDED = [
-  { title: "Account structure and strategy", desc: "Campaign and ad set structure built around your catalogue and margins, not a generic template." },
-  { title: "Creative testing", desc: "A running test queue across formats and angles, with clear criteria for what gets scaled and what gets cut." },
-  { title: "Audience testing", desc: "Prospecting and retargeting audiences tested against each other, not assumed to work from day one." },
-  { title: "Catalogue and dynamic ads", desc: "Product catalogue kept in sync so dynamic ads show current pricing and availability." },
-  { title: "Budget allocation", desc: "Spend moved between campaigns and audiences based on what's converting, reviewed on a set schedule rather than ad hoc." },
-  { title: "Tracking and attribution review", desc: "Meta Pixel and Conversions API checked as part of the engagement, not left to drift once it's set up." },
-  { title: "Reporting", desc: "Reporting against Shopify revenue, with the reasoning behind budget moves, not just a screenshot of Ads Manager." },
+  { title: "A plan that fits your store", desc: "We set up your ads around your products and how much you earn on each one, not a one-size-fits-all template (account structure)." },
+  { title: "Testing new ads", desc: "We keep trying new pictures, videos and messages. The ones that sell get more budget, the rest get switched off (creative testing)." },
+  { title: "Finding the right people", desc: "We test ads for new customers and for people who already visited your store, to see which groups buy (audience testing)." },
+  { title: "Ads that show your products", desc: "We keep your product list up to date, so ads show the right prices and only items in stock (catalogue and dynamic ads)." },
+  { title: "Spending your budget wisely", desc: "We move money towards the ads that bring sales, and check this on a regular schedule (budget allocation)." },
+  { title: "Making sure sales are counted", desc: "We check that your store reports sales to Facebook correctly and keeps doing so (Meta Pixel and Conversions API)." },
+  { title: "Clear reports", desc: "We show results next to your real Shopify sales, and explain why we made each change." },
 ];
 
 const OPERATIONS = [
@@ -77,13 +77,13 @@ export default function MetaAdsManagementPage() {
         <Reveal>
           <Eyebrow>Meta Ads management</Eyebrow>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
-            Meta Ads management for Shopify stores
+            We run your Facebook and Instagram ads
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            Full management of your Meta account: strategy, creative
-            direction, audience testing and day-to-day optimisation,
-            reported against real Shopify revenue instead of Ads Manager&apos;s
-            own numbers.
+            Meta Ads management for Shopify stores. We plan your ads, test
+            new ones, choose who sees them and look after your budget every
+            day. We judge results by your real Shopify sales, not only by
+            what Facebook reports.
           </p>
           <ManagedServicesCTA className="mt-9" />
         </Reveal>
@@ -129,7 +129,7 @@ export default function MetaAdsManagementPage() {
       {/* TRACKING TIE-IN */}
       <section className="mx-auto max-w-3xl px-4 py-10">
         <Reveal>
-          <h2 className="text-xl md:text-2xl font-extrabold">Reporting starts from Shopify, not Ads Manager</h2>
+          <h2 className="text-xl md:text-2xl font-extrabold">We check results against your real sales</h2>
           <p className="mt-4 text-white/60 leading-relaxed text-sm max-w-2xl">
             Budget decisions are checked against your actual{" "}
             <Link href="/shopify-attribution" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">

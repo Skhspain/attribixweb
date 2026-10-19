@@ -9,17 +9,17 @@ import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 const TOOLS = [
   {
     title: "ROAS Calculator",
-    desc: "Calculate return on ad spend and your store's break-even ROAS from margin.",
+    desc: "Find out how much you get back for every $1 spent on ads, and how much you need to break even.",
     href: "/tools/roas-calculator",
   },
   {
     title: "MER Calculator",
-    desc: "Calculate marketing efficiency ratio from total revenue and total marketing spend.",
+    desc: "Compare all your sales with all your marketing costs, to see if marketing pays off overall (MER).",
     href: "/tools/mer-calculator",
   },
   {
     title: "Attribution Model Explorer",
-    desc: "See how one Shopify order is credited to Meta and Google under four attribution models.",
+    desc: "See how one sale can be credited to Facebook or Google, depending on the rule you use.",
     href: "/tools/attribution-models",
   },
 ];
@@ -46,9 +46,8 @@ export default function ToolsPage() {
             Free Shopify attribution tools
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            Quick calculators for the numbers that come up constantly when
-            reviewing Meta and Google Ads performance against Shopify
-            revenue.
+            Simple calculators that help you understand if your Facebook
+            and Google ads are making you money.
           </p>
         </Reveal>
       </section>

@@ -7,9 +7,9 @@ import { Reveal } from "@/components/marketing/Reveal";
 import Breadcrumbs from "@/components/marketing/Breadcrumbs";
 
 const INCLUDES = [
-  { title: "Your current setup", desc: "What you're running on Meta and Google today, and what's working or not." },
-  { title: "Tracking and attribution", desc: "Whether your Pixel, CAPI and Google conversion tracking are set up in a way we'd trust." },
-  { title: "Fit", desc: "An honest read on whether ongoing management or an audit makes more sense for where you are." },
+  { title: "Your ads today", desc: "What you run on Facebook and Google now, and what is or isn't working." },
+  { title: "How your sales are counted", desc: "Whether your store reports sales to Facebook and Google correctly (pixel, Conversions API and Google conversion tracking)." },
+  { title: "What fits you", desc: "An honest view on whether you need us to run your ads, a one-off check, or neither." },
 ];
 
 export default function AdManagementConsultationPage() {
@@ -21,11 +21,11 @@ export default function AdManagementConsultationPage() {
         <Breadcrumbs items={[{ label: "Ad management", href: "/ad-management" }, { label: "Book a free consultation call" }]} />
         <Reveal>
           <h1 className="text-4xl sm:text-5xl font-extrabold leading-[1.08] tracking-tight text-center">
-            Book a free consultation call
+            Book a free call
           </h1>
           <p className="mt-5 text-base sm:text-lg text-white/65 max-w-xl mx-auto text-center leading-relaxed">
-            A 30-minute call with the team that would actually manage your
-            campaigns, not a salesperson. Pick a time below.
+            A 30-minute call with the people who would run your ads, not a
+            salesperson. Pick a time below.
           </p>
         </Reveal>
       </section>
@@ -43,10 +43,10 @@ export default function AdManagementConsultationPage() {
               ))}
             </div>
             <p className="text-sm text-white/50 leading-relaxed">
-              We discuss your current advertising setup, tracking, challenges
-              and goals. You can share your screen during the call if
-              reviewing part of the account would be useful. We don&apos;t
-              require account access ahead of time.
+              We talk about your ads, how your sales are counted, and your
+              goals. You can share your screen if you want to show us
+              something. You don&apos;t need to give us access to anything
+              beforehand.
             </p>
             <Link href="/ad-management" className="inline-flex items-center gap-1.5 text-sm text-white/40 hover:text-white/70 transition-colors">
               ← Back to Ad management

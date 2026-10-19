@@ -1,30 +1,34 @@
 [
   {
-    "q": "Which stores does Attribix work with?",
-    "a": "Shopify stores, including Shopify Plus. Attribix is installed from the Shopify App Store and connects through Shopify's standard app and webhook APIs. Other ecommerce platforms are not supported."
+    "q": "What does Attribix do, in one sentence?",
+    "a": "It shows you which of your Facebook, Instagram and Google ads bring you customers, and makes sure your sales are counted correctly."
   },
   {
-    "q": "Will Attribix numbers match Meta Ads Manager or Google Ads exactly?",
-    "a": "No. Each ad platform counts conversions with its own attribution windows, including some view-through conversions, and both can claim the same order. Attribix starts from orders recorded in Shopify and counts each order once. The gap between the two shows how much the platforms may be over-crediting themselves."
+    "q": "Which online stores does Attribix work with?",
+    "a": "Shopify stores, including Shopify Plus. You install Attribix from the Shopify App Store. Other store platforms are not supported."
   },
   {
-    "q": "How do you track conversions accurately?",
-    "a": "Attribix combines browser-side and server-side conversion signals. Meta CAPI uses matching parameters and event deduplication; Google Ads uses its own conversion and transaction-ID mechanisms. Each platform's own method is used to avoid double-counting."
+    "q": "Why are Attribix numbers different from Facebook or Google?",
+    "a": "Facebook and Google count sales their own way. Both can count the same order. Some also count people who only saw an ad and bought later. Attribix starts from the real orders in your Shopify store and counts each one once. The difference shows how much extra credit the platforms may be taking."
   },
   {
-    "q": "Which attribution models are available?",
-    "a": "Last-click, first-click, linear and time-decay: compare them directly in your attribution dashboard, with last-click, first-click or linear available as your account's default model in Settings."
+    "q": "How does Attribix count sales correctly?",
+    "a": "Your store reports each sale to Facebook and Google from the shopper's browser. Attribix also reports it from a server, which ad blockers can't stop. Both reports carry the same ID number, so the sale is only counted once. In technical terms: browser and server-side tracking with event deduplication, using the Meta Conversions API and Google's own conversion IDs."
   },
   {
-    "q": "How is privacy handled?",
-    "a": "Attribix supports Google Consent Mode v2, and implements the data-request and deletion webhooks Shopify requires of every app. See our Privacy Policy for full details on what's collected and how it's handled."
+    "q": "What is attribution, and which options do I get?",
+    "a": "Attribution is the rule for which ad gets credit when a customer saw more than one. You can compare four rules: the last ad clicked (last click), the first ad clicked (first click), an equal share for every ad (linear), and more credit to recent clicks (time-decay). You can set last click, first click or linear as your default in Settings."
   },
   {
-    "q": "Can I export my data?",
-    "a": "Customer lists can be exported as a CSV formatted for Google Ads Customer Match. If you need other data exported, contact us at hello@attribix.app."
+    "q": "What about my customers' privacy?",
+    "a": "Attribix respects your visitors' cookie choices through Google Consent Mode v2. It also follows Shopify's rules for customer data requests and deletions. Our Privacy Policy explains what is collected and how it is used."
   },
   {
-    "q": "How do refunds, tax and shipping affect revenue?",
-    "a": "Revenue is captured from your Shopify order total at the time of purchase. It doesn't automatically re-adjust if an order is later refunded or edited, so for periods with significant refund activity, cross-check against Shopify's own reporting."
+    "q": "Can I download my data?",
+    "a": "You can download your customer list as a file ready for Google Ads Customer Match, so you can reach past buyers. If you need other data, email us at hello@attribix.app."
+  },
+  {
+    "q": "Do refunds change the sales numbers?",
+    "a": "No. Attribix records the order total at the moment of purchase. If an order is refunded or changed later, Attribix does not update it. In months with many refunds, check your Shopify reports as well."
   }
 ]

@@ -19,11 +19,11 @@ function isFAQArray(x: unknown): x is FAQ[] {
 const PRICING_ITEMS: FAQ[] = [
   {
     q: "Is there a free trial?",
-    a: `Yes: ${trialSummary()}. Use it to check that tracking works and the reports make sense for your store before you pay.`,
+    a: `Yes. The trial lasts ${trialSummary()}. Use it to see your own numbers before you pay anything.`,
   },
   {
-    q: "How am I billed?",
-    a: `${BILLING_NOTE} Cancel by uninstalling the app.`,
+    q: "How do I pay?",
+    a: `${BILLING_NOTE} To cancel, uninstall the app.`,
   },
 ];
 
@@ -49,7 +49,7 @@ export default function FAQPage() {
           as="h1"
           eyebrow="FAQ"
           title="Frequently asked questions"
-          intro="How Attribix tracks and attributes sales, what it works with, and how pricing works."
+          intro="Short, simple answers about what Attribix does, how it counts your sales, and what it costs."
         />
 
         <div className="mt-10">
@@ -66,7 +66,7 @@ export default function FAQPage() {
 
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
           <TrialLink location="faq" />
-          <DemoLink location="faq" />
+          <DemoLink location="faq">Get a free walkthrough</DemoLink>
         </div>
       </main>
     </ProductPageShell>

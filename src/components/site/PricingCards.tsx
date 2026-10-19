@@ -44,12 +44,12 @@ function PlanCard({
 
       <p className="mt-4 flex items-end gap-1">
         <span className="text-4xl font-extrabold tracking-tight text-white">${price}</span>
-        <span className="mb-1.5 text-sm text-white/55">USD / month</span>
+        <span className="mb-1.5 text-sm text-white/55">USD a month</span>
       </p>
       <p className="mt-1 text-xs text-white/55">
         {yearly
-          ? `Billed $${plan.yearly.toLocaleString("en-US")} per year (save ${yearlySavingsPct(plan)}%)`
-          : `or $${plan.yearly.toLocaleString("en-US")} per year`}
+          ? `Paid yearly: $${plan.yearly.toLocaleString("en-US")} (you save ${yearlySavingsPct(plan)}%)`
+          : `or $${plan.yearly.toLocaleString("en-US")} if you pay yearly`}
       </p>
       <p className="mt-3 text-sm font-medium text-emerald-300">{plan.trialDays}-day free trial</p>
 
@@ -66,7 +66,7 @@ function PlanCard({
         location={`${location}_${plan.id}`}
         className={cx("mt-7 w-full", plan.highlight ? btnPrimary : btnSecondary)}
       >
-        Start {plan.trialDays}-day trial
+        Try free for {plan.trialDays} days
       </TrialLink>
     </li>
   );
@@ -89,8 +89,8 @@ export default function PricingCards({
         <div className="mb-10 flex justify-center">
           <div role="radiogroup" aria-label="Billing interval" className="inline-flex rounded-full border border-white/10 bg-white/5 p-1">
             {[
-              { v: false, label: "Monthly" },
-              { v: true, label: `Yearly, save up to ${MAX_YEARLY_SAVINGS_PCT}%` },
+              { v: false, label: "Pay monthly" },
+              { v: true, label: `Pay yearly, save up to ${MAX_YEARLY_SAVINGS_PCT}%` },
             ].map((o) => (
               <button
                 key={String(o.v)}

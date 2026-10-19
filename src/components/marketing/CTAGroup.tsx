@@ -26,14 +26,14 @@ export function ManagedServicesCTA({
   return (
     <div className={cx("flex flex-wrap items-center gap-3", className)}>
       <Link href={inquiryHref} className={primaryClass}>
-        Request ad management
+        Ask us to run your ads
       </Link>
       <Link
         href={consultationHref}
         className={secondaryClass}
         onClick={() => trackConsultationClick("services_cta")}
       >
-        Book a free consultation
+        Book a free call
       </Link>
     </div>
   );
@@ -48,7 +48,7 @@ export function ManagedServicesCTA({
 export function SoftInquiryCTA({
   className,
   href = "/ad-management/inquiry",
-  label = "Request ad management",
+  label = "Ask us to run your ads",
 }: {
   className?: string;
   href?: string;

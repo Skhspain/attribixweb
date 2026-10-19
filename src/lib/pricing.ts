@@ -12,7 +12,7 @@
 export const SHOPIFY_APP_URL = "https://apps.shopify.com/attribix-app";
 export const CURRENCY = "USD";
 export const BILLING_NOTE =
-  "Prices in USD. Billed every 30 days through your Shopify invoice.";
+  "Prices are in US dollars. You pay every 30 days through your normal Shopify bill.";
 
 export type PlanId = "starter" | "growth" | "pro";
 
@@ -25,6 +25,9 @@ export type Plan = {
   trialDays: number;
   highlight: boolean;
   bestFor: string;
+  /** Orders counted per month; null = unlimited. */
+  orderLimit: number | null;
+  historyDays: number;
   /** Limits shown on every plan card, in the same order for each plan. */
   limits: {
     orders: string;
@@ -48,16 +51,18 @@ export const PLANS: Plan[] = [
     yearly: 490,
     trialDays: 7,
     highlight: false,
-    bestFor: "Newer stores with up to about 300 orders a month.",
+    bestFor: "For newer stores with up to 300 orders a month.",
+    orderLimit: 300,
+    historyDays: 30,
     limits: {
-      orders: "300 tracked orders / month",
-      history: "30 days of analytics history",
-      newsletter: "500 newsletter sends / month",
-      reviews: "50 reviews / month",
-      leads: "25 leads / month",
+      orders: "Counts up to 300 orders a month",
+      history: "Keeps 30 days of history",
+      newsletter: "500 newsletter emails a month",
+      reviews: "50 reviews a month",
+      leads: "25 leads a month",
     },
-    extras: ["UTM builder"],
-    summary: ["300 tracked orders / month", "Meta and Google Ads data", "30 days of history", "UTM builder"],
+    extras: ["Link builder (UTM builder)"],
+    summary: ["Counts up to 300 orders a month", "Facebook and Google ad results", "Keeps 30 days of history", "Link builder (UTM builder)"],
   },
   {
     id: "growth",
@@ -67,16 +72,18 @@ export const PLANS: Plan[] = [
     yearly: 720,
     trialDays: 7,
     highlight: true,
-    bestFor: "Established stores with up to 2,500 orders a month.",
+    bestFor: "For growing stores with up to 2,500 orders a month.",
+    orderLimit: 2500,
+    historyDays: 90,
     limits: {
-      orders: "2,500 tracked orders / month",
-      history: "90 days of analytics history",
-      newsletter: "5,000 subscribers, 20,000 sends",
+      orders: "Counts up to 2,500 orders a month",
+      history: "Keeps 90 days of history",
+      newsletter: "5,000 subscribers, 20,000 emails",
       reviews: "Unlimited reviews",
       leads: "Unlimited leads",
     },
-    extras: ["Social calendar and analytics", "Google and Meta product feed"],
-    summary: ["2,500 tracked orders / month", "90 days of history", "Social calendar and analytics", "Google and Meta product feed"],
+    extras: ["Social media calendar and stats", "Product list for Google and Facebook (product feed)"],
+    summary: ["Counts up to 2,500 orders a month", "Keeps 90 days of history", "Social media calendar and stats", "Product list for Google and Facebook"],
   },
   {
     id: "pro",
@@ -86,24 +93,27 @@ export const PLANS: Plan[] = [
     yearly: 1356,
     trialDays: 3,
     highlight: false,
-    bestFor: "High-volume stores that need unlimited orders and a full year of history.",
+    bestFor: "For busy stores that want no order limit and a full year of history.",
+    orderLimit: null,
+    historyDays: 365,
     limits: {
-      orders: "Unlimited tracked orders",
-      history: "365 days of analytics history",
-      newsletter: "Unlimited subscribers and sends",
+      orders: "Counts every order, no limit",
+      history: "Keeps 365 days of history",
+      newsletter: "Unlimited subscribers and emails",
       reviews: "Unlimited reviews",
       leads: "Unlimited leads",
     },
-    extras: ["Visitor flow analysis", "Social calendar and analytics", "Google and Meta product feed", "Priority support"],
-    summary: ["Unlimited tracked orders", "365 days of history", "Visitor flow analysis", "Priority support"],
+    extras: ["Visitor paths (visitor flow analysis)", "Social media calendar and stats", "Product list for Google and Facebook (product feed)", "Faster support (priority)"],
+    summary: ["Counts every order, no limit", "Keeps a full year of history", "Visitor paths", "Faster support"],
   },
 ];
 
 /** Included on every plan. Written to read mid-sentence. */
 export const INCLUDED_ON_ALL_PLANS = [
-  "Meta and Google Ads data",
-  "server-side tracking and attribution",
-  "unlimited SEO audits",
+  "your Facebook and Google ad results",
+  "correct sale counting (server-side tracking)",
+  "a view of which ads earned each sale (attribution)",
+  "unlimited SEO checks",
 ];
 
 export function includedSentence() {

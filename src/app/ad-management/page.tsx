@@ -13,32 +13,36 @@ import FAQList from "@/components/marketing/FAQList";
 ----------------------------------------------------- */
 const SERVICES = [
   {
-    title: "Meta Ads management",
-    desc: "Ongoing management of Facebook and Instagram campaigns: account structure, creative direction and testing, audiences, budgets and day-to-day optimisation.",
-    fit: "For Shopify brands that want Meta run for them, month over month.",
+    title: "We run your Facebook and Instagram ads",
+    term: "Meta Ads management",
+    desc: "We plan your campaigns, test new ads, choose who sees them and manage your budget every day.",
+    fit: "For Shopify stores that want an expert to run their Facebook and Instagram ads.",
     href: "/ad-management/meta-ads",
-    cta: "Meta Ads management",
+    cta: "Facebook and Instagram ads",
   },
   {
-    title: "Google Ads management",
-    desc: "Ongoing management of Search, Shopping and Performance Max: product feed, bidding, search terms, brand versus non-brand spend and budget allocation.",
-    fit: "For Shopify brands that want Google run for them, month over month.",
+    title: "We run your Google ads",
+    term: "Google Ads management",
+    desc: "We run your Google Search and Google Shopping ads. We keep your product list in shape, choose which searches to show up for, and manage your budget.",
+    fit: "For Shopify stores that want an expert to run their Google ads.",
     href: "/ad-management/google-ads",
-    cta: "Google Ads management",
+    cta: "Google ads",
   },
   {
-    title: "Tracking and measurement setup",
-    desc: "We review and set up Shopify tracking, the Meta Pixel and Conversions API, and Google Ads purchase and enhanced conversions, including deduplication and Consent Mode, so conversions are recorded correctly.",
-    fit: "For brands that run ads in-house but want tracking they can trust.",
+    title: "We fix how your sales are counted",
+    term: "Tracking and measurement setup",
+    desc: "We check and set up how your store reports sales to Facebook and Google, so each sale is counted, and counted only once. We also respect your visitors' cookie choices.",
+    fit: "For stores that run their own ads but don't trust the numbers.",
     href: "/ad-management/inquiry",
-    cta: "Ask about tracking setup",
+    cta: "Ask about fixing your tracking",
   },
   {
-    title: "Advertising audit (paid)",
-    desc: "A fixed-scope review of your Meta and Google Ads accounts: structure, budget allocation, tracking and creative performance, delivered as a written report with prioritised fixes.",
-    fit: "For brands that want a second opinion before committing to ongoing management.",
+    title: "We check your ad accounts (paid)",
+    term: "Advertising audit",
+    desc: "We look through your Facebook and Google ad accounts and write a report: what works, what doesn't, and what to fix first.",
+    fit: "For stores that want a second opinion before hiring anyone.",
     href: "/ad-management/inquiry",
-    cta: "Ask about an audit",
+    cta: "Ask about an ad account check",
   },
 ];
 
@@ -79,54 +83,54 @@ const TESTIMONIALS = [
 const PROCESS = [
   {
     n: "1",
-    title: "Send inquiry or book a call",
-    desc: "Tell us about your store, your current ad spend and what you're trying to fix.",
+    title: "Tell us about your store",
+    desc: "Send us a short message or book a free call. Tell us what you sell, what you spend on ads, and what you want to fix.",
   },
   {
     n: "2",
-    title: "Account and tracking review",
-    desc: "We look at your existing Meta/Google accounts and your current tracking setup, including what Shopify data is and isn't connected.",
+    title: "We look at your accounts",
+    desc: "We look at your Facebook and Google ad accounts, and at how your store reports sales to them.",
   },
   {
     n: "3",
-    title: "Plan and proposal",
-    desc: "You get a clear, written plan: what we'd change, what it costs, and what to expect. No work starts before you approve it.",
+    title: "You get a written plan",
+    desc: "We tell you what we would change, what it costs, and what to expect. Nothing starts until you say yes.",
   },
   {
     n: "4",
-    title: "Manage, report, adjust",
-    desc: "We run the campaigns, connect everything to Attribix, and report monthly against real Shopify revenue, not platform-reported numbers.",
+    title: "We run your ads and report back",
+    desc: "We manage your ads every day. Each month we show you the results next to your real Shopify sales.",
   },
 ];
 
 const FAQ_ITEMS = [
   {
-    q: "How is this different from just using Attribix on its own?",
-    a: "Attribix is software, so you can run it yourself with your existing agency or in-house team. Ad Management is optional: the same team behind Attribix manages your campaigns directly, using the same tracking, and real people make the campaign decisions, not an automated system.",
+    q: "What is the difference between Attribix and Ad Management?",
+    a: "Attribix is an app. You use it yourself to see which ads work. Ad Management is a service. Our team runs your ads for you, using the same app. You can use one without the other.",
   },
   {
-    q: "What's the relationship between Attribix and bevit?",
-    a: "bevit is the advertising team; Attribix is the tracking platform bevit built to work through the attribution problems it kept running into for clients. Ad Management is delivered by the bevit team.",
+    q: "Who is bevit?",
+    a: "bevit is our advertising team. We built Attribix because we needed better numbers for our own clients. Ad Management is done by the bevit team.",
   },
   {
-    q: "Do I need to use Attribix to work with you on ads?",
-    a: "No, but we typically set up Attribix tracking alongside any ongoing management, because it's how we make sure campaign decisions are based on real Shopify revenue.",
+    q: "Do I need Attribix to work with you?",
+    a: "No. But we usually set it up when we run your ads, because it shows us your real sales, not just what Facebook and Google report.",
   },
   {
-    q: "What's the difference between the free consultation call and the paid audit?",
-    a: "The free consultation call is a short conversation to understand your situation and see if we're a fit. The paid audit is a deeper, structured review of your ad accounts and tracking, with specific written recommendations you keep either way.",
+    q: "What is the difference between the free call and the paid check?",
+    a: "The free call is a short chat to understand your store and see if we are a good fit. The paid check (audit) is a careful look through your ad accounts, with a written report you keep either way.",
   },
   {
-    q: "Do you guarantee results?",
-    a: "No, nobody honestly can. We'll tell you what we see, what we'd change, and why, but we don't promise a specific ROAS or growth number.",
+    q: "Can you promise results?",
+    a: "No. Nobody can honestly promise results in advertising. We will tell you what we see, what we would change and why. We won't promise a specific number.",
   },
   {
-    q: "Which platforms do you manage?",
-    a: "Meta Ads and Google Ads for Shopify stores. That's what we focus on and what we're best at.",
+    q: "Which ad platforms do you manage?",
+    a: "Facebook and Instagram ads (Meta) and Google ads, for Shopify stores. That is what we focus on.",
   },
   {
-    q: "How much does ongoing management cost?",
-    a: "It depends on account complexity and monthly ad spend. Send an inquiry or book a free consultation call and we'll give you a straight answer.",
+    q: "How much does it cost?",
+    a: "It depends on how much you spend on ads and how much work your accounts need. Send us a message or book a free call, and we will give you a clear price.",
   },
 ];
 
@@ -157,14 +161,14 @@ export default function AdManagementPage() {
       {/* ── 1. HERO ── */}
       <section className="relative mx-auto max-w-4xl px-4 pt-24 pb-14 md:pt-32 md:pb-16 text-center">
         <Reveal>
-          <Eyebrow>Ad management by the team behind Attribix</Eyebrow>
+          <Eyebrow>Ad Management · Meta and Google Ads</Eyebrow>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
-            Meta &amp; Google Ads management for Shopify stores
+            We run your Facebook, Instagram and Google ads for you
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-2xl mx-auto leading-relaxed">
-            We combine hands-on campaign management with server-side tracking
-            and honest attribution, so decisions are based on real Shopify
-            revenue, not only the results reported by advertising platforms.
+            Our team manages your ads every day, for Shopify stores. We judge
+            them by your real sales in Shopify, not only by what Facebook and
+            Google say.
           </p>
           <ManagedServicesCTA className="mt-9 justify-center" />
         </Reveal>
@@ -182,9 +186,9 @@ export default function AdManagementPage() {
             <span className="h-3 w-px bg-white/15 hidden sm:block" />
             <span>Top Rated seller</span>
             <span className="h-3 w-px bg-white/15 hidden sm:block" />
-            <span>Marketing experience since 2008</span>
+            <span>In online advertising since 2008</span>
             <span className="h-3 w-px bg-white/15 hidden sm:block" />
-            <span>Meta &amp; Google Ads specialists</span>
+            <span>Facebook, Instagram and Google ads</span>
           </div>
         </Reveal>
       </section>
@@ -192,23 +196,18 @@ export default function AdManagementPage() {
       {/* ── 3. ATTRIBIX + BEVIT STORY ── */}
       <section className="mx-auto max-w-3xl px-4 py-14">
         <Reveal>
-          <Eyebrow>Why we also run ads</Eyebrow>
-          <h2 className="text-2xl md:text-3xl font-extrabold">Attribix was built from real advertising work</h2>
+          <Eyebrow>Who we are</Eyebrow>
+          <h2 className="text-2xl md:text-3xl font-extrabold">The team that built Attribix</h2>
           <div className="mt-5 space-y-4 text-white/65 leading-relaxed">
             <p>
-              Attribix was created by the team behind <strong className="text-white/85">bevit</strong> after
-              years of managing Meta and Google Ads and dealing with
-              incomplete, conflicting and misleading platform reports. The
-              software helps us connect campaign decisions with Shopify
-              orders, server-side events and customer journeys.
+              We are <strong className="text-white/85">bevit</strong>, an advertising team.
+              For years we ran Facebook and Google ads for clients, and the
+              numbers from those platforms often didn&apos;t match the real
+              sales. So we built Attribix to see which ads really worked.
             </p>
             <p>
-              Many attribution platforms are developed separately from the
-              teams making daily campaign decisions. Attribix grew directly
-              out of our work managing real Meta and Google Ads accounts.
-              Ad Management is the optional service for businesses that want
-              the same team to manage their campaigns directly, using that
-              same data.
+              Ad Management is for stores that would rather have us run their
+              ads. We use the same app and the same real sales numbers.
             </p>
           </div>
         </Reveal>
@@ -217,11 +216,10 @@ export default function AdManagementPage() {
       {/* ── 4. THREE SERVICES ── */}
       <section className="mx-auto max-w-6xl px-4 py-14">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold">Services</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold">What we can do for you</h2>
           <p className="mt-3 text-white/60 max-w-xl">
-            Some stores want the accounts fully handed off. Others just want
-            a second opinion, or tracking they can trust while they run ads
-            themselves.
+            Some stores want us to run everything. Others just want a second
+            opinion, or help getting their sales counted correctly.
           </p>
         </Reveal>
         <div className="mt-9 grid gap-5 md:grid-cols-2">
@@ -229,6 +227,7 @@ export default function AdManagementPage() {
             <Reveal key={s.title} delay={i * 80}>
               <div className="h-full rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col">
                 <h3 className="font-semibold text-base text-white">{s.title}</h3>
+                <p className="mt-1 text-xs text-white/45">{s.term}</p>
                 <p className="mt-3 text-sm text-white/60 leading-relaxed flex-1">{s.desc}</p>
                 <p className="mt-4 text-xs text-white/40 border-t border-white/10 pt-4">{s.fit}</p>
                 <Link href={s.href} className="mt-3 inline-flex min-h-[44px] items-center text-sm font-semibold text-cyan-300 hover:text-cyan-200">
@@ -247,36 +246,33 @@ export default function AdManagementPage() {
           <Reveal>
             <Eyebrow>Reporting and measurement</Eyebrow>
             <h2 className="text-2xl md:text-3xl font-extrabold max-w-xl">
-              The difference is what we&apos;re optimising against
+              We judge your ads by your real sales
             </h2>
             <p className="mt-5 text-white/65 leading-relaxed max-w-3xl">
-              Ad-manager numbers are shaped by cookie loss, attribution
-              windows, and each platform&apos;s incentive to take credit for
-              the sale. That is why we built Attribix in the first place.
-              When we manage your ads, we&apos;re not just watching ROAS in
-              Ads Manager. We&apos;re watching what actually shipped in
-              Shopify, tied back to the ad, the campaign and the customer
-              journey that led to it.
+              Facebook and Google both want credit for your sales, and both
+              miss some sales too. So we don&apos;t just trust their numbers.
+              We check every decision against the orders in your Shopify
+              store, and the ads that led to them.
             </p>
           </Reveal>
 
           <Reveal delay={100}>
             <div className="mt-8 flex flex-col sm:flex-row items-stretch gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-5 text-sm">
-              <div className="flex-1 rounded-xl bg-white/5 px-4 py-3 text-center text-white/75">Campaign management</div>
+              <div className="flex-1 rounded-xl bg-white/5 px-4 py-3 text-center text-white/75">We run your ads</div>
               <div className="flex items-center justify-center text-white/30">+</div>
-              <div className="flex-1 rounded-xl bg-white/5 px-4 py-3 text-center text-white/75">Attribix tracking</div>
+              <div className="flex-1 rounded-xl bg-white/5 px-4 py-3 text-center text-white/75">Attribix counts the sales</div>
               <div className="flex items-center justify-center text-white/30">+</div>
-              <div className="flex-1 rounded-xl bg-white/5 px-4 py-3 text-center text-white/75">Shopify revenue</div>
+              <div className="flex-1 rounded-xl bg-white/5 px-4 py-3 text-center text-white/75">Your real Shopify sales</div>
               <div className="flex items-center justify-center text-white/30">=</div>
-              <div className="flex-1 rounded-xl bg-cyan-500/10 border border-cyan-500/20 px-4 py-3 text-center text-cyan-200 font-medium">Better-informed decisions</div>
+              <div className="flex-1 rounded-xl bg-cyan-500/10 border border-cyan-500/20 px-4 py-3 text-center text-cyan-200 font-medium">Better decisions</div>
             </div>
           </Reveal>
 
           <Reveal delay={150}>
             <ul className="mt-8 grid gap-3 sm:grid-cols-3 text-sm text-white/60">
-              <li className="rounded-xl border border-white/10 bg-white/5 p-4">Server-side events, not just pixel data, mean fewer gaps from iOS, ad blockers and cookie loss.</li>
-              <li className="rounded-xl border border-white/10 bg-white/5 p-4">Every campaign decision checked against Shopify orders, not platform-reported conversions.</li>
-              <li className="rounded-xl border border-white/10 bg-white/5 p-4">One team accountable for both the ads and the tracking, so there&apos;s no finger-pointing between agency and tool.</li>
+              <li className="rounded-xl border border-white/10 bg-white/5 p-4">Fewer sales go missing, because we also report them from a server that ad blockers can&apos;t stop.</li>
+              <li className="rounded-xl border border-white/10 bg-white/5 p-4">Every decision is checked against your Shopify orders, not just what the ad platforms report.</li>
+              <li className="rounded-xl border border-white/10 bg-white/5 p-4">One team handles both the ads and the counting, so nobody can blame someone else.</li>
             </ul>
           </Reveal>
 
@@ -289,13 +285,12 @@ export default function AdManagementPage() {
       {/* ── 6. EXPERIENCE ── */}
       <section className="mx-auto max-w-3xl px-4 py-16">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold">Experience across ecommerce and performance advertising</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold">Who we have worked with</h2>
           <p className="mt-5 text-white/65 leading-relaxed">
-            We have managed Meta and Google Ads for businesses across
-            ecommerce, services and digital products, including MyHeritage,
-            London Diamonds and Roberes. Written case studies are still being
-            prepared. Send us an inquiry to discuss experience relevant to
-            your business and advertising channels.
+            We have run Facebook and Google ads for online stores, service
+            businesses and digital products, including MyHeritage, London
+            Diamonds and Roberes. We are still writing up full case studies.
+            Send us a message to hear about work similar to your business.
           </p>
         </Reveal>
       </section>
@@ -305,7 +300,7 @@ export default function AdManagementPage() {
         <div className="absolute inset-0 -z-10 bg-black/15" />
         <div className="mx-auto max-w-6xl px-4">
           <Reveal>
-            <h2 className="text-2xl md:text-3xl font-extrabold">What happens after you reach out</h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold">What happens after you contact us</h2>
           </Reveal>
           <div className="mt-9 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {PROCESS.map((step, i) => (
@@ -327,9 +322,9 @@ export default function AdManagementPage() {
           <Eyebrow>Pricing approach</Eyebrow>
           <h2 className="text-2xl md:text-3xl font-extrabold">How pricing works</h2>
           <ul className="mt-6 space-y-3 text-white/70 leading-relaxed">
-            <li>Ongoing management is quoted per account, based on the platforms involved, account complexity and monthly ad spend.</li>
-            <li>You receive the price in a written plan. No work starts before you approve it.</li>
-            <li>The advertising audit is a fixed-scope, paid engagement. The first consultation call is free.</li>
+            <li>The price depends on which platforms we run, how much you spend on ads, and how much work your accounts need.</li>
+            <li>You get the price in writing first. Nothing starts until you say yes.</li>
+            <li>The first call is free. The ad account check (audit) has a fixed price.</li>
           </ul>
         </Reveal>
       </section>
@@ -370,10 +365,10 @@ export default function AdManagementPage() {
               <div className="h-full rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.04] p-6">
                 <h3 className="font-semibold text-sm text-emerald-300">Good fit</h3>
                 <ul className="mt-4 space-y-2.5 text-sm text-white/65">
-                  <li>Shopify or Shopify Plus stores with existing revenue and some paid ad history</li>
-                  <li>Roughly $3,000+/month combined on Meta and/or Google Ads, or about to start</li>
-                  <li>Want a partner who reports against real revenue, not platform ROAS</li>
-                  <li>Open to server-side tracking and attribution changes</li>
+                  <li>Shopify stores that already make sales and have tried ads before</li>
+                  <li>Spend about $3,000 a month or more on Facebook and Google ads, or plan to</li>
+                  <li>Want results measured by real sales, not just by ad platform numbers</li>
+                  <li>Happy for us to improve how sales are counted</li>
                 </ul>
               </div>
             </Reveal>
@@ -381,8 +376,8 @@ export default function AdManagementPage() {
               <div className="h-full rounded-2xl border border-white/10 bg-white/5 p-6">
                 <h3 className="font-semibold text-sm text-white/70">Probably not a fit yet</h3>
                 <ul className="mt-4 space-y-2.5 text-sm text-white/50">
-                  <li>Pre-revenue stores with no traffic or sales history</li>
-                  <li>Stores on platforms other than Shopify</li>
+                  <li>Brand-new stores with no visitors or sales yet</li>
+                  <li>Stores that don&apos;t use Shopify</li>
                   <li>Looking for the cheapest option rather than a long-term partner</li>
                 </ul>
               </div>
@@ -416,7 +411,7 @@ export default function AdManagementPage() {
       {/* ── 11. FINAL CTA ── */}
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold">Want a second opinion on your ad accounts?</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold">Want a second opinion on your ads?</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
             Send us a few details in writing, or book a free 30-minute call.
             Either way, you&apos;ll hear directly from the team that manages

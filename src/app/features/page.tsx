@@ -26,10 +26,14 @@ import {
 
 type Feature = {
   id: string;
-  eyebrow: string;
+  /** Plain-language name shown in the page nav and eyebrow. */
+  name: string;
+  /** Technical term, kept for people who know it and for search. */
+  term: string;
   title: string;
   what: string;
   why: string;
+  help: string;
   action: string;
   points?: { k: string; v: string }[];
   links?: { label: string; href: string }[];
@@ -39,82 +43,91 @@ type Feature = {
 const FEATURES: Feature[] = [
   {
     id: "dashboard",
-    eyebrow: "Advertising dashboard",
-    title: "Spend, revenue and ROAS on one screen",
-    what: "The Overview combines Shopify revenue and orders with ad spend from Meta and Google. Dedicated Meta Ads and Google Ads views break results down by campaign, ad set and ad.",
-    why: "Each ad platform shows its own version of results. Seeing spend next to actual store revenue tells you whether advertising is paying back overall.",
-    action: "Start each review here. If store-level ROAS is below what your margins need, fix that before tuning single campaigns.",
+    name: "Your numbers in one place",
+    term: "Advertising dashboard",
+    title: "See your sales and ad costs side by side",
+    what: "Attribix shows your Shopify sales next to what you spent on Facebook, Instagram and Google ads. You can also look at each platform on its own, down to single ads.",
+    why: "Each ad platform shows its own numbers. Your store shows the real sales. Seeing them together tells you if your ads are worth the money.",
+    help: "You can quickly tell if your advertising as a whole is paying off, before you dig into single ads.",
+    action: "Look at this screen once a week. If you get back less than you need to make a profit, fix that first.",
     points: [
-      { k: "Ad spend", v: "What you paid Meta and Google in the period." },
-      { k: "Revenue", v: "Order value recorded in Shopify." },
-      { k: "ROAS", v: "Revenue divided by ad spend. 3.0x means $3 back for every $1 spent." },
-      { k: "CPA", v: "Cost per acquisition: spend divided by purchases." },
-      { k: "AOV", v: "Average order value: revenue divided by orders." },
+      { k: "Ad cost (ad spend)", v: "What you paid Facebook and Google for your ads." },
+      { k: "Sales (revenue)", v: "The money your customers paid you, as recorded in Shopify." },
+      { k: "ROAS", v: "Sales for every $1 spent on ads. $300 in sales from $100 of ads is a ROAS of 3." },
+      { k: "Cost per sale (CPA)", v: "Ad cost divided by number of sales. $100 of ads and 4 sales means $25 per sale." },
+      { k: "Average order (AOV)", v: "Sales divided by number of orders. How much a customer spends each time." },
     ],
-    links: [{ label: "Shopify ROAS tracking explained", href: "/shopify-roas-tracking" }],
+    links: [{ label: "Learn more about tracking ROAS on Shopify", href: "/shopify-roas-tracking" }],
     visual: <OverviewMock />,
   },
   {
     id: "ads-review",
-    eyebrow: "Ads Review",
-    title: "Find the campaigns that pay for themselves",
-    what: "Ads Review lists campaigns with spend, purchases, cost per acquisition and ROAS, and lets you set a target ROAS. Campaigns are marked above or below that target and can be filtered by it.",
-    why: "A single target based on your margins turns a long table into a short list of decisions.",
-    action: "Increase budget gradually on campaigns above target. Check tracking, offer and creative on the ones below it before cutting them.",
+    name: "Which ads make money",
+    term: "Ads Review",
+    title: "Find the ads that pay for themselves",
+    what: "Ads Review lists all your ad campaigns. For each one you see what it cost, how many sales it brought and what each sale cost you.",
+    why: "Some campaigns make money and some quietly waste it. Without a clear list, it is hard to tell them apart.",
+    help: "You set a goal, for example $3 back for every $1 spent. Attribix marks which campaigns beat it, so you know where your money works best.",
+    action: "Slowly give more budget to campaigns that beat your goal. For the ones below it, check the ad and the offer before you switch them off.",
     links: [
-      { label: "Free break-even ROAS calculator", href: "/tools/roas-calculator" },
-      { label: "Is a 4x ROAS profitable?", href: "/resources/400-roas-profitable" },
+      { label: "Work out your break-even goal with the free ROAS calculator", href: "/tools/roas-calculator" },
+      { label: "Is a ROAS of 4 profitable?", href: "/resources/400-roas-profitable" },
     ],
     visual: <AdsReviewMock />,
   },
   {
     id: "attribution",
-    eyebrow: "Sales attribution",
-    title: "Connect ad activity to Shopify orders",
-    what: "Attribix records visits with their source and UTM parameters and links them to the Shopify orders that follow. The Attribution view splits that revenue by channel under last-click, first-click, linear or time-decay models.",
-    why: "Meta and Google each count a sale when their ad was involved, so both can claim the same order. Attribution based on your own orders counts each order once.",
-    action: "Choose the model that matches how you buy media and use it consistently. Compare it with what each platform reports to see how much they overlap.",
+    name: "Who earned each sale",
+    term: "Sales attribution",
+    title: "See which channel really brought each sale",
+    what: "Attribix notes where each visitor came from, like a Facebook ad, a Google search or an email. When they buy, it links the order to those visits.",
+    why: "Many customers see more than one ad before they buy. Facebook and Google both claim the sale, so their numbers add up to more than you really sold.",
+    help: "Each order is counted once, from your own Shopify data. You get a fairer view of which channel deserves your budget.",
+    action: "Choose one credit rule and use it every time you compare channels. Then compare it with what Facebook and Google say.",
     points: [
-      { k: "Platform-reported conversions", v: "What Meta or Google count, using their own windows, including some view-through conversions." },
-      { k: "Attribix attribution", v: "Tracked Shopify orders, credited by the model you choose. Each order is counted once." },
+      { k: "What Facebook or Google report", v: "Their own count of sales. Both can count the same order, and some count people who only saw an ad." },
+      { k: "What Attribix reports", v: "Your real Shopify orders, each counted once, with credit given by the rule you choose." },
+      { k: "Credit rules (attribution models)", v: "Last click, first click, equal split (linear) or more credit to recent clicks (time-decay)." },
     ],
     links: [
-      { label: "Try the attribution model explorer", href: "/tools/attribution-models" },
-      { label: "Shopify attribution explained", href: "/shopify-attribution" },
+      { label: "Try the free attribution model explorer", href: "/tools/attribution-models" },
+      { label: "Learn more about Shopify attribution", href: "/shopify-attribution" },
     ],
     visual: <AttributionMock />,
   },
   {
     id: "tracking",
-    eyebrow: "Meta Conversions API and Google conversions",
-    title: "Send purchases from the server, counted once",
-    what: "Alongside the browser pixel, Attribix sends purchase events to Meta through the Conversions API and to Google from the server. Both copies of an event share one event ID so the platform can deduplicate them.",
-    why: "Ad blockers, Safari limits and short cookie lifetimes stop some browser events from arriving. Meta and Google optimise delivery on the conversions they receive, so missing events weaken campaigns.",
-    action: "Turn on server-side sending in Settings. Use Meta's test event code to confirm events arrive, then check deduplication in Events Manager.",
+    name: "Sales counted correctly",
+    term: "Meta Conversions API and Google server-side tracking",
+    title: "Make sure every sale you can count gets counted, once",
+    what: "Your store normally tells Facebook and Google about a sale from the shopper's browser. Attribix also sends it from a server. Both reports carry the same ID, so the sale is counted once.",
+    why: "Ad blockers and browser privacy settings stop some sales from being reported. Then your ads look worse than they are.",
+    help: "Facebook and Google use your sales to decide who sees your ads. When they see more of your real sales, they have better information to find buyers.",
+    action: "Turn it on in Attribix Settings. Then use Facebook's test tool to check that your sales are arriving.",
     points: [
-      { k: "Server-side events", v: "Sent from a server, so browser blocking does not stop them." },
-      { k: "Deduplication", v: "A shared event ID tells the platform the browser and server events are the same purchase." },
-      { k: "Consent", v: "Server-side sending changes how events travel, not whether you may send them. Consent rules still apply." },
+      { k: "Server-side tracking", v: "Sending sales from a server instead of only from the browser. Ad blockers can't stop it." },
+      { k: "Deduplication", v: "Giving both reports of a sale the same ID, so it is not counted twice." },
+      { k: "Your visitors' choices still count", v: "This changes how a sale is sent, not whether you are allowed to send it. Cookie choices still apply." },
     ],
     links: [
-      { label: "Meta CAPI for Shopify", href: "/meta-capi-shopify" },
-      { label: "Google Ads conversion tracking for Shopify", href: "/google-ads-conversion-tracking-shopify" },
-      { label: "Fix duplicate Meta purchases", href: "/resources/fix-duplicate-meta-purchases-shopify" },
+      { label: "How the Meta Conversions API works on Shopify", href: "/meta-capi-shopify" },
+      { label: "How Google Ads conversion tracking works on Shopify", href: "/google-ads-conversion-tracking-shopify" },
+      { label: "How to fix sales counted twice in Facebook", href: "/resources/fix-duplicate-meta-purchases-shopify" },
     ],
     visual: <TrackingMock />,
   },
 ];
 
 const MORE = [
-  { t: "Orders and products", d: "Every order with its source, campaign and country, plus revenue and units sold by product.", plan: "All plans" },
-  { t: "UTM builder", d: "Build consistently tagged links so campaigns show up correctly in attribution.", plan: "All plans" },
-  { t: "Customer lists", d: "Export customers as a CSV formatted for Google Ads Customer Match.", plan: "All plans" },
-  { t: "SEO audit", d: "Scans your store and lists fixes in priority order.", plan: "Unlimited on all plans" },
-  { t: "Newsletter", d: "Email campaigns and automated flows with revenue tracking.", plan: "Limits vary by plan" },
-  { t: "Lead Center", d: "Capture leads from forms and ads and track their status.", plan: "Limits vary by plan" },
-  { t: "Reviews", d: "Collect product reviews and show them in a customisable widget.", plan: "Limits vary by plan" },
-  { t: "Product feeds", d: "One feed URL for Google Merchant Center and Meta product catalogues.", plan: "Growth and Pro" },
-  { t: "Visitor flow analysis", d: "See how visitors move through the store before buying or leaving.", plan: "Pro" },
+  { t: "Orders and products", d: "See every order with where the customer came from, and which products sell best.", plan: "All plans" },
+  { t: "Link builder (UTM builder)", d: "Make tagged links for your ads and emails, so Attribix knows where each visitor came from.", plan: "All plans" },
+  { t: "Customer lists", d: "Download your customer list in the format Google Ads needs to reach past buyers.", plan: "All plans" },
+  { t: "SEO check", d: "Checks your store for things that hurt how you show up in Google search, and lists what to fix first.", plan: "Unlimited on all plans" },
+  { t: "Newsletter", d: "Send emails and automatic email series, and see how much they sell.", plan: "Limits depend on plan" },
+  { t: "Lead Center", d: "Collect contact details from forms and ads, and keep track of who you followed up with.", plan: "Limits depend on plan" },
+  { t: "Reviews", d: "Collect product reviews from customers and show them on your store.", plan: "Limits depend on plan" },
+  { t: "Product feeds", d: "One link that lists your products for Google Shopping and Facebook shops.", plan: "Growth and Pro" },
+  { t: "Visitor paths (visitor flow)", d: "See which pages visitors look at before they buy or leave.", plan: "Pro" },
 ];
 
 function FeatureBlock({ f, flip }: { f: Feature; flip: boolean }) {
@@ -122,21 +135,26 @@ function FeatureBlock({ f, flip }: { f: Feature; flip: boolean }) {
     <section id={f.id} aria-labelledby={`${f.id}-title`} className="scroll-mt-24 border-t border-white/10 py-16 md:py-20">
       <div className={cx("grid items-start gap-10 lg:grid-cols-2 lg:gap-14", flip && "lg:[&>*:first-child]:order-2")}>
         <div>
-          <Eyebrow className="mb-3">{f.eyebrow}</Eyebrow>
+          <Eyebrow className="mb-3">{f.name}</Eyebrow>
           <h2 id={`${f.id}-title`} className="text-3xl font-extrabold tracking-tight text-white">
             {f.title}
           </h2>
+          <p className="mt-2 text-sm text-white/50">Also known as: {f.term}</p>
           <dl className="mt-6 space-y-5 text-[15px] leading-relaxed">
             <div>
               <dt className="text-xs font-semibold uppercase tracking-wide text-white/45">What it does</dt>
               <dd className="mt-1 text-white/80">{f.what}</dd>
             </div>
             <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-white/45">Why it matters</dt>
+              <dt className="text-xs font-semibold uppercase tracking-wide text-white/45">Why you should care</dt>
               <dd className="mt-1 text-white/80">{f.why}</dd>
             </div>
             <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-white/45">What to do with it</dt>
+              <dt className="text-xs font-semibold uppercase tracking-wide text-white/45">How it helps your business</dt>
+              <dd className="mt-1 text-white/80">{f.help}</dd>
+            </div>
+            <div>
+              <dt className="text-xs font-semibold uppercase tracking-wide text-white/45">What to do next</dt>
               <dd className="mt-1 text-white/80">{f.action}</dd>
             </div>
           </dl>
@@ -179,8 +197,8 @@ export default function FeaturesPage() {
           <SectionHeader
             as="h1"
             eyebrow="Features"
-            title="What Attribix does for your Shopify store"
-            intro="Attribix connects Shopify with Meta and Google Ads, improves how purchases are sent back to the platforms, and shows which campaigns are connected to real orders. Here is each part, what it is for, and how to use it."
+            title="What Attribix does, in plain words"
+            intro="Attribix shows which of your Facebook, Instagram and Google ads bring you customers, and makes sure your sales are counted correctly. Below, each part is explained in four short answers: what it does, why you should care, how it helps, and what to do next."
           />
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <TrialLink location="features_top" />
@@ -191,7 +209,7 @@ export default function FeaturesPage() {
 
           <nav aria-label="On this page" className="mt-12">
             <ul className="flex flex-wrap gap-2 text-sm">
-              {[...FEATURES.map((f) => ({ id: f.id, label: f.eyebrow })), { id: "more", label: "Marketing tools" }].map((x) => (
+              {[...FEATURES.map((f) => ({ id: f.id, label: f.name })), { id: "more", label: "Extra tools" }].map((x) => (
                 <li key={x.id}>
                   <a
                     href={`#${x.id}`}
@@ -216,8 +234,8 @@ export default function FeaturesPage() {
           <SectionHeader
             id="more-title"
             eyebrow="Also included"
-            title="Marketing tools on the same store data"
-            intro="Attribution and tracking are the core of Attribix. These tools use the same connected store data. Availability and limits depend on your plan."
+            title="Extra tools for your store"
+            intro="The main job of Attribix is showing which ads work. These extra tools are included too. What you get depends on your plan."
           />
           <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {MORE.map((m) => (
@@ -229,7 +247,7 @@ export default function FeaturesPage() {
             ))}
           </ul>
           <p className="mt-6 text-sm text-white/60">
-            Exact limits for each plan are on the{" "}
+            See exactly what each plan includes on the{" "}
             <Link href="/pricing#compare" className={textLink}>
               pricing page
             </Link>
@@ -243,12 +261,12 @@ export default function FeaturesPage() {
               Try it on your own store
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-white/70">
-              Install from the Shopify App Store and connect Meta and Google. If you would rather see it first, book a
-              short walkthrough.
+              Install Attribix from the Shopify App Store and connect your ad accounts. Want to see it first? Book a
+              free walkthrough with our team.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <TrialLink location="features_bottom" />
-              <DemoLink location="features_bottom" />
+              <DemoLink location="features_bottom">Get a free walkthrough</DemoLink>
             </div>
           </div>
         </Section>

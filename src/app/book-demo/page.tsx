@@ -15,14 +15,14 @@ export default function BookDemoPage() {
           <div>
             <p className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              Get a walkthrough
+              Free, no obligation
             </p>
             <h1 className="mt-4 text-5xl md:text-6xl font-extrabold leading-[1.05]">
-              Book a demo
+              Get a free walkthrough
             </h1>
             <p className="mt-5 text-lg text-white/80 max-w-xl">
-              20–30 minutes on Zoom. We&apos;ll review your current tracking, show live reports, and
-              outline the setup plan.
+              A 20 to 30 minute video call. We show you Attribix, look at how your store counts sales
+              today, and tell you what we would fix.
             </p>
 
             <div className="mt-8 space-y-4 text-sm text-white/75">
@@ -31,10 +31,10 @@ export default function BookDemoPage() {
                   1
                 </span>
                 <div>
-                  <p className="font-medium text-white">We look at your current tracking.</p>
+                  <p className="font-medium text-white">We look at how your sales are counted today.</p>
                   <p className="text-white/70">
-                    Pixel events, server events, UTMs, and what your ad platforms &amp; Shopify are
-                    actually saying.
+                    We compare what Facebook and Google report with the real sales in your Shopify
+                    store.
                   </p>
                 </div>
               </div>
@@ -43,10 +43,10 @@ export default function BookDemoPage() {
                   2
                 </span>
                 <div>
-                  <p className="font-medium text-white">We show you live reports.</p>
+                  <p className="font-medium text-white">We show you Attribix.</p>
                   <p className="text-white/70">
-                    How Attribix stitches together journeys and makes ROAS &amp; MER actually
-                    trustworthy.
+                    How it shows which ads bring you customers, and how much you get back for each
+                    dollar you spend on ads.
                   </p>
                 </div>
               </div>
@@ -55,10 +55,10 @@ export default function BookDemoPage() {
                   3
                 </span>
                 <div>
-                  <p className="font-medium text-white">We leave you with a plan.</p>
+                  <p className="font-medium text-white">You leave with a plan.</p>
                   <p className="text-white/70">
-                    Exact steps to clean up tracking whether you use Attribix, something else, or
-                    build it in-house.
+                    Clear next steps to get your sales counted correctly, whether or not you use
+                    Attribix.
                   </p>
                 </div>
               </div>

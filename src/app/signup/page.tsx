@@ -33,15 +33,15 @@ export default function SignupPage() {
             </span>
           </h2>
           <p className="text-white/45 text-[15px] leading-relaxed mb-8">
-            Server-side tracking and attribution for Meta and Google Ads, built for Shopify.
+            See which Facebook, Instagram and Google ads bring you customers, and make sure your sales are counted correctly.
           </p>
 
           <ul className="space-y-2.5">
             {[
-              "Server-side events reduce iOS and browser tracking gaps",
-              "Clearer ROAS across Meta and Google Ads",
-              "Connects directly to your Shopify store",
-              "Billed through your Shopify invoice",
+              "Fewer sales go missing because of ad blockers",
+              "See which ads make money and which waste it",
+              "Works with your Shopify store, no code needed",
+              "You pay through your normal Shopify bill",
             ].map((t) => (
               <li key={t} className="flex items-center gap-2.5 text-sm text-white/55">
                 <svg className="h-4 w-4 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -73,8 +73,8 @@ export default function SignupPage() {
 
           <div className="rounded-2xl border border-white/[0.09] bg-[#0f172a] shadow-[0_32px_80px_rgba(0,0,0,0.7)] p-6">
             <p className="text-white/55 text-sm leading-relaxed mb-5">
-              Attribix installs and connects through the Shopify App Store, so your store and ad
-              accounts link up in one step.
+              You install Attribix from the Shopify App Store. After that, you connect your Facebook
+              and Google ad accounts inside the app.
             </p>
             <a
               href={SHOPIFY_APP_URL}

@@ -82,7 +82,7 @@ export default function BookDemoForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium" htmlFor="email">Work email</label>
+        <label className="block text-sm font-medium" htmlFor="email">Email</label>
         <input
           required
           type="email"
@@ -94,7 +94,7 @@ export default function BookDemoForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium" htmlFor="storeUrl">Store URL</label>
+        <label className="block text-sm font-medium" htmlFor="storeUrl">Your store&apos;s web address</label>
         <input
           id="storeUrl"
           name="storeUrl"
@@ -104,13 +104,13 @@ export default function BookDemoForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium" htmlFor="goals">What are you hoping to improve?</label>
+        <label className="block text-sm font-medium" htmlFor="goals">What would you like to know or fix?</label>
         <textarea
           id="goals"
           name="goals"
           rows={4}
           className="mt-1 w-full rounded-xl border border-white/10 bg-white/10 px-3 py-2 text-white placeholder-white/50"
-          placeholder="e.g., Server-side purchase accuracy, product-level ROAS, Meta CAPI setup…"
+          placeholder="For example: I don't know which of my Facebook ads make money"
         />
       </div>
 
@@ -125,7 +125,7 @@ export default function BookDemoForm() {
         disabled={status === "sending"}
         className="w-full px-5 py-3 rounded-xl bg-blue-600 text-white font-semibold hover:opacity-90 disabled:opacity-60"
       >
-        {status === "sending" ? "Sending…" : "Request demo"}
+        {status === "sending" ? "Sending…" : "Request a walkthrough"}
       </button>
 
       <p className="text-xs text-white/60">

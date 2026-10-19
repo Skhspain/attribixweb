@@ -11,6 +11,7 @@ type Step = {
   title: string;
   what: string;
   why: string;
+  help: string;
   action: string;
   href: string;
   visual: React.ReactNode;
@@ -20,40 +21,44 @@ const STEPS: Step[] = [
   {
     id: "overview",
     tab: "Overview",
-    title: "Revenue, spend and ROAS in one view",
-    what: "Shopify revenue and orders sit next to Meta and Google ad spend, with ROAS and average order value calculated for you.",
-    why: "You stop switching between three dashboards that each count sales differently.",
-    action: "Check whether total ad spend is paying back at the store level before looking at single campaigns.",
+    title: "All your key numbers on one screen",
+    what: "Shows your sales from Shopify next to what you spent on Facebook and Google ads.",
+    why: "You don't have to open three different apps that all count sales differently.",
+    help: "In a few seconds you can see if your advertising is paying for itself.",
+    action: "Check the big picture first: is your ad spending bringing back more than it costs?",
     href: "/features#dashboard",
     visual: <OverviewMock />,
   },
   {
     id: "ads",
     tab: "Ads Review",
-    title: "See which campaigns clear your target",
-    what: "Every Meta and Google campaign with spend, purchases, cost per acquisition and ROAS, marked against a target ROAS you set.",
-    why: "It shows which campaigns pay for themselves and which only look good inside the ad platform.",
-    action: "Move budget towards campaigns above target and investigate the ones below it.",
+    title: "See which ads make money",
+    what: "Lists every ad campaign with what it cost, how many sales it brought, and how much each sale cost you.",
+    why: "Some campaigns make money and some quietly waste it. This screen shows which is which.",
+    help: "You set a goal, for example $3 in sales for every $1 spent. Attribix marks which campaigns beat it.",
+    action: "Give more budget to campaigns that beat your goal. Look closer at the ones that don't before you turn them off.",
     href: "/features#ads-review",
     visual: <AdsReviewMock />,
   },
   {
     id: "attribution",
     tab: "Attribution",
-    title: "Compare how each channel gets credit",
-    what: "Tracked Shopify orders split by channel under last-click, first-click, linear or time-decay attribution.",
-    why: "Meta and Google each credit themselves. Seeing several models side by side shows where they overlap.",
-    action: "Pick the model that matches how you buy media, and use it consistently in budget decisions.",
+    title: "See which channel really earned the sale",
+    what: "Splits your sales between Facebook, Google, email and other channels. You choose the rule for who gets the credit.",
+    why: "Facebook and Google both take credit for the same sale. Here, each order is counted only once.",
+    help: "You get a fairer picture of which channel deserves more of your budget.",
+    action: "Pick one rule and stick with it, so you compare channels fairly over time.",
     href: "/features#attribution",
     visual: <AttributionMock />,
   },
   {
     id: "tracking",
-    tab: "Tracking",
-    title: "Send purchases from the server, counted once",
-    what: "Purchases go to Meta through the Conversions API and to Google from the server, alongside the browser pixel, using a shared event ID.",
-    why: "Browser tracking misses some purchases because of ad blockers and privacy limits. Platforms optimise on what they receive.",
-    action: "Turn on server-side sending, then confirm in Meta Events Manager that events arrive and are deduplicated.",
+    tab: "Sale tracking",
+    title: "Make sure sales are reported correctly",
+    what: "Sends every sale to Facebook and Google in a second, more reliable way, and makes sure it is only counted once.",
+    why: "Ad blockers hide some sales. Then your ads look worse than they really are.",
+    help: "Facebook and Google use your sales to find new buyers. Better information can help them show your ads to the right people.",
+    action: "Turn it on in Settings, then check in Facebook that your sales are arriving.",
     href: "/features#tracking",
     visual: <TrackingMock />,
   },
@@ -125,16 +130,20 @@ export default function ProductTour() {
               <dd className="mt-1 text-white/80">{step.what}</dd>
             </div>
             <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-white/45">Why it matters</dt>
+              <dt className="text-xs font-semibold uppercase tracking-wide text-white/45">Why you should care</dt>
               <dd className="mt-1 text-white/80">{step.why}</dd>
             </div>
             <div>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-white/45">What to do with it</dt>
+              <dt className="text-xs font-semibold uppercase tracking-wide text-white/45">How it helps your business</dt>
+              <dd className="mt-1 text-white/80">{step.help}</dd>
+            </div>
+            <div>
+              <dt className="text-xs font-semibold uppercase tracking-wide text-white/45">What to do next</dt>
               <dd className="mt-1 text-white/80">{step.action}</dd>
             </div>
           </dl>
           <Link href={step.href} className={cx("mt-6 inline-flex min-h-[44px] items-center text-sm", textLink)}>
-            More on {step.tab.toLowerCase()} in Features
+            Learn more about this screen
           </Link>
         </div>
         <div className="min-w-0">{step.visual}</div>

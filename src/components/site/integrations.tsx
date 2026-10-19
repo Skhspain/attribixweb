@@ -9,19 +9,19 @@ export const INTEGRATIONS = [
     id: "shopify",
     name: "Shopify",
     logo: "/assets/logos/shopify.svg",
-    role: "Orders, products and customers come from your store. Installed from the Shopify App Store, no theme code edits.",
+    role: "Your real orders and sales. You install Attribix from the Shopify App Store, with no code to edit.",
   },
   {
     id: "meta",
-    name: "Meta Ads",
+    name: "Facebook and Instagram ads",
     logo: "/assets/logos/meta.svg",
-    role: "Campaign, ad set and ad spend and results. Purchases sent back through the Conversions API.",
+    role: "What each ad cost and what it brought in. Attribix also sends your sales back to Meta (the company behind Facebook and Instagram), so it can find more buyers like them.",
   },
   {
     id: "google",
     name: "Google Ads",
     logo: "/assets/logos/google.svg",
-    role: "Campaign spend and conversions. Purchase conversions sent server-side, plus product feeds for Google Shopping.",
+    role: "What each Google ad cost and what it brought in. Attribix also sends your sales back to Google, and can list your products in Google Shopping.",
   },
 ] as const;
 

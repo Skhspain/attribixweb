@@ -81,16 +81,16 @@ export function OverviewMock() {
     { s: "Other", v: 5 },
   ];
   return (
-    <AppFrame title="Overview" active="Overview" caption="Overview: revenue, orders, ad spend and ROAS for the last 30 days.">
+    <AppFrame title="Overview" active="Overview" caption="Overview: your sales, orders and ad costs for the last 30 days.">
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
-        <Kpi label="Revenue" value={usd(revenue)} />
+        <Kpi label="Sales" value={usd(revenue)} />
         <Kpi label="Orders" value={orders.toLocaleString("en-US")} />
-        <Kpi label="AOV" value={usd(revenue / orders, 2)} />
-        <Kpi label="Ad spend" value={usd(spend)} />
-        <Kpi label="ROAS" value={`${(revenue / spend).toFixed(2)}x`} hint="Revenue ÷ spend" />
+        <Kpi label="Avg. order" value={usd(revenue / orders, 2)} />
+        <Kpi label="Ad cost" value={usd(spend)} />
+        <Kpi label="ROAS" value={`${(revenue / spend).toFixed(2)}x`} hint="Sales per $1 of ads" />
       </div>
       <div className="mt-3 rounded-lg border border-slate-200 p-3">
-        <div className="text-[11px] font-semibold text-slate-700">Sessions by source</div>
+        <div className="text-[11px] font-semibold text-slate-700">Where visitors came from</div>
         <div className="mt-2 space-y-1.5">
           {sources.map((x) => (
             <div key={x.s} className="grid grid-cols-[56px_1fr_32px] items-center gap-2 text-[10px] text-slate-600">
@@ -121,12 +121,12 @@ export function AdsReviewMock({ target = 2.5 }: { target?: number }) {
     <AppFrame
       title="Ads Review"
       active="Ads Review"
-      caption={`Ads Review: every campaign against your target ROAS (${target.toFixed(1)}x in this example).`}
+      caption={`Ads Review: each campaign checked against your goal of $${target.toFixed(2)} in sales for every $1 spent.`}
     >
       <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
         <div className="text-xs font-semibold text-slate-800">Campaigns, last 30 days</div>
         <div className="rounded-md border border-slate-200 px-2 py-1 text-[10px] text-slate-600">
-          Target ROAS <b className="text-slate-900">{target.toFixed(1)}x</b>
+          Goal <b className="text-slate-900">{target.toFixed(1)}x</b>
         </div>
       </div>
       <div className="overflow-x-auto">
@@ -134,9 +134,9 @@ export function AdsReviewMock({ target = 2.5 }: { target?: number }) {
           <thead className="text-[10px] uppercase tracking-wide text-slate-500">
             <tr className="border-b border-slate-200">
               <th className="py-1.5 pr-2 font-medium">Campaign</th>
-              <th className="py-1.5 pr-2 text-right font-medium">Spend</th>
-              <th className="py-1.5 pr-2 text-right font-medium">Purchases</th>
-              <th className="py-1.5 pr-2 text-right font-medium">CPA</th>
+              <th className="py-1.5 pr-2 text-right font-medium">Cost</th>
+              <th className="py-1.5 pr-2 text-right font-medium">Sales</th>
+              <th className="py-1.5 pr-2 text-right font-medium">Cost per sale</th>
               <th className="py-1.5 pr-2 text-right font-medium">ROAS</th>
               <th className="py-1.5 text-right font-medium">Status</th>
             </tr>
@@ -162,7 +162,7 @@ export function AdsReviewMock({ target = 2.5 }: { target?: number }) {
                         ok ? "bg-emerald-50 text-emerald-700" : "bg-amber-50 text-amber-700"
                       )}
                     >
-                      {ok ? "Above target" : "Below target"}
+                      {ok ? "Beats goal" : "Below goal"}
                     </span>
                   </td>
                 </tr>
@@ -189,7 +189,7 @@ export function AttributionMock() {
     <AppFrame
       title="Attribution"
       active="Attribution"
-      caption="Attribution: tracked Shopify revenue split by channel under the model you choose."
+      caption="Attribution: your Shopify sales split by channel. You pick the rule for who gets the credit."
     >
       <div className="mb-3 flex flex-wrap gap-1.5" aria-hidden>
         {["Last click", "First click", "Linear", "Time-decay"].map((m) => (
@@ -205,17 +205,17 @@ export function AttributionMock() {
         ))}
       </div>
       <div className="mb-3 grid grid-cols-3 gap-2">
-        <Kpi label="Attributed revenue" value={usd(total)} />
-        <Kpi label="Conversions" value={conv.toLocaleString("en-US")} />
-        <Kpi label="AOV" value={usd(total / conv, 2)} />
+        <Kpi label="Sales counted" value={usd(total)} />
+        <Kpi label="Orders" value={conv.toLocaleString("en-US")} />
+        <Kpi label="Avg. order" value={usd(total / conv, 2)} />
       </div>
       <div className="overflow-x-auto">
         <table className="w-full min-w-[360px] text-left text-[11px]">
           <thead className="text-[10px] uppercase tracking-wide text-slate-500">
             <tr className="border-b border-slate-200">
               <th className="py-1.5 pr-2 font-medium">Channel</th>
-              <th className="py-1.5 pr-2 text-right font-medium">Conversions</th>
-              <th className="py-1.5 pr-2 text-right font-medium">Attributed revenue</th>
+              <th className="py-1.5 pr-2 text-right font-medium">Orders</th>
+              <th className="py-1.5 pr-2 text-right font-medium">Sales credited</th>
               <th className="py-1.5 text-right font-medium">Share</th>
             </tr>
           </thead>
@@ -256,14 +256,14 @@ export function TrackingMock() {
     <AppFrame
       title="Settings · Server-side (CAPI)"
       active="Settings"
-      caption="Settings: server-side sending to Meta and Google, deduplicated by event ID."
+      caption="Settings: every sale is sent to Facebook and Google from a server, and counted only once."
     >
       <div className="grid gap-2 sm:grid-cols-2">
-        <Toggle on label="Meta Conversions API" sub="Purchases sent from the server" />
-        <Toggle on label="Google server-side" sub="Purchase conversions" />
+        <Toggle on label="Facebook (Meta Conversions API)" sub="Send sales from the server" />
+        <Toggle on label="Google (server-side)" sub="Send sales from the server" />
         <div className="rounded-lg border border-slate-200 px-3 py-2 sm:col-span-2">
-          <div className="text-[11px] font-semibold text-slate-800">Deduplication</div>
-          <div className="mt-1 text-[10px] text-slate-500">Browser and server events share one event ID, so each order counts once.</div>
+          <div className="text-[11px] font-semibold text-slate-800">Count each sale once (deduplication)</div>
+          <div className="mt-1 text-[10px] text-slate-500">Both reports of a sale get the same ID, so it is only counted once.</div>
           <div className="mt-2 inline-flex rounded-md border border-slate-200 text-[10px]">
             <span className="rounded-l-md bg-slate-900 px-2 py-1 font-semibold text-white">event_id</span>
             <span className="px-2 py-1 text-slate-500">order_id</span>
@@ -271,13 +271,13 @@ export function TrackingMock() {
         </div>
       </div>
       <div className="mt-3 rounded-lg border border-slate-200 bg-slate-50 p-3 text-[10px] text-slate-600">
-        <div className="mb-1.5 font-semibold text-slate-700">Order #1042 · Purchase · {usd(84, 2)}</div>
+        <div className="mb-1.5 font-semibold text-slate-700">Order #1042 · {usd(84, 2)}</div>
         <div className="grid gap-1 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
-          <span className="rounded border border-slate-200 bg-white px-2 py-1">Browser pixel · event_id a91f…</span>
+          <span className="rounded border border-slate-200 bg-white px-2 py-1">From the browser · ID a91f…</span>
           <span aria-hidden className="text-center text-slate-400">+</span>
-          <span className="rounded border border-slate-200 bg-white px-2 py-1">Server event · event_id a91f…</span>
+          <span className="rounded border border-slate-200 bg-white px-2 py-1">From the server · ID a91f…</span>
         </div>
-        <div className="mt-1.5 font-semibold text-emerald-700">Same ID, counted once by Meta</div>
+        <div className="mt-1.5 font-semibold text-emerald-700">Same ID, so Facebook counts it once</div>
       </div>
     </AppFrame>
   );

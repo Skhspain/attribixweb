@@ -47,7 +47,7 @@ export function TrialLink({
 export function DemoLink({
   location,
   className = btnSecondary,
-  children = "Book a demo",
+  children = "Get a free walkthrough",
 }: {
   location: string;
   className?: string;
@@ -63,7 +63,7 @@ export function DemoLink({
 export function ConsultationLink({
   location,
   className = btnSecondary,
-  children = "Book a free consultation",
+  children = "Book a free call",
 }: {
   location: string;
   className?: string;
@@ -174,7 +174,7 @@ export function Check({ className }: { className?: string }) {
 }
 
 /** Small label used on every illustrative product visual. */
-export function ExampleLabel({ children = "Illustrative example with sample data" }: { children?: React.ReactNode }) {
+export function ExampleLabel({ children = "Example screen with made-up numbers" }: { children?: React.ReactNode }) {
   return (
     <span className="inline-flex items-center rounded-full border border-amber-300/25 bg-amber-400/10 px-2.5 py-0.5 text-[11px] font-medium text-amber-100/90">
       {children}

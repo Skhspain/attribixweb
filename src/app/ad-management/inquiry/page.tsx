@@ -22,22 +22,22 @@ export default function AdManagementInquiryPage() {
         <div className="grid gap-14 md:grid-cols-2 md:items-start">
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-cyan-400">
-              Send inquiry
+              Ask us to run your ads
             </p>
             <h1 className="text-4xl md:text-5xl font-extrabold leading-[1.1] tracking-tight">
               Tell us about your store.
             </h1>
             <p className="mt-5 text-base leading-relaxed text-white/60 max-w-md">
-              A few details about your business, your current advertising, and
-              what you&apos;re trying to fix. We read every inquiry personally,
-              with no auto-replies and no sales queue.
+              Tell us what you sell, what you do with ads today, and what you
+              want to fix. A real person reads every message. No automatic
+              replies.
             </p>
 
             <div className="mt-10 space-y-4 text-sm text-white/50 max-w-md">
               <p>
                 Prefer to talk it through first? You can{" "}
                 <Link href="/ad-management/consultation" className="text-white/80 underline underline-offset-4 hover:text-white">
-                  book a free consultation call
+                  book a free call
                 </Link>{" "}
                 instead.
               </p>

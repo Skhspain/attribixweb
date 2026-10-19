@@ -30,9 +30,9 @@ export default function AboutPage() {
             About Attribix
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            Attribix is built by the team behind bevit, a Meta and Google
-            Ads agency, not a software company that built a tracking tool
-            without ever running the campaigns it reports on.
+            Attribix is made by bevit, a team that runs Facebook and Google
+            ads for businesses. We built it to answer a simple question: which
+            ads really bring in customers?
           </p>
         </Reveal>
       </section>
@@ -42,13 +42,11 @@ export default function AboutPage() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Why it exists</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Attribix was created by the bevit team after years of managing
-            Meta and Google Ads accounts and dealing with incomplete,
-            conflicting and misleading platform reporting for clients. The
-            software connects campaign decisions with Shopify orders,
-            server-side events and customer journeys. It was built to solve
-            the specific reporting problems that kept coming up in that
-            day-to-day agency work, not designed in the abstract.
+            For years we ran ads for online stores. Facebook said one number.
+            Google said another. The store&apos;s real sales said a third. We
+            couldn&apos;t tell our clients which ads truly worked. So we built
+            Attribix. It puts your real Shopify sales next to your ads, and
+            makes sure each sale is counted correctly.
           </p>
         </Reveal>
       </section>
@@ -58,18 +56,16 @@ export default function AboutPage() {
         <div className="absolute inset-0 -z-10 bg-black/15" />
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>
-            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Two ways to work with the same team</h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Two ways to work with us</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-              Shopify stores can use Attribix as self-serve software,
-              connecting Shopify, Meta and Google to view attribution and
-              tracking in one dashboard. Businesses that want more can
-              separately work with bevit directly for{" "}
+              You can use the Attribix app yourself. Connect your Shopify
+              store and your Facebook and Google ad accounts, and see which ads
+              work. Or, if you would rather not run your ads yourself, our team
+              can do it for you through{" "}
               <Link href="/ad-management" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Ad Management
               </Link>
-              , where the same team runs the campaigns using the same
-              underlying data. The two are separate, optional paths: using
-              Attribix doesn&apos;t require using Ad Management, and vice versa.
+              . You can use one without the other.
             </p>
           </Reveal>
         </div>
@@ -80,15 +76,13 @@ export default function AboutPage() {
         <div className="absolute inset-0 -z-10 bg-black/15" />
         <div className="mx-auto max-w-3xl px-4">
           <Reveal>
-            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What we believe about measurement</h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold mb-4">What we believe</h2>
             <p className="text-white/60 leading-relaxed text-sm max-w-2xl">
-              No attribution model is the objectively correct one. Meta and Google both have an
-              incentive to credit themselves for a sale, which is why their reported numbers rarely
-              add up to what a store actually took in. Attribix doesn&apos;t claim to solve that with
-              a single truer number. It shows the Shopify order next to how different models would
-              credit it, and closes as much of the tracking gap as possible along the way, so the
-              decision about which model to trust is one you can make deliberately instead of by
-              default.
+              There is no single &quot;right&quot; way to decide which ad earned a sale. Facebook and
+              Google both want the credit, so their numbers rarely add up to your real sales. We
+              don&apos;t pretend to have one perfect number. Instead, Attribix shows your real orders,
+              lets you compare different ways of giving credit, and counts as many sales as it
+              can. Then you decide, with the facts in front of you.
             </p>
           </Reveal>
         </div>
@@ -99,12 +93,12 @@ export default function AboutPage() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Track record</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Stian Henriksen, who leads the team, has worked in digital
-            advertising since 2008. bevit started managing Meta and Google
-            Ads for clients in 2020, and roughly 80% of clients have stayed
-            since then. The agency is Top Rated and 5-star reviewed on
-            Fiverr, and has managed campaigns for businesses including
-            MyHeritage, London Diamonds and Roberes.
+            Stian Henriksen leads the team and has worked in online
+            advertising since 2008. bevit started running Facebook and Google
+            ads for clients in 2020, and about 80% of those clients have stayed
+            with us since. The agency is Top Rated with 5-star reviews on
+            Fiverr, and has run ads for businesses including MyHeritage, London
+            Diamonds and Roberes.
           </p>
         </Reveal>
       </section>
@@ -133,8 +127,8 @@ export default function AboutPage() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold">See it on your own store</h2>
           <p className="mt-4 text-white/60 max-w-lg mx-auto">
-            Connect your Shopify store and ad accounts and see the
-            reporting directly.
+            Install the app, connect your ad accounts, and see which of
+            your ads bring in customers.
           </p>
           <ProductCTA className="mt-8 justify-center" />
         </Reveal>

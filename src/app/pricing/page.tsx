@@ -10,51 +10,55 @@ import { Check, DemoLink, Section, SectionHeader, TrialLink, textLink } from "@/
 import { BILLING_NOTE, PLANS, trialSummary } from "@/lib/pricing";
 import { gtagEvent } from "@/lib/track";
 
+const fmtOrders = (n: number | null) => (n === null ? "No limit" : n.toLocaleString("en-US"));
+const has = (x: string) => PLANS.map((p) => p.extras.some((e) => e.startsWith(x)));
+
 const ROWS: { label: string; values: (string | boolean)[] }[] = [
-  { label: "Tracked orders per month", values: PLANS.map((p) => p.limits.orders.replace(" / month", "").replace(" tracked orders", "")) },
-  { label: "Analytics history", values: PLANS.map((p) => p.limits.history.replace(" of analytics history", "")) },
-  { label: "Meta and Google Ads data", values: [true, true, true] },
-  { label: "Server-side tracking and attribution", values: [true, true, true] },
-  { label: "SEO audits", values: ["Unlimited", "Unlimited", "Unlimited"] },
-  { label: "UTM builder", values: [true, true, true] },
+  { label: "Orders counted each month", values: PLANS.map((p) => fmtOrders(p.orderLimit)) },
+  { label: "How far back you can look (history)", values: PLANS.map((p) => `${p.historyDays} days`) },
+  { label: "Facebook and Google ad results", values: [true, true, true] },
+  { label: "Correct sale counting (server-side tracking)", values: [true, true, true] },
+  { label: "Which ad earned each sale (attribution)", values: [true, true, true] },
+  { label: "SEO checks", values: ["Unlimited", "Unlimited", "Unlimited"] },
+  { label: "Link builder (UTM builder)", values: [true, true, true] },
   { label: "Newsletter", values: PLANS.map((p) => p.limits.newsletter) },
-  { label: "Reviews", values: PLANS.map((p) => p.limits.reviews.replace(" reviews", "")) },
-  { label: "Lead Center", values: PLANS.map((p) => p.limits.leads.replace(" leads", "")) },
-  { label: "Google and Meta product feed", values: PLANS.map((p) => p.extras.includes("Google and Meta product feed")) },
-  { label: "Social calendar and analytics", values: PLANS.map((p) => p.extras.includes("Social calendar and analytics")) },
-  { label: "Visitor flow analysis", values: PLANS.map((p) => p.extras.includes("Visitor flow analysis")) },
-  { label: "Priority support", values: PLANS.map((p) => p.extras.includes("Priority support")) },
+  { label: "Reviews", values: PLANS.map((p) => p.limits.reviews) },
+  { label: "Lead Center", values: PLANS.map((p) => p.limits.leads) },
+  { label: "Product list for Google and Facebook", values: has("Product list") },
+  { label: "Social media calendar and stats", values: has("Social media") },
+  { label: "Visitor paths", values: has("Visitor paths") },
+  { label: "Faster support", values: has("Faster support") },
   { label: "Free trial", values: PLANS.map((p) => `${p.trialDays} days`) },
 ];
 
 const PRICING_FAQ: { q: string; a: string }[] = [
   {
-    q: "What counts as a tracked order?",
-    a: "Each new Shopify order that reaches Attribix through your store's order webhook counts once toward your plan's monthly limit, matched by order ID.",
+    q: "What does \"orders counted\" mean?",
+    a: "Each new order in your Shopify store counts once toward your monthly limit. If you get 250 orders in a month, Starter (up to 300) is enough.",
   },
   {
-    q: "What happens if I go over my order limit?",
-    a: "Attribix stops recording additional orders for the rest of that billing period, until it resets or you upgrade. Your store keeps taking orders as normal; only further tracking pauses.",
+    q: "What happens if I get more orders than my plan allows?",
+    a: "Your store keeps selling as normal. Attribix just stops counting new orders until the next month starts, or until you move to a bigger plan.",
   },
   {
-    q: "How does billing work?",
-    a: `${BILLING_NOTE} There is no separate payment form: the charge appears on your Shopify bill.`,
+    q: "How do I pay?",
+    a: `${BILLING_NOTE} There is no separate payment form to fill in.`,
   },
   {
     q: "How long is the free trial?",
-    a: `The trial is ${trialSummary()}. It starts when you install and approve the plan in Shopify. Uninstall during the trial and you are not charged.`,
+    a: `The trial lasts ${trialSummary()}. It starts when you install the app and approve the plan in Shopify. If you uninstall during the trial, you are not charged.`,
   },
   {
-    q: "Can I switch plans or cancel?",
-    a: "Yes. Plan changes are handled through Shopify billing once your store is connected, and you can cancel by uninstalling the app.",
+    q: "Can I change plans or cancel?",
+    a: "Yes. You change plans through Shopify billing once your store is connected. To cancel, uninstall the app.",
   },
   {
-    q: "Do all plans include server-side tracking?",
-    a: "Yes. Every plan includes server-side tracking, Meta and Google Ads data and attribution. Plans differ in order volume, history length and the additional marketing tools.",
+    q: "Do all plans count sales correctly and show which ads work?",
+    a: "Yes. Every plan includes server-side tracking (the more reliable way of counting sales), your Facebook and Google ad results, and attribution (which ad earned each sale). Bigger plans handle more orders, keep more history and add extra tools.",
   },
   {
-    q: "Is Shopify Plus supported?",
-    a: "Yes. Attribix uses Shopify's standard app and webhook APIs, so it works the same way on Shopify Plus.",
+    q: "Does it work with Shopify Plus?",
+    a: "Yes. Attribix works the same way on Shopify Plus as on other Shopify plans.",
   },
 ];
 
@@ -100,8 +104,8 @@ export default function PricingPage() {
           <SectionHeader
             as="h1"
             align="center"
-            title="Simple pricing based on order volume"
-            intro="Every plan includes tracking, attribution and Meta and Google Ads data. Choose by how many orders your store takes each month."
+            title="Simple pricing, based on how many orders you get"
+            intro="Every plan shows which ads bring you customers and makes sure your sales are counted correctly. Pick the plan that fits your number of orders each month."
           />
         </div>
 
@@ -110,7 +114,7 @@ export default function PricingPage() {
         </Section>
 
         <Section tone="band" labelledBy="fit-title">
-          <SectionHeader id="fit-title" eyebrow="Which plan fits" title="Pick by monthly orders" />
+          <SectionHeader id="fit-title" eyebrow="Which plan fits" title="Not sure which plan to pick?" />
           <ul className="mt-10 grid gap-4 md:grid-cols-3">
             {PLANS.map((p) => (
               <li key={p.id} className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
@@ -120,13 +124,13 @@ export default function PricingPage() {
             ))}
           </ul>
           <p className="mt-6 max-w-3xl text-sm leading-relaxed text-white/60">
-            Not sure? Start on the plan that covers last month&apos;s order count. You can change plans later through
-            Shopify billing.
+            Look at how many orders you got last month, and pick the plan that covers it. You can change plans later
+            through Shopify billing.
           </p>
         </Section>
 
         <Section id="compare" labelledBy="compare-title">
-          <SectionHeader id="compare-title" eyebrow="Compare plans" title="Everything in each plan" />
+          <SectionHeader id="compare-title" eyebrow="Compare plans" title="What you get in each plan" />
           <div className="mt-10 overflow-x-auto rounded-2xl border border-white/10">
             <table className="w-full min-w-[640px] text-left text-sm">
               <caption className="sr-only">Plan comparison</caption>
@@ -138,7 +142,7 @@ export default function PricingPage() {
                   {PLANS.map((p) => (
                     <th key={p.id} scope="col" className="px-4 py-3 text-center font-semibold text-white">
                       {p.name}
-                      <span className="block text-xs font-normal text-white/55">${p.monthly} / month</span>
+                      <span className="block text-xs font-normal text-white/55">${p.monthly} a month</span>
                     </th>
                   ))}
                 </tr>
@@ -177,15 +181,15 @@ export default function PricingPage() {
               Start with a free trial
             </h2>
             <p className="mt-4 text-white/70">
-              Install from the Shopify App Store. Want help choosing a plan? Book a short demo, or read{" "}
+              Install Attribix from the Shopify App Store. Want help choosing? Book a free walkthrough, or read{" "}
               <Link href="/features" className={textLink}>
-                what each feature does
+                what each part of Attribix does
               </Link>
               .
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <TrialLink location="pricing_bottom" />
-              <DemoLink location="pricing_bottom" />
+              <DemoLink location="pricing_bottom">Get a free walkthrough</DemoLink>
             </div>
           </div>
         </Section>

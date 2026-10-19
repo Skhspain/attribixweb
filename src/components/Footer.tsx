@@ -5,7 +5,7 @@ import CookiePreferencesButton from "./CookiePreferencesButton";
 
 const COLUMNS = [
   {
-    heading: "Attribution & tracking",
+    heading: "Guides",
     links: [
       { label: "Resources", href: "/resources" },
       { label: "Shopify attribution", href: "/shopify-attribution" },
@@ -32,8 +32,8 @@ const COLUMNS = [
       { label: "Overview", href: "/ad-management" },
       { label: "Meta Ads management", href: "/ad-management/meta-ads" },
       { label: "Google Ads management", href: "/ad-management/google-ads" },
-      { label: "Request ad management", href: "/ad-management/inquiry" },
-      { label: "Free consultation", href: "/ad-management/consultation" },
+      { label: "Ask us to run your ads", href: "/ad-management/inquiry" },
+      { label: "Book a free call", href: "/ad-management/consultation" },
     ],
   },
   {
@@ -59,7 +59,7 @@ export default function Footer() {
               <span className="text-sm font-semibold text-white">Attribix</span>
             </Link>
             <p className="mt-3 text-xs text-white/40 leading-relaxed max-w-[200px]">
-              Shopify attribution and server-side tracking for Meta and Google Ads.
+              See which ads bring you customers, and make sure your sales are counted correctly.
             </p>
           </div>
 

@@ -30,10 +30,10 @@ const MODEL_LABEL: Record<ModelKind, string> = {
   decay: "Time-decay",
 };
 const MODEL_COPY: Record<ModelKind, string> = {
-  last: "Protects brand and retargeting. Gives all the credit to the final touch before the purchase.",
-  first: "Finds top-of-funnel winners. Rewards the touch that started the journey.",
-  linear: "Keeps everyone honest. Splits credit evenly across every touch in the journey.",
-  decay: "Leans into recency. Touches closer to the purchase get more credit than earlier ones, without ignoring them.",
+  last: "The last ad the customer clicked before buying gets all the credit.",
+  first: "The first ad that brought the customer to your store gets all the credit.",
+  linear: "Every ad the customer clicked gets an equal share of the credit.",
+  decay: "Every ad gets some credit, but ads clicked closer to the purchase get more.",
 };
 
 /* -----------------------------------------------------
@@ -197,9 +197,9 @@ export default function AttributionModelsPage() {
         <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Tools", href: "/tools" }, { label: "Attribution models" }]} />
         <SectionHeader
           as="h1"
-          eyebrow="Free tool"
-          title="Attribution model explorer"
-          intro="The same Shopify order can be credited very differently depending on the attribution model. Switch models on a fixed example to see how credit moves between Meta and Google while the order itself stays the same."
+          eyebrow="Free tool: attribution model explorer"
+          title="Who gets credit for a sale?"
+          intro="A customer clicks a Facebook ad, then a Google ad, then buys for $100. Which ad earned the sale? It depends on the rule you use. These rules are called attribution models. Switch between them below and watch the credit move."
         />
 
         <div className="mt-10 grid gap-6 lg:grid-cols-12">
