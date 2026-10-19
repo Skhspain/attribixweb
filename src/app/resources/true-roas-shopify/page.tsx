@@ -234,7 +234,7 @@ export default function Page() {
             Connect your store and ad accounts to compare blended and
             platform-reported ROAS against actual Shopify revenue.
           </p>
-          <ProductCTA className="mt-8 justify-center" />
+          <ProductCTA className="mt-8 justify-center" howHref="/features#dashboard" />
         </Reveal>
       </section>
     </ProductPageShell>

@@ -11,7 +11,7 @@ export default function Breadcrumbs({
         <span key={item.label} className="flex items-center gap-2">
           {i > 0 && <span aria-hidden>/</span>}
           {item.href ? (
-            <Link href={item.href} className="hover:text-white/70 transition-colors">
+            <Link href={item.href} className="inline-block py-1 hover:text-white/70 transition-colors">
               {item.label}
             </Link>
           ) : (

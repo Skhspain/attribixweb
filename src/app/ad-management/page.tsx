@@ -13,27 +13,35 @@ import FAQList from "@/components/marketing/FAQList";
 ----------------------------------------------------- */
 const SERVICES = [
   {
-    title: "Ongoing Meta & Google Ads management",
-    desc: "Full management of your Meta and Google Ads accounts: strategy, creative direction, budget allocation and day-to-day optimisation, reviewed against real Shopify revenue instead of platform-reported ROAS.",
-    fit: "For brands who want campaigns run for them, month over month.",
+    title: "Meta Ads management",
+    desc: "Ongoing management of Facebook and Instagram campaigns: account structure, creative direction and testing, audiences, budgets and day-to-day optimisation.",
+    fit: "For Shopify brands that want Meta run for them, month over month.",
     href: "/ad-management/meta-ads",
-    cta: "See Meta & Google Ads management",
+    cta: "Meta Ads management",
   },
   {
-    title: "Advertising audit (paid)",
-    desc: "A structured, paid review of your existing Meta and/or Google Ads accounts: account structure, budget allocation, tracking setup and creative performance, delivered as a written report with prioritised fixes. This is separate from the free consultation call: a fixed-scope engagement with a defined deliverable, not a conversation.",
-    fit: "For brands who want a second opinion or a clear starting point before committing to ongoing management.",
-    href: "/ad-management/inquiry",
-    cta: "Ask about an audit",
+    title: "Google Ads management",
+    desc: "Ongoing management of Search, Shopping and Performance Max: product feed, bidding, search terms, brand versus non-brand spend and budget allocation.",
+    fit: "For Shopify brands that want Google run for them, month over month.",
+    href: "/ad-management/google-ads",
+    cta: "Google Ads management",
   },
   {
-    title: "Tracking and attribution setup",
-    desc: "We review and set up your Shopify tracking, Meta Pixel and Conversions API, and Google Ads purchase and enhanced conversions (including event deduplication, Consent Mode and attribution setup), so conversions and revenue are recorded correctly, whether or not we manage your ad spend.",
-    fit: "For brands who manage ads in-house but want tracking they can trust.",
+    title: "Tracking and measurement setup",
+    desc: "We review and set up Shopify tracking, the Meta Pixel and Conversions API, and Google Ads purchase and enhanced conversions, including deduplication and Consent Mode, so conversions are recorded correctly.",
+    fit: "For brands that run ads in-house but want tracking they can trust.",
     href: "/ad-management/inquiry",
     cta: "Ask about tracking setup",
   },
+  {
+    title: "Advertising audit (paid)",
+    desc: "A fixed-scope review of your Meta and Google Ads accounts: structure, budget allocation, tracking and creative performance, delivered as a written report with prioritised fixes.",
+    fit: "For brands that want a second opinion before committing to ongoing management.",
+    href: "/ad-management/inquiry",
+    cta: "Ask about an audit",
+  },
 ];
+
 
 const TESTIMONIALS = [
   {
@@ -167,12 +175,12 @@ export default function AdManagementPage() {
         <Reveal>
           <div className="rounded-2xl border border-white/10 bg-white/5 px-6 py-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-white/60">
             <span className="inline-flex items-center gap-1.5 text-white/85 font-semibold">
-              <span className="text-amber-400">★★★★★</span> 5.0
+              <span aria-hidden className="text-amber-400">★★★★★</span> 5.0 on Fiverr
             </span>
             <span className="h-3 w-px bg-white/15 hidden sm:block" />
-            <span>150+ verified reviews</span>
+            <span>150+ agency reviews</span>
             <span className="h-3 w-px bg-white/15 hidden sm:block" />
-            <span>Top Rated on Fiverr</span>
+            <span>Top Rated seller</span>
             <span className="h-3 w-px bg-white/15 hidden sm:block" />
             <span>Marketing experience since 2008</span>
             <span className="h-3 w-px bg-white/15 hidden sm:block" />
@@ -209,21 +217,21 @@ export default function AdManagementPage() {
       {/* ── 4. THREE SERVICES ── */}
       <section className="mx-auto max-w-6xl px-4 py-14">
         <Reveal>
-          <h2 className="text-2xl md:text-3xl font-extrabold">How much do you want us to run?</h2>
+          <h2 className="text-2xl md:text-3xl font-extrabold">Services</h2>
           <p className="mt-3 text-white/60 max-w-xl">
             Some stores want the accounts fully handed off. Others just want
             a second opinion, or tracking they can trust while they run ads
             themselves.
           </p>
         </Reveal>
-        <div className="mt-9 grid gap-5 md:grid-cols-3">
+        <div className="mt-9 grid gap-5 md:grid-cols-2">
           {SERVICES.map((s, i) => (
             <Reveal key={s.title} delay={i * 80}>
               <div className="h-full rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col">
                 <h3 className="font-semibold text-base text-white">{s.title}</h3>
                 <p className="mt-3 text-sm text-white/60 leading-relaxed flex-1">{s.desc}</p>
                 <p className="mt-4 text-xs text-white/40 border-t border-white/10 pt-4">{s.fit}</p>
-                <Link href={s.href} className="mt-4 text-sm font-semibold text-cyan-400 hover:text-cyan-300">
+                <Link href={s.href} className="mt-3 inline-flex min-h-[44px] items-center text-sm font-semibold text-cyan-300 hover:text-cyan-200">
                   {s.cta} →
                 </Link>
               </div>
@@ -237,7 +245,7 @@ export default function AdManagementPage() {
         <div className="absolute inset-0 -z-10 bg-black/15" />
         <div className="mx-auto max-w-5xl px-4">
           <Reveal>
-            <Eyebrow>The Attribix advantage</Eyebrow>
+            <Eyebrow>Reporting and measurement</Eyebrow>
             <h2 className="text-2xl md:text-3xl font-extrabold max-w-xl">
               The difference is what we&apos;re optimising against
             </h2>
@@ -268,7 +276,7 @@ export default function AdManagementPage() {
             <ul className="mt-8 grid gap-3 sm:grid-cols-3 text-sm text-white/60">
               <li className="rounded-xl border border-white/10 bg-white/5 p-4">Server-side events, not just pixel data, mean fewer gaps from iOS, ad blockers and cookie loss.</li>
               <li className="rounded-xl border border-white/10 bg-white/5 p-4">Every campaign decision checked against Shopify orders, not platform-reported conversions.</li>
-              <li className="rounded-xl border border-white/10 bg-white/5 p-4">One team accountable for both the ads and the tracking, so there's no finger-pointing between agency and tool.</li>
+              <li className="rounded-xl border border-white/10 bg-white/5 p-4">One team accountable for both the ads and the tracking, so there&apos;s no finger-pointing between agency and tool.</li>
             </ul>
           </Reveal>
 
@@ -313,12 +321,25 @@ export default function AdManagementPage() {
         </div>
       </section>
 
+      {/* ── 7b. PRICING APPROACH ── */}
+      <section className="mx-auto max-w-3xl px-4 py-16">
+        <Reveal>
+          <Eyebrow>Pricing approach</Eyebrow>
+          <h2 className="text-2xl md:text-3xl font-extrabold">How pricing works</h2>
+          <ul className="mt-6 space-y-3 text-white/70 leading-relaxed">
+            <li>Ongoing management is quoted per account, based on the platforms involved, account complexity and monthly ad spend.</li>
+            <li>You receive the price in a written plan. No work starts before you approve it.</li>
+            <li>The advertising audit is a fixed-scope, paid engagement. The first consultation call is free.</li>
+          </ul>
+        </Reveal>
+      </section>
+
       {/* ── 8. TESTIMONIALS ── */}
       <section className="mx-auto max-w-6xl px-4 py-16">
         <Reveal>
           <div className="flex items-center gap-4 flex-wrap">
             <h2 className="text-2xl md:text-3xl font-extrabold">What clients say</h2>
-            <span className="text-sm text-white/45">5.0 from 150+ verified reviews</span>
+            <span className="text-sm text-white/55">Selected client reviews from Fiverr, where the agency is rated 5.0 from 150+ reviews</span>
           </div>
         </Reveal>
         <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -326,7 +347,7 @@ export default function AdManagementPage() {
             <Reveal key={t.quote} delay={i * 60}>
               <div className="h-full rounded-2xl border border-white/10 bg-white/5 p-5">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-amber-400 text-sm">★★★★★</span>
+                  <span aria-label="5 out of 5 stars" className="text-amber-400 text-sm">★★★★★</span>
                   <span className="text-[11px] text-white/40">{t.tag}</span>
                 </div>
                 <blockquote className="text-sm text-white/75 leading-relaxed">&ldquo;{t.quote}&rdquo;</blockquote>

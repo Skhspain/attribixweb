@@ -297,7 +297,7 @@ export default function Page() {
             Connect your Shopify store and see which purchase events are
             currently making it to Meta and Google, and which aren&apos;t.
           </p>
-          <ProductCTA className="mt-8 justify-center" />
+          <ProductCTA className="mt-8 justify-center" howHref="/features#tracking" />
         </Reveal>
       </section>
     </ProductPageShell>

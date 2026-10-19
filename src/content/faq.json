@@ -1,7 +1,11 @@
 [
   {
-    "q": "Does Attribix work with Shopify and WooCommerce?",
-    "a": "Yes: Shopify and WooCommerce are both supported. Connect your store and start streaming events."
+    "q": "Which stores does Attribix work with?",
+    "a": "Shopify stores, including Shopify Plus. Attribix is installed from the Shopify App Store and connects through Shopify's standard app and webhook APIs. Other ecommerce platforms are not supported."
+  },
+  {
+    "q": "Will Attribix numbers match Meta Ads Manager or Google Ads exactly?",
+    "a": "No. Each ad platform counts conversions with its own attribution windows, including some view-through conversions, and both can claim the same order. Attribix starts from orders recorded in Shopify and counts each order once. The gap between the two shows how much the platforms may be over-crediting themselves."
   },
   {
     "q": "How do you track conversions accurately?",
@@ -17,14 +21,10 @@
   },
   {
     "q": "Can I export my data?",
-    "a": "Yes: CSV exports are available throughout the dashboard, and lead data can be pushed to your own systems via webhook."
+    "a": "Customer lists can be exported as a CSV formatted for Google Ads Customer Match. If you need other data exported, contact us at hello@attribix.app."
   },
   {
     "q": "How do refunds, tax and shipping affect revenue?",
     "a": "Revenue is captured from your Shopify order total at the time of purchase. It doesn't automatically re-adjust if an order is later refunded or edited, so for periods with significant refund activity, cross-check against Shopify's own reporting."
-  },
-  {
-    "q": "Is there a free trial?",
-    "a": "Yes: verify tracking and reports during the trial before upgrading."
   }
 ]

@@ -17,6 +17,11 @@ const TOOLS = [
     desc: "Calculate marketing efficiency ratio from total revenue and total marketing spend.",
     href: "/tools/mer-calculator",
   },
+  {
+    title: "Attribution Model Explorer",
+    desc: "See how one Shopify order is credited to Meta and Google under four attribution models.",
+    href: "/tools/attribution-models",
+  },
 ];
 
 const BREADCRUMB_JSON_LD = {

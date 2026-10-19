@@ -21,6 +21,7 @@ const COLUMNS = [
       { label: "Features", href: "/features" },
       { label: "Pricing", href: "/pricing" },
       { label: "Free tools", href: "/tools" },
+      { label: "Attribution model explorer", href: "/tools/attribution-models" },
       { label: "Book demo", href: "/book-demo" },
       { label: "Log in", href: "/login" },
     ],
@@ -31,7 +32,8 @@ const COLUMNS = [
       { label: "Overview", href: "/ad-management" },
       { label: "Meta Ads management", href: "/ad-management/meta-ads" },
       { label: "Google Ads management", href: "/ad-management/google-ads" },
-      { label: "Send inquiry", href: "/ad-management/inquiry" },
+      { label: "Request ad management", href: "/ad-management/inquiry" },
+      { label: "Free consultation", href: "/ad-management/consultation" },
     ],
   },
   {

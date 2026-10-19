@@ -35,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: BASE,
-      lastModified: new Date("2026-08-13"),
+      lastModified: new Date("2026-10-19"),
       changeFrequency: "weekly",
       priority: 1.0,
     },
@@ -48,7 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...resourceArticleEntries,
     {
       url: `${BASE}/tools`,
-      lastModified: new Date("2026-08-08"),
+      lastModified: new Date("2026-10-19"),
       changeFrequency: "monthly",
       priority: 0.6,
     },
@@ -65,6 +65,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${BASE}/tools/attribution-models`,
+      lastModified: new Date("2026-10-19"),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
       url: `${BASE}/about`,
       lastModified: new Date("2026-08-13"),
       changeFrequency: "monthly",
@@ -72,13 +78,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE}/features`,
-      lastModified: new Date("2026-08-09"),
+      lastModified: new Date("2026-10-19"),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${BASE}/pricing`,
-      lastModified: new Date("2026-08-09"),
+      lastModified: new Date("2026-10-19"),
       changeFrequency: "monthly",
       priority: 0.9,
     },
@@ -114,7 +120,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE}/ad-management`,
-      lastModified: new Date("2026-08-13"),
+      lastModified: new Date("2026-10-19"),
       changeFrequency: "monthly",
       priority: 0.8,
     },
@@ -132,7 +138,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${BASE}/faq`,
-      lastModified: new Date("2026-04-17"),
+      lastModified: new Date("2026-10-19"),
       changeFrequency: "monthly",
       priority: 0.7,
     },

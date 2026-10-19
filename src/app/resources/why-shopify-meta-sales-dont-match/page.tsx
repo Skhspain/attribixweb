@@ -251,7 +251,7 @@ export default function Page() {
             reported revenue next to actual Shopify orders, for your own
             data.
           </p>
-          <ProductCTA className="mt-8 justify-center" />
+          <ProductCTA className="mt-8 justify-center" howHref="/features#attribution" />
         </Reveal>
       </section>
     </ProductPageShell>

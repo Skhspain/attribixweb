@@ -64,7 +64,7 @@ export default function MetaCapiPage() {
             it recovers events the browser drops. Set up carelessly, it
             double-counts them.
           </p>
-          <ProductCTA className="mt-9" />
+          <ProductCTA className="mt-9" howHref="/features#tracking" />
         </Reveal>
       </section>
 
@@ -253,7 +253,7 @@ export default function MetaCapiPage() {
             and duplicate rates in Meta Events Manager, where Meta reports
             them.
           </p>
-          <ProductCTA className="mt-8 justify-center" />
+          <ProductCTA className="mt-8 justify-center" howHref="/features#tracking" />
         </Reveal>
         <p className="mt-6 text-sm text-white/35">
           Want this set up for you instead?{" "}

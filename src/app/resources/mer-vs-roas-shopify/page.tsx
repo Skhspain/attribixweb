@@ -231,7 +231,7 @@ export default function Page() {
             Connect your store and ad accounts to see both metrics
             calculated from the same underlying data.
           </p>
-          <ProductCTA className="mt-8 justify-center" />
+          <ProductCTA className="mt-8 justify-center" howHref="/features#dashboard" />
         </Reveal>
       </section>
     </ProductPageShell>

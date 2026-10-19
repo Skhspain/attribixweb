@@ -184,7 +184,7 @@ export default function Page() {
             events share a matching event ID, then check your duplicate
             rate in Meta Events Manager.
           </p>
-          <ProductCTA className="mt-8 justify-center" />
+          <ProductCTA className="mt-8 justify-center" howHref="/features#tracking" />
         </Reveal>
       </section>
     </ProductPageShell>

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const SHOPIFY_APP_URL = "https://apps.shopify.com/attribix-app";
+import { SHOPIFY_APP_URL, trialSummary } from "@/lib/pricing";
 
 export default function SignupPage() {
   return (
@@ -42,7 +41,7 @@ export default function SignupPage() {
               "Server-side events reduce iOS and browser tracking gaps",
               "Clearer ROAS across Meta and Google Ads",
               "Connects directly to your Shopify store",
-              "No credit card required",
+              "Billed through your Shopify invoice",
             ].map((t) => (
               <li key={t} className="flex items-center gap-2.5 text-sm text-white/55">
                 <svg className="h-4 w-4 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -70,7 +69,7 @@ export default function SignupPage() {
           </div>
 
           <h1 className="text-2xl font-bold text-white mb-1">Get started</h1>
-          <p className="text-white/35 text-sm mb-6">Free trial on every plan · No credit card required</p>
+          <p className="text-white/50 text-sm mb-6">Free trial: {trialSummary()}</p>
 
           <div className="rounded-2xl border border-white/[0.09] bg-[#0f172a] shadow-[0_32px_80px_rgba(0,0,0,0.7)] p-6">
             <p className="text-white/55 text-sm leading-relaxed mb-5">

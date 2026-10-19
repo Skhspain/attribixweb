@@ -221,7 +221,7 @@ export default function Page() {
             with stronger matching parameters, then track the effect on
             Event Match Quality in Meta Events Manager.
           </p>
-          <ProductCTA className="mt-8 justify-center" />
+          <ProductCTA className="mt-8 justify-center" howHref="/features#tracking" />
         </Reveal>
       </section>
     </ProductPageShell>

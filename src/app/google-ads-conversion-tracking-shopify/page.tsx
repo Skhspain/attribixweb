@@ -56,7 +56,7 @@ export default function GoogleAdsTrackingPage() {
             doesn&apos;t automatically know about refunds, discount codes, or
             a checkout that skipped the tag entirely. Shopify does.
           </p>
-          <ProductCTA className="mt-9" />
+          <ProductCTA className="mt-9" howHref="/features#tracking" />
         </Reveal>
       </section>
 
@@ -315,7 +315,7 @@ export default function GoogleAdsTrackingPage() {
             Connect your store and Google Ads account to see the gap for
             your own orders, not an illustrative example.
           </p>
-          <ProductCTA className="mt-8 justify-center" />
+          <ProductCTA className="mt-8 justify-center" howHref="/features#tracking" />
         </Reveal>
         <p className="mt-6 text-sm text-white/35">
           Want your Google Ads account managed?{" "}

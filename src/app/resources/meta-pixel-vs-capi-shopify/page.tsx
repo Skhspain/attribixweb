@@ -248,7 +248,7 @@ export default function Page() {
             server-side purchase events, so a blocked or missed browser
             event isn&apos;t the only chance Meta gets to see the sale.
           </p>
-          <ProductCTA className="mt-8 justify-center" />
+          <ProductCTA className="mt-8 justify-center" howHref="/features#tracking" />
         </Reveal>
       </section>
     </ProductPageShell>

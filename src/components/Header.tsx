@@ -5,6 +5,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { trackDemoClick } from "@/lib/track";
 
 function cx(...xs: Array<string | false | null | undefined>) {
   return xs.filter(Boolean).join(" ");
@@ -39,7 +40,10 @@ export default function Header() {
       }
     }
     function onKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape") setResourcesOpen(false);
+      if (e.key === "Escape") {
+        setResourcesOpen(false);
+        setMobileOpen(false);
+      }
     }
     document.addEventListener("mousedown", onClickOutside);
     document.addEventListener("keydown", onKeyDown);
@@ -59,9 +63,10 @@ export default function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8 text-sm">
+        <nav aria-label="Main" className="hidden md:flex items-center gap-8 text-sm">
           <Link
             href="/features"
+            aria-current={isActive("/features") ? "page" : undefined}
             className={cx(
               "opacity-80 hover:opacity-100 relative",
               isActive("/features") &&
@@ -72,6 +77,7 @@ export default function Header() {
           </Link>
           <Link
             href="/pricing"
+            aria-current={isActive("/pricing") ? "page" : undefined}
             className={cx(
               "opacity-80 hover:opacity-100 relative",
               isActive("/pricing") &&
@@ -82,6 +88,7 @@ export default function Header() {
           </Link>
           <Link
             href="/faq"
+            aria-current={isActive("/faq") ? "page" : undefined}
             className={cx(
               "opacity-80 hover:opacity-100 relative",
               isActive("/faq") &&
@@ -92,6 +99,7 @@ export default function Header() {
           </Link>
           <Link
             href="/ad-management"
+            aria-current={isActive("/ad-management") ? "page" : undefined}
             className={cx(
               "opacity-80 hover:opacity-100 relative",
               isActive("/ad-management") &&
@@ -106,6 +114,7 @@ export default function Header() {
               onClick={() => setResourcesOpen((v) => !v)}
               aria-expanded={resourcesOpen}
               aria-haspopup="true"
+              aria-controls="resources-menu"
               className={cx(
                 "flex items-center gap-1 opacity-80 hover:opacity-100 relative",
                 isResourcesActive &&
@@ -126,7 +135,7 @@ export default function Header() {
             </button>
 
             {resourcesOpen && (
-              <div className="absolute left-1/2 top-full z-50 mt-3 w-64 -translate-x-1/2 rounded-2xl border border-white/10 bg-[#0E0A1A]/95 backdrop-blur-md p-2 shadow-2xl">
+              <div id="resources-menu" className="absolute left-1/2 top-full z-50 mt-3 w-64 -translate-x-1/2 rounded-2xl border border-white/10 bg-[#0E0A1A]/95 backdrop-blur-md p-2 shadow-2xl">
                 <Link
                   href="/resources"
                   onClick={() => setResourcesOpen(false)}
@@ -158,6 +167,7 @@ export default function Header() {
             </Link>
             <Link
               href="/book-demo"
+              onClick={() => trackDemoClick("header")}
               className="rounded-full bg-white px-4 py-2 text-sm font-medium text-black shadow-md hover:bg-neutral-200 transition"
             >
               Book demo
@@ -185,12 +195,13 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div id="mobile-nav" className="md:hidden border-t border-white/10 bg-black/70 backdrop-blur-sm">
-          <nav className="mx-auto max-w-7xl px-4 py-4 space-y-2 text-sm">
+          <nav aria-label="Mobile" className="mx-auto max-w-7xl px-4 py-4 space-y-2 text-sm">
             <Link
               href="/features"
+              aria-current={isActive("/features") ? "page" : undefined}
               onClick={() => setMobileOpen(false)}
               className={cx(
-                "block py-1 text-white/80 hover:text-white",
+                "block py-2 text-white/80 hover:text-white",
                 isActive("/features") && "text-white"
               )}
             >
@@ -198,9 +209,10 @@ export default function Header() {
             </Link>
             <Link
               href="/pricing"
+              aria-current={isActive("/pricing") ? "page" : undefined}
               onClick={() => setMobileOpen(false)}
               className={cx(
-                "block py-1 text-white/80 hover:text-white",
+                "block py-2 text-white/80 hover:text-white",
                 isActive("/pricing") && "text-white"
               )}
             >
@@ -208,9 +220,10 @@ export default function Header() {
             </Link>
             <Link
               href="/faq"
+              aria-current={isActive("/faq") ? "page" : undefined}
               onClick={() => setMobileOpen(false)}
               className={cx(
-                "block py-1 text-white/80 hover:text-white",
+                "block py-2 text-white/80 hover:text-white",
                 isActive("/faq") && "text-white"
               )}
             >
@@ -218,9 +231,10 @@ export default function Header() {
             </Link>
             <Link
               href="/ad-management"
+              aria-current={isActive("/ad-management") ? "page" : undefined}
               onClick={() => setMobileOpen(false)}
               className={cx(
-                "block py-1 text-white/80 hover:text-white",
+                "block py-2 text-white/80 hover:text-white",
                 isActive("/ad-management") && "text-white"
               )}
             >
@@ -281,7 +295,10 @@ export default function Header() {
               </Link>
               <Link
                 href="/book-demo"
-                onClick={() => setMobileOpen(false)}
+                onClick={() => {
+                  trackDemoClick("header_mobile");
+                  setMobileOpen(false);
+                }}
                 className="block rounded-lg bg-white text-center text-gray-900 px-4 py-2 font-semibold hover:bg-neutral-200"
               >
                 Book demo

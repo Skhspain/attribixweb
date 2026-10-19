@@ -224,6 +224,11 @@ export default function Page() {
           <h2 className="text-xl md:text-2xl font-extrabold mb-4">Related reading</h2>
           <ul className="space-y-2 text-sm">
             <li>
+              <Link href="/tools/attribution-models" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
+                Attribution model explorer: one order, four models
+              </Link>
+            </li>
+            <li>
               <Link href="/shopify-attribution" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
                 Shopify attribution software
               </Link>
@@ -260,7 +265,7 @@ export default function Page() {
             Attribix applies one clear methodology across Meta and Google, so
             you&apos;re comparing campaigns on the same terms.
           </p>
-          <ProductCTA className="mt-8 justify-center" />
+          <ProductCTA className="mt-8 justify-center" howHref="/features#attribution" />
         </Reveal>
       </section>
     </ProductPageShell>

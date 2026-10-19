@@ -223,7 +223,7 @@ export default function Page() {
             Connect your store and Google Ads account to see conversion
             coverage against actual Shopify orders.
           </p>
-          <ProductCTA className="mt-8 justify-center" />
+          <ProductCTA className="mt-8 justify-center" howHref="/features#tracking" />
         </Reveal>
       </section>
     </ProductPageShell>

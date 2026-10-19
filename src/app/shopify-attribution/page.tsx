@@ -70,7 +70,7 @@ export default function ShopifyAttributionPage() {
             in Shopify, so campaign decisions start from one number instead of
             three competing ones.
           </p>
-          <ProductCTA className="mt-9" />
+          <ProductCTA className="mt-9" howHref="/features#attribution" />
         </Reveal>
       </section>
 
@@ -368,7 +368,7 @@ export default function ShopifyAttributionPage() {
             Connect your Shopify store, Meta and Google accounts, and see how
             your own orders reconcile against platform-reported numbers.
           </p>
-          <ProductCTA className="mt-8 justify-center" />
+          <ProductCTA className="mt-8 justify-center" howHref="/features#attribution" />
           <p className="mt-6 text-sm text-white/35">
             <Link href="/pricing" className="text-white/60 underline underline-offset-4 hover:text-white">
               See plans and pricing

@@ -57,7 +57,7 @@ export default function ServerSideTrackingPage() {
             event from your server instead, reducing the gap created by
             browser-side tracking loss.
           </p>
-          <ProductCTA className="mt-9" />
+          <ProductCTA className="mt-9" howHref="/features#tracking" />
         </Reveal>
       </section>
 
@@ -292,7 +292,7 @@ export default function ServerSideTrackingPage() {
             Connect your Shopify store and see which purchase events are
             currently making it to Meta and Google, and which aren&apos;t.
           </p>
-          <ProductCTA className="mt-8 justify-center" />
+          <ProductCTA className="mt-8 justify-center" howHref="/features#tracking" />
         </Reveal>
         <p className="mt-6 text-sm text-white/35">
           See how this feeds into{" "}

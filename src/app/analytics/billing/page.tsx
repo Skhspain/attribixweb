@@ -1,29 +1,17 @@
 "use client";
 
 import React from "react";
+import { PLANS as SHARED_PLANS } from "@/lib/pricing";
 
-const PLANS = [
-  {
-    name: "Starter", price: 49, trialDays: 7, features: [
-      "300 orders tracked/mo", "Meta & Google Ads data", "30 days history",
-      "UTM builder", "Basic attribution", "Email support",
-    ],
-  },
-  {
-    name: "Growth", price: 79, trialDays: 7, popular: true, features: [
-      "2,500 orders tracked/mo", "90 days history", "Social calendar & analytics",
-      "Product feed — Google & Meta", "Newsletter (2,500 emails/mo)",
-      "Lead center", "Review collection", "Priority support",
-    ],
-  },
-  {
-    name: "Pro", price: 149, trialDays: 3, features: [
-      "Unlimited orders tracked", "365 days history", "Visitor flow analysis",
-      "Multi-touch attribution", "Automation flows", "Newsletter (10,000 emails/mo)",
-      "SEO audit", "Custom reports", "Dedicated support",
-    ],
-  },
-];
+// Plan data comes from the shared pricing config so the in-app preview,
+// the website and the Shopify listing stay in sync.
+const PLANS = SHARED_PLANS.map((p) => ({
+  name: p.name,
+  price: p.monthly,
+  trialDays: p.trialDays,
+  popular: p.highlight,
+  features: [...Object.values(p.limits), ...p.extras],
+}));
 
 export default function BillingPage() {
   return (

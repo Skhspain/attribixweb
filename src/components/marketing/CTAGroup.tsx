@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { cx } from "./Reveal";
+import { SHOPIFY_APP_URL } from "@/lib/pricing";
+import { trackConsultationClick, trackTrialClick } from "@/lib/track";
 
 const primaryClass =
   "rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-gray-900 shadow-lg hover:bg-neutral-100 transition text-center";
@@ -7,8 +11,8 @@ const secondaryClass =
   "rounded-xl border border-white/20 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white/80 hover:bg-white/10 hover:text-white transition text-center";
 
 /**
- * "Send inquiry" must always read as more prominent than "Book a free
- * consultation call" should be solid fill vs. outline, primary listed first.
+ * The written inquiry is the primary service action (solid fill, listed
+ * first); the free consultation is the outline secondary.
  */
 export function ManagedServicesCTA({
   className,
@@ -22,10 +26,14 @@ export function ManagedServicesCTA({
   return (
     <div className={cx("flex flex-wrap items-center gap-3", className)}>
       <Link href={inquiryHref} className={primaryClass}>
-        Send inquiry
+        Request ad management
       </Link>
-      <Link href={consultationHref} className={secondaryClass}>
-        Book a free consultation call
+      <Link
+        href={consultationHref}
+        className={secondaryClass}
+        onClick={() => trackConsultationClick("services_cta")}
+      >
+        Book a free consultation
       </Link>
     </div>
   );
@@ -40,7 +48,7 @@ export function ManagedServicesCTA({
 export function SoftInquiryCTA({
   className,
   href = "/ad-management/inquiry",
-  label = "Send inquiry",
+  label = "Request ad management",
 }: {
   className?: string;
   href?: string;
@@ -57,7 +65,7 @@ export function SoftInquiryCTA({
 
 export function ProductCTA({
   className,
-  trialHref = "https://apps.shopify.com/attribix-app",
+  trialHref = SHOPIFY_APP_URL,
   howHref = "/features",
   trialLabel = "Start free trial",
   howLabel = "See how it works",
@@ -70,9 +78,9 @@ export function ProductCTA({
 }) {
   return (
     <div className={cx("flex flex-wrap items-center gap-3", className)}>
-      <Link href={trialHref} className={primaryClass}>
+      <a href={trialHref} className={primaryClass} onClick={() => trackTrialClick("product_cta")}>
         {trialLabel}
-      </Link>
+      </a>
       <Link href={howHref} className={secondaryClass}>
         {howLabel}
       </Link>

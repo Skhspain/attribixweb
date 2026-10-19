@@ -187,7 +187,7 @@ export default function Page() {
             Connect your store and Google Ads account to see the actual gap
             for your orders, not an illustrative example.
           </p>
-          <ProductCTA className="mt-8 justify-center" />
+          <ProductCTA className="mt-8 justify-center" howHref="/features#attribution" />
         </Reveal>
       </section>
     </ProductPageShell>

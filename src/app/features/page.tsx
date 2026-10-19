@@ -1,357 +1,258 @@
 "use client";
 
+// Product walkthrough. Every feature here maps to a real screen in the
+// dashboard (src/app/analytics/*) or a feature named on the Shopify App
+// Store listing. Visuals are illustrative and labelled as sample data.
+// The attribution simulator that used to live here is now
+// /tools/attribution-models.
+
+import Link from "next/link";
 import React from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/marketing/Breadcrumbs";
+import ProductPageShell from "@/components/marketing/ProductPageShell";
+import { AdsReviewMock, AttributionMock, OverviewMock, TrackingMock } from "@/components/site/ProductMocks";
+import { IntegrationStrip } from "@/components/site/integrations";
+import {
+  Card,
+  DemoLink,
+  Eyebrow,
+  Section,
+  SectionHeader,
+  TrialLink,
+  btnSecondary,
+  cx,
+  textLink,
+} from "@/components/site/ui";
 
-/* -----------------------------------------------------
-   Utilities
------------------------------------------------------ */
-function cx(...xs: Array<string | false | null | undefined>) {
-  return xs.filter(Boolean).join(" ");
-}
-const money = (n: number) =>
-  n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 });
-
-/* -----------------------------------------------------
-   Attribution model types
-   Same model set and weighting logic as the production
-   /analytics/attribution dashboard (src/app/analytics/attribution/logic.ts):
-   last-click, first-click, linear, and positional time-decay (2^i weights).
------------------------------------------------------ */
-type ModelKind = "last" | "first" | "linear" | "decay";
-const MODEL_LABEL: Record<ModelKind, string> = {
-  last: "Last Click",
-  first: "First Click",
-  linear: "Linear",
-  decay: "Time-decay",
-};
-const MODEL_COPY: Record<ModelKind, string> = {
-  last: "Protects brand and retargeting. Gives all the credit to the final touch before the purchase.",
-  first: "Finds top-of-funnel winners. Rewards the touch that started the journey.",
-  linear: "Keeps everyone honest. Splits credit evenly across every touch in the journey.",
-  decay: "Leans into recency. Touches closer to the purchase get more credit than earlier ones, without ignoring them.",
+type Feature = {
+  id: string;
+  eyebrow: string;
+  title: string;
+  what: string;
+  why: string;
+  action: string;
+  points?: { k: string; v: string }[];
+  links?: { label: string; href: string }[];
+  visual: React.ReactNode;
 };
 
-/* -----------------------------------------------------
-   Fixed example journey
-   One Shopify order, two ad touches. The order itself
-   never changes; only how each model splits credit does.
------------------------------------------------------ */
-type Touch = { channel: "Meta" | "Google"; label: string; day: string };
-const JOURNEY: Touch[] = [
-  { channel: "Meta", label: "Meta Ad click", day: "Day 1" },
-  { channel: "Google", label: "Google Search click", day: "Day 3" },
+const FEATURES: Feature[] = [
+  {
+    id: "dashboard",
+    eyebrow: "Advertising dashboard",
+    title: "Spend, revenue and ROAS on one screen",
+    what: "The Overview combines Shopify revenue and orders with ad spend from Meta and Google. Dedicated Meta Ads and Google Ads views break results down by campaign, ad set and ad.",
+    why: "Each ad platform shows its own version of results. Seeing spend next to actual store revenue tells you whether advertising is paying back overall.",
+    action: "Start each review here. If store-level ROAS is below what your margins need, fix that before tuning single campaigns.",
+    points: [
+      { k: "Ad spend", v: "What you paid Meta and Google in the period." },
+      { k: "Revenue", v: "Order value recorded in Shopify." },
+      { k: "ROAS", v: "Revenue divided by ad spend. 3.0x means $3 back for every $1 spent." },
+      { k: "CPA", v: "Cost per acquisition: spend divided by purchases." },
+      { k: "AOV", v: "Average order value: revenue divided by orders." },
+    ],
+    links: [{ label: "Shopify ROAS tracking explained", href: "/shopify-roas-tracking" }],
+    visual: <OverviewMock />,
+  },
+  {
+    id: "ads-review",
+    eyebrow: "Ads Review",
+    title: "Find the campaigns that pay for themselves",
+    what: "Ads Review lists campaigns with spend, purchases, cost per acquisition and ROAS, and lets you set a target ROAS. Campaigns are marked above or below that target and can be filtered by it.",
+    why: "A single target based on your margins turns a long table into a short list of decisions.",
+    action: "Increase budget gradually on campaigns above target. Check tracking, offer and creative on the ones below it before cutting them.",
+    links: [
+      { label: "Free break-even ROAS calculator", href: "/tools/roas-calculator" },
+      { label: "Is a 4x ROAS profitable?", href: "/resources/400-roas-profitable" },
+    ],
+    visual: <AdsReviewMock />,
+  },
+  {
+    id: "attribution",
+    eyebrow: "Sales attribution",
+    title: "Connect ad activity to Shopify orders",
+    what: "Attribix records visits with their source and UTM parameters and links them to the Shopify orders that follow. The Attribution view splits that revenue by channel under last-click, first-click, linear or time-decay models.",
+    why: "Meta and Google each count a sale when their ad was involved, so both can claim the same order. Attribution based on your own orders counts each order once.",
+    action: "Choose the model that matches how you buy media and use it consistently. Compare it with what each platform reports to see how much they overlap.",
+    points: [
+      { k: "Platform-reported conversions", v: "What Meta or Google count, using their own windows, including some view-through conversions." },
+      { k: "Attribix attribution", v: "Tracked Shopify orders, credited by the model you choose. Each order is counted once." },
+    ],
+    links: [
+      { label: "Try the attribution model explorer", href: "/tools/attribution-models" },
+      { label: "Shopify attribution explained", href: "/shopify-attribution" },
+    ],
+    visual: <AttributionMock />,
+  },
+  {
+    id: "tracking",
+    eyebrow: "Meta Conversions API and Google conversions",
+    title: "Send purchases from the server, counted once",
+    what: "Alongside the browser pixel, Attribix sends purchase events to Meta through the Conversions API and to Google from the server. Both copies of an event share one event ID so the platform can deduplicate them.",
+    why: "Ad blockers, Safari limits and short cookie lifetimes stop some browser events from arriving. Meta and Google optimise delivery on the conversions they receive, so missing events weaken campaigns.",
+    action: "Turn on server-side sending in Settings. Use Meta's test event code to confirm events arrive, then check deduplication in Events Manager.",
+    points: [
+      { k: "Server-side events", v: "Sent from a server, so browser blocking does not stop them." },
+      { k: "Deduplication", v: "A shared event ID tells the platform the browser and server events are the same purchase." },
+      { k: "Consent", v: "Server-side sending changes how events travel, not whether you may send them. Consent rules still apply." },
+    ],
+    links: [
+      { label: "Meta CAPI for Shopify", href: "/meta-capi-shopify" },
+      { label: "Google Ads conversion tracking for Shopify", href: "/google-ads-conversion-tracking-shopify" },
+      { label: "Fix duplicate Meta purchases", href: "/resources/fix-duplicate-meta-purchases-shopify" },
+    ],
+    visual: <TrackingMock />,
+  },
 ];
-const ORDER_VALUE = 100;
-const ORDER_LABEL = "Shopify order #1042";
 
-function attributeJourney(model: ModelKind): Record<"Meta" | "Google", number> {
-  const L = JOURNEY.length;
-  const shares: Record<"Meta" | "Google", number> = { Meta: 0, Google: 0 };
+const MORE = [
+  { t: "Orders and products", d: "Every order with its source, campaign and country, plus revenue and units sold by product.", plan: "All plans" },
+  { t: "UTM builder", d: "Build consistently tagged links so campaigns show up correctly in attribution.", plan: "All plans" },
+  { t: "Customer lists", d: "Export customers as a CSV formatted for Google Ads Customer Match.", plan: "All plans" },
+  { t: "SEO audit", d: "Scans your store and lists fixes in priority order.", plan: "Unlimited on all plans" },
+  { t: "Newsletter", d: "Email campaigns and automated flows with revenue tracking.", plan: "Limits vary by plan" },
+  { t: "Lead Center", d: "Capture leads from forms and ads and track their status.", plan: "Limits vary by plan" },
+  { t: "Reviews", d: "Collect product reviews and show them in a customisable widget.", plan: "Limits vary by plan" },
+  { t: "Product feeds", d: "One feed URL for Google Merchant Center and Meta product catalogues.", plan: "Growth and Pro" },
+  { t: "Visitor flow analysis", d: "See how visitors move through the store before buying or leaving.", plan: "Pro" },
+];
 
-  if (model === "last") {
-    shares[JOURNEY[L - 1].channel] = ORDER_VALUE;
-  } else if (model === "first") {
-    shares[JOURNEY[0].channel] = ORDER_VALUE;
-  } else if (model === "linear") {
-    const w = 1 / L;
-    JOURNEY.forEach((t) => (shares[t.channel] += ORDER_VALUE * w));
-  } else {
-    // Positional time-decay: weight = 2^i, oldest touch i=0
-    const weights = JOURNEY.map((_, i) => Math.pow(2, i));
-    const sumW = weights.reduce((a, b) => a + b, 0);
-    JOURNEY.forEach((t, i) => (shares[t.channel] += ORDER_VALUE * (weights[i] / sumW)));
-  }
-  return shares;
-}
-
-/* -----------------------------------------------------
-   Journey diagram
------------------------------------------------------ */
-function JourneyDiagram() {
-  const steps = [
-    { t: "Meta Ad", sub: "Day 1" },
-    { t: "Shopify visit", sub: "session started" },
-    { t: "Google Search", sub: "Day 3" },
-    { t: "Shopify purchase", sub: `${ORDER_LABEL} · ${money(ORDER_VALUE)}` },
-  ];
+function FeatureBlock({ f, flip }: { f: Feature; flip: boolean }) {
   return (
-    <div className="flex flex-wrap items-center gap-2">
-      {steps.map((s, i) => (
-        <React.Fragment key={s.t}>
-          <div className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-center">
-            <div className="text-sm font-semibold text-white">{s.t}</div>
-            <div className="text-[11px] text-white/50">{s.sub}</div>
-          </div>
-          {i < steps.length - 1 && (
-            <span aria-hidden className="text-white/25">
-              →
-            </span>
+    <section id={f.id} aria-labelledby={`${f.id}-title`} className="scroll-mt-24 border-t border-white/10 py-16 md:py-20">
+      <div className={cx("grid items-start gap-10 lg:grid-cols-2 lg:gap-14", flip && "lg:[&>*:first-child]:order-2")}>
+        <div>
+          <Eyebrow className="mb-3">{f.eyebrow}</Eyebrow>
+          <h2 id={`${f.id}-title`} className="text-3xl font-extrabold tracking-tight text-white">
+            {f.title}
+          </h2>
+          <dl className="mt-6 space-y-5 text-[15px] leading-relaxed">
+            <div>
+              <dt className="text-xs font-semibold uppercase tracking-wide text-white/45">What it does</dt>
+              <dd className="mt-1 text-white/80">{f.what}</dd>
+            </div>
+            <div>
+              <dt className="text-xs font-semibold uppercase tracking-wide text-white/45">Why it matters</dt>
+              <dd className="mt-1 text-white/80">{f.why}</dd>
+            </div>
+            <div>
+              <dt className="text-xs font-semibold uppercase tracking-wide text-white/45">What to do with it</dt>
+              <dd className="mt-1 text-white/80">{f.action}</dd>
+            </div>
+          </dl>
+          {f.links && (
+            <ul className="mt-6 space-y-2 text-sm">
+              {f.links.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className={textLink}>
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           )}
-        </React.Fragment>
-      ))}
-    </div>
-  );
-}
-
-/* -----------------------------------------------------
-   Attribution demo: same order, different credit per model
------------------------------------------------------ */
-function AttributionDemo() {
-  const [model, setModel] = React.useState<ModelKind>("linear");
-  const shares = attributeJourney(model);
-  const rows: { channel: "Meta" | "Google"; revenue: number }[] = [
-    { channel: "Meta" as const, revenue: shares.Meta },
-    { channel: "Google" as const, revenue: shares.Google },
-  ].sort((a, b) => b.revenue - a.revenue);
-
-  return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-4 md:p-5 shadow-[0_20px_80px_-30px_rgba(0,0,0,0.5)]">
-      <div className="flex items-center justify-between gap-4">
-        <div className="text-lg font-semibold">One order, four models</div>
-        <div className="text-[11px] text-white/60">Fixed example, not a projection</div>
-      </div>
-
-      <div className="mt-4 rounded-xl border border-white/10 bg-black/20 p-3 overflow-x-auto">
-        <JourneyDiagram />
-      </div>
-
-      <div className="mt-5">
-        <div className="text-xs text-white/70 mb-2">Attribution model</div>
-        <div className="flex flex-wrap gap-2">
-          {(Object.keys(MODEL_LABEL) as ModelKind[]).map((m) => (
-            <button
-              key={m}
-              onClick={() => setModel(m)}
-              className={cx(
-                "px-3 py-1.5 rounded-lg border text-sm transition",
-                model === m ? "border-cyan-400/40 bg-cyan-400/15" : "border-white/10 hover:bg-white/5"
-              )}
-            >
-              {MODEL_LABEL[m]}
-            </button>
-          ))}
         </div>
-        <p className="mt-2 text-[12px] text-white/60 leading-relaxed">{MODEL_COPY[model]}</p>
-      </div>
-
-      <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden">
-        <table className="w-full text-sm">
-          <thead className="bg-white/[0.04]">
-            <tr>
-              <th className="px-4 py-2.5 text-left text-[11px] font-semibold uppercase tracking-wide text-white/50">Channel</th>
-              <th className="px-4 py-2.5 text-right text-[11px] font-semibold uppercase tracking-wide text-white/50">Attributed revenue</th>
-              <th className="px-4 py-2.5 text-right text-[11px] font-semibold uppercase tracking-wide text-white/50">Share</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((r) => (
-              <tr key={r.channel} className="border-t border-white/10">
-                <td className="px-4 py-3 font-medium text-white">{r.channel}</td>
-                <td className="px-4 py-3 text-right text-white/85">{money(r.revenue)}</td>
-                <td className="px-4 py-3 text-right text-white/60">
-                  {((r.revenue / ORDER_VALUE) * 100).toFixed(1)}%
-                </td>
-              </tr>
-            ))}
-            <tr className="border-t border-white/10 bg-white/[0.03]">
-              <td className="px-4 py-2.5 text-white/60">Order total</td>
-              <td className="px-4 py-2.5 text-right text-white/60">{money(ORDER_VALUE)}</td>
-              <td className="px-4 py-2.5 text-right text-white/60">100%</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p className="mt-4 text-[12px] text-white/55 leading-relaxed">
-        {ORDER_LABEL} stays {money(ORDER_VALUE)} in Shopify no matter which model is selected. Attribix
-        doesn&apos;t change what the store sold; it changes which channel gets credit for having sold it,
-        using the same last-click, first-click, linear and time-decay logic as your account&apos;s live
-        attribution dashboard.
-      </p>
-    </div>
-  );
-}
-
-/* -----------------------------------------------------
-   Sample dashboard preview (mirrors the real /analytics
-   attribution table structure with clearly labeled sample data)
------------------------------------------------------ */
-function DashboardPreview() {
-  const sampleRows = [
-    { channel: "Meta", conversions: 148, revenue: 9820, share: 41.2 },
-    { channel: "Google", conversions: 121, revenue: 8340, share: 35.0 },
-    { channel: "Direct / Other", conversions: 63, revenue: 5670, share: 23.8 },
-  ];
-  return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-5 md:p-6">
-      <div className="flex items-center justify-between gap-3 flex-wrap">
-        <h3 className="text-xl font-bold">What you&apos;ll see after connecting your store</h3>
-        <span className="rounded-full border border-amber-300/20 bg-amber-400/10 px-2.5 py-1 text-[11px] text-amber-200/90">
-          Sample data, not a live account
-        </span>
-      </div>
-      <p className="mt-3 text-sm text-white/70 max-w-2xl">
-        This mirrors the layout of the real Attribution dashboard inside your Attribix account: a model
-        picker, then attributed revenue and conversions by channel for the period you select.
-      </p>
-      <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden overflow-x-auto">
-        <table className="w-full text-sm min-w-[480px]">
-          <thead className="bg-white/[0.04]">
-            <tr>
-              <th className="px-4 py-2.5 text-left text-[11px] font-semibold uppercase tracking-wide text-white/50">Channel</th>
-              <th className="px-4 py-2.5 text-right text-[11px] font-semibold uppercase tracking-wide text-white/50">Conversions</th>
-              <th className="px-4 py-2.5 text-right text-[11px] font-semibold uppercase tracking-wide text-white/50">Attributed revenue</th>
-              <th className="px-4 py-2.5 text-right text-[11px] font-semibold uppercase tracking-wide text-white/50">Share</th>
-            </tr>
-          </thead>
-          <tbody>
-            {sampleRows.map((r) => (
-              <tr key={r.channel} className="border-t border-white/10">
-                <td className="px-4 py-3 font-medium text-white">{r.channel}</td>
-                <td className="px-4 py-3 text-right text-white/70">{r.conversions}</td>
-                <td className="px-4 py-3 text-right text-white/85">{money(r.revenue)}</td>
-                <td className="px-4 py-3 text-right text-white/60">{r.share.toFixed(1)}%</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-}
-
-/* -----------------------------------------------------
-   Page shell
------------------------------------------------------ */
-export default function FeaturesPage() {
-  return (
-    <div className="relative min-h-screen bg-gradient-to-br from-[#0F0620] via-[#0E1530] to-[#053B56] text-white">
-      <Header />
-
-      <main className="mx-auto max-w-7xl px-4 py-12 md:py-16">
-        <div className="grid gap-6 lg:grid-cols-12">
-          <section className="lg:col-span-5">
-            <p className="text-xs uppercase tracking-[0.2em] text-cyan-300/70 mb-2">
-              Attribution Features
-            </p>
-            <h1 className="text-3xl md:text-4xl font-extrabold">
-              Shopify attribution &amp; tracking, made simple
-            </h1>
-            <p className="mt-2 text-white/75">
-              The same Shopify order can look completely different depending on which attribution
-              model gets applied to it. Switch models on the fixed example to see how credit moves
-              between Meta and Google while the order itself stays the same.
-            </p>
-
-            <div className="mt-4 grid gap-3">
-              {(Object.keys(MODEL_LABEL) as ModelKind[]).map((m) => (
-                <div key={m} className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <div className="font-semibold">{MODEL_LABEL[m]}</div>
-                  <p className="text-sm text-white/70 mt-1">{MODEL_COPY[m]}</p>
+        <div className="min-w-0">
+          {f.visual}
+          {f.points && (
+            <dl className="mt-6 grid gap-3 sm:grid-cols-2">
+              {f.points.map((p) => (
+                <div key={p.k} className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">
+                  <dt className="text-sm font-semibold text-white">{p.k}</dt>
+                  <dd className="mt-1 text-[13px] leading-relaxed text-white/65">{p.v}</dd>
                 </div>
               ))}
-            </div>
-          </section>
-
-          <section className="lg:col-span-7">
-            <AttributionDemo />
-          </section>
+            </dl>
+          )}
         </div>
+      </div>
+    </section>
+  );
+}
 
-        {/* Why this is useful */}
-        <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-5">
-          <h3 className="text-xl font-bold mb-2">Why this is useful</h3>
-          <ul className="list-disc pl-5 space-y-1 text-white/80 text-sm">
-            <li>
-              See how different models change <b>which channel looks responsible</b> for a sale,
-              before you make a budget decision based on platform-reported ROAS.
-            </li>
-            <li>
-              Understand why Meta and Google can both report reasonable-looking numbers that add up
-              to more than the store actually sold.
-            </li>
-            <li>
-              Walk into a budget conversation able to say which model you&apos;re using and why, instead
-              of comparing two platforms that are each grading their own homework.
-            </li>
-          </ul>
-        </div>
-
-        {/* Dashboard preview */}
-        <div className="mt-8">
-          <DashboardPreview />
-        </div>
-
-        {/* Tracking layer highlight */}
-        <div className="mt-8 rounded-2xl border border-cyan-400/20 bg-white/5 p-5 md:p-6">
-          <p className="text-xs uppercase tracking-[0.2em] text-cyan-300/80 mb-2">
-            Tracking Layer
-          </p>
-          <div className="grid gap-6 md:grid-cols-2">
-            <div>
-              <h3 className="text-xl font-bold mb-2">
-                Better tracking, not just prettier reports
-              </h3>
-              <p className="text-sm text-white/80">
-                Attribix sits between your store and the ad platforms. We
-                combine{" "}
-                <b>first-party cookies, server-side events and clean IDs</b>{" "}
-                so you see sales that pixels miss, and your attribution models
-                are built on real data, not guesswork.
-              </p>
-            </div>
-            <div className="grid gap-3 text-sm">
-              <div className="rounded-xl border border-white/12 bg-black/30 px-4 py-3">
-                <div className="font-semibold text-white/90">
-                  First-party IDs
-                </div>
-                <p className="text-white/70 text-[13px]">
-                  First-party identifiers help maintain more consistent
-                  measurement across sessions where browser-based tracking
-                  is limited.
-                </p>
-              </div>
-              <div className="rounded-xl border border-white/12 bg-black/30 px-4 py-3">
-                <div className="font-semibold text-white/90">
-                  Server-side events
-                </div>
-                <p className="text-white/70 text-[13px]">
-                  Purchases and key events sent via CAPI with smart deduping
-                  against your pixels.
-                </p>
-              </div>
-              <div className="rounded-xl border border-white/12 bg-black/30 px-4 py-3">
-                <div className="font-semibold text-white/90">
-                  Model-ready data
-                </div>
-                <p className="text-white/70 text-[13px]">
-                  Clean, joined event stream so Attribix can run attribution
-                  models and reports instantly, tightly integrated with your
-                  store.
-                </p>
-              </div>
-            </div>
+export default function FeaturesPage() {
+  return (
+    <ProductPageShell>
+      <main>
+        <div className="mx-auto max-w-6xl px-4 pt-24 pb-12 md:pt-32">
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Features" }]} />
+          <SectionHeader
+            as="h1"
+            eyebrow="Features"
+            title="What Attribix does for your Shopify store"
+            intro="Attribix connects Shopify with Meta and Google Ads, improves how purchases are sent back to the platforms, and shows which campaigns are connected to real orders. Here is each part, what it is for, and how to use it."
+          />
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <TrialLink location="features_top" />
+            <Link href="/pricing" className={btnSecondary}>
+              View pricing
+            </Link>
           </div>
+
+          <nav aria-label="On this page" className="mt-12">
+            <ul className="flex flex-wrap gap-2 text-sm">
+              {[...FEATURES.map((f) => ({ id: f.id, label: f.eyebrow })), { id: "more", label: "Marketing tools" }].map((x) => (
+                <li key={x.id}>
+                  <a
+                    href={`#${x.id}`}
+                    className="inline-flex min-h-[40px] items-center rounded-full border border-white/15 bg-white/5 px-4 text-white/75 hover:bg-white/10 hover:text-white"
+                  >
+                    {x.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <IntegrationStrip className="mt-10" />
         </div>
 
-        {/* Secondary tools note */}
-        <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
-          <p className="text-xs uppercase tracking-[0.2em] text-white/40 mb-2">Additional tools included</p>
-          <p className="text-sm text-white/70 max-w-2xl">
-            Attribution and tracking are why Attribix exists. Accounts also include supporting tools
-            such as newsletter, reviews, lead capture, SEO audit and product feeds, built on the same
-            connected store data.{" "}
-            <a href="/pricing" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
-              See what&apos;s on each plan
-            </a>
+        <div className="mx-auto max-w-6xl px-4">
+          {FEATURES.map((f, i) => (
+            <FeatureBlock key={f.id} f={f} flip={i % 2 === 1} />
+          ))}
+        </div>
+
+        <Section id="more" tone="band" labelledBy="more-title">
+          <SectionHeader
+            id="more-title"
+            eyebrow="Also included"
+            title="Marketing tools on the same store data"
+            intro="Attribution and tracking are the core of Attribix. These tools use the same connected store data. Availability and limits depend on your plan."
+          />
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {MORE.map((m) => (
+              <Card as="li" key={m.t} className="flex flex-col">
+                <h3 className="text-base font-semibold text-white">{m.t}</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-white/70">{m.d}</p>
+                <p className="mt-4 text-xs font-medium text-cyan-200/80">{m.plan}</p>
+              </Card>
+            ))}
+          </ul>
+          <p className="mt-6 text-sm text-white/60">
+            Exact limits for each plan are on the{" "}
+            <Link href="/pricing#compare" className={textLink}>
+              pricing page
+            </Link>
             .
           </p>
-        </div>
-      </main>
+        </Section>
 
-      <Footer />
-    </div>
+        <Section labelledBy="features-cta-title">
+          <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-cyan-400/10 via-white/[0.03] to-indigo-500/10 px-6 py-12 text-center md:px-12">
+            <h2 id="features-cta-title" className="text-3xl font-extrabold tracking-tight text-white">
+              Try it on your own store
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-white/70">
+              Install from the Shopify App Store and connect Meta and Google. If you would rather see it first, book a
+              short walkthrough.
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <TrialLink location="features_bottom" />
+              <DemoLink location="features_bottom" />
+            </div>
+          </div>
+        </Section>
+      </main>
+    </ProductPageShell>
   );
 }
