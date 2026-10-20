@@ -28,27 +28,28 @@ export function AppFrame({
     <figure className="m-0">
       <div className="overflow-hidden rounded-2xl border border-white/15 bg-white text-slate-900 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.7)]">
         <div className="flex items-center gap-2 border-b border-slate-200 bg-slate-50 px-4 py-2.5">
-          <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-slate-300" />
-          <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-slate-300" />
-          <span aria-hidden className="h-2.5 w-2.5 rounded-full bg-slate-300" />
+          <span aria-hidden className="h-2.5 w-2.5 shrink-0 rounded-full bg-slate-300" />
+          <span aria-hidden className="h-2.5 w-2.5 shrink-0 rounded-full bg-slate-300" />
+          <span aria-hidden className="h-2.5 w-2.5 shrink-0 rounded-full bg-slate-300" />
           <span className="ml-2 truncate text-[11px] font-medium text-slate-500">Attribix · {title}</span>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-[140px_1fr]">
-          <nav aria-hidden className="hidden border-r border-slate-100 bg-white p-2 sm:block">
-            {nav.map((n) => (
-              <div
-                key={n}
-                className={cx(
-                  "rounded-md px-2.5 py-1.5 text-[11px]",
-                  n === active ? "bg-slate-900 font-semibold text-white" : "text-slate-500"
-                )}
-              >
-                {n}
-              </div>
-            ))}
-          </nav>
-          <div className="min-w-0 p-4 sm:p-5">{children}</div>
-        </div>
+        <nav
+          aria-hidden
+          className="relative flex gap-1 overflow-hidden whitespace-nowrap border-b border-slate-100 px-3 py-2 [mask-image:linear-gradient(to_right,black_85%,transparent)]"
+        >
+          {nav.map((n) => (
+            <span
+              key={n}
+              className={cx(
+                "rounded-md px-2.5 py-1 text-[11px]",
+                n === active ? "bg-slate-900 font-semibold text-white" : "text-slate-500"
+              )}
+            >
+              {n}
+            </span>
+          ))}
+        </nav>
+        <div className="min-w-0 p-4 sm:p-5">{children}</div>
       </div>
       <figcaption className="mt-3 flex flex-wrap items-center gap-2 text-xs text-white/55">
         <ExampleLabel />
@@ -58,12 +59,24 @@ export function AppFrame({
   );
 }
 
-function Kpi({ label, value, hint }: { label: string; value: string; hint?: string }) {
+function Kpi({
+  label,
+  value,
+  hint,
+  accent = false,
+}: {
+  label: string;
+  value: string;
+  hint?: string;
+  accent?: boolean;
+}) {
   return (
-    <div className="rounded-lg border border-slate-200 bg-white p-3">
-      <div className="text-[10px] font-medium uppercase tracking-wide text-slate-500">{label}</div>
-      <div className="mt-1 text-base font-bold tabular-nums text-slate-900">{value}</div>
-      {hint && <div className="text-[10px] text-slate-400">{hint}</div>}
+    <div className={cx("min-w-0 overflow-hidden rounded-xl border p-2.5 sm:p-4", accent ? "border-sky-200 bg-sky-50" : "border-slate-200 bg-white")}>
+      <div className="truncate text-[11px] font-medium text-slate-500">{label}</div>
+      <div className="mt-1 whitespace-nowrap text-base font-bold tabular-nums tracking-tight text-slate-900 sm:text-xl">
+        {value}
+      </div>
+      {hint && <div className="mt-0.5 text-[11px] leading-snug text-slate-500">{hint}</div>}
     </div>
   );
 }
@@ -74,7 +87,7 @@ export function OverviewMock() {
   const orders = 612;
   const spend = 14200;
   const sources = [
-    { s: "Meta", v: 42 },
+    { s: "Facebook & Instagram", v: 42 },
     { s: "Google", v: 31 },
     { s: "Email", v: 12 },
     { s: "Direct", v: 10 },
@@ -82,21 +95,27 @@ export function OverviewMock() {
   ];
   return (
     <AppFrame title="Overview" active="Overview" caption="Overview: your sales, orders and ad costs for the last 30 days.">
-      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
-        <Kpi label="Sales" value={usd(revenue)} />
-        <Kpi label="Orders" value={orders.toLocaleString("en-US")} />
-        <Kpi label="Avg. order" value={usd(revenue / orders, 2)} />
-        <Kpi label="Ad cost" value={usd(spend)} />
-        <Kpi label="ROAS" value={`${(revenue / spend).toFixed(2)}x`} hint="Sales per $1 of ads" />
+      <div className="grid grid-cols-3 gap-2 sm:gap-3">
+        <Kpi label="Ad cost" value={usd(spend)} hint="What you spent" />
+        <Kpi label="Sales" value={usd(revenue)} hint="What came in" />
+        <Kpi label="ROAS" value={`${(revenue / spend).toFixed(1)}x`} hint="Back per $1 spent" accent />
       </div>
-      <div className="mt-3 rounded-lg border border-slate-200 p-3">
+      <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 rounded-lg bg-slate-50 px-3 py-2 text-[11px] text-slate-600">
+        <span>
+          Orders <b className="tabular-nums text-slate-900">{orders.toLocaleString("en-US")}</b>
+        </span>
+        <span>
+          Avg. order <b className="tabular-nums text-slate-900">{usd(revenue / orders, 2)}</b>
+        </span>
+      </div>
+      <div className="mt-3 rounded-xl border border-slate-200 p-3 sm:p-4">
         <div className="text-[11px] font-semibold text-slate-700">Where visitors came from</div>
-        <div className="mt-2 space-y-1.5">
+        <div className="mt-3 space-y-2">
           {sources.map((x) => (
-            <div key={x.s} className="grid grid-cols-[56px_1fr_32px] items-center gap-2 text-[10px] text-slate-600">
-              <span>{x.s}</span>
+            <div key={x.s} className="grid grid-cols-[minmax(0,120px)_1fr_32px] items-center gap-3 text-[11px] text-slate-600">
+              <span className="truncate">{x.s}</span>
               <span className="h-2 rounded-full bg-slate-100">
-                <span className="block h-2 rounded-full bg-[#0e7eff]" style={{ width: `${x.v * 2}%` }} />
+                <span className="block h-2 rounded-full bg-[#0e7eff]" style={{ width: `${(x.v / 42) * 100}%` }} />
               </span>
               <span className="text-right tabular-nums">{x.v}%</span>
             </div>
