@@ -282,3 +282,59 @@ export function TrackingMock() {
     </AppFrame>
   );
 }
+
+/* ---------- Customer paths (mirrors Attribution > Customer List) ---------- */
+export function JourneyMock() {
+  const rows = [
+    { c: "Customer A", order: "#1042", value: 100, path: ["Instagram ad", "Google search", "Purchase"] },
+    { c: "Customer B", order: "#1043", value: 64, path: ["Google ad", "Email", "Purchase"] },
+    { c: "Customer C", order: "#1044", value: 152, path: ["Facebook ad", "Facebook ad", "Purchase"] },
+    { c: "Customer D", order: "#1045", value: 38, path: ["Direct visit", "Purchase"] },
+  ];
+  return (
+    <AppFrame
+      title="Attribution · Customer List"
+      active="Attribution"
+      caption="Customer List: the visits Attribix saw before each order. Some steps can be missing because of privacy settings."
+    >
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-[420px] text-left text-[11px]">
+          <thead className="text-[10px] uppercase tracking-wide text-slate-500">
+            <tr className="border-b border-slate-200">
+              <th className="py-1.5 pr-2 font-medium">Customer</th>
+              <th className="py-1.5 pr-2 font-medium">Order</th>
+              <th className="py-1.5 pr-2 text-right font-medium">Value</th>
+              <th className="py-1.5 font-medium">Path</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr key={r.order} className="border-b border-slate-100 align-top">
+                <td className="py-2 pr-2 font-medium text-slate-800">{r.c}</td>
+                <td className="py-2 pr-2 text-slate-500">{r.order}</td>
+                <td className="py-2 pr-2 text-right tabular-nums">{usd(r.value)}</td>
+                <td className="py-2">
+                  <span className="flex flex-wrap items-center gap-1">
+                    {r.path.map((p, i) => (
+                      <React.Fragment key={i}>
+                        {i > 0 && <span aria-hidden className="text-slate-300">→</span>}
+                        <span
+                          className={cx(
+                            "rounded px-1.5 py-0.5 text-[10px]",
+                            p === "Purchase" ? "bg-emerald-50 font-semibold text-emerald-700" : "bg-slate-100 text-slate-700"
+                          )}
+                        >
+                          {p}
+                        </span>
+                      </React.Fragment>
+                    ))}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </AppFrame>
+  );
+}

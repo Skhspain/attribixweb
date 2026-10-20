@@ -61,7 +61,7 @@ export default function ShopifyRoasPage() {
             platforms are frequently crediting themselves for the same
             order.
           </p>
-          <ProductCTA className="mt-9" howHref="/features#dashboard" />
+          <ProductCTA className="mt-9" howHref="/features#results" />
         </Reveal>
       </section>
 
@@ -284,7 +284,7 @@ export default function ShopifyRoasPage() {
             Connect your store and ad accounts to compare platform-reported
             ROAS against actual Shopify revenue.
           </p>
-          <ProductCTA className="mt-8 justify-center" howHref="/features#dashboard" />
+          <ProductCTA className="mt-8 justify-center" howHref="/features#results" />
         </Reveal>
         <p className="mt-6 text-sm text-white/35">
           See how this fits into{" "}

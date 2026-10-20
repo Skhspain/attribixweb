@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import React from "react";
-import { AdsReviewMock, AttributionMock, OverviewMock, TrackingMock } from "./ProductMocks";
+import { CampaignCompare, MoneyExample } from "./EduVisuals";
+import { AdsReviewMock, JourneyMock, OverviewMock, TrackingMock } from "./ProductMocks";
 import { cx, textLink } from "./ui";
 
 type Step = {
@@ -15,52 +16,55 @@ type Step = {
   action: string;
   href: string;
   visual: React.ReactNode;
+  extra?: React.ReactNode;
 };
 
 const STEPS: Step[] = [
   {
-    id: "overview",
-    tab: "Overview",
-    title: "All your key numbers on one screen",
-    what: "Shows your sales from Shopify next to what you spent on Facebook and Google ads.",
-    why: "You don't have to open three different apps that all count sales differently.",
-    help: "In a few seconds you can see if your advertising is paying for itself.",
-    action: "Check the big picture first: is your ad spending bringing back more than it costs?",
-    href: "/features#dashboard",
+    id: "results",
+    tab: "Advertising results",
+    title: "See where your advertising money goes",
+    what: "Shows what you spent on Facebook, Instagram and Google ads next to the sales in your Shopify store.",
+    why: "You no longer have to open three apps that each count sales differently.",
+    help: "In a few seconds you can see whether your advertising is bringing back more than it costs.",
+    action: "Check this screen every week, before you look at single ads.",
+    href: "/features#results",
     visual: <OverviewMock />,
+    extra: <MoneyExample />,
   },
   {
-    id: "ads",
-    tab: "Ads Review",
-    title: "See which ads make money",
-    what: "Lists every ad campaign with what it cost, how many sales it brought, and how much each sale cost you.",
-    why: "Some campaigns make money and some quietly waste it. This screen shows which is which.",
-    help: "You set a goal, for example $3 in sales for every $1 spent. Attribix marks which campaigns beat it.",
-    action: "Give more budget to campaigns that beat your goal. Look closer at the ones that don't before you turn them off.",
-    href: "/features#ads-review",
+    id: "campaigns",
+    tab: "Campaign check",
+    title: "Know which campaigns need attention",
+    what: "Lists every campaign with what it cost, the sales linked to it and what each sale cost you.",
+    why: "Some campaigns bring in sales. Others quietly use up your budget.",
+    help: "You set a goal, for example $3 back for every $1. Attribix marks which campaigns beat it.",
+    action: "Give more budget to campaigns that beat your goal. Look closer at the others before switching them off.",
+    href: "/features#campaigns",
     visual: <AdsReviewMock />,
-  },
-  {
-    id: "attribution",
-    tab: "Attribution",
-    title: "See which channel really earned the sale",
-    what: "Splits your sales between Facebook, Google, email and other channels. You choose the rule for who gets the credit.",
-    why: "Facebook and Google both take credit for the same sale. Here, each order is counted only once.",
-    help: "You get a fairer picture of which channel deserves more of your budget.",
-    action: "Pick one rule and stick with it, so you compare channels fairly over time.",
-    href: "/features#attribution",
-    visual: <AttributionMock />,
+    extra: <CampaignCompare />,
   },
   {
     id: "tracking",
-    tab: "Sale tracking",
-    title: "Make sure sales are reported correctly",
-    what: "Sends every sale to Facebook and Google in a second, more reliable way, and makes sure it is only counted once.",
-    why: "Ad blockers hide some sales. Then your ads look worse than they really are.",
-    help: "Facebook and Google use your sales to find new buyers. Better information can help them show your ads to the right people.",
+    tab: "Sales tracking",
+    title: "Help Facebook and Google hear about your sales",
+    what: "Sends each sale to Facebook and Google a second way, from a server, and makes sure it is only counted once.",
+    why: "Ad blockers can stop the normal message, so some sales never show up in your ad reports.",
+    help: "Facebook and Google use your sales to decide who sees your ads. More complete information helps them.",
     action: "Turn it on in Settings, then check in Facebook that your sales are arriving.",
     href: "/features#tracking",
     visual: <TrackingMock />,
+  },
+  {
+    id: "journeys",
+    tab: "Customer journeys",
+    title: "Understand how customers found your store",
+    what: "For each order, shows the visits Attribix saw before it. For example: an Instagram ad, then a Google search, then the purchase.",
+    why: "Most customers don't buy the first time they see an ad. The path shows which ads helped along the way.",
+    help: "You can see which channels start customer journeys and which ones finish them.",
+    action: "Look for ads that often appear early in the path. They may be doing more than their own reports suggest.",
+    href: "/features#journeys",
+    visual: <JourneyMock />,
   },
 ];
 
@@ -142,7 +146,8 @@ export default function ProductTour() {
               <dd className="mt-1 text-white/80">{step.action}</dd>
             </div>
           </dl>
-          <Link href={step.href} className={cx("mt-6 inline-flex min-h-[44px] items-center text-sm", textLink)}>
+          {step.extra && <div className="mt-6">{step.extra}</div>}
+          <Link href={step.href} className={cx("mt-4 inline-flex min-h-[44px] items-center text-sm", textLink)}>
             Learn more about this screen
           </Link>
         </div>

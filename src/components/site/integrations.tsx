@@ -9,19 +9,19 @@ export const INTEGRATIONS = [
     id: "shopify",
     name: "Shopify",
     logo: "/assets/logos/shopify.svg",
-    role: "Your real orders and sales. You install Attribix from the Shopify App Store, with no code to edit.",
+    role: "Where your orders and store information come from. You install Attribix from the Shopify App Store, with no code to edit.",
   },
   {
     id: "meta",
     name: "Facebook and Instagram ads",
     logo: "/assets/logos/meta.svg",
-    role: "What each ad cost and what it brought in. Attribix also sends your sales back to Meta (the company behind Facebook and Instagram), so it can find more buyers like them.",
+    role: "See results from your Facebook and Instagram ads. Attribix also sends your sales back to Meta, the company behind both.",
   },
   {
     id: "google",
     name: "Google Ads",
     logo: "/assets/logos/google.svg",
-    role: "What each Google ad cost and what it brought in. Attribix also sends your sales back to Google, and can list your products in Google Shopping.",
+    role: "See results from your Google ads. Attribix also sends your sales back to Google, and can list your products in Google Shopping.",
   },
 ] as const;
 
@@ -39,10 +39,17 @@ export function IntegrationStrip({ className }: { className?: string }) {
   );
 }
 
+const ATTRIBIX_CARD = {
+  id: "attribix",
+  name: "Attribix",
+  logo: "/assets/logo.svg",
+  role: "Brings the information together, so you can see your ads and your sales side by side.",
+};
+
 export function IntegrationCards() {
   return (
-    <ul className="grid gap-4 md:grid-cols-3">
-      {INTEGRATIONS.map((i) => (
+    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {[...INTEGRATIONS, ATTRIBIX_CARD].map((i) => (
         <li key={i.id} className="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
           <div className="flex items-center gap-3">
             <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/10">

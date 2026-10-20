@@ -14,8 +14,8 @@ const fmtOrders = (n: number | null) => (n === null ? "No limit" : n.toLocaleStr
 const has = (x: string) => PLANS.map((p) => p.extras.some((e) => e.startsWith(x)));
 
 const ROWS: { label: string; values: (string | boolean)[] }[] = [
-  { label: "Orders counted each month", values: PLANS.map((p) => fmtOrders(p.orderLimit)) },
-  { label: "How far back you can look (history)", values: PLANS.map((p) => `${p.historyDays} days`) },
+  { label: "Store orders tracked each month", values: PLANS.map((p) => fmtOrders(p.orderLimit)) },
+  { label: "How far back you can look", values: PLANS.map((p) => `${p.historyDays} days`) },
   { label: "Facebook and Google ad results", values: [true, true, true] },
   { label: "Correct sale counting (server-side tracking)", values: [true, true, true] },
   { label: "Which ad earned each sale (attribution)", values: [true, true, true] },
@@ -111,6 +111,13 @@ export default function PricingPage() {
 
         <Section className="!pt-10">
           <PricingCards location="pricing_page" />
+          <div className="mx-auto mt-10 max-w-3xl rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-sm leading-relaxed text-white/70">
+            <p className="font-semibold text-white">What happens if I reach my order limit?</p>
+            <p className="mt-1">
+              Your store keeps selling as normal. Attribix stops tracking new orders until your next billing month
+              starts, or until you move to a bigger plan.
+            </p>
+          </div>
         </Section>
 
         <Section tone="band" labelledBy="fit-title">

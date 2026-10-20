@@ -7,6 +7,7 @@ import { Reveal } from "@/components/marketing/Reveal";
 import Eyebrow from "@/components/marketing/Eyebrow";
 import { ManagedServicesCTA } from "@/components/marketing/CTAGroup";
 import FAQList from "@/components/marketing/FAQList";
+import { ConsultationLink, btnPrimary, btnSecondary } from "@/components/site/ui";
 
 /* -----------------------------------------------------
    Data
@@ -15,7 +16,7 @@ const SERVICES = [
   {
     title: "We run your Facebook and Instagram ads",
     term: "Meta Ads management",
-    desc: "We plan your campaigns, test new ads, choose who sees them and manage your budget every day.",
+    desc: "We plan your campaigns, test new ads, choose who sees them, and regularly review results and make changes.",
     fit: "For Shopify stores that want an expert to run their Facebook and Instagram ads.",
     href: "/ad-management/meta-ads",
     cta: "Facebook and Instagram ads",
@@ -163,14 +164,21 @@ export default function AdManagementPage() {
         <Reveal>
           <Eyebrow>Ad Management · Meta and Google Ads</Eyebrow>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
-            We run your Facebook, Instagram and Google ads for you
+            Want someone to manage your ads for you?
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-2xl mx-auto leading-relaxed">
-            Our team manages your ads every day, for Shopify stores. We judge
-            them by your real sales in Shopify, not only by what Facebook and
-            Google say.
+            Our team runs and improves your Facebook, Instagram and Google
+            ads. We handle the campaigns while you focus on running your
+            business. Results are checked against your real Shopify sales.
           </p>
-          <ManagedServicesCTA className="mt-9 justify-center" />
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+            <ConsultationLink location="ad_management_hero" className={btnPrimary}>
+              Book a free consultation
+            </ConsultationLink>
+            <Link href="/ad-management/inquiry" className={btnSecondary}>
+              Send us a message
+            </Link>
+          </div>
         </Reveal>
       </section>
 
