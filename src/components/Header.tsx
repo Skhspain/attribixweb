@@ -54,23 +54,23 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/20">
+    <header className="sticky top-0 z-40 border-b border-white/[0.06] bg-[#0b0a18]/70 backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image src="/assets/logo.svg" alt="Attribix" width={28} height={28} />
-          <span className="font-semibold">Attribix</span>
+          <span className="text-[17px] font-semibold tracking-tight">Attribix</span>
         </Link>
 
         {/* Desktop nav */}
-        <nav aria-label="Main" className="hidden md:flex items-center gap-8 text-sm">
+        <nav aria-label="Main" className="hidden md:flex items-center gap-8 text-sm font-medium">
           <Link
             href="/features"
             aria-current={isActive("/features") ? "page" : undefined}
             className={cx(
-              "opacity-80 hover:opacity-100 relative",
+              "text-white/70 hover:text-white transition-colors relative",
               isActive("/features") &&
-                "opacity-100 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
+                "text-white after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
             )}
           >
             Features
@@ -79,9 +79,9 @@ export default function Header() {
             href="/pricing"
             aria-current={isActive("/pricing") ? "page" : undefined}
             className={cx(
-              "opacity-80 hover:opacity-100 relative",
+              "text-white/70 hover:text-white transition-colors relative",
               isActive("/pricing") &&
-                "opacity-100 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
+                "text-white after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
             )}
           >
             Pricing
@@ -90,9 +90,9 @@ export default function Header() {
             href="/faq"
             aria-current={isActive("/faq") ? "page" : undefined}
             className={cx(
-              "opacity-80 hover:opacity-100 relative",
+              "text-white/70 hover:text-white transition-colors relative",
               isActive("/faq") &&
-                "opacity-100 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
+                "text-white after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
             )}
           >
             FAQ
@@ -101,9 +101,9 @@ export default function Header() {
             href="/ad-management"
             aria-current={isActive("/ad-management") ? "page" : undefined}
             className={cx(
-              "opacity-80 hover:opacity-100 relative",
+              "text-white/70 hover:text-white transition-colors relative",
               isActive("/ad-management") &&
-                "opacity-100 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
+                "text-white after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
             )}
           >
             Ad Management
@@ -116,9 +116,9 @@ export default function Header() {
               aria-haspopup="true"
               aria-controls="resources-menu"
               className={cx(
-                "flex items-center gap-1 opacity-80 hover:opacity-100 relative",
+                "flex items-center gap-1 text-white/70 hover:text-white transition-colors relative",
                 isResourcesActive &&
-                  "opacity-100 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
+                  "text-white after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
               )}
             >
               Resources
@@ -158,17 +158,17 @@ export default function Header() {
             )}
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="ml-2 flex items-center gap-2">
             <Link
               href="/login"
-              className="rounded-full bg-white/10 px-4 py-2 hover:bg-white/15"
+              className="rounded-full border border-white/15 px-4 py-2 text-white/90 hover:bg-white/10 hover:text-white transition"
             >
               Log in
             </Link>
             <Link
               href="/book-demo"
               onClick={() => trackDemoClick("header")}
-              className="rounded-full bg-white px-4 py-2 text-sm font-medium text-black shadow-md hover:bg-neutral-200 transition"
+              className="rounded-full border border-white bg-white px-4 py-2 text-black shadow-md hover:bg-neutral-200 transition"
             >
               Book demo
             </Link>
