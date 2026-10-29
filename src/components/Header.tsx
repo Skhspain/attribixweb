@@ -106,7 +106,7 @@ export default function Header() {
                 "text-white after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-full after:bg-cyan-400/70 rounded"
             )}
           >
-            Ad Management
+            Agency
           </Link>
           <div className="relative" ref={resourcesRef}>
             <button
@@ -238,7 +238,7 @@ export default function Header() {
                 isActive("/ad-management") && "text-white"
               )}
             >
-              Ad Management
+              Agency
             </Link>
             <div>
               <button

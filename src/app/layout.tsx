@@ -32,7 +32,15 @@ const ORG_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Attribix",
+  legalName: "Attribix Ltd",
   url: "https://www.attribix.app",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "124 City Road",
+    addressLocality: "London",
+    postalCode: "EC1V 2NX",
+    addressCountry: "GB",
+  },
   logo: "https://www.attribix.app/assets/logo.svg",
   sameAs: ["https://apps.shopify.com/attribix-app"],
 };

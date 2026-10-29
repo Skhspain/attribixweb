@@ -30,8 +30,8 @@ export default function AboutPage() {
             About Attribix
           </h1>
           <p className="mt-6 text-lg text-white/65 max-w-xl leading-relaxed">
-            Attribix is made by bevit, a team that runs Facebook and Google
-            ads for businesses. We built it to answer a simple question: which
+            Attribix is made by a team that runs Facebook and Google ads for
+            businesses. We built it to answer a simple question: which
             ads really bring in customers?
           </p>
         </Reveal>
@@ -94,9 +94,9 @@ export default function AboutPage() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Track record</h2>
           <p className="text-white/60 leading-relaxed text-sm">
             Stian Henriksen leads the team and has worked in online
-            advertising since 2008. bevit started running Facebook and Google
+            advertising since 2008. The team started running Facebook and Google
             ads for clients in 2020, and about 80% of those clients have stayed
-            with us since. The agency is Top Rated with 5-star reviews on
+            with us since. The team is Top Rated with 5-star reviews on
             Fiverr, and has run ads for businesses including MyHeritage, London
             Diamonds and Roberes.
           </p>
@@ -108,7 +108,9 @@ export default function AboutPage() {
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Who&apos;s behind it</h2>
           <p className="text-white/60 leading-relaxed text-sm">
-            Attribix is operated by Bevit Agency, based in Altea, Spain. Legal
+            Attribix is operated by Attribix Ltd, a company registered in England
+            and Wales (company number 17476759), with its registered office at
+            124 City Road, London, EC1V 2NX. Legal
             and contact details are in the{" "}
             <Link href="/terms" className="text-cyan-300 underline underline-offset-4 hover:text-cyan-200">
               Terms of Service

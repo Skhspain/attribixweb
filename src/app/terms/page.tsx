@@ -178,9 +178,11 @@ export default function TermsPage() {
               If you have questions about these Terms, contact us at:
               <br />
               <br />
-              Attribix
+              Attribix Ltd
               <br />
-              Bevit Agency, Altea, Spain
+              124 City Road, London, EC1V 2NX, United Kingdom
+              <br />
+              Company number 17476759 (England and Wales)
               <br />
               Email:{" "}
               <a href="mailto:hello@attribix.app" className="underline">

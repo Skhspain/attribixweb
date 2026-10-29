@@ -74,11 +74,6 @@ const TESTIMONIALS = [
     country: "Norway",
     tag: "Long-term cooperation",
   },
-  {
-    quote: "Working with Bevit Agency was an outstanding experience. Their expertise in social media marketing, combined with a high level of professionalism, strategic thinking, and impeccable attention to detail, made our collaboration seamless.",
-    country: "Bahamas",
-    tag: "bevit agency",
-  },
 ];
 
 const PROCESS = [
@@ -110,8 +105,8 @@ const FAQ_ITEMS = [
     a: "Attribix is an app. You use it yourself to see which ads work. Ad Management is a service. Our team runs your ads for you, using the same app. You can use one without the other.",
   },
   {
-    q: "Who is bevit?",
-    a: "bevit is our advertising team. We built Attribix because we needed better numbers for our own clients. Ad Management is done by the bevit team.",
+    q: "Who runs my ads?",
+    a: "The same team that builds Attribix. We built the app because we needed better numbers for our own clients.",
   },
   {
     q: "Do I need Attribix to work with you?",
@@ -201,14 +196,14 @@ export default function AdManagementPage() {
         </Reveal>
       </section>
 
-      {/* ── 3. ATTRIBIX + BEVIT STORY ── */}
+      {/* ── 3. WHO WE ARE ── */}
       <section className="mx-auto max-w-3xl px-4 py-14">
         <Reveal>
           <Eyebrow>Who we are</Eyebrow>
           <h2 className="text-2xl md:text-3xl font-extrabold">The team that built Attribix</h2>
           <div className="mt-5 space-y-4 text-white/65 leading-relaxed">
             <p>
-              We are <strong className="text-white/85">bevit</strong>, an advertising team.
+              We are the team behind Attribix.
               For years we ran Facebook and Google ads for clients, and the
               numbers from those platforms often didn&apos;t match the real
               sales. So we built Attribix to see which ads really worked.

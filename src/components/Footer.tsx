@@ -3,6 +3,13 @@ import Image from "next/image";
 import CopyEmail from "./CopyEmail";
 import CookiePreferencesButton from "./CookiePreferencesButton";
 
+const COMPANY = {
+  name: "Attribix Ltd",
+  number: "17476759",
+  address: "124 City Road, London, EC1V 2NX, United Kingdom",
+  registryUrl: "https://find-and-update.company-information.service.gov.uk/company/17476759",
+};
+
 const COLUMNS = [
   {
     heading: "Guides",
@@ -27,7 +34,7 @@ const COLUMNS = [
     ],
   },
   {
-    heading: "Ad management",
+    heading: "Agency",
     links: [
       { label: "Overview", href: "/ad-management" },
       { label: "Meta Ads management", href: "/ad-management/meta-ads" },
@@ -80,12 +87,28 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/40">
-          <p>© {new Date().getFullYear()} Attribix, a bevit product.</p>
+          <p>© {new Date().getFullYear()} {COMPANY.name}.</p>
           <div className="flex items-center gap-4">
             <CookiePreferencesButton />
             <CopyEmail email="hello@attribix.app" />
           </div>
         </div>
+
+        <address className="mt-4 not-italic text-[11px] leading-relaxed text-white/30">
+          {COMPANY.name} is a private limited company registered in England and Wales,{" "}
+          <span className="whitespace-nowrap">
+            company number{" "}
+            <a
+              href={COMPANY.registryUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-white/60"
+            >
+              {COMPANY.number}
+            </a>
+          </span>
+          . Registered office: {COMPANY.address}.
+        </address>
       </div>
     </footer>
   );
