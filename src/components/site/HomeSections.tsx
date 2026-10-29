@@ -340,7 +340,7 @@ export default function HomeSections() {
               intro="Attribix grew out of years of running ads for businesses, and the measuring problems that came with it."
             />
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/70">
-              It is made by a team that runs Facebook and Google ads for businesses. Stian Henriksen has
+              It is made by a team that runs Facebook and Google ads for businesses. Our founder has
               worked in online advertising since 2008. The team has run ads for clients since 2020, including
               MyHeritage, London Diamonds and Roberes.
             </p>
