@@ -95,7 +95,7 @@ export default function Footer() {
         </div>
 
         <address className="mt-4 not-italic text-[11px] leading-relaxed text-white/30">
-          {COMPANY.name} is a private limited company registered in England and Wales,{" "}
+          {COMPANY.name} is a private limited company,{" "}
           <span className="whitespace-nowrap">
             company number{" "}
             <a
