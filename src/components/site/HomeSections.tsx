@@ -341,7 +341,7 @@ export default function HomeSections() {
             />
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/70">
               It is made by a team that runs Facebook and Google ads for businesses. Our founder has
-              worked in online advertising since 2008. The team has run ads for clients since 2020, including
+              been in the business since 2008. The team has run ads for clients since 2020, including
               MyHeritage, London Diamonds and Roberes.
             </p>
             <Link href="/about" className={cx("mt-5 inline-flex min-h-[44px] items-center text-sm", textLink)}>

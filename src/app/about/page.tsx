@@ -33,7 +33,7 @@ const THREE_NUMBERS = [
 ];
 
 const STATS = [
-  { k: "Since 2008", v: "Our founder has worked in online advertising" },
+  { k: "Since 2008", v: "Our founder has been in the business" },
   { k: "Since 2020", v: "The team has run Facebook and Google ads for clients" },
   { k: "About 80%", v: "Of those clients have stayed with us since" },
   { k: "Top Rated", v: "Fiverr seller level, 5.0 from 150+ reviews" },
