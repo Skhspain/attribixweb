@@ -12,7 +12,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="text-sm text-white/70 mb-8">
-            Last updated: 9 August 2026
+            Last updated: 30 October 2026
           </p>
 
           <div className="space-y-8 text-sm md:text-[15px] text-white/75 leading-relaxed bg-black/30 border border-white/10 rounded-2xl p-6 md:p-8">
@@ -97,7 +97,10 @@ export default function PrivacyPage() {
                   Google Ads data accessed via the Google Ads API is used only to display reporting within your Attribix dashboard and is not shared with any third party.
                 </li>
                 <li>
-                  Our use of Google Ads API data complies with{" "}
+                  If you turn on &quot;Send purchases to Google Ads&quot; in Attribix, we send your store&apos;s purchase conversions to your own connected Google Ads account through the Google Data Manager API. Each conversion contains the order ID, value, currency, time, the Google click ID (gclid, gbraid or wbraid) and, for enhanced conversions, the customer&apos;s email address and phone number hashed with SHA-256. Nothing is sent to any other Google Ads account. You can turn this off or disconnect Google Ads at any time.
+                </li>
+                <li>
+                  Attribix&apos;s use and transfer of information received from Google APIs (including the Google Ads API and the Data Manager API) to any other app adheres to the{" "}
                   <a href="https://developers.google.com/terms/api-services-user-data-policy" className="underline underline-offset-4 text-cyan-300 hover:text-cyan-200" target="_blank" rel="noopener noreferrer">
                     Google API Services User Data Policy
                   </a>
@@ -127,7 +130,7 @@ export default function PrivacyPage() {
                   <span className="font-semibold">Encryption at rest</span> – Sensitive data including OAuth tokens, API credentials, and personal data stored in our databases is encrypted at rest.
                 </li>
                 <li>
-                  <span className="font-semibold">OAuth token handling</span> – When you connect a Google account (e.g., Google Ads), we store only the OAuth access and refresh tokens required to retrieve your ad performance data on your behalf. These tokens are stored in encrypted form, are scoped to the minimum permissions required, and are never shared with third parties.
+                  <span className="font-semibold">OAuth token handling</span> – When you connect a Google account (e.g., Google Ads), we store only the OAuth access and refresh tokens required to retrieve your ad performance data and, if you turn it on, to send your store&apos;s purchase conversions to your Google Ads account on your behalf. These tokens are stored in encrypted form, are scoped to the minimum permissions required, and are never shared with third parties.
                 </li>
                 <li>
                   <span className="font-semibold">Access controls</span> – Access to data is restricted to authorised personnel who need it to operate and support the service. We enforce role-based access controls and audit internal access to sensitive systems.
